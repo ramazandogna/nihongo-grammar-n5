@@ -1,0 +1,3178 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌻 N4 Japonca Rehberim — Ramazan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --sakura: #d99e0b;          /* ana vurgu — amber/sarı */
+    --sakura-light: #fdf3cf;    /* açık sarı */
+    --ink: #2a2205;
+    --ink-soft: #3d3208;
+    --gold: #c9902a;
+    --matcha: #4a7c59;
+    --matcha-light: #d9edcf;
+    --sky: #b07d10;             /* romaji rengi — koyu amber */
+    --sky-light: #fbf0c9;
+    --orange: #d9731f;
+    --orange-light: #fdeede;
+    --purple: #9a7b1f;
+    --purple-light: #f3ecd0;
+    --bg: #fbf8ee;
+    --card: #ffffff;
+    --border: #ece2c8;
+    --text: #33300f;
+    --text-soft: #6b6236;
+    --new-green: #2e9e5b;
+    --upd-yellow: #e6a817;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #3a2e05 0%, #4a3a08 50%, #2e2a05 100%);
+    padding: 56px 24px 44px; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '🌻 ⛩️ ✍️ 🗾 🌟'; position: absolute; top: 14px; left: 0; right: 0;
+    font-size: 18px; letter-spacing: 10px; opacity: 0.3;
+  }
+  .hero h1 { font-family: 'Noto Serif JP', serif; color: #fff; font-size: clamp(24px, 6vw, 46px); font-weight: 700; line-height: 1.3; }
+  .hero h1 span { color: var(--sakura); }
+  .hero p { color: rgba(255,255,255,0.78); margin-top: 12px; font-size: clamp(13px, 3vw, 16px); max-width: 560px; margin-left: auto; margin-right: auto; }
+  .hero-badge { display: inline-block; margin-top: 18px; background: var(--sakura); color: var(--ink); padding: 6px 18px; border-radius: 20px; font-size: 13px; font-weight: 700; }
+
+  /* ── FLOATING MENU BUTTON ── */
+  .menu-fab {
+    position: fixed; bottom: 22px; right: 22px; z-index: 200;
+    width: 58px; height: 58px; border-radius: 50%;
+    background: var(--sakura); border: none; cursor: pointer;
+    box-shadow: 0 6px 20px rgba(217,158,11,0.55);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; transition: transform 0.2s, background 0.2s;
+  }
+  .menu-fab:hover { transform: scale(1.08); background: #c48f09; }
+  .menu-fab:active { transform: scale(0.95); }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 300;
+    background: rgba(35,30,5,0.62); backdrop-filter: blur(4px);
+    display: none; align-items: center; justify-content: center; padding: 20px;
+  }
+  .modal-overlay.open { display: flex; animation: fadeIn 0.2s; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .modal {
+    background: var(--card); border-radius: 18px; width: 100%; max-width: 440px;
+    max-height: 82vh; display: flex; flex-direction: column; overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4); animation: slideUp 0.25s;
+  }
+  @keyframes slideUp { from { transform: translateY(20px); opacity: 0.6; } to { transform: translateY(0); opacity: 1; } }
+  .modal-head {
+    padding: 18px 20px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    background: linear-gradient(135deg, #3a2e05, #4a3a08);
+  }
+  .modal-head h3 { color: #fff; font-family: 'Noto Serif JP', serif; font-size: 18px; }
+  .modal-close { background: rgba(255,255,255,0.15); border: none; color: #fff; width: 32px; height: 32px; border-radius: 50%; font-size: 18px; cursor: pointer; }
+  .modal-close:hover { background: rgba(255,255,255,0.3); }
+  .modal-body { overflow-y: auto; padding: 10px 0; }
+  .modal-section-label { padding: 12px 20px 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-soft); }
+  .modal-link {
+    display: flex; align-items: center; gap: 10px; padding: 12px 20px;
+    text-decoration: none; color: var(--text); font-size: 15px; cursor: pointer;
+    border: none; background: none; width: 100%; text-align: left; font-family: inherit;
+  }
+  .modal-link:hover { background: var(--sakura-light); }
+  .modal-link .emoji { font-size: 18px; }
+  .modal-link .label { flex: 1; }
+  .badge-new, .badge-upd {
+    font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; letter-spacing: 0.5px;
+  }
+  .badge-new { background: var(--new-green); color: #fff; }
+  .badge-upd { background: var(--upd-yellow); color: #4a3700; }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+  .section { padding: 46px 0 30px; scroll-margin-top: 14px; }
+  .section + .section { border-top: 1px solid var(--border); }
+
+  .section-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 24px; }
+  .section-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+  .section-header h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(18px, 4vw, 25px); font-weight: 700; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .section-header .subtitle { font-size: 13px; color: var(--text-soft); margin-top: 3px; }
+  .inline-badge-new { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 10px; background: var(--new-green); color:#fff; }
+  .inline-badge-upd { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 10px; background: var(--upd-yellow); color:#4a3700; }
+
+  /* ── CARDS ── */
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+  .card-title { font-size: 13px; font-weight: 700; margin-bottom: 12px; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* ── RULE BOX ── */
+  .rule-box { border-left: 4px solid var(--sakura); background: var(--sakura-light); border-radius: 0 10px 10px 0; padding: 14px 16px; margin: 12px 0; font-size: 14px; }
+  .rule-box.matcha { border-color: var(--matcha); background: var(--matcha-light); }
+  .rule-box.sky { border-color: var(--sky); background: var(--sky-light); }
+  .rule-box.orange { border-color: var(--orange); background: var(--orange-light); }
+  .rule-box.purple { border-color: var(--purple); background: var(--purple-light); }
+  .rule-box.gold { border-color: var(--gold); background: #fef6dc; }
+
+  ruby { font-family: 'Noto Sans JP', sans-serif; }
+  rt { font-size: 0.55em; color: var(--text-soft); }
+  .jp { font-family: 'Noto Sans JP', sans-serif; font-size: 18px; font-weight: 500; }
+
+  /* ── EXAMPLE (Cümle / Okunuş / Türkçe) ── */
+  .example { background: #fbf7ea; border-radius: 10px; padding: 14px 16px; margin: 8px 0; border: 1px solid var(--border); }
+  .example .jp-sentence { font-family: 'Noto Sans JP', sans-serif; font-size: 17px; font-weight: 500; color: var(--ink); margin-bottom: 5px; line-height: 1.9; }
+  .example .romaji { font-size: 12.5px; color: var(--sky); font-style: italic; margin-bottom: 3px; }
+  .example .tr { font-size: 13.5px; color: var(--text-soft); }
+  .example .usage-tag { display: inline-block; margin-top: 7px; background: var(--matcha); color: white; padding: 2px 10px; border-radius: 20px; font-size: 11px; }
+
+  /* ── TABLE ── */
+  .group-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+  .group-table th { background: var(--ink); color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+  .group-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); }
+  .group-table tr:last-child td { border-bottom: none; }
+  .group-table tr:nth-child(even) td { background: #fbf8ee; }
+  .group-table .g1 { color: #c0392b; font-weight: 700; }
+  .group-table .g2 { color: #2471a3; font-weight: 700; }
+  .group-table .g3 { color: #1e8449; font-weight: 700; }
+  .table-scroll { overflow-x: auto; }
+
+  code { background: #f4ecd4; padding: 2px 7px; border-radius: 5px; font-family: monospace; font-size: 14px; color: var(--orange); }
+  mark { background: #fff0b3; padding: 1px 4px; border-radius: 3px; color: var(--ink); }
+
+  /* ── DAILY BOX ── */
+  .daily-box { background: var(--matcha-light); border: 1px solid #a8d5b5; border-radius: 10px; padding: 14px 16px; margin: 12px 0; }
+  .daily-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--matcha); letter-spacing: 1px; margin-bottom: 8px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* ── YENİ QUIZ MOTORU ── */
+  .quizhub-wrap { background: linear-gradient(135deg, #3a2e05, #4a3a08); border-radius: 16px; padding: 24px 16px; margin: 20px 0; }
+  .quizhub-head h2 { color: #fff; font-family: 'Noto Serif JP', serif; font-size: 22px; margin-bottom: 8px; }
+  .quizhub-head p { color: rgba(255,255,255,0.75); font-size: 13.5px; line-height: 1.7; margin-bottom: 20px; }
+  .quizhub-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  @media(min-width:520px){ .quizhub-grid { grid-template-columns: 1fr 1fr; } }
+  .quizhub-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-top: 3px solid var(--sakura); border-radius: 12px; padding: 16px; }
+  .quizhub-card-title { color: #fff; font-weight: 700; font-size: 15px; font-family:'Noto Sans JP',sans-serif; margin-bottom: 5px; }
+  .quizhub-card-sub { color: rgba(255,255,255,0.65); font-size: 12.5px; margin-bottom: 6px; min-height: 32px; }
+  .quizhub-card-meta { color: var(--sakura); font-size: 12px; font-weight: 600; margin-bottom: 12px; }
+  .quizhub-start { width: 100%; padding: 11px; border: none; border-radius: 8px; color: #fff; font-weight: 700; font-size: 14px; cursor: pointer; font-family:'DM Sans',sans-serif; }
+  .quizhub-start:hover { filter: brightness(1.12); }
+
+  .quizrun { background: linear-gradient(135deg, #3a2e05, #4a3a08); border-radius: 16px; padding: 22px 16px; margin: 20px 0; position: relative; }
+  .quizrun-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .quizrun-title { color: #fff; font-weight: 700; font-size: 15px; font-family:'Noto Sans JP',sans-serif; max-width: 65%; }
+  .quizrun-timer { color: var(--sakura); font-weight: 700; font-size: 15px; background: rgba(0,0,0,0.3); padding: 5px 12px; border-radius: 20px; }
+  .quizrun-progress { height: 7px; background: rgba(255,255,255,0.12); border-radius: 10px; overflow: hidden; margin-bottom: 8px; }
+  .quizrun-progress-bar { height: 100%; background: var(--sakura); width: 5%; transition: width 0.3s; border-radius: 10px; }
+  .quizrun-counter { color: rgba(255,255,255,0.6); font-size: 12.5px; text-align: right; margin-bottom: 16px; }
+  .quizrun-q { color: #fff; font-size: 17px; line-height: 1.9; font-family:'Noto Sans JP',sans-serif; background: rgba(255,255,255,0.06); padding: 18px; border-radius: 12px; margin-bottom: 16px; min-height: 56px; }
+  .quizrun-q ruby rt { color: var(--sakura); font-size: 0.55em; }
+  .quizrun-opts { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+  .quizrun-opt { background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 14px 16px; cursor: pointer; color: rgba(255,255,255,0.9); font-size: 15px; text-align: left; font-family:'Noto Sans JP',sans-serif; transition: all 0.18s; display: flex; align-items: center; gap: 10px; }
+  .quizrun-opt:hover { background: rgba(255,255,255,0.13); border-color: var(--sakura); }
+  .quizrun-opt.selected { background: rgba(217,158,11,0.28); border-color: var(--sakura); }
+  .quizrun-opt .optletter { background: rgba(255,255,255,0.15); width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .quizrun-opt.selected .optletter { background: var(--sakura); color: var(--ink); }
+  .quizrun-nav { display: flex; gap: 12px; }
+  .quizrun-btn { flex: 1; padding: 14px; border: none; border-radius: 10px; background: var(--sakura); color: var(--ink); font-weight: 700; font-size: 15px; cursor: pointer; font-family:'DM Sans',sans-serif; }
+  .quizrun-btn:hover { filter: brightness(1.1); }
+  .quizrun-btn.ghost { background: rgba(255,255,255,0.12); color: #fff; }
+  .quizrun-quit { background: none; border: none; color: rgba(255,255,255,0.4); font-size: 13px; cursor: pointer; margin-top: 14px; width: 100%; }
+
+  .quizresult { background: linear-gradient(135deg, #3a2e05, #4a3a08); border-radius: 16px; padding: 26px 16px; margin: 20px 0; text-align: center; }
+  .quizresult-score { font-size: 48px; font-weight: 800; color: var(--sakura); font-family:'DM Sans',sans-serif; }
+  .quizresult-label { color: rgba(255,255,255,0.7); font-size: 14px; margin: 6px 0; }
+  .quizresult-comment { color: #fff; font-size: 15px; margin: 14px 0 20px; line-height: 1.6; }
+  .quizresult-review { text-align: left; margin: 18px 0; }
+  .review-title { color: #fff; font-weight: 700; font-size: 15px; margin-bottom: 12px; }
+  .review-item { background: rgba(255,255,255,0.05); border-left: 3px solid #888; border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; }
+  .review-item.ok { border-left-color: #4a7c59; }
+  .review-item.no { border-left-color: #c0392b; }
+  .review-q { color: rgba(255,255,255,0.92); font-size: 14px; line-height: 1.7; margin-bottom: 6px; font-family:'Noto Sans JP',sans-serif; }
+  .review-q ruby rt { color: var(--sakura); font-size: 0.55em; }
+  .review-a { color: #a8e6b8; font-size: 13.5px; margin-bottom: 4px; }
+  .review-item.no .review-a { color: #ffb0b0; }
+  .review-your { color: rgba(255,255,255,0.55); font-size: 12.5px; }
+  .review-exp { color: rgba(255,255,255,0.6); font-size: 12.5px; line-height: 1.6; }
+  .quizresult-actions { display: flex; gap: 12px; margin-top: 20px; }
+
+  .h3title { font-size: 16px; margin: 20px 0 10px; font-family: 'Noto Serif JP', serif; }
+</style>
+</head>
+<body>
+
+<button class="menu-fab" onclick="openMenu()">🌻</button>
+
+<div class="hero" id="top">
+  <h1>🌻 <span>N4 Japonca</span> Rehberim</h1>
+  <p>Ramazan'a özel — JLPT N4 dilbilgisi (tam liste), N4 kanji & kelime, romaji + Türkçe. Her konuda 5-6 örnek cümle, konu grupları için sınavlar.</p>
+  <div class="hero-badge">🎓 N5 tamamlandı → şimdi N4! · Sağ alttaki 🌻 ile menü</div>
+</div>
+
+<div class="modal-overlay" id="menuModal" onclick="if(event.target===this)closeMenu()">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>📚 İçindekiler — N4</h3>
+      <button class="modal-close" onclick="closeMenu()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section-label">🈹 Fiil Formları (N4 belkemiği)</div>
+      <button class="modal-link" onclick="goTo('potential')"><span class="emoji">⚡</span><span class="label">可能形 — Yapabilmek (〜られる/せる)</span></button>
+      <button class="modal-link" onclick="goTo('volitional')"><span class="emoji">🙋</span><span class="label">意向形 — 〜よう + と思う/とする</span></button>
+      <button class="modal-link" onclick="goTo('imperative')"><span class="emoji">🗯️</span><span class="label">命令形・禁止形 — Emir & sert yasak</span></button>
+      <button class="modal-link" onclick="goTo('passive')"><span class="emoji">🎭</span><span class="label">受身形 — Edilgen (〜られる)</span></button>
+      <button class="modal-link" onclick="goTo('causative')"><span class="emoji">👉</span><span class="label">使役形 — Ettirgen (〜させる)</span></button>
+      <button class="modal-link" onclick="goTo('caus-passive')"><span class="emoji">😣</span><span class="label">使役受身 — Zorunda bırakılmak</span></button>
+
+      <div class="modal-section-label">🔀 Koşullar</div>
+      <button class="modal-link" onclick="goTo('tara')"><span class="emoji">🔀</span><span class="label">〜たら — ...sa / ...ınca</span></button>
+      <button class="modal-link" onclick="goTo('ba')"><span class="emoji">➰</span><span class="label">〜ば — ...sa (koşul)</span></button>
+      <button class="modal-link" onclick="goTo('nara')"><span class="emoji">💡</span><span class="label">〜なら — ...ysa / konusundaysa</span></button>
+
+      <div class="modal-section-label">🤝 Verme & Alma</div>
+      <button class="modal-link" onclick="goTo('ageru')"><span class="emoji">🎁</span><span class="label">あげる・くれる・もらう</span></button>
+      <button class="modal-link" onclick="goTo('te-juyo')"><span class="emoji">🤝</span><span class="label">〜てあげる・てくれる・てもらう</span></button>
+
+      <div class="modal-section-label">🔵 て形 Uzantıları</div>
+      <button class="modal-link" onclick="goTo('te-oku')"><span class="emoji">📦</span><span class="label">〜ておく — Önceden hazırlık</span></button>
+      <button class="modal-link" onclick="goTo('te-shimau')"><span class="emoji">💥</span><span class="label">〜てしまう — Bitirme / pişmanlık</span></button>
+      <button class="modal-link" onclick="goTo('te-miru')"><span class="emoji">🧪</span><span class="label">〜てみる — Deneme</span></button>
+      <button class="modal-link" onclick="goTo('te-iku-kuru')"><span class="emoji">🚶</span><span class="label">〜ていく・〜てくる</span></button>
+      <button class="modal-link" onclick="goTo('te-aru')"><span class="emoji">🪧</span><span class="label">〜てある — Hazırlanmış durum</span></button>
+
+      <div class="modal-section-label">🔮 Tahmin & Kip</div>
+      <button class="modal-link" onclick="goTo('sou-densetsu')"><span class="emoji">📻</span><span class="label">〜そうです — Söylenene göre</span></button>
+      <button class="modal-link" onclick="goTo('sou-mitame')"><span class="emoji">👀</span><span class="label">〜そうです — Görünüşe göre</span></button>
+      <button class="modal-link" onclick="goTo('you-mitai')"><span class="emoji">🌫️</span><span class="label">〜ようだ・〜みたいだ — ...gibi</span></button>
+      <button class="modal-link" onclick="goTo('rashii')"><span class="emoji">🧩</span><span class="label">〜らしい — Anlaşılan / tipik</span></button>
+      <button class="modal-link" onclick="goTo('hazu')"><span class="emoji">✔️</span><span class="label">〜はず — Olması gerek</span></button>
+      <button class="modal-link" onclick="goTo('kamo')"><span class="emoji">🎲</span><span class="label">〜かもしれない — Olabilir</span></button>
+      <button class="modal-link" onclick="goTo('darou')"><span class="emoji">🔮</span><span class="label">〜だろう・でしょう — Herhalde</span></button>
+
+      <div class="modal-section-label">⛔ Zorunluluk & İzin</div>
+      <button class="modal-link" onclick="goTo('nakereba')"><span class="emoji">⛔</span><span class="label">〜なければならない — Zorunluluk</span></button>
+      <button class="modal-link" onclick="goTo('nakutemo')"><span class="emoji">🆗</span><span class="label">〜なくてもいい — Gerek yok</span></button>
+      <button class="modal-link" onclick="goTo('permission')"><span class="emoji">✋</span><span class="label">〜てもいい・〜てはいけない</span></button>
+
+      <div class="modal-section-label">🔗 Sebep & Zıtlık</div>
+      <button class="modal-link" onclick="goTo('node')"><span class="emoji">🔗</span><span class="label">〜ので — Çünkü (nazik)</span></button>
+      <button class="modal-link" onclick="goTo('noni')"><span class="emoji">😤</span><span class="label">〜のに — ...masına rağmen</span></button>
+      <button class="modal-link" onclick="goTo('shi')"><span class="emoji">➕</span><span class="label">〜し — Hem...hem (sebep)</span></button>
+      <button class="modal-link" onclick="goTo('tame')"><span class="emoji">🎯</span><span class="label">〜ために・ため — Amaç & sebep</span></button>
+
+      <div class="modal-section-label">🔄 Amaç, Değişim & Karar</div>
+      <button class="modal-link" onclick="goTo('youni')"><span class="emoji">🙏</span><span class="label">〜ように — ...sın diye</span></button>
+      <button class="modal-link" onclick="goTo('youni-suru-naru')"><span class="emoji">🔄</span><span class="label">〜ようにする・〜ようになる</span></button>
+      <button class="modal-link" onclick="goTo('koto-ni')"><span class="emoji">🧭</span><span class="label">〜ことにする・〜ことになる</span></button>
+      <button class="modal-link" onclick="goTo('tsumori')"><span class="emoji">📝</span><span class="label">〜つもり — Niyet</span></button>
+      <button class="modal-link" onclick="goTo('yotei')"><span class="emoji">📅</span><span class="label">〜予定 — Plan</span></button>
+
+      <div class="modal-section-label">🧱 Diğer Temel N4</div>
+      <button class="modal-link" onclick="goTo('nagara')"><span class="emoji">🎧</span><span class="label">〜ながら — Aynı anda</span></button>
+      <button class="modal-link" onclick="goTo('sugiru')"><span class="emoji">🈵</span><span class="label">〜すぎる — Aşırı / fazla</span></button>
+      <button class="modal-link" onclick="goTo('yasui-nikui')"><span class="emoji">⚖️</span><span class="label">〜やすい・〜にくい</span></button>
+      <button class="modal-link" onclick="goTo('kata')"><span class="emoji">🛠️</span><span class="label">〜方 — Yapılış şekli</span></button>
+      <button class="modal-link" onclick="goTo('kadouka')"><span class="emoji">❓</span><span class="label">〜かどうか — ...olup olmadığı</span></button>
+      <button class="modal-link" onclick="goTo('to-omou')"><span class="emoji">💭</span><span class="label">〜と思う・〜と言っていた</span></button>
+      <button class="modal-link" onclick="goTo('mama')"><span class="emoji">🔒</span><span class="label">〜まま — ...haliyle</span></button>
+      <button class="modal-link" onclick="goTo('bahodo')"><span class="emoji">📈</span><span class="label">〜ば〜ほど — ...dıkça</span></button>
+      <button class="modal-link" onclick="goTo('gimonshi')"><span class="emoji">✳️</span><span class="label">疑問詞＋も/でも/か</span></button>
+      <button class="modal-link" onclick="goTo('jita')"><span class="emoji">🔁</span><span class="label">自動詞・他動詞 — Geçişli/geçişsiz</span></button>
+      <button class="modal-link" onclick="goTo('keigo')"><span class="emoji">🎎</span><span class="label">敬語 — Saygı dili (giriş)</span></button>
+
+      <div class="modal-section-label">🈁 Kanji & Kelime</div>
+      <button class="modal-link" onclick="goTo('kanji-n4')"><span class="emoji">🈵</span><span class="label">N4 Kanji — Liste</span></button>
+      <button class="modal-link" onclick="goTo('vocab-n4')"><span class="emoji">📝</span><span class="label">N4 Kelime — Temaya göre</span></button>
+
+      <div class="modal-section-label">🎓 Sınav Merkezi</div>
+      <button class="modal-link" onclick="goTo('exam-center')"><span class="emoji">🎓</span><span class="label">Sınav Merkezi — Tüm quizler</span></button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ═══ 可能形 ═══ -->
+<section class="section" id="potential">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">⚡</div>
+    <div>
+      <h2><ruby>可能形<rt>かのうけい</rt></ruby> — Yapabilmek (Potansiyel)</h2>
+      <p class="subtitle">"...abilmek / ...ebilmek" — bir şeyi yapma yeteneği/imkânı.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Çekim (grup grup):</strong><br>
+    <strong>1. grup:</strong> son <code>う</code> sırası → <code>え</code> sırası + る → <ruby>話<rt>はな</rt></ruby>す→<ruby>話<rt>はな</rt></ruby>せる · <ruby>行<rt>い</rt></ruby>く→<ruby>行<rt>い</rt></ruby>ける · <ruby>飲<rt>の</rt></ruby>む→<ruby>飲<rt>の</rt></ruby>める<br>
+    <strong>2. grup:</strong> る → <code>られる</code> → <ruby>食<rt>た</rt></ruby>べる→<ruby>食<rt>た</rt></ruby>べられる · <ruby>見<rt>み</rt></ruby>る→<ruby>見<rt>み</rt></ruby>られる<br>
+    <strong>3. grup:</strong> する→<code>できる</code> · <ruby>来<rt>く</rt></ruby>る→<ruby>来<rt>こ</rt></ruby>られる</div>
+
+  <div class="rule-box sky"><strong>⚠️ Partikel değişir:</strong> nesne <code>を</code> çoğunlukla <code>が</code> olur → <ruby>日本語<rt>にほんご</rt></ruby><u>を</u><ruby>話<rt>はな</rt></ruby>す → <ruby>日本語<rt>にほんご</rt></ruby><u>が</u><ruby>話<rt>はな</rt></ruby>せる.</div>
+
+  <div class="card">
+    <div class="card-title">📊 Çekim tablosu</div>
+    <div class="table-scroll"><table class="group-table">
+      <tr><th>Sözlük</th><th>Grup</th><th>Potansiyel</th></tr>
+      <tr><td><ruby>書<rt>か</rt></ruby>く</td><td class="g1">1</td><td><ruby>書<rt>か</rt></ruby>ける</td></tr>
+      <tr><td><ruby>泳<rt>およ</rt></ruby>ぐ</td><td class="g1">1</td><td><ruby>泳<rt>およ</rt></ruby>げる</td></tr>
+      <tr><td><ruby>買<rt>か</rt></ruby>う</td><td class="g1">1</td><td><ruby>買<rt>か</rt></ruby>える</td></tr>
+      <tr><td><ruby>食<rt>た</rt></ruby>べる</td><td class="g2">2</td><td><ruby>食<rt>た</rt></ruby>べられる</td></tr>
+      <tr><td>する</td><td class="g3">3</td><td>できる</td></tr>
+      <tr><td><ruby>来<rt>く</rt></ruby>る</td><td class="g3">3</td><td><ruby>来<rt>こ</rt></ruby>られる</td></tr>
+    </table></div>
+  </div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>私<rt>わたし</rt></ruby>は<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>少<rt>すこ</rt></ruby>し<mark><ruby>話<rt>はな</rt></ruby>せます</mark>。</div>
+    <div class="romaji">Watashi wa nihongo ga sukoshi hanasemasu.</div>
+    <div class="tr">Ben biraz Japonca konuşabiliyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>漢字<rt>かんじ</rt></ruby>が<mark><ruby>読<rt>よ</rt></ruby>めますか</mark>。</div>
+    <div class="romaji">Kono kanji ga yomemasu ka?</div>
+    <div class="tr">Bu kanjiyi okuyabiliyor musun?</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>明日<rt>あした</rt></ruby>は<ruby>早<rt>はや</rt></ruby>く<mark><ruby>来<rt>こ</rt></ruby>られます</mark>。</div>
+    <div class="romaji">Ashita wa hayaku koraremasu.</div>
+    <div class="tr">Yarın erken gelebilirim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>店<rt>みせ</rt></ruby>でクレジットカードが<mark><ruby>使<rt>つか</rt></ruby>えます</mark>。</div>
+    <div class="romaji">Kono mise de kurejitto kādo ga tsukaemasu.</div>
+    <div class="tr">Bu mağazada kredi kartı kullanılabiliyor.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>昨日<rt>きのう</rt></ruby>は<ruby>忙<rt>いそが</rt></ruby>しくて、<mark><ruby>寝<rt>ね</rt></ruby>られませんでした</mark>。</div>
+    <div class="romaji">Kinō wa isogashikute, neraremasen deshita.</div>
+    <div class="tr">Dün meşguldüm, uyuyamadım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>納豆<rt>なっとう</rt></ruby>が<mark><ruby>食<rt>た</rt></ruby>べられますか</mark>。 — いいえ、<mark><ruby>食<rt>た</rt></ruby>べられません</mark>。</div>
+    <div class="romaji">Nattō ga taberaremasu ka? — Iie, taberaremasen.</div>
+    <div class="tr">Natto yiyebiliyor musun? — Hayır, yiyemiyorum.</div>
+    <div class="usage-tag">⚡ Potansiyel</div>
+  </div>
+</section>
+
+<!-- ═══ 意向形 ═══ -->
+<section class="section" id="volitional">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--matcha-light);">🙋</div>
+    <div>
+      <h2><ruby>意向形<rt>いこうけい</rt></ruby> — 〜(よ)う ("Hadi... / ...ayım")</h2>
+      <p class="subtitle">İrade formu: teklif, niyet (〜と<ruby>思<rt>おも</rt></ruby>う), çaba (〜とする).</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Çekim:</strong><br>
+    <strong>1. grup:</strong> <code>う</code> sırası → <code>お</code> sırası + う → <ruby>行<rt>い</rt></ruby>く→<ruby>行<rt>い</rt></ruby>こう · <ruby>飲<rt>の</rt></ruby>む→<ruby>飲<rt>の</rt></ruby>もう · <ruby>話<rt>はな</rt></ruby>す→<ruby>話<rt>はな</rt></ruby>そう<br>
+    <strong>2. grup:</strong> る → <code>よう</code> → <ruby>食<rt>た</rt></ruby>べる→<ruby>食<rt>た</rt></ruby>べよう<br>
+    <strong>3. grup:</strong> する→<code>しよう</code> · <ruby>来<rt>く</rt></ruby>る→<ruby>来<rt>こ</rt></ruby>よう</div>
+
+  <div class="rule-box sky"><strong>Kullanımlar:</strong><br>
+    ① <code>〜(よ)う</code> tek başına = arkadaşça "hadi ...alım" (= ましょう'nun samimi hâli).<br>
+    ② <code>〜(よ)うと<ruby>思<rt>おも</rt></ruby>う</code> = "...mayı düşünüyorum / niyetindeyim".<br>
+    ③ <code>〜(よ)うとする</code> = "...maya çalışmak / ...mak üzereyken".</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>週末<rt>しゅうまつ</rt></ruby>、<ruby>映画<rt>えいが</rt></ruby>を<mark><ruby>見<rt>み</rt></ruby>ようと<ruby>思<rt>おも</rt></ruby>います</mark>。</div>
+    <div class="romaji">Shūmatsu, eiga o miyō to omoimasu.</div>
+    <div class="tr">Hafta sonu film izlemeyi düşünüyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>日本<rt>にほん</rt></ruby>で<mark><ruby>働<rt>はたら</rt></ruby>こうと<ruby>思<rt>おも</rt></ruby>っています</mark>。</div>
+    <div class="romaji">Nihon de hatarakō to omotte imasu.</div>
+    <div class="tr">Japonya'da çalışmayı düşünüyorum. (uzun süredir niyet)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>一緒<rt>いっしょ</rt></ruby>に<mark><ruby>帰<rt>かえ</rt></ruby>ろう</mark>。</div>
+    <div class="romaji">Issho ni kaerō.</div>
+    <div class="tr">Beraber dönelim. (arkadaşça teklif)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>早<rt>はや</rt></ruby>く<mark><ruby>寝<rt>ね</rt></ruby>ようと<ruby>思<rt>おも</rt></ruby>いました</mark>が、<ruby>寝<rt>ね</rt></ruby>られませんでした。</div>
+    <div class="romaji">Hayaku neyō to omoimashita ga, neraremasen deshita.</div>
+    <div class="tr">Erken uyumaya niyetlendim ama uyuyamadım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">タクシーに<mark><ruby>乗<rt>の</rt></ruby>ろうとした</mark>とき、<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ってきました。</div>
+    <div class="romaji">Takushī ni norō to shita toki, ame ga futte kimashita.</div>
+    <div class="tr">Taksiye binmeye çalışırken yağmur başladı.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>大学<rt>だいがく</rt></ruby>で<ruby>日本語<rt>にほんご</rt></ruby>を<mark><ruby>勉強<rt>べんきょう</rt></ruby>しようと<ruby>思<rt>おも</rt></ruby>っています</mark>。</div>
+    <div class="romaji">Daigaku de nihongo o benkyō shiyō to omotte imasu.</div>
+    <div class="tr">Üniversitede Japonca çalışmayı düşünüyorum.</div>
+    <div class="usage-tag">🙋 İrade / niyet</div>
+  </div>
+</section>
+
+<!-- ═══ 命令形・禁止形 ═══ -->
+<section class="section" id="imperative">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--orange-light);">🗯️</div>
+    <div>
+      <h2><ruby>命令形<rt>めいれいけい</rt></ruby>・<ruby>禁止形<rt>きんしけい</rt></ruby> — Emir & Sert Yasak</h2>
+      <p class="subtitle">Kaba/güçlü emir (erkek dili, tabela, spor, aktarım) ve 〜な yasağı.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>命令形 (emir):</strong><br>
+    <strong>1. grup:</strong> <code>う</code>→<code>え</code> → <ruby>行<rt>い</rt></ruby>く→<ruby>行<rt>い</rt></ruby>け · <ruby>飲<rt>の</rt></ruby>む→<ruby>飲<rt>の</rt></ruby>め · <ruby>止<rt>と</rt></ruby>まる→<ruby>止<rt>と</rt></ruby>まれ<br>
+    <strong>2. grup:</strong> る→<code>ろ</code> → <ruby>食<rt>た</rt></ruby>べる→<ruby>食<rt>た</rt></ruby>べろ<br>
+    <strong>3. grup:</strong> する→<code>しろ</code> · <ruby>来<rt>く</rt></ruby>る→<code>こい</code></div>
+
+  <div class="rule-box orange"><strong>禁止形 (yasak):</strong> <code><ruby>辞書形<rt>じしょけい</rt></ruby> + な</code> → <ruby>行<rt>い</rt></ruby>く<u>な</u> (gitme!) · <ruby>見<rt>み</rt></ruby>る<u>な</u> (bakma!).<br>
+    💡 Yumuşak emir: <code>ますkökü + なさい</code> → <ruby>食<rt>た</rt></ruby>べなさい · <ruby>静<rt>しず</rt></ruby>かにしなさい (anne/öğretmen tonu).</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>早<rt>はや</rt></ruby>く<mark><ruby>起<rt>お</rt></ruby>きろ</mark>！</div>
+    <div class="romaji">Hayaku okiro!</div>
+    <div class="tr">Çabuk kalk!</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><mark><ruby>止<rt>と</rt></ruby>まれ</mark>！</div>
+    <div class="romaji">Tomare!</div>
+    <div class="tr">Dur! (trafik tabelası)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">ここに<mark><ruby>入<rt>はい</rt></ruby>るな</mark>。</div>
+    <div class="romaji">Koko ni hairu na.</div>
+    <div class="tr">Buraya girme. (yasak)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><mark><ruby>頑張<rt>がんば</rt></ruby>れ</mark>！<ruby>負<rt>ま</rt></ruby>けるな！</div>
+    <div class="romaji">Ganbare! Makeru na!</div>
+    <div class="tr">Dayan! Pes etme! (spor tezahüratı)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>子<rt>こ</rt></ruby>どもに「<ruby>静<rt>しず</rt></ruby>かに<mark>しなさい</mark>」と<ruby>言<rt>い</rt></ruby>いました。</div>
+    <div class="romaji">Kodomo ni "shizuka ni shinasai" to iimashita.</div>
+    <div class="tr">Çocuğa "sessiz ol" dedim. (yumuşak emir)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>先生<rt>せんせい</rt></ruby>は「<mark><ruby>逃<rt>に</rt></ruby>げろ</mark>」と<ruby>言<rt>い</rt></ruby>いました。</div>
+    <div class="romaji">Sensei wa "nigero" to iimashita.</div>
+    <div class="tr">Öğretmen "kaçın!" dedi. (aktarımda emir sık kullanılır)</div>
+    <div class="usage-tag">🗯️ Sert emir</div>
+  </div>
+</section>
+
+<!-- ═══ 受身形 ═══ -->
+<section class="section" id="passive">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--purple-light);">🎭</div>
+    <div>
+      <h2><ruby>受身形<rt>うけみけい</rt></ruby> — Edilgen ("...ıldı / ...e maruz kaldım")</h2>
+      <p class="subtitle">Eylemi yapan <code>に</code> ile gösterilir. Sık: başına iş gelme (<ruby>迷惑<rt>めいわく</rt></ruby>).</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Çekim:</strong><br>
+    <strong>1. grup:</strong> <code>う</code>→<code>あ</code>+れる → <ruby>言<rt>い</rt></ruby>う→<ruby>言<rt>い</rt></ruby>われる · <ruby>読<rt>よ</rt></ruby>む→<ruby>読<rt>よ</rt></ruby>まれる · <ruby>取<rt>と</rt></ruby>る→<ruby>取<rt>と</rt></ruby>られる &nbsp;(う→<u>わ</u>れる!)<br>
+    <strong>2. grup:</strong> る→<code>られる</code> → <ruby>食<rt>た</rt></ruby>べる→<ruby>食<rt>た</rt></ruby>べられる<br>
+    <strong>3. grup:</strong> する→<code>される</code> · <ruby>来<rt>く</rt></ruby>る→<ruby>来<rt>こ</rt></ruby>られる</div>
+
+  <div class="rule-box sky"><strong>Yapı:</strong> <code>A は B に [fiil-受身]</code> → "A, B tarafından ...ıldı".<br>
+    😣 <strong>Zarar edilgeni:</strong> <ruby>雨<rt>あめ</rt></ruby>に<ruby>降<rt>ふ</rt></ruby>られた (yağmura yakalandım) gibi, başına gelen olumsuzluk.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>先生<rt>せんせい</rt></ruby>に<mark><ruby>褒<rt>ほ</rt></ruby>められました</mark>。</div>
+    <div class="romaji">Sensei ni homeraremashita.</div>
+    <div class="tr">Öğretmen tarafından övüldüm.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>弟<rt>おとうと</rt></ruby>に<ruby>私<rt>わたし</rt></ruby>のケーキを<mark><ruby>食<rt>た</rt></ruby>べられました</mark>。</div>
+    <div class="romaji">Otōto ni watashi no kēki o taberaremashita.</div>
+    <div class="tr">Kardeşim pastamı yedi (başıma iş açtı / canım sıkıldı).</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>電車<rt>でんしゃ</rt></ruby>で<ruby>足<rt>あし</rt></ruby>を<mark><ruby>踏<rt>ふ</rt></ruby>まれました</mark>。</div>
+    <div class="romaji">Densha de ashi o fumaremashita.</div>
+    <div class="tr">Trende ayağıma basıldı.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>帰<rt>かえ</rt></ruby>るとき、<ruby>雨<rt>あめ</rt></ruby>に<mark><ruby>降<rt>ふ</rt></ruby>られて</mark>、<ruby>濡<rt>ぬ</rt></ruby>れました。</div>
+    <div class="romaji">Kaeru toki, ame ni furarete, nuremashita.</div>
+    <div class="tr">Dönerken yağmura yakalanıp ıslandım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">このビルは1990<ruby>年<rt>ねん</rt></ruby>に<mark><ruby>建<rt>た</rt></ruby>てられました</mark>。</div>
+    <div class="romaji">Kono biru wa sen-kyūhyaku-kyūjū-nen ni tateraremashita.</div>
+    <div class="tr">Bu bina 1990 yılında inşa edildi.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">みんなに<mark><ruby>笑<rt>わら</rt></ruby>われました</mark>。</div>
+    <div class="romaji">Minna ni warawaremashita.</div>
+    <div class="tr">Herkes bana güldü.</div>
+    <div class="usage-tag">🎭 Edilgen</div>
+  </div>
+</section>
+
+<!-- ═══ 使役形 ═══ -->
+<section class="section" id="causative">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">👉</div>
+    <div>
+      <h2><ruby>使役形<rt>しえきけい</rt></ruby> — Ettirgen ("...tırmak / izin vermek")</h2>
+      <p class="subtitle">Birine bir şey yaptırmak veya yapmasına izin vermek.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Çekim:</strong><br>
+    <strong>1. grup:</strong> <code>う</code>→<code>あ</code>+せる → <ruby>行<rt>い</rt></ruby>く→<ruby>行<rt>い</rt></ruby>かせる · <ruby>飲<rt>の</rt></ruby>む→<ruby>飲<rt>の</rt></ruby>ませる · <ruby>待<rt>ま</rt></ruby>つ→<ruby>待<rt>ま</rt></ruby>たせる<br>
+    <strong>2. grup:</strong> る→<code>させる</code> → <ruby>食<rt>た</rt></ruby>べる→<ruby>食<rt>た</rt></ruby>べさせる<br>
+    <strong>3. grup:</strong> する→<code>させる</code> · <ruby>来<rt>く</rt></ruby>る→<ruby>来<rt>こ</rt></ruby>させる</div>
+
+  <div class="rule-box sky"><strong>Yapı:</strong> geçişsiz fiilde yaptırılan kişi <code>を</code> ya da <code>に</code>; geçişlide <code>に</code> +nesne <code>を</code>.<br>
+    🙏 <code>〜(さ)せてください</code> = "...mama izin verin" (kibar izin isteme).</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>母<rt>はは</rt></ruby>は<ruby>妹<rt>いもうと</rt></ruby>に<ruby>部屋<rt>へや</rt></ruby>を<mark><ruby>掃除<rt>そうじ</rt></ruby>させました</mark>。</div>
+    <div class="romaji">Haha wa imōto ni heya o sōji sasemashita.</div>
+    <div class="tr">Annem kız kardeşime odayı temizletti.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>先生<rt>せんせい</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>を<mark><ruby>読<rt>よ</rt></ruby>ませます</mark>。</div>
+    <div class="romaji">Sensei wa gakusei ni hon o yomasemasu.</div>
+    <div class="tr">Öğretmen öğrencilere kitap okutur.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>子<rt>こ</rt></ruby>どもを<ruby>公園<rt>こうえん</rt></ruby>で<mark><ruby>遊<rt>あそ</rt></ruby>ばせます</mark>。</div>
+    <div class="romaji">Kodomo o kōen de asobasemasu.</div>
+    <div class="tr">Çocuğu parkta oynatırım / oynamasına izin veririm.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">すみません、<ruby>少<rt>すこ</rt></ruby>し<mark><ruby>休<rt>やす</rt></ruby>ませてください</mark>。</div>
+    <div class="romaji">Sumimasen, sukoshi yasumasete kudasai.</div>
+    <div class="tr">Affedersiniz, biraz dinlenmeme izin verin.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">その<ruby>仕事<rt>しごと</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>に<mark>やらせてください</mark>。</div>
+    <div class="romaji">Sono shigoto wa watashi ni yarasete kudasai.</div>
+    <div class="tr">O işi bana yaptırın / bırakın ben yapayım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>待<rt>ま</rt></ruby><mark>たせて</mark>ごめんね。</div>
+    <div class="romaji">Matasete gomen ne.</div>
+    <div class="tr">Beklettiğim için özür dilerim.</div>
+    <div class="usage-tag">👉 Ettirgen</div>
+  </div>
+</section>
+
+<!-- ═══ 使役受身 ═══ -->
+<section class="section" id="caus-passive">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--purple-light);">😣</div>
+    <div>
+      <h2><ruby>使役受身<rt>しえきうけみ</rt></ruby> — Zorunda Bırakılmak</h2>
+      <p class="subtitle">"İstemeden ...mek zorunda kaldım" — ettirgen + edilgen birleşimi.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Çekim (ettirgen → edilgen):</strong><br>
+    <strong>1. grup:</strong> <code>う</code>→<code>あ</code>+される → <ruby>飲<rt>の</rt></ruby>む→<ruby>飲<rt>の</rt></ruby>まされる · <ruby>待<rt>ま</rt></ruby>つ→<ruby>待<rt>ま</rt></ruby>たされる · <ruby>行<rt>い</rt></ruby>く→<ruby>行<rt>い</rt></ruby>かされる<br>
+    <strong>2. grup:</strong> る→<code>させられる</code> → <ruby>食<rt>た</rt></ruby>べる→<ruby>食<rt>た</rt></ruby>べさせられる<br>
+    <strong>3. grup:</strong> する→<code>させられる</code> · <ruby>来<rt>く</rt></ruby>る→<ruby>来<rt>こ</rt></ruby>させられる</div>
+
+  <div class="rule-box orange"><strong>Anlam:</strong> Ben istemedim ama biri (<code>に</code>) beni yaptırdı → ben mecbur kaldım. Genelde <u>şikâyet</u> tonu.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>子<rt>こ</rt></ruby>どものとき、<ruby>毎日<rt>まいにち</rt></ruby>ピアノを<mark><ruby>練習<rt>れんしゅう</rt></ruby>させられました</mark>。</div>
+    <div class="romaji">Kodomo no toki, mainichi piano o renshū saseraremashita.</div>
+    <div class="tr">Çocukken her gün piyano çalışmak zorunda bırakıldım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>部長<rt>ぶちょう</rt></ruby>に お<ruby>酒<rt>さけ</rt></ruby>を<mark><ruby>飲<rt>の</rt></ruby>まされました</mark>。</div>
+    <div class="romaji">Buchō ni osake o nomasaremashita.</div>
+    <div class="tr">Müdür bana zorla içki içirdi.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">1<ruby>時間<rt>じかん</rt></ruby>も<mark><ruby>待<rt>ま</rt></ruby>たされました</mark>。</div>
+    <div class="romaji">Ichi-jikan mo matasaremashita.</div>
+    <div class="tr">Bir saat boyunca bekletildim (mecburen bekledim).</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>兄<rt>あに</rt></ruby>に<ruby>宿題<rt>しゅくだい</rt></ruby>を<mark><ruby>手伝<rt>てつだ</rt></ruby>わされました</mark>。</div>
+    <div class="romaji">Ani ni shukudai o tetsudawasaremashita.</div>
+    <div class="tr">Ağabeyim bana ödevine zorla yardım ettirdi.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>嫌<rt>きら</rt></ruby>いな<ruby>野菜<rt>やさい</rt></ruby>を<mark><ruby>食<rt>た</rt></ruby>べさせられました</mark>。</div>
+    <div class="romaji">Kirai na yasai o tabesaseraremashita.</div>
+    <div class="tr">Sevmediğim sebzeleri yemek zorunda kaldım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>会議<rt>かいぎ</rt></ruby>で<ruby>長<rt>なが</rt></ruby>い<ruby>話<rt>はなし</rt></ruby>を<mark><ruby>聞<rt>き</rt></ruby>かされました</mark>。</div>
+    <div class="romaji">Kaigi de nagai hanashi o kikasaremashita.</div>
+    <div class="tr">Toplantıda uzun bir konuşma dinlemek zorunda kaldım.</div>
+    <div class="usage-tag">😣 Zorunda bırakılma</div>
+  </div>
+</section>
+<!-- ═══ たら ═══ -->
+<section class="section" id="tara">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">🔀</div>
+    <div>
+      <h2>〜たら — "...sa / ...ınca" (en esnek koşul)</h2>
+      <p class="subtitle">Hem koşul hem "X olduktan sonra Y". En çok kullanılan koşul.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>[Sade geçmiş] + ら</code><br>
+    Fiil: <ruby>食<rt>た</rt></ruby>べた→<ruby>食<rt>た</rt></ruby>べ<u>たら</u> · <ruby>行<rt>い</rt></ruby>った→<ruby>行<rt>い</rt></ruby>っ<u>たら</u><br>
+    いadj: <ruby>安<rt>やす</rt></ruby>かった→<ruby>安<rt>やす</rt></ruby>かっ<u>たら</u> · なadj/N: <ruby>暇<rt>ひま</rt></ruby>だった→<ruby>暇<rt>ひま</rt></ruby>だっ<u>たら</u></div>
+
+  <div class="rule-box sky">💡 <code>もし</code> (eğer) sık eklenir. Sonuç kısmında <u>rica/emir/teklif serbesttir</u> (と'den farkı budur).</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>時間<rt>じかん</rt></ruby>が<mark>あったら</mark>、<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ます。</div>
+    <div class="romaji">Jikan ga attara, eiga o mimasu.</div>
+    <div class="tr">Vaktim olursa film izlerim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>家<rt>いえ</rt></ruby>に<mark><ruby>帰<rt>かえ</rt></ruby>ったら</mark>、<ruby>電話<rt>でんわ</rt></ruby>します。</div>
+    <div class="romaji">Ie ni kaettara, denwa shimasu.</div>
+    <div class="tr">Eve varınca telefon ederim. (kesin olay sonrası)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">もし<ruby>雨<rt>あめ</rt></ruby>が<mark><ruby>降<rt>ふ</rt></ruby>ったら</mark>、<ruby>行<rt>い</rt></ruby>きません。</div>
+    <div class="romaji">Moshi ame ga futtara, ikimasen.</div>
+    <div class="tr">Eğer yağmur yağarsa gitmem.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>安<rt>やす</rt></ruby><mark>かったら</mark>、<ruby>買<rt>か</rt></ruby>います。</div>
+    <div class="romaji">Yasukattara, kaimasu.</div>
+    <div class="tr">Ucuzsa alırım. (いadj koşul)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>日本<rt>にほん</rt></ruby>に<mark><ruby>行<rt>い</rt></ruby>ったら</mark>、お<ruby>寿司<rt>すし</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたいです。</div>
+    <div class="romaji">Nihon ni ittara, osushi o tabetai desu.</div>
+    <div class="tr">Japonya'ya gidersem suşi yemek isterim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>宿題<rt>しゅくだい</rt></ruby>が<mark><ruby>終<rt>お</rt></ruby>わったら</mark>、<ruby>遊<rt>あそ</rt></ruby>びに<ruby>行<rt>い</rt></ruby>こう。</div>
+    <div class="romaji">Shukudai ga owattara, asobi ni ikō.</div>
+    <div class="tr">Ödev bitince oynamaya gidelim.</div>
+    <div class="usage-tag">🔀 Koşul / sonra</div>
+  </div>
+</section>
+
+<!-- ═══ ば ═══ -->
+<section class="section" id="ba">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--matcha-light);">➰</div>
+    <div>
+      <h2>〜ば — "...sa" (varsayımsal / genel koşul)</h2>
+      <p class="subtitle">Genel doğrular, tavsiye (〜ばいい), varsayım. Sonuçta emir/rica olmaz.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong><br>
+    Fiil: <code>う→えば</code> → <ruby>行<rt>い</rt></ruby>く→<ruby>行<rt>い</rt></ruby>けば · <ruby>飲<rt>の</rt></ruby>む→<ruby>飲<rt>の</rt></ruby>めば<br>
+    いadj: <code>い→ければ</code> → <ruby>安<rt>やす</rt></ruby>い→<ruby>安<rt>やす</rt></ruby>ければ · いい→よ<u>ければ</u><br>
+    なadj/N: <code>+なら(ば)</code> · Olumsuz: <code>〜なければ</code> (<ruby>行<rt>い</rt></ruby>かなければ)</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence">お<ruby>金<rt>かね</rt></ruby>が<mark>あれば</mark>、<ruby>車<rt>くるま</rt></ruby>を<ruby>買<rt>か</rt></ruby>います。</div>
+    <div class="romaji">Okane ga areba, kuruma o kaimasu.</div>
+    <div class="tr">Param olsa araba alırım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>早<rt>はや</rt></ruby>く<mark><ruby>行<rt>い</rt></ruby>けば</mark>、<ruby>間<rt>ま</rt></ruby>に<ruby>合<rt>あ</rt></ruby>います。</div>
+    <div class="romaji">Hayaku ikeba, maniaimasu.</div>
+    <div class="tr">Erken gidersen yetişirsin.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>分<rt>わ</rt></ruby>から<mark>なければ</mark>、<ruby>聞<rt>き</rt></ruby>いてください。</div>
+    <div class="romaji">Wakaranakereba, kiite kudasai.</div>
+    <div class="tr">Anlamazsan sor. (olumsuz koşul)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">どう<mark>すれば</mark>いいですか。</div>
+    <div class="romaji">Dō sureba ii desu ka?</div>
+    <div class="tr">Ne yapsam iyi olur? / Nasıl yapmalıyım?</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>薬<rt>くすり</rt></ruby>を<mark><ruby>飲<rt>の</rt></ruby>めば</mark>、よくなりますよ。</div>
+    <div class="romaji">Kusuri o nomeba, yoku narimasu yo.</div>
+    <div class="tr">İlaç içersen iyileşirsin.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>天気<rt>てんき</rt></ruby>がよ<mark>ければ</mark>、<ruby>散歩<rt>さんぽ</rt></ruby>します。</div>
+    <div class="romaji">Tenki ga yokereba, sanpo shimasu.</div>
+    <div class="tr">Hava güzelse yürüyüş yaparım. (いい→よければ)</div>
+    <div class="usage-tag">➰ Varsayım</div>
+  </div>
+</section>
+
+<!-- ═══ なら ═══ -->
+<section class="section" id="nara">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--purple-light);">💡</div>
+    <div>
+      <h2>〜なら — "...ysa / ...konusundaysa"</h2>
+      <p class="subtitle">Karşının söylediği konuya/duruma göre şart. Tavsiye verirken sık.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>N + なら</code> · <code>[Sade form] + なら</code>.<br>
+    Anlam: "Madem X (öyle diyorsun / o konu) → o zaman...". Konuşmacı, karşının verdiği bilgiyi alıp devam eder.</div>
+
+  <div class="card">
+    <div class="card-title">📊 4 koşul — farkları (çok önemli!)</div>
+    <div class="table-scroll"><table class="group-table">
+      <tr><th>Koşul</th><th>Ne zaman</th><th>Örnek</th></tr>
+      <tr><td><code>と</code></td><td>Otomatik/kesin sonuç (N5)</td><td><ruby>押<rt>お</rt></ruby>すと<ruby>開<rt>あ</rt></ruby>く</td></tr>
+      <tr><td><code>たら</code></td><td>En genel; "olduğunda"</td><td><ruby>帰<rt>かえ</rt></ruby>ったら<ruby>電話<rt>でんわ</rt></ruby></td></tr>
+      <tr><td><code>ば</code></td><td>Varsayım / genel doğru</td><td>あれば<ruby>買<rt>か</rt></ruby>う</td></tr>
+      <tr><td><code>なら</code></td><td>Karşının konusuna göre</td><td><ruby>温泉<rt>おんせん</rt></ruby>なら<ruby>箱根<rt>はこね</rt></ruby></td></tr>
+    </table></div>
+  </div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>日本語<rt>にほんご</rt></ruby><mark>なら</mark>、<ruby>田中<rt>たなか</rt></ruby>さんに<ruby>聞<rt>き</rt></ruby>いてください。</div>
+    <div class="romaji">Nihongo nara, Tanaka-san ni kiite kudasai.</div>
+    <div class="tr">Japonca konusunda(ysa) Tanaka'ya sor.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>温泉<rt>おんせん</rt></ruby>に<mark><ruby>行<rt>い</rt></ruby>くなら</mark>、<ruby>箱根<rt>はこね</rt></ruby>がいいですよ。</div>
+    <div class="romaji">Onsen ni iku nara, Hakone ga ii desu yo.</div>
+    <div class="tr">Kaplıcaya gideceksen Hakone iyidir.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">あなたが<mark><ruby>行<rt>い</rt></ruby>くなら</mark>、<ruby>私<rt>わたし</rt></ruby>も<ruby>行<rt>い</rt></ruby>きます。</div>
+    <div class="romaji">Anata ga iku nara, watashi mo ikimasu.</div>
+    <div class="tr">Sen gidersen ben de giderim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">パソコンを<mark><ruby>買<rt>か</rt></ruby>うなら</mark>、この<ruby>店<rt>みせ</rt></ruby>がいいです。</div>
+    <div class="romaji">Pasokon o kau nara, kono mise ga ii desu.</div>
+    <div class="tr">Bilgisayar alacaksan bu mağaza iyidir.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>疲<rt>つか</rt></ruby>れている<mark>なら</mark>、<ruby>休<rt>やす</rt></ruby>んだほうがいいですよ。</div>
+    <div class="romaji">Tsukarete iru nara, yasunda hō ga ii desu yo.</div>
+    <div class="tr">Yorgunsan dinlensen iyi olur.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">A:<ruby>寒<rt>さむ</rt></ruby>いです。 B:<ruby>寒<rt>さむ</rt></ruby>い<mark>なら</mark>、<ruby>窓<rt>まど</rt></ruby>を<ruby>閉<rt>し</rt></ruby>めましょう。</div>
+    <div class="romaji">A: Samui desu. B: Samui nara, mado o shimemashō.</div>
+    <div class="tr">A: Üşüyorum. B: Üşüyorsan pencereyi kapatalım.</div>
+    <div class="usage-tag">💡 Konuya göre şart</div>
+  </div>
+</section>
+
+<!-- ═══ あげる・くれる・もらう ═══ -->
+<section class="section" id="ageru">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">🎁</div>
+    <div>
+      <h2>あげる・くれる・もらう — Verme & Alma</h2>
+      <p class="subtitle">Yön çok önemli: <code>くれる</code> hep BANA doğru gelir!</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Üç fiil, üç yön:</strong><br>
+    <code>あげる</code> = ben/biri → <u>başkasına</u> verir. (<ruby>私<rt>わたし</rt></ruby>は〜に〜をあげる)<br>
+    <code>くれる</code> = biri → <u>BANA</u> verir. (〜が<ruby>私<rt>わたし</rt></ruby>に〜をくれる)<br>
+    <code>もらう</code> = ben <u>alırım</u>. (<ruby>私<rt>わたし</rt></ruby>は〜に/から〜をもらう)</div>
+
+  <div class="rule-box sky"><strong>Kibar (keigo):</strong> あげる→<ruby>差<rt>さ</rt></ruby>し<ruby>上<rt>あ</rt></ruby>げる · くれる→くださる · もらう→いただく.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>私<rt>わたし</rt></ruby>は<ruby>妹<rt>いもうと</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>を<mark>あげました</mark>。</div>
+    <div class="romaji">Watashi wa imōto ni hon o agemashita.</div>
+    <div class="tr">Kız kardeşime kitap verdim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>友達<rt>ともだち</rt></ruby>が<ruby>私<rt>わたし</rt></ruby>に<ruby>花<rt>はな</rt></ruby>を<mark>くれました</mark>。</div>
+    <div class="romaji">Tomodachi ga watashi ni hana o kuremashita.</div>
+    <div class="tr">Arkadaşım bana çiçek verdi. (bana doğru → くれる)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>私<rt>わたし</rt></ruby>は<ruby>先生<rt>せんせい</rt></ruby>に ペンを<mark>もらいました</mark>。</div>
+    <div class="romaji">Watashi wa sensei ni pen o moraimashita.</div>
+    <div class="tr">Öğretmenden kalem aldım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>母<rt>はは</rt></ruby>が お<ruby>金<rt>かね</rt></ruby>を<mark>くれました</mark>。</div>
+    <div class="romaji">Haha ga okane o kuremashita.</div>
+    <div class="tr">Annem (bana) para verdi.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>誕生日<rt>たんじょうび</rt></ruby>に<ruby>何<rt>なに</rt></ruby>を<mark>もらいましたか</mark>。</div>
+    <div class="romaji">Tanjōbi ni nani o moraimashita ka?</div>
+    <div class="tr">Doğum gününde ne(ler) aldın?</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>部長<rt>ぶちょう</rt></ruby>にお<ruby>土産<rt>みやげ</rt></ruby>を<mark>いただきました</mark>。</div>
+    <div class="romaji">Buchō ni omiyage o itadakimashita.</div>
+    <div class="tr">Müdürden hediye aldım. (kibar もらう)</div>
+    <div class="usage-tag">🎁 Verme/alma</div>
+  </div>
+</section>
+
+<!-- ═══ てあげる・てくれる・てもらう ═══ -->
+<section class="section" id="te-juyo">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--matcha-light);">🤝</div>
+    <div>
+      <h2>〜てあげる・〜てくれる・〜てもらう — İyilik/Eylem</h2>
+      <p class="subtitle">Bir <u>eylemi</u> birinin lehine yapmak / birine yaptırmak.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>て形 + yardım fiili:</strong><br>
+    <code>〜てあげる</code> = birine iyilik olsun diye yaparım.<br>
+    <code>〜てくれる</code> = biri BANA iyilik yapar. (minnet tonu)<br>
+    <code>〜てもらう</code> = birine (benim için) yaptırırım / biri benim için yapar.</div>
+
+  <div class="rule-box sky">🙏 Rica kalıpları: <code>〜てくれませんか</code> / <code>〜てもらえますか</code> = "...yapabilir misiniz?" (kibar).</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>友達<rt>ともだち</rt></ruby>が<ruby>駅<rt>えき</rt></ruby>まで<ruby>送<rt>おく</rt></ruby><mark>ってくれました</mark>。</div>
+    <div class="romaji">Tomodachi ga eki made okutte kuremashita.</div>
+    <div class="tr">Arkadaşım beni istasyona kadar bıraktı. (bana iyilik)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>私<rt>わたし</rt></ruby>は<ruby>弟<rt>おとうと</rt></ruby>に<ruby>宿題<rt>しゅくだい</rt></ruby>を<ruby>教<rt>おし</rt></ruby><mark>えてあげました</mark>。</div>
+    <div class="romaji">Watashi wa otōto ni shukudai o oshiete agemashita.</div>
+    <div class="tr">Kardeşime ödevini anlattım/yardım ettim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>先生<rt>せんせい</rt></ruby>に<ruby>文法<rt>ぶんぽう</rt></ruby>を<ruby>教<rt>おし</rt></ruby><mark>えてもらいました</mark>。</div>
+    <div class="romaji">Sensei ni bunpō o oshiete moraimashita.</div>
+    <div class="tr">Öğretmen bana dilbilgisini öğretti (öğrenmiş oldum).</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby><mark>ってくれませんか</mark>。</div>
+    <div class="romaji">Shashin o totte kuremasen ka?</div>
+    <div class="tr">Fotoğraf çeker misiniz? (kibar rica)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>道<rt>みち</rt></ruby>を<ruby>教<rt>おし</rt></ruby><mark>えてもらえますか</mark>。</div>
+    <div class="romaji">Michi o oshiete moraemasu ka?</div>
+    <div class="tr">Yolu tarif edebilir misiniz?</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>母<rt>はは</rt></ruby>にセーターを<ruby>作<rt>つく</rt></ruby><mark>ってもらいました</mark>。</div>
+    <div class="romaji">Haha ni sētā o tsukutte moraimashita.</div>
+    <div class="tr">Annem bana kazak ördü (benim için).</div>
+    <div class="usage-tag">🤝 İyilik</div>
+  </div>
+</section>
+<!-- ═══ ておく ═══ -->
+<section class="section" id="te-oku">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">📦</div>
+    <div>
+      <h2>〜ておく — Önceden Hazırlık / Öylece Bırakma</h2>
+      <p class="subtitle">Bir amaç için önceden yapmak, ya da durumu olduğu gibi bırakmak.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>て形 + おく</code>. Günlük konuşmada <code>〜とく</code> (<ruby>買<rt>か</rt></ruby>っておく→<ruby>買<rt>か</rt></ruby>っとく).<br>
+    Anlam ①: gelecekte lazım olacak → <u>önceden yap</u>. ②: değiştirme → <u>öyle bırak</u>.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>旅行<rt>りょこう</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に、ホテルを<ruby>予約<rt>よやく</rt></ruby><mark>しておきます</mark>。</div>
+    <div class="romaji">Ryokō no mae ni, hoteru o yoyaku shite okimasu.</div>
+    <div class="tr">Seyahatten önce oteli önceden ayırtırım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">ビールを<ruby>冷蔵庫<rt>れいぞうこ</rt></ruby>に<ruby>入<rt>い</rt></ruby><mark>れておきました</mark>。</div>
+    <div class="romaji">Bīru o reizōko ni irete okimashita.</div>
+    <div class="tr">Birayı buzdolabına koydum (hazır olsun diye).</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>会議<rt>かいぎ</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>資料<rt>しりょう</rt></ruby>を<ruby>読<rt>よ</rt></ruby><mark>んでおいてください</mark>。</div>
+    <div class="romaji">Kaigi no mae ni shiryō o yonde oite kudasai.</div>
+    <div class="tr">Toplantıdan önce belgeleri okuyun (hazırlıklı gelin).</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>使<rt>つか</rt></ruby>ったら、<ruby>元<rt>もと</rt></ruby>に<ruby>戻<rt>もど</rt></ruby><mark>しておいて</mark>ください。</div>
+    <div class="romaji">Tsukattara, moto ni modoshite oite kudasai.</div>
+    <div class="tr">Kullandıktan sonra yerine geri koyun.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">パーティーのために、<ruby>料理<rt>りょうり</rt></ruby>を<ruby>作<rt>つく</rt></ruby><mark>っておきます</mark>。</div>
+    <div class="romaji">Pātī no tame ni, ryōri o tsukutte okimasu.</div>
+    <div class="tr">Parti için yemekleri önceden hazırlarım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>暑<rt>あつ</rt></ruby>いので、その<ruby>窓<rt>まど</rt></ruby>は<ruby>開<rt>あ</rt></ruby><mark>けておいて</mark>ください。</div>
+    <div class="romaji">Atsui node, sono mado wa akete oite kudasai.</div>
+    <div class="tr">Sıcak olduğu için o pencereyi açık bırakın.</div>
+    <div class="usage-tag">📦 Hazırlık</div>
+  </div>
+</section>
+
+<!-- ═══ てしまう ═══ -->
+<section class="section" id="te-shimau">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--orange-light);">💥</div>
+    <div>
+      <h2>〜てしまう — Tamamlama / Pişmanlık ("...ıverdi, ah!")</h2>
+      <p class="subtitle">① Tam bitirme, ② istemeden olan/pişmanlık. Günlük: 〜ちゃう/〜じゃう.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>て形 + しまう</code>.<br>
+    ① Tamamen bitirmek: <ruby>読<rt>よ</rt></ruby>んでしまった (okuyup bitirdim).<br>
+    ② Kaza/pişmanlık: <ruby>忘<rt>わす</rt></ruby>れてしまった (unutuverdim — of!).<br>
+    💬 Kısaltma: <code>〜てしまう→〜ちゃう</code> · <code>〜でしまう→〜じゃう</code>.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>宿題<rt>しゅくだい</rt></ruby>はもう<ruby>終<rt>お</rt></ruby><mark>わってしまいました</mark>。</div>
+    <div class="romaji">Shukudai wa mō owatte shimaimashita.</div>
+    <div class="tr">Ödevi çoktan bitirdim (tamamen).</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>財布<rt>さいふ</rt></ruby>を<ruby>忘<rt>わす</rt></ruby><mark>れてしまいました</mark>。</div>
+    <div class="romaji">Saifu o wasurete shimaimashita.</div>
+    <div class="tr">Cüzdanımı unuttum (aksi gibi / eyvah).</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">ケーキを<ruby>全部<rt>ぜんぶ</rt></ruby><ruby>食<rt>た</rt></ruby><mark>べてしまった</mark>。</div>
+    <div class="romaji">Kēki o zenbu tabete shimatta.</div>
+    <div class="tr">Pastanın hepsini yiyip bitirdim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>電車<rt>でんしゃ</rt></ruby>で<ruby>寝<rt>ね</rt></ruby><mark>てしまって</mark>、<ruby>乗<rt>の</rt></ruby>り<ruby>過<rt>す</rt></ruby>ごしました。</div>
+    <div class="romaji">Densha de nete shimatte, norisugoshimashita.</div>
+    <div class="tr">Trende uyuyakaldım ve durağı geçtim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>大切<rt>たいせつ</rt></ruby>な<ruby>皿<rt>さら</rt></ruby>を<ruby>割<rt>わ</rt></ruby><mark>ってしまいました</mark>。</div>
+    <div class="romaji">Taisetsu na sara o watte shimaimashita.</div>
+    <div class="tr">Değerli tabağı kırdım (istemeden).</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">あ、また<ruby>遅刻<rt>ちこく</rt></ruby>し<mark>ちゃった</mark>。</div>
+    <div class="romaji">A, mata chikoku shichatta.</div>
+    <div class="tr">Ah, yine geç kaldım. (してしまった→しちゃった)</div>
+    <div class="usage-tag">💥 Pişmanlık/bitirme</div>
+  </div>
+</section>
+
+<!-- ═══ てみる ═══ -->
+<section class="section" id="te-miru">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--matcha-light);">🧪</div>
+    <div>
+      <h2>〜てみる — Deneme ("bir yapayım / deneyeyim")</h2>
+      <p class="subtitle">Nasıl olduğunu görmek için bir şeyi denemek.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>て形 + みる</code> (見る = bakmak → "yapıp bir bakayım").</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>日本<rt>にほん</rt></ruby>の<ruby>納豆<rt>なっとう</rt></ruby>を<ruby>食<rt>た</rt></ruby><mark>べてみました</mark>。</div>
+    <div class="romaji">Nihon no nattō o tabete mimashita.</div>
+    <div class="tr">Japon nattosunu bir denedim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>服<rt>ふく</rt></ruby>を<ruby>着<rt>き</rt></ruby><mark>てみて</mark>もいいですか。</div>
+    <div class="romaji">Kono fuku o kite mite mo ii desu ka?</div>
+    <div class="tr">Bu kıyafeti deneyebilir miyim? (giyip bakmak)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>新<rt>あたら</rt></ruby>しいレストランに<ruby>行<rt>い</rt></ruby><mark>ってみたい</mark>です。</div>
+    <div class="romaji">Atarashii resutoran ni itte mitai desu.</div>
+    <div class="tr">Yeni bir restorana gidip görmek istiyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>分<rt>わ</rt></ruby>からないので、<ruby>先生<rt>せんせい</rt></ruby>に<ruby>聞<rt>き</rt></ruby><mark>いてみます</mark>。</div>
+    <div class="romaji">Wakaranai node, sensei ni kiite mimasu.</div>
+    <div class="tr">Anlamadığım için öğretmene bir sorayım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>を<ruby>調<rt>しら</rt></ruby><mark>べてみて</mark>ください。</div>
+    <div class="romaji">Kono kanji no yomikata o shirabete mite kudasai.</div>
+    <div class="tr">Bu kanjinin okunuşunu bir araştırıver.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>一度<rt>いちど</rt></ruby><ruby>自分<rt>じぶん</rt></ruby>で<mark>やってみなければ</mark>、<ruby>分<rt>わ</rt></ruby>かりません。</div>
+    <div class="romaji">Ichido jibun de yatte minakereba, wakarimasen.</div>
+    <div class="tr">Bir kez kendin denemezsen anlayamazsın.</div>
+    <div class="usage-tag">🧪 Deneme</div>
+  </div>
+</section>
+
+<!-- ═══ ていく・てくる ═══ -->
+<section class="section" id="te-iku-kuru">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--purple-light);">🚶</div>
+    <div>
+      <h2>〜ていく・〜てくる — Yön & Zaman Akışı</h2>
+      <p class="subtitle">いく = uzaklaşan/geleceğe · くる = bize doğru/şimdiye kadar/gidip gelme.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Anlamlar:</strong><br>
+    <code>〜ていく</code>: ① yaparak gitmek (<ruby>持<rt>も</rt></ruby>っていく = götürmek) ② şu andan geleceğe doğru sürme.<br>
+    <code>〜てくる</code>: ① yaparak gelmek/bize yaklaşmak ② geçmişten şimdiye ③ gidip yapıp dönmek.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るので、<ruby>傘<rt>かさ</rt></ruby>を<ruby>持<rt>も</rt></ruby><mark>っていきます</mark>。</div>
+    <div class="romaji">Ame ga furu node, kasa o motte ikimasu.</div>
+    <div class="tr">Yağmur yağacağı için şemsiye götürürüm.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">だんだん<ruby>寒<rt>さむ</rt></ruby>く<mark>なってきました</mark>。</div>
+    <div class="romaji">Dandan samuku natte kimashita.</div>
+    <div class="tr">Yavaş yavaş soğumaya başladı (şimdiye dek).</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">ちょっとコンビニに<ruby>行<rt>い</rt></ruby><mark>ってきます</mark>。</div>
+    <div class="romaji">Chotto konbini ni itte kimasu.</div>
+    <div class="tr">Bir markete gidip geliyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">これからも<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby><mark>していきます</mark>。</div>
+    <div class="romaji">Kore kara mo nihongo o benkyō shite ikimasu.</div>
+    <div class="tr">Bundan sonra da Japonca çalışmaya devam edeceğim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>子<rt>こ</rt></ruby>どもが<ruby>走<rt>はし</rt></ruby><mark>ってきました</mark>。</div>
+    <div class="romaji">Kodomo ga hashitte kimashita.</div>
+    <div class="tr">Çocuk (bana doğru) koşarak geldi.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>朝<rt>あさ</rt></ruby>ごはんを<ruby>食<rt>た</rt></ruby><mark>べてきました</mark>。</div>
+    <div class="romaji">Asagohan o tabete kimashita.</div>
+    <div class="tr">Kahvaltıyı (evde) yapıp geldim.</div>
+    <div class="usage-tag">🚶 Yön/zaman</div>
+  </div>
+</section>
+
+<!-- ═══ てある ═══ -->
+<section class="section" id="te-aru">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">🪧</div>
+    <div>
+      <h2>〜てある — Hazırlanmış / Yapılmış Durum</h2>
+      <p class="subtitle">Biri bilerek yapmış ve o durum sürüyor. Partikel <code>が</code>.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>他動詞 て形 + ある</code> → "...yapılmış (hâlâ öyle)".<br>
+    ⚖️ <strong>ている vs てある:</strong> <ruby>窓<rt>まど</rt></ruby>が<u>開いている</u> = pencere açık (durum). <ruby>窓<rt>まど</rt></ruby>が<u>開けてある</u> = pencere (biri tarafından) <u>bilerek</u> açılmış.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>壁<rt>かべ</rt></ruby>に<ruby>地図<rt>ちず</rt></ruby>が<ruby>貼<rt>は</rt></ruby><mark>ってあります</mark>。</div>
+    <div class="romaji">Kabe ni chizu ga hatte arimasu.</div>
+    <div class="tr">Duvara harita asılmış (öyle duruyor).</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby><mark>けてあります</mark>。</div>
+    <div class="romaji">Mado ga akete arimasu.</div>
+    <div class="tr">Pencere (bilerek) açık bırakılmış.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">テーブルに<ruby>料理<rt>りょうり</rt></ruby>が<ruby>並<rt>なら</rt></ruby><mark>べてあります</mark>。</div>
+    <div class="romaji">Tēburu ni ryōri ga narabete arimasu.</div>
+    <div class="tr">Masaya yemekler dizilmiş.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">ノートに<ruby>名前<rt>なまえ</rt></ruby>が<ruby>書<rt>か</rt></ruby><mark>いてあります</mark>。</div>
+    <div class="romaji">Nōto ni namae ga kaite arimasu.</div>
+    <div class="tr">Deftere isim yazılmış.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>会議<rt>かいぎ</rt></ruby>の<ruby>準備<rt>じゅんび</rt></ruby>はもう<mark>してあります</mark>。</div>
+    <div class="romaji">Kaigi no junbi wa mō shite arimasu.</div>
+    <div class="tr">Toplantı hazırlığı çoktan yapılmış (hazır).</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>冷蔵庫<rt>れいぞうこ</rt></ruby>にビールが<ruby>入<rt>い</rt></ruby><mark>れてあります</mark>。</div>
+    <div class="romaji">Reizōko ni bīru ga irete arimasu.</div>
+    <div class="tr">Buzdolabına bira konulmuş (hazır duruyor).</div>
+    <div class="usage-tag">🪧 Hazır durum</div>
+  </div>
+</section>
+<!-- ═══ そうです (aktarım) ═══ -->
+<section class="section" id="sou-densetsu">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">📻</div>
+    <div>
+      <h2>〜そうです — Söylenene Göre (Aktarım)</h2>
+      <p class="subtitle">Başkasından duyduğunu aktarmak: "...mış / ...ymış".</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>[Sade form] + そうです</code> (değişmez! N/なadj sonuna <code>だ</code> gelir).<br>
+    <ruby>降<rt>ふ</rt></ruby>る→<ruby>降<rt>ふ</rt></ruby>るそうだ · おいしい→おいしいそうだ · <ruby>元気<rt>げんき</rt></ruby><u>だ</u>そうだ · <ruby>学生<rt>がくせい</rt></ruby><u>だ</u>そうだ<br>
+    💡 Kaynak: <code>〜によると</code> (...e göre).</div>
+
+  <div class="rule-box orange">⚠️ Bu <code>そう</code>, "görünüş" <code>そう</code>'suyla karışır! Aktarımda <u>sade form + そう</u>, görünüşte <u>kök + そう</u>.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>天気予報<rt>てんきよほう</rt></ruby>によると、<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る<mark>そうです</mark>。</div>
+    <div class="romaji">Tenki yohō ni yoru to, ashita wa ame ga furu sō desu.</div>
+    <div class="tr">Hava tahminine göre yarın yağmur yağacakmış.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>田中<rt>たなか</rt></ruby>さんは<ruby>来月<rt>らいげつ</rt></ruby><ruby>結婚<rt>けっこん</rt></ruby>する<mark>そうです</mark>。</div>
+    <div class="romaji">Tanaka-san wa raigetsu kekkon suru sō desu.</div>
+    <div class="tr">Tanaka gelecek ay evleniyormuş.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">あの<ruby>店<rt>みせ</rt></ruby>のラーメンはおいしい<mark>そうです</mark>。</div>
+    <div class="romaji">Ano mise no rāmen wa oishii sō desu.</div>
+    <div class="tr">O dükkânın rameni lezzetliymiş.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>彼<rt>かれ</rt></ruby>は<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>だ<mark>そうです</mark>。</div>
+    <div class="romaji">Kare wa nihongo ga jōzu da sō desu.</div>
+    <div class="tr">O Japonca'da iyiymiş (diyorlar). (なadj + だ)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">ニュースによると、<ruby>事故<rt>じこ</rt></ruby>があった<mark>そうです</mark>。</div>
+    <div class="romaji">Nyūsu ni yoru to, jiko ga atta sō desu.</div>
+    <div class="tr">Habere göre kaza olmuş.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>佐藤<rt>さとう</rt></ruby>さんは<ruby>子<rt>こ</rt></ruby>どものとき、アメリカにいた<mark>そうです</mark>。</div>
+    <div class="romaji">Satō-san wa kodomo no toki, Amerika ni ita sō desu.</div>
+    <div class="tr">Sato çocukken Amerika'da yaşamış (diyorlar).</div>
+    <div class="usage-tag">📻 Aktarım</div>
+  </div>
+</section>
+
+<!-- ═══ そうです (görünüş) ═══ -->
+<section class="section" id="sou-mitame">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--matcha-light);">👀</div>
+    <div>
+      <h2>〜そうです — Görünüşe Göre ("...gibi görünüyor")</h2>
+      <p class="subtitle">Gözle görüp tahmin: "...acak gibi / ...görünüyor".</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong><br>
+    Fiil: ますkökü + <code>そう</code> → <ruby>降<rt>ふ</rt></ruby>ります→<ruby>降<rt>ふ</rt></ruby>りそう<br>
+    いadj: い atıl + <code>そう</code> → おいしい→おいし<u>そう</u> · <ruby>難<rt>むずか</rt></ruby>しい→<ruby>難<rt>むずか</rt></ruby>し<u>そう</u><br>
+    なadj: <ruby>元気<rt>げんき</rt></ruby>→<ruby>元気<rt>げんき</rt></ruby>そう · Sıfat + N: <code>〜そうな</code></div>
+
+  <div class="rule-box orange"><strong>⚠️ İstisnalar:</strong> いい→<u>よさ</u>そう · ない→<u>なさ</u>そう.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>空<rt>そら</rt></ruby>が<ruby>暗<rt>くら</rt></ruby>いです。<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby><mark>りそうです</mark>。</div>
+    <div class="romaji">Sora ga kurai desu. Ame ga furisō desu.</div>
+    <div class="tr">Gökyüzü karanlık. Yağmur yağacak gibi.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">このケーキはおいし<mark>そうです</mark>。</div>
+    <div class="romaji">Kono kēki wa oishisō desu.</div>
+    <div class="tr">Bu pasta lezzetli görünüyor.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>彼<rt>かれ</rt></ruby>は<ruby>元気<rt>げんき</rt></ruby><mark>そうです</mark>ね。</div>
+    <div class="romaji">Kare wa genkisō desu ne.</div>
+    <div class="tr">O keyifli/sağlıklı görünüyor.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>問題<rt>もんだい</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>し<mark>そうです</mark>。</div>
+    <div class="romaji">Kono mondai wa muzukashisō desu.</div>
+    <div class="tr">Bu soru zor görünüyor.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>今<rt>いま</rt></ruby>にも<ruby>泣<rt>な</rt></ruby>き<mark>そうな</mark><ruby>顔<rt>かお</rt></ruby>をしています。</div>
+    <div class="romaji">Ima ni mo nakisō na kao o shite imasu.</div>
+    <div class="tr">Şimdi ağlayacakmış gibi bir yüzü var. (〜そうな + N)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>仕事<rt>しごと</rt></ruby>は<ruby>大変<rt>たいへん</rt></ruby><mark>そうです</mark>が、おもしろ<mark>そうです</mark>。</div>
+    <div class="romaji">Kono shigoto wa taihensō desu ga, omoshirosō desu.</div>
+    <div class="tr">Bu iş zor görünüyor ama ilginç görünüyor.</div>
+    <div class="usage-tag">👀 Görünüş</div>
+  </div>
+</section>
+
+<!-- ═══ ようだ・みたいだ ═══ -->
+<section class="section" id="you-mitai">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--purple-light);">🌫️</div>
+    <div>
+      <h2>〜ようだ・〜みたいだ — "...gibi görünüyor / sanki..."</h2>
+      <p class="subtitle">Kanıta/duyuya dayalı tahmin, ya da benzetme. みたい = samimi.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong><br>
+    <code>ようだ</code>: [Sade] + ようだ · N + <u>の</u>ようだ · なadj + <u>な</u>ようだ<br>
+    <code>みたいだ</code>: [Sade] + みたい · N/なadj (だ'sız) + みたい (daha günlük)</div>
+
+  <div class="rule-box sky">Kullanım: ① <u>kanıttan çıkarım</u> ("öyle görünüyor"). ② <u>benzetme</u> (まるで〜ようだ = sanki...).</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>外<rt>そと</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>っている<mark>ようです</mark>。</div>
+    <div class="romaji">Soto wa ame ga futte iru yō desu.</div>
+    <div class="tr">Dışarıda yağmur yağıyor gibi. (ıslak insanlar → çıkarım)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>誰<rt>だれ</rt></ruby>か いる<mark>みたいです</mark>。</div>
+    <div class="romaji">Dareka iru mitai desu.</div>
+    <div class="tr">Birisi var gibi. (ses duyuldu)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>彼<rt>かれ</rt></ruby>は<ruby>疲<rt>つか</rt></ruby>れている<mark>ようだ</mark>。</div>
+    <div class="romaji">Kare wa tsukarete iru yō da.</div>
+    <div class="tr">O yorgun gibi görünüyor.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>味<rt>あじ</rt></ruby>はチーズ<mark>みたいだ</mark>。</div>
+    <div class="romaji">Kono aji wa chīzu mitai da.</div>
+    <div class="tr">Bu tat peynir gibi. (benzetme)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>熱<rt>ねつ</rt></ruby>がある<mark>ようです</mark>。<ruby>病院<rt>びょういん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>ったほうがいいです。</div>
+    <div class="romaji">Netsu ga aru yō desu. Byōin e itta hō ga ii desu.</div>
+    <div class="tr">Ateşin var gibi. Hastaneye gitsen iyi olur.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">まるで<ruby>夢<rt>ゆめ</rt></ruby>の<mark>ようです</mark>。</div>
+    <div class="romaji">Marude yume no yō desu.</div>
+    <div class="tr">Sanki rüya gibi. (まるで〜ようだ)</div>
+    <div class="usage-tag">🌫️ Çıkarım/benzetme</div>
+  </div>
+</section>
+
+<!-- ═══ らしい ═══ -->
+<section class="section" id="rashii">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--orange-light);">🧩</div>
+    <div>
+      <h2>〜らしい — "Anlaşılan / ...vari (tipik)"</h2>
+      <p class="subtitle">① Bilgiye dayalı çıkarım. ② "-e yakışır, tam bir ..." tipiklik.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>[Sade form] + らしい</code> · <code>N + らしい</code> (だ yok).<br>
+    Anlam ①: dışarıdan aldığın bilgiye göre "öyle görünüyor / ...mış".<br>
+    Anlam ②: <code>N + らしい</code> = o şeye <u>yakışan</u>, tipik → <ruby>男<rt>おとこ</rt></ruby>らしい (mert), <ruby>春<rt>はる</rt></ruby>らしい (bahar gibi).</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>田中<rt>たなか</rt></ruby>さんは<ruby>会社<rt>かいしゃ</rt></ruby>を やめた<mark>らしいです</mark>。</div>
+    <div class="romaji">Tanaka-san wa kaisha o yameta rashii desu.</div>
+    <div class="tr">Tanaka işten ayrılmış (öyle duydum/anlaşılıyor).</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">あの<ruby>二人<rt>ふたり</rt></ruby>は<ruby>付<rt>つ</rt></ruby>き<ruby>合<rt>あ</rt></ruby>っている<mark>らしい</mark>。</div>
+    <div class="romaji">Ano futari wa tsukiatte iru rashii.</div>
+    <div class="tr">O ikisi çıkıyormuş galiba.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>今日<rt>きょう</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby><mark>らしい</mark>ですよ。</div>
+    <div class="romaji">Kyō wa ame rashii desu yo.</div>
+    <div class="tr">Bugün yağmurluymuş. (N + らしい, çıkarım)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>彼<rt>かれ</rt></ruby>は<ruby>本当<rt>ほんとう</rt></ruby>に<ruby>男<rt>おとこ</rt></ruby><mark>らしい</mark><ruby>人<rt>ひと</rt></ruby>だ。</div>
+    <div class="romaji">Kare wa hontō ni otokorashii hito da.</div>
+    <div class="tr">O gerçekten mert/erkeksi biri. (tipiklik)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>春<rt>はる</rt></ruby><mark>らしい</mark><ruby>天気<rt>てんき</rt></ruby>になりましたね。</div>
+    <div class="romaji">Harurashii tenki ni narimashita ne.</div>
+    <div class="tr">Bahara yakışır bir hava oldu.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>先生<rt>せんせい</rt></ruby><mark>らしくない</mark>。</div>
+    <div class="romaji">Kanojo wa senseirashikunai.</div>
+    <div class="tr">O öğretmene yakışmıyor / öğretmen gibi değil.</div>
+    <div class="usage-tag">🧩 Çıkarım/tipiklik</div>
+  </div>
+</section>
+<!-- ═══ はず ═══ -->
+<section class="section" id="hazu">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">✔️</div>
+    <div>
+      <h2>〜はずです — "Olması gerek / beklenir"</h2>
+      <p class="subtitle">Mantıken böyle olmalı (dayanağı olan güçlü beklenti).</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>[Sade form] + はず</code> · <code>N + の + はず</code> · <code>なadj + な + はず</code>.<br>
+    Olumsuz: <code>〜はずがない</code> = "olması imkânsız / olamaz".</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>田中<rt>たなか</rt></ruby>さんはもう<ruby>着<rt>つ</rt></ruby>いている<mark>はずです</mark>。</div>
+    <div class="romaji">Tanaka-san wa mō tsuite iru hazu desu.</div>
+    <div class="tr">Tanaka çoktan varmış olmalı.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>彼<rt>かれ</rt></ruby>は10<ruby>年<rt>ねん</rt></ruby><ruby>日本<rt>にほん</rt></ruby>にいたから、<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>な<mark>はずだ</mark>。</div>
+    <div class="romaji">Kare wa jū-nen Nihon ni ita kara, nihongo ga jōzu na hazu da.</div>
+    <div class="tr">10 yıl Japonya'da kaldı, Japoncası iyi olmalı.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>約束<rt>やくそく</rt></ruby>したから、<ruby>来<rt>く</rt></ruby>る<mark>はずです</mark>。</div>
+    <div class="romaji">Yakusoku shita kara, kuru hazu desu.</div>
+    <div class="tr">Söz verdi, gelmesi gerek.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">そんなことが ある<mark>はずがない</mark>。</div>
+    <div class="romaji">Sonna koto ga aru hazu ga nai.</div>
+    <div class="tr">Öyle bir şey olamaz (imkânsız).</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>会議<rt>かいぎ</rt></ruby>は3<ruby>時<rt>じ</rt></ruby>からの<mark>はずです</mark>。</div>
+    <div class="romaji">Kaigi wa san-ji kara no hazu desu.</div>
+    <div class="tr">Toplantı 3'ten itibaren olmalı. (N + の + はず)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>鍵<rt>かぎ</rt></ruby>はここに<ruby>置<rt>お</rt></ruby>いたから、ある<mark>はずだ</mark>。</div>
+    <div class="romaji">Kagi wa koko ni oita kara, aru hazu da.</div>
+    <div class="tr">Anahtarı buraya koydum, burada olması lazım.</div>
+    <div class="usage-tag">✔️ Mantıklı beklenti</div>
+  </div>
+</section>
+
+<!-- ═══ かもしれない ═══ -->
+<section class="section" id="kamo">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--matcha-light);">🎲</div>
+    <div>
+      <h2>〜かもしれない — "Olabilir / belki"</h2>
+      <p class="subtitle">Düşük-orta olasılık. <code>はず</code>'dan çok daha zayıf.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>[Sade form] + かもしれない/かもしれません</code>.<br>
+    N/なadj sonuna <code>だ</code> GELMEZ → <ruby>雨<rt>あめ</rt></ruby>かもしれない · <ruby>元気<rt>げんき</rt></ruby>かもしれない.<br>
+    💬 Günlük kısaltma: <code>〜かも</code>.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る<mark>かもしれません</mark>。</div>
+    <div class="romaji">Ashita wa ame ga furu kamo shiremasen.</div>
+    <div class="tr">Yarın yağmur yağabilir.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>彼<rt>かれ</rt></ruby>はもう<ruby>帰<rt>かえ</rt></ruby>った<mark>かもしれない</mark>。</div>
+    <div class="romaji">Kare wa mō kaetta kamo shirenai.</div>
+    <div class="tr">O çoktan gitmiş olabilir.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>店<rt>みせ</rt></ruby>は<ruby>高<rt>たか</rt></ruby>い<mark>かもしれません</mark>。</div>
+    <div class="romaji">Kono mise wa takai kamo shiremasen.</div>
+    <div class="tr">Bu dükkân pahalı olabilir.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>田中<rt>たなか</rt></ruby>さんは<ruby>来<rt>こ</rt></ruby>ない<mark>かもしれない</mark>。</div>
+    <div class="romaji">Tanaka-san wa konai kamo shirenai.</div>
+    <div class="tr">Tanaka gelmeyebilir.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>道<rt>みち</rt></ruby>が<ruby>込<rt>こ</rt></ruby>んでいる<mark>かもしれない</mark>から、<ruby>早<rt>はや</rt></ruby>く<ruby>出<rt>で</rt></ruby>ましょう。</div>
+    <div class="romaji">Michi ga konde iru kamo shirenai kara, hayaku demashō.</div>
+    <div class="tr">Yol sıkışık olabilir, erken çıkalım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">それは<ruby>本当<rt>ほんとう</rt></ruby><mark>かも</mark>。</div>
+    <div class="romaji">Sore wa hontō kamo.</div>
+    <div class="tr">O doğru olabilir. (günlük kısaltma)</div>
+    <div class="usage-tag">🎲 Olasılık</div>
+  </div>
+</section>
+
+<!-- ═══ だろう・でしょう ═══ -->
+<section class="section" id="darou">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--purple-light);">🔮</div>
+    <div>
+      <h2>〜だろう・でしょう — "Herhalde / ...dır"</h2>
+      <p class="subtitle">Tahmin/kanaat. <code>でしょう</code> kibar; yükselen tonla teyit.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>[Sade form] + だろう/でしょう</code> (N/なadj'de だ düşer → <ruby>雨<rt>あめ</rt></ruby>だろう).<br>
+    💡 Sık <code>たぶん</code> (muhtemelen) ile. Yükselen ton: <code>〜でしょう？</code> = "...değil mi?" (teyit).</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>明日<rt>あした</rt></ruby>はたぶん<ruby>晴<rt>は</rt></ruby>れる<mark>でしょう</mark>。</div>
+    <div class="romaji">Ashita wa tabun hareru deshō.</div>
+    <div class="tr">Yarın muhtemelen hava açar.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>彼<rt>かれ</rt></ruby>は<ruby>来<rt>こ</rt></ruby>ない<mark>だろう</mark>。</div>
+    <div class="romaji">Kare wa konai darō.</div>
+    <div class="tr">O gelmez herhalde.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>問題<rt>もんだい</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>しい<mark>でしょう</mark>。</div>
+    <div class="romaji">Kono mondai wa muzukashii deshō.</div>
+    <div class="tr">Bu soru zordur herhalde.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">あなたも<ruby>行<rt>い</rt></ruby>く<mark>でしょう</mark>？</div>
+    <div class="romaji">Anata mo iku deshō?</div>
+    <div class="tr">Sen de gidersin değil mi? (teyit)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>試合<rt>しあい</rt></ruby>は<ruby>日本<rt>にほん</rt></ruby>が<ruby>勝<rt>か</rt></ruby>つ<mark>だろう</mark>。</div>
+    <div class="romaji">Shiai wa Nihon ga katsu darō.</div>
+    <div class="tr">Maçı Japonya kazanır herhalde.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">もう<ruby>遅<rt>おそ</rt></ruby>いから、<ruby>寝<rt>ね</rt></ruby>ている<mark>でしょう</mark>。</div>
+    <div class="romaji">Mō osoi kara, nete iru deshō.</div>
+    <div class="tr">Geç oldu, uyuyordur herhalde.</div>
+    <div class="usage-tag">🔮 Tahmin</div>
+  </div>
+</section>
+<!-- ═══ なければならない ═══ -->
+<section class="section" id="nakereba">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--orange-light);">⛔</div>
+    <div>
+      <h2>〜なければならない — Zorunluluk ("...mak zorundayım")</h2>
+      <p class="subtitle">Yapmak mecburiyeti. Günlük: 〜なきゃ / 〜なくちゃ.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>ない形 (い at) + ければならない</code> → <ruby>行<rt>い</rt></ruby>かない→<ruby>行<rt>い</rt></ruby>か<u>なければならない</u>.<br>
+    Eş anlamlı: <code>〜なくてはいけない</code>. 💬 Kısaltma: <code>〜なきゃ</code> · <code>〜なくちゃ</code>.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>明日<rt>あした</rt></ruby>は<ruby>早<rt>はや</rt></ruby>く<ruby>起<rt>お</rt></ruby>き<mark>なければなりません</mark>。</div>
+    <div class="romaji">Ashita wa hayaku oki-nakereba narimasen.</div>
+    <div class="tr">Yarın erken kalkmam gerek.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">レポートを<ruby>金曜日<rt>きんようび</rt></ruby>までに<ruby>出<rt>だ</rt></ruby>さ<mark>なければなりません</mark>。</div>
+    <div class="romaji">Repōto o kin'yōbi made ni dasa-nakereba narimasen.</div>
+    <div class="tr">Raporu cumaya kadar teslim etmeliyim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>学生<rt>がくせい</rt></ruby>は<ruby>制服<rt>せいふく</rt></ruby>を<ruby>着<rt>き</rt></ruby><mark>なくてはいけません</mark>。</div>
+    <div class="romaji">Gakusei wa seifuku o ki-nakute wa ikemasen.</div>
+    <div class="tr">Öğrenciler üniforma giymek zorunda.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">ビザを<ruby>取<rt>と</rt></ruby>るために、<ruby>書類<rt>しょるい</rt></ruby>を<ruby>準備<rt>じゅんび</rt></ruby>し<mark>なければならない</mark>。</div>
+    <div class="romaji">Biza o toru tame ni, shorui o junbi shi-nakereba naranai.</div>
+    <div class="tr">Vize almak için belge hazırlamam gerek.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>薬<rt>くすり</rt></ruby>を<ruby>飲<rt>の</rt></ruby>ま<mark>なければならない</mark>。</div>
+    <div class="romaji">Kusuri o noma-nakereba naranai.</div>
+    <div class="tr">İlaç içmem lazım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">もう<ruby>行<rt>い</rt></ruby>か<mark>なきゃ</mark>。</div>
+    <div class="romaji">Mō ika-nakya.</div>
+    <div class="tr">Artık gitmem lazım. (günlük kısaltma)</div>
+    <div class="usage-tag">⛔ Zorunluluk</div>
+  </div>
+</section>
+
+<!-- ═══ なくてもいい ═══ -->
+<section class="section" id="nakutemo">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--matcha-light);">🆗</div>
+    <div>
+      <h2>〜なくてもいい — "Yapmasan da olur"</h2>
+      <p class="subtitle">Gereksizlik: yapmak zorunda değilsin.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>ない形 (い at) + くてもいい</code> → <ruby>来<rt>こ</rt></ruby>ない→<ruby>来<rt>こ</rt></ruby>な<u>くてもいい</u>.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>明日<rt>あした</rt></ruby>は<ruby>来<rt>こ</rt></ruby><mark>なくてもいいです</mark>。</div>
+    <div class="romaji">Ashita wa ko-nakute mo ii desu.</div>
+    <div class="tr">Yarın gelmesen de olur.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>全部<rt>ぜんぶ</rt></ruby><ruby>食<rt>た</rt></ruby>べ<mark>なくてもいいですよ</mark>。</div>
+    <div class="romaji">Zenbu tabe-nakute mo ii desu yo.</div>
+    <div class="tr">Hepsini yemek zorunda değilsin.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">お<ruby>金<rt>かね</rt></ruby>を<ruby>払<rt>はら</rt></ruby>わ<mark>なくてもいいです</mark>。</div>
+    <div class="romaji">Okane o harawa-nakute mo ii desu.</div>
+    <div class="tr">Para ödemene gerek yok.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>急<rt>いそ</rt></ruby>が<mark>なくてもいいですよ</mark>。</div>
+    <div class="romaji">Isoga-nakute mo ii desu yo.</div>
+    <div class="tr">Acele etmene gerek yok.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>靴<rt>くつ</rt></ruby>を<ruby>脱<rt>ぬ</rt></ruby>が<mark>なくてもいいです</mark>。</div>
+    <div class="romaji">Kutsu o nuga-nakute mo ii desu.</div>
+    <div class="tr">Ayakkabını çıkarmana gerek yok.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>心配<rt>しんぱい</rt></ruby>し<mark>なくてもいいよ</mark>。</div>
+    <div class="romaji">Shinpai shi-nakute mo ii yo.</div>
+    <div class="tr">Endişelenmene gerek yok.</div>
+    <div class="usage-tag">🆗 Gerek yok</div>
+  </div>
+</section>
+
+<!-- ═══ てもいい・てはいけない ═══ -->
+<section class="section" id="permission">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">✋</div>
+    <div>
+      <h2>〜てもいい・〜てはいけない — İzin & Yasak</h2>
+      <p class="subtitle">İzin isteme/verme ve yasaklama (N5 tekrarı + pekiştirme).</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong><br>
+    İzin: <code>て形 + もいい(です)</code> — soru: <code>〜てもいいですか</code><br>
+    Yasak: <code>て形 + はいけない/いけません</code></div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence">ここで<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby><mark>ってもいいですか</mark>。</div>
+    <div class="romaji">Koko de shashin o totte mo ii desu ka?</div>
+    <div class="tr">Burada fotoğraf çekebilir miyim?</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">はい、<ruby>撮<rt>と</rt></ruby><mark>ってもいいです</mark>。</div>
+    <div class="romaji">Hai, totte mo ii desu.</div>
+    <div class="tr">Evet, çekebilirsin.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>部屋<rt>へや</rt></ruby>に<ruby>入<rt>はい</rt></ruby><mark>ってはいけません</mark>。</div>
+    <div class="romaji">Kono heya ni haitte wa ikemasen.</div>
+    <div class="tr">Bu odaya girmek yasak.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>授業中<rt>じゅぎょうちゅう</rt></ruby>に<ruby>話<rt>はな</rt></ruby><mark>してはいけません</mark>。</div>
+    <div class="romaji">Jugyō-chū ni hanashite wa ikemasen.</div>
+    <div class="tr">Ders sırasında konuşmak yasak.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">トイレを<ruby>使<rt>つか</rt></ruby><mark>ってもいいですか</mark>。</div>
+    <div class="romaji">Toire o tsukatte mo ii desu ka?</div>
+    <div class="tr">Tuvaleti kullanabilir miyim?</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">ここでタバコを<ruby>吸<rt>す</rt></ruby><mark>ってはいけません</mark>。</div>
+    <div class="romaji">Koko de tabako o sutte wa ikemasen.</div>
+    <div class="tr">Burada sigara içmek yasak.</div>
+    <div class="usage-tag">✋ İzin/yasak</div>
+  </div>
+</section>
+<!-- ═══ ので ═══ -->
+<section class="section" id="node">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">🔗</div>
+    <div>
+      <h2>〜ので — "Çünkü / ...dığı için" (nazik)</h2>
+      <p class="subtitle">Objektif, yumuşak sebep. から'dan daha kibar.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>[Sade form] + ので</code> · <code>N/なadj + な + ので</code> (<ruby>元気<rt>げんき</rt></ruby><u>な</u>ので).<br>
+    ⚖️ <code>から</code> = öznel/güçlü sebep; <code>ので</code> = nazik/açıklayıcı (rica ve özürde tercih).</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>頭<rt>あたま</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>い<mark>ので</mark>、<ruby>早<rt>はや</rt></ruby>く<ruby>帰<rt>かえ</rt></ruby>ります。</div>
+    <div class="romaji">Atama ga itai node, hayaku kaerimasu.</div>
+    <div class="tr">Başım ağrıdığı için erken dönüyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>日曜日<rt>にちようび</rt></ruby><mark>なので</mark>、<ruby>店<rt>みせ</rt></ruby>が<ruby>込<rt>こ</rt></ruby>んでいます。</div>
+    <div class="romaji">Nichiyōbi na node, mise ga konde imasu.</div>
+    <div class="tr">Pazar olduğu için dükkân kalabalık. (N + な + ので)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>遅<rt>おく</rt></ruby>れた<mark>ので</mark>、<ruby>遅刻<rt>ちこく</rt></ruby>しました。</div>
+    <div class="romaji">Densha ga okureta node, chikoku shimashita.</div>
+    <div class="tr">Tren geciktiği için geç kaldım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">ここは<ruby>静<rt>しず</rt></ruby>か<mark>なので</mark>、よく<ruby>勉強<rt>べんきょう</rt></ruby>できます。</div>
+    <div class="romaji">Koko wa shizuka na node, yoku benkyō dekimasu.</div>
+    <div class="tr">Burası sessiz olduğu için iyi çalışabiliyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">まだ<ruby>子<rt>こ</rt></ruby>ども<mark>なので</mark>、お<ruby>酒<rt>さけ</rt></ruby>は<ruby>飲<rt>の</rt></ruby>めません。</div>
+    <div class="romaji">Mada kodomo na node, osake wa nomemasen.</div>
+    <div class="tr">Daha çocuk olduğu için içki içemez.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>忙<rt>いそが</rt></ruby>しい<mark>ので</mark>、また<ruby>今度<rt>こんど</rt></ruby>お<ruby>願<rt>ねが</rt></ruby>いします。</div>
+    <div class="romaji">Isogashii node, mata kondo onegai shimasu.</div>
+    <div class="tr">Meşgul olduğum için başka sefere rica edeyim.</div>
+    <div class="usage-tag">🔗 Nazik sebep</div>
+  </div>
+</section>
+
+<!-- ═══ のに ═══ -->
+<section class="section" id="noni">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--orange-light);">😤</div>
+    <div>
+      <h2>〜のに — "...masına rağmen" (beklenmedik)</h2>
+      <p class="subtitle">Beklenenin tersi olduğunda; sitem/şaşkınlık tonu var.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>[Sade form] + のに</code> · <code>N/なadj + な + のに</code>.<br>
+    ⚖️ <code>けど/が</code>'dan farkı: <code>のに</code>'de <u>hayal kırıklığı / beklenmedik</u> hissi güçlüdür.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>薬<rt>くすり</rt></ruby>を<ruby>飲<rt>の</rt></ruby>んだ<mark>のに</mark>、まだ<ruby>熱<rt>ねつ</rt></ruby>があります。</div>
+    <div class="romaji">Kusuri o nonda noni, mada netsu ga arimasu.</div>
+    <div class="tr">İlaç içtiğim halde hâlâ ateşim var.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>一生懸命<rt>いっしょうけんめい</rt></ruby><ruby>勉強<rt>べんきょう</rt></ruby>した<mark>のに</mark>、<ruby>試験<rt>しけん</rt></ruby>に<ruby>落<rt>お</rt></ruby>ちました。</div>
+    <div class="romaji">Isshōkenmei benkyō shita noni, shiken ni ochimashita.</div>
+    <div class="tr">Canla başla çalıştığım halde sınavda kaldım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>日曜日<rt>にちようび</rt></ruby><mark>なのに</mark>、<ruby>働<rt>はたら</rt></ruby>かなければなりません。</div>
+    <div class="romaji">Nichiyōbi na noni, hatarakanakereba narimasen.</div>
+    <div class="tr">Pazar olmasına rağmen çalışmam gerek.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">まだ8<ruby>時<rt>じ</rt></ruby><mark>なのに</mark>、もう<ruby>眠<rt>ねむ</rt></ruby>い。</div>
+    <div class="romaji">Mada hachi-ji na noni, mō nemui.</div>
+    <div class="tr">Daha saat 8 olmasına rağmen çoktan uykum geldi.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>約束<rt>やくそく</rt></ruby>した<mark>のに</mark>、<ruby>彼<rt>かれ</rt></ruby>は<ruby>来<rt>こ</rt></ruby>なかった。</div>
+    <div class="romaji">Yakusoku shita noni, kare wa konakatta.</div>
+    <div class="tr">Söz verdiği halde gelmedi. (sitem)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>店<rt>みせ</rt></ruby>は<ruby>高<rt>たか</rt></ruby>い<mark>のに</mark>、あまりおいしくない。</div>
+    <div class="romaji">Kono mise wa takai noni, amari oishikunai.</div>
+    <div class="tr">Bu dükkân pahalı olmasına rağmen pek lezzetli değil.</div>
+    <div class="usage-tag">😤 Zıtlık/sitem</div>
+  </div>
+</section>
+
+<!-- ═══ し ═══ -->
+<section class="section" id="shi">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--matcha-light);">➕</div>
+    <div>
+      <h2>〜し — "Hem...hem / üstelik" (sebep sıralama)</h2>
+      <p class="subtitle">Birden fazla sebep/özellik sıralar; "ayrıca" nüansı verir.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>[Sade form] + し</code> (her cümlecikten sonra し). Sık: son し sebep, sonuç gelir.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>店<rt>みせ</rt></ruby>は<ruby>安<rt>やす</rt></ruby>い<mark>し</mark>、おいしい<mark>し</mark>、よく<ruby>来<rt>き</rt></ruby>ます。</div>
+    <div class="romaji">Kono mise wa yasui shi, oishii shi, yoku kimasu.</div>
+    <div class="tr">Bu dükkân hem ucuz hem lezzetli, sık gelirim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>田中<rt>たなか</rt></ruby>さんは<ruby>頭<rt>あたま</rt></ruby>がいい<mark>し</mark>、<ruby>性格<rt>せいかく</rt></ruby>もいいです。</div>
+    <div class="romaji">Tanaka-san wa atama ga ii shi, seikaku mo ii desu.</div>
+    <div class="tr">Tanaka hem zeki hem karakteri iyi.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>雨<rt>あめ</rt></ruby>も<ruby>降<rt>ふ</rt></ruby>っている<mark>し</mark>、<ruby>寒<rt>さむ</rt></ruby>い<mark>し</mark>、<ruby>家<rt>いえ</rt></ruby>にいましょう。</div>
+    <div class="romaji">Ame mo futte iru shi, samui shi, ie ni imashō.</div>
+    <div class="tr">Hem yağmur yağıyor hem soğuk, evde kalalım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">お<ruby>金<rt>かね</rt></ruby>もない<mark>し</mark>、<ruby>時間<rt>じかん</rt></ruby>もない<mark>ので</mark>、<ruby>旅行<rt>りょこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>けません。</div>
+    <div class="romaji">Okane mo nai shi, jikan mo nai node, ryokō ni ikemasen.</div>
+    <div class="tr">Hem param hem vaktim yok, o yüzden seyahate gidemem.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>部屋<rt>へや</rt></ruby>は<ruby>広<rt>ひろ</rt></ruby>い<mark>し</mark>、<ruby>静<rt>しず</rt></ruby>かだ<mark>し</mark>、<ruby>気<rt>き</rt></ruby>に<ruby>入<rt>い</rt></ruby>りました。</div>
+    <div class="romaji">Kono heya wa hiroi shi, shizuka da shi, ki ni irimashita.</div>
+    <div class="tr">Bu oda hem geniş hem sessiz, beğendim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>彼<rt>かれ</rt></ruby>は<ruby>仕事<rt>しごと</rt></ruby>もできる<mark>し</mark>、みんなに<ruby>人気<rt>にんき</rt></ruby>があります。</div>
+    <div class="romaji">Kare wa shigoto mo dekiru shi, minna ni ninki ga arimasu.</div>
+    <div class="tr">Hem işini iyi yapar hem herkes tarafından sevilir.</div>
+    <div class="usage-tag">➕ Sebep sıralama</div>
+  </div>
+</section>
+
+<!-- ═══ ために ═══ -->
+<section class="section" id="tame">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--purple-light);">🎯</div>
+    <div>
+      <h2>〜ために・〜ため — Amaç & Sebep</h2>
+      <p class="subtitle">"...mak için" (amaç) veya "...nedeniyle" (sebep).</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong><br>
+    Amaç: <code><ruby>辞書形<rt>じしょけい</rt></ruby> / N + の + ために</code> → "...mak için".<br>
+    Sebep: <code>[Sade / N + の] + ため(に)</code> → "...nedeniyle" (çoğu resmi/olumsuz olay).</div>
+
+  <div class="rule-box sky">💡 <code>ために</code> (amaç) ile <code>ように</code> (amaç) farkı: <code>ために</code> = <u>iradeli</u> fiil (aynı özne); <code>ように</code> = potansiyel/iradesiz fiil.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>日本<rt>にほん</rt></ruby>で<ruby>働<rt>はたら</rt></ruby>く<mark>ために</mark>、<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>しています。</div>
+    <div class="romaji">Nihon de hataraku tame ni, nihongo o benkyō shite imasu.</div>
+    <div class="tr">Japonya'da çalışmak için Japonca öğreniyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>家族<rt>かぞく</rt></ruby>の<mark>ために</mark>、<ruby>一生懸命<rt>いっしょうけんめい</rt></ruby><ruby>働<rt>はたら</rt></ruby>きます。</div>
+    <div class="romaji">Kazoku no tame ni, isshōkenmei hatarakimasu.</div>
+    <div class="tr">Ailem için canla başla çalışırım. (N + の + ために)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>健康<rt>けんこう</rt></ruby>の<mark>ために</mark>、<ruby>毎朝<rt>まいあさ</rt></ruby><ruby>走<rt>はし</rt></ruby>っています。</div>
+    <div class="romaji">Kenkō no tame ni, maiasa hashitte imasu.</div>
+    <div class="tr">Sağlığım için her sabah koşuyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>試験<rt>しけん</rt></ruby>に<ruby>合格<rt>ごうかく</rt></ruby>する<mark>ために</mark>、たくさん<ruby>勉強<rt>べんきょう</rt></ruby>しました。</div>
+    <div class="romaji">Shiken ni gōkaku suru tame ni, takusan benkyō shimashita.</div>
+    <div class="tr">Sınavı geçmek için çok çalıştım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>事故<rt>じこ</rt></ruby>の<mark>ために</mark>、<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>止<rt>と</rt></ruby>まりました。</div>
+    <div class="romaji">Jiko no tame ni, densha ga tomarimashita.</div>
+    <div class="tr">Kaza nedeniyle tren durdu. (sebep)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>大雨<rt>おおあめ</rt></ruby>の<mark>ため</mark>、<ruby>試合<rt>しあい</rt></ruby>は<ruby>中止<rt>ちゅうし</rt></ruby>になりました。</div>
+    <div class="romaji">Ōame no tame, shiai wa chūshi ni narimashita.</div>
+    <div class="tr">Şiddetli yağmur nedeniyle maç iptal edildi.</div>
+    <div class="usage-tag">🎯 Amaç/sebep</div>
+  </div>
+</section>
+<!-- ═══ ように ═══ -->
+<section class="section" id="youni">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">🙏</div>
+    <div>
+      <h2>〜ように — "...sın diye / ...mak için" (amaç)</h2>
+      <p class="subtitle">İradesiz/potansiyel fiil sonrası amaç. 〜ように言う = "...masını söylemek".</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>[<ruby>辞書形<rt>じしょけい</rt></ruby> / ない形 / potansiyel] + ように、〜</code>.<br>
+    Genelde <u>potansiyel</u> (<ruby>見<rt>み</rt></ruby>える, <ruby>話<rt>はな</rt></ruby>せる), <u>olumsuz</u> (<ruby>忘<rt>わす</rt></ruby>れない) ya da geçişsiz fiille.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence">よく<ruby>見<rt>み</rt></ruby>える<mark>ように</mark>、<ruby>前<rt>まえ</rt></ruby>に<ruby>座<rt>すわ</rt></ruby>りました。</div>
+    <div class="romaji">Yoku mieru yō ni, mae ni suwarimashita.</div>
+    <div class="tr">İyi görünsün diye öne oturdum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>忘<rt>わす</rt></ruby>れない<mark>ように</mark>、メモします。</div>
+    <div class="romaji">Wasurenai yō ni, memo shimasu.</div>
+    <div class="tr">Unutmayayım diye not alırım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>日本語<rt>にほんご</rt></ruby>が<ruby>話<rt>はな</rt></ruby>せる<mark>ように</mark>、<ruby>毎日<rt>まいにち</rt></ruby><ruby>練習<rt>れんしゅう</rt></ruby>します。</div>
+    <div class="romaji">Nihongo ga hanaseru yō ni, mainichi renshū shimasu.</div>
+    <div class="tr">Japonca konuşabileyim diye her gün alıştırma yaparım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>学生<rt>がくせい</rt></ruby>に<ruby>静<rt>しず</rt></ruby>かにする<mark>ように</mark><ruby>言<rt>い</rt></ruby>いました。</div>
+    <div class="romaji">Gakusei ni shizuka ni suru yō ni iimashita.</div>
+    <div class="tr">Öğrencilere sessiz olmalarını söyledim. (〜ように言う)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>間<rt>ま</rt></ruby>に<ruby>合<rt>あ</rt></ruby>う<mark>ように</mark>、<ruby>早<rt>はや</rt></ruby>く<ruby>家<rt>いえ</rt></ruby>を<ruby>出<rt>で</rt></ruby>ました。</div>
+    <div class="romaji">Densha ni maniau yō ni, hayaku ie o demashita.</div>
+    <div class="tr">Trene yetişeyim diye erken çıktım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>病気<rt>びょうき</rt></ruby>が<ruby>早<rt>はや</rt></ruby>く<ruby>治<rt>なお</rt></ruby>る<mark>ように</mark>、<ruby>祈<rt>いの</rt></ruby>っています。</div>
+    <div class="romaji">Byōki ga hayaku naoru yō ni, inotte imasu.</div>
+    <div class="tr">Hastalığın çabuk geçsin diye dua ediyorum.</div>
+    <div class="usage-tag">🙏 Amaç</div>
+  </div>
+</section>
+
+<!-- ═══ ようにする・ようになる ═══ -->
+<section class="section" id="youni-suru-naru">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--matcha-light);">🔄</div>
+    <div>
+      <h2>〜ようにする・〜ようになる — Çaba & Hale Gelme</h2>
+      <p class="subtitle">する = çaba/alışkanlık. なる = durum değişimi (...abilir oldu).</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong><br>
+    <code>[<ruby>辞書形<rt>じしょけい</rt></ruby>/ない形] + ようにする</code> = "...maya çalışmak / alışkanlık edinmek".<br>
+    <code>[<ruby>辞書形<rt>じしょけい</rt></ruby>/potansiyel] + ようになる</code> = "...ır hale gelmek / ...abilir oldu".</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>毎日<rt>まいにち</rt></ruby><ruby>野菜<rt>やさい</rt></ruby>を<ruby>食<rt>た</rt></ruby>べる<mark>ようにしています</mark>。</div>
+    <div class="romaji">Mainichi yasai o taberu yō ni shite imasu.</div>
+    <div class="tr">Her gün sebze yemeye çalışıyorum. (çaba)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>健康<rt>けんこう</rt></ruby>のために、お<ruby>酒<rt>さけ</rt></ruby>を<ruby>飲<rt>の</rt></ruby>まない<mark>ようにしています</mark>。</div>
+    <div class="romaji">Kenkō no tame ni, osake o nomanai yō ni shite imasu.</div>
+    <div class="tr">Sağlık için içki içmemeye çalışıyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>練習<rt>れんしゅう</rt></ruby>して、<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>話<rt>はな</rt></ruby>せる<mark>ようになりました</mark>。</div>
+    <div class="romaji">Renshū shite, nihongo ga hanaseru yō ni narimashita.</div>
+    <div class="tr">Alıştırma yapıp Japonca konuşabilir hale geldim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>漢字<rt>かんじ</rt></ruby>が<ruby>読<rt>よ</rt></ruby>める<mark>ようになりました</mark>。</div>
+    <div class="romaji">Kanji ga yomeru yō ni narimashita.</div>
+    <div class="tr">Kanji okuyabilir oldum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>毎朝<rt>まいあさ</rt></ruby><ruby>早<rt>はや</rt></ruby>く<ruby>起<rt>お</rt></ruby>きる<mark>ようにして</mark>ください。</div>
+    <div class="romaji">Maiasa hayaku okiru yō ni shite kudasai.</div>
+    <div class="tr">Her sabah erken kalkmaya çalışın.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>子<rt>こ</rt></ruby>どもは<ruby>一人<rt>ひとり</rt></ruby>で<ruby>歩<rt>ある</rt></ruby>ける<mark>ようになった</mark>。</div>
+    <div class="romaji">Kodomo wa hitori de arukeru yō ni natta.</div>
+    <div class="tr">Çocuk tek başına yürüyebilir oldu.</div>
+    <div class="usage-tag">🔄 Çaba/değişim</div>
+  </div>
+</section>
+
+<!-- ═══ ことにする・ことになる ═══ -->
+<section class="section" id="koto-ni">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--purple-light);">🧭</div>
+    <div>
+      <h2>〜ことにする・〜ことになる — Karar</h2>
+      <p class="subtitle">する = kendi kararım. なる = (dışarıdan) kararlaştırıldı.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>[<ruby>辞書形<rt>じしょけい</rt></ruby>/ない形] + ことにする/ことになる</code>.<br>
+    <code>ことにする</code> = <u>ben karar verdim</u>. <code>ことになる</code> = <u>(başkası/durum) karar verdi</u>, sonuç.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>来年<rt>らいねん</rt></ruby>、<ruby>日本<rt>にほん</rt></ruby>の<ruby>大学<rt>だいがく</rt></ruby>に<ruby>行<rt>い</rt></ruby>く<mark>ことにしました</mark>。</div>
+    <div class="romaji">Rainen, Nihon no daigaku ni iku koto ni shimashita.</div>
+    <div class="tr">Gelecek yıl Japon üniversitesine gitmeye karar verdim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>健康<rt>けんこう</rt></ruby>のために、<ruby>毎日<rt>まいにち</rt></ruby><ruby>運動<rt>うんどう</rt></ruby>する<mark>ことにしました</mark>。</div>
+    <div class="romaji">Kenkō no tame ni, mainichi undō suru koto ni shimashita.</div>
+    <div class="tr">Sağlık için her gün spor yapmaya karar verdim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">たばこをやめる<mark>ことにしました</mark>。</div>
+    <div class="romaji">Tabako o yameru koto ni shimashita.</div>
+    <div class="tr">Sigarayı bırakmaya karar verdim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>来月<rt>らいげつ</rt></ruby>、<ruby>大阪<rt>おおさか</rt></ruby>に<ruby>転勤<rt>てんきん</rt></ruby>する<mark>ことになりました</mark>。</div>
+    <div class="romaji">Raigetsu, Ōsaka ni tenkin suru koto ni narimashita.</div>
+    <div class="tr">Gelecek ay Osaka'ya tayin edildim. (dışarıdan karar)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>会議<rt>かいぎ</rt></ruby>は<ruby>金曜日<rt>きんようび</rt></ruby>に<ruby>変更<rt>へんこう</rt></ruby>する<mark>ことになりました</mark>。</div>
+    <div class="romaji">Kaigi wa kin'yōbi ni henkō suru koto ni narimashita.</div>
+    <div class="tr">Toplantının cumaya alınmasına karar verildi.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>二人<rt>ふたり</rt></ruby>は<ruby>結婚<rt>けっこん</rt></ruby>する<mark>ことになりました</mark>。</div>
+    <div class="romaji">Futari wa kekkon suru koto ni narimashita.</div>
+    <div class="tr">İkisinin evlenmesine karar verildi / evleniyorlar.</div>
+    <div class="usage-tag">🧭 Karar</div>
+  </div>
+</section>
+
+<!-- ═══ つもり ═══ -->
+<section class="section" id="tsumori">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">📝</div>
+    <div>
+      <h2>〜つもり — Niyet ("...mayı düşünüyorum")</h2>
+      <p class="subtitle">Kişisel niyet/plan (henüz kesin olmayabilir).</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code><ruby>辞書形<rt>じしょけい</rt></ruby> + つもり</code> (yapma niyeti) · <code>ない形 + つもり</code> (yapmama niyeti).</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>夏休<rt>なつやす</rt></ruby>みに<ruby>国<rt>くに</rt></ruby>へ<ruby>帰<rt>かえ</rt></ruby>る<mark>つもりです</mark>。</div>
+    <div class="romaji">Natsuyasumi ni kuni e kaeru tsumori desu.</div>
+    <div class="tr">Yaz tatilinde ülkeme dönmeyi düşünüyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>今日<rt>きょう</rt></ruby>は<ruby>早<rt>はや</rt></ruby>く<ruby>寝<rt>ね</rt></ruby>る<mark>つもりです</mark>。</div>
+    <div class="romaji">Kyō wa hayaku neru tsumori desu.</div>
+    <div class="tr">Bugün erken yatmayı planlıyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">お<ruby>酒<rt>さけ</rt></ruby>はもう<ruby>飲<rt>の</rt></ruby>まない<mark>つもりです</mark>。</div>
+    <div class="romaji">Osake wa mō nomanai tsumori desu.</div>
+    <div class="tr">Artık içki içmemeyi düşünüyorum. (ない形 + つもり)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>大学<rt>だいがく</rt></ruby>で<ruby>経済<rt>けいざい</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>する<mark>つもりです</mark>。</div>
+    <div class="romaji">Daigaku de keizai o benkyō suru tsumori desu.</div>
+    <div class="tr">Üniversitede ekonomi okumaya niyetliyim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>週末<rt>しゅうまつ</rt></ruby>は<ruby>何<rt>なに</rt></ruby>をする<mark>つもりですか</mark>。</div>
+    <div class="romaji">Shūmatsu wa nani o suru tsumori desu ka?</div>
+    <div class="tr">Hafta sonu ne yapmayı düşünüyorsun?</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>車<rt>くるま</rt></ruby>を<ruby>買<rt>か</rt></ruby>う<mark>つもりでした</mark>が、やめました。</div>
+    <div class="romaji">Kuruma o kau tsumori deshita ga, yamemashita.</div>
+    <div class="tr">Araba almaya niyetliydim ama vazgeçtim.</div>
+    <div class="usage-tag">📝 Niyet</div>
+  </div>
+</section>
+
+<!-- ═══ 予定 ═══ -->
+<section class="section" id="yotei">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--matcha-light);">📅</div>
+    <div>
+      <h2>〜<ruby>予定<rt>よてい</rt></ruby> — Plan/Program</h2>
+      <p class="subtitle">Kesinleşmiş, programlanmış plan (つもり'den daha objektif).</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code><ruby>辞書形<rt>じしょけい</rt></ruby> + <ruby>予定<rt>よてい</rt></ruby></code> · <code>N + の + <ruby>予定<rt>よてい</rt></ruby></code>.<br>
+    ⚖️ <code>つもり</code> = kişisel niyet; <code>予定</code> = takvime bağlı, dışarıdan da belli program.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>来週<rt>らいしゅう</rt></ruby>、<ruby>京都<rt>きょうと</rt></ruby>へ<ruby>行<rt>い</rt></ruby>く<mark><ruby>予定<rt>よてい</rt></ruby>です</mark>。</div>
+    <div class="romaji">Raishū, Kyōto e iku yotei desu.</div>
+    <div class="tr">Gelecek hafta Kyoto'ya gitme planım var.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>会議<rt>かいぎ</rt></ruby>は3<ruby>時<rt>じ</rt></ruby>から<ruby>始<rt>はじ</rt></ruby>まる<mark><ruby>予定<rt>よてい</rt></ruby>です</mark>。</div>
+    <div class="romaji">Kaigi wa san-ji kara hajimaru yotei desu.</div>
+    <div class="tr">Toplantı 3'ten itibaren başlayacak (planlı).</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>飛行機<rt>ひこうき</rt></ruby>は10<ruby>時<rt>じ</rt></ruby>に<ruby>着<rt>つ</rt></ruby>く<mark><ruby>予定<rt>よてい</rt></ruby>です</mark>。</div>
+    <div class="romaji">Hikōki wa jū-ji ni tsuku yotei desu.</div>
+    <div class="tr">Uçak 10'da varacak (planda).</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>明日<rt>あした</rt></ruby>は<ruby>出張<rt>しゅっちょう</rt></ruby>の<mark><ruby>予定<rt>よてい</rt></ruby>です</mark>。</div>
+    <div class="romaji">Ashita wa shutchō no yotei desu.</div>
+    <div class="tr">Yarın iş gezisi planım var. (N + の + 予定)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>来月<rt>らいげつ</rt></ruby>、<ruby>引<rt>ひ</rt></ruby>っ<ruby>越<rt>こ</rt></ruby>す<mark><ruby>予定<rt>よてい</rt></ruby>です</mark>。</div>
+    <div class="romaji">Raigetsu, hikkosu yotei desu.</div>
+    <div class="tr">Gelecek ay taşınma planım var.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">パーティーは<ruby>何時<rt>なんじ</rt></ruby>に<ruby>終<rt>お</rt></ruby>わる<mark><ruby>予定<rt>よてい</rt></ruby>ですか</mark>。</div>
+    <div class="romaji">Pātī wa nan-ji ni owaru yotei desu ka?</div>
+    <div class="tr">Parti kaçta bitecek (planda)?</div>
+    <div class="usage-tag">📅 Program</div>
+  </div>
+</section>
+<!-- ═══ ながら ═══ -->
+<section class="section" id="nagara">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">🎧</div>
+    <div>
+      <h2>〜ながら — "...arak / aynı anda"</h2>
+      <p class="subtitle">Aynı kişi iki eylemi aynı anda yapar (asıl eylem sonda).</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>ますkök + ながら、〜</code> → <ruby>聞<rt>き</rt></ruby>きます→<ruby>聞<rt>き</rt></ruby>き<u>ながら</u>. İki eylem de aynı özneye ait.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聞<rt>き</rt></ruby>き<mark>ながら</mark>、<ruby>勉強<rt>べんきょう</rt></ruby>します。</div>
+    <div class="romaji">Ongaku o kikinagara, benkyō shimasu.</div>
+    <div class="tr">Müzik dinleyerek çalışırım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">テレビを<ruby>見<rt>み</rt></ruby><mark>ながら</mark>、ご<ruby>飯<rt>はん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べます。</div>
+    <div class="romaji">Terebi o minagara, gohan o tabemasu.</div>
+    <div class="tr">TV izleyerek yemek yerim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>歩<rt>ある</rt></ruby>き<mark>ながら</mark>、<ruby>電話<rt>でんわ</rt></ruby>しないでください。</div>
+    <div class="romaji">Arukinagara, denwa shinaide kudasai.</div>
+    <div class="tr">Yürürken telefonla konuşma.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">コーヒーを<ruby>飲<rt>の</rt></ruby>み<mark>ながら</mark>、<ruby>新聞<rt>しんぶん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>みます。</div>
+    <div class="romaji">Kōhī o nominagara, shinbun o yomimasu.</div>
+    <div class="tr">Kahve içerek gazete okurum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">アルバイトをし<mark>ながら</mark>、<ruby>大学<rt>だいがく</rt></ruby>に<ruby>通<rt>かよ</rt></ruby>っています。</div>
+    <div class="romaji">Arubaito o shinagara, daigaku ni kayotte imasu.</div>
+    <div class="tr">Yarı zamanlı çalışırken üniversiteye gidiyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>泣<rt>な</rt></ruby>き<mark>ながら</mark>、<ruby>話<rt>はな</rt></ruby>しました。</div>
+    <div class="romaji">Kanojo wa nakinagara, hanashimashita.</div>
+    <div class="tr">O ağlayarak konuştu.</div>
+    <div class="usage-tag">🎧 Aynı anda</div>
+  </div>
+</section>
+
+<!-- ═══ すぎる ═══ -->
+<section class="section" id="sugiru">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--orange-light);">🈵</div>
+    <div>
+      <h2>〜すぎる — "Aşırı / çok fazla"</h2>
+      <p class="subtitle">Gereğinden fazla; genelde olumsuz sonuç.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>ますkök + すぎる</code> · <code>いadj (い at) + すぎる</code> · <code>なadj + すぎる</code>.<br>
+    <ruby>食<rt>た</rt></ruby>べます→<ruby>食<rt>た</rt></ruby>べすぎる · <ruby>高<rt>たか</rt></ruby>い→<ruby>高<rt>たか</rt></ruby>すぎる · <ruby>静<rt>しず</rt></ruby>か→<ruby>静<rt>しず</rt></ruby>かすぎる. (いい→よすぎる)</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>食<rt>た</rt></ruby>べ<mark>すぎて</mark>、お<ruby>腹<rt>なか</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>いです。</div>
+    <div class="romaji">Tabesugite, onaka ga itai desu.</div>
+    <div class="tr">Çok yedim, karnım ağrıyor.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">このかばんは<ruby>高<rt>たか</rt></ruby><mark>すぎます</mark>。</div>
+    <div class="romaji">Kono kaban wa takasugimasu.</div>
+    <div class="tr">Bu çanta çok pahalı.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>昨日<rt>きのう</rt></ruby>、お<ruby>酒<rt>さけ</rt></ruby>を<ruby>飲<rt>の</rt></ruby>み<mark>すぎました</mark>。</div>
+    <div class="romaji">Kinō, osake o nomisugimashita.</div>
+    <div class="tr">Dün çok içki içtim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>問題<rt>もんだい</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>し<mark>すぎて</mark>、<ruby>分<rt>わ</rt></ruby>かりません。</div>
+    <div class="romaji">Kono mondai wa muzukashisugite, wakarimasen.</div>
+    <div class="tr">Bu soru çok zor, anlamıyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>運動<rt>うんどう</rt></ruby>し<mark>すぎる</mark>と、<ruby>体<rt>からだ</rt></ruby>に<ruby>悪<rt>わる</rt></ruby>いです。</div>
+    <div class="romaji">Undō shisugiru to, karada ni warui desu.</div>
+    <div class="tr">Aşırı spor yapmak vücuda zarar verir.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>部屋<rt>へや</rt></ruby>は<ruby>静<rt>しず</rt></ruby>か<mark>すぎて</mark>、<ruby>寂<rt>さび</rt></ruby>しいです。</div>
+    <div class="romaji">Kono heya wa shizukasugite, sabishii desu.</div>
+    <div class="tr">Bu oda fazla sessiz, iç sıkıcı.</div>
+    <div class="usage-tag">🈵 Aşırılık</div>
+  </div>
+</section>
+
+<!-- ═══ やすい・にくい ═══ -->
+<section class="section" id="yasui-nikui">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--matcha-light);">⚖️</div>
+    <div>
+      <h2>〜やすい・〜にくい — "...ması kolay / zor"</h2>
+      <p class="subtitle">Bir eylemin kolay/zor oluşu. いadj gibi çekilir.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>ますkök + やすい</code> (kolay) · <code>+ にくい</code> (zor). → <ruby>読<rt>よ</rt></ruby>みます→<ruby>読<rt>よ</rt></ruby>み<u>やすい</u>/<ruby>読<rt>よ</rt></ruby>み<u>にくい</u>.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>本<rt>ほん</rt></ruby>は<ruby>字<rt>じ</rt></ruby>が<ruby>大<rt>おお</rt></ruby>きくて、<ruby>読<rt>よ</rt></ruby>み<mark>やすい</mark>です。</div>
+    <div class="romaji">Kono hon wa ji ga ōkikute, yomiyasui desu.</div>
+    <div class="tr">Bu kitabın yazısı büyük, okuması kolay.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">このペンは<ruby>書<rt>か</rt></ruby>き<mark>やすい</mark>です。</div>
+    <div class="romaji">Kono pen wa kakiyasui desu.</div>
+    <div class="tr">Bu kalemle yazmak kolay.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>薬<rt>くすり</rt></ruby>は<ruby>苦<rt>にが</rt></ruby>くて、<ruby>飲<rt>の</rt></ruby>み<mark>にくい</mark>です。</div>
+    <div class="romaji">Kono kusuri wa nigakute, nominikui desu.</div>
+    <div class="tr">Bu ilaç acı, içmesi zor.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>雨<rt>あめ</rt></ruby>の<ruby>日<rt>ひ</rt></ruby>は<ruby>道<rt>みち</rt></ruby>が<ruby>滑<rt>すべ</rt></ruby>り<mark>やすい</mark>です。</div>
+    <div class="romaji">Ame no hi wa michi ga suberiyasui desu.</div>
+    <div class="tr">Yağmurlu günlerde yol kaygandır.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>田中<rt>たなか</rt></ruby><ruby>先生<rt>せんせい</rt></ruby>の<ruby>話<rt>はなし</rt></ruby>は<ruby>分<rt>わ</rt></ruby>かり<mark>やすい</mark>です。</div>
+    <div class="romaji">Tanaka sensei no hanashi wa wakariyasui desu.</div>
+    <div class="tr">Tanaka öğretmenin anlatımı anlaşılır.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>肉<rt>にく</rt></ruby>は<ruby>硬<rt>かた</rt></ruby>くて、<ruby>食<rt>た</rt></ruby>べ<mark>にくい</mark>です。</div>
+    <div class="romaji">Kono niku wa katakute, tabenikui desu.</div>
+    <div class="tr">Bu et sert, yemesi zor.</div>
+    <div class="usage-tag">⚖️ Kolay/zor</div>
+  </div>
+</section>
+
+<!-- ═══ 方（かた）═══ -->
+<section class="section" id="kata">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--purple-light);">🛠️</div>
+    <div>
+      <h2>〜<ruby>方<rt>かた</rt></ruby> — "...yapılış şekli / nasıl ...ılır"</h2>
+      <p class="subtitle">Bir eylemin yöntemi/biçimi.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>ますkök + <ruby>方<rt>かた</rt></ruby></code> → <ruby>作<rt>つく</rt></ruby>ります→<ruby>作<rt>つく</rt></ruby>り<u>方</u> (yapılışı). Nesne partikeli genelde <code>の</code> olur: <ruby>漢字<rt>かんじ</rt></ruby><u>の</u><ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>読<rt>よ</rt></ruby>み<mark><ruby>方<rt>かた</rt></ruby></mark>が<ruby>分<rt>わ</rt></ruby>かりません。</div>
+    <div class="romaji">Kono kanji no yomikata ga wakarimasen.</div>
+    <div class="tr">Bu kanjinin okunuşunu bilmiyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>料理<rt>りょうり</rt></ruby>の<ruby>作<rt>つく</rt></ruby>り<mark><ruby>方<rt>かた</rt></ruby></mark>を<ruby>教<rt>おし</rt></ruby>えてください。</div>
+    <div class="romaji">Ryōri no tsukurikata o oshiete kudasai.</div>
+    <div class="tr">Yemeğin yapılışını öğret.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>機械<rt>きかい</rt></ruby>の<ruby>使<rt>つか</rt></ruby>い<mark><ruby>方<rt>かた</rt></ruby></mark>は<ruby>簡単<rt>かんたん</rt></ruby>です。</div>
+    <div class="romaji">Kono kikai no tsukaikata wa kantan desu.</div>
+    <div class="tr">Bu makinenin kullanımı kolay.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>駅<rt>えき</rt></ruby>までの<ruby>行<rt>い</rt></ruby>き<mark><ruby>方<rt>かた</rt></ruby></mark>を<ruby>教<rt>おし</rt></ruby>えてもらえますか。</div>
+    <div class="romaji">Eki made no ikikata o oshiete moraemasu ka?</div>
+    <div class="tr">İstasyona nasıl gidileceğini söyler misin?</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>漢字<rt>かんじ</rt></ruby>の<ruby>書<rt>か</rt></ruby>き<mark><ruby>方<rt>かた</rt></ruby></mark>を<ruby>練習<rt>れんしゅう</rt></ruby>します。</div>
+    <div class="romaji">Kanji no kakikata o renshū shimasu.</div>
+    <div class="tr">Kanji yazma şeklini çalışırım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>彼<rt>かれ</rt></ruby>の<ruby>考<rt>かんが</rt></ruby>え<mark><ruby>方<rt>かた</rt></ruby></mark>が<ruby>好<rt>す</rt></ruby>きです。</div>
+    <div class="romaji">Kare no kangaekata ga suki desu.</div>
+    <div class="tr">Onun düşünce tarzını seviyorum.</div>
+    <div class="usage-tag">🛠️ Yöntem</div>
+  </div>
+</section>
+
+<!-- ═══ かどうか ═══ -->
+<section class="section" id="kadouka">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">❓</div>
+    <div>
+      <h2>〜かどうか — "...olup olmadığı"</h2>
+      <p class="subtitle">Evet/hayır sorusunu cümleye gömme.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>[Sade form] + かどうか</code> (N/なadj sonuna <code>だ</code> GELMEZ).<br>
+    💡 Soru kelimesi varsa <code>かどうか</code> yerine sadece <code>か</code>: <ruby>誰<rt>だれ</rt></ruby>が<ruby>来<rt>く</rt></ruby>るか<ruby>分<rt>わ</rt></ruby>からない.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>彼<rt>かれ</rt></ruby>が<ruby>来<rt>く</rt></ruby>る<mark>かどうか</mark><ruby>分<rt>わ</rt></ruby>かりません。</div>
+    <div class="romaji">Kare ga kuru ka dō ka wakarimasen.</div>
+    <div class="tr">Onun gelip gelmeyeceğini bilmiyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">これでいい<mark>かどうか</mark>、<ruby>見<rt>み</rt></ruby>てください。</div>
+    <div class="romaji">Kore de ii ka dō ka, mite kudasai.</div>
+    <div class="tr">Bu böyle iyi mi bir bakın.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>試験<rt>しけん</rt></ruby>に<ruby>合格<rt>ごうかく</rt></ruby>した<mark>かどうか</mark>、まだ<ruby>分<rt>わ</rt></ruby>かりません。</div>
+    <div class="romaji">Shiken ni gōkaku shita ka dō ka, mada wakarimasen.</div>
+    <div class="tr">Sınavı geçip geçmediğimi henüz bilmiyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>店<rt>みせ</rt></ruby>がおいしい<mark>かどうか</mark>、<ruby>食<rt>た</rt></ruby>べてみましょう。</div>
+    <div class="romaji">Kono mise ga oishii ka dō ka, tabete mimashō.</div>
+    <div class="tr">Bu dükkân lezzetli mi bir yiyip görelim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">パーティーに<ruby>行<rt>い</rt></ruby>く<mark>かどうか</mark>、まだ<ruby>決<rt>き</rt></ruby>めていません。</div>
+    <div class="romaji">Pātī ni iku ka dō ka, mada kimete imasen.</div>
+    <div class="tr">Partiye gidip gitmeyeceğime henüz karar vermedim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>本当<rt>ほんとう</rt></ruby><mark>かどうか</mark>、<ruby>確<rt>たし</rt></ruby>かめます。</div>
+    <div class="romaji">Hontō ka dō ka, tashikamemasu.</div>
+    <div class="tr">Doğru mu değil mi kontrol ederim.</div>
+    <div class="usage-tag">❓ Olup olmadığı</div>
+  </div>
+</section>
+
+<!-- ═══ と思う・と言っていた ═══ -->
+<section class="section" id="to-omou">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--matcha-light);">💭</div>
+    <div>
+      <h2>〜と<ruby>思<rt>おも</rt></ruby>う・〜と<ruby>言<rt>い</rt></ruby>っていた — Görüş & Aktarım</h2>
+      <p class="subtitle">Fikir belirtme ve başkasının sözünü aktarma.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>[Sade form] + と<ruby>思<rt>おも</rt></ruby>う</code> = "...diye düşünüyorum".<br>
+    <code>[Sade form] + と<ruby>言<rt>い</rt></ruby>っていた</code> = "...dedi / söylüyordu" (aktarım).</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る<mark>と<ruby>思<rt>おも</rt></ruby>います</mark>。</div>
+    <div class="romaji">Ashita wa ame ga furu to omoimasu.</div>
+    <div class="tr">Yarın yağmur yağar diye düşünüyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>映画<rt>えいが</rt></ruby>はおもしろい<mark>と<ruby>思<rt>おも</rt></ruby>います</mark>。</div>
+    <div class="romaji">Kono eiga wa omoshiroi to omoimasu.</div>
+    <div class="tr">Bu filmin ilginç olduğunu düşünüyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>田中<rt>たなか</rt></ruby>さんは<ruby>来<rt>こ</rt></ruby>ない<mark>と<ruby>思<rt>おも</rt></ruby>う</mark>。</div>
+    <div class="romaji">Tanaka-san wa konai to omou.</div>
+    <div class="tr">Bence Tanaka gelmez.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>先生<rt>せんせい</rt></ruby>は<ruby>明日<rt>あした</rt></ruby><ruby>試験<rt>しけん</rt></ruby>がある<mark>と<ruby>言<rt>い</rt></ruby>っていました</mark>。</div>
+    <div class="romaji">Sensei wa ashita shiken ga aru to itte imashita.</div>
+    <div class="tr">Öğretmen yarın sınav olduğunu söylüyordu.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>彼<rt>かれ</rt></ruby>は<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きたい<mark>と<ruby>言<rt>い</rt></ruby>っていました</mark>。</div>
+    <div class="romaji">Kare wa Nihon e ikitai to itte imashita.</div>
+    <div class="tr">O Japonya'ya gitmek istediğini söylüyordu.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">これが<ruby>一番<rt>いちばん</rt></ruby>いい<mark>と<ruby>思<rt>おも</rt></ruby>います</mark>。</div>
+    <div class="romaji">Kore ga ichiban ii to omoimasu.</div>
+    <div class="tr">Bunun en iyisi olduğunu düşünüyorum.</div>
+    <div class="usage-tag">💭 Görüş/aktarım</div>
+  </div>
+</section>
+<!-- ═══ まま ═══ -->
+<section class="section" id="mama">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">🔒</div>
+    <div>
+      <h2>〜まま — "...haliyle / ...bırakarak"</h2>
+      <p class="subtitle">Bir durum değişmeden başka bir şey yapmak/kalmak.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong> <code>Vた形 + まま</code> (yaptığı halde sürüyor) · <code>Vない形 + まま</code> · <code>N + の + まま</code> · <code>なadj + な + まま</code>.</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>電気<rt>でんき</rt></ruby>を つけた<mark>まま</mark>、<ruby>寝<rt>ね</rt></ruby>てしまいました。</div>
+    <div class="romaji">Denki o tsuketa mama, nete shimaimashita.</div>
+    <div class="tr">Işığı açık bırakarak uyuyakaldım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>靴<rt>くつ</rt></ruby>を <ruby>履<rt>は</rt></ruby>いた<mark>まま</mark>、<ruby>入<rt>はい</rt></ruby>らないでください。</div>
+    <div class="romaji">Kutsu o haita mama, hairanaide kudasai.</div>
+    <div class="tr">Ayakkabıyla (giymiş halde) girmeyin.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>窓<rt>まど</rt></ruby>を <ruby>開<rt>あ</rt></ruby>けた<mark>まま</mark>、<ruby>出<rt>で</rt></ruby>かけました。</div>
+    <div class="romaji">Mado o aketa mama, dekakemashita.</div>
+    <div class="tr">Pencereyi açık bırakarak çıktım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>立<rt>た</rt></ruby>った<mark>まま</mark>、<ruby>話<rt>はな</rt></ruby>しましょう。</div>
+    <div class="romaji">Tatta mama, hanashimashō.</div>
+    <div class="tr">Ayakta (durur halde) konuşalım.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>昔<rt>むかし</rt></ruby>の<mark>まま</mark>、<ruby>何<rt>なに</rt></ruby>も<ruby>変<rt>か</rt></ruby>わっていません。</div>
+    <div class="romaji">Mukashi no mama, nani mo kawatte imasen.</div>
+    <div class="tr">Eskisi gibi, hiçbir şey değişmemiş. (N + の + まま)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">テレビを つけた<mark>まま</mark>にしないでください。</div>
+    <div class="romaji">Terebi o tsuketa mama ni shinaide kudasai.</div>
+    <div class="tr">TV'yi açık bırakmayın.</div>
+    <div class="usage-tag">🔒 Değişmeyen hal</div>
+  </div>
+</section>
+
+<!-- ═══ ば〜ほど ═══ -->
+<section class="section" id="bahodo">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--matcha-light);">📈</div>
+    <div>
+      <h2>〜ば〜ほど — "...dıkça (daha da)..."</h2>
+      <p class="subtitle">Bir şey arttıkça diğerinin de artması.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Yapım:</strong><br>
+    Fiil: <code>〜ば + <ruby>辞書形<rt>じしょけい</rt></ruby> + ほど</code> → <ruby>練習<rt>れんしゅう</rt></ruby>すれば<ruby>練習<rt>れんしゅう</rt></ruby>するほど<br>
+    いadj: <code>〜ければ + い + ほど</code> → <ruby>高<rt>たか</rt></ruby>ければ<ruby>高<rt>たか</rt></ruby>いほど<br>
+    なadj: <code>〜なら + な + ほど</code> → <ruby>便利<rt>べんり</rt></ruby>なら<ruby>便利<rt>べんり</rt></ruby>なほど</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>練習<rt>れんしゅう</rt></ruby><mark>すればするほど</mark>、<ruby>上手<rt>じょうず</rt></ruby>になります。</div>
+    <div class="romaji">Renshū sureba suru hodo, jōzu ni narimasu.</div>
+    <div class="tr">Alıştırma yaptıkça daha iyi olursun.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>考<rt>かんが</rt></ruby><mark>えれば<ruby>考<rt>かんが</rt></ruby>えるほど</mark>、<ruby>分<rt>わ</rt></ruby>からなくなります。</div>
+    <div class="romaji">Kangaereba kangaeru hodo, wakaranaku narimasu.</div>
+    <div class="tr">Düşündükçe daha da anlaşılmaz oluyor.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">この<ruby>本<rt>ほん</rt></ruby>は<ruby>読<rt>よ</rt></ruby><mark>めば<ruby>読<rt>よ</rt></ruby>むほど</mark>、おもしろいです。</div>
+    <div class="romaji">Kono hon wa yomeba yomu hodo, omoshiroi desu.</div>
+    <div class="tr">Bu kitap okudukça ilginçleşiyor.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>給料<rt>きゅうりょう</rt></ruby>は<ruby>高<rt>たか</rt></ruby><mark>ければ<ruby>高<rt>たか</rt></ruby>いほど</mark>いいです。</div>
+    <div class="romaji">Kyūryō wa takakereba takai hodo ii desu.</div>
+    <div class="tr">Maaş ne kadar yüksekse o kadar iyi.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>日本語<rt>にほんご</rt></ruby>は<ruby>勉強<rt>べんきょう</rt></ruby><mark>すればするほど</mark>、<ruby>好<rt>す</rt></ruby>きになります。</div>
+    <div class="romaji">Nihongo wa benkyō sureba suru hodo, suki ni narimasu.</div>
+    <div class="tr">Japoncayı çalıştıkça seviyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>道具<rt>どうぐ</rt></ruby>は<ruby>便利<rt>べんり</rt></ruby><mark>なら<ruby>便利<rt>べんり</rt></ruby>なほど</mark>いいです。</div>
+    <div class="romaji">Dōgu wa benri nara benri na hodo ii desu.</div>
+    <div class="tr">Alet ne kadar pratikse o kadar iyi.</div>
+    <div class="usage-tag">📈 ...dıkça</div>
+  </div>
+</section>
+
+<!-- ═══ 疑問詞＋も・でも・か ═══ -->
+<section class="section" id="gimonshi">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--orange-light);">✳️</div>
+    <div>
+      <h2><ruby>疑問詞<rt>ぎもんし</rt></ruby>＋も／でも／か — Herkes / Hiç / Bir şey</h2>
+      <p class="subtitle">Soru kelimesi + ek → belgisiz/kapsayıcı anlam.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Üç kalıp:</strong><br>
+    <code>疑問詞 + も</code> (+ olumsuz) = hiç → <ruby>誰<rt>だれ</rt></ruby>も (kimse) · <ruby>何<rt>なに</rt></ruby>も (hiçbir şey)<br>
+    <code>疑問詞 + か</code> = belirsiz → <ruby>誰<rt>だれ</rt></ruby>か (birisi) · <ruby>何<rt>なに</rt></ruby>か (bir şey) · どこか (bir yer)<br>
+    <code>疑問詞 + でも</code> = tümü → <ruby>誰<rt>だれ</rt></ruby>でも (herkes) · <ruby>何<rt>なん</rt></ruby>でも (her şey) · いつでも (her zaman)</div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>教室<rt>きょうしつ</rt></ruby>には<mark><ruby>誰<rt>だれ</rt></ruby>も</mark>いません。</div>
+    <div class="romaji">Kyōshitsu ni wa dare mo imasen.</div>
+    <div class="tr">Sınıfta kimse yok.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><mark><ruby>何<rt>なに</rt></ruby>か</mark><ruby>食<rt>た</rt></ruby>べましたか。</div>
+    <div class="romaji">Nanika tabemashita ka?</div>
+    <div class="tr">Bir şey yedin mi?</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">このゲームは<mark><ruby>誰<rt>だれ</rt></ruby>でも</mark>できます。</div>
+    <div class="romaji">Kono gēmu wa dare demo dekimasu.</div>
+    <div class="tr">Bu oyunu herkes yapabilir.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><mark><ruby>何<rt>なん</rt></ruby>でも</mark><ruby>食<rt>た</rt></ruby>べます。</div>
+    <div class="romaji">Nan demo tabemasu.</div>
+    <div class="tr">Her şeyi yerim.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><mark>どこか</mark>へ<ruby>行<rt>い</rt></ruby>きたいです。</div>
+    <div class="romaji">Dokoka e ikitai desu.</div>
+    <div class="tr">Bir yere gitmek istiyorum.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><mark>いつでも</mark><ruby>来<rt>き</rt></ruby>てください。</div>
+    <div class="romaji">Itsu demo kite kudasai.</div>
+    <div class="tr">İstediğin zaman gel.</div>
+    <div class="usage-tag">✳️ Belgisiz</div>
+  </div>
+</section>
+
+<!-- ═══ 自動詞・他動詞 ═══ -->
+<section class="section" id="jita">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--purple-light);">🔁</div>
+    <div>
+      <h2><ruby>自動詞<rt>じどうし</rt></ruby>・<ruby>他動詞<rt>たどうし</rt></ruby> — Geçişsiz / Geçişli Çiftler</h2>
+      <p class="subtitle">他動詞 (özne yapar, を) vs 自動詞 (kendiliğinden olur, が).</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Kural:</strong> <code><ruby>他動詞<rt>たどうし</rt></ruby></code> = biri yapar → nesne <code>を</code>. <code><ruby>自動詞<rt>じどうし</rt></ruby></code> = kendi olur → özne <code>が</code>.<br>
+    Durum: <code>自動詞 + ている</code> (kapı açık) · <code>他動詞 + てある</code> (bilerek açılmış).</div>
+
+  <div class="card">
+    <div class="card-title">📊 Sık çiftler</div>
+    <div class="table-scroll"><table class="group-table">
+      <tr><th><ruby>他動詞<rt>たどうし</rt></ruby> (を)</th><th><ruby>自動詞<rt>じどうし</rt></ruby> (が)</th><th>Anlam</th></tr>
+      <tr><td><ruby>開<rt>あ</rt></ruby>ける</td><td><ruby>開<rt>あ</rt></ruby>く</td><td>açmak / açılmak</td></tr>
+      <tr><td><ruby>閉<rt>し</rt></ruby>める</td><td><ruby>閉<rt>し</rt></ruby>まる</td><td>kapatmak / kapanmak</td></tr>
+      <tr><td>つける</td><td>つく</td><td>yakmak / yanmak</td></tr>
+      <tr><td><ruby>消<rt>け</rt></ruby>す</td><td><ruby>消<rt>き</rt></ruby>える</td><td>söndürmek / sönmek</td></tr>
+      <tr><td><ruby>始<rt>はじ</rt></ruby>める</td><td><ruby>始<rt>はじ</rt></ruby>まる</td><td>başlatmak / başlamak</td></tr>
+      <tr><td><ruby>止<rt>と</rt></ruby>める</td><td><ruby>止<rt>と</rt></ruby>まる</td><td>durdurmak / durmak</td></tr>
+    </table></div>
+  </div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence">ドアを<mark><ruby>開<rt>あ</rt></ruby>けます</mark>。／ドアが<mark><ruby>開<rt>あ</rt></ruby>きます</mark>。</div>
+    <div class="romaji">Doa o akemasu. / Doa ga akimasu.</div>
+    <div class="tr">Kapıyı açarım. / Kapı açılır.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>電気<rt>でんき</rt></ruby>を<mark>つけました</mark>。／<ruby>電気<rt>でんき</rt></ruby>が<mark>つきました</mark>。</div>
+    <div class="romaji">Denki o tsukemashita. / Denki ga tsukimashita.</div>
+    <div class="tr">Işığı yaktım. / Işık yandı.</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>窓<rt>まど</rt></ruby>が<mark><ruby>閉<rt>し</rt></ruby>まっています</mark>。</div>
+    <div class="romaji">Mado ga shimatte imasu.</div>
+    <div class="tr">Pencere kapalı. (自動詞 + ている = durum)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>授業<rt>じゅぎょう</rt></ruby>が<mark><ruby>始<rt>はじ</rt></ruby>まりました</mark>。</div>
+    <div class="romaji">Jugyō ga hajimarimashita.</div>
+    <div class="tr">Ders başladı. (自動詞)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">バスが<mark><ruby>止<rt>と</rt></ruby>まりました</mark>。</div>
+    <div class="romaji">Basu ga tomarimashita.</div>
+    <div class="tr">Otobüs durdu. (自動詞)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence">エアコンを<mark><ruby>消<rt>け</rt></ruby>して</mark>ください。</div>
+    <div class="romaji">Eakon o keshite kudasai.</div>
+    <div class="tr">Klimayı kapatın. (他動詞)</div>
+    <div class="usage-tag">🔁 Geçişli/geçişsiz</div>
+  </div>
+</section>
+
+<!-- ═══ 敬語 ═══ -->
+<section class="section" id="keigo">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">🎎</div>
+    <div>
+      <h2><ruby>敬語<rt>けいご</rt></ruby> — Saygı Dili (Giriş)</h2>
+      <p class="subtitle">尊敬語 (karşıyı yükselt) · 謙譲語 (kendini alçalt) · 丁寧語 (です/ます).</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold"><strong>Genel kalıplar:</strong><br>
+    <ruby>尊敬語<rt>そんけいご</rt></ruby>: <code>お + ますkök + になる</code> → お<ruby>帰<rt>かえ</rt></ruby>りになる. Ya da <code>〜(ら)れる</code>.<br>
+    <ruby>謙譲語<rt>けんじょうご</rt></ruby>: <code>お + ますkök + する</code> → お<ruby>持<rt>も</rt></ruby>ちする.</div>
+
+  <div class="card">
+    <div class="card-title">📊 Özel fiiller (ezberle)</div>
+    <div class="table-scroll"><table class="group-table">
+      <tr><th>Normal</th><th>尊敬語 (saygı)</th><th>謙譲語 (alçak)</th></tr>
+      <tr><td><ruby>行<rt>い</rt></ruby>く/<ruby>来<rt>く</rt></ruby>る</td><td>いらっしゃる</td><td><ruby>参<rt>まい</rt></ruby>る</td></tr>
+      <tr><td><ruby>食<rt>た</rt></ruby>べる/<ruby>飲<rt>の</rt></ruby>む</td><td><ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がる</td><td>いただく</td></tr>
+      <tr><td><ruby>見<rt>み</rt></ruby>る</td><td>ご<ruby>覧<rt>らん</rt></ruby>になる</td><td><ruby>拝見<rt>はいけん</rt></ruby>する</td></tr>
+      <tr><td><ruby>言<rt>い</rt></ruby>う</td><td>おっしゃる</td><td><ruby>申<rt>もう</rt></ruby>す</td></tr>
+      <tr><td>する</td><td>なさる</td><td>いたす</td></tr>
+    </table></div>
+  </div>
+
+  <h3 class="h3title">📖 Örnek cümleler</h3>
+  <div class="example">
+    <div class="jp-sentence"><ruby>先生<rt>せんせい</rt></ruby>はもう お<ruby>帰<rt>かえ</rt></ruby>りに<mark>なりました</mark>。</div>
+    <div class="romaji">Sensei wa mō okaeri ni narimashita.</div>
+    <div class="tr">Öğretmen çoktan gitti. (尊敬語)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>何<rt>なに</rt></ruby>を<mark><ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がりますか</mark>。</div>
+    <div class="romaji">Nani o meshiagarimasu ka?</div>
+    <div class="tr">Ne yersiniz/içersiniz? (尊敬語)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>社長<rt>しゃちょう</rt></ruby>がそう<mark>おっしゃいました</mark>。</div>
+    <div class="romaji">Shachō ga sō osshaimashita.</div>
+    <div class="tr">Müdür öyle dedi. (尊敬語)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>私<rt>わたし</rt></ruby>が<ruby>荷物<rt>にもつ</rt></ruby>を<mark>お<ruby>持<rt>も</rt></ruby>ちします</mark>。</div>
+    <div class="romaji">Watashi ga nimotsu o omochi shimasu.</div>
+    <div class="tr">Bagajınızı ben taşıyayım. (謙譲語)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>明日<rt>あした</rt></ruby>、そちらへ<mark><ruby>参<rt>まい</rt></ruby>ります</mark>。</div>
+    <div class="romaji">Ashita, sochira e mairimasu.</div>
+    <div class="tr">Yarın oraya geleceğim. (謙譲語)</div>
+  </div>
+  <div class="example">
+    <div class="jp-sentence"><ruby>資料<rt>しりょう</rt></ruby>を<mark><ruby>拝見<rt>はいけん</rt></ruby>しました</mark>。</div>
+    <div class="romaji">Shiryō o haiken shimashita.</div>
+    <div class="tr">Belgeyi inceledim/gördüm. (謙譲語)</div>
+    <div class="usage-tag">🎎 Saygı dili</div>
+  </div>
+</section>
+<!-- ═══ N4 KANJI ═══ -->
+<section class="section" id="kanji-n4">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--sakura-light);">🈵</div>
+    <div>
+      <h2>N4 Kanji — Çekirdek Liste (~150)</h2>
+      <p class="subtitle">N5'in üstüne gelen yeni kanjiler. Okunuş (kana) + anlam + örnek kelime.</p>
+    </div>
+  </div>
+
+  <div class="rule-box gold">💡 Sınavda kanji hem <u>okunuş</u> (kanji→kana) hem <u>yazım/anlam</u> (kelime→kanji) olarak çıkar. Örnek kelimeleri sesli oku.</div>
+
+  <div class="card">
+    <div class="card-title">🧑‍🤝‍🧑 İnsan · Aile · Toplum</div>
+    <div class="table-scroll"><table class="group-table">
+      <tr><th>Kanji</th><th>Okunuş</th><th>Anlam</th><th>Örnek</th></tr>
+      <tr><td>力</td><td>ちから・リョク</td><td>güç</td><td><ruby>力<rt>ちから</rt></ruby> · <ruby>電力<rt>でんりょく</rt></ruby></td></tr>
+      <tr><td>元</td><td>もと・ゲン</td><td>kaynak/asıl</td><td><ruby>元気<rt>げんき</rt></ruby></td></tr>
+      <tr><td>兄</td><td>あに・キョウ</td><td>ağabey</td><td><ruby>兄<rt>あに</rt></ruby> · <ruby>兄弟<rt>きょうだい</rt></ruby></td></tr>
+      <tr><td>姉</td><td>あね・シ</td><td>abla</td><td><ruby>姉<rt>あね</rt></ruby></td></tr>
+      <tr><td>妹</td><td>いもうと</td><td>küçük kız kardeş</td><td><ruby>妹<rt>いもうと</rt></ruby></td></tr>
+      <tr><td>弟</td><td>おとうと</td><td>küçük erkek kardeş</td><td><ruby>弟<rt>おとうと</rt></ruby></td></tr>
+      <tr><td>親</td><td>おや・シン</td><td>ebeveyn</td><td><ruby>両親<rt>りょうしん</rt></ruby></td></tr>
+      <tr><td>族</td><td>ゾク</td><td>klan/aile</td><td><ruby>家族<rt>かぞく</rt></ruby></td></tr>
+      <tr><td>員</td><td>イン</td><td>üye/görevli</td><td><ruby>店員<rt>てんいん</rt></ruby> · <ruby>社員<rt>しゃいん</rt></ruby></td></tr>
+      <tr><td>者</td><td>もの・シャ</td><td>kişi</td><td><ruby>医者<rt>いしゃ</rt></ruby></td></tr>
+      <tr><td>民</td><td>ミン</td><td>halk</td><td><ruby>市民<rt>しみん</rt></ruby></td></tr>
+      <tr><td>不</td><td>フ</td><td>-sız/değil</td><td><ruby>不便<rt>ふべん</rt></ruby></td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🏙️ Yer · Yön · Ulaşım</div>
+    <div class="table-scroll"><table class="group-table">
+      <tr><th>Kanji</th><th>Okunuş</th><th>Anlam</th><th>Örnek</th></tr>
+      <tr><td>場</td><td>ば・ジョウ</td><td>yer/alan</td><td><ruby>場所<rt>ばしょ</rt></ruby> · <ruby>会場<rt>かいじょう</rt></ruby></td></tr>
+      <tr><td>屋</td><td>や・オク</td><td>dükkân/çatı</td><td><ruby>部屋<rt>へや</rt></ruby> · <ruby>本屋<rt>ほんや</rt></ruby></td></tr>
+      <tr><td>室</td><td>シツ</td><td>oda</td><td><ruby>教室<rt>きょうしつ</rt></ruby></td></tr>
+      <tr><td>院</td><td>イン</td><td>kurum</td><td><ruby>病院<rt>びょういん</rt></ruby></td></tr>
+      <tr><td>館</td><td>カン</td><td>bina/salon</td><td><ruby>図書館<rt>としょかん</rt></ruby></td></tr>
+      <tr><td>堂</td><td>ドウ</td><td>salon</td><td><ruby>食堂<rt>しょくどう</rt></ruby></td></tr>
+      <tr><td>都</td><td>ト・みやこ</td><td>başkent</td><td><ruby>都会<rt>とかい</rt></ruby> · <ruby>京都<rt>きょうと</rt></ruby></td></tr>
+      <tr><td>京</td><td>キョウ</td><td>başkent</td><td><ruby>東京<rt>とうきょう</rt></ruby></td></tr>
+      <tr><td>州</td><td>シュウ</td><td>eyalet/kıta</td><td><ruby>九州<rt>きゅうしゅう</rt></ruby></td></tr>
+      <tr><td>地</td><td>チ・ジ</td><td>toprak/yer</td><td><ruby>地図<rt>ちず</rt></ruby> · <ruby>地下<rt>ちか</rt></ruby></td></tr>
+      <tr><td>鉄</td><td>テツ</td><td>demir</td><td><ruby>地下鉄<rt>ちかてつ</rt></ruby></td></tr>
+      <tr><td>橋</td><td>はし・キョウ</td><td>köprü</td><td><ruby>橋<rt>はし</rt></ruby></td></tr>
+      <tr><td>公</td><td>コウ</td><td>kamu</td><td><ruby>公園<rt>こうえん</rt></ruby></td></tr>
+      <tr><td>園</td><td>エン・その</td><td>bahçe/park</td><td><ruby>公園<rt>こうえん</rt></ruby> · <ruby>動物園<rt>どうぶつえん</rt></ruby></td></tr>
+      <tr><td>道</td><td>みち・ドウ</td><td>yol</td><td><ruby>道<rt>みち</rt></ruby> · <ruby>柔道<rt>じゅうどう</rt></ruby></td></tr>
+      <tr><td>送</td><td>おく(る)・ソウ</td><td>göndermek</td><td><ruby>送<rt>おく</rt></ruby>る</td></tr>
+      <tr><td>運</td><td>はこ(ぶ)・ウン</td><td>taşımak/kader</td><td><ruby>運転<rt>うんてん</rt></ruby></td></tr>
+      <tr><td>転</td><td>テン・ころ(ぶ)</td><td>dönmek</td><td><ruby>運転<rt>うんてん</rt></ruby></td></tr>
+      <tr><td>乗</td><td>の(る)・ジョウ</td><td>binmek</td><td><ruby>乗<rt>の</rt></ruby>る</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🕐 Zaman · Doğa · Sayı</div>
+    <div class="table-scroll"><table class="group-table">
+      <tr><th>Kanji</th><th>Okunuş</th><th>Anlam</th><th>Örnek</th></tr>
+      <tr><td>秋</td><td>あき・シュウ</td><td>sonbahar</td><td><ruby>秋<rt>あき</rt></ruby></td></tr>
+      <tr><td>春</td><td>はる・シュン</td><td>ilkbahar</td><td><ruby>春<rt>はる</rt></ruby></td></tr>
+      <tr><td>夏</td><td>なつ・カ</td><td>yaz</td><td><ruby>夏<rt>なつ</rt></ruby> · <ruby>夏休<rt>なつやす</rt></ruby>み</td></tr>
+      <tr><td>冬</td><td>ふゆ・トウ</td><td>kış</td><td><ruby>冬<rt>ふゆ</rt></ruby></td></tr>
+      <tr><td>朝</td><td>あさ・チョウ</td><td>sabah</td><td><ruby>朝<rt>あさ</rt></ruby> · <ruby>今朝<rt>けさ</rt></ruby></td></tr>
+      <tr><td>昼</td><td>ひる・チュウ</td><td>öğle</td><td><ruby>昼<rt>ひる</rt></ruby></td></tr>
+      <tr><td>夜</td><td>よる・ヤ</td><td>gece</td><td><ruby>夜<rt>よる</rt></ruby> · <ruby>今夜<rt>こんや</rt></ruby></td></tr>
+      <tr><td>世</td><td>よ・セ</td><td>dünya/nesil</td><td><ruby>世界<rt>せかい</rt></ruby></td></tr>
+      <tr><td>界</td><td>カイ</td><td>dünya/alem</td><td><ruby>世界<rt>せかい</rt></ruby></td></tr>
+      <tr><td>洋</td><td>ヨウ</td><td>okyanus/batı</td><td><ruby>洋服<rt>ようふく</rt></ruby></td></tr>
+      <tr><td>海</td><td>うみ・カイ</td><td>deniz</td><td><ruby>海<rt>うみ</rt></ruby></td></tr>
+      <tr><td>山</td><td>やま・サン</td><td>dağ</td><td><ruby>山<rt>やま</rt></ruby> · <ruby>富士山<rt>ふじさん</rt></ruby></td></tr>
+      <tr><td>林</td><td>はやし・リン</td><td>orman</td><td><ruby>林<rt>はやし</rt></ruby></td></tr>
+      <tr><td>森</td><td>もり・シン</td><td>büyük orman</td><td><ruby>森<rt>もり</rt></ruby></td></tr>
+      <tr><td>風</td><td>かぜ・フウ</td><td>rüzgâr</td><td><ruby>風<rt>かぜ</rt></ruby> · <ruby>台風<rt>たいふう</rt></ruby></td></tr>
+      <tr><td>雲</td><td>くも・ウン</td><td>bulut</td><td><ruby>雲<rt>くも</rt></ruby></td></tr>
+      <tr><td>寒</td><td>さむ(い)・カン</td><td>soğuk</td><td><ruby>寒<rt>さむ</rt></ruby>い</td></tr>
+      <tr><td>暑</td><td>あつ(い)・ショ</td><td>sıcak</td><td><ruby>暑<rt>あつ</rt></ruby>い</td></tr>
+      <tr><td>数</td><td>かず・スウ</td><td>sayı</td><td><ruby>数<rt>かず</rt></ruby> · <ruby>数学<rt>すうがく</rt></ruby></td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🏃 Fiil Kanjileri</div>
+    <div class="table-scroll"><table class="group-table">
+      <tr><th>Kanji</th><th>Okunuş</th><th>Anlam</th><th>Örnek</th></tr>
+      <tr><td>使</td><td>つか(う)・シ</td><td>kullanmak</td><td><ruby>使<rt>つか</rt></ruby>う</td></tr>
+      <tr><td>始</td><td>はじ(める)・シ</td><td>başlamak</td><td><ruby>始<rt>はじ</rt></ruby>める</td></tr>
+      <tr><td>終</td><td>お(わる)・シュウ</td><td>bitmek</td><td><ruby>終<rt>お</rt></ruby>わる</td></tr>
+      <tr><td>働</td><td>はたら(く)・ドウ</td><td>çalışmak</td><td><ruby>働<rt>はたら</rt></ruby>く</td></tr>
+      <tr><td>急</td><td>いそ(ぐ)・キュウ</td><td>acele/acil</td><td><ruby>急<rt>いそ</rt></ruby>ぐ · <ruby>急行<rt>きゅうこう</rt></ruby></td></tr>
+      <tr><td>待</td><td>ま(つ)・タイ</td><td>beklemek</td><td><ruby>待<rt>ま</rt></ruby>つ</td></tr>
+      <tr><td>持</td><td>も(つ)・ジ</td><td>tutmak/taşımak</td><td><ruby>持<rt>も</rt></ruby>つ</td></tr>
+      <tr><td>洗</td><td>あら(う)・セン</td><td>yıkamak</td><td><ruby>洗<rt>あら</rt></ruby>う</td></tr>
+      <tr><td>教</td><td>おし(える)・キョウ</td><td>öğretmek</td><td><ruby>教<rt>おし</rt></ruby>える</td></tr>
+      <tr><td>習</td><td>なら(う)・シュウ</td><td>öğrenmek</td><td><ruby>習<rt>なら</rt></ruby>う · <ruby>練習<rt>れんしゅう</rt></ruby></td></tr>
+      <tr><td>研</td><td>ケン</td><td>araştırmak</td><td><ruby>研究<rt>けんきゅう</rt></ruby></td></tr>
+      <tr><td>究</td><td>キュウ</td><td>incelemek</td><td><ruby>研究<rt>けんきゅう</rt></ruby></td></tr>
+      <tr><td>動</td><td>うご(く)・ドウ</td><td>hareket etmek</td><td><ruby>動<rt>うご</rt></ruby>く · <ruby>運動<rt>うんどう</rt></ruby></td></tr>
+      <tr><td>働</td><td>はたら(く)</td><td>çalışmak</td><td><ruby>働<rt>はたら</rt></ruby>く</td></tr>
+      <tr><td>止</td><td>と(まる)・シ</td><td>durmak</td><td><ruby>止<rt>と</rt></ruby>まる · <ruby>中止<rt>ちゅうし</rt></ruby></td></tr>
+      <tr><td>開</td><td>あ(く)・カイ</td><td>açmak</td><td><ruby>開<rt>あ</rt></ruby>く · <ruby>開始<rt>かいし</rt></ruby></td></tr>
+      <tr><td>閉</td><td>し(まる)・ヘイ</td><td>kapanmak</td><td><ruby>閉<rt>し</rt></ruby>まる</td></tr>
+      <tr><td>売</td><td>う(る)・バイ</td><td>satmak</td><td><ruby>売<rt>う</rt></ruby>る</td></tr>
+      <tr><td>買</td><td>か(う)・バイ</td><td>satın almak</td><td><ruby>買<rt>か</rt></ruby>う · <ruby>買物<rt>かいもの</rt></ruby></td></tr>
+      <tr><td>飲</td><td>の(む)・イン</td><td>içmek</td><td><ruby>飲<rt>の</rt></ruby>む</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🧠 Kavram · Sıfat · Soyut</div>
+    <div class="table-scroll"><table class="group-table">
+      <tr><th>Kanji</th><th>Okunuş</th><th>Anlam</th><th>Örnek</th></tr>
+      <tr><td>意</td><td>イ</td><td>anlam/niyet</td><td><ruby>意味<rt>いみ</rt></ruby> · <ruby>意見<rt>いけん</rt></ruby></td></tr>
+      <tr><td>味</td><td>あじ・ミ</td><td>tat</td><td><ruby>味<rt>あじ</rt></ruby> · <ruby>意味<rt>いみ</rt></ruby></td></tr>
+      <tr><td>楽</td><td>たの(しい)・ガク</td><td>keyifli/müzik</td><td><ruby>楽<rt>たの</rt></ruby>しい · <ruby>音楽<rt>おんがく</rt></ruby></td></tr>
+      <tr><td>音</td><td>おと・オン</td><td>ses</td><td><ruby>音<rt>おと</rt></ruby> · <ruby>音楽<rt>おんがく</rt></ruby></td></tr>
+      <tr><td>字</td><td>ジ</td><td>harf/yazı</td><td><ruby>漢字<rt>かんじ</rt></ruby> · <ruby>字<rt>じ</rt></ruby></td></tr>
+      <tr><td>漢</td><td>カン</td><td>Çin/kanji</td><td><ruby>漢字<rt>かんじ</rt></ruby></td></tr>
+      <tr><td>英</td><td>エイ</td><td>İngiliz</td><td><ruby>英語<rt>えいご</rt></ruby></td></tr>
+      <tr><td>質</td><td>シツ</td><td>nitelik/soru</td><td><ruby>質問<rt>しつもん</rt></ruby></td></tr>
+      <tr><td>問</td><td>と(う)・モン</td><td>sormak</td><td><ruby>問題<rt>もんだい</rt></ruby> · <ruby>質問<rt>しつもん</rt></ruby></td></tr>
+      <tr><td>題</td><td>ダイ</td><td>konu/başlık</td><td><ruby>問題<rt>もんだい</rt></ruby> · <ruby>宿題<rt>しゅくだい</rt></ruby></td></tr>
+      <tr><td>宿</td><td>やど・シュク</td><td>konaklama</td><td><ruby>宿題<rt>しゅくだい</rt></ruby></td></tr>
+      <tr><td>試</td><td>ため(す)・シ</td><td>denemek/sınav</td><td><ruby>試験<rt>しけん</rt></ruby> · <ruby>試合<rt>しあい</rt></ruby></td></tr>
+      <tr><td>験</td><td>ケン</td><td>test/deneyim</td><td><ruby>試験<rt>しけん</rt></ruby> · <ruby>経験<rt>けいけん</rt></ruby></td></tr>
+      <tr><td>特</td><td>トク</td><td>özel</td><td><ruby>特<rt>とく</rt></ruby>に · <ruby>特急<rt>とっきゅう</rt></ruby></td></tr>
+      <tr><td>別</td><td>ベツ・わか(れる)</td><td>ayrı/farklı</td><td><ruby>特別<rt>とくべつ</rt></ruby></td></tr>
+      <tr><td>便</td><td>ベン・ビン</td><td>rahat/posta</td><td><ruby>便利<rt>べんり</rt></ruby> · <ruby>不便<rt>ふべん</rt></ruby></td></tr>
+      <tr><td>利</td><td>リ・き(く)</td><td>fayda</td><td><ruby>便利<rt>べんり</rt></ruby></td></tr>
+      <tr><td>心</td><td>こころ・シン</td><td>kalp/zihin</td><td><ruby>心配<rt>しんぱい</rt></ruby> · <ruby>安心<rt>あんしん</rt></ruby></td></tr>
+      <tr><td>配</td><td>ハイ・くば(る)</td><td>dağıtmak/endişe</td><td><ruby>心配<rt>しんぱい</rt></ruby></td></tr>
+      <tr><td>集</td><td>あつ(める)・シュウ</td><td>toplamak</td><td><ruby>集<rt>あつ</rt></ruby>める</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🏥 Beden · Sağlık · İş</div>
+    <div class="table-scroll"><table class="group-table">
+      <tr><th>Kanji</th><th>Okunuş</th><th>Anlam</th><th>Örnek</th></tr>
+      <tr><td>体</td><td>からだ・タイ</td><td>vücut</td><td><ruby>体<rt>からだ</rt></ruby></td></tr>
+      <tr><td>顔</td><td>かお・ガン</td><td>yüz</td><td><ruby>顔<rt>かお</rt></ruby></td></tr>
+      <tr><td>頭</td><td>あたま・トウ</td><td>kafa</td><td><ruby>頭<rt>あたま</rt></ruby></td></tr>
+      <tr><td>首</td><td>くび・シュ</td><td>boyun</td><td><ruby>首<rt>くび</rt></ruby></td></tr>
+      <tr><td>薬</td><td>くすり・ヤク</td><td>ilaç</td><td><ruby>薬<rt>くすり</rt></ruby></td></tr>
+      <tr><td>医</td><td>イ</td><td>tıp/doktor</td><td><ruby>医者<rt>いしゃ</rt></ruby> · <ruby>医学<rt>いがく</rt></ruby></td></tr>
+      <tr><td>病</td><td>やまい・ビョウ</td><td>hastalık</td><td><ruby>病気<rt>びょうき</rt></ruby> · <ruby>病院<rt>びょういん</rt></ruby></td></tr>
+      <tr><td>死</td><td>し(ぬ)・シ</td><td>ölmek</td><td><ruby>死<rt>し</rt></ruby>ぬ</td></tr>
+      <tr><td>仕</td><td>シ・つか(える)</td><td>iş/hizmet</td><td><ruby>仕事<rt>しごと</rt></ruby></td></tr>
+      <tr><td>事</td><td>こと・ジ</td><td>iş/şey</td><td><ruby>仕事<rt>しごと</rt></ruby> · <ruby>事故<rt>じこ</rt></ruby></td></tr>
+      <tr><td>業</td><td>ギョウ</td><td>meslek/sanayi</td><td><ruby>授業<rt>じゅぎょう</rt></ruby> · <ruby>工業<rt>こうぎょう</rt></ruby></td></tr>
+      <tr><td>授</td><td>ジュ</td><td>vermek/ders</td><td><ruby>授業<rt>じゅぎょう</rt></ruby></td></tr>
+      <tr><td>工</td><td>コウ</td><td>işçilik/fabrika</td><td><ruby>工場<rt>こうじょう</rt></ruby></td></tr>
+      <tr><td>産</td><td>う(む)・サン</td><td>üretmek/doğurmak</td><td><ruby>産業<rt>さんぎょう</rt></ruby> · お<ruby>土産<rt>みやげ</rt></ruby></td></tr>
+      <tr><td>銀</td><td>ギン</td><td>gümüş</td><td><ruby>銀行<rt>ぎんこう</rt></ruby></td></tr>
+      <tr><td>建</td><td>た(てる)・ケン</td><td>inşa etmek</td><td><ruby>建<rt>た</rt></ruby>てる · <ruby>建物<rt>たてもの</rt></ruby></td></tr>
+      <tr><td>物</td><td>もの・ブツ</td><td>şey/nesne</td><td><ruby>物<rt>もの</rt></ruby> · <ruby>荷物<rt>にもつ</rt></ruby></td></tr>
+      <tr><td>品</td><td>しな・ヒン</td><td>ürün/mal</td><td><ruby>品物<rt>しなもの</rt></ruby> · <ruby>作品<rt>さくひん</rt></ruby></td></tr>
+    </table></div>
+  </div>
+  <div class="rule-box sky">📌 Bu liste çekirdek N4 kanjilerini kapsar. Tam N4 seti ~180 kanjidir; sınavda en sık çıkanlara odaklandık. Örnek kelimeleri quizlerle pekiştir (aşağıda Sınav Merkezi).</div>
+</section>
+
+<!-- ═══ N4 KELİME ═══ -->
+<section class="section" id="vocab-n4">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--matcha-light);">📝</div>
+    <div>
+      <h2>N4 Kelime — Temaya Göre</h2>
+      <p class="subtitle">Sık çıkan N4 kelimeleri: okunuş + anlam. Sesli tekrar et.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🏃 Fiiller (1)</div>
+    <div class="table-scroll"><table class="group-table">
+      <tr><th>Kelime</th><th>Okunuş</th><th>Anlam</th></tr>
+      <tr><td><ruby>払<rt>はら</rt></ruby>う</td><td>harau</td><td>ödemek</td></tr>
+      <tr><td><ruby>探<rt>さが</rt></ruby>す</td><td>sagasu</td><td>aramak</td></tr>
+      <tr><td><ruby>運<rt>はこ</rt></ruby>ぶ</td><td>hakobu</td><td>taşımak</td></tr>
+      <tr><td><ruby>選<rt>えら</rt></ruby>ぶ</td><td>erabu</td><td>seçmek</td></tr>
+      <tr><td><ruby>比<rt>くら</rt></ruby>べる</td><td>kuraberu</td><td>karşılaştırmak</td></tr>
+      <tr><td><ruby>捨<rt>す</rt></ruby>てる</td><td>suteru</td><td>atmak (çöpe)</td></tr>
+      <tr><td><ruby>拾<rt>ひろ</rt></ruby>う</td><td>hirou</td><td>yerden almak</td></tr>
+      <tr><td><ruby>謝<rt>あやま</rt></ruby>る</td><td>ayamaru</td><td>özür dilemek</td></tr>
+      <tr><td><ruby>怒<rt>おこ</rt></ruby>る</td><td>okoru</td><td>kızmak</td></tr>
+      <tr><td><ruby>笑<rt>わら</rt></ruby>う</td><td>warau</td><td>gülmek</td></tr>
+      <tr><td><ruby>泣<rt>な</rt></ruby>く</td><td>naku</td><td>ağlamak</td></tr>
+      <tr><td><ruby>驚<rt>おどろ</rt></ruby>く</td><td>odoroku</td><td>şaşırmak</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🏃 Fiiller (2)</div>
+    <div class="table-scroll"><table class="group-table">
+      <tr><th>Kelime</th><th>Okunuş</th><th>Anlam</th></tr>
+      <tr><td><ruby>準備<rt>じゅんび</rt></ruby>する</td><td>junbi suru</td><td>hazırlanmak</td></tr>
+      <tr><td><ruby>予約<rt>よやく</rt></ruby>する</td><td>yoyaku suru</td><td>rezervasyon yapmak</td></tr>
+      <tr><td><ruby>約束<rt>やくそく</rt></ruby>する</td><td>yakusoku suru</td><td>söz vermek</td></tr>
+      <tr><td><ruby>案内<rt>あんない</rt></ruby>する</td><td>annai suru</td><td>rehberlik etmek</td></tr>
+      <tr><td><ruby>連絡<rt>れんらく</rt></ruby>する</td><td>renraku suru</td><td>iletişim kurmak</td></tr>
+      <tr><td><ruby>説明<rt>せつめい</rt></ruby>する</td><td>setsumei suru</td><td>açıklamak</td></tr>
+      <tr><td><ruby>相談<rt>そうだん</rt></ruby>する</td><td>sōdan suru</td><td>danışmak</td></tr>
+      <tr><td><ruby>注意<rt>ちゅうい</rt></ruby>する</td><td>chūi suru</td><td>dikkat etmek/uyarmak</td></tr>
+      <tr><td><ruby>紹介<rt>しょうかい</rt></ruby>する</td><td>shōkai suru</td><td>tanıtmak</td></tr>
+      <tr><td><ruby>招待<rt>しょうたい</rt></ruby>する</td><td>shōtai suru</td><td>davet etmek</td></tr>
+      <tr><td><ruby>賛成<rt>さんせい</rt></ruby>する</td><td>sansei suru</td><td>katılmak/onaylamak</td></tr>
+      <tr><td><ruby>変<rt>か</rt></ruby>わる</td><td>kawaru</td><td>değişmek</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🎨 Sıfatlar (い / な)</div>
+    <div class="table-scroll"><table class="group-table">
+      <tr><th>Kelime</th><th>Okunuş</th><th>Anlam</th></tr>
+      <tr><td><ruby>硬<rt>かた</rt></ruby>い</td><td>katai</td><td>sert</td></tr>
+      <tr><td><ruby>柔<rt>やわ</rt></ruby>らかい</td><td>yawarakai</td><td>yumuşak</td></tr>
+      <tr><td><ruby>深<rt>ふか</rt></ruby>い</td><td>fukai</td><td>derin</td></tr>
+      <tr><td><ruby>浅<rt>あさ</rt></ruby>い</td><td>asai</td><td>sığ</td></tr>
+      <tr><td><ruby>苦<rt>にが</rt></ruby>い</td><td>nigai</td><td>acı (tat)</td></tr>
+      <tr><td><ruby>珍<rt>めずら</rt></ruby>しい</td><td>mezurashii</td><td>nadir/ilginç</td></tr>
+      <tr><td><ruby>寂<rt>さび</rt></ruby>しい</td><td>sabishii</td><td>yalnız/hüzünlü</td></tr>
+      <tr><td><ruby>複雑<rt>ふくざつ</rt></ruby>な</td><td>fukuzatsu na</td><td>karmaşık</td></tr>
+      <tr><td><ruby>簡単<rt>かんたん</rt></ruby>な</td><td>kantan na</td><td>basit/kolay</td></tr>
+      <tr><td><ruby>危険<rt>きけん</rt></ruby>な</td><td>kiken na</td><td>tehlikeli</td></tr>
+      <tr><td><ruby>安全<rt>あんぜん</rt></ruby>な</td><td>anzen na</td><td>güvenli</td></tr>
+      <tr><td><ruby>丁寧<rt>ていねい</rt></ruby>な</td><td>teinei na</td><td>kibar/özenli</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📦 İsimler</div>
+    <div class="table-scroll"><table class="group-table">
+      <tr><th>Kelime</th><th>Okunuş</th><th>Anlam</th></tr>
+      <tr><td><ruby>経験<rt>けいけん</rt></ruby></td><td>keiken</td><td>deneyim</td></tr>
+      <tr><td><ruby>技術<rt>ぎじゅつ</rt></ruby></td><td>gijutsu</td><td>teknik/beceri</td></tr>
+      <tr><td><ruby>研究<rt>けんきゅう</rt></ruby></td><td>kenkyū</td><td>araştırma</td></tr>
+      <tr><td><ruby>会議<rt>かいぎ</rt></ruby></td><td>kaigi</td><td>toplantı</td></tr>
+      <tr><td><ruby>約束<rt>やくそく</rt></ruby></td><td>yakusoku</td><td>söz/randevu</td></tr>
+      <tr><td><ruby>都合<rt>つごう</rt></ruby></td><td>tsugō</td><td>uygunluk/durum</td></tr>
+      <tr><td><ruby>理由<rt>りゆう</rt></ruby></td><td>riyū</td><td>sebep</td></tr>
+      <tr><td><ruby>原因<rt>げんいん</rt></ruby></td><td>gen'in</td><td>neden (kök)</td></tr>
+      <tr><td><ruby>興味<rt>きょうみ</rt></ruby></td><td>kyōmi</td><td>ilgi</td></tr>
+      <tr><td><ruby>意見<rt>いけん</rt></ruby></td><td>iken</td><td>görüş</td></tr>
+      <tr><td><ruby>将来<rt>しょうらい</rt></ruby></td><td>shōrai</td><td>gelecek</td></tr>
+      <tr><td><ruby>最近<rt>さいきん</rt></ruby></td><td>saikin</td><td>son zamanlarda</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">⏱️ Zarflar & Bağlaçlar</div>
+    <div class="table-scroll"><table class="group-table">
+      <tr><th>Kelime</th><th>Okunuş</th><th>Anlam</th></tr>
+      <tr><td>たぶん</td><td>tabun</td><td>muhtemelen</td></tr>
+      <tr><td>きっと</td><td>kitto</td><td>kesinlikle/mutlaka</td></tr>
+      <tr><td>もし</td><td>moshi</td><td>eğer</td></tr>
+      <tr><td>ぜひ</td><td>zehi</td><td>mutlaka (istek)</td></tr>
+      <tr><td>やっと</td><td>yatto</td><td>nihayet</td></tr>
+      <tr><td>きゅうに / <ruby>急<rt>きゅう</rt></ruby>に</td><td>kyū ni</td><td>aniden</td></tr>
+      <tr><td><ruby>特<rt>とく</rt></ruby>に</td><td>toku ni</td><td>özellikle</td></tr>
+      <tr><td>それで</td><td>sorede</td><td>bu yüzden</td></tr>
+      <tr><td>それに</td><td>soreni</td><td>ayrıca/üstelik</td></tr>
+      <tr><td>でも / けれども</td><td>demo / keredomo</td><td>ama/fakat</td></tr>
+      <tr><td>だから</td><td>dakara</td><td>bu yüzden</td></tr>
+      <tr><td>また</td><td>mata</td><td>tekrar/ayrıca</td></tr>
+    </table></div>
+  </div>
+</section>
+<!-- ═══ SINAV MERKEZİ ═══ -->
+<section class="section" id="exam-center">
+  <div class="quizhub-wrap">
+    <div class="quizhub-head">
+      <h2>🎓 Sınav Merkezi — N4 Quizleri</h2>
+      <p>Her 2-3 konuda bir quiz + kanji + kelime + karma achievement test. Bir quiz seç, "Başlat"a bas: süre işler, sorular tek tek gelir (ileri/geri), sonunda puan + açıklamalı cevap anahtarı.</p>
+    </div>
+    <div class="quizhub-grid" id="quizhub-grid"></div>
+  </div>
+
+  <div class="quizrun" id="quizrun" style="display:none;">
+    <div class="quizrun-top">
+      <div class="quizrun-title" id="quizrun-title">Quiz</div>
+      <div class="quizrun-timer" id="quizrun-timer">⏱️ 00:00</div>
+    </div>
+    <div class="quizrun-progress"><div class="quizrun-progress-bar" id="quizrun-bar"></div></div>
+    <div class="quizrun-counter" id="quizrun-counter">Soru 1 / 10</div>
+    <div class="quizrun-q" id="quizrun-q"></div>
+    <div class="quizrun-opts" id="quizrun-opts"></div>
+    <div class="quizrun-nav">
+      <button class="quizrun-btn ghost" id="quizrun-prev" onclick="quizPrev()">← Önceki</button>
+      <button class="quizrun-btn" id="quizrun-next" onclick="quizNext()">Sonraki →</button>
+    </div>
+    <button class="quizrun-quit" onclick="quizQuit()">✕ Çıkış</button>
+  </div>
+
+  <div class="quizresult" id="quizresult" style="display:none;">
+    <div class="quizresult-score" id="quizresult-score">0/10</div>
+    <div class="quizresult-label" id="quizresult-label"></div>
+    <div class="quizresult-comment" id="quizresult-comment"></div>
+    <div class="quizresult-review" id="quizresult-review"></div>
+    <div class="quizresult-actions">
+      <button class="quizrun-btn" onclick="quizRestart()">🔄 Tekrar Çöz</button>
+      <button class="quizrun-btn ghost" onclick="quizQuit()">🏁 Merkeze Dön</button>
+    </div>
+  </div>
+</section>
+
+<div style="text-align:center;padding:16px;"><a href="#top" style="color:var(--text-soft);font-size:12px;text-decoration:none;">⬆ Başa dön</a></div>
+<div style="height:80px;"></div>
+</div>
+
+<script>
+function openMenu(){document.getElementById('menuModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeMenu(){document.getElementById('menuModal').classList.remove('open');document.body.style.overflow='';}
+function goTo(id){closeMenu();setTimeout(()=>{document.getElementById(id).scrollIntoView({behavior:'smooth'});},150);}
+
+const q1=[
+{q:"「<ruby>話<rt>はな</rt></ruby>す」の<ruby>可能形<rt>かのうけい</rt></ruby>は？",opts:["話される","話せる","話される","話そう"],ans:1,exp:"G1: う→える → 話せる"},
+{q:"「<ruby>食<rt>た</rt></ruby>べる」の可能形は？",opts:["食べれる","食べられる","食べさせる","食べよう"],ans:1,exp:"G2: る→られる → 食べられる"},
+{q:"「する」の可能形は？",opts:["される","できる","させる","しよう"],ans:1,exp:"する→できる"},
+{q:"「<ruby>日本語<rt>にほんご</rt></ruby>（　）<ruby>話<rt>はな</rt></ruby>せます」正しい助詞は？",opts:["を","が","に","で"],ans:1,exp:"可能形では を→が"},
+{q:"「<ruby>行<rt>い</rt></ruby>く」の<ruby>意向形<rt>いこうけい</rt></ruby>は？",opts:["行こう","行けう","行きよう","行かう"],ans:0,exp:"G1: う→おう → 行こう"},
+{q:"「<ruby>食<rt>た</rt></ruby>べる」の意向形は？",opts:["食べよう","食べろう","食べおう","食べさ"],ans:0,exp:"G2: る→よう → 食べよう"},
+{q:"「映画を見（　）と<ruby>思<rt>おも</rt></ruby>います」",opts:["る","よう","ろ","た"],ans:1,exp:"意向形+と思う: 見よう"},
+{q:"「<ruby>行<rt>い</rt></ruby>く」の<ruby>命令形<rt>めいれいけい</rt></ruby>は？",opts:["行け","行ろ","行こ","行きろ"],ans:0,exp:"G1: う→え → 行け"},
+{q:"「<ruby>食<rt>た</rt></ruby>べる」の命令形は？",opts:["食べれ","食べろ","食べよ","食べ"],ans:1,exp:"G2: る→ろ → 食べろ"},
+{q:"<ruby>禁止形<rt>きんしけい</rt></ruby>「<ruby>入<rt>はい</rt></ruby>る」→「入る（　）」",opts:["な","ろ","よ","ず"],ans:0,exp:"辞書形+な = yasak: 入るな"}
+];
+const q2=[
+{q:"「<ruby>言<rt>い</rt></ruby>う」の<ruby>受身形<rt>うけみけい</rt></ruby>は？",opts:["言われる","言えられる","言らせる","言おれる"],ans:0,exp:"G1: う→わ+れる → 言われる"},
+{q:"「<ruby>読<rt>よ</rt></ruby>む」の受身形は？",opts:["読める","読まれる","読ませる","読もれる"],ans:1,exp:"む→ま+れる → 読まれる"},
+{q:"「<ruby>先生<rt>せんせい</rt></ruby>（　）<ruby>褒<rt>ほ</rt></ruby>められました」動作主の助詞は？",opts:["を","に","が","で"],ans:1,exp:"受身の動作主は に"},
+{q:"「<ruby>雨<rt>あめ</rt></ruby>に<ruby>降<rt>ふ</rt></ruby>られた」の意味は？",opts:["yağmuru sevdim","yağmura yakalandım (kötü)","yağmuru durdurdum","yağmur yağdırdım"],ans:1,exp:"迷惑の受身: başıma yağmur geldi"},
+{q:"「<ruby>行<rt>い</rt></ruby>く」の<ruby>使役形<rt>しえきけい</rt></ruby>は？",opts:["行かれる","行かせる","行ける","行かす"],ans:1,exp:"G1: う→あ+せる → 行かせる"},
+{q:"「<ruby>食<rt>た</rt></ruby>べる」の使役形は？",opts:["食べされる","食べさせる","食べられる","食べらせる"],ans:1,exp:"G2: る→させる → 食べさせる"},
+{q:"「<ruby>休<rt>やす</rt></ruby>ませてください」の意味は？",opts:["Dinlen!","Dinlenmeme izin verin","Beni dinlendir","Dinlenme"],ans:1,exp:"使役+てください = izin isteme"},
+{q:"「<ruby>飲<rt>の</rt></ruby>む」の<ruby>使役受身<rt>しえきうけみ</rt></ruby>は？",opts:["飲まれる","飲ませる","飲まされる","飲ませられる ✓ ikisi de"],ans:3,exp:"飲まされる / 飲ませられる"},
+{q:"「1<ruby>時間<rt>じかん</rt></ruby>も<ruby>待<rt>ま</rt></ruby>たされた」の意味は？",opts:["1 saat bekledim (istekle)","1 saat bekletildim (mecbur)","1 saat beklettim","beklemedim"],ans:1,exp:"使役受身: mecburen bekledim"},
+{q:"使役受身「<ruby>食<rt>た</rt></ruby>べる」→",opts:["食べさせられる","食べされる","食べられる","食べさす"],ans:0,exp:"G2: させられる"}
+];
+const q3=[
+{q:"「<ruby>時間<rt>じかん</rt></ruby>が（　）、<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ます」(varsa)",opts:["あるたら","あったら","あれたら","ありたら"],ans:1,exp:"sade geçmiş+ら: あったら"},
+{q:"「<ruby>安<rt>やす</rt></ruby>い」の たら-形は？",opts:["安いたら","安かったら","安くたら","安だったら"],ans:1,exp:"いadj: 安かった+ら"},
+{q:"「お<ruby>金<rt>かね</rt></ruby>が（　）、<ruby>車<rt>くるま</rt></ruby>を<ruby>買<rt>か</rt></ruby>う」ば-形は？",opts:["あるば","あれば","あらば","ありば"],ans:1,exp:"ある→あれば"},
+{q:"「<ruby>安<rt>やす</rt></ruby>い」の ば-形は？",opts:["安いば","安ければ","安くば","安えば"],ans:1,exp:"いadj: い→ければ"},
+{q:"「<ruby>温泉<rt>おんせん</rt></ruby>に<ruby>行<rt>い</rt></ruby>く（　）、<ruby>箱根<rt>はこね</rt></ruby>がいい」(gideceksen)",opts:["たら","なら","と","ば"],ans:1,exp:"karşının konusuna göre: なら"},
+{q:"「まっすぐ<ruby>行<rt>い</rt></ruby>く（　）、<ruby>右<rt>みぎ</rt></ruby>に<ruby>曲<rt>ま</rt></ruby>がってください」— hangisi YANLIŞ?",opts:["たら OK","と ✗ (sonra emir olmaz)","ば OK","なら OK"],ans:1,exp:"と'den sonra emir/rica gelmez"},
+{q:"「<ruby>行<rt>い</rt></ruby>く」の否定条件(ば)は？",opts:["行かなば","行かなければ","行かないば","行けなば"],ans:1,exp:"ない→なければ"},
+{q:"「<ruby>分<rt>わ</rt></ruby>から（　）、<ruby>聞<rt>き</rt></ruby>いてください」",opts:["なければ","たら","なら","ないと"],ans:0,exp:"分からなければ"},
+{q:"En genel, 'olduğunda' anlamı olan koşul?",opts:["と","ば","たら","なら"],ans:2,exp:"たら en esnek"},
+{q:"「<ruby>家<rt>いえ</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>っ（　）、<ruby>電話<rt>でんわ</rt></ruby>します」",opts:["たら","ば","なら","と"],ans:0,exp:"帰ったら"}
+];
+const q4=[
+{q:"「<ruby>友達<rt>ともだち</rt></ruby>が<ruby>私<rt>わたし</rt></ruby>に<ruby>花<rt>はな</rt></ruby>を（　）」(bana verdi)",opts:["あげました","くれました","もらいました","やりました"],ans:1,exp:"bana doğru → くれる"},
+{q:"「<ruby>私<rt>わたし</rt></ruby>は<ruby>先生<rt>せんせい</rt></ruby>に ペンを（　）」(aldım)",opts:["あげました","くれました","もらいました","いました"],ans:2,exp:"ben aldım → もらう"},
+{q:"「<ruby>私<rt>わたし</rt></ruby>は<ruby>妹<rt>いもうと</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>を（　）」(verdim)",opts:["あげました","くれました","もらいました","きました"],ans:0,exp:"başkasına verdim → あげる"},
+{q:"「くれる」の<ruby>尊敬語<rt>そんけいご</rt></ruby>(kibar)は？",opts:["いただく","くださる","さしあげる","もらう"],ans:1,exp:"くれる→くださる"},
+{q:"「<ruby>友達<rt>ともだち</rt></ruby>が<ruby>駅<rt>えき</rt></ruby>まで<ruby>送<rt>おく</rt></ruby>って（　）」(bana iyilik)",opts:["あげました","くれました","もらいました","おきました"],ans:1,exp:"bana iyilik → てくれる"},
+{q:"「<ruby>先生<rt>せんせい</rt></ruby>に<ruby>文法<rt>ぶんぽう</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えて（　）」(öğretmen bana)",opts:["あげました","もらいました","くれました","やりました"],ans:1,exp:"birine yaptırdım/aldım → てもらう"},
+{q:"「<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>って（　）か」(kibar rica)",opts:["あげません","くれませんか","もらいました","おきます"],ans:1,exp:"rica: 〜てくれませんか"},
+{q:"「もらう」の kibar hali?",opts:["いただく","くださる","さしあげる","なさる"],ans:0,exp:"もらう→いただく"},
+{q:"「<ruby>弟<rt>おとうと</rt></ruby>に<ruby>宿題<rt>しゅくだい</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えて（　）」(ben ona iyilik)",opts:["あげました","くれました","もらいました","いました"],ans:0,exp:"ben birine → てあげる"},
+{q:"「<ruby>道<rt>みち</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えて（　）ますか」(rica: -ebilir misiniz)",opts:["もらえ","あげ","くれ","い"],ans:0,exp:"〜てもらえますか"}
+];
+const q5=[
+{q:"「<ruby>旅行<rt>りょこう</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に、ホテルを<ruby>予約<rt>よやく</rt></ruby>して（　）」(önceden)",opts:["おきます","しまいます","みます","あります"],ans:0,exp:"hazırlık: 〜ておく"},
+{q:"「<ruby>財布<rt>さいふ</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れて（　）」(eyvah, unuttum)",opts:["おきました","しまいました","みました","いきました"],ans:1,exp:"pişmanlık: 〜てしまう"},
+{q:"「〜てしまう」の günlük kısaltması?",opts:["〜ておく","〜ちゃう","〜てみる","〜とく"],ans:1,exp:"てしまう→ちゃう"},
+{q:"「<ruby>納豆<rt>なっとう</rt></ruby>を<ruby>食<rt>た</rt></ruby>べて（　）」(deneyeyim/denedim)",opts:["おきました","しまいました","みました","ありました"],ans:2,exp:"deneme: 〜てみる"},
+{q:"「だんだん<ruby>寒<rt>さむ</rt></ruby>くなって（　）」(şimdiye kadar)",opts:["いきました","きました","おきました","みました"],ans:1,exp:"geçmişten şimdiye: 〜てくる"},
+{q:"「これからも<ruby>勉強<rt>べんきょう</rt></ruby>して（　）」(geleceğe doğru sürer)",opts:["いきます","きます","おきます","あります"],ans:0,exp:"şimdiden geleceğe: 〜ていく"},
+{q:"「<ruby>壁<rt>かべ</rt></ruby>に<ruby>地図<rt>ちず</rt></ruby>が<ruby>貼<rt>は</rt></ruby>って（　）」(bilerek asılmış)",opts:["います","あります","おきます","みます"],ans:1,exp:"他動詞+てある = durum"},
+{q:"「<ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby>いて（　）」(kendiliğinden açık durum)",opts:["います","あります","おきます","しまいます"],ans:0,exp:"自動詞+ている = durum"},
+{q:"「ちょっとコンビニに<ruby>行<rt>い</rt></ruby>って（　）」(gidip gelirim)",opts:["いきます","きます","おきます","みます"],ans:1,exp:"gidip gelme: 行ってくる"},
+{q:"「<ruby>会議<rt>かいぎ</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>資料<rt>しりょう</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んで（　）ください」(hazırlan)",opts:["おいて","しまって","みて","あって"],ans:0,exp:"önceden yap: 〜ておく"}
+];
+const q6=[
+{q:"「<ruby>天気予報<rt>てんきよほう</rt></ruby>によると、<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る（　）」(...mış)",opts:["そうです (aktarım)","そうです (görünüş)","ようです","らしい"],ans:0,exp:"sade form+そう = aktarım"},
+{q:"「おいし（　）ケーキ」(görünüş: lezzetli görünen)",opts:["いそうな","そうな","だそうな","らしい"],ans:1,exp:"いadj: い at + そうな"},
+{q:"görünüş: 「<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>（　）そうです」",opts:["る","り","った","って"],ans:1,exp:"ますkök+そう: 降りそう"},
+{q:"aktarım「<ruby>元気<rt>げんき</rt></ruby>（　）そうです」(iyiymiş)",opts:["だ","な","の","-"],ans:0,exp:"aktarımda なadj+だ+そう"},
+{q:"「いい」の görünüş-そう?",opts:["いそう","よさそう","いいそう","よそう"],ans:1,exp:"istisna: いい→よさそう"},
+{q:"「<ruby>外<rt>そと</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>っている（　）」(kanıta göre görünüyor)",opts:["ようです","そうです(aktarım)","つもり","はず"],ans:0,exp:"kanıttan çıkarım: ようだ"},
+{q:"「みたいだ」は「ようだ」の…",opts:["kibar hali","günlük/samimi hali","geçmişi","olumsuzu"],ans:1,exp:"みたい = casual ようだ"},
+{q:"「<ruby>田中<rt>たなか</rt></ruby>さんは<ruby>会社<rt>かいしゃ</rt></ruby>をやめた（　）」(öyle diyorlar)",opts:["らしい","そうな","みたいな","ような"],ans:0,exp:"çıkarım/söylenti: らしい"},
+{q:"「<ruby>男<rt>おとこ</rt></ruby>らしい<ruby>人<rt>ひと</rt></ruby>」の意味は？",opts:["erkek olan kişi","mert/erkeksi (tipik) kişi","erkek olmayan","erkek gibi görünen"],ans:1,exp:"N+らしい = tipiklik"},
+{q:"「まるで<ruby>夢<rt>ゆめ</rt></ruby>の（　）です」(sanki rüya gibi)",opts:["よう","そう","らしい","はず"],ans:0,exp:"benzetme: まるで〜ようだ"}
+];
+const q7=[
+{q:"「<ruby>約束<rt>やくそく</rt></ruby>したから、<ruby>来<rt>く</rt></ruby>る（　）です」(gelmesi gerek)",opts:["かも","はず","そう","つもり"],ans:1,exp:"mantıklı beklenti: はず"},
+{q:"「そんなことがある（　）」(olamaz/imkânsız)",opts:["はずがない","はずだ","かもしれない","だろう"],ans:0,exp:"〜はずがない"},
+{q:"「<ruby>会議<rt>かいぎ</rt></ruby>は3<ruby>時<rt>じ</rt></ruby>から（　）はずです」(N + ?)",opts:["な","の","だ","-"],ans:1,exp:"N+の+はず"},
+{q:"「<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る（　）」(yağabilir)",opts:["はずです","かもしれません","だろう ✗","つもり"],ans:1,exp:"olasılık: かもしれない"},
+{q:"「かもしれない」の前で N/なadjに だ は？",opts:["gerekli","gelmez","な olur","の olur"],ans:1,exp:"雨かもしれない (だ yok)"},
+{q:"「<ruby>明日<rt>あした</rt></ruby>はたぶん<ruby>晴<rt>は</rt></ruby>れる（　）」(muhtemelen açar)",opts:["でしょう","はずがない","つもり","ながら"],ans:0,exp:"tahmin: でしょう"},
+{q:"「あなたも<ruby>行<rt>い</rt></ruby>く（　）？」(değil mi? — teyit)",opts:["だろう","でしょう","はず","かも"],ans:1,exp:"yükselen でしょう? = teyit"},
+{q:"En güçlü mantıklı beklenti hangisi?",opts:["かもしれない","でしょう","はず","らしい"],ans:2,exp:"はず en güçlü/mantıklı"},
+{q:"「<ruby>彼<rt>かれ</rt></ruby>はもう<ruby>帰<rt>かえ</rt></ruby>った（　）」(gitmiş olabilir)",opts:["はずがない","かもしれない","つもり","ように"],ans:1,exp:"olasılık: かもしれない"},
+{q:"「かも」は何の kısaltması?",opts:["かもしれない","かどうか","からも","かな"],ans:0,exp:"かもしれない→かも"}
+];
+const q8=[
+{q:"「<ruby>行<rt>い</rt></ruby>く」→ zorunluluk",opts:["行かなければならない","行かなくてもいい","行ってもいい","行くな"],ans:0,exp:"〜なければならない"},
+{q:"「<ruby>早<rt>はや</rt></ruby>く<ruby>起<rt>お</rt></ruby>き（　）なりません」",opts:["なくても","なければ","ないで","ずに"],ans:1,exp:"起きなければなりません"},
+{q:"「〜なければならない」günlük?",opts:["〜なきゃ","〜ちゃう","〜とく","〜そう"],ans:0,exp:"〜なきゃ / なくちゃ"},
+{q:"「<ruby>来<rt>こ</rt></ruby>ない」→ gerek yok",opts:["来なければならない","来なくてもいい","来てはいけない","来るな"],ans:1,exp:"〜なくてもいい"},
+{q:"「<ruby>全部<rt>ぜんぶ</rt></ruby><ruby>食<rt>た</rt></ruby>べ（　）もいいですよ」(zorunda değilsin)",opts:["なくて","ないで","なければ","ずに"],ans:0,exp:"食べなくてもいい"},
+{q:"izin: 「ここで<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>って（　）ですか」",opts:["はいけない","もいい","おく","しまう"],ans:1,exp:"〜てもいいですか"},
+{q:"yasak: 「この<ruby>部屋<rt>へや</rt></ruby>に<ruby>入<rt>はい</rt></ruby>って（　）」",opts:["もいい","はいけません","おく","みる"],ans:1,exp:"〜てはいけません"},
+{q:"「お<ruby>金<rt>かね</rt></ruby>を<ruby>払<rt>はら</rt></ruby>わ（　）いいです」(ödemene gerek yok)",opts:["なくても","なければ","ないでも","ずとも"],ans:0,exp:"払わなくてもいい"},
+{q:"「<ruby>学生<rt>がくせい</rt></ruby>は<ruby>制服<rt>せいふく</rt></ruby>を<ruby>着<rt>き</rt></ruby>（　）はいけません」(zorunda)",opts:["なくて","なくては","ても","ないで"],ans:1,exp:"着なくてはいけません = giymek zorunda"},
+{q:"「<ruby>急<rt>いそ</rt></ruby>が（　）いいですよ」(acele gerek yok)",opts:["なくても","なければ","ないと","ずに"],ans:0,exp:"急がなくてもいい"}
+];
+const q9=[
+{q:"「<ruby>頭<rt>あたま</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>い（　）、<ruby>帰<rt>かえ</rt></ruby>ります」(nazik sebep)",opts:["から","ので","のに","し"],ans:1,exp:"nazik sebep: ので"},
+{q:"「<ruby>日曜日<rt>にちようび</rt></ruby>（　）ので、<ruby>込<rt>こ</rt></ruby>んでいます」(N + ?)",opts:["だ","な","の","-"],ans:1,exp:"N+な+ので"},
+{q:"「<ruby>薬<rt>くすり</rt></ruby>を<ruby>飲<rt>の</rt></ruby>んだ（　）、まだ<ruby>熱<rt>ねつ</rt></ruby>がある」(rağmen)",opts:["ので","のに","から","し"],ans:1,exp:"beklenmedik: のに"},
+{q:"「<ruby>日曜日<rt>にちようび</rt></ruby>（　）のに、<ruby>働<rt>はたら</rt></ruby>く」(N + ?)",opts:["だ","な","の","-"],ans:1,exp:"N+な+のに"},
+{q:"「この<ruby>店<rt>みせ</rt></ruby>は<ruby>安<rt>やす</rt></ruby>い（　）、おいしい（　）、よく<ruby>来<rt>き</rt></ruby>ます」(hem-hem)",opts:["て/て","し/し","が/が","のに/のに"],ans:1,exp:"sebep sıralama: し"},
+{q:"「<ruby>日本<rt>にほん</rt></ruby>で<ruby>働<rt>はたら</rt></ruby>く（　）、<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>する」(amaç)",opts:["ために","のに","ので","たら"],ans:0,exp:"amaç: 辞書形+ために"},
+{q:"「<ruby>家族<rt>かぞく</rt></ruby>（　）ために、<ruby>働<rt>はたら</rt></ruby>く」(N + ?)",opts:["な","の","だ","-"],ans:1,exp:"N+の+ために"},
+{q:"「<ruby>事故<rt>じこ</rt></ruby>の（　）、<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>止<rt>と</rt></ruby>まった」(sebep)",opts:["ために","ように","ので","のに"],ans:0,exp:"ため(に) = sebep de olur"},
+{q:"「から」ile「ので」farkı?",opts:["aynı","ので daha nazik/objektif","から daha kibar","ので geçmiş"],ans:1,exp:"ので nazik"},
+{q:"「<ruby>雨<rt>あめ</rt></ruby>も<ruby>降<rt>ふ</rt></ruby>っている（　）、<ruby>寒<rt>さむ</rt></ruby>い（　）、<ruby>家<rt>いえ</rt></ruby>にいよう」",opts:["し/し","て/て","のに/のに","ば/ば"],ans:0,exp:"し ile sebep sırala"}
+];
+const q10=[
+{q:"「よく<ruby>見<rt>み</rt></ruby>える（　）、<ruby>前<rt>まえ</rt></ruby>に<ruby>座<rt>すわ</rt></ruby>った」(...sın diye)",opts:["ために","ように","ので","つもり"],ans:1,exp:"potansiyel+ように = amaç"},
+{q:"「ために」ile「ように」— ように ne zaman?",opts:["iradeli fiil","potansiyel/iradesiz fiil","isim","geçmiş"],ans:1,exp:"ように: 見える, 話せる…"},
+{q:"「<ruby>毎日<rt>まいにち</rt></ruby><ruby>野菜<rt>やさい</rt></ruby>を<ruby>食<rt>た</rt></ruby>べる（　）しています」(çaba)",opts:["ように","ようで","ために","ことに"],ans:0,exp:"çaba: 〜ようにする"},
+{q:"「<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>話<rt>はな</rt></ruby>せる（　）なりました」(...abilir oldum)",opts:["ように","ことに","ために","つもり"],ans:0,exp:"değişim: 〜ようになる"},
+{q:"「<ruby>大学<rt>だいがく</rt></ruby>に<ruby>行<rt>い</rt></ruby>く（　）しました」(ben karar verdim)",opts:["ことに","ように","ために","はず"],ans:0,exp:"kendi kararım: ことにする"},
+{q:"「<ruby>転勤<rt>てんきん</rt></ruby>する（　）なりました」(dışarıdan kararlaştırıldı)",opts:["ことに","ように","つもり","予定"],ans:0,exp:"dışarıdan: ことになる"},
+{q:"「<ruby>国<rt>くに</rt></ruby>へ<ruby>帰<rt>かえ</rt></ruby>る（　）です」(niyetindeyim)",opts:["つもり","予定 ✗","はず","よう"],ans:0,exp:"kişisel niyet: つもり"},
+{q:"「<ruby>会議<rt>かいぎ</rt></ruby>は3<ruby>時<rt>じ</rt></ruby>から<ruby>始<rt>はじ</rt></ruby>まる（　）です」(programlı)",opts:["つもり","予定","ように","こと"],ans:1,exp:"program: 予定"},
+{q:"「つもり」ile「予定」farkı?",opts:["aynı","つもり kişisel niyet, 予定 program","予定 niyet","つもり geçmiş"],ans:1,exp:"予定 daha objektif"},
+{q:"「お<ruby>酒<rt>さけ</rt></ruby>を<ruby>飲<rt>の</rt></ruby>まない（　）です」(içmeme niyeti)",opts:["つもり","予定","ように","はず"],ans:0,exp:"ない形+つもり"}
+];
+const q11=[
+{q:"「<ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聞<rt>き</rt></ruby>き（　）、<ruby>勉強<rt>べんきょう</rt></ruby>する」(...arak)",opts:["ながら","たり","つつ","ので"],ans:0,exp:"aynı anda: ますkök+ながら"},
+{q:"「<ruby>食<rt>た</rt></ruby>べる」の ながら-形は？",opts:["食べるながら","食べながら","食べてながら","食べたながら"],ans:1,exp:"ますkök: 食べ+ながら"},
+{q:"「<ruby>食<rt>た</rt></ruby>べ（　）、お<ruby>腹<rt>なか</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>い」(çok yiyip)",opts:["すぎて","やすくて","にくくて","かたで"],ans:0,exp:"aşırı: 〜すぎる"},
+{q:"「<ruby>高<rt>たか</rt></ruby>い」の すぎる-形は？",opts:["高いすぎる","高すぎる","高くすぎる","高さすぎる"],ans:1,exp:"いadj: い at + すぎる"},
+{q:"「この<ruby>本<rt>ほん</rt></ruby>は<ruby>読<rt>よ</rt></ruby>み（　）」(okuması kolay)",opts:["やすい","にくい","すぎる","かた"],ans:0,exp:"kolay: 〜やすい"},
+{q:"「この<ruby>薬<rt>くすり</rt></ruby>は<ruby>飲<rt>の</rt></ruby>み（　）」(içmesi zor)",opts:["やすい","にくい","すぎる","かた"],ans:1,exp:"zor: 〜にくい"},
+{q:"「<ruby>読<rt>よ</rt></ruby>む」→ okunuş/yapılış şekli",opts:["読みかた","読むかた","読んでかた","読みやすい"],ans:0,exp:"ますkök+方: 読み方"},
+{q:"「<ruby>作<rt>つく</rt></ruby>る」の 方(kata)?",opts:["作るかた","作りかた","作ってかた","作りやすい"],ans:1,exp:"作り方 = yapılışı"},
+{q:"「<ruby>漢字<rt>かんじ</rt></ruby>（　）<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>」doğru partikel?",opts:["を","の","が","に"],ans:1,exp:"〜の+読み方"},
+{q:"「<ruby>運動<rt>うんどう</rt></ruby>し（　）と、<ruby>体<rt>からだ</rt></ruby>に<ruby>悪<rt>わる</rt></ruby>い」(aşırı yaparsan)",opts:["すぎる","やすい","にくい","ながら"],ans:0,exp:"しすぎる"}
+];
+const q12=[
+{q:"「<ruby>彼<rt>かれ</rt></ruby>が<ruby>来<rt>く</rt></ruby>る（　）<ruby>分<rt>わ</rt></ruby>かりません」(gelip gelmeyeceği)",opts:["かどうか","と思う","そう","はず"],ans:0,exp:"evet/hayır gömme: かどうか"},
+{q:"「<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る（　）<ruby>思<rt>おも</rt></ruby>います」(görüş)",opts:["と","かどうか","ように","ため"],ans:0,exp:"〜と思う"},
+{q:"「<ruby>先生<rt>せんせい</rt></ruby>は<ruby>試験<rt>しけん</rt></ruby>があると（　）」(söylüyordu)",opts:["言っていました","思います","そうです","かどうか"],ans:0,exp:"aktarım: と言っていた"},
+{q:"「<ruby>電気<rt>でんき</rt></ruby>をつけた（　）、<ruby>寝<rt>ね</rt></ruby>た」(açık bırakarak)",opts:["まま","ながら","こと","ように"],ans:0,exp:"değişmeyen hal: 〜まま"},
+{q:"「<ruby>練習<rt>れんしゅう</rt></ruby>すれば（　）ほど、<ruby>上手<rt>じょうず</rt></ruby>になる」(çalıştıkça)",opts:["する","した","して","しない"],ans:0,exp:"〜ば〜辞書形+ほど"},
+{q:"「<ruby>教室<rt>きょうしつ</rt></ruby>には<ruby>誰<rt>だれ</rt></ruby>（　）いません」(kimse)",opts:["か","も","でも","が"],ans:1,exp:"疑問詞+も+否定 = hiç"},
+{q:"「<ruby>何<rt>なに</rt></ruby>（　）<ruby>食<rt>た</rt></ruby>べましたか」(bir şey)",opts:["も","か","でも","が"],ans:1,exp:"何か = bir şey"},
+{q:"「このゲームは<ruby>誰<rt>だれ</rt></ruby>（　）できます」(herkes)",opts:["も","か","でも","が"],ans:2,exp:"誰でも = herkes"},
+{q:"他動詞はどれ？「ドアを（　）」",opts:["開く","開ける","閉まる","つく"],ans:1,exp:"を alan他動詞: 開ける"},
+{q:"「<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がる」は何の敬語?",opts:["行く(尊敬)","食べる(尊敬)","言う(謙譲)","する(謙譲)"],ans:1,exp:"食べる/飲む の尊敬語"}
+];
+const qK=[
+{q:"「<ruby>特急<rt>?</rt></ruby>」の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",opts:["とっきゅう","とくきゅう","とくいそ","とうきゅう"],ans:0,exp:"特急 = とっきゅう (ekspres tren)"},
+{q:"「<ruby>研究<rt>?</rt></ruby>」の読み方は？",opts:["けんきゅ","けんきゅう","げんきゅう","けんく"],ans:1,exp:"研究 = けんきゅう (araştırma)"},
+{q:"「<ruby>会議<rt>?</rt></ruby>」の読み方は？",opts:["かいぎ","かいごう","えぎ","かいき"],ans:0,exp:"会議 = かいぎ (toplantı)"},
+{q:"「<ruby>経験<rt>?</rt></ruby>」の読み方は？",opts:["けいけん","きょうけん","けいげん","きょうげん"],ans:0,exp:"経験 = けいけん (deneyim)"},
+{q:"「<ruby>病院<rt>?</rt></ruby>」の読み方は？",opts:["びょうき","びょういん","へいいん","びよういん"],ans:1,exp:"病院 = びょういん (hastane)"},
+{q:"「<ruby>質問<rt>?</rt></ruby>」の読み方は？",opts:["しつもん","しちもん","しつぶん","しゅつもん"],ans:0,exp:"質問 = しつもん (soru)"},
+{q:"「<ruby>特別<rt>?</rt></ruby>」の読み方は？",opts:["とくべつ","とくべち","とくわけ","どくべつ"],ans:0,exp:"特別 = とくべつ (özel)"},
+{q:"「<ruby>便利<rt>?</rt></ruby>」の読み方は？",opts:["びんり","べんり","べんとう","びんとう"],ans:1,exp:"便利 = べんり (pratik)"},
+{q:"「<ruby>地下鉄<rt>?</rt></ruby>」の読み方は？",opts:["ちかてつ","じかてつ","ちげてつ","ちかどう"],ans:0,exp:"地下鉄 = ちかてつ (metro)"},
+{q:"「<ruby>仕事<rt>?</rt></ruby>」の読み方は？",opts:["しごと","しじ","じこと","つかごと"],ans:0,exp:"仕事 = しごと (iş)"},
+{q:"「<ruby>世界<rt>?</rt></ruby>」の読み方は？",opts:["せかい","せいかい","よかい","せがい"],ans:0,exp:"世界 = せかい (dünya)"},
+{q:"「<ruby>心配<rt>?</rt></ruby>」の読み方は？",opts:["しんぱい","しんはい","こころくば","しんばい"],ans:0,exp:"心配 = しんぱい (endişe)"}
+];
+const qV=[
+{q:"「<ruby>払<rt>はら</rt></ruby>う」の意味は？",opts:["aramak","ödemek","atmak","seçmek"],ans:1,exp:"払う = ödemek"},
+{q:"「<ruby>探<rt>さが</rt></ruby>す」の意味は？",opts:["aramak","bulmak","kaybetmek","saklamak"],ans:0,exp:"探す = aramak"},
+{q:"「<ruby>準備<rt>じゅんび</rt></ruby>する」の意味は？",opts:["temizlemek","hazırlanmak","dinlenmek","bitirmek"],ans:1,exp:"準備する = hazırlanmak"},
+{q:"「<ruby>約束<rt>やくそく</rt></ruby>する」の意味は？",opts:["danışmak","söz vermek","davet etmek","tanıtmak"],ans:1,exp:"約束する = söz vermek"},
+{q:"「<ruby>危険<rt>きけん</rt></ruby>な」の意味は？",opts:["güvenli","tehlikeli","karmaşık","basit"],ans:1,exp:"危険な = tehlikeli"},
+{q:"「<ruby>簡単<rt>かんたん</rt></ruby>な」の意味は？",opts:["zor","basit/kolay","kibar","nadir"],ans:1,exp:"簡単な = basit"},
+{q:"「<ruby>技術<rt>ぎじゅつ</rt></ruby>」の意味は？",opts:["deneyim","teknik/beceri","araştırma","toplantı"],ans:1,exp:"技術 = teknik/beceri"},
+{q:"「<ruby>将来<rt>しょうらい</rt></ruby>」の意味は？",opts:["geçmiş","gelecek","şimdi","son zaman"],ans:1,exp:"将来 = gelecek"},
+{q:"「たぶん」の意味は？",opts:["kesinlikle","muhtemelen","asla","hemen"],ans:1,exp:"たぶん = muhtemelen"},
+{q:"「やっと」の意味は？",opts:["aniden","nihayet","tekrar","özellikle"],ans:1,exp:"やっと = nihayet"},
+{q:"「<ruby>紹介<rt>しょうかい</rt></ruby>する」の意味は？",opts:["tanıtmak","açıklamak","uyarmak","seçmek"],ans:0,exp:"紹介する = tanıtmak"},
+{q:"「<ruby>興味<rt>きょうみ</rt></ruby>」の意味は？",opts:["görüş","ilgi","sebep","uygunluk"],ans:1,exp:"興味 = ilgi"}
+];
+const qMix=[
+{q:"「<ruby>日本語<rt>にほんご</rt></ruby>が（　）ようになりました」(konuşabilir oldum)",opts:["話す","話せる","話される","話そう"],ans:1,exp:"potansiyel+ようになる: 話せる"},
+{q:"「<ruby>子<rt>こ</rt></ruby>どものとき、ピアノを<ruby>練習<rt>れんしゅう</rt></ruby>（　）」(mecbur bırakıldım)",opts:["させました","させられました","されました","しました"],ans:1,exp:"使役受身: させられる"},
+{q:"「<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る（　）から、<ruby>傘<rt>かさ</rt></ruby>を<ruby>持<rt>も</rt></ruby>っていく」(olabilir)",opts:["はず","かもしれない","つもり","ように"],ans:1,exp:"olasılık: かもしれない"},
+{q:"「<ruby>薬<rt>くすり</rt></ruby>を<ruby>飲<rt>の</rt></ruby>んだ（　）、<ruby>熱<rt>ねつ</rt></ruby>がある」(rağmen)",opts:["ので","のに","から","ように"],ans:1,exp:"のに = rağmen"},
+{q:"「<ruby>時間<rt>じかん</rt></ruby>が（　）、<ruby>手伝<rt>てつだ</rt></ruby>います」(varsa - たら)",opts:["あるたら","あったら","あれば ✗","ありたら"],ans:1,exp:"あったら"},
+{q:"「<ruby>先生<rt>せんせい</rt></ruby>に<ruby>褒<rt>ほ</rt></ruby>め（　）」(övüldüm - edilgen)",opts:["られました","させました","させられました","ました"],ans:0,exp:"受身: 褒められる"},
+{q:"「<ruby>健康<rt>けんこう</rt></ruby>の（　）、<ruby>運動<rt>うんどう</rt></ruby>する」(...için - N)",opts:["ように","ために","ので","のに"],ans:1,exp:"N+の+ために"},
+{q:"「<ruby>友達<rt>ともだち</rt></ruby>が<ruby>手伝<rt>てつだ</rt></ruby>って（　）」(bana iyilik)",opts:["あげた","くれた","もらった","おいた"],ans:1,exp:"bana iyilik: てくれる"},
+{q:"「<ruby>食<rt>た</rt></ruby>べ（　）、お<ruby>腹<rt>なか</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>い」(çok yedim)",opts:["やすくて","にくくて","すぎて","ながら"],ans:2,exp:"食べすぎて"},
+{q:"「<ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聞<rt>き</rt></ruby>き（　）<ruby>歩<rt>ある</rt></ruby>く」(...arak)",opts:["ながら","たり","ので","まま"],ans:0,exp:"ながら = aynı anda"},
+{q:"「この<ruby>店<rt>みせ</rt></ruby>は<ruby>安<rt>やす</rt></ruby>い（　）、おいしい（　）」(hem-hem)",opts:["て/て","し/し","のに/のに","ば/ば"],ans:1,exp:"し ile sırala"},
+{q:"「<ruby>行<rt>い</rt></ruby>く」の<ruby>謙譲語<rt>けんじょうご</rt></ruby>は？",opts:["いらっしゃる","参る","おっしゃる","なさる"],ans:1,exp:"行く/来る の謙譲語 = 参る"}
+];
+
+const QUIZZES = {
+  1:{title:"Quiz 1 — Fiil Formları A", sub:"可能・意向・命令・禁止", data:q1, color:"#d99e0b"},
+  2:{title:"Quiz 2 — Fiil Formları B", sub:"受身・使役・使役受身", color:"#c07a1a", data:q2},
+  3:{title:"Quiz 3 — Koşullar", sub:"たら・ば・なら (+と)", data:q3, color:"#4a7c59"},
+  4:{title:"Quiz 4 — Verme & Alma", sub:"あげる/くれる/もらう + て形", data:q4, color:"#b07d10"},
+  5:{title:"Quiz 5 — て形 Uzantıları", sub:"ておく・てしまう・てみる・ていく/くる・てある", data:q5, color:"#9a7b1f"},
+  6:{title:"Quiz 6 — Tahmin A", sub:"そう×2・ようだ/みたい・らしい", data:q6, color:"#d9731f"},
+  7:{title:"Quiz 7 — Tahmin B", sub:"はず・かもしれない・だろう", data:q7, color:"#c9902a"},
+  8:{title:"Quiz 8 — Zorunluluk & İzin", sub:"なければ・なくてもいい・てもいい/てはいけない", data:q8, color:"#4a7c59"},
+  9:{title:"Quiz 9 — Sebep & Zıtlık", sub:"ので・のに・し・ために", data:q9, color:"#d99e0b"},
+  10:{title:"Quiz 10 — Amaç & Karar & Niyet", sub:"ように・ことにする・つもり・予定", data:q10, color:"#9a7b1f"},
+  11:{title:"Quiz 11 — Diğer N4 A", sub:"ながら・すぎる・やすい/にくい・方", data:q11, color:"#d9731f"},
+  12:{title:"Quiz 12 — Diğer N4 B", sub:"かどうか・と思う・まま・ば〜ほど・敬語", data:q12, color:"#c07a1a"},
+  13:{title:"Quiz 13 — N4 KANJI 🈵", sub:"Kanji → doğru okunuş", data:qK, color:"#7b5ea7"},
+  14:{title:"Quiz 14 — N4 KELİME 📝", sub:"Kelime → anlam", data:qV, color:"#2e9e5b"},
+  15:{title:"Quiz 15 — KARMA / Achievement 🏆", sub:"Tüm N4 konuları karışık", data:qMix, color:"#c0392b"}
+};
+
+let curQuiz=null, curData=[], curIdx=0, curAnswers={}, timerInt=null, elapsed=0;
+
+function buildHub(){
+  const grid=document.getElementById('quizhub-grid');
+  grid.innerHTML='';
+  Object.keys(QUIZZES).forEach(n=>{
+    const q=QUIZZES[n];
+    const card=document.createElement('div');
+    card.className='quizhub-card';
+    card.style.borderTopColor=q.color;
+    card.innerHTML='<div class="quizhub-card-title">'+q.title+'</div><div class="quizhub-card-sub">'+q.sub+'</div><div class="quizhub-card-meta">'+q.data.length+' soru</div><button class="quizhub-start" style="background:'+q.color+'">▶ Başlat</button>';
+    card.querySelector('.quizhub-start').onclick=()=>startQuiz(n);
+    grid.appendChild(card);
+  });
+}
+function startQuiz(n){
+  curQuiz=n; curData=QUIZZES[n].data; curIdx=0; curAnswers={}; elapsed=0;
+  document.getElementById('quizhub-grid').parentElement.style.display='none';
+  document.getElementById('quizresult').style.display='none';
+  document.getElementById('quizrun').style.display='block';
+  document.getElementById('quizrun-title').textContent=QUIZZES[n].title;
+  clearInterval(timerInt);
+  timerInt=setInterval(()=>{elapsed++;updateTimer();},1000);
+  updateTimer(); renderQ();
+  document.getElementById('quizrun').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function updateTimer(){
+  const m=String(Math.floor(elapsed/60)).padStart(2,'0');
+  const s=String(elapsed%60).padStart(2,'0');
+  document.getElementById('quizrun-timer').textContent='⏱️ '+m+':'+s;
+}
+function renderQ(){
+  const it=curData[curIdx]; const total=curData.length;
+  document.getElementById('quizrun-counter').textContent='Soru '+(curIdx+1)+' / '+total;
+  document.getElementById('quizrun-bar').style.width=((curIdx+1)/total*100)+'%';
+  document.getElementById('quizrun-q').innerHTML=it.q;
+  const optsBox=document.getElementById('quizrun-opts'); optsBox.innerHTML='';
+  it.opts.forEach((o,j)=>{
+    const b=document.createElement('button');
+    b.className='quizrun-opt';
+    if(curAnswers[curIdx]===j) b.classList.add('selected');
+    b.innerHTML='<span class="optletter">'+['A','B','C','D'][j]+'</span> '+o;
+    b.onclick=()=>{curAnswers[curIdx]=j; renderQ();};
+    optsBox.appendChild(b);
+  });
+  document.getElementById('quizrun-prev').style.visibility = curIdx===0 ? 'hidden':'visible';
+  document.getElementById('quizrun-next').textContent = curIdx===total-1 ? '✓ Bitir & Sonuç' : 'Sonraki →';
+}
+function quizPrev(){ if(curIdx>0){curIdx--;renderQ();} }
+function quizNext(){ if(curIdx<curData.length-1){curIdx++;renderQ();} else finishQuiz(); }
+function finishQuiz(){
+  clearInterval(timerInt);
+  let score=0; curData.forEach((it,i)=>{ if(curAnswers[i]===it.ans) score++; });
+  const total=curData.length;
+  document.getElementById('quizrun').style.display='none';
+  const res=document.getElementById('quizresult'); res.style.display='block';
+  document.getElementById('quizresult-score').textContent=score+'/'+total;
+  const m=String(Math.floor(elapsed/60)).padStart(2,'0'), s=String(elapsed%60).padStart(2,'0');
+  document.getElementById('quizresult-label').textContent=QUIZZES[curQuiz].title+' · Süre: '+m+':'+s;
+  const pct=score/total; let cm='';
+  if(pct>=0.9)cm='🌟 素晴らしい！N4 için hazırsın!';
+  else if(pct>=0.7)cm='😊 よくできました！Birkaç tekrar kaldı.';
+  else if(pct>=0.5)cm='💪 Yarıdan fazla! Yanlışları gözden geçir.';
+  else cm='📚 大丈夫！Açıklamaları oku, tekrar dene.';
+  document.getElementById('quizresult-comment').textContent=cm;
+  let rev='<div class="review-title">📋 Cevap Anahtarı & Açıklamalar</div>';
+  curData.forEach((it,i)=>{
+    const sel=curAnswers[i]; const ok = sel===it.ans;
+    rev+='<div class="review-item '+(ok?'ok':'no')+'">';
+    rev+='<div class="review-q">'+(i+1)+'. '+it.q+'</div>';
+    rev+='<div class="review-a">'+(ok?'✅':'❌')+' Doğru: '+['A','B','C','D'][it.ans]+'. '+it.opts[it.ans];
+    if(!ok && sel!==undefined) rev+=' <span class="review-your">(senin: '+['A','B','C','D'][sel]+'. '+it.opts[sel]+')</span>';
+    if(!ok && sel===undefined) rev+=' <span class="review-your">(boş bıraktın)</span>';
+    rev+='</div><div class="review-exp">💡 '+it.exp+'</div></div>';
+  });
+  document.getElementById('quizresult-review').innerHTML=rev;
+  res.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function quizRestart(){ startQuiz(curQuiz); }
+function quizQuit(){
+  clearInterval(timerInt);
+  document.getElementById('quizrun').style.display='none';
+  document.getElementById('quizresult').style.display='none';
+  document.getElementById('quizhub-grid').parentElement.style.display='block';
+  document.getElementById('exam-center').scrollIntoView({behavior:'smooth',block:'start'});
+}
+buildHub();
+</script>
+</body>
+</html>
