@@ -9,57 +9,57 @@
 @media (prefers-color-scheme:dark){:root{--bg:#121722;--paper:#1b2230;--ink:#e7ebf2;--soft:#9aa4b5;--line:#2e3849;--ai:#8db4ee;--ai-soft:#22324d;--beni:#ec7d86;--ok:#6fcf97;--ok-soft:#1f3a2b;--bad-soft:#41222a;color-scheme:dark}}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;overflow:hidden}
-body{background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic","PingFang SC",system-ui,sans-serif;display:flex;flex-direction:column;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Hiragino Sans","Noto Sans JP","Yu Gothic","PingFang SC",system-ui,sans-serif;display:flex;flex-direction:column;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}
 header{display:flex;align-items:center;gap:6px;padding:8px 10px;border-bottom:1px solid var(--line);background:var(--paper)}
-header h1{flex:1;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
-.iconbtn{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:8px;height:36px;min-width:36px;font-size:16px;cursor:pointer;font-weight:600}
-select{height:36px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);font-size:13px;max-width:36vw;padding:0 4px}
+header h1{flex:1;font-size:17px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
+.iconbtn{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:8px;height:36px;min-width:36px;font-size:19px;cursor:pointer;font-weight:600}
+select{height:36px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);font-size:16px;max-width:36vw;padding:0 4px}
 main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:10px}
-.card{width:100%;max-width:640px;max-height:100%;overflow:hidden;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
-.tag{font-size:12px;color:var(--soft)}
-.pattern{font-size:clamp(20px,5.5vw,28px);font-weight:700;color:var(--ai);border-left:4px solid var(--beni);padding-left:10px;line-height:1.8}
-.exp{font-size:14px;line-height:1.55}.exp b{color:var(--beni)}
-.form{font-size:13px;background:var(--ai-soft);border-radius:8px;padding:8px 10px;line-height:1.9}
+.card{width:100%;max-width:640px;max-height:100%;overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.tag{font-size:14px;color:var(--soft)}
+.pattern{font-size:clamp(24px,6.6vw,34px);font-weight:700;color:var(--ai);border-left:4px solid var(--beni);padding-left:10px;line-height:1.8}
+.exp{font-size:17px;line-height:1.55}.exp b{color:var(--beni)}
+.form{font-size:16px;background:var(--ai-soft);border-radius:8px;padding:8px 10px;line-height:1.9}
 .ex{display:flex;flex-direction:column;gap:7px}.ex div{border-top:1px dashed var(--line);padding-top:6px}
-.jp{font-size:clamp(15px,4.2vw,18px);line-height:2}
-.tr{font-size:12.5px;color:var(--soft)}
+.jp{font-size:clamp(18px,5vw,22px);line-height:2}
+.tr{font-size:15px;color:var(--soft)}
 ruby rt{font-size:.5em;color:var(--soft)}
-.line{display:flex;gap:8px;font-size:clamp(14px,3.9vw,17px);line-height:1.95}
+.line{display:flex;gap:8px;font-size:clamp(17px,4.7vw,20px);line-height:1.95}
 .sp{flex:0 0 4.2em;color:var(--ai);font-weight:600}
 mark{background:none;color:var(--beni);border-bottom:2px dotted var(--beni)}
 .opts{display:grid;gap:8px}
-.opt{text-align:left;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:10px;padding:10px 12px;font-size:16px;cursor:pointer;font-family:inherit}
+.opt{text-align:left;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:10px;padding:10px 12px;font-size:19px;cursor:pointer;font-family:inherit}
 .opt.ok{background:var(--ok-soft);border-color:var(--ok)}.opt.bad{background:var(--bad-soft);border-color:var(--beni)}
-.fb{font-size:13px;line-height:1.5;min-height:1.5em}
-.big{font-size:clamp(28px,8vw,44px);font-weight:700;color:var(--ai);text-align:center}
+.fb{font-size:16px;line-height:1.5;min-height:1.5em}
+.big{font-size:clamp(34px,9.6vw,53px);font-weight:700;color:var(--ai);text-align:center}
 footer{background:var(--paper);border-top:1px solid var(--line);padding:8px 10px 4px}
 .navrow{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.navrow button{flex:1;height:44px;border-radius:10px;border:1px solid var(--line);background:var(--ai);color:#fff;font-size:15px;font-weight:600;cursor:pointer}
+.navrow button{flex:1;height:44px;border-radius:10px;border:1px solid var(--line);background:var(--ai);color:#fff;font-size:18px;font-weight:600;cursor:pointer}
 .navrow button:disabled{opacity:.35}
-#count{font-size:13px;color:var(--soft);min-width:60px;text-align:center}
-.credit{text-align:center;font-size:11px;color:var(--soft);padding-top:5px;letter-spacing:.02em}
+#count{font-size:16px;color:var(--soft);min-width:60px;text-align:center}
+.credit{text-align:center;font-size:13px;color:var(--soft);padding-top:5px;letter-spacing:.02em}
 .credit a{color:var(--ai);font-weight:700;text-decoration:none}.credit a:hover{text-decoration:underline}
 
 .seg{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;flex:0 0 auto}
-.seg button{border:0;background:var(--paper);color:var(--soft);font-size:13px;font-weight:600;padding:0 10px;height:34px;cursor:pointer}
+.seg button{border:0;background:var(--paper);color:var(--soft);font-size:16px;font-weight:600;padding:0 10px;height:34px;cursor:pointer}
 .seg button.on{background:var(--ai);color:#fff}
 #menu .item{display:flex;gap:10px;align-items:flex-start}
-#menu .num{flex:0 0 26px;height:26px;border-radius:50%;background:var(--ai-soft);color:var(--ai);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
-#menu .nm{font-size:14px;line-height:1.35}
-#menu .jpp{display:block;font-size:12px;color:var(--soft);margin-top:2px}
-#menu h2{font-size:14px;color:var(--ink);font-weight:700;margin:16px 0 6px;padding-bottom:4px;border-bottom:2px solid var(--beni)}
-#menu .close{float:right;border:0;background:none;color:var(--soft);font-size:22px;cursor:pointer}
+#menu .num{flex:0 0 26px;height:26px;border-radius:50%;background:var(--ai-soft);color:var(--ai);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+#menu .nm{font-size:17px;line-height:1.35}
+#menu .jpp{display:block;font-size:14px;color:var(--soft);margin-top:2px}
+#menu h2{font-size:17px;color:var(--ink);font-weight:700;margin:16px 0 6px;padding-bottom:4px;border-bottom:2px solid var(--beni)}
+#menu .close{float:right;border:0;background:none;color:var(--soft);font-size:26px;cursor:pointer}
 #welcome{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:20;padding:20px}
 #welcome.open{display:flex}
 #welcome .box{background:var(--paper);border-radius:16px;padding:22px;max-width:360px;width:100%;display:flex;flex-direction:column;gap:12px;text-align:center}
-#welcome h3{font-size:18px}#welcome p{font-size:14px;color:var(--soft);line-height:1.5}
-#welcome button{height:46px;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+#welcome h3{font-size:22px}#welcome p{font-size:17px;color:var(--soft);line-height:1.5}
+#welcome button{height:46px;border-radius:10px;font-size:18px;font-weight:600;cursor:pointer;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
 #welcome button.main{background:var(--ai);color:#fff;border-color:var(--ai)}
 #menu{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;z-index:10}
 #menu.open{display:block}
 #menu nav{position:absolute;left:0;top:0;bottom:0;width:min(320px,85vw);background:var(--paper);padding:14px;overflow-y:auto;padding-top:calc(14px + env(safe-area-inset-top,0))}
-#menu h2{font-size:13px;color:var(--soft);margin:12px 0 4px}
-#menu a{display:block;padding:7px 8px;border-radius:6px;color:var(--ink);text-decoration:none;font-size:14px;cursor:pointer}
+#menu h2{font-size:16px;color:var(--soft);margin:12px 0 4px}
+#menu a{display:block;padding:7px 8px;border-radius:6px;color:var(--ink);text-decoration:none;font-size:17px;cursor:pointer}
 #menu a.cur{background:var(--ai-soft);color:var(--ai);font-weight:600}
 .langs{display:flex;gap:6px}.langs button{flex:1;height:34px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer}
 .langs button.on{background:var(--ai);color:#fff;border-color:var(--ai)}
@@ -308,7 +308,7 @@ function label(p,i){const u=UI[lang];
 function build(){const u=UI[lang];
   $('seg').innerHTML=LS.map(l=>`<button data-l="${l}" class="${l===lang?'on':''}">${UI[l].code}</button>`).join('');
   const secs=[...new Set(P.map(p=>p.sec))];
-  $('nav').innerHTML=`<button class="close" data-x="1" aria-label="Kapat">×</button><h3 style="font-size:17px">${u.topics}</h3>`+
+  $('nav').innerHTML=`<button class="close" data-x="1" aria-label="Kapat">×</button><h3 style="font-size:20px">${u.topics}</h3>`+
    secs.map(s=>`<h2>${secName(s)}</h2>`+P.map((p,i)=>p.sec!==s?'':`<a data-i="${i}" class="item"><span class="num" data-i="${i}">${p.t==='q'?(ans[i]===undefined?'?':(ans[i]===p.a?'✓':'✗')):i+1}</span><span class="nm" data-i="${i}">${label(p,i)}${p.t==='g'?`<span class="jpp" data-i="${i}">${strip(p.pattern).split(' / ')[0]}</span>`:''}</span></a>`).join('')).join('');
   $('prev').textContent=u.prev;$('next').textContent=u.next;
   document.documentElement.lang=lang==='zh'?'zh-CN':lang;
@@ -321,7 +321,7 @@ function render(){const p=P[cur],u=UI[lang];let h='';
   }else if(p.t==='r'){
     h=`<div class="tag">${u.read} · ${p.title}</div>`+p.lines.map(l=>`<div class="line"><span class="sp">${R(l[0])}</span><span>${R(l[1])}</span></div>`).join('');
   }else if(p.t==='q'){const a=ans[cur];
-    h=`<div class="tag">${u.test} · ${u.q} ${qn(cur)} / ${QT}</div><div class="jp" style="font-size:clamp(17px,4.8vw,21px)">${R(p.q)}${p.hint?` <span class="tr">（${L(p.hint)}）</span>`:''}</div>
+    h=`<div class="tag">${u.test} · ${u.q} ${qn(cur)} / ${QT}</div><div class="jp" style="font-size:clamp(20px,5.8vw,25px)">${R(p.q)}${p.hint?` <span class="tr">（${L(p.hint)}）</span>`:''}</div>
     <div class="opts">${p.opts.map((o,i)=>`<button class="opt ${a!==undefined?(i===p.a?'ok':(i===a?'bad':'')):''}" data-o="${i}">${R(o)}</button>`).join('')}</div>
     <div class="fb">${a!==undefined?(a===p.a?u.ok:u.bad)+R(L(p.why)):u.pick}</div>`;
   }else{const qs=P.map((x,i)=>[x,i]).filter(([x])=>x.t==='q');
