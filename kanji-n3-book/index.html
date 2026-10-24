@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>N3 Kelime Çalışması — 25 soru</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef1f6;--paper:#ffffff;--ink:#1d2a44;--soft:#5d6a85;--line:#d5dbe7;--indigo:#2f4b8f;--red:#c8322b;--ok:#1f7a55;--okbg:#e3f3ec;--badbg:#fbe9e7;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121826;--paper:#1b2336;--ink:#e6eaf3;--soft:#9aa6c0;--line:#2e3a55;--indigo:#8fa8ec;--red:#ef6a5f;--ok:#5fd0a0;--okbg:#173a2d;--badbg:#45201d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121826;--paper:#1b2336;--ink:#e6eaf3;--soft:#9aa6c0;--line:#2e3a55;--indigo:#8fa8ec;--red:#ef6a5f;--ok:#5fd0a0;--okbg:#173a2d;--badbg:#45201d;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:Figtree,system-ui,sans-serif;font-size:17px;line-height:1.5}
+.jp,.big,.sent,.opt{font-family:"Klee One","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif}
+#app{max-width:640px;margin:0 auto;padding:16px;min-height:100%;display:flex;flex-direction:column}
+header{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+header h1{font-size:18px;margin:0;flex:1}
+button{font:inherit;color:inherit;cursor:pointer}
+.back{background:none;border:1px solid var(--line);border-radius:10px;padding:6px 12px}
+.toggle{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:14px}
+.toggle.on{border-color:var(--indigo);color:var(--indigo)}
+button:focus-visible{outline:3px solid var(--indigo);outline-offset:2px}
+/* home */
+.hero{text-align:center;padding:24px 0 10px}
+.hero .big{font-size:64px;line-height:1;letter-spacing:.05em}
+.hero p{color:var(--soft);margin:10px 0 0}
+.menu{display:grid;gap:12px;margin-top:20px}
+.mbtn{display:flex;align-items:center;gap:14px;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px}
+.mbtn .k{font-family:"Klee One",sans-serif;font-size:34px;width:52px;text-align:center;color:var(--indigo)}
+.mbtn b{display:block;font-size:17px}
+.mbtn span{color:var(--soft);font-size:14px}
+.grp{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.chip{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px}
+.chip.on{background:var(--indigo);color:var(--paper);border-color:var(--indigo)}
+h2{font-size:15px;color:var(--soft);margin:22px 0 4px;font-weight:600}
+/* learn */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:12px}
+.word{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.word .big{font-size:52px;line-height:1.1}
+.rd{font-family:"Klee One",sans-serif;font-size:22px;color:var(--indigo)}
+.rd.hid{background:var(--line);color:transparent;border-radius:6px;cursor:pointer;user-select:none}
+.mean{font-weight:700;font-size:19px;margin-top:4px}
+.parts{display:grid;gap:6px;margin:12px 0}
+.part{display:flex;gap:10px;align-items:center;background:var(--bg);border-radius:10px;padding:8px 10px;font-size:15px}
+.part .jp{font-size:28px;width:36px;text-align:center}
+.tip{border-left:3px solid var(--red);padding-left:10px;font-size:15px;margin:10px 0}
+.sent{font-size:20px;line-height:2.2}
+.tr{color:var(--soft);font-size:15px}
+.navrow{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px;gap:10px}
+.navrow button{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px}
+.navrow .pri{background:var(--indigo);color:var(--paper);border-color:var(--indigo)}
+ruby rt{font-size:.5em;color:var(--soft)}
+.nofuri rt{visibility:hidden}
+u.t{text-decoration:none;border-bottom:2px solid var(--red);padding:0 2px}
+/* test */
+.prog{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--ok);transition:width .3s}
+.stat{display:flex;justify-content:space-between;color:var(--soft);font-size:14px;margin:6px 0 14px}
+.qtype{font-size:14px;color:var(--soft);margin-bottom:6px}
+.dots{display:inline-flex;gap:4px;margin-left:6px;vertical-align:middle}
+.dots i{width:10px;height:10px;border-radius:50%;border:2px solid var(--ok)}
+.dots i.f{background:var(--ok)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.opt{background:var(--paper);border:2px solid var(--line);border-radius:14px;padding:14px 8px;font-size:22px;min-height:64px}
+.opt.ok{background:var(--okbg);border-color:var(--ok)}
+.opt.bad{background:var(--badbg);border-color:var(--red)}
+.opt small{display:block;font-family:Figtree,sans-serif;font-size:12px;color:var(--soft)}
+.fb{margin-top:14px;border-radius:14px;padding:14px;font-size:15px}
+.fb.ok{background:var(--okbg)} .fb.bad{background:var(--badbg)}
+.fb .head{font-weight:700;font-size:16px;margin-bottom:6px}
+.done{text-align:center;padding:40px 0}
+.stamp{display:inline-block;font-family:"Klee One",sans-serif;font-size:44px;color:var(--red);border:4px solid var(--red);border-radius:50%;width:110px;height:110px;line-height:100px;transform:rotate(-8deg)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const D=[
+{m:1,s:"会場には{大勢|おおぜい}の[観客]がいた。",o:["けんぎゃく","かんぎゃく","けんきゃく","かんきゃく"],a:3,w:"観客",r:"かんきゃく",mean:"seyirci",p:[["観","カン","bakmak, izlemek (観光 かんこう = turizm)"],["客","キャク","misafir, müşteri (お客さん)"]],tip:"İzleyen misafir = seyirci. 客 her zaman きゃく — ゛ (ぎゃ) yok.",tr:"Salonda çok sayıda seyirci vardı."},
+{m:1,s:"{田村|たむら}さんが[払って]くれました。",o:["くばって","はらって","かざって","ひろって"],a:1,w:"払う",r:"はらう",mean:"ödemek",p:[["払","はら(う)","sol taraf 扌 = el → elle para uzatmak"]],tip:"扌 (el) olan fiiller hep elle yapılan işlerdir: 払う ödemek, 拾う ひろう yerden almak, 持つ もつ tutmak.",tr:"Tamura-san (benim yerime) ödedi."},
+{m:1,s:"ホテルには3{時|じ}ごろ[到着]します。",o:["とうちゃく","とうつく","とちゃく","とつく"],a:0,w:"到着",r:"とうちゃく",mean:"varış",p:[["到","トウ","ulaşmak, varmak"],["着","チャク","varmak / giymek (着る きる)"]],tip:"着 tek başına fiilken つく ama kelime içinde チャク olur. 到 uzun okunur: とう.",tr:"Otele saat 3 civarı varacağım."},
+{m:1,s:"{山下|やました}さんが{説明|せつめい}を[加えました]。",o:["つたえました","おえました","くわえました","かえました"],a:2,w:"加える",r:"くわえる",mean:"eklemek",p:[["加","カ / くわ(える)","力 (güç) + 口 (ağız) → bir şeye güç katmak"]],tip:"追加 ついか = ek, 参加 さんか = katılım. Hep 'ekleme' fikri.",tr:"Yamashita-san açıklama ekledi."},
+{m:1,s:"{今|いま}から[訓練]を{行|おこな}います。",o:["くんれい","くんれん","ぐんれい","ぐんれん"],a:1,w:"訓練",r:"くんれん",mean:"eğitim, talim",p:[["訓","クン","öğretmek (言 = söz)"],["練","レン","alıştırma (練習 れんしゅう)"]],tip:"練習'teki 練 = れん. Sonu れい değil れん. 訓 sessiz: く, ぐ değil.",tr:"Şimdi eğitimi yapacağız."},
+{m:1,s:"この[豆]はスープに{使|つか}うといいですよ。",o:["こな","いも","かい","まめ"],a:3,w:"豆",r:"まめ",mean:"fasulye, bakla",p:[["豆","まめ / トウ","ayaklı bir kase resmi"]],tip:"豆腐 とうふ = tofu, 納豆 なっとう. Tek başına まめ.",tr:"Bu fasulyeyi çorbada kullanmak iyi olur."},
+{m:1,s:"{社会|しゃかい}には[共通]のルールがあります。",o:["きょうつ","こうつう","きょうつう","こうつ"],a:2,w:"共通",r:"きょうつう",mean:"ortak",p:[["共","キョウ","birlikte (共に ともに)"],["通","ツウ","geçmek, ortak olmak"]],tip:"Tuzak: 交通 こうつう = trafik! 共 = birlikte → きょう. İkisi de uzun: きょう・つう.",tr:"Toplumda ortak kurallar vardır."},
+{m:1,s:"{来年|らいねん}から[税金]が{上|あ}がるそうだ。",o:["ぜいきん","ぜっきん","せいきん","せっきん"],a:0,w:"税金",r:"ぜいきん",mean:"vergi",p:[["税","ゼイ","禾 (tahıl) → eskiden vergi tahılla ödenirdi"],["金","キン","para, altın"]],tip:"税 = ぜい (゛var, っ yok). 消費税 しょうひぜい = KDV — Japonya'da her fişte görürsün.",tr:"Gelecek yıldan vergiler artacakmış."},
+{m:2,s:"しばらく、きれいな[なみ]を{見|み}ていた。",o:["池","湖","港","波"],or:["いけ","みずうみ","みなと","なみ"],a:3,w:"波",r:"なみ",mean:"dalga",p:[["波","なみ / ハ","氵 (su) + 皮 (deri) → suyun derisi = dalga"]],tip:"Hepsinde 氵 (su) var! 池 いけ gölet, 湖 みずうみ göl, 港 みなと liman.",tr:"Bir süre güzel dalgaları izledim."},
+{m:2,s:"もう{少|すこ}し[はやく]{歩|ある}きましょう。",o:["軽く","急く","速く","進く"],or:["かるく","—","はやく","—"],a:2,w:"速い",r:"はやい",mean:"hızlı",p:[["速","ソク / はや(い)","辶 (yol) → yolda hızlı gitmek"]],tip:"早い = erken (zaman), 速い = hızlı (sürat). Yürümek sürat → 速く. 急ぐ いそぐ = acele etmek, 軽い かるい = hafif.",tr:"Biraz daha hızlı yürüyelim."},
+{m:2,s:"わたしは{今|いま}の{生活|せいかつ}に[まんぞく]している。",o:["満続","万続","満足","万足"],a:2,w:"満足",r:"まんぞく",mean:"memnuniyet",p:[["満","マン","dolu (満員 まんいん = tıklım tıklım)"],["足","ソク / あし","ayak; yeterli (足りる たりる)"]],tip:"Dolu + yeterli = memnun. 万 = 10.000 (sayı), burada yanlış.",tr:"Şimdiki hayatımdan memnunum."},
+{m:2,s:"{父|ちち}は{腕|うで}を[くんで]{何|なに}か{考|かんが}えていた。",o:["接んで","組んで","折んで","結んで"],or:["—","くんで","—","むすんで"],a:1,w:"組む",r:"くむ",mean:"kavuşturmak, birleştirmek",p:[["組","くみ / く(む)","糸 (iplik) → iplikleri örmek"]],tip:"腕を組む = kollarını kavuşturmak (kalıp ifade). 組 = sınıf/grup da demek: 1年2組. 結ぶ むすぶ = bağlamak.",tr:"Babam kollarını kavuşturmuş bir şey düşünüyordu."},
+{m:2,s:"この{国|くに}は{主|おも}に{米|こめ}を[ゆしゅつ]している。",o:["輸出","論出","輪出","諭出"],a:0,w:"輸出",r:"ゆしゅつ",mean:"ihracat",p:[["輸","ユ","車 (araba) → taşımak"],["出","シュツ","çıkmak"]],tip:"Taşıyıp dışarı çıkarmak = ihracat. Karşıtı 輸入 ゆにゅう = ithalat. 車 olanı seç!",tr:"Bu ülke başlıca pirinç ihraç ediyor."},
+{m:2,s:"{赤|あか}ちゃんが{母親|ははおや}に{抱|だ}かれて[ねむって]います。",o:["寝って","宿って","眼って","眠って"],a:3,w:"眠る",r:"ねむる",mean:"uyumak",p:[["眠","ミン / ねむ(る)","目 (göz) + 民 → gözler kapanır"]],tip:"寝る ねる = yatmak (って değil て olur). 眼 め = göz (uyumak değil). 眠い ねむい = uykulu.",tr:"Bebek annesinin kucağında uyuyor."},
+{m:3,s:"この{紙|かみ}は、ぬれても{破|やぶ}れにくいという（　）があります。",o:["実力","特長","専門","主張"],or:["じつりょく","とくちょう","せんもん","しゅちょう"],a:1,w:"特長",r:"とくちょう",mean:"güçlü özellik, avantaj",p:[["特","トク","özel (特に とくに)"],["長","チョウ","uzun; üstün yan"]],tip:"Bir ürünün iyi özelliği = 特長. 実力 yetenek, 専門 uzmanlık alanı, 主張 iddia.",tr:"Bu kağıdın ıslansa bile zor yırtılma gibi bir özelliği var."},
+{m:3,s:"{佐藤|さとう}さんには、おとなしい（　）があるが、{本当|ほんとう}は{活動的|かつどうてき}な{人|ひと}らしい。",o:["ヒント","タイトル","アイディア","イメージ"],a:3,w:"イメージ",r:"イメージ",mean:"imaj, izlenim",p:[],tip:"おとなしい = sakin, uslu. 'Sakin bir imajı var ama aslında aktif' → イメージ.",tr:"Sato-san sakin görünüyor ama aslında aktif biriymiş."},
+{m:3,s:"{正月|しょうがつ}には{親戚|しんせき}が{集|あつ}まって、みんなでテーブルを（　）、{楽|たの}しく{食事|しょくじ}をした。",o:["囲み","通し","包み","越え"],or:["かこみ","とおし","つつみ","こえ"],a:0,w:"囲む",r:"かこむ",mean:"etrafını çevirmek",p:[["囲","イ / かこ(む)","囗 (çerçeve) içinde → etrafı kapalı"]],tip:"Kanjinin kendisi bir çerçeve: 囗. テーブルを囲む = masanın etrafına toplanmak. 包む = paketlemek.",tr:"Yılbaşında akrabalar toplandı, masanın etrafında keyifle yemek yedik."},
+{m:3,s:"このレストランの{料理|りょうり}はおいしくないので、{店内|てんない}はいつも（　）だ。",o:["ふらふら","ぐっすり","がらがら","うっかり"],a:2,w:"がらがら",r:"がらがら",mean:"bomboş",p:[],tip:"がらがら = boş (trende de: 電車ががらがら). ぐっすり derin uyku, ふらふら sendeleyerek, うっかり dalgınlıkla.",tr:"Bu restoranın yemekleri lezzetsiz, o yüzden içerisi hep bomboş."},
+{m:3,s:"{高田|たかだ}さんが{引|ひ}っ{越|こ}すという（　）を{聞|き}いたが、{本当|ほんとう}かどうか{気|き}になる。",o:["うわさ","宣伝","うそ","冗談"],or:["うわさ","せんでん","うそ","じょうだん"],a:0,w:"うわさ（噂）",r:"うわさ",mean:"söylenti, dedikodu",p:[],tip:"'Doğru mu acaba?' → henüz emin değil = söylenti. うそ yalan (zaten yanlış), 宣伝 reklam, 冗談 şaka.",tr:"Takada-san'ın taşınacağı söylentisini duydum, doğru mu merak ediyorum."},
+{m:3,s:"{父|ちち}から{借|か}りた{本|ほん}をなくしてしまったので{謝|あやま}ったら、{父|ちち}はすぐに（　）くれた。",o:["従って","守って","許して","抑えて"],or:["したがって","まもって","ゆるして","おさえて"],a:2,w:"許す",r:"ゆるす",mean:"affetmek, izin vermek",p:[["許","キョ / ゆる(す)","言 (söz) → sözle izin vermek"]],tip:"謝る あやまる (özür dilemek) → 許す (affetmek). 許可 きょか = izin.",tr:"Babamdan ödünç aldığım kitabı kaybettim, özür dileyince hemen affetti."},
+{m:3,s:"パソコンの{前|まえ}でずっと{同|おな}じ（　）でいたので、{体|からだ}が{痛|いた}くなった。",o:["様子","姿勢","印象","間隔"],or:["ようす","しせい","いんしょう","かんかく"],a:1,w:"姿勢",r:"しせい",mean:"duruş, postür",p:[["姿","シ / すがた","görünüş, beden şekli"],["勢","セイ","güç (大勢 おおぜい'deki aynı kanji!)"]],tip:"Vücudun şekli = duruş. 姿勢がいい = dik duruyor. 様子 durum, 印象 izlenim, 間隔 aralık.",tr:"Bilgisayar başında hep aynı pozisyonda kaldığım için vücudum ağrıdı."},
+{m:3,s:"{申込書|もうしこみしょ}に{間違|まちが}いがないか、よく（　）から{受付|うけつけ}に{出|だ}した。",o:["くりかえして","気にして","見つめて","たしかめて"],a:3,w:"確かめる",r:"たしかめる",mean:"kontrol etmek, emin olmak",p:[["確","カク / たし(か)","石 (taş) → taş gibi sağlam = kesin"]],tip:"'Hata var mı' diye bakmak = 確かめる. 確認 かくにん aynı anlam (iş yerinde çok kullanılır).",tr:"Başvuru formunda hata var mı iyice kontrol edip resepsiyona verdim."},
+{m:3,s:"わたしのふるさとは（　）が{盛|さか}んで、{米|こめ}や{野菜|やさい}をたくさん{作|つく}っています。",o:["自然","資源","作物","農業"],or:["しぜん","しげん","さくもつ","のうぎょう"],a:3,w:"農業",r:"のうぎょう",mean:"tarım",p:[["農","ノウ","çiftçilik (農家 のうか = çiftçi)"],["業","ギョウ","iş, sektör (工業 = sanayi)"]],tip:"〜が盛ん = '...yaygın/gelişmiş' → bir sektör ister. 作物 (ürün) üretilir ama 'gelişmiş' olmaz.",tr:"Memleketimde tarım gelişmiş, çok pirinç ve sebze üretiyoruz."},
+{m:3,s:"{水|みず}に{浮|う}いていた{木|き}の{葉|は}が、しばらくすると{水|みず}の{中|なか}に（　）しまった。",o:["しずんで","ころんで","たおれて","おぼれて"],a:0,w:"沈む",r:"しずむ",mean:"batmak",p:[["沈","チン / しず(む)","氵 (su) → suya gömülmek"]],tip:"浮く うく (yüzmek) ↔ 沈む しずむ (batmak). おぼれる = boğulmak, sadece canlılar için.",tr:"Suyun üstünde yüzen yaprak, bir süre sonra suya battı."},
+{m:3,s:"この{話|はなし}は{誰|だれ}にも{言|い}わずに、ずっと（　）にしていた。",o:["裏側","内緒","後方","中身"],or:["うらがわ","ないしょ","こうほう","なかみ"],a:1,w:"内緒",r:"ないしょ",mean:"sır, gizli",p:[["内","ナイ","iç"],["緒","ショ","ip ucu"]],tip:"内緒にする = sır olarak tutmak. 'これ、内緒ね' = bu aramızda kalsın.",tr:"Bu konuyu kimseye söylemeden hep sır olarak tuttum."}
+];
+const MT={1:"問題1 · Okunuş seç",2:"問題2 · Doğru kanjiyi seç",3:"問題3 · Boşluğu doldur"};
+let S={view:"home",furi:true,lf:0,li:0,hide:false,tf:0,q:[],c:{},cur:null,ans:null,tries:0,wrong:0};
+const $=document.getElementById("app");
+const ruby=s=>s.replace(/\{([^|}]+)\|([^}]+)\}/g,"<ruby>$1<rt>$2</rt></ruby>").replace(/\[([^\]]+)\]/g,'<u class="t">$1</u>');
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const pool=f=>D.map((d,i)=>i).filter(i=>!f||D[i].m===f);
+function hdr(t,extra=""){return `<header><button class="back" onclick="go('home')">← Menü</button><h1>${t}</h1>${extra}</header>`}
+const furiBtn=()=>`<button class="toggle ${S.furi?'on':''}" onclick="S.furi=!S.furi;render()">ふりがな ${S.furi?'açık':'kapalı'}</button>`;
+function go(v){S.view=v;render();scrollTo(0,0)}
+function home(){
+ const chips=(k,fn)=>[0,1,2,3].map(f=>`<button class="chip ${S[k]===f?'on':''}" onclick="S.${k}=${f};render()">${f?'問題'+f:'Hepsi'}</button>`).join("");
+ return `<div class="hero"><div class="big jp">漢字</div><p>25 soru · önce öğren, sonra test</p></div>
+ <div class="menu">
+ <button class="mbtn" onclick="S.li=0;go('learn')"><span class="k">学</span><div><b>Öğren</b><span>Her kelime: okunuş, anlam, kanji parçaları, ipucu</span></div></button>
+ <h2>Hangi bölüm?</h2><div class="grp">${chips('lf')}</div>
+ <button class="mbtn" onclick="startTest()" style="margin-top:12px"><span class="k">試</span><div><b>Teste başla</b><span>Her soruyu 2 kez doğru bilene kadar sorar. Yanlışlar kısa süre sonra geri gelir.</span></div></button>
+ <h2>Test bölümü</h2><div class="grp">${chips('tf')}</div>
+ </div>`;
+}
+function learn(){
+ const ids=pool(S.lf),i=ids[S.li],d=D[i];
+ const parts=d.p.map(p=>`<div class="part"><span class="jp">${p[0]}</span><div><b>${p[1]}</b><br>${p[2]}</div></div>`).join("");
+ return hdr(`Öğren ${S.li+1}/${ids.length}`,`<button class="toggle ${S.hide?'on':''}" onclick="S.hide=!S.hide;render()">Okunuşu gizle</button>`)+
+ `<div class="card"><div class="tr">${MT[d.m]} · soru ${i+1}</div>
+ <div class="word"><span class="big jp">${d.w}</span><span class="rd ${S.hide?'hid':''}" onclick="this.classList.remove('hid')">${d.r}</span></div>
+ <div class="mean">${d.mean}</div>${parts?`<div class="parts">${parts}</div>`:""}
+ <div class="tip">${d.tip}</div>
+ <div class="sent">${ruby(d.s.replace(/（　）/,`<u class="t">${d.o[d.a]}</u>`))}</div><div class="tr">${d.tr}</div></div>
+ <div class="navrow"><button onclick="S.li=Math.max(0,S.li-1);render()" ${S.li?'':'disabled'}>Önceki</button>
+ ${S.li<ids.length-1?`<button class="pri" onclick="S.li++;render();scrollTo(0,0)">Sonraki</button>`:`<button class="pri" onclick="startTest(S.lf)">Teste geç</button>`}</div>`;
+}
+function startTest(f){if(f!==undefined)S.tf=f;S.q=shuffle(pool(S.tf));S.c={};S.q.forEach(i=>S.c[i]=0);S.tries=0;S.wrong=0;next();go('test')}
+function next(){S.cur=S.q.shift();S.ans=null;S.order=shuffle([0,1,2,3])}
+function pick(k){if(S.ans!==null)return;S.ans=k;S.tries++;const d=D[S.cur];
+ if(k===d.a){S.c[S.cur]++;if(S.c[S.cur]<2)S.q.splice(Math.min(S.q.length,4+Math.floor(Math.random()*4)),0,S.cur)}
+ else{S.wrong++;S.q.splice(Math.min(S.q.length,2),0,S.cur)}render()}
+function cont(){if(!S.q.length){go('done');return}next();render();scrollTo(0,0)}
+function test(){
+ const tot=Object.keys(S.c).length,m=Object.values(S.c).filter(v=>v>=2).length,d=D[S.cur],c=S.c[S.cur];
+ const opts=S.order.map(k=>{let cl="";if(S.ans!==null){if(k===d.a)cl="ok";else if(k===S.ans)cl="bad"}
+  return `<button class="opt ${cl}" onclick="pick(${k})">${d.o[k]}${S.ans!==null&&d.or&&d.or[k]!=="—"&&d.m!==1?`<small>${d.or[k]}</small>`:""}</button>`}).join("");
+ let fb="";if(S.ans!==null){const ok=S.ans===d.a;
+  fb=`<div class="fb ${ok?'ok':'bad'}"><div class="head">${ok?(S.c[S.cur]>=2?'Doğru — bu kelime tamam ✓':'Doğru — bir kez daha gelecek'):'Yanlış — doğrusu: '+d.o[d.a]}</div>
+  <b class="jp" style="font-size:22px">${d.w}</b> <span class="rd">${d.r}</span> = <b>${d.mean}</b>
+  <div class="tip">${d.tip}</div><div class="tr">${d.tr}</div></div>
+  <div class="navrow"><button class="pri" onclick="cont()">Devam</button></div>`}
+ return hdr("Test",furiBtn())+`<div class="prog"><i style="width:${m/tot*100}%"></i></div>
+ <div class="stat"><span>Tamamlanan ${m}/${tot}</span><span>Yanlış ${S.wrong}</span></div>
+ <div class="card"><div class="qtype">${MT[d.m]}<span class="dots"><i class="${c>=1?'f':''}"></i><i class="${c>=2?'f':''}"></i></span></div>
+ <div class="sent ${S.furi?'':'nofuri'}">${ruby(d.s)}</div>
+ ${S.ans!==null?`<div class="tr">${d.tr}</div>`:""}
+ <div class="opts">${opts}</div></div>${fb}`;
+}
+function done(){return `<div class="done"><div class="stamp">合格</div><h1 style="margin-top:24px">Hepsini 2 kez doğru bildin</h1>
+ <p class="tr">${S.tries} cevap, ${S.wrong} yanlış</p>
+ <div class="navrow"><button onclick="go('home')">Menü</button><button class="pri" onclick="startTest()">Tekrar test</button></div></div>`}
+function render(){$.innerHTML=({home,learn,test,done})[S.view]()}
+render();
+</script>
+</body>
+</html>
