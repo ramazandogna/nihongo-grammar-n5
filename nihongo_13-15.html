@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>13・14・15課</title>
+<style>
+:root{--bg:#eef1f4;--paper:#fff;--ink:#1d2433;--soft:#5d6677;--line:#d5dbe3;--ai:#24508f;--ai-soft:#e3ebf7;--beni:#b4313b;--ok:#2e7d4f;--ok-soft:#e2f2e8;--bad-soft:#f8e3e5;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#121722;--paper:#1b2230;--ink:#e7ebf2;--soft:#9aa4b5;--line:#2e3849;--ai:#8db4ee;--ai-soft:#22324d;--beni:#ec7d86;--ok:#6fcf97;--ok-soft:#1f3a2b;--bad-soft:#41222a;color-scheme:dark}}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic","PingFang SC",system-ui,sans-serif;display:flex;flex-direction:column;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}
+header{display:flex;align-items:center;gap:6px;padding:8px 10px;border-bottom:1px solid var(--line);background:var(--paper)}
+header h1{flex:1;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
+.iconbtn{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:8px;height:36px;min-width:36px;font-size:16px;cursor:pointer;font-weight:600}
+select{height:36px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);font-size:13px;max-width:36vw;padding:0 4px}
+main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:10px}
+.card{width:100%;max-width:640px;max-height:100%;overflow:hidden;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.tag{font-size:12px;color:var(--soft)}
+.pattern{font-size:clamp(20px,5.5vw,28px);font-weight:700;color:var(--ai);border-left:4px solid var(--beni);padding-left:10px;line-height:1.8}
+.exp{font-size:14px;line-height:1.55}.exp b{color:var(--beni)}
+.form{font-size:13px;background:var(--ai-soft);border-radius:8px;padding:8px 10px;line-height:1.9}
+.ex{display:flex;flex-direction:column;gap:7px}.ex div{border-top:1px dashed var(--line);padding-top:6px}
+.jp{font-size:clamp(15px,4.2vw,18px);line-height:2}
+.tr{font-size:12.5px;color:var(--soft)}
+ruby rt{font-size:.5em;color:var(--soft)}
+.line{display:flex;gap:8px;font-size:clamp(14px,3.9vw,17px);line-height:1.95}
+.sp{flex:0 0 4.2em;color:var(--ai);font-weight:600}
+mark{background:none;color:var(--beni);border-bottom:2px dotted var(--beni)}
+.opts{display:grid;gap:8px}
+.opt{text-align:left;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:10px;padding:10px 12px;font-size:16px;cursor:pointer;font-family:inherit}
+.opt.ok{background:var(--ok-soft);border-color:var(--ok)}.opt.bad{background:var(--bad-soft);border-color:var(--beni)}
+.fb{font-size:13px;line-height:1.5;min-height:1.5em}
+.big{font-size:clamp(28px,8vw,44px);font-weight:700;color:var(--ai);text-align:center}
+footer{background:var(--paper);border-top:1px solid var(--line);padding:8px 10px 4px}
+.navrow{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.navrow button{flex:1;height:44px;border-radius:10px;border:1px solid var(--line);background:var(--ai);color:#fff;font-size:15px;font-weight:600;cursor:pointer}
+.navrow button:disabled{opacity:.35}
+#count{font-size:13px;color:var(--soft);min-width:60px;text-align:center}
+.credit{text-align:center;font-size:11px;color:var(--soft);padding-top:5px;letter-spacing:.02em}
+.credit a{color:var(--ai);font-weight:700;text-decoration:none}.credit a:hover{text-decoration:underline}
+
+.seg{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;flex:0 0 auto}
+.seg button{border:0;background:var(--paper);color:var(--soft);font-size:13px;font-weight:600;padding:0 10px;height:34px;cursor:pointer}
+.seg button.on{background:var(--ai);color:#fff}
+#menu .item{display:flex;gap:10px;align-items:flex-start}
+#menu .num{flex:0 0 26px;height:26px;border-radius:50%;background:var(--ai-soft);color:var(--ai);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+#menu .nm{font-size:14px;line-height:1.35}
+#menu .jpp{display:block;font-size:12px;color:var(--soft);margin-top:2px}
+#menu h2{font-size:14px;color:var(--ink);font-weight:700;margin:16px 0 6px;padding-bottom:4px;border-bottom:2px solid var(--beni)}
+#menu .close{float:right;border:0;background:none;color:var(--soft);font-size:22px;cursor:pointer}
+#welcome{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:20;padding:20px}
+#welcome.open{display:flex}
+#welcome .box{background:var(--paper);border-radius:16px;padding:22px;max-width:360px;width:100%;display:flex;flex-direction:column;gap:12px;text-align:center}
+#welcome h3{font-size:18px}#welcome p{font-size:14px;color:var(--soft);line-height:1.5}
+#welcome button{height:46px;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+#welcome button.main{background:var(--ai);color:#fff;border-color:var(--ai)}
+#menu{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;z-index:10}
+#menu.open{display:block}
+#menu nav{position:absolute;left:0;top:0;bottom:0;width:min(320px,85vw);background:var(--paper);padding:14px;overflow-y:auto;padding-top:calc(14px + env(safe-area-inset-top,0))}
+#menu h2{font-size:13px;color:var(--soft);margin:12px 0 4px}
+#menu a{display:block;padding:7px 8px;border-radius:6px;color:var(--ink);text-decoration:none;font-size:14px;cursor:pointer}
+#menu a.cur{background:var(--ai-soft);color:var(--ai);font-weight:600}
+.langs{display:flex;gap:6px}.langs button{flex:1;height:34px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer}
+.langs button.on{background:var(--ai);color:#fff;border-color:var(--ai)}
+button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--beni);outline-offset:2px}
+</style>
+</head>
+<body>
+<header>
+  <button class="iconbtn" id="menuBtn" aria-label="Menu">☰</button>
+  <h1 id="title"></h1>
+  <div class="seg" id="seg" role="group" aria-label="Language"></div>
+</header>
+<main><div class="card" id="card"></div></main>
+<footer>
+  <div class="navrow"><button id="prev"></button><span id="count"></span><button id="next"></button></div>
+  <div class="credit">Powered by <a href="https://www.instagram.com/ramazandogna?psln=NTJ3YjV5MzJmMWFn" target="_blank" rel="noopener">Ramazan Dogna</a></div>
+</footer>
+<div id="menu"><nav id="nav"></nav></div>
+<div id="welcome"><div class="box" id="wbox"></div></div>
+<script>
+const R=s=>s.replace(/\{([^|}]+)\|([^}]+)\}/g,'<ruby>$1<rt>$2</rt></ruby>').replace(/\[\[(.+?)\]\]/g,'<mark>$1</mark>');
+const UI={
+ tr:{unit:n=>`${n}. Ünite`,wel:'Hoş geldin!',last:'Kaldığın yer',cont:'Kaldığım yerden devam et',choose:'Bir konu seç',start:'Baştan başla',topics:'Konular',dlg:'Diyalog',prev:'◀ Geri',next:'İleri ▶',gram:'Gramer',read:'Okuma',test:'Test',q:'Soru',res:'Sonuç',pick:'Bir şık seç.',ok:'✔ Doğru! ',bad:'✘ Yanlış. ',answered:'Cevaplanan',tip:'Yanlış yaptığın soruların gramer sayfasına menüden dönebilirsin.',reset:'Testi sıfırla',lang:'Dil',code:'TR'},
+ en:{unit:n=>`Lesson ${n}`,wel:'Welcome!',last:'Where you left off',cont:'Continue where I left off',choose:'Choose a topic',start:'Start from the beginning',topics:'Topics',dlg:'Dialogue',prev:'◀ Back',next:'Next ▶',gram:'Grammar',read:'Reading',test:'Test',q:'Question',res:'Result',pick:'Choose an option.',ok:'✔ Correct! ',bad:'✘ Wrong. ',answered:'Answered',tip:'Use the menu to go back to the grammar page of any question you missed.',reset:'Reset test',lang:'Language',code:'EN'},
+ zh:{unit:n=>`第${n}课`,wel:'欢迎！',last:'上次学到',cont:'从上次的地方继续',choose:'选择一个主题',start:'从头开始',topics:'主题',dlg:'对话',prev:'◀ 上一页',next:'下一页 ▶',gram:'语法',read:'阅读',test:'测试',q:'题',res:'结果',pick:'请选择一个答案。',ok:'✔ 正确！',bad:'✘ 错误。',answered:'已作答',tip:'答错的题可以通过菜单回到对应的语法页复习。',reset:'重置测试',lang:'语言',code:'中'}
+};
+const LS=['tr','en','zh'];
+const P=[];
+// t: [tr,en,zh]
+const G=(sec,pattern,exp,form,ex)=>P.push({t:'g',sec,pattern,exp,form,ex});
+const D=(title,lines)=>P.push({t:'r',sec:'read',title,lines});
+const Q=(q,hint,opts,a,why)=>P.push({t:'q',sec:'test',q,hint,opts,a,why});
+
+/* 13課 */
+G('13課','{使役動詞|しえきどうし}',
+ ['Birine bir şey <b>yaptırmak</b> ya da yapmasına <b>izin vermek</b>. Yaptıran は, yapan に (veya を) alır.',
+  'To <b>make</b> someone do something or <b>let</b> them do it. The causer takes は, the doer takes に (or を).',
+  '<b>让／使</b>某人做某事，或<b>允许</b>某人做某事。使役者用は，做事的人用に（或を）。'],
+ 'G1: う→あ+せる　{行|い}く→{行|い}かせる / {習|なら}う→{習|なら}わせる<br>G2: る→させる　{食|た}べる→{食|た}べさせる<br>する→させる　{来|く}る→{来|こ}させる',
+ [['{母親|ははおや}は{子|こ}どもに{勉強|べんきょう}させます。',['Anne çocuğa ders çalıştırır.','The mother makes the child study.','母亲让孩子学习。']],
+  ['{私|わたし}が{親|おや}だったら、{子|こ}どもをもっと{遊|あそ}ばせる。',['Ben ebeveyn olsam çocuğun daha çok oynamasına izin verirdim.','If I were a parent, I would let the kids play more.','如果我是父母，会让孩子多玩一些。']],
+  ['{先生|せんせい}は{学生|がくせい}に{作文|さくぶん}を{書|か}かせました。',['Öğretmen öğrencilere kompozisyon yazdırdı.','The teacher had the students write an essay.','老师让学生写了作文。']]]);
+G('13課','{辞書形|じしょけい}／〜ている／タ{形|けい} ＋ のを{見|み}ました',
+ ['Birinin bir şeyi <b>yaptığını gördüm</b>. Fiil の ile isimleşir, sonra を{見|み}る gelir.','<b>I saw</b> someone doing something. The verb is nominalized with の, then を{見|み}る.','<b>看到</b>某人做某事。动词加の名词化，后接を{見|み}る。'],
+ 'やっている＋のを{見|み}た ／ {乗|の}る＋のを{見|み}た ／ {食|た}べた＋のを{見|み}た',
+ [['{公園|こうえん}で{子|こ}どもたちが{野球|やきゅう}をやっているのを{見|み}たよ。',['Parkta çocukların beyzbol oynadığını gördüm.','I saw kids playing baseball in the park.','我看到孩子们在公园打棒球。']],
+  ['{駅|えき}で{友達|ともだち}が{電車|でんしゃ}に{乗|の}るのを{見|み}ました。',['İstasyonda arkadaşımın trene bindiğini gördüm.','I saw my friend get on the train at the station.','我在车站看到朋友上了电车。']],
+  ['{猫|ねこ}が{魚|さかな}を{食|た}べたのを{見|み}ました。',['Kedinin balığı yediğini gördüm.','I saw the cat eat the fish.','我看到猫把鱼吃了。']]]);
+G('13課','テ{形|けい} ＋ いました',
+ ['Geçmişte <b>devam eden</b> ya da <b>alışkanlık olan</b> eylem: “...yapardım / yapıyordum”.','An action that was <b>ongoing</b> or <b>habitual</b> in the past: “I used to / I was ...ing”.','过去<b>持续</b>或<b>习惯性</b>的动作：“以前常常…／当时在…”。'],
+ 'サッカーをする → サッカーをしていた',
+ [['{子|こ}どものころは、よく{友達|ともだち}とサッカーをしていたよ。',['Çocukken arkadaşlarla sık sık futbol oynardım.','As a kid, I often played soccer with friends.','小时候我常和朋友踢足球。']],
+  ['{大学生|だいがくせい}のとき、{毎日|まいにち}アルバイトをしていました。',['Üniversitedeyken her gün yarı zamanlı çalışıyordum.','In college, I worked part-time every day.','大学时我每天都在打工。']],
+  ['{昨日|きのう}の{夜|よる}、ずっとゲームをしていました。',['Dün gece hep oyun oynuyordum.','I was playing games all last night.','昨晚我一直在玩游戏。']]]);
+G('13課','{名詞|めいし}ばかり テ{形|けい}＋います<br>{名詞|めいし}を テ{形|けい}＋ばかりいます',
+ ['“<b>Hep / sadece</b> ...yapıyor” (genelde eleştiri). 1. kalıp nesneyi, 2. kalıp eylemi vurgular.','“<b>Only / always</b> doing ...” (usually critical). Pattern 1 stresses the object, pattern 2 the action.','“<b>光／老是</b>做…”（多含批评）。第1种强调对象，第2种强调动作。'],
+ 'テレビばかり{見|み}ている ／ テレビを{見|み}てばかりいる',
+ [['{毎日|まいにち}テレビばかり{見|み}てたから、よく{叱|しか}られた。',['Her gün sadece TV izlediğim için sık sık azar işittim.','I watched nothing but TV every day, so I often got scolded.','我每天光看电视，所以常被骂。']],
+  ['{弟|おとうと}はゲームばかりしています。',['Küçük kardeşim hep oyun oynuyor.','My little brother does nothing but play games.','弟弟老是玩游戏。']],
+  ['{彼|かれ}は{寝|ね}てばかりいます。',['O hep uyuyup duruyor.','He does nothing but sleep.','他总是在睡觉。']]]);
+G('13課','{使役受身形|しえきうけみけい}',
+ ['Birisi tarafından <b>zorla yaptırılmak</b>: “...mak zorunda bırakıldım”.','<b>Being made to do</b> something against your will.','<b>被迫</b>做某事（不情愿）。'],
+ 'G1: う→あ+される　{書|か}く→{書|か}かされる / {手伝|てつだ}う→{手伝|てつだ}わされる<br>（す: {話|はな}す→{話|はな}させられる）<br>G2: させられる　{食|た}べる→{食|た}べさせられる<br>する→させられる　{来|く}る→{来|こ}させられる',
+ [['{毎日|まいにち}{勉強|べんきょう}させられたし、{掃除|そうじ}や{料理|りょうり}も{手伝|てつだ}わされた。',['Her gün ders çalıştırıldım, temizlik ve yemeğe de yardım ettirildim.','I was made to study every day and help with cleaning and cooking.','每天被逼着学习，还被迫帮忙打扫和做饭。']],
+  ['{子|こ}どものころ、{嫌|きら}いな{野菜|やさい}を{食|た}べさせられました。',['Çocukken sevmediğim sebzeleri yedirildim.','As a child, I was made to eat vegetables I hated.','小时候被逼着吃讨厌的蔬菜。']],
+  ['{駅|えき}で１{時間|じかん}も{待|ま}たされました。',['İstasyonda tam 1 saat bekletildim.','I was kept waiting a whole hour at the station.','在车站被迫等了整整一小时。']]]);
+G('13課','{使役動詞|しえきどうし}テ{形|けい} ＋ くれます<br>{使役動詞|しえきどうし}テ{形|けい} ＋ もらいます',
+ ['Birinin sana <b>izin vermesi</b> ve buna <b>minnet</b>. くれる: o kişi özne; もらう: sen özne.','Someone <b>let you</b> do something, with <b>gratitude</b>. くれる: they are the subject; もらう: you are.','别人<b>允许</b>你做某事，并带有<b>感激</b>。くれる：对方是主语；もらう：自己是主语。'],
+ '{行|い}かせる→{行|い}かせて＋もらう ／ させる→させて＋くれる',
+ [['{両親|りょうしん}はやりたいことはだいたいさせてくれたよ。',['Ailem istediğim şeylerin çoğunu yapmama izin verdi.','My parents let me do most things I wanted.','父母基本上让我做想做的事。']],
+  ['{小学生|しょうがくせい}のときは{水泳|すいえい}を{習|なら}わせてもらった。',['İlkokuldayken yüzme öğrenmeme izin verildi.','In elementary school, they let me take swimming lessons.','小学时（父母）让我学了游泳。']],
+  ['{高校生|こうこうせい}の{時|とき}は{友達|ともだち}と{旅行|りょこう}に{行|い}かせてもらった。',['Lisedeyken arkadaşlarla seyahate gitmeme izin verdiler.','In high school, they let me travel with friends.','高中时（父母）让我和朋友去旅行。']]]);
+
+/* 14課 */
+G('14課','{名詞|めいし} ＋ って{何|なん}ですか',
+ ['Bilmediğin kelimeyi sormak: “<b>X ne demek?</b>” って = は (konuşma dili).','Asking about an unknown word: “<b>What is X?</b>” って = は (casual).','询问不懂的词：“<b>X是什么？</b>” って＝は（口语）。'],
+ 'しちごさん＋って{何|なん}ですか',
+ [['しちごさんって{何|なん}ですか。',['Şiçigosan ne demek?','What is “shichigosan”?','“七五三”是什么？']],
+  ['パッタイって{何|なん}ですか。',['Pad thai nedir?','What is pad thai?','泰式炒河粉是什么？']],
+  ['「つんどく」って{何|なん}ですか。',['“Tsundoku” ne demek?','What does “tsundoku” mean?','“积读”是什么意思？']]]);
+G('14課','{名詞|めいし}というのは {名詞|めいし}です',
+ ['Bir şeyi <b>tanımlamak</b>: “X demek, ... demektir”.','<b>Defining</b> something: “X is / means ...”.','<b>解释、定义</b>：“所谓X，就是…”。'],
+ '{七五三|しちごさん}というのは ＋ 〜{行事|ぎょうじ}です',
+ [['{七五三|しちごさん}というのは、{神社|じんじゃ}やお{寺|てら}へ{行|い}って、{子|こ}どもの{健康|けんこう}を{祈|いの}る{行事|ぎょうじ}ですよ。',['Şiçigosan, tapınağa gidip çocuğun sağlığı için dua edilen bir etkinliktir.','Shichigosan is an event where you visit a shrine or temple to pray for children’s health.','七五三是去神社或寺庙祈祷孩子健康的活动。']],
+  ['パッタイというのは、{焼|や}きそばのような{料理|りょうり}です。',['Pad thai, yakisoba gibi bir yemektir.','Pad thai is a dish like yakisoba.','泰式炒河粉是像日式炒面一样的菜。']],
+  ['「コンビニ」というのは、24{時間|じかん}{開|あ}いている{店|みせ}です。',['“Konbini”, 24 saat açık dükkândır.','A “konbini” is a store open 24 hours.','“便利店”是24小时营业的店。']]]);
+G('14課','{普通形|ふつうけい} ＋ と{言|い}われています',
+ ['“<b>...denir / söylenir</b>”. Genel kabul, gelenek, inanç.','“<b>It is said that ...</b>” — common belief or tradition.','“<b>据说…／被称为…</b>”——普遍说法或传统。'],
+ '{長生|ながい}きする＋と{言|い}われている',
+ [['３{歳|さい}・５{歳|さい}・７{歳|さい}に{祝|いわ}うので、{七五三|しちごさん}と{言|い}われています。',['3, 5, 7 yaşlarda kutlandığı için Şiçigosan denir.','It’s called shichigosan because it’s celebrated at ages 3, 5 and 7.','因为在3、5、7岁庆祝，所以叫七五三。']],
+  ['あのあめを{食|た}べると、{長生|ながい}きすると{言|い}われているんです。',['O şekeri yiyince uzun yaşanır denir.','It’s said that eating that candy makes you live long.','据说吃了那种糖会长寿。']],
+  ['{緑茶|りょくちゃ}は{体|からだ}にいいと{言|い}われています。',['Yeşil çayın vücuda iyi geldiği söylenir.','Green tea is said to be good for your health.','据说绿茶对身体好。']]]);
+G('14課','{名詞|めいし} ＋ のような ＋ {名詞|めいし}',
+ ['“<b>X gibi bir Y</b>”. Benzetme veya örnek.','“<b>A Y like X</b>” — comparison or example.','“<b>像X一样的Y</b>”——比喻或举例。'],
+ '{焼|や}きそば＋のような＋{料理|りょうり}',
+ [['ナタポンさんの{国|くに}にも、{七五三|しちごさん}のような{行事|ぎょうじ}がありますか。',['Senin ülkende de Şiçigosan gibi bir etkinlik var mı?','Is there an event like shichigosan in your country too?','你的国家也有像七五三这样的活动吗？']],
+  ['{焼|や}きそばのような{料理|りょうり}です。',['Yakisoba gibi bir yemek.','It’s a dish like yakisoba.','是像炒面一样的菜。']],
+  ['{東京|とうきょう}のような{大|おお}きい{町|まち}に{住|す}みたいです。',['Tokyo gibi büyük bir şehirde yaşamak istiyorum.','I want to live in a big city like Tokyo.','我想住在像东京那样的大城市。']]]);
+G('14課','{普通形|ふつうけい} ＋ からだ',
+ ['Sonucun <b>sebebini açıklamak</b>: “...olduğu içindir”. な/isim: 〜だ＋からだ.','<b>Explaining the reason</b>: “It’s because ...”. な-adj/noun: 〜だ＋からだ.','<b>说明原因</b>：“是因为…”。な形容词／名词：〜だ＋からだ。'],
+ '{同|おな}じだ＋からだ　{止|と}まった＋からです',
+ [['「{時計|とけい}」と「{終|お}わり」の{発音|はつおん}が{同|おな}じだからだよ。',['Çünkü “saat” ile “son” kelimelerinin telaffuzu aynı.','Because “clock” and “end” sound the same.','因为“钟”和“终”发音一样。']],
+  ['{遅|おく}れたのは、{電車|でんしゃ}が{止|と}まったからです。',['Geç kalmamın sebebi trenin durmasıydı.','I was late because the train stopped.','迟到是因为电车停了。']],
+  ['{元気|げんき}がないのは、{寝|ね}ていないからだ。',['Halsiz olmamın sebebi uyumamış olmam.','I’m tired because I haven’t slept.','没精神是因为没睡觉。']]]);
+G('14課','{意向形|いこうけい} ＋ かなぁ',
+ ['Kendi kendine: “<b>...sam mı acaba?</b>”','Thinking to yourself: “<b>Should I ...?</b>”','自言自语：“<b>要不要…呢？</b>”'],
+ 'あげる→あげよう＋かなぁ　{行|い}く→{行|い}こう＋かなぁ',
+ [['アンナさんに{何|なに}をあげようかなぁ。',['Anna’ya ne versem acaba?','What should I give Anna?','送安娜什么好呢？']],
+  ['{今日|きょう}は{何|なに}を{食|た}べようかなぁ。',['Bugün ne yesem acaba?','What should I eat today?','今天吃什么好呢？']],
+  ['{週末|しゅうまつ}、{京都|きょうと}に{行|い}こうかなぁ。',['Hafta sonu Kyoto’ya mı gitsem.','Maybe I’ll go to Kyoto this weekend.','周末去京都吧？']]]);
+G('14課','{普通形|ふつうけい} ＋ かなぁ',
+ ['“<b>...acaba?</b>” – emin olmadığın şeyi merak etmek. な/isimde だ düşer.','“<b>I wonder if ...</b>” — not sure. Drop だ after な-adj/noun.','“<b>…吗？（不确定）</b>”。な形容词／名词去掉だ。'],
+ '{降|ふ}る＋かなぁ　{元気|げんき}（だ）＋かなぁ',
+ [['{明日|あした}は{雨|あめ}が{降|ふ}るかなぁ。',['Yarın yağmur yağar mı acaba?','I wonder if it will rain tomorrow.','明天会下雨吗？']],
+  ['アンナさん、{喜|よろこ}ぶかなぁ。',['Anna sevinir mi acaba?','I wonder if Anna will be happy.','安娜会高兴吗？']],
+  ['{先生|せんせい}は{元気|げんき}かなぁ。',['Hocam iyi mi acaba?','I wonder if my teacher is well.','老师还好吗？']]]);
+G('14課','{名詞|めいし} ＋ なんかどう？',
+ ['Hafif <b>öneri</b>: “Mesela X nasıl?”','A light <b>suggestion</b>: “How about X, maybe?”','轻松的<b>建议</b>：“X之类的怎么样？”'],
+ '{時計|とけい}＋なんかどう？',
+ [['{時計|とけい}なんかどう？',['Mesela saat nasıl?','How about a clock?','手表之类的怎么样？']],
+  ['プレゼント、{花|はな}なんかどう？',['Hediye olarak çiçek nasıl?','How about flowers for the gift?','礼物送花怎么样？']],
+  ['{晩|ばん}ごはん、ラーメンなんかどう？',['Akşam yemeği için ramen nasıl?','How about ramen for dinner?','晚饭吃拉面怎么样？']]]);
+G('14課','イ{形|けい}（い）／ナ{形|けい}（だ） ＋ がっています',
+ ['<b>Başkasının</b> duygusunu/isteğini anlatmak. ほしい→ほしがる (を alır).','Describing <b>someone else’s</b> feelings/wants. ほしい→ほしがる (takes を).','描述<b>第三者</b>的感情或愿望。ほしい→ほしがる（用を）。'],
+ 'ほしい→ほしがっている　{寂|さび}しい→{寂|さび}しがっている　{嫌|いや}だ→{嫌|いや}がっている',
+ [['アンナさん、{目覚|めざ}まし{時計|どけい}をほしがっていたよ。',['Anna çalar saat istiyordu.','Anna was wanting an alarm clock.','安娜一直想要闹钟。']],
+  ['{子|こ}どもが{寂|さび}しがっています。',['Çocuk yalnız hissediyor.','The child seems lonely.','孩子觉得寂寞。']],
+  ['{犬|いぬ}がお{風呂|ふろ}を{嫌|いや}がっています。',['Köpek banyodan hoşlanmıyor.','The dog hates the bath.','狗讨厌洗澡。']]]);
+
+/* 15課 */
+G('15課','{普通形|ふつうけい} ＋ んだって',
+ ['<b>Duyulan bilgi</b>: “...mış”. な/isim: な＋んだって.','<b>Hearsay</b>: “I heard that ...”. な-adj/noun: な＋んだって.','<b>传闻</b>：“听说…”。な形容词／名词：な＋んだって。'],
+ '{食|た}べちゃった＋んだって　{休|やす}みな＋んだって',
+ [['クマが{畑|はたけ}の{野菜|やさい}を{全部|ぜんぶ}{食|た}べちゃったんだって。',['Ayı tarladaki sebzelerin hepsini yemiş.','I heard a bear ate all the vegetables in the field.','听说熊把田里的菜全吃了。']],
+  ['{木|き}の{実|み}が{少|すく}なくなってるんだってね。',['Ağaç meyveleri azalıyormuş.','I heard the tree nuts are decreasing.','听说树上的果实变少了。']],
+  ['{明日|あした}は{休|やす}みなんだって。',['Yarın tatilmiş.','I heard tomorrow is a holiday.','听说明天放假。']]]);
+G('15課','{辞書形|じしょけい} ＋ のはどうですか',
+ ['Eylem <b>önermek</b>: “...mak nasıl olur?”','<b>Suggesting</b> an action: “How about doing ...?”','<b>建议</b>做某事：“…怎么样？”'],
+ '{発表|はっぴょう}する＋のはどう？',
+ [['クマのニュースについて{調|しら}べて{発表|はっぴょう}するのはどう？',['Ayı haberini araştırıp sunmaya ne dersin?','How about researching the bear news and presenting it?','调查熊的新闻来发表怎么样？']],
+  ['{週末|しゅうまつ}、{海|うみ}に{行|い}くのはどうですか。',['Hafta sonu denize gitmek nasıl olur?','How about going to the sea this weekend?','周末去海边怎么样？']],
+  ['みんなでカレーを{作|つく}るのはどう？',['Hep beraber köri yapmaya ne dersiniz?','How about making curry together?','大家一起做咖喱怎么样？']]]);
+G('15課','{普通形|ふつうけい} ＋ だけじゃなくて、＿＿も〜',
+ ['“<b>Sadece ... değil, ... da</b>”.','“<b>Not only ... but also ...</b>”.','“<b>不仅…而且…也</b>”。'],
+ '{調|しら}べる＋だけじゃなくて ＋ {図書館|としょかん}へも',
+ [['インターネットで{調|しら}べるだけじゃなくて、{図書館|としょかん}へも{行|い}ってみない？',['Sadece internette araştırmak değil, kütüphaneye de gitsek mi?','Instead of only searching online, shall we go to the library too?','不光在网上查，也去图书馆看看吧？']],
+  ['{彼|かれ}は{英語|えいご}だけじゃなくて、{中国語|ちゅうごくご}も{話|はな}せます。',['O sadece İngilizce değil, Çince de konuşabiliyor.','He can speak not only English but also Chinese.','他不仅会说英语，还会说中文。']],
+  ['この{店|みせ}は{安|やす}いだけじゃなくて、おいしいです。',['Bu dükkân sadece ucuz değil, lezzetli de.','This shop is not only cheap but tasty.','这家店不仅便宜，而且好吃。']]]);
+G('15課','{名詞|めいし}・ナ{形容詞|けいようし}＋じゃないと<br>イ{形容詞|けいようし}（い）＋くないと<br>ナイ{形|けい}＋と',
+ ['“<b>...olmazsa / değilse</b>” (ardından olumsuz sonuç).','“<b>Unless / if not ...</b>” (followed by a negative result).','“<b>如果不…就…</b>”（后接消极结果）。'],
+ '{市民|しみん}じゃないと　{静|しず}かじゃないと　{安|やす}くないと　{行|い}かないと',
+ [['{市民|しみん}じゃないと{借|か}りられないと{思|おも}うよ。',['Şehir sakini değilsen ödünç alamazsın bence.','I think you can’t borrow unless you’re a resident.','我觉得不是市民就借不了。']],
+  ['{静|しず}かじゃないと{寝|ね}られません。',['Sessiz olmazsa uyuyamam.','I can’t sleep unless it’s quiet.','不安静的话我睡不着。']],
+  ['{早|はや}く{行|い}かないと{遅|おく}れますよ。',['Erken gitmezsen geç kalırsın.','If you don’t go soon, you’ll be late.','不早点去的话会迟到哦。']]]);
+G('15課','テ{形|けい} ＋ きます',
+ ['<b>Geçmişten şimdiye</b> değişim: “...olup geldi / ...maya başladı”.','Change from the <b>past up to now</b>: “has been ...ing / has become”.','从<b>过去到现在</b>的变化：“…起来了／一直…到现在”。'],
+ '{少|すく}なくなる→{少|すく}なくなって＋きました',
+ [['そのころから{山|やま}の{木|き}が{少|すく}なくなってきました。',['O zamandan beri dağdaki ağaçlar azalıp geldi.','Since then, the mountain trees have been decreasing.','从那时起山上的树越来越少了。']],
+  ['{日本語|にほんご}がわかってきました。',['Japoncayı anlamaya başladım.','I’ve started to understand Japanese.','我渐渐懂日语了。']],
+  ['{寒|さむ}くなってきましたね。',['Hava soğumaya başladı.','It’s getting colder.','天气变冷起来了呢。']]]);
+G('15課','{普通形|ふつうけい} ＋ ために',
+ ['<b>Sebep</b>: “...olduğu için” (resmî). İsim: の＋ために.','<b>Cause</b>: “because of / due to” (formal). Noun: の＋ために.','<b>原因</b>：“由于…”（书面）。名词：の＋ために。'],
+ '{減|へ}った＋ために　{事故|じこ}の＋ために',
+ [['クマの{食|た}べる{物|もの}が{減|へ}ったために、クマが{出|で}てくるようになったそうです。',['Ayıların yiyeceği azaldığı için yerleşim yerlerine inmeye başlamışlar.','Because bears’ food decreased, they started coming out.','由于熊的食物减少，熊开始跑出来了。']],
+  ['{事故|じこ}のために、{電車|でんしゃ}が{遅|おく}れました。',['Kaza yüzünden tren gecikti.','The train was late due to an accident.','由于事故，电车晚点了。']],
+  ['{大雨|おおあめ}が{降|ふ}ったために、{試合|しあい}が{中止|ちゅうし}になりました。',['Şiddetli yağmur yüzünden maç iptal oldu.','The game was cancelled due to heavy rain.','由于下大雨，比赛取消了。']]]);
+G('15課','テ{形|けい} ＋ いきます',
+ ['<b>Şimdiden geleceğe</b> değişim: “...maya devam edecek”. （〜てきます’in tersi）','Change from <b>now into the future</b>: “will keep ...ing”. (opposite of 〜てきます)','从<b>现在到将来</b>的变化：“会继续…下去”。（与〜てきます相反）'],
+ '{増|ふ}える→{増|ふ}えて＋いく',
+ [['クマは、これからも{増|ふ}えていくと{思|おも}います。',['Ayılar bundan sonra da artmaya devam edecek bence.','I think bears will keep increasing.','我认为熊今后也会继续增加。']],
+  ['これからも{日本語|にほんご}を{勉強|べんきょう}していきます。',['Bundan sonra da Japonca çalışmaya devam edeceğim.','I’ll keep studying Japanese from now on.','今后我也会继续学日语。']],
+  ['{日本|にほん}の{人口|じんこう}は{減|へ}っていくでしょう。',['Japonya’nın nüfusu azalmaya devam edecek.','Japan’s population will probably keep falling.','日本的人口可能会继续减少。']]]);
+
+/* 読解 */
+D('13課 ST1 ①',[['マルコ','あ、あそこ。{人|ひと}がたくさん{集|あつ}まってるね。あれ、{何|なに}？'],['パク','ああ、{塾|じゅく}だよ。{子|こ}どもを{待|ま}ってるの。ほら、{子|こ}どもたちが{出|で}てきたよ。'],['マルコ','わあ、{小|ちい}さい{子|こ}どももたくさんいるね。'],['マルコ','{私|わたし}が{親|おや}だったら、{小|ちい}さいときはもっと{子|こ}どもを[[{遊|あそ}ばせる]]けど…。'],['パク','そっか。でも、あの{子|こ}のお{父|とう}さん、お{母|かあ}さんはあの{子|こ}の{将来|しょうらい}のために、いろいろ[[{習|なら}わせてる]]んだと{思|おも}うよ。']]);
+D('13課 ST1 ②',[['パク','あ、あそこを{見|み}て。{子|こ}どもたちが{道|みち}に{絵|え}を{描|か}いて{遊|あそ}んでいるよ。'],['マルコ','{本当|ほんとう}だ。この{間|あいだ}は、{公園|こうえん}で{子|こ}どもたちが[[{野球|やきゅう}をやっているのを{見|み}た]]よ。'],['マルコ','{私|わたし}も[[{子|こ}どものころ]]は、よく{友達|ともだち}と[[サッカーをしていた]]よ。'],['マルコ','{勉強|べんきょう}も{大切|たいせつ}だけど、やっぱり{子|こ}どもは{外|そと}で{元気|げんき}に{遊|あそ}んだほうがいいと{思|おも}う。'],['パク','それもそうだね。']]);
+D('13課 ST2 ①',[['パク','これ、{山口|やまぐち}さんのお{母|かあ}さん？{優|やさ}しそうな{人|ひと}だね。'],['山口','うーん。{私|わたし}が{子|こ}どものころは{厳|きび}しかったよ。{毎日|まいにち}[[テレビばかり{見|み}てた]]から、よく{叱|しか}られた。'],['山口','{毎日|まいにち}[[{勉強|べんきょう}させられた]]し、{掃除|そうじ}や{料理|りょうり}も[[{手伝|てつだ}わされた]]。'],['山口','その{時|とき}は{大変|たいへん}だったけど、{今|いま}は{自分|じぶん}で{何|なん}でもできるようになって、{良|よ}かったと{思|おも}ってる。']]);
+D('13課 ST2 ②',[['山口','パクさんのうちはどうだった？'],['パク','{私|わたし}の{両親|りょうしん}も{教育|きょういく}には{熱心|ねっしん}だったけど、そんなに{厳|きび}しくなかった。やりたいことはだいたい[[させてくれた]]よ。'],['パク','{小学生|しょうがくせい}のときは{水泳|すいえい}を[[{習|なら}わせてもらった]]し、{高校生|こうこうせい}の{時|とき}は{友達|ともだち}と{旅行|りょこう}に[[{行|い}かせてもらった]]。'],['パク','{私|わたし}も{子|こ}どもには{好|す}きなことをさせたいと{思|おも}っているんだ。']]);
+D('14課 ST1 ①',[['ナタポン','{木村|きむら}さん、{今日|きょう}は{着物|きもの}を{着|き}ている{子|こ}どもがたくさんいますね。'],['木村','ああ、{七五三|しちごさん}ですよ。'],['ナタポン','[[しちごさんって{何|なん}ですか]]。'],['木村','[[{七五三|しちごさん}というのは]]、{神社|じんじゃ}やお{寺|てら}へ{行|い}って、{子|こ}どもの{健康|けんこう}を{祈|いの}る{行事|ぎょうじ}ですよ。'],['木村','{女|おんな}の{子|こ}は３{歳|さい}と７{歳|さい}、{男|おとこ}の{子|こ}は３{歳|さい}と５{歳|さい}のときに{祝|いわ}うので、[[{七五三|しちごさん}と{言|い}われています]]。']]);
+D('14課 ST1 ②',[['木村','{千歳|ちとせ}あめを{食|た}べると、[[{長生|ながい}きすると{言|い}われている]]んです。'],['木村','ナタポンさんの{国|くに}にも、[[{七五三|しちごさん}のような{行事|ぎょうじ}]]がありますか。'],['ナタポン','１{月|がつ}にワン・デックという{日|ひ}があります。{子|こ}どもの{日|ひ}という{意味|いみ}です。'],['ナタポン','パッタイというのは、[[{焼|や}きそばのような{料理|りょうり}]]で、タイでよく{食|た}べます。']]);
+D('14課 ST2',[['ワン','アンナさんに{何|なに}を[[あげようかなぁ]]。{誕生日|たんじょうび}プレゼント、どうしよう。'],['パク','あ、[[{時計|とけい}なんかどう？]]　アンナさん、{目覚|めざ}まし{時計|どけい}を[[ほしがっていた]]よ。'],['ワン','{日本|にほん}では{時計|とけい}をプレゼントしてもいいの？'],['ワン','{中国語|ちゅうごくご}では「{時計|とけい}」と「{終|お}わり」の{発音|はつおん}が[[{同|おな}じだからだ]]よ。'],['山口','そうなんだ。でも、{日本|にほん}では{大丈夫|だいじょうぶ}だよ。']]);
+D('15課 ST1',[['パク','テレビで{見|み}たんだけど、クマが{山|やま}から{下|お}りてきて{畑|はたけ}の{野菜|やさい}を{全部|ぜんぶ}[[{食|た}べちゃったんだって]]。'],['ワン','{山|やま}にクマの{食|た}べる{木|き}の{実|み}が[[{少|すく}なくなってるんだって]]ね。'],['ナタポン','じゃ、クマのニュースについて{調|しら}べて[[{発表|はっぴょう}するのはどう？]]'],['パク','[[インターネットで{調|しら}べるだけじゃなくて]]、{図書館|としょかん}へも{行|い}ってみない？'],['ワン','さくら{図書館|としょかん}の{本|ほん}は[[{市民|しみん}じゃないと]]{借|か}りられないと{思|おも}うよ。']]);
+D('15課 ST2 (発表)',[['パク','{最近|さいきん}{人|ひと}の{住|す}んでいるところへクマがよく{出|で}てくるようになりました。そのころから{山|やま}の{木|き}が[[{少|すく}なくなってきました]]。'],['ワン','クマの{食|た}べる{物|もの}が[[{減|へ}ったために]]、クマが{出|で}てくるようになったそうです。'],['ナタポン','{人|ひと}の{住|す}んでいるところへ{出|で}てくるクマは、これからも[[{増|ふ}えていく]]と{思|おも}います。'],['ナタポン','{山|やま}に{木|き}を{植|う}えたり、{木|き}の{世話|せわ}をしたりすることが{必要|ひつよう}だと{思|おも}います。']]);
+
+/* テスト */
+Q('{母|はは}は{弟|おとうと}に{部屋|へや}を{掃除|そうじ}（　）。',null,['させました','されました','してもらいました'],0,['Yaptıran anne → 使役: させる.','The mother makes him do it → causative させる.','母亲让弟弟做 → 使役：させる。']);
+Q('{子|こ}どものころ、{毎日|まいにち}ピアノを{練習|れんしゅう}（　）。',['istemeden','unwillingly','不情愿地'],['させた','させられた','させてくれた'],1,['Zorla yaptırılmak → 使役受身: させられる.','Made to do it → causative-passive させられる.','被迫 → 使役被动：させられる。']);
+Q('{書|か}く の{使役受身形|しえきうけみけい}はどれ？',null,['{書|か}かれる','{書|か}かせる','{書|か}かされる'],2,['G1: う→あ+される → {書|か}かされる.','G1: う→あ+される → {書|か}かされる.','一类：う→あ+される → {書|か}かされる。']);
+Q('{父|ちち}は{私|わたし}を{留学|りゅうがく}に{行|い}か（　）。',['minnet','gratitude','感激'],['せてくれた','されてくれた','せてあげた'],0,['İzin + minnet: 〜させてくれる.','Permission + gratitude: 〜させてくれる.','允许＋感激：〜させてくれる。']);
+Q('{公園|こうえん}で{子|こ}どもが{遊|あそ}んでいる（　）{見|み}ました。',null,['のを','ことを','のが'],0,['〜のを{見|み}る kalıbı.','Pattern 〜のを{見|み}る.','句型〜のを{見|み}る。']);
+Q('{弟|おとうと}はマンガ（　）{読|よ}んでいます。',null,['だけじゃなくて','ばかり','のような'],1,['Hep/sadece: ばかり〜ている.','Nothing but: ばかり〜ている.','光／老是：ばかり〜ている。']);
+Q('「おせち」（　）{何|なん}ですか。',null,['って','から','ために'],0,['Bilinmeyen kelime: 〜って{何|なん}ですか.','Unknown word: 〜って{何|なん}ですか.','不懂的词：〜って{何|なん}ですか。']);
+Q('{富士山|ふじさん}は{日本一|にほんいち}{高|たか}い{山|やま}だ（　）。',null,['と{言|い}われています','がっています','なんかどう'],0,['Genel kabul: と{言|い}われている.','Common saying: と{言|い}われている.','普遍说法：と{言|い}われている。']);
+Q('{遅|おく}れたのは、バスが{来|こ}なかった（　）。',null,['ためだ','からだ','かなぁ'],1,['Sebep açıklama: 〜からだ (konuşma).','Explaining reason: 〜からだ (spoken).','说明原因：〜からだ（口语）。']);
+Q('{明日|あした}、{何|なに}を{着|き}（　）かなぁ。',null,['る','よう','た'],1,['{意向形|いこうけい}＋かなぁ → {着|き}よう.','Volitional＋かなぁ → {着|き}よう.','意向形＋かなぁ → {着|き}よう。']);
+Q('{妹|いもうと}は{新|あたら}しいスマホをほし（　）。',null,['がっています','いです','そうです'],0,['3. kişinin isteği: ほしがっている.','Third person’s want: ほしがっている.','第三者的愿望：ほしがっている。']);
+Q('お{土産|みやげ}、お{菓子|かし}（　）どう？',null,['なんか','ばかり','って'],0,['Öneri: 〜なんかどう？','Suggestion: 〜なんかどう？','建议：〜なんかどう？']);
+Q('{田中|たなか}さん、{来月|らいげつ}{結婚|けっこん}する（　）。',null,['んだって','のはどう','ために'],0,['Duyulan bilgi: 〜んだって.','Hearsay: 〜んだって.','传闻：〜んだって。']);
+Q('パスポートが（　）、{飛行機|ひこうき}に{乗|の}れません。',null,['ないと','なくて','なくても'],0,['Şart: ナイ{形|けい}＋と.','Condition: ナイ form＋と.','条件：ナイ形＋と。']);
+Q('このごろ{暖|あたた}かくなって（　）ね。',['şimdiye kadar','up to now','到现在为止'],['いきました','きました','いました'],1,['Geçmişten şimdiye: 〜てきました.','Past to now: 〜てきました.','过去到现在：〜てきました。']);
+Q('{雪|ゆき}が{降|ふ}った（　）、{電車|でんしゃ}が{止|と}まりました。',null,['ために','のような','なんか'],0,['Sebep (resmî): 〜ために.','Cause (formal): 〜ために.','原因（书面）：〜ために。']);
+Q('これからも{頑張|がんば}って（　）。',['gelecek','future','将来'],['きます','います','いきます'],2,['Şimdiden geleceğe: 〜ていきます.','Now to future: 〜ていきます.','现在到将来：〜ていきます。']);
+Q('{日本語|にほんご}（　）、{韓国語|かんこくご}も{勉強|べんきょう}しています。',null,['だけじゃなくて','じゃないと','というのは'],0,['Sadece... değil, ...da: だけじゃなくて〜も.','Not only... but also: だけじゃなくて〜も.','不仅…也：だけじゃなくて〜も。']);
+P.push({t:'s',sec:'test'});
+const NAMES=[
+['Ettirgen fiil (yaptırmak)','Causative verbs (make/let)','使役动词（让／使）'],
+['...yaptığını gördüm','I saw someone doing...','看到某人做…'],
+['Geçmişte süren eylem (-ırdım)','Past habit / ongoing action','过去持续或习惯的动作'],
+['Hep / sadece (ばかり)','Nothing but (ばかり)','光／老是（ばかり）'],
+['Zorla yaptırılmak','Causative-passive (made to do)','使役被动（被迫）'],
+['İzin verilmek (させてくれる)','Being allowed (させてくれる)','被允许（させてくれる）'],
+['X ne demek?','What is X?','X是什么？'],
+['X demek ... demektir','Defining: X means...','所谓X就是…'],
+['...denir / söylenir','It is said that...','据说…'],
+['X gibi bir Y','A Y like X','像X一样的Y'],
+['Çünkü... (からだ)','It’s because... (からだ)','是因为…（からだ）'],
+['...sam mı acaba?','Should I...?','要不要…呢？'],
+['...acaba?','I wonder if...','…吗？（不确定）'],
+['Mesela X nasıl?','How about X?','X怎么样？'],
+['Başkasının duygusu (がる)','Others’ feelings (がる)','第三者的感情（がる）'],
+['...mış (duydum ki)','I heard that...','听说…'],
+['...mak nasıl olur?','How about doing...?','做…怎么样？'],
+['Sadece ... değil, ... da','Not only... but also','不仅…而且…'],
+['...olmazsa / değilse','Unless / if not...','如果不…的话'],
+['Şimdiye kadar değişim (てきた)','Change up to now (てきた)','到现在的变化（てきた）'],
+['Sebep: ...yüzünden (ために)','Because of (ために)','由于…（ために）'],
+['Geleceğe devam (ていく)','Change into the future (ていく)','今后继续（ていく）']];
+P.filter(p=>p.t==='g').forEach((p,i)=>p.name=NAMES[i]);
+
+
+/* motor */
+const KEY='jp1315_page',AK='jp1315_ans',LK='jp1315_lang';
+const get=(k,d)=>{try{return localStorage.getItem(k)??d}catch(e){return d}};
+const set=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+let ans={};try{ans=JSON.parse(get(AK,'{}'))||{}}catch(e){}
+let cur=Math.min(P.length-1,Math.max(0,parseInt(get(KEY,0))||0));
+let lang=LS.includes(get(LK,'tr'))?get(LK,'tr'):'tr';
+const L=a=>a[LS.indexOf(lang)];
+const $=id=>document.getElementById(id);
+const strip=s=>s.replace(/\{([^|}]+)\|[^}]+\}/g,'$1').replace(/<br>/g,' / ').replace(/<[^>]+>/g,'');
+const qn=i=>P.slice(0,i+1).filter(x=>x.t==='q').length, QT=P.filter(x=>x.t==='q').length;
+const secName=s=>s==='read'?UI[lang].read:s==='test'?UI[lang].test:UI[lang].unit(parseInt(s));
+function label(p,i){const u=UI[lang];
+  if(p.t==='q')return `${u.q} ${qn(i)}`; if(p.t==='s')return u.res;
+  if(p.t==='r')return `${u.dlg} ${p.title}`; return L(p.name)}
+function build(){const u=UI[lang];
+  $('seg').innerHTML=LS.map(l=>`<button data-l="${l}" class="${l===lang?'on':''}">${UI[l].code}</button>`).join('');
+  const secs=[...new Set(P.map(p=>p.sec))];
+  $('nav').innerHTML=`<button class="close" data-x="1" aria-label="Kapat">×</button><h3 style="font-size:17px">${u.topics}</h3>`+
+   secs.map(s=>`<h2>${secName(s)}</h2>`+P.map((p,i)=>p.sec!==s?'':`<a data-i="${i}" class="item"><span class="num" data-i="${i}">${p.t==='q'?(ans[i]===undefined?'?':(ans[i]===p.a?'✓':'✗')):i+1}</span><span class="nm" data-i="${i}">${label(p,i)}${p.t==='g'?`<span class="jpp" data-i="${i}">${strip(p.pattern).split(' / ')[0]}</span>`:''}</span></a>`).join('')).join('');
+  $('prev').textContent=u.prev;$('next').textContent=u.next;
+  document.documentElement.lang=lang==='zh'?'zh-CN':lang;
+}
+function render(){const p=P[cur],u=UI[lang];let h='';
+  if(p.t==='g'){
+    h=`<div class="tag">${p.sec} · ${u.gram}</div><div class="pattern">${R(p.pattern)}</div>
+    <div class="exp">${R(L(p.exp))}</div><div class="form">${R(p.form)}</div>
+    <div class="ex">${p.ex.map(e=>`<div><div class="jp">${R(e[0])}</div><div class="tr">${L(e[1])}</div></div>`).join('')}</div>`;
+  }else if(p.t==='r'){
+    h=`<div class="tag">${u.read} · ${p.title}</div>`+p.lines.map(l=>`<div class="line"><span class="sp">${R(l[0])}</span><span>${R(l[1])}</span></div>`).join('');
+  }else if(p.t==='q'){const a=ans[cur];
+    h=`<div class="tag">${u.test} · ${u.q} ${qn(cur)} / ${QT}</div><div class="jp" style="font-size:clamp(17px,4.8vw,21px)">${R(p.q)}${p.hint?` <span class="tr">（${L(p.hint)}）</span>`:''}</div>
+    <div class="opts">${p.opts.map((o,i)=>`<button class="opt ${a!==undefined?(i===p.a?'ok':(i===a?'bad':'')):''}" data-o="${i}">${R(o)}</button>`).join('')}</div>
+    <div class="fb">${a!==undefined?(a===p.a?u.ok:u.bad)+R(L(p.why)):u.pick}</div>`;
+  }else{const qs=P.map((x,i)=>[x,i]).filter(([x])=>x.t==='q');
+    const done=qs.filter(([,i])=>ans[i]!==undefined).length,ok=qs.filter(([x,i])=>ans[i]===x.a).length;
+    h=`<div class="tag">${u.res}</div><div class="big">${ok} / ${qs.length}</div>
+    <div class="exp" style="text-align:center">${u.answered}: ${done}. ${u.tip}</div>
+    <button class="opt" id="reset" style="text-align:center">${u.reset}</button>`;}
+  $('card').innerHTML=h;$('title').textContent=`${secName(p.sec)} – ${label(p,cur)}`;
+  $('count').textContent=`${cur+1} / ${P.length}`;
+  $('prev').disabled=cur===0;$('next').disabled=cur===P.length-1;
+  document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('cur',+a.dataset.i===cur));
+  set(KEY,cur);fit();}
+function fit(){const c=$('card');let s=1;c.style.zoom=1;while(c.scrollHeight>c.clientHeight+1&&s>0.6){s-=0.05;c.style.zoom=s}}
+function go(i){if(i>=0&&i<P.length){cur=i;render()}}
+function setLang(l){lang=l;set(LK,l);build();render();if($('welcome').classList.contains('open'))welcome()}
+$('prev').onclick=()=>go(cur-1);$('next').onclick=()=>go(cur+1);
+$('seg').onclick=e=>{if(e.target.dataset.l)setLang(e.target.dataset.l)};
+$('menuBtn').onclick=()=>$('menu').classList.add('open');
+$('menu').onclick=e=>{const t=e.target;
+  if(t.dataset.i!==undefined)go(+t.dataset.i);
+  if(t.id==='menu'||t.dataset.x||t.dataset.i!==undefined)$('menu').classList.remove('open')};
+$('card').onclick=e=>{const o=e.target.closest('.opt');
+  if(o&&o.dataset.o!==undefined&&ans[cur]===undefined){ans[cur]=+o.dataset.o;set(AK,JSON.stringify(ans));build();render()}
+  if(e.target.id==='reset'){ans={};set(AK,'{}');build();render()}};
+document.onkeydown=e=>{if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1);if(e.key==='Escape')$('menu').classList.remove('open')};
+let sx=null;document.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
+document.addEventListener('touchend',e=>{if(sx===null)return;const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>70&&!$('menu').classList.contains('open'))go(cur+(d<0?1:-1));sx=null});
+window.onresize=fit;build();render();
+const saved=get(KEY,null)!==null&&cur>0;
+function welcome(){const u=UI[lang],p=P[cur];
+  $('wbox').innerHTML=`<h3>${u.wel}</h3>`+(saved?`<p>${u.last}: <b>${secName(p.sec)} – ${label(p,cur)}</b></p><button class="main" data-w="c">${u.cont}</button>`:`<button class="main" data-w="s">${u.start}</button>`)+`<button data-w="m">${u.choose}</button>`;
+  $('welcome').classList.add('open')}
+$('wbox').onclick=e=>{const w=e.target.dataset.w;if(!w)return;$('welcome').classList.remove('open');
+  if(w==='s')go(0);if(w==='m')$('menu').classList.add('open')};
+welcome();
+</script>
+</body>
+</html>
