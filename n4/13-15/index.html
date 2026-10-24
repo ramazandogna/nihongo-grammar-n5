@@ -64,6 +64,8 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:8px 10px
 .langs{display:flex;gap:6px}.langs button{flex:1;height:34px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer}
 .langs button.on{background:var(--ai);color:#fff;border-color:var(--ai)}
 button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--beni);outline-offset:2px}
+.pbar{height:8px;background:var(--line);border-radius:4px;overflow:hidden}.pbar i{display:block;height:100%;background:var(--ok);transition:width .3s}
+.dots{color:var(--ok);letter-spacing:2px;margin-left:4px}
 </style>
 </head>
 <body>
@@ -87,11 +89,15 @@ const UI={
  zh:{unit:n=>`第${n}课`,wel:'欢迎！',last:'上次学到',cont:'从上次的地方继续',choose:'选择一个主题',start:'从头开始',topics:'主题',dlg:'对话',prev:'◀ 上一页',next:'下一页 ▶',gram:'语法',read:'阅读',test:'测试',q:'题',res:'结果',pick:'请选择一个答案。',ok:'✔ 正确！',bad:'✘ 错误。',answered:'已作答',tip:'答错的题可以通过菜单回到对应的语法页复习。',reset:'重置测试',lang:'语言',code:'中'}
 };
 const LS=['tr','en','zh'];
+Object.assign(UI.tr,{tst:n=>`Test ${n}`,mast:'Öğrenilen',again:'Bu soru birazdan tekrar gelecek.',go:'Devam ▶',done:'Tebrikler! Testi bitirdin.',wrong:'Toplam yanlış',restart:'Testi baştan başlat',rule:'Her soruyu 2 kez doğru cevaplaman gerekiyor.'});
+Object.assign(UI.en,{tst:n=>`Test ${n}`,mast:'Mastered',again:'This question will come back soon.',go:'Continue ▶',done:'Well done! Test complete.',wrong:'Total mistakes',restart:'Restart test',rule:'Answer each question correctly twice.'});
+Object.assign(UI.zh,{tst:n=>`测试 ${n}`,mast:'已掌握',again:'这道题稍后会再出现。',go:'继续 ▶',done:'恭喜！测试完成。',wrong:'错误总数',restart:'重新开始测试',rule:'每道题需要答对两次。'});
 const P=[];
 // t: [tr,en,zh]
 const G=(sec,pattern,exp,form,ex)=>P.push({t:'g',sec,pattern,exp,form,ex});
 const D=(title,lines)=>P.push({t:'r',sec:'read',title,lines});
-const Q=(q,hint,opts,a,why)=>P.push({t:'q',sec:'test',q,hint,opts,a,why});
+const QS=[];
+const Q=(q,hint,opts,a,why)=>QS.push({q,hint,opts,a,why});
 
 /* 13課 */
 G('13課','{使役動詞|しえきどうし}',
@@ -263,7 +269,23 @@ Q('このごろ{暖|あたた}かくなって（　）ね。',['şimdiye kadar',
 Q('{雪|ゆき}が{降|ふ}った（　）、{電車|でんしゃ}が{止|と}まりました。',null,['ために','のような','なんか'],0,['Sebep (resmî): 〜ために.','Cause (formal): 〜ために.','原因（书面）：〜ために。']);
 Q('これからも{頑張|がんば}って（　）。',['gelecek','future','将来'],['きます','います','いきます'],2,['Şimdiden geleceğe: 〜ていきます.','Now to future: 〜ていきます.','现在到将来：〜ていきます。']);
 Q('{日本語|にほんご}（　）、{韓国語|かんこくご}も{勉強|べんきょう}しています。',null,['だけじゃなくて','じゃないと','というのは'],0,['Sadece... değil, ...da: だけじゃなくて〜も.','Not only... but also: だけじゃなくて〜も.','不仅…也：だけじゃなくて〜も。']);
-P.push({t:'s',sec:'test'});
+
+/* ek sorular – konulardan türetildi */
+Q('{子|こ}どものころ、よく{川|かわ}で{泳|およ}いで（　）。',['alışkanlık','habit','习惯'],['いました','いきました','ばかりです'],0,['Geçmişteki alışkanlık: 〜ていました.','Past habit: 〜ていました.','过去的习惯：〜ていました。']);
+Q('{食|た}べる の{使役形|しえきけい}はどれ？',null,['{食|た}べさせる','{食|た}べられる','{食|た}べさせられる'],0,['G2: る→させる → {食|た}べさせる.','G2: る→させる → {食|た}べさせる.','二类：る→させる → {食|た}べさせる。']);
+Q('{兄|あに}は{毎日|まいにち}{寝|ね}て（　）います。',null,['ばかり','だけじゃなくて','なんか'],0,['テ{形|けい}＋ばかりいる: hep uyuyor.','テ form＋ばかりいる: does nothing but sleep.','テ形＋ばかりいる：老是睡觉。']);
+Q('{先生|せんせい}が{私|わたし}に{発表|はっぴょう}さ（　）。',['minnet, ben özne','gratitude, I am subject','感激，我是主语'],['せてもらいました','せられました','れました'],0,['Ben özne + izin: 〜させてもらう.','I am the subject + permission: 〜させてもらう.','我是主语＋允许：〜させてもらう。']);
+Q('「おにぎり」（　）、ご{飯|はん}を{丸|まる}くした{食|た}べ{物|もの}です。',null,['というのは','なんか','のような'],0,['Tanım: 〜というのは〜です.','Definition: 〜というのは〜です.','定义：〜というのは〜です。']);
+Q('{明日|あした}のテスト、{難|むずか}しい（　）。',['merak','wondering','不确定'],['かなぁ','ようかなぁ','がっている'],0,['{普通形|ふつうけい}＋かなぁ: ...acaba?','Plain form＋かなぁ: I wonder...','普通形＋かなぁ：…吗？']);
+Q('{犬|いぬ}は{注射|ちゅうしゃ}を{嫌|いや}（　）。',['3. kişi','third person','第三者'],['がっています','だからです','じゃないと'],0,['Başkasının duygusu: {嫌|いや}がる.','Others’ feelings: {嫌|いや}がる.','第三者的感情：{嫌|いや}がる。']);
+Q('{日曜日|にちようび}、みんなで{山|やま}に{登|のぼ}る（　）？',['öneri','suggestion','建议'],['のはどう','んだって','ために'],0,['Eylem önerisi: 〜のはどう？','Suggesting an action: 〜のはどう？','建议做某事：〜のはどう？']);
+Q('あの{店|みせ}、{来週|らいしゅう}から{休|やす}み（　）。',['duydum','I heard','听说'],['なんだって','だんだって','のんだって'],0,['İsim + んだって → なんだって.','Noun + んだって → なんだって.','名词＋んだって → なんだって。']);
+Q('{台風|たいふう}（　）、{学校|がっこう}が{休|やす}みになりました。',null,['のために','なために','ために'],0,['İsim + ために → のために.','Noun + ために → のために.','名词＋ために → のために。']);
+Q('{部屋|へや}が{広|ひろ}（　）、パーティーができません。',null,['くないと','じゃないと','ないと'],0,['イ{形|けい}: い→くないと.','い-adj: い→くないと.','い形容词：い→くないと。']);
+Q('これから{日本|にほん}に{住|す}む{外国人|がいこくじん}は{増|ふ}えて（　）でしょう。',['gelecek','future','将来'],['いく','くる','いた'],0,['Geleceğe değişim: 〜ていく.','Change into the future: 〜ていく.','到将来的变化：〜ていく。']);
+QS.forEach((q,i)=>q.tn=i<18?(i<9?1:2):(i<24?1:2));
+P.push({t:'t',sec:'test',n:1},{t:'t',sec:'test',n:2});
+
 const NAMES=[
 ['Ettirgen fiil (yaptırmak)','Causative verbs (make/let)','使役动词（让／使）'],
 ['...yaptığını gördüm','I saw someone doing...','看到某人做…'],
@@ -294,22 +316,26 @@ P.filter(p=>p.t==='g').forEach((p,i)=>p.name=NAMES[i]);
 const KEY='jp1315_page',AK='jp1315_ans',LK='jp1315_lang';
 const get=(k,d)=>{try{return localStorage.getItem(k)??d}catch(e){return d}};
 const set=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
-let ans={};try{ans=JSON.parse(get(AK,'{}'))||{}}catch(e){}
+const shuf=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const TK=n=>'jp1315_test'+n, tq=n=>QS.map((q,i)=>i).filter(i=>QS[i].tn===n);
+function tst(n){let t=null;try{t=JSON.parse(get(TK(n),'null'))}catch(e){}
+  return t&&t.q?t:{q:shuf(tq(n)),c:{},w:0,fb:null,ord:null}}
+const tsave=(n,t)=>set(TK(n),JSON.stringify(t));
+const tdone=(n,t)=>tq(n).filter(i=>(t.c[i]||0)>=2).length;
 let cur=Math.min(P.length-1,Math.max(0,parseInt(get(KEY,0))||0));
 let lang=LS.includes(get(LK,'tr'))?get(LK,'tr'):'tr';
 const L=a=>a[LS.indexOf(lang)];
 const $=id=>document.getElementById(id);
 const strip=s=>s.replace(/\{([^|}]+)\|[^}]+\}/g,'$1').replace(/<br>/g,' / ').replace(/<[^>]+>/g,'');
-const qn=i=>P.slice(0,i+1).filter(x=>x.t==='q').length, QT=P.filter(x=>x.t==='q').length;
 const secName=s=>s==='read'?UI[lang].read:s==='test'?UI[lang].test:UI[lang].unit(parseInt(s));
 function label(p,i){const u=UI[lang];
-  if(p.t==='q')return `${u.q} ${qn(i)}`; if(p.t==='s')return u.res;
+  if(p.t==='t')return u.tst(p.n);
   if(p.t==='r')return `${u.dlg} ${p.title}`; return L(p.name)}
 function build(){const u=UI[lang];
   $('seg').innerHTML=LS.map(l=>`<button data-l="${l}" class="${l===lang?'on':''}">${UI[l].code}</button>`).join('');
   const secs=[...new Set(P.map(p=>p.sec))];
   $('nav').innerHTML=`<button class="close" data-x="1" aria-label="Kapat">×</button><h3 style="font-size:20px">${u.topics}</h3>`+
-   secs.map(s=>`<h2>${secName(s)}</h2>`+P.map((p,i)=>p.sec!==s?'':`<a data-i="${i}" class="item"><span class="num" data-i="${i}">${p.t==='q'?(ans[i]===undefined?'?':(ans[i]===p.a?'✓':'✗')):i+1}</span><span class="nm" data-i="${i}">${label(p,i)}${p.t==='g'?`<span class="jpp" data-i="${i}">${strip(p.pattern).split(' / ')[0]}</span>`:''}</span></a>`).join('')).join('');
+   secs.map(s=>`<h2>${secName(s)}</h2>`+P.map((p,i)=>p.sec!==s?'':`<a data-i="${i}" class="item"><span class="num" data-i="${i}">${p.t==='t'?(()=>{const t=tst(p.n);return t.q.length?'?':'✓'})():i+1}</span><span class="nm" data-i="${i}">${label(p,i)}${p.t==='g'?`<span class="jpp" data-i="${i}">${strip(p.pattern).split(' / ')[0]}</span>`:''}</span></a>`).join('')).join('');
   $('prev').textContent=u.prev;$('next').textContent=u.next;
   document.documentElement.lang=lang==='zh'?'zh-CN':lang;
 }
@@ -320,15 +346,21 @@ function render(){const p=P[cur],u=UI[lang];let h='';
     <div class="ex">${p.ex.map(e=>`<div><div class="jp">${R(e[0])}</div><div class="tr">${L(e[1])}</div></div>`).join('')}</div>`;
   }else if(p.t==='r'){
     h=`<div class="tag">${u.read} · ${p.title}</div>`+p.lines.map(l=>`<div class="line"><span class="sp">${R(l[0])}</span><span>${R(l[1])}</span></div>`).join('');
-  }else if(p.t==='q'){const a=ans[cur];
-    h=`<div class="tag">${u.test} · ${u.q} ${qn(cur)} / ${QT}</div><div class="jp" style="font-size:clamp(20px,5.8vw,25px)">${R(p.q)}${p.hint?` <span class="tr">（${L(p.hint)}）</span>`:''}</div>
-    <div class="opts">${p.opts.map((o,i)=>`<button class="opt ${a!==undefined?(i===p.a?'ok':(i===a?'bad':'')):''}" data-o="${i}">${R(o)}</button>`).join('')}</div>
-    <div class="fb">${a!==undefined?(a===p.a?u.ok:u.bad)+R(L(p.why)):u.pick}</div>`;
-  }else{const qs=P.map((x,i)=>[x,i]).filter(([x])=>x.t==='q');
-    const done=qs.filter(([,i])=>ans[i]!==undefined).length,ok=qs.filter(([x,i])=>ans[i]===x.a).length;
-    h=`<div class="tag">${u.res}</div><div class="big">${ok} / ${qs.length}</div>
-    <div class="exp" style="text-align:center">${u.answered}: ${done}. ${u.tip}</div>
-    <button class="opt" id="reset" style="text-align:center">${u.reset}</button>`;}
+  }else{const n=p.n,t=tst(n),tot=tq(n).length,m=tdone(n,t);
+    const bar=`<div class="pbar"><i style="width:${m/tot*100}%"></i></div><div class="tag">${u.tst(n)} · ${u.mast}: ${m} / ${tot}</div>`;
+    if(!t.q.length){
+      h=`<div class="tag">${u.tst(n)}</div><div class="big">${tot} / ${tot}</div>
+      <div class="exp" style="text-align:center">${u.done}<br>${u.wrong}: <b>${t.w}</b></div>
+      <button class="opt" id="treset" style="text-align:center">${u.restart}</button>`;
+    }else{const qi=t.q[0],q=QS[qi],c=t.c[qi]||0;
+      if(!t.ord){t.ord=shuf(q.opts.map((_,i)=>i));tsave(n,t)}
+      const fb=t.fb;
+      h=bar+`<div class="tag">${u.rule} <span class="dots">${c>=1?'●':'○'}${c>=2?'●':'○'}</span></div>
+      <div class="jp" style="font-size:clamp(20px,5.8vw,25px)">${R(q.q)}${q.hint?` <span class="tr">（${L(q.hint)}）</span>`:''}</div>
+      <div class="opts">${t.ord.map(i=>`<button class="opt ${fb?(i===q.a?'ok':(i===fb.pick?'bad':'')):''}" data-o="${i}">${R(q.opts[i])}</button>`).join('')}</div>
+      <div class="fb">${fb?(fb.ok?u.ok:u.bad+u.again+' ')+R(L(q.why)):u.pick}</div>`+
+      (fb?`<button class="opt" id="tnext" style="text-align:center;background:var(--ai);color:#fff;border-color:var(--ai)">${u.go}</button>`:'');
+    }}
   $('card').innerHTML=h;$('title').textContent=`${secName(p.sec)} – ${label(p,cur)}`;
   $('count').textContent=`${cur+1} / ${P.length}`;
   $('prev').disabled=cur===0;$('next').disabled=cur===P.length-1;
@@ -344,8 +376,13 @@ $('menu').onclick=e=>{const t=e.target;
   if(t.dataset.i!==undefined)go(+t.dataset.i);
   if(t.id==='menu'||t.dataset.x||t.dataset.i!==undefined)$('menu').classList.remove('open')};
 $('card').onclick=e=>{const o=e.target.closest('.opt');
-  if(o&&o.dataset.o!==undefined&&ans[cur]===undefined){ans[cur]=+o.dataset.o;set(AK,JSON.stringify(ans));build();render()}
-  if(e.target.id==='reset'){ans={};set(AK,'{}');build();render()}};
+  const p=P[cur];if(p.t!=='t')return;const n=p.n,t=tst(n);
+  if(o&&o.dataset.o!==undefined&&!t.fb&&t.q.length){const qi=t.q[0],pick=+o.dataset.o,ok=pick===QS[qi].a;
+    t.c[qi]=ok?(t.c[qi]||0)+1:0;if(!ok)t.w++;t.fb={pick,ok};tsave(n,t);render()}
+  if(e.target.id==='tnext'&&t.fb){const qi=t.q.shift();
+    if(!t.fb.ok)t.q.splice(Math.min(2,t.q.length),0,qi);else if(t.c[qi]<2)t.q.push(qi);
+    t.fb=null;t.ord=null;tsave(n,t);build();render()}
+  if(e.target.id==='treset'){set(TK(n),'null');build();render()}};
 document.onkeydown=e=>{if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1);if(e.key==='Escape')$('menu').classList.remove('open')};
 let sx=null;document.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
 document.addEventListener('touchend',e=>{if(sx===null)return;const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>70&&!$('menu').classList.contains('open'))go(cur+(d<0?1:-1));sx=null});
