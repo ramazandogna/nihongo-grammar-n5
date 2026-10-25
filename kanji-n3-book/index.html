@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>N3 Kelime Çalışması — 25 soru</title>
+<title>N3 Kelime Çalışması — 1-35</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -65,6 +65,10 @@ u.t{text-decoration:none;border-bottom:2px solid var(--red);padding:0 2px}
 .dots i.f{background:var(--ok)}
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
 .opt{background:var(--paper);border:2px solid var(--line);border-radius:14px;padding:14px 8px;font-size:22px;min-height:64px}
+.opts.wide{grid-template-columns:1fr}.opts.wide .opt{font-size:17px;text-align:left;padding:12px 14px;line-height:1.9;min-height:0}
+.sec{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.sec .t{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.sec .t b{font-size:17px}.sec .t span{color:var(--soft);font-size:14px}
+.sec .b{display:flex;gap:8px;margin-top:10px}.sec .b button{flex:1;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:10px}.sec .b .pri{background:var(--indigo);color:var(--paper);border-color:var(--indigo)}
 .opt.ok{background:var(--okbg);border-color:var(--ok)}
 .opt.bad{background:var(--badbg);border-color:var(--red)}
 .opt small{display:block;font-family:Figtree,sans-serif;font-size:12px;color:var(--soft)}
@@ -104,38 +108,75 @@ const D=[
 {m:3,s:"{申込書|もうしこみしょ}に{間違|まちが}いがないか、よく（　）から{受付|うけつけ}に{出|だ}した。",o:["くりかえして","気にして","見つめて","たしかめて"],a:3,w:"確かめる",r:"たしかめる",mean:"kontrol etmek, emin olmak",p:[["確","カク / たし(か)","石 (taş) → taş gibi sağlam = kesin"]],tip:"'Hata var mı' diye bakmak = 確かめる. 確認 かくにん aynı anlam (iş yerinde çok kullanılır).",tr:"Başvuru formunda hata var mı iyice kontrol edip resepsiyona verdim."},
 {m:3,s:"わたしのふるさとは（　）が{盛|さか}んで、{米|こめ}や{野菜|やさい}をたくさん{作|つく}っています。",o:["自然","資源","作物","農業"],or:["しぜん","しげん","さくもつ","のうぎょう"],a:3,w:"農業",r:"のうぎょう",mean:"tarım",p:[["農","ノウ","çiftçilik (農家 のうか = çiftçi)"],["業","ギョウ","iş, sektör (工業 = sanayi)"]],tip:"〜が盛ん = '...yaygın/gelişmiş' → bir sektör ister. 作物 (ürün) üretilir ama 'gelişmiş' olmaz.",tr:"Memleketimde tarım gelişmiş, çok pirinç ve sebze üretiyoruz."},
 {m:3,s:"{水|みず}に{浮|う}いていた{木|き}の{葉|は}が、しばらくすると{水|みず}の{中|なか}に（　）しまった。",o:["しずんで","ころんで","たおれて","おぼれて"],a:0,w:"沈む",r:"しずむ",mean:"batmak",p:[["沈","チン / しず(む)","氵 (su) → suya gömülmek"]],tip:"浮く うく (yüzmek) ↔ 沈む しずむ (batmak). おぼれる = boğulmak, sadece canlılar için.",tr:"Suyun üstünde yüzen yaprak, bir süre sonra suya battı."},
-{m:3,s:"この{話|はなし}は{誰|だれ}にも{言|い}わずに、ずっと（　）にしていた。",o:["裏側","内緒","後方","中身"],or:["うらがわ","ないしょ","こうほう","なかみ"],a:1,w:"内緒",r:"ないしょ",mean:"sır, gizli",p:[["内","ナイ","iç"],["緒","ショ","ip ucu"]],tip:"内緒にする = sır olarak tutmak. 'これ、内緒ね' = bu aramızda kalsın.",tr:"Bu konuyu kimseye söylemeden hep sır olarak tuttum."}
+{m:3,s:"この{話|はなし}は{誰|だれ}にも{言|い}わずに、ずっと（　）にしていた。",o:["裏側","内緒","後方","中身"],or:["うらがわ","ないしょ","こうほう","なかみ"],a:1,w:"内緒",r:"ないしょ",mean:"sır, gizli",p:[["内","ナイ","iç"],["緒","ショ","ip ucu"]],tip:"内緒にする = sır olarak tutmak. 'これ、内緒ね' = bu aramızda kalsın.",tr:"Bu konuyu kimseye söylemeden hep sır olarak tuttum."},
+{m:4,s:"{水|みず}の{表面|ひょうめん}が[かがやいて]います。",o:["{止|と}まって","{揺|ゆ}れて","{汚|よご}れて","{光|ひか}って"],a:3,w:"輝く",r:"かがやく",mean:"parlamak, ışıldamak",p:[["輝","キ / かがや(く)","光 (ışık) + 軍 → ışık saçmak"]],tip:"輝く ≈ 光る (ışıldamak). 揺れる = sallanmak, 汚れる = kirlenmek, 止まる = durmak.",tr:"Suyun yüzeyi ışıldıyor."},
+{m:4,s:"その{知|し}らせを{聞|き}いたとき、わたしはとても[がっかりした]。",o:["{残念|ざんねん}だと{思|おも}った","うれしかった","{驚|おどろ}いた","{安心|あんしん}した"],a:0,w:"がっかりする",r:"がっかりする",mean:"hayal kırıklığına uğramak",p:[],tip:"がっかり = beklentin boşa çıkınca → 残念だと思う. 驚く = şaşırmak, 安心 = rahatlamak.",tr:"O haberi duyduğumda çok hayal kırıklığına uğradım."},
+{m:4,s:"{留学生活|りゅうがくせいかつ}に{不安|ふあん}は[{当然|とうぜん}]ありました。",o:["いろいろ","{少|すこ}し","もちろん","いつも"],a:2,w:"当然",r:"とうぜん",mean:"doğal olarak, elbette",p:[["当","トウ","isabet etmek, uygun"],["然","ゼン","öyle, durum (自然 しぜん)"]],tip:"当然 = olması doğal → もちろん. 当然です = 'Bu çok normal'.",tr:"Yurt dışı öğrenci hayatında elbette kaygılarım vardı."},
+{m:4,s:"パーティーの{料理|りょうり}が[あまりました]。",o:["{多|おお}すぎて{残|のこ}りました","{少|すこ}し{足|た}りませんでした","とてもおいしかったです","そんなにおいしくなかったです"],a:0,w:"余る",r:"あまる",mean:"artmak, fazla kalmak",p:[["余","ヨ / あま(る)","fazlalık (余裕 よゆう = boş zaman/pay)"]],tip:"余る = gereğinden fazla olup artmak. Tuzak: あまり〜ない (pek değil) ile karıştırma! Karşıtı 足りない.",tr:"Partide yemek arttı."},
+{m:4,s:"ここは[{横断禁止|おうだんきんし}]です。",o:["{座|すわ}ってはいけません","{渡|わた}ってはいけません","{走|はし}ってはいけません","{入|はい}ってはいけません"],a:1,w:"横断禁止",r:"おうだんきんし",mean:"karşıya geçmek yasak",p:[["横","オウ / よこ","yan, enine"],["断","ダン","kesmek"],["禁","キン","yasaklamak"],["止","シ","durdurmak"]],tip:"横断 = yolu enine kesmek = karşıya geçmek → 渡る. 横断歩道 おうだんほどう = yaya geçidi. 立入禁止 = girmek yasak.",tr:"Burada karşıya geçmek yasaktır."},
+{m:5,s:"[{急|きゅう}]",o:["この{料理|りょうり}は{電子|でんし}レンジを{使|つか}って[{急|きゅう}に]できるので、とても{簡単|かんたん}だ。","あと10{分|ぷん}で{電車|でんしゃ}が{出発|しゅっぱつ}してしまうので、[{急|きゅう}に]{駅|えき}に{向|む}かった。","{部屋|へや}から[{急|きゅう}に]{人|ひと}が{飛|と}び{出|だ}してきたので、ぶつかりそうになった。","{新|あたら}しいゲームを{買|か}ったので、{家|いえ}に{帰|かえ}って[{急|きゅう}に]やってみた。"],a:2,w:"急に",r:"きゅうに",mean:"aniden, birden",p:[["急","キュウ / いそ(ぐ)","acele; ani"]],tip:"急に = beklenmedik anda, aniden. 'Hızlıca' için すぐに / 急いで kullanılır (1, 2, 4 bu yüzden yanlış).",tr:"Odadan aniden biri fırladı, neredeyse çarpışıyorduk."},
+{m:5,s:"[{沸騰|ふっとう}]",o:["{今日|きょう}は{朝|あさ}からどんどん{暑|あつ}くなり、{昼|ひる}には{気温|きおん}が[{沸騰|ふっとう}]した。","{鍋|なべ}のお{湯|ゆ}が[{沸騰|ふっとう}]したら、とうふを{入|い}れて{火|ひ}を{少|すこ}し{弱|よわ}くしてください。","{昼|ひる}ごろから{具合|ぐあい}が{悪|わる}くなり、{夕方|ゆうがた}{熱|ねつ}が[{沸騰|ふっとう}]したので{病院|びょういん}へ{行|い}った。","このストーブは[{沸騰|ふっとう}]するのが{早|はや}いので、すぐに{部屋|へや}が{暖|あたた}かくなる。"],a:1,w:"沸騰",r:"ふっとう",mean:"kaynama",p:[["沸","フツ / わ(く)","氵 (su) → su kaynamak (お湯が沸く)"],["騰","トウ","yükselmek"]],tip:"沸騰 sadece sıvılar için: su kaynar. Hava sıcaklığı 上がる, ateş 出る/上がる, oda 暖まる.",tr:"Tencerede su kaynayınca tofuyu ekle ve ateşi biraz kıs."},
+{m:5,s:"[まげる]",o:["{今朝|けさ}は{寒|さむ}かったので、マフラーを{首|くび}に[まげて]{出|で}かけた。","けがは{良|よ}くなったが、{腕|うで}を{伸|の}ばしたり[まげたり]すると、まだ{少|すこ}し{痛|いた}む。","{一|ひと}つのパンを{半分|はんぶん}に[まげて]、{二人|ふたり}で{分|わ}けて{食|た}べた。","シャツをきちんと[まげたら]、たんすの{引|ひ}き{出|だ}しにしまってください。"],a:1,w:"曲げる",r:"まげる",mean:"bükmek",p:[["曲","キョク / ま(げる)","eğri (曲 = şarkı da: 名曲)"]],tip:"曲げる = bükmek (kol, diz, tel). Atkı 巻く まく, ekmek 割る/分ける, gömlek たたむ.",tr:"Yara iyileşti ama kolumu uzatıp bükünce hâlâ biraz ağrıyor."},
+{m:5,s:"[{出張|しゅっちょう}]",o:["{営業|えいぎょう}のため、{来週|らいしゅう}{一週間|いっしゅうかん}、{課長|かちょう}とアメリカに[{出張|しゅっちょう}]します。","{仕事|しごと}を{辞|や}めたら、{家族|かぞく}とゆっくり{海外|かいがい}に[{出張|しゅっちょう}]したいと{思|おも}う。","わたしは{毎朝|まいあさ}9{時|じ}に{会社|かいしゃ}に[{出張|しゅっちょう}]し、{残業|ざんぎょう}はしないで{家|いえ}に{帰|かえ}る。","あしたは{子|こ}どもの{運動会|うんどうかい}に[{出張|しゅっちょう}]するので、{仕事|しごと}を{休|やす}みます。"],a:0,w:"出張",r:"しゅっちょう",mean:"iş seyahati",p:[["出","シュツ","çıkmak"],["張","チョウ","germek, yaymak"]],tip:"出張 = iş için başka yere gitmek. Tatil 旅行, her gün işe gitmek 出勤 しゅっきん, etkinliğe katılmak 参加.",tr:"Satış için gelecek hafta bir haftalığına müdürle Amerika'ya iş seyahatine gidiyorum."},
+{m:5,s:"[{慰|なぐさ}める]",o:["{祖母|そぼ}は{古|ふる}い{物|もの}でも{捨|す}てないで、{長|なが}い{間|あいだ}[{慰|なぐさ}めて]{使|つか}っている。","{試合|しあい}を{見|み}ながら、{優勝|ゆうしょう}を{願|ねが}って{一生懸命|いっしょうけんめい}{選手|せんしゅ}を[{慰|なぐさ}めた]。","{仕事|しごと}で{失敗|しっぱい}してしまったが、{友人|ゆうじん}が[{慰|なぐさ}めて]くれたので{元気|げんき}が{出|で}た。","{弟|おとうと}が{希望|きぼう}の{大学|だいがく}に{合格|ごうかく}したので、{家族|かぞく}で{外食|がいしょく}をして[{慰|なぐさ}めた]。"],a:2,w:"慰める",r:"なぐさめる",mean:"teselli etmek",p:[["慰","イ / なぐさ(める)","心 (kalp) → kalbi rahatlatmak"]],tip:"慰める = üzgün birini teselli etmek. Eşyayı korumak 大切にする, oyuncuyu desteklemek 応援する, başarıyı kutlamak 祝う.",tr:"İşte hata yaptım ama arkadaşım teselli edince moralim düzeldi."}
 ];
-const MT={1:"問題1 · Okunuş seç",2:"問題2 · Doğru kanjiyi seç",3:"問題3 · Boşluğu doldur"};
+const MT={1:"問題1 · Okunuş seç",2:"問題2 · Doğru kanjiyi seç",3:"問題3 · Boşluğu doldur",4:"問題4 · Anlamca en yakını seç",5:"問題5 · Doğru kullanımı seç"};
+const RD={
+1:{t:"サッカーの{試合|しあい}",j:["{日曜日|にちようび}、{友達|ともだち}とサッカーの{試合|しあい}を{見|み}に{行|い}った。","{駅|えき}に[{到着|とうちゃく}]すると、もう[{観客|かんきゃく}]がたくさんいた。","チケット{代|だい}は{友達|ともだち}が[{払|はら}って]くれた。{値段|ねだん}には[{税金|ぜいきん}]も[{加|くわ}えられて]いた。","{選手|せんしゅ}たちは{毎日|まいにち}きびしい[{訓練|くんれん}]をしているそうだ。","{試合|しあい}のあと、[{豆|まめ}]のスープを{飲|の}みながら、{二人|ふたり}の[{共通|きょうつう}]の{趣味|しゅみ}について{話|はな}した。"],tr:"Pazar günü arkadaşımla futbol maçına gittim. İstasyona vardığımızda çok seyirci vardı. Bileti arkadaşım ödedi; fiyata vergi de eklenmişti. Oyuncular her gün sıkı antrenman yapıyormuş. Maçtan sonra fasulye çorbası içip ortak hobimiz hakkında konuştuk."},
+2:{t:"{海|うみ}の{町|まち}",j:["わたしの{町|まち}には{大|おお}きな{港|みなと}があって、{魚|さかな}を{外国|がいこく}に[{輸出|ゆしゅつ}]している。","{夕方|ゆうがた}、{父|ちち}は{腕|うで}を[{組|く}んで]、{静|しず}かに[{波|なみ}]を{見|み}ている。","{父|ちち}は「この{町|まち}の{生活|せいかつ}に[{満足|まんぞく}]している」と{言|い}う。","{風|かぜ}が{冷|つめ}たくなったので、わたしたちは[{速|はや}く]{歩|ある}いて{家|いえ}に{帰|かえ}った。","その{夜|よる}は{波|なみ}の{音|おと}を{聞|き}きながら、ぐっすり[{眠|ねむ}った]。"],tr:"Kasabamda büyük bir liman var ve balık yurt dışına ihraç ediliyor. Akşamları babam kollarını kavuşturup sessizce dalgaları izler. Babam 'Bu kasabadaki hayatımdan memnunum' der. Rüzgâr soğuyunca hızlı yürüyüp eve döndük. O gece dalga sesini dinleyerek derin uyudum."},
+3:{t:"ふるさとの{店|みせ}",j:["わたしのふるさとは[{農業|のうぎょう}]が{盛|さか}んな{町|まち}だ。","{駅前|えきまえ}のレストランは、{前|まえ}はいつも[がらがら]だった。","でも「{新|あたら}しいシェフが{来|き}た」という[うわさ]を{聞|き}いて、{行|い}ってみた。","{本当|ほんとう}かどうか[{確|たし}かめる]ためだ。{料理|りょうり}の[{特長|とくちょう}]は{地元|じもと}の{野菜|やさい}だった。","シェフは{背|せ}が{高|たか}くて[{姿勢|しせい}]がよく、こわい[イメージ]だったが、とてもやさしかった。","{家族|かぞく}でテーブルを[{囲|かこ}んで]{食|た}べていると、{日|ひ}が[{沈|しず}んで]いった。","{実|じつ}は{予約|よやく}を{忘|わす}れていたが、{店|みせ}の{人|ひと}は[{許|ゆる}して]くれた。これは{母|はは}には[{内緒|ないしょ}]だ。"],tr:"Memleketim tarımı gelişmiş bir kasaba. İstasyon önündeki restoran eskiden hep bomboştu. Ama 'yeni bir şef geldi' söylentisini duyunca gittim; doğru mu diye emin olmak için. Yemeklerin güçlü yanı yerel sebzelerdi. Şef uzun boylu, dik duruşluydu; korkutucu bir imajı vardı ama çok nazikti. Ailece masanın etrafında yerken güneş battı. Aslında rezervasyonu unutmuştum ama çalışanlar affetti. Bu anneme sır."},
+4:{t:"パーティーの{夜|よる}",j:["{留学生|りゅうがくせい}のパーティーがあった。{日本|にほん}の{生活|せいかつ}に{不安|ふあん}があるのは[{当然|とうぜん}]だ。","でも、みんなの{目|め}が[{輝|かがや}いて]いて、{楽|たの}しそうだった。","{料理|りょうり}をたくさん{作|つく}ったので、{少|すこ}し[{余|あま}って]しまった。","{帰|かえ}り{道|みち}、{近|ちか}い{道|みち}は[{横断禁止|おうだんきんし}]で{渡|わた}れなかった。","バスも{行|い}ってしまって、ちょっと[がっかり]した。"],tr:"Yabancı öğrencilerin partisi vardı. Japonya'daki hayat hakkında kaygı olması doğal. Ama herkesin gözleri parlıyordu, mutlu görünüyorlardı. Çok yemek yaptığımız için biraz arttı. Dönüş yolunda kısa yolda karşıya geçmek yasaktı, geçemedik. Otobüsü de kaçırınca biraz hayal kırıklığına uğradım."},
+5:{t:"{出張|しゅっちょう}の{日|ひ}",j:["{来週|らいしゅう}、{課長|かちょう}と{大阪|おおさか}へ[{出張|しゅっちょう}]することになった。","{準備|じゅんび}をしていたら、[{急|きゅう}に]{会議|かいぎ}の{時間|じかん}が{変|か}わった。","{急|いそ}いで{動|うご}いたので、{膝|ひざ}を[{曲|ま}げる]と{少|すこ}し{痛|いた}い。","{夜|よる}、お{湯|ゆ}が[{沸騰|ふっとう}]するのを{待|ま}ちながら、{資料|しりょう}を{読|よ}んだ。","{失敗|しっぱい}しないか{心配|しんぱい}だったが、{同僚|どうりょう}が「{大丈夫|だいじょうぶ}だよ」と[{慰|なぐさ}めて]くれた。"],tr:"Gelecek hafta müdürle Osaka'ya iş seyahatine gideceğim. Hazırlanırken toplantı saati aniden değişti. Acele hareket ettiğim için dizimi bükünce biraz ağrıyor. Akşam suyun kaynamasını beklerken belgeleri okudum. Hata yaparım diye endişeliydim ama iş arkadaşım 'Merak etme' diye teselli etti."}};
+const SEC=[1,2,3,4,5].map(m=>{const ids=D.map((d,i)=>i).filter(i=>D[i].m===m);return {m,ids,from:ids[0]+1,to:ids[ids.length-1]+1}});
+const secOf=m=>SEC.findIndex(x=>x.m===m);
+
+const EN=[["audience, spectators","There were many spectators at the venue."],["to pay","Tamura-san paid (for me)."],["arrival","I will arrive at the hotel around 3."],["to add","Yamashita-san added an explanation."],["training, drill","We will now do the training."],["beans","These beans are good in soup."],["common, shared","Society has common rules."],["tax","I hear taxes will go up from next year."],["wave","I watched the beautiful waves for a while."],["fast","Let's walk a little faster."],["satisfaction","I am satisfied with my current life."],["to cross (arms), to join","My father was thinking with his arms crossed."],["export","This country mainly exports rice."],["to sleep","The baby is sleeping in its mother's arms."],["strong point, merit","This paper has the merit of not tearing easily even when wet."],["image, impression","Sato-san seems quiet, but is actually very active."],["to surround","At New Year our relatives gathered around the table and ate happily."],["completely empty","The food here isn't good, so the restaurant is always empty."],["rumor","I heard a rumor that Takada-san is moving; I wonder if it's true."],["to forgive","I lost the book I borrowed from my father, but when I apologized he forgave me."],["posture","I stayed in the same posture at the computer, so my body started to hurt."],["to check, to make sure","I checked the form carefully for mistakes before handing it in."],["agriculture","Farming is thriving in my hometown; we grow lots of rice and vegetables."],["to sink","The leaf floating on the water sank after a while."],["secret","I kept this story a secret and told no one."],["to shine, sparkle","The surface of the water is sparkling."],["to be disappointed","I was very disappointed when I heard the news."],["naturally, of course","Of course I had worries about studying abroad."],["to be left over","There was food left over at the party."],["no crossing","Crossing is prohibited here."],["suddenly","Someone suddenly ran out of the room and nearly hit me."],["boiling","When the water in the pot boils, add the tofu and lower the heat."],["to bend","The injury is better, but it still hurts a little when I bend my arm."],["business trip","Next week I'm going to America on business with my manager for a week."],["to comfort","I failed at work, but a friend comforted me and I felt better."]];
+const ZH=[["观众","会场里有很多观众。"],["支付","田村先生帮我付了钱。"],["到达","我三点左右到达酒店。"],["添加","山下先生补充了说明。"],["训练","现在开始训练。"],["豆子","这种豆子很适合做汤。"],["共同","社会有共同的规则。"],["税金","听说明年开始要涨税。"],["波浪","我看了一会儿美丽的波浪。"],["快","我们走快一点吧。"],["满足","我对现在的生活很满足。"],["交叉（双臂）","父亲抱着胳膊在想什么。"],["出口","这个国家主要出口大米。"],["睡觉","婴儿被妈妈抱着睡着了。"],["优点、特点","这种纸的优点是湿了也不容易破。"],["印象","佐藤给人安静的印象，但其实很活跃。"],["围坐","过年时亲戚们聚在一起，围着桌子愉快地吃饭。"],["空荡荡","这家餐厅的菜不好吃，所以店里总是空荡荡的。"],["传闻","听说高田要搬家，不知道是不是真的。"],["原谅","我弄丢了从父亲那借的书，道歉后他马上原谅了我。"],["姿势","在电脑前一直保持同一个姿势，身体疼了。"],["确认","仔细确认申请表没有错误后交给了前台。"],["农业","我的家乡农业发达，种很多大米和蔬菜。"],["沉下去","漂在水上的树叶过了一会儿沉了下去。"],["秘密","这件事我一直保密，没告诉任何人。"],["闪耀","水面闪闪发光。"],["失望","听到那个消息时我非常失望。"],["当然","留学生活当然有不安。"],["剩下","聚会的菜剩下了。"],["禁止横穿","这里禁止横穿马路。"],["突然","有人突然从房间里冲出来，差点撞上。"],["沸腾","锅里的水沸腾后，放入豆腐并把火调小。"],["弯曲","伤好了，但伸直或弯曲手臂时还有点疼。"],["出差","下周我要和科长去美国出差一周。"],["安慰","工作失败了，但朋友安慰了我，我又振作起来了。"]];
+const RDT={en:{1:"On Sunday I went to a soccer match with a friend. When we arrived at the station there were already many spectators. My friend paid for the tickets; tax was added to the price. The players apparently train hard every day. After the match we had bean soup and talked about our common hobby.",2:"My town has a big port that exports fish abroad. In the evening my father crosses his arms and quietly watches the waves. He says he is satisfied with life here. The wind got cold, so we walked home quickly. That night I slept deeply, listening to the waves.",3:"My hometown is a farming town. The restaurant by the station used to be always empty. But I heard a rumor that a new chef had come, so I went to check if it was true. The dish's strong point was local vegetables. The chef was tall with good posture and looked scary, but was very kind. As my family ate around the table, the sun went down. Actually I had forgotten my reservation, but the staff forgave me. That's a secret from my mother.",4:"There was a party for international students. Of course people worry about life in Japan. But everyone's eyes were shining and they looked happy. We cooked so much that some food was left over. On the way home, crossing was prohibited on the short road. The bus had also left, so I was a bit disappointed.",5:"Next week I'm going to Osaka on business with my manager. While preparing, the meeting time suddenly changed. I moved in a hurry, so my knee hurts a little when I bend it. At night I read the documents while waiting for the water to boil. I was worried about failing, but a colleague comforted me: 'It'll be fine.'"},
+zh:{1:"星期天我和朋友去看足球比赛。到车站时已经有很多观众了。票钱是朋友付的，价格里还加了税。听说选手们每天都进行严格的训练。比赛后我们喝着豆汤，聊了两人共同的爱好。",2:"我的城市有一个大港口，向国外出口鱼。傍晚，父亲抱着胳膊静静地看着海浪。他说对这里的生活很满足。风变冷了，我们快步走回了家。那天晚上我听着海浪声睡得很香。",3:"我的家乡是农业发达的小镇。车站前的餐厅以前总是空荡荡的。但听到“来了新厨师”的传闻，我就去确认是不是真的。菜的特点是本地蔬菜。厨师个子高、姿势端正，给人可怕的印象，但其实很温柔。家人围着桌子吃饭时，太阳落山了。其实我忘了预约，但店员原谅了我。这件事要对妈妈保密。",4:"有一个留学生聚会。对日本的生活感到不安是理所当然的。但大家的眼睛闪闪发光，看起来很开心。菜做得太多，剩下了一些。回家路上，近路禁止横穿，过不去。公交车也开走了，我有点失望。",5:"下周我要和科长去大阪出差。准备的时候，会议时间突然变了。因为匆忙行动，弯膝盖时有点疼。晚上一边等水沸腾一边看资料。我担心会失败，但同事安慰我说“没关系的”。"}};
+const UI={
+tr:{menu:"← Menü",q:"soru",sec:"Bölüm",lead:(a,b)=>`${a} soru · ${b} bölüm · önce öğren, sonra test`,learn:"学 Öğren",read:"読 Okuma",test:"試 Test",all:n=>`Genel test (1–${n})`,allS:"Tüm sorular karışık. Her soruyu 2 kez doğru bilene kadar sorar.",readT:"Okuma",words:"kelimeleri · altı çizili",show:"Türkçesini göster",l:"Öğren",secTest:"Bu bölümün testi",hide:"Okunuşu gizle",prev:"Önceki",next:"Sonraki",nextSec:"Sonraki bölüm →",on:"açık",off:"kapalı",ok2:"Doğru — bu kelime tamam ✓",ok1:"Doğru — bir kez daha gelecek",bad:"Yanlış — doğrusu: ",cont:"Devam",doneN:"Tamamlanan",wrong:"Yanlış",doneH:"Hepsini 2 kez doğru bildin",doneP:(a,b)=>`${a} cevap, ${b} yanlış`,again:"Tekrar test",MT:{1:"問題1 · Okunuş seç",2:"問題2 · Doğru kanjiyi seç",3:"問題3 · Boşluğu doldur",4:"問題4 · Anlamca en yakını seç",5:"問題5 · Doğru kullanımı seç"}},
+en:{menu:"← Menu",q:"questions",sec:"Section",lead:(a,b)=>`${a} questions · ${b} sections · learn first, then test`,learn:"学 Learn",read:"読 Reading",test:"試 Test",all:n=>`Full test (1–${n})`,allS:"All questions mixed. Each must be answered correctly twice.",readT:"Reading",words:"words · underlined",show:"Show translation",l:"Learn",secTest:"Section test",hide:"Hide reading",prev:"Previous",next:"Next",nextSec:"Next section →",on:"on",off:"off",ok2:"Correct — word done ✓",ok1:"Correct — it will come once more",bad:"Wrong — answer: ",cont:"Continue",doneN:"Done",wrong:"Wrong",doneH:"You got everything right twice",doneP:(a,b)=>`${a} answers, ${b} wrong`,again:"Test again",MT:{1:"問題1 · Choose the reading",2:"問題2 · Choose the kanji",3:"問題3 · Fill in the blank",4:"問題4 · Closest meaning",5:"問題5 · Correct usage"}},
+zh:{menu:"← 菜单",q:"题",sec:"第",lead:(a,b)=>`${a} 题 · ${b} 个部分 · 先学习，再测试`,learn:"学 学习",read:"読 阅读",test:"試 测试",all:n=>`综合测试（1–${n}）`,allS:"所有题目混合。每题需答对两次。",readT:"阅读",words:"的词汇 · 带下划线",show:"显示翻译",l:"学习",secTest:"本部分测试",hide:"隐藏读音",prev:"上一个",next:"下一个",nextSec:"下一部分 →",on:"开",off:"关",ok2:"正确 — 这个词完成 ✓",ok1:"正确 — 还会再出一次",bad:"错误 — 正确答案：",cont:"继续",doneN:"已完成",wrong:"错误",doneH:"全部答对两次！",doneP:(a,b)=>`${a} 次作答，${b} 次错误`,again:"再测一次",MT:{1:"問題1 · 选择读音",2:"問題2 · 选择汉字",3:"問題3 · 填空",4:"問題4 · 意思最接近",5:"問題5 · 正确用法"}}};
+let LG="tr";try{LG=localStorage.getItem("n3_lang")||"tr"}catch(e){}if(!UI[LG])LG="tr";
+const U=()=>UI[LG],MEAN=i=>LG==="en"?EN[i][0]:LG==="zh"?ZH[i][0]:D[i].mean,TRN=i=>LG==="en"?EN[i][1]:LG==="zh"?ZH[i][1]:D[i].tr;
+const secL=k=>LG==="zh"?`第${k}部分`:`${U().sec} ${k}`;
+function setLG(l){LG=l;try{localStorage.setItem("n3_lang",l)}catch(e){}document.documentElement.lang=l==="zh"?"zh-CN":l;render()}
+const langBar=()=>`<div class="grp" style="justify-content:center;margin-top:14px">${[["tr","Türkçe"],["en","English"],["zh","中文"]].map(([l,n])=>`<button class="chip ${LG===l?'on':''}" onclick="setLG('${l}')">${n}</button>`).join("")}</div>`;
 let S={view:"home",furi:true,lf:0,li:0,hide:false,tf:0,q:[],c:{},cur:null,ans:null,tries:0,wrong:0};
 const $=document.getElementById("app");
 const ruby=s=>s.replace(/\{([^|}]+)\|([^}]+)\}/g,"<ruby>$1<rt>$2</rt></ruby>").replace(/\[([^\]]+)\]/g,'<u class="t">$1</u>');
 const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 const pool=f=>D.map((d,i)=>i).filter(i=>!f||D[i].m===f);
-function hdr(t,extra=""){return `<header><button class="back" onclick="go('home')">← Menü</button><h1>${t}</h1>${extra}</header>`}
-const furiBtn=()=>`<button class="toggle ${S.furi?'on':''}" onclick="S.furi=!S.furi;render()">ふりがな ${S.furi?'açık':'kapalı'}</button>`;
+function hdr(t,extra=""){return `<header><button class="back" onclick="go('home')">${U().menu}</button><h1>${t}</h1>${extra}</header>`}
+const furiBtn=()=>`<button class="toggle ${S.furi?'on':''}" onclick="S.furi=!S.furi;render()">ふりがな ${S.furi?U().on:U().off}</button>`;
 function go(v){S.view=v;render();scrollTo(0,0)}
 function home(){
- const chips=(k,fn)=>[0,1,2,3].map(f=>`<button class="chip ${S[k]===f?'on':''}" onclick="S.${k}=${f};render()">${f?'問題'+f:'Hepsi'}</button>`).join("");
- return `<div class="hero"><div class="big jp">漢字</div><p>25 soru · önce öğren, sonra test</p></div>
- <div class="menu">
- <button class="mbtn" onclick="S.li=0;go('learn')"><span class="k">学</span><div><b>Öğren</b><span>Her kelime: okunuş, anlam, kanji parçaları, ipucu</span></div></button>
- <h2>Hangi bölüm?</h2><div class="grp">${chips('lf')}</div>
- <button class="mbtn" onclick="startTest()" style="margin-top:12px"><span class="k">試</span><div><b>Teste başla</b><span>Her soruyu 2 kez doğru bilene kadar sorar. Yanlışlar kısa süre sonra geri gelir.</span></div></button>
- <h2>Test bölümü</h2><div class="grp">${chips('tf')}</div>
+ const card=(x,k)=>`<div class="sec"><div class="t"><b>${secL(k+1)} · ${x.from}–${x.to}</b><span>${U().MT[x.m]} · ${x.ids.length} ${U().q}</span></div>
+  <div class="b"><button onclick="learnSec(${k})">${U().learn}</button><button onclick="S.lf=${x.m};go('read')">${U().read}</button><button class="pri" onclick="startTest(${x.m})">${U().test}</button></div></div>`;
+ return `<div class="hero"><div class="big jp">漢字</div><p>${U().lead(D.length,SEC.length)}</p>${langBar()}</div>
+ <div class="menu">${SEC.map(card).join("")}
+ <button class="mbtn" onclick="startTest(0)" style="margin-top:6px"><span class="k">総</span><div><b>${U().all(D.length)}</b><span>${U().allS}</span></div></button>
  </div>`;
 }
+function read(){const k=secOf(S.lf),r=RD[S.lf],x=SEC[k];
+ return hdr(`${secL(k+1)} · ${U().readT}`,furiBtn())+`<div class="card"><div class="tr">${x.from}–${x.to} ${U().words}</div>
+ <h2 class="jp" style="font-size:22px;color:var(--ink);margin:6px 0 10px">${ruby(r.t)}</h2>
+ <div class="sent ${S.furi?'':'nofuri'}">${r.j.map(ruby).join('<br>')}</div>
+ <details style="margin-top:12px"><summary class="tr" style="cursor:pointer">${U().show}</summary><p class="tr">${LG==='tr'?r.tr:RDT[LG][S.lf]}</p></details></div>
+ <div class="navrow"><button onclick="learnSec(${k})">${U().l}</button><button class="pri" onclick="startTest(${x.m})">${U().secTest}</button></div>`}
+function learnSec(k){S.lf=SEC[k].m;S.li=0;go('learn')}
 function learn(){
  const ids=pool(S.lf),i=ids[S.li],d=D[i];
  const parts=d.p.map(p=>`<div class="part"><span class="jp">${p[0]}</span><div><b>${p[1]}</b><br>${p[2]}</div></div>`).join("");
- return hdr(`Öğren ${S.li+1}/${ids.length}`,`<button class="toggle ${S.hide?'on':''}" onclick="S.hide=!S.hide;render()">Okunuşu gizle</button>`)+
- `<div class="card"><div class="tr">${MT[d.m]} · soru ${i+1}</div>
+ return hdr(`${secL(secOf(S.lf)+1)} · ${S.li+1}/${ids.length}`,`<button class="toggle ${S.hide?'on':''}" onclick="S.hide=!S.hide;render()">${U().hide}</button>`)+
+ `<div class="card"><div class="tr">${U().MT[d.m]} · #${i+1}</div>
  <div class="word"><span class="big jp">${d.w}</span><span class="rd ${S.hide?'hid':''}" onclick="this.classList.remove('hid')">${d.r}</span></div>
- <div class="mean">${d.mean}</div>${parts?`<div class="parts">${parts}</div>`:""}
+ <div class="mean">${MEAN(i)}</div>${parts?`<div class="parts">${parts}</div>`:""}
  <div class="tip">${d.tip}</div>
- <div class="sent">${ruby(d.s.replace(/（　）/,`<u class="t">${d.o[d.a]}</u>`))}</div><div class="tr">${d.tr}</div></div>
- <div class="navrow"><button onclick="S.li=Math.max(0,S.li-1);render()" ${S.li?'':'disabled'}>Önceki</button>
- ${S.li<ids.length-1?`<button class="pri" onclick="S.li++;render();scrollTo(0,0)">Sonraki</button>`:`<button class="pri" onclick="startTest(S.lf)">Teste geç</button>`}</div>`;
+ <div class="sent">${ruby(d.m===5?d.o[d.a]:d.m===4?d.s+' → <b>'+d.o[d.a]+'</b>':d.s.replace(/（　）/,`<u class="t">${d.o[d.a]}</u>`))}</div><div class="tr">${TRN(S.view==="learn"?i:S.cur)}</div></div>
+ <div class="navrow"><button onclick="S.li=Math.max(0,S.li-1);render()" ${S.li?'':'disabled'}>${U().prev}</button>
+ ${S.li<ids.length-1?`<button class="pri" onclick="S.li++;render();scrollTo(0,0)">${U().next}</button>`:`<button onclick="go('read')">${U().readT}</button><button class="pri" onclick="startTest(S.lf)">${U().secTest}</button>${secOf(S.lf)<SEC.length-1?`<button onclick="learnSec(${secOf(S.lf)+1})">${U().nextSec}</button>`:''}`}</div>`;
 }
 function startTest(f){if(f!==undefined)S.tf=f;S.q=shuffle(pool(S.tf));S.c={};S.q.forEach(i=>S.c[i]=0);S.tries=0;S.wrong=0;next();go('test')}
 function next(){S.cur=S.q.shift();S.ans=null;S.order=shuffle([0,1,2,3])}
@@ -146,23 +187,23 @@ function cont(){if(!S.q.length){go('done');return}next();render();scrollTo(0,0)}
 function test(){
  const tot=Object.keys(S.c).length,m=Object.values(S.c).filter(v=>v>=2).length,d=D[S.cur],c=S.c[S.cur];
  const opts=S.order.map(k=>{let cl="";if(S.ans!==null){if(k===d.a)cl="ok";else if(k===S.ans)cl="bad"}
-  return `<button class="opt ${cl}" onclick="pick(${k})">${d.o[k]}${S.ans!==null&&d.or&&d.or[k]!=="—"&&d.m!==1?`<small>${d.or[k]}</small>`:""}</button>`}).join("");
+  return `<button class="opt ${cl}" onclick="pick(${k})">${ruby(d.o[k])}${S.ans!==null&&d.or&&d.or[k]!=="—"&&d.m!==1?`<small>${d.or[k]}</small>`:""}</button>`}).join("");
  let fb="";if(S.ans!==null){const ok=S.ans===d.a;
-  fb=`<div class="fb ${ok?'ok':'bad'}"><div class="head">${ok?(S.c[S.cur]>=2?'Doğru — bu kelime tamam ✓':'Doğru — bir kez daha gelecek'):'Yanlış — doğrusu: '+d.o[d.a]}</div>
-  <b class="jp" style="font-size:22px">${d.w}</b> <span class="rd">${d.r}</span> = <b>${d.mean}</b>
-  <div class="tip">${d.tip}</div><div class="tr">${d.tr}</div></div>
-  <div class="navrow"><button class="pri" onclick="cont()">Devam</button></div>`}
+  fb=`<div class="fb ${ok?'ok':'bad'}"><div class="head">${ok?(S.c[S.cur]>=2?U().ok2:U().ok1):U().bad+ruby(d.o[d.a])}</div>
+  <b class="jp" style="font-size:22px">${d.w}</b> <span class="rd">${d.r}</span> = <b>${MEAN(S.cur)}</b>
+  <div class="tip">${d.tip}</div><div class="tr">${TRN(S.view==="learn"?i:S.cur)}</div></div>
+  <div class="navrow"><button class="pri" onclick="cont()">${U().cont}</button></div>`}
  return hdr("Test",furiBtn())+`<div class="prog"><i style="width:${m/tot*100}%"></i></div>
- <div class="stat"><span>Tamamlanan ${m}/${tot}</span><span>Yanlış ${S.wrong}</span></div>
- <div class="card"><div class="qtype">${MT[d.m]}<span class="dots"><i class="${c>=1?'f':''}"></i><i class="${c>=2?'f':''}"></i></span></div>
+ <div class="stat"><span>${U().doneN} ${m}/${tot}</span><span>${U().wrong} ${S.wrong}</span></div>
+ <div class="card"><div class="qtype">${U().MT[d.m]}<span class="dots"><i class="${c>=1?'f':''}"></i><i class="${c>=2?'f':''}"></i></span></div>
  <div class="sent ${S.furi?'':'nofuri'}">${ruby(d.s)}</div>
- ${S.ans!==null?`<div class="tr">${d.tr}</div>`:""}
- <div class="opts">${opts}</div></div>${fb}`;
+ ${S.ans!==null?`<div class="tr">${TRN(S.view==="learn"?i:S.cur)}</div>`:""}
+ <div class="opts ${d.m>=4?'wide':''} ${S.furi?'':'nofuri'}">${opts}</div></div>${fb}`;
 }
-function done(){return `<div class="done"><div class="stamp">合格</div><h1 style="margin-top:24px">Hepsini 2 kez doğru bildin</h1>
- <p class="tr">${S.tries} cevap, ${S.wrong} yanlış</p>
- <div class="navrow"><button onclick="go('home')">Menü</button><button class="pri" onclick="startTest()">Tekrar test</button></div></div>`}
-function render(){$.innerHTML=({home,learn,test,done})[S.view]()}
+function done(){return `<div class="done"><div class="stamp">合格</div><h1 style="margin-top:24px">${U().doneH}</h1>
+ <p class="tr">${U().doneP(S.tries,S.wrong)}</p>
+ <div class="navrow"><button onclick="go('home')">${U().menu.replace('← ','')}</button><button onclick="startTest()">${U().again}</button>${S.tf&&secOf(S.tf)<SEC.length-1?`<button class="pri" onclick="learnSec(${secOf(S.tf)+1})">${U().nextSec}</button>`:''}</div></div>`}
+function render(){$.innerHTML=({home,learn,read,test,done})[S.view]()}
 render();
 </script>
 </body>
