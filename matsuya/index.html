@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Restoran Kanji – Matsuya Rehberi v2</title>
+<style>
+:root{--bg:#faf7f2;--card:#fff;--ink:#1e1b18;--mute:#6f675f;--line:#e6dfd5;--acc:#d9381e;--acc2:#fde8e3;--ok:#2e8b57;--mid:#d9a21e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root{--bg:#171513;--card:#221f1c;--ink:#f1ece6;--mute:#a69d93;--line:#37322d;--acc:#ff6a50;--acc2:#3a201b;--ok:#5cc58a;--mid:#e8b844;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.5}
+header{padding:16px 16px 6px;max-width:720px;margin:0 auto}
+h1{font-size:21px;margin:0}
+.sub{color:var(--mute);font-size:13px;margin:2px 0 0}
+.prog{height:7px;background:var(--line);border-radius:4px;margin:10px 0 0;overflow:hidden;display:flex}
+.prog i{display:block;height:100%;transition:width .3s}
+.mode{display:flex;gap:6px;margin-top:10px}
+.mode button{flex:1;padding:10px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:15px;font-weight:600;cursor:pointer}
+.mode button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;max-width:720px;margin:0 auto;padding:8px 16px;display:flex;gap:6px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav button{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 12px;border-radius:20px;font-size:13px;cursor:pointer}
+nav button.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+main{max-width:720px;margin:0 auto;padding:12px 16px 40px}
+.note{background:var(--acc2);border-radius:12px;padding:12px 14px;font-size:14px;margin:0 0 12px}
+.tools{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.tools button{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 12px;border-radius:10px;font-size:13px;cursor:pointer}
+.tools button.on{border-color:var(--acc);color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px;display:flex;gap:12px;align-items:center}
+.card.m2{border-color:var(--ok)}
+.card.m1{border-color:var(--mid)}
+.jp{font-size:26px;min-width:100px;font-weight:600;line-height:1.25;word-break:keep-all}
+.jp rt{font-size:11px;font-weight:400;color:var(--mute)}
+.info{flex:1;min-width:0}
+.tr{font-size:16px;font-weight:600}
+.ro{font-size:13px;color:var(--mute)}
+.ex{font-size:13px;color:var(--mute);margin-top:2px}
+.hide{filter:blur(7px);cursor:pointer;user-select:none}
+.dots{flex:none;display:flex;gap:4px}
+.dots b{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.dots b.f{background:var(--ok)}
+.q{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}
+.q .big{font-size:46px;font-weight:700;margin:6px 0;line-height:1.3}
+.q .big.tr2{font-size:24px}
+.q .big rt{font-size:14px;font-weight:400}
+.qtype{font-size:14px;color:var(--mute)}
+.opts{display:grid;gap:8px;margin-top:14px}
+.opts button{padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:17px;cursor:pointer}
+.opts button.right{background:var(--ok);color:#fff;border-color:var(--ok)}
+.opts button.wrong{background:var(--acc);color:#fff;border-color:var(--acc)}
+.next{margin-top:14px;padding:11px 22px;border:0;border-radius:12px;background:var(--acc);color:#fff;font-size:15px;cursor:pointer}
+.fb{margin-top:12px;font-size:14px}
+.stat{display:flex;justify-content:space-between;font-size:13px;color:var(--mute);margin-bottom:6px}
+.win{font-size:40px}
+.small{font-size:12px;color:var(--mute)}
+.reset{background:none;border:0;color:var(--mute);text-decoration:underline;font-size:12px;cursor:pointer;margin-top:20px}
+.foot{text-align:center;color:var(--mute);font-size:12px;margin:10px 0 24px}
+</style>
+</head>
+<body>
+<header>
+<h1>🍚 Restoran Kanji Rehberi</h1>
+<p class="sub">Matsuya’da çalışanlar için · Her kelime 2 kez doğru bilinince öğrenilmiş sayılır</p>
+<div class="prog"><i id="b2" style="background:var(--ok)"></i><i id="b1" style="background:var(--mid)"></i></div>
+<p class="sub" id="ptxt"></p>
+<div class="mode"><button id="mStudy">📖 Çalış</button><button id="mTest">🎯 Test</button></div>
+</header>
+<nav id="nav"></nav>
+<main id="main"></main>
+<p class="foot">Powered by Ramazan Dogna</p>
+
+<script>
+// [kanji/yazılış, okunuş, romaji, Türkçe, not]
+const S={
+yemek:{t:"🍱 Yemekler",note:"Matsuya’da gyudon’a <b>牛めし</b> denir. 牛 (sığır), 豚 (domuz), 鶏 (tavuk), 魚 (balık) harflerini tanırsan menünün çoğunu çözersin.",c:[
+["牛めし","ぎゅうめし","gyūmeshi","Sığır etli pilav kasesi (Matsuya)","めし = pilav/yemek"],
+["牛丼","ぎゅうどん","gyūdon","Sığır etli pilav kasesi","丼 = kase yemeği"],
+["豚丼","ぶたどん","butadon","Domuz etli pilav kasesi",""],
+["牛皿","ぎゅうざら","gyūzara","Pilavsız sığır eti tabağı","皿 = tabak"],
+["定食","ていしょく","teishoku","Set menü (yemek + pilav + çorba)",""],
+["朝定食","あさていしょく","asa teishoku","Sabah seti","朝 = sabah"],
+["ご飯","ごはん","gohan","Pilav",""],
+["肉","にく","niku","Et",""],
+["牛肉","ぎゅうにく","gyūniku","Sığır eti",""],
+["豚肉","ぶたにく","butaniku","Domuz eti",""],
+["鶏肉","とりにく","toriniku","Tavuk eti",""],
+["魚","さかな","sakana","Balık",""],
+["焼魚","やきざかな","yakizakana","Izgara balık","焼 = ızgara/pişmiş"],
+["鮭","さけ","sake","Somon",""],
+["鯖","さば","saba","Uskumru",""],
+["焼肉","やきにく","yakiniku","Izgara et",""],
+["唐揚げ","からあげ","karaage","Kızarmış tavuk",""],
+["野菜","やさい","yasai","Sebze",""],
+["生野菜","なまやさい","nama yasai","Çiğ sebze salatası","生 = çiğ"],
+["小鉢","こばち","kobachi","Küçük yan tabak",""],
+["卵","たまご","tamago","Yumurta",""],
+["生卵","なまたまご","nama tamago","Çiğ yumurta",""],
+["半熟卵","はんじゅくたまご","hanjuku tamago","Az pişmiş yumurta","半 = yarım"],
+["納豆","なっとう","nattō","Fermente soya fasulyesi",""],
+["漬物","つけもの","tsukemono","Turşu",""],
+["お新香","おしんこ","oshinko","Turşu (menüde)",""],
+["海苔","のり","nori","Yosun yaprağı",""],
+["辛い","からい","karai","Acı",""],
+["甘い","あまい","amai","Tatlı",""]]},
+corba:{t:"🥣 Miso & Tonjiru",note:"<b>Miso çorbası</b>: beyaz küp = <b>tofu</b>, yeşil yumuşak yaprak = <b>wakame</b>, üstteki halkalar = <b>negi</b>. <b>Tonjiru</b>: domuz + daikon + havuç + gobo + konnyaku (+ tofu, negi).",c:[
+["味噌","みそ","miso","Miso (soya ezmesi)",""],
+["味噌汁","みそしる","misoshiru","Miso çorbası","汁 = çorba/sulu şey"],
+["豚汁","とんじる","tonjiru","Domuzlu sebzeli miso çorbası","豚 + 汁"],
+["豆腐","とうふ","tōfu","Tofu (beyaz küpler)",""],
+["若布","わかめ","wakame","Wakame yosunu","Çoğu yerde わかめ yazılır"],
+["葱","ねぎ","negi","Yeşil soğan","Çoğu yerde ねぎ yazılır"],
+["大根","だいこん","daikon","Beyaz turp","大 büyük + 根 kök"],
+["人参","にんじん","ninjin","Havuç",""],
+["牛蒡","ごぼう","gobō","Gobo kökü","Çoğu yerde ごぼう yazılır"],
+["蒟蒻","こんにゃく","konnyaku","Konnyaku (jöle kök)","Çoğu yerde こんにゃく yazılır"],
+["玉葱","たまねぎ","tamanegi","Kuru soğan","牛めし içinde olur"],
+["生姜","しょうが","shōga","Zencefil",""],
+["紅生姜","べにしょうが","beni shōga","Kırmızı turşu zencefil","Masadaki kırmızı şey"]]},
+siparis:{t:"🧾 Sipariş & Boyut",note:"<b>盛</b> görürsen porsiyon boyutu yazıyordur: 並盛 normal, 大盛 büyük, 特盛 extra.",c:[
+["並盛","なみもり","namimori","Normal porsiyon","並 = normal"],
+["大盛","おおもり","ōmori","Büyük porsiyon","大 = büyük"],
+["特盛","とくもり","tokumori","Extra büyük porsiyon","特 = özel"],
+["小盛","こもり","komori","Küçük porsiyon","小 = küçük"],
+["中盛","ちゅうもり","chūmori","Orta porsiyon","中 = orta"],
+["肉増し","にくまし","nikumashi","Fazla et","増 = artırmak"],
+["少なめ","すくなめ","sukuname","Biraz az",""],
+["多め","おおめ","ōme","Biraz fazla",""],
+["汁だく","つゆだく","tsuyudaku","Bol soslu",""],
+["抜き","ぬき","nuki","...siz (çıkarılmış)","ねぎ抜き = soğansız"],
+["追加","ついか","tsuika","İlave / ek",""],
+["変更","へんこう","henkō","Değiştirme","豚汁変更 = çorbayı tonjiru yap"],
+["単品","たんぴん","tanpin","Tek ürün (set değil)",""],
+["注文","ちゅうもん","chūmon","Sipariş",""],
+["店内","てんない","tennai","İçeride yemek",""],
+["持ち帰り","もちかえり","mochikaeri","Paket / götürmelik","Fişte 持帰 diye kısalır"],
+["番号","ばんごう","bangō","Numara",""],
+["呼出","よびだし","yobidashi","Çağrı (numara ekranı)",""],
+["温","おん","on","Sıcak (menüde kısaltma)","温かい = sıcak"],
+["冷","れい","rei","Soğuk (menüde kısaltma)","冷たい = soğuk"],
+["飲み物","のみもの","nomimono","İçecek",""],
+["お茶","おちゃ","ocha","Çay",""],
+["水","みず","mizu","Su",""]]},
+fis:{t:"💴 Fiş & Ödeme",note:"Fişte önce <b>合計</b> (toplam) ve <b>税込</b> (vergi dahil) bak. お預かり = alınan para, お釣り = para üstü.",c:[
+["食券","しょっけん","shokken","Yemek bileti",""],
+["券売機","けんばいき","kenbaiki","Bilet makinesi",""],
+["領収書","りょうしゅうしょ","ryōshūsho","Resmi makbuz",""],
+["伝票","でんぴょう","denpyō","Adisyon / sipariş fişi",""],
+["合計","ごうけい","gōkei","Toplam",""],
+["小計","しょうけい","shōkei","Ara toplam",""],
+["税込","ぜいこみ","zeikomi","Vergi dahil",""],
+["税抜","ぜいぬき","zeinuki","Vergi hariç",""],
+["消費税","しょうひぜい","shōhizei","Tüketim vergisi",""],
+["現金","げんきん","genkin","Nakit",""],
+["お預かり","おあずかり","oazukari","Teslim alınan para",""],
+["お釣り","おつり","otsuri","Para üstü",""],
+["金額","きんがく","kingaku","Tutar",""],
+["数量","すうりょう","sūryō","Adet",""],
+["円","えん","en","Yen",""],
+["売切","うりきれ","urikire","Tükendi","売り切れ diye de yazılır"],
+["販売終了","はんばいしゅうりょう","hanbai shūryō","Satış bitti",""],
+["割引","わりびき","waribiki","İndirim",""]]},
+alet:{t:"🍽️ Mutfak & Eşya",note:"Talimatlarda geçen nesneler. Bunları bilirsen “tepsiyi getir” gibi cümleleri anlarsın.",c:[
+["お盆","おぼん","obon","Tepsi",""],
+["丼","どんぶり","donburi","Büyük kase",""],
+["皿","さら","sara","Tabak",""],
+["器","うつわ","utsuwa","Kap / kase",""],
+["箸","はし","hashi","Yemek çubuğu",""],
+["布巾","ふきん","fukin","Bez (masa bezi)",""],
+["湯呑み","ゆのみ","yunomi","Çay bardağı",""],
+["鍋","なべ","nabe","Tencere",""],
+["蓋","ふた","futa","Kapak",""],
+["袋","ふくろ","fukuro","Poşet",""],
+["容器","ようき","yōki","Paket kabı",""],
+["厨房","ちゅうぼう","chūbō","Mutfak (restoran)",""],
+["客席","きゃくせき","kyakuseki","Müşteri masaları",""],
+["洗い場","あらいば","araiba","Bulaşık yeri",""],
+["返却口","へんきゃくぐち","henkyakuguchi","Tepsi iade yeri",""],
+["冷蔵庫","れいぞうこ","reizōko","Buzdolabı",""],
+["冷凍庫","れいとうこ","reitōko","Dondurucu",""],
+["在庫","ざいこ","zaiko","Stok",""],
+["お客様","おきゃくさま","okyakusama","Müşteri (nazik)",""]]},
+fiil:{t:"🏃 Fiiller",note:"Sözlük hâli. Sonraki bölümde iş yerinde duyacağın emir (〜て) hâlleri var.",c:[
+["取る","とる","toru","Almak",""],
+["置く","おく","oku","Koymak (bir yere)",""],
+["入れる","いれる","ireru","İçine koymak",""],
+["出す","だす","dasu","Çıkarmak / servis etmek",""],
+["持つ","もつ","motsu","Tutmak / taşımak",""],
+["運ぶ","はこぶ","hakobu","Taşımak",""],
+["渡す","わたす","watasu","Vermek / uzatmak",""],
+["受け取る","うけとる","uketoru","Teslim almak",""],
+["下げる","さげる","sageru","(Boş tabakları) toplamak",""],
+["片付ける","かたづける","katazukeru","Toplamak / düzenlemek",""],
+["空ける","あける","akeru","Boşaltmak",""],
+["捨てる","すてる","suteru","Atmak (çöpe)",""],
+["戻す","もどす","modosu","Geri koymak",""],
+["並べる","ならべる","naraberu","Sıralamak / dizmek",""],
+["替える","かえる","kaeru","Değiştirmek",""],
+["足す","たす","tasu","Eklemek",""],
+["拭く","ふく","fuku","Silmek",""],
+["洗う","あらう","arau","Yıkamak",""],
+["盛る","もる","moru","Kaseye doldurmak",""],
+["注ぐ","そそぐ","sosogu","Dökmek",""],
+["温める","あたためる","atatameru","Isıtmak",""],
+["焼く","やく","yaku","Izgarada pişirmek",""],
+["煮る","にる","niru","Kaynatarak pişirmek",""],
+["切る","きる","kiru","Kesmek",""],
+["呼ぶ","よぶ","yobu","Çağırmak",""],
+["急ぐ","いそぐ","isogu","Acele etmek",""],
+["手伝う","てつだう","tetsudau","Yardım etmek",""],
+["確認する","かくにんする","kakunin suru","Kontrol etmek",""],
+["補充する","ほじゅうする","hojū suru","Stok tamamlamak",""],
+["準備する","じゅんびする","junbi suru","Hazırlamak",""],
+["掃除する","そうじする","sōji suru","Temizlemek",""]]},
+emir:{t:"📣 İş Talimatları",note:"〜て + ください = rica. İş yerinde genelde sadece 〜て denir: <b>取って</b> = al/uzat.",c:[
+["取って","とって","totte","Al! / Uzat!","それ取って = şunu uzat"],
+["持ってきて","もってきて","motte kite","Getir!","お盆持ってきて = tepsiyi getir"],
+["ここに置いて","ここにおいて","koko ni oite","Buraya koy!",""],
+["入れて","いれて","irete","İçine koy!",""],
+["下げて","さげて","sagete","(Masadakileri) topla!",""],
+["お盆を片付けて","おぼんをかたづけて","obon o katazukete","Tepsiyi topla!",""],
+["空けて","あけて","akete","Boşalt!","ゴミ箱を空けて = çöpü boşalt"],
+["捨てて","すてて","sutete","At! (çöpe)",""],
+["戻して","もどして","modoshite","Geri koy!",""],
+["拭いて","ふいて","fuite","Sil!","テーブル拭いて = masayı sil"],
+["洗って","あらって","aratte","Yıka!",""],
+["掃除して","そうじして","sōji shite","Temizle!",""],
+["並べて","ならべて","narabete","Diz! / Sırala!",""],
+["替えて","かえて","kaete","Değiştir!",""],
+["足して","たして","tashite","Ekle! / Tamamla!",""],
+["渡して","わたして","watashite","Ver!",""],
+["運んで","はこんで","hakonde","Taşı!",""],
+["呼んで","よんで","yonde","Çağır!",""],
+["手伝って","てつだって","tetsudatte","Yardım et!",""],
+["急いで","いそいで","isoide","Acele et!",""],
+["確認して","かくにんして","kakunin shite","Kontrol et!",""],
+["補充して","ほじゅうして","hojū shite","Stoğu tamamla!",""],
+["お願いします","おねがいします","onegai shimasu","Rica ederim / lütfen",""]]},
+fraz:{t:"💬 Kalıplar",note:"Müşteriye ve ekibe en çok söylenen cümleler.",c:[
+["いらっしゃいませ","いらっしゃいませ","irasshaimase","Hoş geldiniz",""],
+["お待たせしました","おまたせしました","omatase shimashita","Beklettim, buyurun",""],
+["少々お待ちください","しょうしょうおまちください","shōshō omachi kudasai","Lütfen biraz bekleyin",""],
+["かしこまりました","かしこまりました","kashikomarimashita","Anlaşıldı (nazik)",""],
+["お会計","おかいけい","okaikei","Hesap",""],
+["ありがとうございました","ありがとうございました","arigatō gozaimashita","Teşekkürler (giderken)",""],
+["お疲れ様です","おつかれさまです","otsukaresama desu","İş arkadaşına selam",""],
+["お先に失礼します","おさきにしつれいします","osaki ni shitsurei shimasu","Önce çıkıyorum (vardiya sonu)",""],
+["店内でお召し上がりですか","てんないでおめしあがりですか","tennai de omeshiagari desu ka","İçeride mi yiyeceksiniz?",""],
+["お持ち帰りですか","おもちかえりですか","omochikaeri desu ka","Paket mi olacak?",""]]}
+};
+const keys=Object.keys(S);
+const ALL=[];keys.forEach(k=>S[k].c.forEach((c,i)=>ALL.push({k,i,id:k+":"+c[0],c})));
+const hasKanji=s=>/[\u4e00-\u9fff]/.test(s);
+let st={};try{st=JSON.parse(localStorage.getItem("rk2")||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem("rk2",JSON.stringify(st))}catch(e){}};
+const lv=id=>st[id]||0;
+let cur="all",mode="study",blur=false,sc={ok:0,tt:0},recent=[];
+function ruby(k,r){return hasKanji(k)&&k!==r?`<ruby>${k}<rt>${r}</rt></ruby>`:k}
+function items(){return cur==="all"?ALL:ALL.filter(x=>x.k===cur)}
+function prog(){
+  const n=ALL.length,a=ALL.filter(x=>lv(x.id)>=2).length,b=ALL.filter(x=>lv(x.id)===1).length;
+  b2.style.width=a/n*100+"%";b1.style.width=b/n*100+"%";
+  ptxt.textContent=`Öğrenildi: ${a} · Yarıda: ${b} · Toplam: ${n}`;
+}
+function nav(){
+  nav_.innerHTML=[["all","Hepsi"],...keys.map(k=>[k,S[k].t])].map(([k,t])=>{
+    const its=k==="all"?ALL:ALL.filter(x=>x.k===k),d=its.filter(x=>lv(x.id)>=2).length;
+    return `<button data-k="${k}" class="${k===cur?'on':''}">${t} <span class="small">${d}/${its.length}</span></button>`}).join("");
+  nav_.querySelectorAll("button").forEach(b=>b.onclick=()=>{cur=b.dataset.k;recent=[];render();scrollTo(0,0)});
+  mStudy.className=mode==="study"?"on":"";mTest.className=mode==="test"?"on":"";
+}
+const nav_=document.getElementById("nav");
+mStudy.onclick=()=>{mode="study";render()};mTest.onclick=()=>{mode="test";recent=[];render()};
+function render(){nav();prog();mode==="study"?study():test()}
+function study(){
+  const m=main;let h="";
+  if(cur!=="all")h+=`<div class="note">${S[cur].note}</div>`;
+  h+=`<div class="tools"><button id="bl" class="${blur?'on':''}">Anlamı gizle</button></div>`;
+  items().forEach(x=>{const c=x.c,l=lv(x.id);
+    h+=`<div class="card ${l>=2?'m2':l===1?'m1':''}"><div class="jp">${ruby(c[0],c[1])}</div>
+    <div class="info"><div class="tr ${blur?'hide':''}">${c[3]}</div><div class="ro">${c[1]} · ${c[2]}</div>${c[4]?`<div class="ex">${c[4]}</div>`:""}</div>
+    <div class="dots"><b class="${l>=1?'f':''}"></b><b class="${l>=2?'f':''}"></b></div></div>`});
+  m.innerHTML=h;
+  bl.onclick=()=>{blur=!blur;render()};
+  m.querySelectorAll(".hide").forEach(e=>e.onclick=()=>e.classList.remove("hide"));
+}
+function pick(){
+  const pool=items().filter(x=>lv(x.id)<2);
+  if(!pool.length)return null;
+  let cand=pool.filter(x=>!recent.includes(x.id));if(!cand.length)cand=pool;
+  // önce yarıda olanlar ve yanlışlar biraz öne
+  cand.sort((a,b)=>lv(b.id)-lv(a.id)+(Math.random()-.5)*2);
+  return cand[0];
+}
+function test(){
+  const m=main,q=pick();
+  if(!q){m.innerHTML=`<div class="q"><div class="win">🎉</div><b>Bu bölümdeki tüm kelimeleri 2 kez doğru bildin!</b><br><span class="small">Başka bölüm seç veya tekrar için sıfırla.</span><br><button class="next" id="rs">Bu bölümü sıfırla</button></div>`;
+    rs.onclick=()=>{items().forEach(x=>delete st[x.id]);save();render()};return}
+  recent.push(q.id);if(recent.length>4)recent.shift();
+  const c=q.c,kanji=hasKanji(c[0]);
+  // soru türü: 0 anlam, 1 okunuş (kanjiliyse), 2 Türkçe→Japonca
+  const types=kanji?[0,1,2]:[0,2];const t=types[Math.floor(Math.random()*types.length)];
+  const fld=t===0?3:t===1?1:0;
+  const others=ALL.filter(x=>x.c[fld]!==c[fld]&&(t!==1||hasKanji(x.c[0])));
+  const near=others.filter(x=>x.k===q.k).sort(()=>Math.random()-.5);
+  const far=others.filter(x=>x.k!==q.k).sort(()=>Math.random()-.5);
+  const seen=new Set([c[fld]]),wrong=[];
+  for(const x of [...near,...far]){if(wrong.length>=3)break;if(!seen.has(x.c[fld])){seen.add(x.c[fld]);wrong.push(x.c)}}
+  const opts=[c,...wrong].sort(()=>Math.random()-.5);
+  const qtxt=["Bu ne demek?","Nasıl okunur?","Japoncası hangisi?"][t];
+  const shown=t===2?`<div class="big tr2">${c[3]}</div>`:`<div class="big">${c[0]}</div>`;
+  const l=lv(q.id);
+  m.innerHTML=`<div class="stat"><span>Oturum: ${sc.ok}/${sc.tt}</span><span>Kalan: ${items().filter(x=>lv(x.id)<2).length}</span></div>
+  <div class="q"><div class="dots" style="justify-content:center"><b class="${l>=1?'f':''}"></b><b class="${l>=2?'f':''}"></b></div>
+  ${shown}<div class="qtype">${qtxt}</div>
+  <div class="opts">${opts.map((o,i)=>`<button data-i="${i}">${o[fld]}</button>`).join("")}</div><div class="fb" id="fb"></div></div>`;
+  let done=false;
+  m.querySelectorAll(".opts button").forEach(b=>b.onclick=()=>{
+    if(done)return;done=true;sc.tt++;
+    const ok=opts[b.dataset.i]===c;
+    if(ok){sc.ok++;st[q.id]=l+1;b.classList.add("right")}
+    else{st[q.id]=0;b.classList.add("wrong");m.querySelectorAll(".opts button").forEach((x,j)=>{if(opts[j]===c)x.classList.add("right")})}
+    save();
+    fb.innerHTML=`<div style="font-size:24px;font-weight:700">${ruby(c[0],c[1])}</div>${c[2]} · ${c[3]}${c[4]?`<br><span class="small">${c[4]}</span>`:""}<br>`+
+      (ok?(st[q.id]>=2?"✅ Öğrenildi!":"👍 1/2 — bir kez daha doğru bil"):"❌ Sayaç sıfırlandı, tekrar gelecek");
+    const n=document.createElement("button");n.className="next";n.textContent="Sonraki →";n.onclick=()=>render();
+    m.querySelector(".q").appendChild(n);prog();
+  });
+}
+const main=document.getElementById("main");
+render();
+</script>
+</body>
+</html>
