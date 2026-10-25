@@ -49,8 +49,8 @@ h2{font-size:15px;color:var(--soft);margin:22px 0 4px;font-weight:600}
 .tip{border-left:3px solid var(--red);padding-left:10px;font-size:15px;margin:10px 0}
 .sent{font-size:20px;line-height:2.2}
 .tr{color:var(--soft);font-size:15px}
-.navrow{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px;gap:10px}
-.navrow button{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px}
+.navrow{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px;gap:10px}
+.navrow button{flex:1 1 140px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px}
 .navrow .pri{background:var(--indigo);color:var(--paper);border-color:var(--indigo)}
 ruby rt{font-size:.5em;color:var(--soft)}
 .nofuri rt{visibility:hidden}
@@ -78,10 +78,14 @@ u.t{text-decoration:none;border-bottom:2px solid var(--red);padding:0 2px}
 .done{text-align:center;padding:40px 0}
 .stamp{display:inline-block;font-family:"Klee One",sans-serif;font-size:44px;color:var(--red);border:4px solid var(--red);border-radius:50%;width:110px;height:110px;line-height:100px;transform:rotate(-8deg)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.credit{position:fixed;left:0;right:0;bottom:0;text-align:center;font-size:11px;line-height:1;color:var(--soft);background:var(--bg);padding:5px 16px calc(5px + env(safe-area-inset-bottom,0px));z-index:5}
+.credit a{color:var(--indigo);font-weight:600;text-decoration:none}
+#app{padding-bottom:32px}
 </style>
 </head>
 <body>
 <div id="app"></div>
+<div class="credit">Created by <a href="https://www.instagram.com/ramazandogna/" target="_blank" rel="noopener">Ramazan Dogna</a></div>
 <script>
 const D=[
 {m:1,s:"会場には{大勢|おおぜい}の[観客]がいた。",o:["けんぎゃく","かんぎゃく","けんきゃく","かんきゃく"],a:3,w:"観客",r:"かんきゃく",mean:"seyirci",p:[["観","カン","bakmak, izlemek (観光 かんこう = turizm)"],["客","キャク","misafir, müşteri (お客さん)"]],tip:"İzleyen misafir = seyirci. 客 her zaman きゃく — ゛ (ぎゃ) yok.",tr:"Salonda çok sayıda seyirci vardı."},
@@ -140,6 +144,80 @@ en:{menu:"← Menu",q:"questions",sec:"Section",lead:(a,b)=>`${a} questions · $
 zh:{menu:"← 菜单",q:"题",sec:"第",lead:(a,b)=>`${a} 题 · ${b} 个部分 · 先学习，再测试`,learn:"学 学习",read:"読 阅读",test:"試 测试",all:n=>`综合测试（1–${n}）`,allS:"所有题目混合。每题需答对两次。",readT:"阅读",words:"的词汇 · 带下划线",show:"显示翻译",l:"学习",secTest:"本部分测试",hide:"隐藏读音",prev:"上一个",next:"下一个",nextSec:"下一部分 →",on:"开",off:"关",ok2:"正确 — 这个词完成 ✓",ok1:"正确 — 还会再出一次",bad:"错误 — 正确答案：",cont:"继续",doneN:"已完成",wrong:"错误",doneH:"全部答对两次！",doneP:(a,b)=>`${a} 次作答，${b} 次错误`,again:"再测一次",MT:{1:"問題1 · 选择读音",2:"問題2 · 选择汉字",3:"問題3 · 填空",4:"問題4 · 意思最接近",5:"問題5 · 正确用法"}}};
 let LG="tr";try{LG=localStorage.getItem("n3_lang")||"tr"}catch(e){}if(!UI[LG])LG="tr";
 const U=()=>UI[LG],MEAN=i=>LG==="en"?EN[i][0]:LG==="zh"?ZH[i][0]:D[i].mean,TRN=i=>LG==="en"?EN[i][1]:LG==="zh"?ZH[i][1]:D[i].tr;
+
+const XT={en:[
+[["to look, watch (観光 = tourism)","guest, customer (お客さん)"],"A guest who watches = spectator. 客 is always きゃく — no voicing (ぎゃ)."],
+[["left side 扌 = hand → handing over money"],"Verbs with 扌 (hand) are done by hand: 払う pay, 拾う ひろう pick up, 持つ もつ hold."],
+[["to reach, arrive","arrive / wear (着る きる)"],"As a verb 着 is つく, but inside words it is チャク. 到 is long: とう."],
+[["力 (power) + 口 (mouth) → adding strength"],"追加 ついか = addition, 参加 さんか = participation. Always the idea of 'adding'."],
+[["to teach (言 = words)","practice (練習 れんしゅう)"],"練 as in 練習 = れん. It ends in れん, not れい. 訓 is unvoiced: く, not ぐ."],
+[["picture of a bowl on a stand"],"豆腐 とうふ = tofu, 納豆 なっとう. Alone it is まめ."],
+[["together (共に ともに)","to pass, to be shared"],"Trap: 交通 こうつう = traffic! 共 = together → きょう. Both long: きょう・つう."],
+[["禾 (grain) → taxes were once paid in grain","money, gold"],"税 = ぜい (voiced, no っ). 消費税 しょうひぜい = consumption tax — on every receipt in Japan."],
+[["氵 (water) + 皮 (skin) → the skin of water = wave"],"All have 氵 (water)! 池 いけ pond, 湖 みずうみ lake, 港 みなと harbor."],
+[["辶 (road) → going fast on the road"],"早い = early (time), 速い = fast (speed). Walking is speed → 速く. 急ぐ = hurry, 軽い = light."],
+[["full (満員 まんいん = packed)","foot; enough (足りる たりる)"],"Full + enough = satisfied. 万 = 10,000 (a number), wrong here."],
+[["糸 (thread) → weaving threads"],"腕を組む = cross one's arms (set phrase). 組 also means class/group: 1年2組. 結ぶ むすぶ = tie."],
+[["車 (vehicle) → to transport","to go out"],"Transport out = export. Opposite: 輸入 ゆにゅう = import. Pick the one with 車!"],
+[["目 (eye) + 民 → eyes close"],"寝る ねる = lie down (て-form, not って). 眼 め = eye. 眠い ねむい = sleepy."],
+[["special (特に とくに)","long; strong point"],"A product's good feature = 特長. 実力 ability, 専門 specialty, 主張 claim."],
+[[],"おとなしい = quiet, gentle. 'Seems quiet but is actually active' → イメージ."],
+[["inside the 囗 frame → enclosed"],"The kanji itself is a frame: 囗. テーブルを囲む = gather around the table. 包む = wrap."],
+[[],"がらがら = empty (also 電車ががらがら). ぐっすり deep sleep, ふらふら unsteady, うっかり carelessly."],
+[[],"'I wonder if it's true' → not certain = rumor. うそ lie, 宣伝 advertising, 冗談 joke."],
+[["言 (words) → permitting with words"],"謝る あやまる (apologize) → 許す (forgive). 許可 きょか = permission."],
+[["figure, body shape","force (same kanji as in 大勢 おおぜい!)"],"The body's shape = posture. 姿勢がいい = stands straight. 様子 state, 印象 impression, 間隔 interval."],
+[["石 (stone) → solid as stone = certain"],"Looking for mistakes = 確かめる. 確認 かくにん means the same (very common at work)."],
+[["farming (農家 のうか = farmer)","work, industry (工業 = manufacturing)"],"〜が盛ん = 'is thriving' → needs an industry. 作物 (crops) are grown, but don't 'thrive'."],
+[["氵 (water) → sinking into water"],"浮く うく (float) ↔ 沈む しずむ (sink). おぼれる = drown, only for living things."],
+[["inside","thread end"],"内緒にする = keep secret. 'これ、内緒ね' = keep this between us."],
+[["光 (light) + 軍 → radiating light"],"輝く ≈ 光る (shine). 揺れる = shake, 汚れる = get dirty, 止まる = stop."],
+[[],"がっかり = when expectations fail → 残念だと思う. 驚く = be surprised, 安心 = relief."],
+[["to hit, appropriate","so, state (自然 しぜん)"],"当然 = natural that it is so → もちろん. 当然です = 'That's quite normal'."],
+[["surplus (余裕 よゆう = spare time/margin)"],"余る = be more than needed, be left over. Trap: don't mix with あまり〜ない (not very). Opposite: 足りない."],
+[["side, horizontal","to cut","to prohibit","to stop"],"横断 = cutting across a road = crossing → 渡る. 横断歩道 = crosswalk. 立入禁止 = no entry."],
+[["hurry; sudden"],"急に = suddenly, unexpectedly. For 'quickly' use すぐに / 急いで (so 1, 2, 4 are wrong)."],
+[["氵 (water) → water boils (お湯が沸く)","to rise"],"沸騰 is only for liquids. Temperature 上がる, fever 出る/上がる, room 暖まる."],
+[["curved (曲 also = song: 名曲)"],"曲げる = bend (arm, knee, wire). Scarf 巻く, bread 割る/分ける, shirt たたむ."],
+[["to go out","to stretch, spread"],"出張 = going somewhere for work. Vacation 旅行, daily commute 出勤, joining an event 参加."],
+[["心 (heart) → easing the heart"],"慰める = comfort someone who is sad. Take care of things 大切にする, cheer a player 応援する, celebrate 祝う."]],
+zh:[
+[["看、观看（観光＝旅游）","客人、顾客（お客さん）"],"观看的客人＝观众。客总是读きゃく，没有浊音（ぎゃ）。"],
+[["左边扌＝手 → 用手递钱"],"带扌（手）的动词都是用手做的事：払う付钱，拾う捡，持つ拿。"],
+[["到达","到达／穿（着る）"],"着作动词时读つく，在词中读チャク。到读长音：とう。"],
+[["力（力量）＋口 → 增添力量"],"追加＝追加，参加＝参加。都是“添加”的意思。"],
+[["教导（言＝言语）","练习（練習）"],"練習的練＝れん。结尾是れん不是れい。訓是清音：く不是ぐ。"],
+[["带脚的碗的形状"],"豆腐 とうふ，納豆 なっとう。单独读まめ。"],
+[["一起（共に）","通过、共通"],"陷阱：交通 こうつう＝交通！共＝一起 → きょう。两个都是长音。"],
+[["禾（谷物）→ 古时用谷物交税","钱、金"],"税＝ぜい（浊音，无っ）。消費税＝消费税，日本每张小票上都有。"],
+[["氵（水）＋皮 → 水的皮＝波浪"],"全部都有氵！池 池塘，湖 湖，港 港口。"],
+[["辶（道路）→ 在路上快走"],"早い＝早（时间），速い＝快（速度）。走路是速度 → 速く。急ぐ＝赶紧，軽い＝轻。"],
+[["满（満員＝满员）","脚；足够（足りる）"],"满＋足够＝满足。万＝一万（数字），这里是错的。"],
+[["糸（线）→ 编织线"],"腕を組む＝抱着胳膊（固定说法）。組也指班级：1年2組。結ぶ＝系。"],
+[["車（车）→ 运输","出"],"运出去＝出口。反义：輸入＝进口。选有車的！"],
+[["目（眼）＋民 → 闭上眼"],"寝る＝躺下（て形不是って）。眼＝眼睛。眠い＝困。"],
+[["特别（特に）","长；长处"],"产品的优点＝特長。実力 实力，専門 专业，主張 主张。"],
+[[],"おとなしい＝安静、老实。“看起来安静但其实很活跃” → イメージ。"],
+[["在囗（框）里 → 四周围住"],"汉字本身就是框：囗。テーブルを囲む＝围着桌子。包む＝包。"],
+[[],"がらがら＝空荡荡（電車ががらがら）。ぐっすり 熟睡，ふらふら 摇晃，うっかり 不小心。"],
+[[],"“不知道是不是真的” → 还不确定＝传闻。うそ 谎言，宣伝 宣传，冗談 玩笑。"],
+[["言（言语）→ 用话语允许"],"謝る（道歉）→ 許す（原谅）。許可＝许可。"],
+[["姿态、身形","势（和大勢的勢是同一个字！）"],"身体的形状＝姿势。姿勢がいい＝站得直。様子 样子，印象 印象，間隔 间隔。"],
+[["石 → 像石头一样坚固＝确定"],"检查有没有错＝確かめる。確認 意思相同（工作中很常用）。"],
+[["农（農家＝农民）","业（工業＝工业）"],"〜が盛ん＝“…兴盛” → 需要一个行业。作物会种植，但不说“兴盛”。"],
+[["氵（水）→ 沉入水中"],"浮く（浮）↔ 沈む（沉）。おぼれる＝溺水，只用于生物。"],
+[["内","线头"],"内緒にする＝保密。“これ、内緒ね”＝这是我们之间的秘密。"],
+[["光＋軍 → 发出光芒"],"輝く ≈ 光る（发光）。揺れる 摇晃，汚れる 变脏，止まる 停止。"],
+[[],"がっかり＝期待落空 → 残念だと思う。驚く＝吃惊，安心＝放心。"],
+[["当、适合","然、样子（自然）"],"当然＝理所当然 → もちろん。当然です＝“这很正常”。"],
+[["余（余裕＝余地）"],"余る＝超过需要而剩下。陷阱：别和あまり〜ない（不太）混淆！反义：足りない。"],
+[["横","断","禁止","停止"],"横断＝横穿马路 → 渡る。横断歩道＝人行横道。立入禁止＝禁止入内。"],
+[["急；突然"],"急に＝突然。表示“快点”用すぐに／急いで（所以1、2、4错）。"],
+[["氵（水）→ 水开（お湯が沸く）","上升"],"沸騰只用于液体。气温用上がる，发烧用出る／上がる，房间用暖まる。"],
+[["弯曲（曲也指歌曲：名曲）"],"曲げる＝弯曲（手臂、膝盖、铁丝）。围巾用巻く，面包用割る／分ける，衬衫用たたむ。"],
+[["出","张开、展开"],"出張＝因工作去别处。旅游用旅行，每天上班用出勤，参加活动用参加。"],
+[["心 → 抚慰内心"],"慰める＝安慰伤心的人。爱惜物品用大切にする，为选手加油用応援する，祝贺用祝う。"]]};
+const PART=(i,j)=>LG==="tr"?D[i].p[j][2]:(XT[LG][i][0][j]||D[i].p[j][2]),TIP=i=>LG==="tr"?D[i].tip:XT[LG][i][1];
 const secL=k=>LG==="zh"?`第${k}部分`:`${U().sec} ${k}`;
 function setLG(l){LG=l;try{localStorage.setItem("n3_lang",l)}catch(e){}document.documentElement.lang=l==="zh"?"zh-CN":l;render()}
 const langBar=()=>`<div class="grp" style="justify-content:center;margin-top:14px">${[["tr","Türkçe"],["en","English"],["zh","中文"]].map(([l,n])=>`<button class="chip ${LG===l?'on':''}" onclick="setLG('${l}')">${n}</button>`).join("")}</div>`;
@@ -163,17 +241,17 @@ function read(){const k=secOf(S.lf),r=RD[S.lf],x=SEC[k];
  return hdr(`${secL(k+1)} · ${U().readT}`,furiBtn())+`<div class="card"><div class="tr">${x.from}–${x.to} ${U().words}</div>
  <h2 class="jp" style="font-size:22px;color:var(--ink);margin:6px 0 10px">${ruby(r.t)}</h2>
  <div class="sent ${S.furi?'':'nofuri'}">${r.j.map(ruby).join('<br>')}</div>
- <details style="margin-top:12px"><summary class="tr" style="cursor:pointer">${U().show}</summary><p class="tr">${LG==='tr'?r.tr:RDT[LG][S.lf]}</p></details></div>
+ <div class="tip" style="margin-top:14px">${LG==='tr'?r.tr:RDT[LG][S.lf]}</div></div>
  <div class="navrow"><button onclick="learnSec(${k})">${U().l}</button><button class="pri" onclick="startTest(${x.m})">${U().secTest}</button></div>`}
 function learnSec(k){S.lf=SEC[k].m;S.li=0;go('learn')}
 function learn(){
  const ids=pool(S.lf),i=ids[S.li],d=D[i];
- const parts=d.p.map(p=>`<div class="part"><span class="jp">${p[0]}</span><div><b>${p[1]}</b><br>${p[2]}</div></div>`).join("");
+ const parts=d.p.map((p,j)=>`<div class="part"><span class="jp">${p[0]}</span><div><b>${p[1]}</b><br>${PART(i,j)}</div></div>`).join("");
  return hdr(`${secL(secOf(S.lf)+1)} · ${S.li+1}/${ids.length}`,`<button class="toggle ${S.hide?'on':''}" onclick="S.hide=!S.hide;render()">${U().hide}</button>`)+
  `<div class="card"><div class="tr">${U().MT[d.m]} · #${i+1}</div>
  <div class="word"><span class="big jp">${d.w}</span><span class="rd ${S.hide?'hid':''}" onclick="this.classList.remove('hid')">${d.r}</span></div>
  <div class="mean">${MEAN(i)}</div>${parts?`<div class="parts">${parts}</div>`:""}
- <div class="tip">${d.tip}</div>
+ <div class="tip">${TIP(S.view==="learn"?i:S.cur)}</div>
  <div class="sent">${ruby(d.m===5?d.o[d.a]:d.m===4?d.s+' → <b>'+d.o[d.a]+'</b>':d.s.replace(/（　）/,`<u class="t">${d.o[d.a]}</u>`))}</div><div class="tr">${TRN(S.view==="learn"?i:S.cur)}</div></div>
  <div class="navrow"><button onclick="S.li=Math.max(0,S.li-1);render()" ${S.li?'':'disabled'}>${U().prev}</button>
  ${S.li<ids.length-1?`<button class="pri" onclick="S.li++;render();scrollTo(0,0)">${U().next}</button>`:`<button onclick="go('read')">${U().readT}</button><button class="pri" onclick="startTest(S.lf)">${U().secTest}</button>${secOf(S.lf)<SEC.length-1?`<button onclick="learnSec(${secOf(S.lf)+1})">${U().nextSec}</button>`:''}`}</div>`;
@@ -191,7 +269,7 @@ function test(){
  let fb="";if(S.ans!==null){const ok=S.ans===d.a;
   fb=`<div class="fb ${ok?'ok':'bad'}"><div class="head">${ok?(S.c[S.cur]>=2?U().ok2:U().ok1):U().bad+ruby(d.o[d.a])}</div>
   <b class="jp" style="font-size:22px">${d.w}</b> <span class="rd">${d.r}</span> = <b>${MEAN(S.cur)}</b>
-  <div class="tip">${d.tip}</div><div class="tr">${TRN(S.view==="learn"?i:S.cur)}</div></div>
+  <div class="tip">${TIP(S.view==="learn"?i:S.cur)}</div><div class="tr">${TRN(S.view==="learn"?i:S.cur)}</div></div>
   <div class="navrow"><button class="pri" onclick="cont()">${U().cont}</button></div>`}
  return hdr("Test",furiBtn())+`<div class="prog"><i style="width:${m/tot*100}%"></i></div>
  <div class="stat"><span>${U().doneN} ${m}/${tot}</span><span>${U().wrong} ${S.wrong}</span></div>

@@ -1,2 +1,11 @@
 pdf/
 data-ss/
+
+# macOS
+.DS_Store
+**/.DS_Store
+._*
+
+# Editor
+.vscode/
+.idea/
