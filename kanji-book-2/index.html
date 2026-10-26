@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kanji Book 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef1f6;--paper:#fff;--ink:#1d2a44;--soft:#5d6a85;--line:#d5dbe7;--indigo:#2f4b8f;--red:#c8322b;--ok:#1f7a55;--okbg:#e3f3ec;--badbg:#fbe9e7;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121826;--paper:#1b2336;--ink:#e6eaf3;--soft:#9aa6c0;--line:#2e3a55;--indigo:#8fa8ec;--red:#ef6a5f;--ok:#5fd0a0;--okbg:#173a2d;--badbg:#45201d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121826;--paper:#1b2336;--ink:#e6eaf3;--soft:#9aa6c0;--line:#2e3a55;--indigo:#8fa8ec;--red:#ef6a5f;--ok:#5fd0a0;--okbg:#173a2d;--badbg:#45201d;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:Figtree,system-ui,sans-serif;font-size:17px;line-height:1.5}
+.jp,.opt.j{font-family:"Klee One","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif}
+#app{max-width:640px;margin:0 auto;padding:16px 16px 40px}
+header{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+header h1{font-size:18px;margin:0;flex:1;min-width:120px}
+button{font:inherit;color:inherit;cursor:pointer}
+.back,.toggle{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:14px}
+.toggle.on{border-color:var(--indigo);color:var(--indigo)}
+button:focus-visible{outline:3px solid var(--indigo);outline-offset:2px}
+.hero{text-align:center;padding:20px 0 6px}.hero .big{font-size:56px;line-height:1}.hero p{color:var(--soft);margin:8px 0 0}
+.block{margin-top:20px}.block h2{font-size:15px;color:var(--soft);margin:0 0 8px;font-weight:600}
+.unit{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:8px}
+.unit .t{display:flex;justify-content:space-between;gap:8px;align-items:baseline}.unit .t b{font-size:16px}.unit .t span{color:var(--soft);font-size:13px}
+.unit .ks{font-size:20px;letter-spacing:.15em;margin:6px 0;color:var(--indigo)}
+.row{display:flex;gap:8px;flex-wrap:wrap}.row button{flex:1 1 120px;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:9px}
+.pri{background:var(--indigo)!important;color:var(--paper)!important;border-color:var(--indigo)!important}
+.btest{width:100%;margin-top:4px;border:1px dashed var(--indigo);background:none;color:var(--indigo);border-radius:12px;padding:10px;font-weight:600}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px}
+.kh{display:flex;gap:16px;align-items:center}
+.kh .k{font-size:64px;line-height:1;width:80px;text-align:center}
+.kh .rd{font-size:14px;color:var(--soft)}.kh .rd b{color:var(--ink);font-weight:600}
+.mean{font-weight:700;font-size:18px;margin-top:2px}
+.words{margin-top:12px;display:grid;gap:6px}
+.w{display:flex;align-items:center;gap:12px;background:var(--bg);border-radius:10px;padding:6px 12px}
+.w .jp{font-size:22px;min-width:110px}
+.w .m{font-size:15px}
+ruby rt{font-size:.5em;color:var(--soft)}
+.nofuri rt{visibility:hidden}
+.hide{filter:blur(6px);cursor:pointer;user-select:none}
+.num{color:var(--soft);font-size:13px}
+.navrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.navrow button{flex:1 1 140px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px}
+.prog{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--ok);transition:width .3s}
+.stat{display:flex;justify-content:space-between;color:var(--soft);font-size:14px;margin:6px 0 14px}
+.qtype{font-size:14px;color:var(--soft);margin-bottom:6px}
+.dots{display:inline-flex;gap:4px;margin-left:6px;vertical-align:middle}
+.dots i{width:10px;height:10px;border-radius:50%;border:2px solid var(--ok)}.dots i.f{background:var(--ok)}
+.qbig{font-size:56px;text-align:center;padding:10px 0}
+.qmean{font-size:24px;font-weight:700;text-align:center;padding:16px 0}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.opt{background:var(--paper);border:2px solid var(--line);border-radius:14px;padding:12px 8px;font-size:17px;min-height:60px}
+.opt.j{font-size:22px}
+.opt.ok{background:var(--okbg);border-color:var(--ok)}.opt.bad{background:var(--badbg);border-color:var(--red)}
+.fb{margin-top:14px;border-radius:14px;padding:14px;font-size:15px}.fb.ok{background:var(--okbg)}.fb.bad{background:var(--badbg)}
+.fb .head{font-weight:700;margin-bottom:6px}
+.done{text-align:center;padding:40px 0}
+.stamp{display:inline-block;font-family:"Klee One",sans-serif;font-size:44px;color:var(--red);border:4px solid var(--red);border-radius:50%;width:110px;height:110px;line-height:100px;transform:rotate(-8deg)}
+.credit{position:fixed;left:0;right:0;bottom:0;text-align:center;font-size:11px;line-height:1;color:var(--soft);background:var(--bg);padding:5px 16px calc(5px + env(safe-area-inset-bottom,0px));z-index:5}
+.credit a{color:var(--indigo);font-weight:600;text-decoration:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div class="credit">Created by <a href="https://www.instagram.com/ramazandogna/" target="_blank" rel="noopener">Ramazan Dogna</a></div>
+<script>
+// Satır: kanji|on|kun|anlam|kelime:okunuş:anlam,...
+const RAW=[
+["病院へ行こう","Hastaneye gidelim",`
+医|イ|—|tıp, hekim|医者:いしゃ:doktor,医学:いがく:tıp bilimi,歯医者:はいしゃ:diş hekimi
+薬|ヤク|くすり|ilaç|薬:くすり:ilaç,薬局:やっきょく:eczane,目薬:めぐすり:göz damlası
+病|ビョウ|やまい|hastalık|病気:びょうき:hastalık,病院:びょういん:hastane,病人:びょうにん:hasta kişi
+院|イン|—|kurum, bina|病院:びょういん:hastane,入院:にゅういん:hastaneye yatmak,大学院:だいがくいん:yüksek lisans
+内|ナイ|うち|iç|内科:ないか:dahiliye,案内:あんない:rehberlik,家内:かない:(benim) karım
+科|カ|—|bölüm, bilim dalı|内科:ないか:dahiliye,外科:げか:cerrahi,科学:かがく:bilim
+目|モク|め|göz|目:め:göz,目薬:めぐすり:göz damlası,目的:もくてき:amaç
+耳|ジ|みみ|kulak|耳:みみ:kulak,耳鼻科:じびか:KBB bölümü
+体|タイ|からだ|vücut|体:からだ:vücut,体温:たいおん:vücut ısısı,体育:たいいく:beden eğitimi
+色|ショク・シキ|いろ|renk|色:いろ:renk,茶色:ちゃいろ:kahverengi,景色:けしき:manzara
+黄|オウ|き|sarı|黄色:きいろ:sarı (renk),黄色い:きいろい:sarı
+赤|セキ|あか|kırmızı|赤い:あかい:kırmızı,赤ちゃん:あかちゃん:bebek,赤十字:せきじゅうじ:Kızılhaç`],
+["特技を自慢しよう","Yeteneğini göster",`
+語|ゴ|かた(る)|dil, söz|日本語:にほんご:Japonca,英語:えいご:İngilizce,物語:ものがたり:hikâye
+英|エイ|—|İngiliz, üstün|英語:えいご:İngilizce,英会話:えいかいわ:İngilizce konuşma,英国:えいこく:İngiltere
+話|ワ|はな(す)|konuşmak|話す:はなす:konuşmak,電話:でんわ:telefon,会話:かいわ:sohbet
+歌|カ|うた(う)|şarkı|歌:うた:şarkı,歌う:うたう:şarkı söylemek,歌手:かしゅ:şarkıcı
+料|リョウ|—|malzeme, ücret|料理:りょうり:yemek pişirme,料金:りょうきん:ücret,無料:むりょう:ücretsiz
+理|リ|—|mantık, düzen|料理:りょうり:yemek pişirme,理由:りゆう:sebep,無理:むり:imkânsız
+作|サク・サ|つく(る)|yapmak|作る:つくる:yapmak,作文:さくぶん:kompozisyon,作家:さっか:yazar
+持|ジ|も(つ)|tutmak, sahip olmak|持つ:もつ:tutmak,気持ち:きもち:duygu,金持ち:かねもち:zengin
+足|ソク|あし・た(りる)|ayak, yetmek|足:あし:ayak/bacak,足りる:たりる:yetmek,不足:ふそく:eksiklik
+速|ソク|はや(い)|hızlı|速い:はやい:hızlı,速度:そくど:hız,高速:こうそく:yüksek hız
+力|リョク・リキ|ちから|güç|力:ちから:güç,努力:どりょく:çaba,協力:きょうりょく:işbirliği
+元|ゲン・ガン|もと|köken|元気:げんき:sağlıklı/enerjik,地元:じもと:memleket,元日:がんじつ:1 Ocak`],
+["ルールを学ぼう","Kuralları öğrenelim",`
+写|シャ|うつ(す)|kopyalamak|写真:しゃしん:fotoğraf,写す:うつす:kopyalamak
+真|シン|ま|gerçek, tam|写真:しゃしん:fotoğraf,真ん中:まんなか:tam orta,真面目:まじめ:ciddi
+声|セイ|こえ|ses (insan)|声:こえ:ses,大声:おおごえ:yüksek ses,音声:おんせい:ses kaydı
+館|カン|—|büyük bina|図書館:としょかん:kütüphane,映画館:えいがかん:sinema,旅館:りょかん:Japon oteli
+教|キョウ|おし(える)|öğretmek|教える:おしえる:öğretmek,教室:きょうしつ:sınıf,教会:きょうかい:kilise
+室|シツ|—|oda|教室:きょうしつ:sınıf,会議室:かいぎしつ:toplantı odası,和室:わしつ:Japon odası
+書|ショ|か(く)|yazmak|書く:かく:yazmak,図書館:としょかん:kütüphane,辞書:じしょ:sözlük
+図|ズ・ト|—|çizim, plan|図書館:としょかん:kütüphane,地図:ちず:harita
+貸|タイ|か(す)|ödünç vermek|貸す:かす:ödünç vermek,貸し出し:かしだし:ödünç verme
+借|シャク|か(りる)|ödünç almak|借りる:かりる:ödünç almak,借金:しゃっきん:borç
+返|ヘン|かえ(す)|geri vermek|返す:かえす:geri vermek,返事:へんじ:cevap
+冊|サツ|—|kitap sayacı|一冊:いっさつ:bir kitap,三冊:さんさつ:üç kitap`],
+["紹介しよう","Birini tanıştıralım",`
+男|ダン・ナン|おとこ|erkek|男:おとこ:erkek,男性:だんせい:erkek (resmî),長男:ちょうなん:en büyük oğul
+女|ジョ|おんな|kadın|女:おんな:kadın,女性:じょせい:kadın (resmî),彼女:かのじょ:o (kadın) / kız arkadaş
+子|シ|こ|çocuk|子ども:こども:çocuk,女の子:おんなのこ:kız çocuk,様子:ようす:durum
+親|シン|おや・した(しい)|ebeveyn, yakın|親:おや:ebeveyn,両親:りょうしん:anne baba,親切:しんせつ:nazik
+主|シュ|おも・ぬし|ana, efendi|主人:しゅじん:(benim) kocam,主婦:しゅふ:ev hanımı
+夫|フ・フウ|おっと|koca|夫:おっと:(benim) kocam,夫婦:ふうふ:karı koca,大丈夫:だいじょうぶ:sorun yok
+妻|サイ|つま|eş (kadın)|妻:つま:(benim) karım,夫妻:ふさい:karı koca (resmî)
+若|ジャク|わか(い)|genç|若い:わかい:genç,若者:わかもの:gençler
+黒|コク|くろ|siyah|黒い:くろい:siyah,黒板:こくばん:kara tahta
+白|ハク|しろ|beyaz|白い:しろい:beyaz,面白い:おもしろい:ilginç/komik,白鳥:はくちょう:kuğu
+長|チョウ|なが(い)|uzun, şef|長い:ながい:uzun,社長:しゃちょう:şirket başkanı,長男:ちょうなん:en büyük oğul
+短|タン|みじか(い)|kısa|短い:みじかい:kısa,短所:たんしょ:zayıf yön`],
+["道を案内しよう","Yol tarif edelim",`
+道|ドウ|みち|yol|道:みち:yol,水道:すいどう:su şebekesi,北海道:ほっかいどう:Hokkaido
+交|コウ|ま(じる)|kesişmek|交番:こうばん:polis kulübesi,交通:こうつう:trafik,交差点:こうさてん:kavşak
+番|バン|—|sıra, nöbet|交番:こうばん:polis kulübesi,番号:ばんごう:numara,一番:いちばん:en / birinci
+号|ゴウ|—|numara|番号:ばんごう:numara,信号:しんごう:trafik ışığı
+辺|ヘン|あた(り)|civar|この辺:このへん:bu civar,辺り:あたり:civar
+銀|ギン|—|gümüş|銀行:ぎんこう:banka,銀:ぎん:gümüş
+左|サ|ひだり|sol|左:ひだり:sol,左右:さゆう:sol ve sağ
+右|ウ・ユウ|みぎ|sağ|右:みぎ:sağ,右手:みぎて:sağ el,左右:さゆう:sol ve sağ
+場|ジョウ|ば|yer|場所:ばしょ:yer,駐車場:ちゅうしゃじょう:otopark,売り場:うりば:satış reyonu
+売|バイ|う(る)|satmak|売る:うる:satmak,売り場:うりば:satış reyonu,販売:はんばい:satış
+工|コウ|—|zanaat, inşa|工場:こうじょう:fabrika,工事:こうじ:inşaat çalışması
+屋|オク|や|dükkân, çatı|本屋:ほんや:kitapçı,部屋:へや:oda,屋上:おくじょう:çatı katı`],
+["トラブルを報告しよう","Sorun bildirelim",`
+遅|チ|おそ(い)・おく(れる)|geç, yavaş|遅い:おそい:geç/yavaş,遅れる:おくれる:geç kalmak,遅刻:ちこく:geç kalma
+早|ソウ|はや(い)|erken|早い:はやい:erken,早速:さっそく:hemen,早起き:はやおき:erken kalkmak
+計|ケイ|はか(る)|ölçmek|時計:とけい:saat,計画:けいかく:plan,合計:ごうけい:toplam
+合|ゴウ・ガッ|あ(う)|uymak, birleşmek|合う:あう:uymak,試合:しあい:maç,合計:ごうけい:toplam
+止|シ|と(まる)|durmak|止まる:とまる:durmak,中止:ちゅうし:iptal,禁止:きんし:yasak
+動|ドウ|うご(く)|hareket|動く:うごく:hareket etmek,自動車:じどうしゃ:otomobil,運動:うんどう:spor
+質|シツ|—|nitelik|質問:しつもん:soru,品質:ひんしつ:kalite
+問|モン|と(う)|sormak|質問:しつもん:soru,問題:もんだい:problem/soru
+字|ジ|—|harf, yazı|漢字:かんじ:kanji,文字:もじ:karakter,字:じ:yazı
+漢|カン|—|Çin (Han)|漢字:かんじ:kanji
+知|チ|し(る)|bilmek|知る:しる:bilmek,知り合い:しりあい:tanıdık,知識:ちしき:bilgi
+読|ドク|よ(む)|okumak|読む:よむ:okumak,読書:どくしょ:kitap okuma`],
+["意見を伝えよう","Fikrini söyle",`
+思|シ|おも(う)|düşünmek|思う:おもう:düşünmek,思い出:おもいで:anı
+高|コウ|たか(い)|yüksek, pahalı|高い:たかい:yüksek/pahalı,高校:こうこう:lise,高速:こうそく:yüksek hız
+安|アン|やす(い)|ucuz, huzur|安い:やすい:ucuz,安心:あんしん:içi rahat,不安:ふあん:kaygı
+心|シン|こころ|kalp|心:こころ:kalp/gönül,安心:あんしん:içi rahat,心配:しんぱい:endişe
+便|ベン・ビン|たよ(り)|kolaylık, posta|便利:べんり:kullanışlı,不便:ふべん:kullanışsız,郵便:ゆうびん:posta
+利|リ|—|fayda|便利:べんり:kullanışlı,利用:りよう:kullanım
+不|フ|—|olumsuz (un-)|不便:ふべん:kullanışsız,不安:ふあん:kaygı,不足:ふそく:eksiklik
+店|テン|みせ|dükkân|店:みせ:dükkân,店員:てんいん:tezgâhtar,喫茶店:きっさてん:kafe
+同|ドウ|おな(じ)|aynı|同じ:おなじ:aynı,同時:どうじ:aynı anda,同僚:どうりょう:iş arkadaşı
+数|スウ|かず・かぞ(える)|sayı|数:かず:sayı,数学:すうがく:matematik,数える:かぞえる:saymak
+住|ジュウ|す(む)|oturmak, yaşamak|住む:すむ:oturmak,住所:じゅうしょ:adres
+働|ドウ|はたら(く)|çalışmak|働く:はたらく:çalışmak,労働:ろうどう:emek`],
+["天気予報を見よう","Hava durumuna bakalım",`
+雨|ウ|あめ|yağmur|雨:あめ:yağmur,大雨:おおあめ:şiddetli yağmur,梅雨:つゆ:yağmur mevsimi
+雲|ウン|くも|bulut|雲:くも:bulut,雨雲:あまぐも:yağmur bulutu
+雪|セツ|ゆき|kar|雪:ゆき:kar,大雪:おおゆき:yoğun kar
+晴|セイ|は(れる)|açık hava|晴れ:はれ:açık hava,晴れる:はれる:hava açmak
+風|フウ|かぜ|rüzgâr|風:かぜ:rüzgâr,台風:たいふう:tayfun,風邪:かぜ:soğuk algınlığı
+台|ダイ・タイ|—|platform, sayaç|台風:たいふう:tayfun,台所:だいどころ:mutfak,一台:いちだい:bir araç/makine
+強|キョウ|つよ(い)|güçlü|強い:つよい:güçlü,勉強:べんきょう:ders çalışmak
+弱|ジャク|よわ(い)|zayıf|弱い:よわい:zayıf,弱点:じゃくてん:zayıf nokta
+低|テイ|ひく(い)|alçak|低い:ひくい:alçak/kısa,最低:さいてい:en düşük
+夜|ヤ|よる|gece|夜:よる:gece,今夜:こんや:bu gece,夜中:よなか:gece yarısı
+夕|セキ|ゆう|akşam|夕方:ゆうがた:akşamüstü,夕飯:ゆうはん:akşam yemeği,七夕:たなばた:Tanabata
+当|トウ|あ(たる)|isabet|本当:ほんとう:gerçek,弁当:べんとう:yemek kutusu,当然:とうぜん:doğal olarak`],
+["町に出よう、漢字を読もう","Şehre çıkalım, kanji okuyalım",`
+使|シ|つか(う)|kullanmak|使う:つかう:kullanmak,大使館:たいしかん:büyükelçilik
+中|チュウ|なか|orta, iç|中:なか:iç,中学校:ちゅうがっこう:ortaokul,中止:ちゅうし:iptal
+開|カイ|あ(ける)・ひら(く)|açmak|開ける:あける:açmak,開く:ひらく:açılmak,開始:かいし:başlangıç
+閉|ヘイ|し(める)・と(じる)|kapatmak|閉める:しめる:kapatmak,閉じる:とじる:kapamak,閉店:へいてん:dükkân kapanışı
+東|トウ|ひがし|doğu|東:ひがし:doğu,東京:とうきょう:Tokyo,東口:ひがしぐち:doğu çıkışı
+西|セイ・サイ|にし|batı|西:にし:batı,西口:にしぐち:batı çıkışı,関西:かんさい:Kansai
+北|ホク|きた|kuzey|北:きた:kuzey,北海道:ほっかいどう:Hokkaido,東北:とうほく:Tohoku
+南|ナン|みなみ|güney|南:みなみ:güney,南口:みなみぐち:güney çıkışı,東南アジア:とうなんアジア:Güneydoğu Asya
+口|コウ|くち|ağız, giriş|口:くち:ağız,入口:いりぐち:giriş,出口:でぐち:çıkış
+出|シュツ|で(る)・だ(す)|çıkmak|出る:でる:çıkmak,出口:でぐち:çıkış,出発:しゅっぱつ:kalkış
+入|ニュウ|はい(る)・い(れる)|girmek|入る:はいる:girmek,入口:いりぐち:giriş,入院:にゅういん:hastaneye yatmak
+立|リツ|た(つ)|ayakta durmak|立つ:たつ:ayağa kalkmak,国立:こくりつ:devlet (ulusal),立入禁止:たちいりきんし:girmek yasak`],
+["夏休みの計画を立てよう","Yaz tatili planı yapalım",`
+園|エン|その|bahçe, park|公園:こうえん:park,動物園:どうぶつえん:hayvanat bahçesi,幼稚園:ようちえん:anaokulu
+客|キャク|—|misafir|お客さん:おきゃくさん:müşteri/misafir,観客:かんきゃく:seyirci
+家|カ・ケ|いえ・うち|ev|家:いえ:ev,家族:かぞく:aile,作家:さっか:yazar
+族|ゾク|—|aile, topluluk|家族:かぞく:aile,民族:みんぞく:millet
+鳥|チョウ|とり|kuş|鳥:とり:kuş,焼き鳥:やきとり:yakitori,白鳥:はくちょう:kuğu
+鳴|メイ|な(く)・な(る)|ötmek, çalmak|鳴く:なく:ötmek (hayvan),鳴る:なる:çalmak (zil)
+羽|ウ|はね|kanat, tüy|羽:はね:kanat/tüy,羽田:はねだ:Haneda
+竹|チク|たけ|bambu|竹:たけ:bambu,竹林:ちくりん:bambu ormanı
+池|チ|いけ|gölet|池:いけ:gölet,電池:でんち:pil
+魚|ギョ|さかな|balık|魚:さかな:balık,金魚:きんぎょ:japon balığı
+馬|バ|うま|at|馬:うま:at,競馬:けいば:at yarışı
+草|ソウ|くさ|ot|草:くさ:ot,草原:そうげん:çayır`],
+["ツアーに参加しよう","Tura katılalım",`
+発|ハツ|—|çıkış, başlatmak|出発:しゅっぱつ:kalkış,発音:はつおん:telaffuz,発表:はっぴょう:sunum
+着|チャク|き(る)・つ(く)|varmak, giymek|着く:つく:varmak,着る:きる:giymek,到着:とうちゃく:varış
+始|シ|はじ(める)|başlamak|始める:はじめる:başlatmak,始まる:はじまる:başlamak,開始:かいし:başlangıç
+終|シュウ|お(わる)|bitmek|終わる:おわる:bitmek,終電:しゅうでん:son tren
+午|ゴ|—|öğle|午前:ごぜん:öğleden önce,午後:ごご:öğleden sonra
+前|ゼン|まえ|ön, önce|前:まえ:ön/önce,午前:ごぜん:öğleden önce,名前:なまえ:isim
+後|ゴ・コウ|あと・うし(ろ)|arka, sonra|後ろ:うしろ:arka,午後:ごご:öğleden sonra,最後:さいご:son
+船|セン|ふね|gemi|船:ふね:gemi,風船:ふうせん:balon
+湖|コ|みずうみ|göl|湖:みずうみ:göl,琵琶湖:びわこ:Biwa Gölü
+寺|ジ|てら|Budist tapınağı|お寺:おてら:tapınak,東大寺:とうだいじ:Todai-ji
+京|キョウ|—|başkent|東京:とうきょう:Tokyo,京都:きょうと:Kyoto
+都|ト・ツ|みやこ|başkent, şehir|京都:きょうと:Kyoto,首都:しゅと:başkent,都合:つごう:uygunluk`],
+["自然を楽しもう","Doğanın tadını çıkaralım",`
+然|ゼン|—|öyle, doğal|自然:しぜん:doğa,全然:ぜんぜん:hiç,当然:とうぜん:doğal olarak
+虫|チュウ|むし|böcek|虫:むし:böcek,昆虫:こんちゅう:böcek (bilimsel)
+原|ゲン|はら|çayır, köken|原っぱ:はらっぱ:çayırlık,草原:そうげん:çayır,原因:げんいん:sebep
+谷|コク|たに|vadi|谷:たに:vadi,渋谷:しぶや:Shibuya
+春|シュン|はる|ilkbahar|春:はる:ilkbahar,春休み:はるやすみ:bahar tatili
+夏|カ|なつ|yaz|夏:なつ:yaz,夏休み:なつやすみ:yaz tatili
+秋|シュウ|あき|sonbahar|秋:あき:sonbahar,春夏秋冬:しゅんかしゅうとう:dört mevsim
+冬|トウ|ふゆ|kış|冬:ふゆ:kış,冬休み:ふゆやすみ:kış tatili
+空|クウ|そら・あ(く)|gökyüzü, boş|空:そら:gökyüzü,空港:くうこう:havalimanı,空く:あく:boşalmak
+星|セイ|ほし|yıldız|星:ほし:yıldız,火星:かせい:Mars
+明|メイ|あか(るい)|aydınlık|明るい:あかるい:aydınlık,説明:せつめい:açıklama,明日:あした:yarın
+暗|アン|くら(い)|karanlık|暗い:くらい:karanlık,暗記:あんき:ezberleme`],
+["料理をしよう","Yemek yapalım",`
+肉|ニク|—|et|肉:にく:et,牛肉:ぎゅうにく:dana eti,豚肉:ぶたにく:domuz eti
+牛|ギュウ|うし|inek|牛:うし:inek,牛乳:ぎゅうにゅう:süt,牛肉:ぎゅうにく:dana eti
+野|ヤ|の|tarla, kır|野菜:やさい:sebze,野球:やきゅう:beyzbol
+玉|ギョク|たま|top, boncuk|玉ねぎ:たまねぎ:soğan,十円玉:じゅうえんだま:10 yenlik bozuk para
+油|ユ|あぶら|yağ|油:あぶら:yağ,醤油:しょうゆ:soya sosu,石油:せきゆ:petrol
+味|ミ|あじ|tat|味:あじ:tat,意味:いみ:anlam,趣味:しゅみ:hobi
+待|タイ|ま(つ)|beklemek|待つ:まつ:beklemek,招待:しょうたい:davet
+切|セツ|き(る)|kesmek|切る:きる:kesmek,大切:たいせつ:önemli,親切:しんせつ:nazik
+飯|ハン|めし|pirinç, yemek|ご飯:ごはん:pilav/yemek,朝ご飯:あさごはん:kahvaltı,夕飯:ゆうはん:akşam yemeği
+米|ベイ・マイ|こめ|pirinç (çiğ)|米:こめ:pirinç,新米:しんまい:yeni pirinç / acemi,米国:べいこく:ABD
+麦|バク|むぎ|buğday, arpa|小麦:こむぎ:buğday,麦茶:むぎちゃ:arpa çayı
+皿|—|さら|tabak|皿:さら:tabak,灰皿:はいざら:kül tablası`],
+["友達と勉強しよう","Arkadaşlarla çalışalım",`
+宿|シュク|やど|konaklama|宿題:しゅくだい:ödev,宿:やど:han,下宿:げしゅく:pansiyon
+題|ダイ|—|konu, başlık|宿題:しゅくだい:ödev,問題:もんだい:problem,話題:わだい:gündem
+正|セイ・ショウ|ただ(しい)|doğru|正しい:ただしい:doğru,正解:せいかい:doğru cevap,正月:しょうがつ:yılbaşı
+答|トウ|こた(える)|cevap|答え:こたえ:cevap,答える:こたえる:cevaplamak,回答:かいとう:yanıt
+習|シュウ|なら(う)|öğrenmek|習う:ならう:öğrenmek,練習:れんしゅう:alıştırma,予習:よしゅう:ön çalışma
+練|レン|ね(る)|alıştırma|練習:れんしゅう:alıştırma,訓練:くんれん:eğitim
+勉|ベン|—|gayret|勉強:べんきょう:ders çalışmak
+方|ホウ|かた|yön, yol|方:かた:kişi (kibar),話し方:はなしかた:konuşma şekli,夕方:ゆうがた:akşamüstü
+言|ゲン・ゴン|い(う)|söylemek|言う:いう:söylemek,言葉:ことば:kelime,方言:ほうげん:lehçe
+文|ブン|—|yazı, cümle|文:ぶん:cümle,作文:さくぶん:kompozisyon,文化:ぶんか:kültür
+会|カイ|あ(う)|buluşmak|会う:あう:buluşmak,会社:かいしゃ:şirket,会話:かいわ:sohbet`],
+["趣味の話をしよう","Hobilerden konuşalım",`
+歴|レキ|—|geçmiş|歴史:れきし:tarih,学歴:がくれき:eğitim geçmişi
+史|シ|—|tarih|歴史:れきし:tarih,日本史:にほんし:Japon tarihi
+様|ヨウ|さま|tarz, Sayın|〜様:さま:Sayın ~,王様:おうさま:kral,様子:ようす:durum
+王|オウ|—|kral|王様:おうさま:kral,女王:じょおう:kraliçe
+音|オン|おと|ses|音:おと:ses,音楽:おんがく:müzik,発音:はつおん:telaffuz
+楽|ガク・ラク|たの(しい)|eğlence, müzik|楽しい:たのしい:eğlenceli,音楽:おんがく:müzik,楽:らく:rahat
+聞|ブン|き(く)|duymak|聞く:きく:dinlemek/sormak,新聞:しんぶん:gazete
+集|シュウ|あつ(める)|toplamak|集める:あつめる:toplamak,集まる:あつまる:toplanmak,集合:しゅうごう:toplanma
+運|ウン|はこ(ぶ)|taşımak, şans|運ぶ:はこぶ:taşımak,運動:うんどう:spor,運転:うんてん:araba kullanma
+通|ツウ|とお(る)・かよ(う)|geçmek|通う:かよう:gidip gelmek,通る:とおる:geçmek,交通:こうつう:trafik
+走|ソウ|はし(る)|koşmak|走る:はしる:koşmak,走者:そうしゃ:koşucu
+育|イク|そだ(てる)|büyütmek|育てる:そだてる:yetiştirmek,教育:きょういく:eğitim,体育:たいいく:beden eğitimi`],
+["買い物しよう","Alışverişe gidelim",`
+服|フク|—|giysi|服:ふく:giysi,洋服:ようふく:batı tarzı giysi,制服:せいふく:üniforma
+洋|ヨウ|—|okyanus, Batı|洋服:ようふく:batı tarzı giysi,西洋:せいよう:Batı,太平洋:たいへいよう:Pasifik
+品|ヒン|しな|ürün|品物:しなもの:mal,食品:しょくひん:gıda,品質:ひんしつ:kalite
+衣|イ|ころも|giysi|衣服:いふく:giyim,衣類:いるい:giysiler
+糸|シ|いと|iplik|糸:いと:iplik,毛糸:けいと:yün iplik
+毛|モウ|け|kıl, tüy|毛:け:kıl/saç,毛糸:けいと:yün iplik,毛布:もうふ:battaniye
+細|サイ|ほそ(い)・こま(かい)|ince|細い:ほそい:ince,細かい:こまかい:ufak/ayrıntılı
+太|タイ|ふと(い)|kalın|太い:ふとい:kalın,太る:ふとる:kilo almak,太陽:たいよう:güneş
+重|ジュウ|おも(い)|ağır|重い:おもい:ağır,体重:たいじゅう:vücut ağırlığı,重要:じゅうよう:önemli
+軽|ケイ|かる(い)|hafif|軽い:かるい:hafif,軽食:けいしょく:hafif yemek
+丸|ガン|まる(い)|yuvarlak|丸い:まるい:yuvarlak,丸:まる:daire
+光|コウ|ひかり・ひか(る)|ışık|光:ひかり:ışık,光る:ひかる:parlamak,観光:かんこう:turizm`],
+["夢の話をしよう","Hayallerden konuşalım",`
+化|カ|ば(ける)|değişmek|文化:ぶんか:kültür,変化:へんか:değişim
+部|ブ|—|bölüm|部屋:へや:oda,部長:ぶちょう:bölüm müdürü,全部:ぜんぶ:hepsi
+試|シ|ため(す)|denemek|試験:しけん:sınav,試合:しあい:maç,試す:ためす:denemek
+験|ケン|—|sınamak|試験:しけん:sınav,経験:けいけん:deneyim,受験:じゅけん:sınava girmek
+研|ケン|と(ぐ)|bilemek, araştırma|研究:けんきゅう:araştırma,研修:けんしゅう:eğitim/staj
+究|キュウ|きわ(める)|derinleşmek|研究:けんきゅう:araştırma,研究者:けんきゅうしゃ:araştırmacı
+門|モン|かど|kapı|門:もん:kapı (giriş),専門:せんもん:uzmanlık,入門:にゅうもん:giriş seviyesi
+考|コウ|かんが(える)|düşünmek|考える:かんがえる:düşünmek,参考:さんこう:referans
+私|シ|わたし|ben, özel|私:わたし:ben,私立:しりつ:özel (okul)
+自|ジ・シ|みずか(ら)|kendi|自分:じぶん:kendi,自然:しぜん:doğa,自転車:じてんしゃ:bisiklet
+社|シャ|やしろ|şirket, tapınak|会社:かいしゃ:şirket,社長:しゃちょう:şirket başkanı,神社:じんじゃ:Şinto tapınağı`],
+["住所を書こう","Adres yazalım",`
+宅|タク|—|ev|自宅:じたく:kendi evi,お宅:おたく:sizin eviniz,宅配便:たくはいびん:kargo
+荷|カ|に|yük|荷物:にもつ:bagaj/paket
+送|ソウ|おく(る)|göndermek|送る:おくる:göndermek,送料:そうりょう:kargo ücreti,放送:ほうそう:yayın
+府|フ|—|il (Osaka/Kyoto)|大阪府:おおさかふ:Osaka ili,京都府:きょうとふ:Kyoto ili,政府:せいふ:hükümet
+県|ケン|—|il|県:けん:il,県庁:けんちょう:valilik binası
+市|シ|いち|şehir, pazar|市:し:şehir,市役所:しやくしょ:belediye,市場:いちば:pazar
+区|ク|—|ilçe|区:く:ilçe,区役所:くやくしょ:ilçe belediyesi,地区:ちく:bölge
+村|ソン|むら|köy|村:むら:köy,農村:のうそん:tarım köyü`]];
+
+const K=[],UN=RAW.map(([t,tr,body],u)=>{const ids=[];
+ body.trim().split("\n").forEach(l=>{const [k,on,kun,m,ws]=l.split("|");
+  ids.push(K.length);K.push({k,on,kun,m,u,w:ws.split(",").map(x=>{const [w,r,mm]=x.split(":");return {w,r,m:mm}})})});
+ return {t,tr,ids}});
+const BL=[];for(let i=0;i<UN.length;i+=4)BL.push([...Array(Math.min(4,UN.length-i)).keys()].map(j=>i+j));
+
+const get=(k,d)=>{try{return localStorage.getItem(k)??d}catch(e){return d}};
+const put=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+let S={view:"home",u:0,furi:get("kb2_furi","1")==="1",blur:get("kb2_blur","1")==="1",open:{},scope:[],title:"",q:[],c:{},cur:null,type:0,opts:[],ans:null,tries:0,wrong:0};
+const $=document.getElementById("app");
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+// tüm kelimeyi okunuşla ruby'le (kana kısmı da üstte görünür, okuması kolay)
+const rb=(w,r)=>w===r?w:`<ruby>${w}<rt>${r}</rt></ruby>`;
+const hdr=(t,x="")=>`<header><button class="back" onclick="go('home')">← Menü</button><h1>${t}</h1>${x}</header>`;
+const tg=(k,l)=>`<button class="toggle ${S[k]?'on':''}" onclick="tog('${k}')">${l} ${S[k]?'açık':'kapalı'}</button>`;
+function tog(k){S[k]=!S[k];put("kb2_"+k,S[k]?"1":"0");S.open={};render()}
+function reveal(id){S.open[id]=1;render()}
+const bl=(id,txt)=>S.blur&&!S.open[id]?`<span class="hide" onclick="reveal('${id}')">${txt}</span>`:txt;
+function go(v){S.view=v;render();scrollTo(0,0)}
+
+function home(){
+ return `<div class="hero"><div class="big jp">漢字 2</div><p>${K.length} kanji · ${UN.length} ünite · önce öğren, sonra test</p></div>`+
+ BL.map((b,bi)=>`<div class="block"><h2>Ünite ${b[0]+1}–${b[b.length-1]+1}</h2>`+
+  b.map(u=>`<div class="unit"><div class="t"><b>${u+1}. ünite · <span class="jp">${UN[u].t}</span></b><span>${UN[u].ids.length} kanji</span></div>
+   <div class="ks jp">${UN[u].ids.map(i=>K[i].k).join("")}</div>
+   <div class="row"><button onclick="learn(${u})">学 Öğren</button><button class="pri" onclick="unitTest(${u})">試 Test</button></div></div>`).join("")+
+  `<button class="btest" onclick="blockTest(${bi})">総 Ünite ${b[0]+1}–${b[b.length-1]+1} genel testi (${b.reduce((n,u)=>n+UN[u].ids.length,0)} kanji)</button></div>`).join("");
+}
+function learn(u){S.u=u;S.open={};go('study')}
+function study(){const u=S.u,U=UN[u];
+ const cards=U.ids.map((i,n)=>{const k=K[i];
+  return `<div class="card"><div class="num">${u+1}.${n+1}</div><div class="kh"><div class="k jp">${k.k}</div>
+   <div><div class="rd">音 <b class="jp">${k.on}</b> · 訓 <b class="jp">${k.kun}</b></div><div class="mean">${bl('k'+i,k.m)}</div></div></div>
+   <div class="words">${k.w.map((w,j)=>`<div class="w"><span class="jp">${rb(w.w,w.r)}</span><span class="m">${bl('w'+i+'_'+j,w.m)}</span></div>`).join("")}</div></div>`}).join("");
+ const nb=BL.findIndex(b=>b[b.length-1]===u);
+ return hdr(`${u+1}. ünite · <span class="jp">${U.t}</span>`,tg('furi','ふりがな')+tg('blur','Anlam gizli'))+
+ `<p class="num" style="margin-top:-6px">${U.tr}${S.blur?' · bulanık anlama dokun, açılsın':''}</p>
+ <div class="${S.furi?'':'nofuri'}">${cards}</div>
+ <div class="navrow"><button class="pri" onclick="unitTest(${u})">Bu ünitenin testi</button>
+ ${nb>=0?`<button onclick="blockTest(${nb})">Ünite ${BL[nb][0]+1}–${u+1} genel testi</button>`:''}
+ ${u<UN.length-1?`<button onclick="learn(${u+1})">Sonraki ünite →</button>`:''}</div>`;
+}
+function unitTest(u){S.u=u;startTest(UN[u].ids,`${u+1}. ünite testi`,{kind:'u',u})}
+function blockTest(b){const B=BL[b];startTest(B.flatMap(u=>UN[u].ids),`Ünite ${B[0]+1}–${B[B.length-1]+1} testi`,{kind:'b',b})}
+function startTest(ids,title,from){S.scope=ids;S.title=title;S.from=from;S.q=shuffle(ids);S.c={};ids.forEach(i=>S.c[i]=0);S.tries=0;S.wrong=0;next();go('test')}
+// soru tipleri: 0 kanji→anlam, 1 kelime→okunuş, 2 anlam→kelime
+function next(){S.cur=S.q.shift();S.ans=null;const k=K[S.cur];S.type=Math.floor(Math.random()*3);S.wi=Math.floor(Math.random()*k.w.length);
+ const others=shuffle((S.scope.length>=8?S.scope:K.map((_,i)=>i)).filter(i=>i!==S.cur));
+ const val=i=>{const x=K[i],w=x.w[Math.floor(Math.random()*x.w.length)];return S.type===0?x.m:S.type===1?w.r:w.w};
+ const right=S.type===0?k.m:S.type===1?k.w[S.wi].r:k.w[S.wi].w;
+ const set=[right];for(const i of others){const v=val(i);if(!set.includes(v))set.push(v);if(set.length===4)break}
+ S.right=right;S.opts=shuffle(set)}
+function pick(n){if(S.ans!==null)return;S.ans=n;S.tries++;
+ if(S.opts[n]===S.right){S.c[S.cur]++;if(S.c[S.cur]<2)S.q.splice(Math.min(S.q.length,4+Math.floor(Math.random()*4)),0,S.cur)}
+ else{S.wrong++;S.q.splice(Math.min(S.q.length,2),0,S.cur)}render()}
+function cont(){if(!S.q.length){go('done');return}next();render();scrollTo(0,0)}
+function test(){const tot=S.scope.length,m=Object.values(S.c).filter(v=>v>=2).length,k=K[S.cur],c=S.c[S.cur],w=k.w[S.wi];
+ const qs=[["Bu kanjinin anlamı?",`<div class="qbig jp">${k.k}</div>`],
+  ["Bu kelimenin okunuşu?",`<div class="qbig jp" style="font-size:44px">${w.w}</div>`],
+  ["Hangi kelime?",`<div class="qmean">${w.m}</div>`]][S.type];
+ const opts=S.opts.map((o,n)=>{let cl="";if(S.ans!==null){if(o===S.right)cl="ok";else if(n===S.ans)cl="bad"}
+  return `<button class="opt ${S.type?'j':''} ${cl}" onclick="pick(${n})">${o}</button>`}).join("");
+ let fb="";if(S.ans!==null){const ok=S.opts[S.ans]===S.right;
+  fb=`<div class="fb ${ok?'ok':'bad'}"><div class="head">${ok?(c>=2?'Doğru — bu kanji tamam ✓':'Doğru — bir kez daha gelecek'):'Yanlış — doğrusu: '+S.right}</div>
+  <span class="jp" style="font-size:26px">${k.k}</span> = <b>${k.m}</b> <span class="num jp">(${k.on} · ${k.kun})</span>
+  <div class="words ${S.furi?'':'nofuri'}">${k.w.map(x=>`<div class="w"><span class="jp">${rb(x.w,x.r)}</span><span class="m">${x.m}</span></div>`).join("")}</div></div>
+  <div class="navrow"><button class="pri" onclick="cont()">Devam</button></div>`}
+ return hdr(S.title,tg('furi','ふりがな'))+`<div class="prog"><i style="width:${m/tot*100}%"></i></div>
+ <div class="stat"><span>Tamamlanan ${m}/${tot}</span><span>Yanlış ${S.wrong}</span></div>
+ <div class="card"><div class="qtype">${qs[0]}<span class="dots"><i class="${c>=1?'f':''}"></i><i class="${c>=2?'f':''}"></i></span></div>${qs[1]}
+ <div class="opts">${opts}</div></div>${fb}`}
+function done(){const f=S.from;let nx="";
+ if(f.kind==='u'){const nb=BL.findIndex(b=>b[b.length-1]===f.u);
+  nx=nb>=0?`<button class="pri" onclick="blockTest(${nb})">Ünite ${BL[nb][0]+1}–${f.u+1} genel testi</button>`:f.u<UN.length-1?`<button class="pri" onclick="learn(${f.u+1})">Sonraki ünite →</button>`:''}
+ else if(f.b<BL.length-1)nx=`<button class="pri" onclick="learn(${BL[f.b+1][0]})">Sonraki ünite →</button>`;
+ return `<div class="done"><div class="stamp">合格</div><h1 style="margin-top:24px">Hepsini 2 kez doğru bildin</h1>
+ <p class="num">${S.tries} cevap, ${S.wrong} yanlış</p>
+ <div class="navrow"><button onclick="go('home')">Menü</button><button onclick="startTest(S.scope,S.title,S.from)">Tekrar test</button>${nx}</div></div>`}
+function render(){$.innerHTML=({home,study,test,done})[S.view]()}
+render();
+</script>
+</body>
+</html>
