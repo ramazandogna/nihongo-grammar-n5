@@ -1,5 +1,6 @@
 pdf/
 data-ss/
+ss_data/
 
 # macOS
 .DS_Store
