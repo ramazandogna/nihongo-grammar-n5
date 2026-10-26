@@ -128,7 +128,7 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
           class="my-3"
           :class="{
             'jp py-3 text-center text-5xl leading-tight': question.size === 'big',
-            'jp text-xl leading-[2.2]': (question.size ?? 'jp') === 'jp',
+            'jp text-[1.4rem] leading-[2.3]': (question.size ?? 'jp') === 'jp',
             'py-3 text-center text-xl font-bold': question.size === 'text',
           }"
           :lang="question.size === 'text' ? undefined : 'ja'"
@@ -139,7 +139,7 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
             v-for="i in order"
             :key="i"
             type="button"
-            class="control focus-ring rounded-control jp min-h-14 px-3 py-2.5 text-lg leading-[1.9] [--control-border-width:2px]"
+            class="control focus-ring rounded-control jp min-h-14 px-3 py-2.5 text-xl leading-[2] [--control-border-width:2px]"
             :class="[
               wide ? 'text-start' : 'text-center',
               picked !== null && i === question.answer ? 'bg-positive/15 [--surface-border-color:var(--color-positive)]' : '',

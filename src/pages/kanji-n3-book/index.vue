@@ -4,6 +4,7 @@ import { BaseButton, BaseCard } from 'rei-kit'
 
 import JpText from '@/components/JpText.vue'
 import MasteryQuiz, { type Question } from '@/components/MasteryQuiz.vue'
+import PagerNav from '@/components/PagerNav.vue'
 import RevealText from '@/components/RevealText.vue'
 import SiteLayout from '@/components/SiteLayout.vue'
 import StudyHeader from '@/components/StudyHeader.vue'
@@ -54,7 +55,13 @@ const tabs = computed(() => [
   { value: 'read' as const, label: t.value.reading },
   { value: 'test' as const, label: t.value.test },
 ])
-watch([sec, view, fullTest], toTop)
+/** One word card on screen at a time while learning. */
+const card = ref(0)
+watch([sec, view, fullTest], () => {
+  card.value = 0
+  toTop()
+})
+watch(card, toTop)
 
 const current = computed(() => (sec.value === null ? null : sections[sec.value]!))
 function openSec(k: number, v: View = 'learn') {
@@ -127,7 +134,7 @@ function build(i: number): Question {
       />
 
       <div v-if="view === 'learn'" class="grid gap-4">
-        <BaseCard v-for="i in current.ids" :key="i">
+        <BaseCard v-for="(i, n) in current.ids" v-show="card === n" :key="i">
           <p class="text-ink-soft text-sm">#{{ i + 1 }}</p>
           <div class="flex flex-wrap items-baseline gap-x-4">
             <span class="jp text-5xl leading-tight">{{ items[i]!.w }}</span>
@@ -141,7 +148,7 @@ function build(i: number): Question {
             </div>
           </div>
           <p class="border-negative my-3 border-s-4 ps-3 text-[15px]">{{ pick(items[i]!.tip) }}</p>
-          <JpText :text="solved(items[i]!)" as="p" class="text-lg leading-[2.2]" />
+          <JpText :text="solved(items[i]!)" as="p" class="text-[1.4rem] leading-[2.3]" />
           <p class="text-ink-soft text-[15px]"><RevealText :text="pick(items[i]!.tr)" /></p>
         </BaseCard>
       </div>
@@ -170,7 +177,8 @@ function build(i: number): Question {
         </template>
       </MasteryQuiz>
 
-      <div v-if="view !== 'test'" class="mt-6 flex flex-wrap gap-3">
+      <PagerNav v-if="view === 'learn'" v-model="card" :count="current.ids.length" />
+      <div v-if="view === 'read' || card === current.ids.length - 1" class="mt-6 flex flex-wrap gap-3">
         <BaseButton v-if="view === 'learn'" variant="secondary" @click="view = 'read'">{{ t.reading }} →</BaseButton>
         <BaseButton @click="view = 'test'">{{ t.test }} →</BaseButton>
         <BaseButton v-if="sec! < sections.length - 1" variant="ghost" @click="openSec(sec! + 1)">{{

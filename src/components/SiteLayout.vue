@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import { BaseButton, BaseSwitch, PageContainer, SegmentedControl, useTheme } from 'rei-kit'
-import { Monitor, Moon, Sun } from 'lucide-vue-next'
+import { Moon, Sun } from 'lucide-vue-next'
 
 import { LANG_LABEL } from '@/lib/i18n'
 import { usePageContext } from '@/lib/page'
@@ -29,11 +29,16 @@ const shownLang = computed({
   set: (v) => (lang.value = v),
 })
 
-const ORDER = ['system', 'light', 'dark'] as const
-const themeIcon = computed(() => ({ system: Monitor, light: Sun, dark: Moon })[theme.value])
-const themeLabel = computed(() => `${t.value.theme}: ${t.value[theme.value]}`)
+// Light or dark, nothing else: a stored "system" (from before) reads as
+// whatever it currently resolves to, and the first press picks a real side.
+const isDark = computed(() =>
+  theme.value === 'dark' ||
+  (theme.value === 'system' && typeof matchMedia !== 'undefined' && matchMedia('(prefers-color-scheme: dark)').matches),
+)
+const themeIcon = computed(() => (isDark.value ? Moon : Sun))
+const themeLabel = computed(() => `${t.value.theme}: ${isDark.value ? t.value.dark : t.value.light}`)
 function cycleTheme() {
-  theme.value = ORDER[(ORDER.indexOf(theme.value) + 1) % ORDER.length]!
+  theme.value = isDark.value ? 'light' : 'dark'
 }
 </script>
 
@@ -74,7 +79,11 @@ function cycleTheme() {
       </PageContainer>
     </main>
 
-    <footer class="text-ink-soft py-4 text-center text-xs">
+    <!-- Fixed to the bottom of every page; the padding below keeps it off the content. -->
+    <div class="h-8" aria-hidden="true" />
+    <footer
+      class="bg-canvas/95 border-hair text-ink-soft fixed inset-x-0 bottom-0 z-30 border-t py-1.5 text-center text-xs backdrop-blur"
+    >
       {{ t.credit }}
       <a
         href="https://www.instagram.com/ramazandogna/"
