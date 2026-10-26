@@ -1,0 +1,1220 @@
+[
+ {
+  "id": "yemek",
+  "title": "🍱 Yemekler",
+  "note": "Matsuya’da gyudon’a <b>牛めし</b> denir. 牛 (sığır), 豚 (domuz), 鶏 (tavuk), 魚 (balık) harflerini tanırsan menünün çoğunu çözersin.",
+  "words": [
+   {
+    "w": "牛めし",
+    "r": "ぎゅうめし",
+    "romaji": "gyūmeshi",
+    "tr": "Sığır etli pilav kasesi (Matsuya)",
+    "note": "めし = pilav/yemek"
+   },
+   {
+    "w": "牛丼",
+    "r": "ぎゅうどん",
+    "romaji": "gyūdon",
+    "tr": "Sığır etli pilav kasesi",
+    "note": "丼 = kase yemeği"
+   },
+   {
+    "w": "豚丼",
+    "r": "ぶたどん",
+    "romaji": "butadon",
+    "tr": "Domuz etli pilav kasesi",
+    "note": ""
+   },
+   {
+    "w": "牛皿",
+    "r": "ぎゅうざら",
+    "romaji": "gyūzara",
+    "tr": "Pilavsız sığır eti tabağı",
+    "note": "皿 = tabak"
+   },
+   {
+    "w": "定食",
+    "r": "ていしょく",
+    "romaji": "teishoku",
+    "tr": "Set menü (yemek + pilav + çorba)",
+    "note": ""
+   },
+   {
+    "w": "朝定食",
+    "r": "あさていしょく",
+    "romaji": "asa teishoku",
+    "tr": "Sabah seti",
+    "note": "朝 = sabah"
+   },
+   {
+    "w": "ご飯",
+    "r": "ごはん",
+    "romaji": "gohan",
+    "tr": "Pilav",
+    "note": ""
+   },
+   {
+    "w": "肉",
+    "r": "にく",
+    "romaji": "niku",
+    "tr": "Et",
+    "note": ""
+   },
+   {
+    "w": "牛肉",
+    "r": "ぎゅうにく",
+    "romaji": "gyūniku",
+    "tr": "Sığır eti",
+    "note": ""
+   },
+   {
+    "w": "豚肉",
+    "r": "ぶたにく",
+    "romaji": "butaniku",
+    "tr": "Domuz eti",
+    "note": ""
+   },
+   {
+    "w": "鶏肉",
+    "r": "とりにく",
+    "romaji": "toriniku",
+    "tr": "Tavuk eti",
+    "note": ""
+   },
+   {
+    "w": "魚",
+    "r": "さかな",
+    "romaji": "sakana",
+    "tr": "Balık",
+    "note": ""
+   },
+   {
+    "w": "焼魚",
+    "r": "やきざかな",
+    "romaji": "yakizakana",
+    "tr": "Izgara balık",
+    "note": "焼 = ızgara/pişmiş"
+   },
+   {
+    "w": "鮭",
+    "r": "さけ",
+    "romaji": "sake",
+    "tr": "Somon",
+    "note": ""
+   },
+   {
+    "w": "鯖",
+    "r": "さば",
+    "romaji": "saba",
+    "tr": "Uskumru",
+    "note": ""
+   },
+   {
+    "w": "焼肉",
+    "r": "やきにく",
+    "romaji": "yakiniku",
+    "tr": "Izgara et",
+    "note": ""
+   },
+   {
+    "w": "唐揚げ",
+    "r": "からあげ",
+    "romaji": "karaage",
+    "tr": "Kızarmış tavuk",
+    "note": ""
+   },
+   {
+    "w": "野菜",
+    "r": "やさい",
+    "romaji": "yasai",
+    "tr": "Sebze",
+    "note": ""
+   },
+   {
+    "w": "生野菜",
+    "r": "なまやさい",
+    "romaji": "nama yasai",
+    "tr": "Çiğ sebze salatası",
+    "note": "生 = çiğ"
+   },
+   {
+    "w": "小鉢",
+    "r": "こばち",
+    "romaji": "kobachi",
+    "tr": "Küçük yan tabak",
+    "note": ""
+   },
+   {
+    "w": "卵",
+    "r": "たまご",
+    "romaji": "tamago",
+    "tr": "Yumurta",
+    "note": ""
+   },
+   {
+    "w": "生卵",
+    "r": "なまたまご",
+    "romaji": "nama tamago",
+    "tr": "Çiğ yumurta",
+    "note": ""
+   },
+   {
+    "w": "半熟卵",
+    "r": "はんじゅくたまご",
+    "romaji": "hanjuku tamago",
+    "tr": "Az pişmiş yumurta",
+    "note": "半 = yarım"
+   },
+   {
+    "w": "納豆",
+    "r": "なっとう",
+    "romaji": "nattō",
+    "tr": "Fermente soya fasulyesi",
+    "note": ""
+   },
+   {
+    "w": "漬物",
+    "r": "つけもの",
+    "romaji": "tsukemono",
+    "tr": "Turşu",
+    "note": ""
+   },
+   {
+    "w": "お新香",
+    "r": "おしんこ",
+    "romaji": "oshinko",
+    "tr": "Turşu (menüde)",
+    "note": ""
+   },
+   {
+    "w": "海苔",
+    "r": "のり",
+    "romaji": "nori",
+    "tr": "Yosun yaprağı",
+    "note": ""
+   },
+   {
+    "w": "辛い",
+    "r": "からい",
+    "romaji": "karai",
+    "tr": "Acı",
+    "note": ""
+   },
+   {
+    "w": "甘い",
+    "r": "あまい",
+    "romaji": "amai",
+    "tr": "Tatlı",
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "corba",
+  "title": "🥣 Miso & Tonjiru",
+  "note": "<b>Miso çorbası</b>: beyaz küp = <b>tofu</b>, yeşil yumuşak yaprak = <b>wakame</b>, üstteki halkalar = <b>negi</b>. <b>Tonjiru</b>: domuz + daikon + havuç + gobo + konnyaku (+ tofu, negi).",
+  "words": [
+   {
+    "w": "味噌",
+    "r": "みそ",
+    "romaji": "miso",
+    "tr": "Miso (soya ezmesi)",
+    "note": ""
+   },
+   {
+    "w": "味噌汁",
+    "r": "みそしる",
+    "romaji": "misoshiru",
+    "tr": "Miso çorbası",
+    "note": "汁 = çorba/sulu şey"
+   },
+   {
+    "w": "豚汁",
+    "r": "とんじる",
+    "romaji": "tonjiru",
+    "tr": "Domuzlu sebzeli miso çorbası",
+    "note": "豚 + 汁"
+   },
+   {
+    "w": "豆腐",
+    "r": "とうふ",
+    "romaji": "tōfu",
+    "tr": "Tofu (beyaz küpler)",
+    "note": ""
+   },
+   {
+    "w": "若布",
+    "r": "わかめ",
+    "romaji": "wakame",
+    "tr": "Wakame yosunu",
+    "note": "Çoğu yerde わかめ yazılır"
+   },
+   {
+    "w": "葱",
+    "r": "ねぎ",
+    "romaji": "negi",
+    "tr": "Yeşil soğan",
+    "note": "Çoğu yerde ねぎ yazılır"
+   },
+   {
+    "w": "大根",
+    "r": "だいこん",
+    "romaji": "daikon",
+    "tr": "Beyaz turp",
+    "note": "大 büyük + 根 kök"
+   },
+   {
+    "w": "人参",
+    "r": "にんじん",
+    "romaji": "ninjin",
+    "tr": "Havuç",
+    "note": ""
+   },
+   {
+    "w": "牛蒡",
+    "r": "ごぼう",
+    "romaji": "gobō",
+    "tr": "Gobo kökü",
+    "note": "Çoğu yerde ごぼう yazılır"
+   },
+   {
+    "w": "蒟蒻",
+    "r": "こんにゃく",
+    "romaji": "konnyaku",
+    "tr": "Konnyaku (jöle kök)",
+    "note": "Çoğu yerde こんにゃく yazılır"
+   },
+   {
+    "w": "玉葱",
+    "r": "たまねぎ",
+    "romaji": "tamanegi",
+    "tr": "Kuru soğan",
+    "note": "牛めし içinde olur"
+   },
+   {
+    "w": "生姜",
+    "r": "しょうが",
+    "romaji": "shōga",
+    "tr": "Zencefil",
+    "note": ""
+   },
+   {
+    "w": "紅生姜",
+    "r": "べにしょうが",
+    "romaji": "beni shōga",
+    "tr": "Kırmızı turşu zencefil",
+    "note": "Masadaki kırmızı şey"
+   }
+  ]
+ },
+ {
+  "id": "siparis",
+  "title": "🧾 Sipariş & Boyut",
+  "note": "<b>盛</b> görürsen porsiyon boyutu yazıyordur: 並盛 normal, 大盛 büyük, 特盛 extra.",
+  "words": [
+   {
+    "w": "並盛",
+    "r": "なみもり",
+    "romaji": "namimori",
+    "tr": "Normal porsiyon",
+    "note": "並 = normal"
+   },
+   {
+    "w": "大盛",
+    "r": "おおもり",
+    "romaji": "ōmori",
+    "tr": "Büyük porsiyon",
+    "note": "大 = büyük"
+   },
+   {
+    "w": "特盛",
+    "r": "とくもり",
+    "romaji": "tokumori",
+    "tr": "Extra büyük porsiyon",
+    "note": "特 = özel"
+   },
+   {
+    "w": "小盛",
+    "r": "こもり",
+    "romaji": "komori",
+    "tr": "Küçük porsiyon",
+    "note": "小 = küçük"
+   },
+   {
+    "w": "中盛",
+    "r": "ちゅうもり",
+    "romaji": "chūmori",
+    "tr": "Orta porsiyon",
+    "note": "中 = orta"
+   },
+   {
+    "w": "肉増し",
+    "r": "にくまし",
+    "romaji": "nikumashi",
+    "tr": "Fazla et",
+    "note": "増 = artırmak"
+   },
+   {
+    "w": "少なめ",
+    "r": "すくなめ",
+    "romaji": "sukuname",
+    "tr": "Biraz az",
+    "note": ""
+   },
+   {
+    "w": "多め",
+    "r": "おおめ",
+    "romaji": "ōme",
+    "tr": "Biraz fazla",
+    "note": ""
+   },
+   {
+    "w": "汁だく",
+    "r": "つゆだく",
+    "romaji": "tsuyudaku",
+    "tr": "Bol soslu",
+    "note": ""
+   },
+   {
+    "w": "抜き",
+    "r": "ぬき",
+    "romaji": "nuki",
+    "tr": "...siz (çıkarılmış)",
+    "note": "ねぎ抜き = soğansız"
+   },
+   {
+    "w": "追加",
+    "r": "ついか",
+    "romaji": "tsuika",
+    "tr": "İlave / ek",
+    "note": ""
+   },
+   {
+    "w": "変更",
+    "r": "へんこう",
+    "romaji": "henkō",
+    "tr": "Değiştirme",
+    "note": "豚汁変更 = çorbayı tonjiru yap"
+   },
+   {
+    "w": "単品",
+    "r": "たんぴん",
+    "romaji": "tanpin",
+    "tr": "Tek ürün (set değil)",
+    "note": ""
+   },
+   {
+    "w": "注文",
+    "r": "ちゅうもん",
+    "romaji": "chūmon",
+    "tr": "Sipariş",
+    "note": ""
+   },
+   {
+    "w": "店内",
+    "r": "てんない",
+    "romaji": "tennai",
+    "tr": "İçeride yemek",
+    "note": ""
+   },
+   {
+    "w": "持ち帰り",
+    "r": "もちかえり",
+    "romaji": "mochikaeri",
+    "tr": "Paket / götürmelik",
+    "note": "Fişte 持帰 diye kısalır"
+   },
+   {
+    "w": "番号",
+    "r": "ばんごう",
+    "romaji": "bangō",
+    "tr": "Numara",
+    "note": ""
+   },
+   {
+    "w": "呼出",
+    "r": "よびだし",
+    "romaji": "yobidashi",
+    "tr": "Çağrı (numara ekranı)",
+    "note": ""
+   },
+   {
+    "w": "温",
+    "r": "おん",
+    "romaji": "on",
+    "tr": "Sıcak (menüde kısaltma)",
+    "note": "温かい = sıcak"
+   },
+   {
+    "w": "冷",
+    "r": "れい",
+    "romaji": "rei",
+    "tr": "Soğuk (menüde kısaltma)",
+    "note": "冷たい = soğuk"
+   },
+   {
+    "w": "飲み物",
+    "r": "のみもの",
+    "romaji": "nomimono",
+    "tr": "İçecek",
+    "note": ""
+   },
+   {
+    "w": "お茶",
+    "r": "おちゃ",
+    "romaji": "ocha",
+    "tr": "Çay",
+    "note": ""
+   },
+   {
+    "w": "水",
+    "r": "みず",
+    "romaji": "mizu",
+    "tr": "Su",
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "fis",
+  "title": "💴 Fiş & Ödeme",
+  "note": "Fişte önce <b>合計</b> (toplam) ve <b>税込</b> (vergi dahil) bak. お預かり = alınan para, お釣り = para üstü.",
+  "words": [
+   {
+    "w": "食券",
+    "r": "しょっけん",
+    "romaji": "shokken",
+    "tr": "Yemek bileti",
+    "note": ""
+   },
+   {
+    "w": "券売機",
+    "r": "けんばいき",
+    "romaji": "kenbaiki",
+    "tr": "Bilet makinesi",
+    "note": ""
+   },
+   {
+    "w": "領収書",
+    "r": "りょうしゅうしょ",
+    "romaji": "ryōshūsho",
+    "tr": "Resmi makbuz",
+    "note": ""
+   },
+   {
+    "w": "伝票",
+    "r": "でんぴょう",
+    "romaji": "denpyō",
+    "tr": "Adisyon / sipariş fişi",
+    "note": ""
+   },
+   {
+    "w": "合計",
+    "r": "ごうけい",
+    "romaji": "gōkei",
+    "tr": "Toplam",
+    "note": ""
+   },
+   {
+    "w": "小計",
+    "r": "しょうけい",
+    "romaji": "shōkei",
+    "tr": "Ara toplam",
+    "note": ""
+   },
+   {
+    "w": "税込",
+    "r": "ぜいこみ",
+    "romaji": "zeikomi",
+    "tr": "Vergi dahil",
+    "note": ""
+   },
+   {
+    "w": "税抜",
+    "r": "ぜいぬき",
+    "romaji": "zeinuki",
+    "tr": "Vergi hariç",
+    "note": ""
+   },
+   {
+    "w": "消費税",
+    "r": "しょうひぜい",
+    "romaji": "shōhizei",
+    "tr": "Tüketim vergisi",
+    "note": ""
+   },
+   {
+    "w": "現金",
+    "r": "げんきん",
+    "romaji": "genkin",
+    "tr": "Nakit",
+    "note": ""
+   },
+   {
+    "w": "お預かり",
+    "r": "おあずかり",
+    "romaji": "oazukari",
+    "tr": "Teslim alınan para",
+    "note": ""
+   },
+   {
+    "w": "お釣り",
+    "r": "おつり",
+    "romaji": "otsuri",
+    "tr": "Para üstü",
+    "note": ""
+   },
+   {
+    "w": "金額",
+    "r": "きんがく",
+    "romaji": "kingaku",
+    "tr": "Tutar",
+    "note": ""
+   },
+   {
+    "w": "数量",
+    "r": "すうりょう",
+    "romaji": "sūryō",
+    "tr": "Adet",
+    "note": ""
+   },
+   {
+    "w": "円",
+    "r": "えん",
+    "romaji": "en",
+    "tr": "Yen",
+    "note": ""
+   },
+   {
+    "w": "売切",
+    "r": "うりきれ",
+    "romaji": "urikire",
+    "tr": "Tükendi",
+    "note": "売り切れ diye de yazılır"
+   },
+   {
+    "w": "販売終了",
+    "r": "はんばいしゅうりょう",
+    "romaji": "hanbai shūryō",
+    "tr": "Satış bitti",
+    "note": ""
+   },
+   {
+    "w": "割引",
+    "r": "わりびき",
+    "romaji": "waribiki",
+    "tr": "İndirim",
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "alet",
+  "title": "🍽️ Mutfak & Eşya",
+  "note": "Talimatlarda geçen nesneler. Bunları bilirsen “tepsiyi getir” gibi cümleleri anlarsın.",
+  "words": [
+   {
+    "w": "お盆",
+    "r": "おぼん",
+    "romaji": "obon",
+    "tr": "Tepsi",
+    "note": ""
+   },
+   {
+    "w": "丼",
+    "r": "どんぶり",
+    "romaji": "donburi",
+    "tr": "Büyük kase",
+    "note": ""
+   },
+   {
+    "w": "皿",
+    "r": "さら",
+    "romaji": "sara",
+    "tr": "Tabak",
+    "note": ""
+   },
+   {
+    "w": "器",
+    "r": "うつわ",
+    "romaji": "utsuwa",
+    "tr": "Kap / kase",
+    "note": ""
+   },
+   {
+    "w": "箸",
+    "r": "はし",
+    "romaji": "hashi",
+    "tr": "Yemek çubuğu",
+    "note": ""
+   },
+   {
+    "w": "布巾",
+    "r": "ふきん",
+    "romaji": "fukin",
+    "tr": "Bez (masa bezi)",
+    "note": ""
+   },
+   {
+    "w": "湯呑み",
+    "r": "ゆのみ",
+    "romaji": "yunomi",
+    "tr": "Çay bardağı",
+    "note": ""
+   },
+   {
+    "w": "鍋",
+    "r": "なべ",
+    "romaji": "nabe",
+    "tr": "Tencere",
+    "note": ""
+   },
+   {
+    "w": "蓋",
+    "r": "ふた",
+    "romaji": "futa",
+    "tr": "Kapak",
+    "note": ""
+   },
+   {
+    "w": "袋",
+    "r": "ふくろ",
+    "romaji": "fukuro",
+    "tr": "Poşet",
+    "note": ""
+   },
+   {
+    "w": "容器",
+    "r": "ようき",
+    "romaji": "yōki",
+    "tr": "Paket kabı",
+    "note": ""
+   },
+   {
+    "w": "厨房",
+    "r": "ちゅうぼう",
+    "romaji": "chūbō",
+    "tr": "Mutfak (restoran)",
+    "note": ""
+   },
+   {
+    "w": "客席",
+    "r": "きゃくせき",
+    "romaji": "kyakuseki",
+    "tr": "Müşteri masaları",
+    "note": ""
+   },
+   {
+    "w": "洗い場",
+    "r": "あらいば",
+    "romaji": "araiba",
+    "tr": "Bulaşık yeri",
+    "note": ""
+   },
+   {
+    "w": "返却口",
+    "r": "へんきゃくぐち",
+    "romaji": "henkyakuguchi",
+    "tr": "Tepsi iade yeri",
+    "note": ""
+   },
+   {
+    "w": "冷蔵庫",
+    "r": "れいぞうこ",
+    "romaji": "reizōko",
+    "tr": "Buzdolabı",
+    "note": ""
+   },
+   {
+    "w": "冷凍庫",
+    "r": "れいとうこ",
+    "romaji": "reitōko",
+    "tr": "Dondurucu",
+    "note": ""
+   },
+   {
+    "w": "在庫",
+    "r": "ざいこ",
+    "romaji": "zaiko",
+    "tr": "Stok",
+    "note": ""
+   },
+   {
+    "w": "お客様",
+    "r": "おきゃくさま",
+    "romaji": "okyakusama",
+    "tr": "Müşteri (nazik)",
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "fiil",
+  "title": "🏃 Fiiller",
+  "note": "Sözlük hâli. Sonraki bölümde iş yerinde duyacağın emir (〜て) hâlleri var.",
+  "words": [
+   {
+    "w": "取る",
+    "r": "とる",
+    "romaji": "toru",
+    "tr": "Almak",
+    "note": ""
+   },
+   {
+    "w": "置く",
+    "r": "おく",
+    "romaji": "oku",
+    "tr": "Koymak (bir yere)",
+    "note": ""
+   },
+   {
+    "w": "入れる",
+    "r": "いれる",
+    "romaji": "ireru",
+    "tr": "İçine koymak",
+    "note": ""
+   },
+   {
+    "w": "出す",
+    "r": "だす",
+    "romaji": "dasu",
+    "tr": "Çıkarmak / servis etmek",
+    "note": ""
+   },
+   {
+    "w": "持つ",
+    "r": "もつ",
+    "romaji": "motsu",
+    "tr": "Tutmak / taşımak",
+    "note": ""
+   },
+   {
+    "w": "運ぶ",
+    "r": "はこぶ",
+    "romaji": "hakobu",
+    "tr": "Taşımak",
+    "note": ""
+   },
+   {
+    "w": "渡す",
+    "r": "わたす",
+    "romaji": "watasu",
+    "tr": "Vermek / uzatmak",
+    "note": ""
+   },
+   {
+    "w": "受け取る",
+    "r": "うけとる",
+    "romaji": "uketoru",
+    "tr": "Teslim almak",
+    "note": ""
+   },
+   {
+    "w": "下げる",
+    "r": "さげる",
+    "romaji": "sageru",
+    "tr": "(Boş tabakları) toplamak",
+    "note": ""
+   },
+   {
+    "w": "片付ける",
+    "r": "かたづける",
+    "romaji": "katazukeru",
+    "tr": "Toplamak / düzenlemek",
+    "note": ""
+   },
+   {
+    "w": "空ける",
+    "r": "あける",
+    "romaji": "akeru",
+    "tr": "Boşaltmak",
+    "note": ""
+   },
+   {
+    "w": "捨てる",
+    "r": "すてる",
+    "romaji": "suteru",
+    "tr": "Atmak (çöpe)",
+    "note": ""
+   },
+   {
+    "w": "戻す",
+    "r": "もどす",
+    "romaji": "modosu",
+    "tr": "Geri koymak",
+    "note": ""
+   },
+   {
+    "w": "並べる",
+    "r": "ならべる",
+    "romaji": "naraberu",
+    "tr": "Sıralamak / dizmek",
+    "note": ""
+   },
+   {
+    "w": "替える",
+    "r": "かえる",
+    "romaji": "kaeru",
+    "tr": "Değiştirmek",
+    "note": ""
+   },
+   {
+    "w": "足す",
+    "r": "たす",
+    "romaji": "tasu",
+    "tr": "Eklemek",
+    "note": ""
+   },
+   {
+    "w": "拭く",
+    "r": "ふく",
+    "romaji": "fuku",
+    "tr": "Silmek",
+    "note": ""
+   },
+   {
+    "w": "洗う",
+    "r": "あらう",
+    "romaji": "arau",
+    "tr": "Yıkamak",
+    "note": ""
+   },
+   {
+    "w": "盛る",
+    "r": "もる",
+    "romaji": "moru",
+    "tr": "Kaseye doldurmak",
+    "note": ""
+   },
+   {
+    "w": "注ぐ",
+    "r": "そそぐ",
+    "romaji": "sosogu",
+    "tr": "Dökmek",
+    "note": ""
+   },
+   {
+    "w": "温める",
+    "r": "あたためる",
+    "romaji": "atatameru",
+    "tr": "Isıtmak",
+    "note": ""
+   },
+   {
+    "w": "焼く",
+    "r": "やく",
+    "romaji": "yaku",
+    "tr": "Izgarada pişirmek",
+    "note": ""
+   },
+   {
+    "w": "煮る",
+    "r": "にる",
+    "romaji": "niru",
+    "tr": "Kaynatarak pişirmek",
+    "note": ""
+   },
+   {
+    "w": "切る",
+    "r": "きる",
+    "romaji": "kiru",
+    "tr": "Kesmek",
+    "note": ""
+   },
+   {
+    "w": "呼ぶ",
+    "r": "よぶ",
+    "romaji": "yobu",
+    "tr": "Çağırmak",
+    "note": ""
+   },
+   {
+    "w": "急ぐ",
+    "r": "いそぐ",
+    "romaji": "isogu",
+    "tr": "Acele etmek",
+    "note": ""
+   },
+   {
+    "w": "手伝う",
+    "r": "てつだう",
+    "romaji": "tetsudau",
+    "tr": "Yardım etmek",
+    "note": ""
+   },
+   {
+    "w": "確認する",
+    "r": "かくにんする",
+    "romaji": "kakunin suru",
+    "tr": "Kontrol etmek",
+    "note": ""
+   },
+   {
+    "w": "補充する",
+    "r": "ほじゅうする",
+    "romaji": "hojū suru",
+    "tr": "Stok tamamlamak",
+    "note": ""
+   },
+   {
+    "w": "準備する",
+    "r": "じゅんびする",
+    "romaji": "junbi suru",
+    "tr": "Hazırlamak",
+    "note": ""
+   },
+   {
+    "w": "掃除する",
+    "r": "そうじする",
+    "romaji": "sōji suru",
+    "tr": "Temizlemek",
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "emir",
+  "title": "📣 İş Talimatları",
+  "note": "〜て + ください = rica. İş yerinde genelde sadece 〜て denir: <b>取って</b> = al/uzat.",
+  "words": [
+   {
+    "w": "取って",
+    "r": "とって",
+    "romaji": "totte",
+    "tr": "Al! / Uzat!",
+    "note": "それ取って = şunu uzat"
+   },
+   {
+    "w": "持ってきて",
+    "r": "もってきて",
+    "romaji": "motte kite",
+    "tr": "Getir!",
+    "note": "お盆持ってきて = tepsiyi getir"
+   },
+   {
+    "w": "ここに置いて",
+    "r": "ここにおいて",
+    "romaji": "koko ni oite",
+    "tr": "Buraya koy!",
+    "note": ""
+   },
+   {
+    "w": "入れて",
+    "r": "いれて",
+    "romaji": "irete",
+    "tr": "İçine koy!",
+    "note": ""
+   },
+   {
+    "w": "下げて",
+    "r": "さげて",
+    "romaji": "sagete",
+    "tr": "(Masadakileri) topla!",
+    "note": ""
+   },
+   {
+    "w": "お盆を片付けて",
+    "r": "おぼんをかたづけて",
+    "romaji": "obon o katazukete",
+    "tr": "Tepsiyi topla!",
+    "note": ""
+   },
+   {
+    "w": "空けて",
+    "r": "あけて",
+    "romaji": "akete",
+    "tr": "Boşalt!",
+    "note": "ゴミ箱を空けて = çöpü boşalt"
+   },
+   {
+    "w": "捨てて",
+    "r": "すてて",
+    "romaji": "sutete",
+    "tr": "At! (çöpe)",
+    "note": ""
+   },
+   {
+    "w": "戻して",
+    "r": "もどして",
+    "romaji": "modoshite",
+    "tr": "Geri koy!",
+    "note": ""
+   },
+   {
+    "w": "拭いて",
+    "r": "ふいて",
+    "romaji": "fuite",
+    "tr": "Sil!",
+    "note": "テーブル拭いて = masayı sil"
+   },
+   {
+    "w": "洗って",
+    "r": "あらって",
+    "romaji": "aratte",
+    "tr": "Yıka!",
+    "note": ""
+   },
+   {
+    "w": "掃除して",
+    "r": "そうじして",
+    "romaji": "sōji shite",
+    "tr": "Temizle!",
+    "note": ""
+   },
+   {
+    "w": "並べて",
+    "r": "ならべて",
+    "romaji": "narabete",
+    "tr": "Diz! / Sırala!",
+    "note": ""
+   },
+   {
+    "w": "替えて",
+    "r": "かえて",
+    "romaji": "kaete",
+    "tr": "Değiştir!",
+    "note": ""
+   },
+   {
+    "w": "足して",
+    "r": "たして",
+    "romaji": "tashite",
+    "tr": "Ekle! / Tamamla!",
+    "note": ""
+   },
+   {
+    "w": "渡して",
+    "r": "わたして",
+    "romaji": "watashite",
+    "tr": "Ver!",
+    "note": ""
+   },
+   {
+    "w": "運んで",
+    "r": "はこんで",
+    "romaji": "hakonde",
+    "tr": "Taşı!",
+    "note": ""
+   },
+   {
+    "w": "呼んで",
+    "r": "よんで",
+    "romaji": "yonde",
+    "tr": "Çağır!",
+    "note": ""
+   },
+   {
+    "w": "手伝って",
+    "r": "てつだって",
+    "romaji": "tetsudatte",
+    "tr": "Yardım et!",
+    "note": ""
+   },
+   {
+    "w": "急いで",
+    "r": "いそいで",
+    "romaji": "isoide",
+    "tr": "Acele et!",
+    "note": ""
+   },
+   {
+    "w": "確認して",
+    "r": "かくにんして",
+    "romaji": "kakunin shite",
+    "tr": "Kontrol et!",
+    "note": ""
+   },
+   {
+    "w": "補充して",
+    "r": "ほじゅうして",
+    "romaji": "hojū shite",
+    "tr": "Stoğu tamamla!",
+    "note": ""
+   },
+   {
+    "w": "お願いします",
+    "r": "おねがいします",
+    "romaji": "onegai shimasu",
+    "tr": "Rica ederim / lütfen",
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "fraz",
+  "title": "💬 Kalıplar",
+  "note": "Müşteriye ve ekibe en çok söylenen cümleler.",
+  "words": [
+   {
+    "w": "いらっしゃいませ",
+    "r": "いらっしゃいませ",
+    "romaji": "irasshaimase",
+    "tr": "Hoş geldiniz",
+    "note": ""
+   },
+   {
+    "w": "お待たせしました",
+    "r": "おまたせしました",
+    "romaji": "omatase shimashita",
+    "tr": "Beklettim, buyurun",
+    "note": ""
+   },
+   {
+    "w": "少々お待ちください",
+    "r": "しょうしょうおまちください",
+    "romaji": "shōshō omachi kudasai",
+    "tr": "Lütfen biraz bekleyin",
+    "note": ""
+   },
+   {
+    "w": "かしこまりました",
+    "r": "かしこまりました",
+    "romaji": "kashikomarimashita",
+    "tr": "Anlaşıldı (nazik)",
+    "note": ""
+   },
+   {
+    "w": "お会計",
+    "r": "おかいけい",
+    "romaji": "okaikei",
+    "tr": "Hesap",
+    "note": ""
+   },
+   {
+    "w": "ありがとうございました",
+    "r": "ありがとうございました",
+    "romaji": "arigatō gozaimashita",
+    "tr": "Teşekkürler (giderken)",
+    "note": ""
+   },
+   {
+    "w": "お疲れ様です",
+    "r": "おつかれさまです",
+    "romaji": "otsukaresama desu",
+    "tr": "İş arkadaşına selam",
+    "note": ""
+   },
+   {
+    "w": "お先に失礼します",
+    "r": "おさきにしつれいします",
+    "romaji": "osaki ni shitsurei shimasu",
+    "tr": "Önce çıkıyorum (vardiya sonu)",
+    "note": ""
+   },
+   {
+    "w": "店内でお召し上がりですか",
+    "r": "てんないでおめしあがりですか",
+    "romaji": "tennai de omeshiagari desu ka",
+    "tr": "İçeride mi yiyeceksiniz?",
+    "note": ""
+   },
+   {
+    "w": "お持ち帰りですか",
+    "r": "おもちかえりですか",
+    "romaji": "omochikaeri desu ka",
+    "tr": "Paket mi olacak?",
+    "note": ""
+   }
+  ]
+ }
+]

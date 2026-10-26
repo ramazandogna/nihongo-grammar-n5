@@ -1,0 +1,1648 @@
+{
+ "types": {
+  "1": [
+   "問題1 · Okunuş seç",
+   "問題1 · Choose the reading",
+   "問題1 · 选择读音"
+  ],
+  "2": [
+   "問題2 · Doğru kanjiyi seç",
+   "問題2 · Choose the kanji",
+   "問題2 · 选择汉字"
+  ],
+  "3": [
+   "問題3 · Boşluğu doldur",
+   "問題3 · Fill in the blank",
+   "問題3 · 填空"
+  ],
+  "4": [
+   "問題4 · Anlamca en yakını seç",
+   "問題4 · Closest meaning",
+   "問題4 · 意思最接近"
+  ],
+  "5": [
+   "問題5 · Doğru kullanımı seç",
+   "問題5 · Correct usage",
+   "問題5 · 正确用法"
+  ]
+ },
+ "questions": [
+  {
+   "m": 1,
+   "s": "会場には{大勢|おおぜい}の[観客]がいた。",
+   "o": [
+    "けんぎゃく",
+    "かんぎゃく",
+    "けんきゃく",
+    "かんきゃく"
+   ],
+   "a": 3,
+   "w": "観客",
+   "r": "かんきゃく",
+   "mean": [
+    "seyirci",
+    "audience, spectators",
+    "观众"
+   ],
+   "p": [
+    [
+     "観",
+     "カン",
+     [
+      "bakmak, izlemek (観光 かんこう = turizm)",
+      "to look, watch (観光 = tourism)",
+      "看、观看（観光＝旅游）"
+     ]
+    ],
+    [
+     "客",
+     "キャク",
+     [
+      "misafir, müşteri (お客さん)",
+      "guest, customer (お客さん)",
+      "客人、顾客（お客さん）"
+     ]
+    ]
+   ],
+   "tip": [
+    "İzleyen misafir = seyirci. 客 her zaman きゃく — ゛ (ぎゃ) yok.",
+    "A guest who watches = spectator. 客 is always きゃく — no voicing (ぎゃ).",
+    "观看的客人＝观众。客总是读きゃく，没有浊音（ぎゃ）。"
+   ],
+   "tr": [
+    "Salonda çok sayıda seyirci vardı.",
+    "There were many spectators at the venue.",
+    "会场里有很多观众。"
+   ]
+  },
+  {
+   "m": 1,
+   "s": "{田村|たむら}さんが[払って]くれました。",
+   "o": [
+    "くばって",
+    "はらって",
+    "かざって",
+    "ひろって"
+   ],
+   "a": 1,
+   "w": "払う",
+   "r": "はらう",
+   "mean": [
+    "ödemek",
+    "to pay",
+    "支付"
+   ],
+   "p": [
+    [
+     "払",
+     "はら(う)",
+     [
+      "sol taraf 扌 = el → elle para uzatmak",
+      "left side 扌 = hand → handing over money",
+      "左边扌＝手 → 用手递钱"
+     ]
+    ]
+   ],
+   "tip": [
+    "扌 (el) olan fiiller hep elle yapılan işlerdir: 払う ödemek, 拾う ひろう yerden almak, 持つ もつ tutmak.",
+    "Verbs with 扌 (hand) are done by hand: 払う pay, 拾う ひろう pick up, 持つ もつ hold.",
+    "带扌（手）的动词都是用手做的事：払う付钱，拾う捡，持つ拿。"
+   ],
+   "tr": [
+    "Tamura-san (benim yerime) ödedi.",
+    "Tamura-san paid (for me).",
+    "田村先生帮我付了钱。"
+   ]
+  },
+  {
+   "m": 1,
+   "s": "ホテルには3{時|じ}ごろ[到着]します。",
+   "o": [
+    "とうちゃく",
+    "とうつく",
+    "とちゃく",
+    "とつく"
+   ],
+   "a": 0,
+   "w": "到着",
+   "r": "とうちゃく",
+   "mean": [
+    "varış",
+    "arrival",
+    "到达"
+   ],
+   "p": [
+    [
+     "到",
+     "トウ",
+     [
+      "ulaşmak, varmak",
+      "to reach, arrive",
+      "到达"
+     ]
+    ],
+    [
+     "着",
+     "チャク",
+     [
+      "varmak / giymek (着る きる)",
+      "arrive / wear (着る きる)",
+      "到达／穿（着る）"
+     ]
+    ]
+   ],
+   "tip": [
+    "着 tek başına fiilken つく ama kelime içinde チャク olur. 到 uzun okunur: とう.",
+    "As a verb 着 is つく, but inside words it is チャク. 到 is long: とう.",
+    "着作动词时读つく，在词中读チャク。到读长音：とう。"
+   ],
+   "tr": [
+    "Otele saat 3 civarı varacağım.",
+    "I will arrive at the hotel around 3.",
+    "我三点左右到达酒店。"
+   ]
+  },
+  {
+   "m": 1,
+   "s": "{山下|やました}さんが{説明|せつめい}を[加えました]。",
+   "o": [
+    "つたえました",
+    "おえました",
+    "くわえました",
+    "かえました"
+   ],
+   "a": 2,
+   "w": "加える",
+   "r": "くわえる",
+   "mean": [
+    "eklemek",
+    "to add",
+    "添加"
+   ],
+   "p": [
+    [
+     "加",
+     "カ / くわ(える)",
+     [
+      "力 (güç) + 口 (ağız) → bir şeye güç katmak",
+      "力 (power) + 口 (mouth) → adding strength",
+      "力（力量）＋口 → 增添力量"
+     ]
+    ]
+   ],
+   "tip": [
+    "追加 ついか = ek, 参加 さんか = katılım. Hep 'ekleme' fikri.",
+    "追加 ついか = addition, 参加 さんか = participation. Always the idea of 'adding'.",
+    "追加＝追加，参加＝参加。都是“添加”的意思。"
+   ],
+   "tr": [
+    "Yamashita-san açıklama ekledi.",
+    "Yamashita-san added an explanation.",
+    "山下先生补充了说明。"
+   ]
+  },
+  {
+   "m": 1,
+   "s": "{今|いま}から[訓練]を{行|おこな}います。",
+   "o": [
+    "くんれい",
+    "くんれん",
+    "ぐんれい",
+    "ぐんれん"
+   ],
+   "a": 1,
+   "w": "訓練",
+   "r": "くんれん",
+   "mean": [
+    "eğitim, talim",
+    "training, drill",
+    "训练"
+   ],
+   "p": [
+    [
+     "訓",
+     "クン",
+     [
+      "öğretmek (言 = söz)",
+      "to teach (言 = words)",
+      "教导（言＝言语）"
+     ]
+    ],
+    [
+     "練",
+     "レン",
+     [
+      "alıştırma (練習 れんしゅう)",
+      "practice (練習 れんしゅう)",
+      "练习（練習）"
+     ]
+    ]
+   ],
+   "tip": [
+    "練習'teki 練 = れん. Sonu れい değil れん. 訓 sessiz: く, ぐ değil.",
+    "練 as in 練習 = れん. It ends in れん, not れい. 訓 is unvoiced: く, not ぐ.",
+    "練習的練＝れん。结尾是れん不是れい。訓是清音：く不是ぐ。"
+   ],
+   "tr": [
+    "Şimdi eğitimi yapacağız.",
+    "We will now do the training.",
+    "现在开始训练。"
+   ]
+  },
+  {
+   "m": 1,
+   "s": "この[豆]はスープに{使|つか}うといいですよ。",
+   "o": [
+    "こな",
+    "いも",
+    "かい",
+    "まめ"
+   ],
+   "a": 3,
+   "w": "豆",
+   "r": "まめ",
+   "mean": [
+    "fasulye, bakla",
+    "beans",
+    "豆子"
+   ],
+   "p": [
+    [
+     "豆",
+     "まめ / トウ",
+     [
+      "ayaklı bir kase resmi",
+      "picture of a bowl on a stand",
+      "带脚的碗的形状"
+     ]
+    ]
+   ],
+   "tip": [
+    "豆腐 とうふ = tofu, 納豆 なっとう. Tek başına まめ.",
+    "豆腐 とうふ = tofu, 納豆 なっとう. Alone it is まめ.",
+    "豆腐 とうふ，納豆 なっとう。单独读まめ。"
+   ],
+   "tr": [
+    "Bu fasulyeyi çorbada kullanmak iyi olur.",
+    "These beans are good in soup.",
+    "这种豆子很适合做汤。"
+   ]
+  },
+  {
+   "m": 1,
+   "s": "{社会|しゃかい}には[共通]のルールがあります。",
+   "o": [
+    "きょうつ",
+    "こうつう",
+    "きょうつう",
+    "こうつ"
+   ],
+   "a": 2,
+   "w": "共通",
+   "r": "きょうつう",
+   "mean": [
+    "ortak",
+    "common, shared",
+    "共同"
+   ],
+   "p": [
+    [
+     "共",
+     "キョウ",
+     [
+      "birlikte (共に ともに)",
+      "together (共に ともに)",
+      "一起（共に）"
+     ]
+    ],
+    [
+     "通",
+     "ツウ",
+     [
+      "geçmek, ortak olmak",
+      "to pass, to be shared",
+      "通过、共通"
+     ]
+    ]
+   ],
+   "tip": [
+    "Tuzak: 交通 こうつう = trafik! 共 = birlikte → きょう. İkisi de uzun: きょう・つう.",
+    "Trap: 交通 こうつう = traffic! 共 = together → きょう. Both long: きょう・つう.",
+    "陷阱：交通 こうつう＝交通！共＝一起 → きょう。两个都是长音。"
+   ],
+   "tr": [
+    "Toplumda ortak kurallar vardır.",
+    "Society has common rules.",
+    "社会有共同的规则。"
+   ]
+  },
+  {
+   "m": 1,
+   "s": "{来年|らいねん}から[税金]が{上|あ}がるそうだ。",
+   "o": [
+    "ぜいきん",
+    "ぜっきん",
+    "せいきん",
+    "せっきん"
+   ],
+   "a": 0,
+   "w": "税金",
+   "r": "ぜいきん",
+   "mean": [
+    "vergi",
+    "tax",
+    "税金"
+   ],
+   "p": [
+    [
+     "税",
+     "ゼイ",
+     [
+      "禾 (tahıl) → eskiden vergi tahılla ödenirdi",
+      "禾 (grain) → taxes were once paid in grain",
+      "禾（谷物）→ 古时用谷物交税"
+     ]
+    ],
+    [
+     "金",
+     "キン",
+     [
+      "para, altın",
+      "money, gold",
+      "钱、金"
+     ]
+    ]
+   ],
+   "tip": [
+    "税 = ぜい (゛var, っ yok). 消費税 しょうひぜい = KDV — Japonya'da her fişte görürsün.",
+    "税 = ぜい (voiced, no っ). 消費税 しょうひぜい = consumption tax — on every receipt in Japan.",
+    "税＝ぜい（浊音，无っ）。消費税＝消费税，日本每张小票上都有。"
+   ],
+   "tr": [
+    "Gelecek yıldan vergiler artacakmış.",
+    "I hear taxes will go up from next year.",
+    "听说明年开始要涨税。"
+   ]
+  },
+  {
+   "m": 2,
+   "s": "しばらく、きれいな[なみ]を{見|み}ていた。",
+   "o": [
+    "池",
+    "湖",
+    "港",
+    "波"
+   ],
+   "or": [
+    "いけ",
+    "みずうみ",
+    "みなと",
+    "なみ"
+   ],
+   "a": 3,
+   "w": "波",
+   "r": "なみ",
+   "mean": [
+    "dalga",
+    "wave",
+    "波浪"
+   ],
+   "p": [
+    [
+     "波",
+     "なみ / ハ",
+     [
+      "氵 (su) + 皮 (deri) → suyun derisi = dalga",
+      "氵 (water) + 皮 (skin) → the skin of water = wave",
+      "氵（水）＋皮 → 水的皮＝波浪"
+     ]
+    ]
+   ],
+   "tip": [
+    "Hepsinde 氵 (su) var! 池 いけ gölet, 湖 みずうみ göl, 港 みなと liman.",
+    "All have 氵 (water)! 池 いけ pond, 湖 みずうみ lake, 港 みなと harbor.",
+    "全部都有氵！池 池塘，湖 湖，港 港口。"
+   ],
+   "tr": [
+    "Bir süre güzel dalgaları izledim.",
+    "I watched the beautiful waves for a while.",
+    "我看了一会儿美丽的波浪。"
+   ]
+  },
+  {
+   "m": 2,
+   "s": "もう{少|すこ}し[はやく]{歩|ある}きましょう。",
+   "o": [
+    "軽く",
+    "急く",
+    "速く",
+    "進く"
+   ],
+   "or": [
+    "かるく",
+    "—",
+    "はやく",
+    "—"
+   ],
+   "a": 2,
+   "w": "速い",
+   "r": "はやい",
+   "mean": [
+    "hızlı",
+    "fast",
+    "快"
+   ],
+   "p": [
+    [
+     "速",
+     "ソク / はや(い)",
+     [
+      "辶 (yol) → yolda hızlı gitmek",
+      "辶 (road) → going fast on the road",
+      "辶（道路）→ 在路上快走"
+     ]
+    ]
+   ],
+   "tip": [
+    "早い = erken (zaman), 速い = hızlı (sürat). Yürümek sürat → 速く. 急ぐ いそぐ = acele etmek, 軽い かるい = hafif.",
+    "早い = early (time), 速い = fast (speed). Walking is speed → 速く. 急ぐ = hurry, 軽い = light.",
+    "早い＝早（时间），速い＝快（速度）。走路是速度 → 速く。急ぐ＝赶紧，軽い＝轻。"
+   ],
+   "tr": [
+    "Biraz daha hızlı yürüyelim.",
+    "Let's walk a little faster.",
+    "我们走快一点吧。"
+   ]
+  },
+  {
+   "m": 2,
+   "s": "わたしは{今|いま}の{生活|せいかつ}に[まんぞく]している。",
+   "o": [
+    "満続",
+    "万続",
+    "満足",
+    "万足"
+   ],
+   "a": 2,
+   "w": "満足",
+   "r": "まんぞく",
+   "mean": [
+    "memnuniyet",
+    "satisfaction",
+    "满足"
+   ],
+   "p": [
+    [
+     "満",
+     "マン",
+     [
+      "dolu (満員 まんいん = tıklım tıklım)",
+      "full (満員 まんいん = packed)",
+      "满（満員＝满员）"
+     ]
+    ],
+    [
+     "足",
+     "ソク / あし",
+     [
+      "ayak; yeterli (足りる たりる)",
+      "foot; enough (足りる たりる)",
+      "脚；足够（足りる）"
+     ]
+    ]
+   ],
+   "tip": [
+    "Dolu + yeterli = memnun. 万 = 10.000 (sayı), burada yanlış.",
+    "Full + enough = satisfied. 万 = 10,000 (a number), wrong here.",
+    "满＋足够＝满足。万＝一万（数字），这里是错的。"
+   ],
+   "tr": [
+    "Şimdiki hayatımdan memnunum.",
+    "I am satisfied with my current life.",
+    "我对现在的生活很满足。"
+   ]
+  },
+  {
+   "m": 2,
+   "s": "{父|ちち}は{腕|うで}を[くんで]{何|なに}か{考|かんが}えていた。",
+   "o": [
+    "接んで",
+    "組んで",
+    "折んで",
+    "結んで"
+   ],
+   "or": [
+    "—",
+    "くんで",
+    "—",
+    "むすんで"
+   ],
+   "a": 1,
+   "w": "組む",
+   "r": "くむ",
+   "mean": [
+    "kavuşturmak, birleştirmek",
+    "to cross (arms), to join",
+    "交叉（双臂）"
+   ],
+   "p": [
+    [
+     "組",
+     "くみ / く(む)",
+     [
+      "糸 (iplik) → iplikleri örmek",
+      "糸 (thread) → weaving threads",
+      "糸（线）→ 编织线"
+     ]
+    ]
+   ],
+   "tip": [
+    "腕を組む = kollarını kavuşturmak (kalıp ifade). 組 = sınıf/grup da demek: 1年2組. 結ぶ むすぶ = bağlamak.",
+    "腕を組む = cross one's arms (set phrase). 組 also means class/group: 1年2組. 結ぶ むすぶ = tie.",
+    "腕を組む＝抱着胳膊（固定说法）。組也指班级：1年2組。結ぶ＝系。"
+   ],
+   "tr": [
+    "Babam kollarını kavuşturmuş bir şey düşünüyordu.",
+    "My father was thinking with his arms crossed.",
+    "父亲抱着胳膊在想什么。"
+   ]
+  },
+  {
+   "m": 2,
+   "s": "この{国|くに}は{主|おも}に{米|こめ}を[ゆしゅつ]している。",
+   "o": [
+    "輸出",
+    "論出",
+    "輪出",
+    "諭出"
+   ],
+   "a": 0,
+   "w": "輸出",
+   "r": "ゆしゅつ",
+   "mean": [
+    "ihracat",
+    "export",
+    "出口"
+   ],
+   "p": [
+    [
+     "輸",
+     "ユ",
+     [
+      "車 (araba) → taşımak",
+      "車 (vehicle) → to transport",
+      "車（车）→ 运输"
+     ]
+    ],
+    [
+     "出",
+     "シュツ",
+     [
+      "çıkmak",
+      "to go out",
+      "出"
+     ]
+    ]
+   ],
+   "tip": [
+    "Taşıyıp dışarı çıkarmak = ihracat. Karşıtı 輸入 ゆにゅう = ithalat. 車 olanı seç!",
+    "Transport out = export. Opposite: 輸入 ゆにゅう = import. Pick the one with 車!",
+    "运出去＝出口。反义：輸入＝进口。选有車的！"
+   ],
+   "tr": [
+    "Bu ülke başlıca pirinç ihraç ediyor.",
+    "This country mainly exports rice.",
+    "这个国家主要出口大米。"
+   ]
+  },
+  {
+   "m": 2,
+   "s": "{赤|あか}ちゃんが{母親|ははおや}に{抱|だ}かれて[ねむって]います。",
+   "o": [
+    "寝って",
+    "宿って",
+    "眼って",
+    "眠って"
+   ],
+   "a": 3,
+   "w": "眠る",
+   "r": "ねむる",
+   "mean": [
+    "uyumak",
+    "to sleep",
+    "睡觉"
+   ],
+   "p": [
+    [
+     "眠",
+     "ミン / ねむ(る)",
+     [
+      "目 (göz) + 民 → gözler kapanır",
+      "目 (eye) + 民 → eyes close",
+      "目（眼）＋民 → 闭上眼"
+     ]
+    ]
+   ],
+   "tip": [
+    "寝る ねる = yatmak (って değil て olur). 眼 め = göz (uyumak değil). 眠い ねむい = uykulu.",
+    "寝る ねる = lie down (て-form, not って). 眼 め = eye. 眠い ねむい = sleepy.",
+    "寝る＝躺下（て形不是って）。眼＝眼睛。眠い＝困。"
+   ],
+   "tr": [
+    "Bebek annesinin kucağında uyuyor.",
+    "The baby is sleeping in its mother's arms.",
+    "婴儿被妈妈抱着睡着了。"
+   ]
+  },
+  {
+   "m": 3,
+   "s": "この{紙|かみ}は、ぬれても{破|やぶ}れにくいという（　）があります。",
+   "o": [
+    "実力",
+    "特長",
+    "専門",
+    "主張"
+   ],
+   "or": [
+    "じつりょく",
+    "とくちょう",
+    "せんもん",
+    "しゅちょう"
+   ],
+   "a": 1,
+   "w": "特長",
+   "r": "とくちょう",
+   "mean": [
+    "güçlü özellik, avantaj",
+    "strong point, merit",
+    "优点、特点"
+   ],
+   "p": [
+    [
+     "特",
+     "トク",
+     [
+      "özel (特に とくに)",
+      "special (特に とくに)",
+      "特别（特に）"
+     ]
+    ],
+    [
+     "長",
+     "チョウ",
+     [
+      "uzun; üstün yan",
+      "long; strong point",
+      "长；长处"
+     ]
+    ]
+   ],
+   "tip": [
+    "Bir ürünün iyi özelliği = 特長. 実力 yetenek, 専門 uzmanlık alanı, 主張 iddia.",
+    "A product's good feature = 特長. 実力 ability, 専門 specialty, 主張 claim.",
+    "产品的优点＝特長。実力 实力，専門 专业，主張 主张。"
+   ],
+   "tr": [
+    "Bu kağıdın ıslansa bile zor yırtılma gibi bir özelliği var.",
+    "This paper has the merit of not tearing easily even when wet.",
+    "这种纸的优点是湿了也不容易破。"
+   ]
+  },
+  {
+   "m": 3,
+   "s": "{佐藤|さとう}さんには、おとなしい（　）があるが、{本当|ほんとう}は{活動的|かつどうてき}な{人|ひと}らしい。",
+   "o": [
+    "ヒント",
+    "タイトル",
+    "アイディア",
+    "イメージ"
+   ],
+   "a": 3,
+   "w": "イメージ",
+   "r": "イメージ",
+   "mean": [
+    "imaj, izlenim",
+    "image, impression",
+    "印象"
+   ],
+   "p": [],
+   "tip": [
+    "おとなしい = sakin, uslu. 'Sakin bir imajı var ama aslında aktif' → イメージ.",
+    "おとなしい = quiet, gentle. 'Seems quiet but is actually active' → イメージ.",
+    "おとなしい＝安静、老实。“看起来安静但其实很活跃” → イメージ。"
+   ],
+   "tr": [
+    "Sato-san sakin görünüyor ama aslında aktif biriymiş.",
+    "Sato-san seems quiet, but is actually very active.",
+    "佐藤给人安静的印象，但其实很活跃。"
+   ]
+  },
+  {
+   "m": 3,
+   "s": "{正月|しょうがつ}には{親戚|しんせき}が{集|あつ}まって、みんなでテーブルを（　）、{楽|たの}しく{食事|しょくじ}をした。",
+   "o": [
+    "囲み",
+    "通し",
+    "包み",
+    "越え"
+   ],
+   "or": [
+    "かこみ",
+    "とおし",
+    "つつみ",
+    "こえ"
+   ],
+   "a": 0,
+   "w": "囲む",
+   "r": "かこむ",
+   "mean": [
+    "etrafını çevirmek",
+    "to surround",
+    "围坐"
+   ],
+   "p": [
+    [
+     "囲",
+     "イ / かこ(む)",
+     [
+      "囗 (çerçeve) içinde → etrafı kapalı",
+      "inside the 囗 frame → enclosed",
+      "在囗（框）里 → 四周围住"
+     ]
+    ]
+   ],
+   "tip": [
+    "Kanjinin kendisi bir çerçeve: 囗. テーブルを囲む = masanın etrafına toplanmak. 包む = paketlemek.",
+    "The kanji itself is a frame: 囗. テーブルを囲む = gather around the table. 包む = wrap.",
+    "汉字本身就是框：囗。テーブルを囲む＝围着桌子。包む＝包。"
+   ],
+   "tr": [
+    "Yılbaşında akrabalar toplandı, masanın etrafında keyifle yemek yedik.",
+    "At New Year our relatives gathered around the table and ate happily.",
+    "过年时亲戚们聚在一起，围着桌子愉快地吃饭。"
+   ]
+  },
+  {
+   "m": 3,
+   "s": "このレストランの{料理|りょうり}はおいしくないので、{店内|てんない}はいつも（　）だ。",
+   "o": [
+    "ふらふら",
+    "ぐっすり",
+    "がらがら",
+    "うっかり"
+   ],
+   "a": 2,
+   "w": "がらがら",
+   "r": "がらがら",
+   "mean": [
+    "bomboş",
+    "completely empty",
+    "空荡荡"
+   ],
+   "p": [],
+   "tip": [
+    "がらがら = boş (trende de: 電車ががらがら). ぐっすり derin uyku, ふらふら sendeleyerek, うっかり dalgınlıkla.",
+    "がらがら = empty (also 電車ががらがら). ぐっすり deep sleep, ふらふら unsteady, うっかり carelessly.",
+    "がらがら＝空荡荡（電車ががらがら）。ぐっすり 熟睡，ふらふら 摇晃，うっかり 不小心。"
+   ],
+   "tr": [
+    "Bu restoranın yemekleri lezzetsiz, o yüzden içerisi hep bomboş.",
+    "The food here isn't good, so the restaurant is always empty.",
+    "这家餐厅的菜不好吃，所以店里总是空荡荡的。"
+   ]
+  },
+  {
+   "m": 3,
+   "s": "{高田|たかだ}さんが{引|ひ}っ{越|こ}すという（　）を{聞|き}いたが、{本当|ほんとう}かどうか{気|き}になる。",
+   "o": [
+    "うわさ",
+    "宣伝",
+    "うそ",
+    "冗談"
+   ],
+   "or": [
+    "うわさ",
+    "せんでん",
+    "うそ",
+    "じょうだん"
+   ],
+   "a": 0,
+   "w": "うわさ（噂）",
+   "r": "うわさ",
+   "mean": [
+    "söylenti, dedikodu",
+    "rumor",
+    "传闻"
+   ],
+   "p": [],
+   "tip": [
+    "'Doğru mu acaba?' → henüz emin değil = söylenti. うそ yalan (zaten yanlış), 宣伝 reklam, 冗談 şaka.",
+    "'I wonder if it's true' → not certain = rumor. うそ lie, 宣伝 advertising, 冗談 joke.",
+    "“不知道是不是真的” → 还不确定＝传闻。うそ 谎言，宣伝 宣传，冗談 玩笑。"
+   ],
+   "tr": [
+    "Takada-san'ın taşınacağı söylentisini duydum, doğru mu merak ediyorum.",
+    "I heard a rumor that Takada-san is moving; I wonder if it's true.",
+    "听说高田要搬家，不知道是不是真的。"
+   ]
+  },
+  {
+   "m": 3,
+   "s": "{父|ちち}から{借|か}りた{本|ほん}をなくしてしまったので{謝|あやま}ったら、{父|ちち}はすぐに（　）くれた。",
+   "o": [
+    "従って",
+    "守って",
+    "許して",
+    "抑えて"
+   ],
+   "or": [
+    "したがって",
+    "まもって",
+    "ゆるして",
+    "おさえて"
+   ],
+   "a": 2,
+   "w": "許す",
+   "r": "ゆるす",
+   "mean": [
+    "affetmek, izin vermek",
+    "to forgive",
+    "原谅"
+   ],
+   "p": [
+    [
+     "許",
+     "キョ / ゆる(す)",
+     [
+      "言 (söz) → sözle izin vermek",
+      "言 (words) → permitting with words",
+      "言（言语）→ 用话语允许"
+     ]
+    ]
+   ],
+   "tip": [
+    "謝る あやまる (özür dilemek) → 許す (affetmek). 許可 きょか = izin.",
+    "謝る あやまる (apologize) → 許す (forgive). 許可 きょか = permission.",
+    "謝る（道歉）→ 許す（原谅）。許可＝许可。"
+   ],
+   "tr": [
+    "Babamdan ödünç aldığım kitabı kaybettim, özür dileyince hemen affetti.",
+    "I lost the book I borrowed from my father, but when I apologized he forgave me.",
+    "我弄丢了从父亲那借的书，道歉后他马上原谅了我。"
+   ]
+  },
+  {
+   "m": 3,
+   "s": "パソコンの{前|まえ}でずっと{同|おな}じ（　）でいたので、{体|からだ}が{痛|いた}くなった。",
+   "o": [
+    "様子",
+    "姿勢",
+    "印象",
+    "間隔"
+   ],
+   "or": [
+    "ようす",
+    "しせい",
+    "いんしょう",
+    "かんかく"
+   ],
+   "a": 1,
+   "w": "姿勢",
+   "r": "しせい",
+   "mean": [
+    "duruş, postür",
+    "posture",
+    "姿势"
+   ],
+   "p": [
+    [
+     "姿",
+     "シ / すがた",
+     [
+      "görünüş, beden şekli",
+      "figure, body shape",
+      "姿态、身形"
+     ]
+    ],
+    [
+     "勢",
+     "セイ",
+     [
+      "güç (大勢 おおぜい'deki aynı kanji!)",
+      "force (same kanji as in 大勢 おおぜい!)",
+      "势（和大勢的勢是同一个字！）"
+     ]
+    ]
+   ],
+   "tip": [
+    "Vücudun şekli = duruş. 姿勢がいい = dik duruyor. 様子 durum, 印象 izlenim, 間隔 aralık.",
+    "The body's shape = posture. 姿勢がいい = stands straight. 様子 state, 印象 impression, 間隔 interval.",
+    "身体的形状＝姿势。姿勢がいい＝站得直。様子 样子，印象 印象，間隔 间隔。"
+   ],
+   "tr": [
+    "Bilgisayar başında hep aynı pozisyonda kaldığım için vücudum ağrıdı.",
+    "I stayed in the same posture at the computer, so my body started to hurt.",
+    "在电脑前一直保持同一个姿势，身体疼了。"
+   ]
+  },
+  {
+   "m": 3,
+   "s": "{申込書|もうしこみしょ}に{間違|まちが}いがないか、よく（　）から{受付|うけつけ}に{出|だ}した。",
+   "o": [
+    "くりかえして",
+    "気にして",
+    "見つめて",
+    "たしかめて"
+   ],
+   "a": 3,
+   "w": "確かめる",
+   "r": "たしかめる",
+   "mean": [
+    "kontrol etmek, emin olmak",
+    "to check, to make sure",
+    "确认"
+   ],
+   "p": [
+    [
+     "確",
+     "カク / たし(か)",
+     [
+      "石 (taş) → taş gibi sağlam = kesin",
+      "石 (stone) → solid as stone = certain",
+      "石 → 像石头一样坚固＝确定"
+     ]
+    ]
+   ],
+   "tip": [
+    "'Hata var mı' diye bakmak = 確かめる. 確認 かくにん aynı anlam (iş yerinde çok kullanılır).",
+    "Looking for mistakes = 確かめる. 確認 かくにん means the same (very common at work).",
+    "检查有没有错＝確かめる。確認 意思相同（工作中很常用）。"
+   ],
+   "tr": [
+    "Başvuru formunda hata var mı iyice kontrol edip resepsiyona verdim.",
+    "I checked the form carefully for mistakes before handing it in.",
+    "仔细确认申请表没有错误后交给了前台。"
+   ]
+  },
+  {
+   "m": 3,
+   "s": "わたしのふるさとは（　）が{盛|さか}んで、{米|こめ}や{野菜|やさい}をたくさん{作|つく}っています。",
+   "o": [
+    "自然",
+    "資源",
+    "作物",
+    "農業"
+   ],
+   "or": [
+    "しぜん",
+    "しげん",
+    "さくもつ",
+    "のうぎょう"
+   ],
+   "a": 3,
+   "w": "農業",
+   "r": "のうぎょう",
+   "mean": [
+    "tarım",
+    "agriculture",
+    "农业"
+   ],
+   "p": [
+    [
+     "農",
+     "ノウ",
+     [
+      "çiftçilik (農家 のうか = çiftçi)",
+      "farming (農家 のうか = farmer)",
+      "农（農家＝农民）"
+     ]
+    ],
+    [
+     "業",
+     "ギョウ",
+     [
+      "iş, sektör (工業 = sanayi)",
+      "work, industry (工業 = manufacturing)",
+      "业（工業＝工业）"
+     ]
+    ]
+   ],
+   "tip": [
+    "〜が盛ん = '...yaygın/gelişmiş' → bir sektör ister. 作物 (ürün) üretilir ama 'gelişmiş' olmaz.",
+    "〜が盛ん = 'is thriving' → needs an industry. 作物 (crops) are grown, but don't 'thrive'.",
+    "〜が盛ん＝“…兴盛” → 需要一个行业。作物会种植，但不说“兴盛”。"
+   ],
+   "tr": [
+    "Memleketimde tarım gelişmiş, çok pirinç ve sebze üretiyoruz.",
+    "Farming is thriving in my hometown; we grow lots of rice and vegetables.",
+    "我的家乡农业发达，种很多大米和蔬菜。"
+   ]
+  },
+  {
+   "m": 3,
+   "s": "{水|みず}に{浮|う}いていた{木|き}の{葉|は}が、しばらくすると{水|みず}の{中|なか}に（　）しまった。",
+   "o": [
+    "しずんで",
+    "ころんで",
+    "たおれて",
+    "おぼれて"
+   ],
+   "a": 0,
+   "w": "沈む",
+   "r": "しずむ",
+   "mean": [
+    "batmak",
+    "to sink",
+    "沉下去"
+   ],
+   "p": [
+    [
+     "沈",
+     "チン / しず(む)",
+     [
+      "氵 (su) → suya gömülmek",
+      "氵 (water) → sinking into water",
+      "氵（水）→ 沉入水中"
+     ]
+    ]
+   ],
+   "tip": [
+    "浮く うく (yüzmek) ↔ 沈む しずむ (batmak). おぼれる = boğulmak, sadece canlılar için.",
+    "浮く うく (float) ↔ 沈む しずむ (sink). おぼれる = drown, only for living things.",
+    "浮く（浮）↔ 沈む（沉）。おぼれる＝溺水，只用于生物。"
+   ],
+   "tr": [
+    "Suyun üstünde yüzen yaprak, bir süre sonra suya battı.",
+    "The leaf floating on the water sank after a while.",
+    "漂在水上的树叶过了一会儿沉了下去。"
+   ]
+  },
+  {
+   "m": 3,
+   "s": "この{話|はなし}は{誰|だれ}にも{言|い}わずに、ずっと（　）にしていた。",
+   "o": [
+    "裏側",
+    "内緒",
+    "後方",
+    "中身"
+   ],
+   "or": [
+    "うらがわ",
+    "ないしょ",
+    "こうほう",
+    "なかみ"
+   ],
+   "a": 1,
+   "w": "内緒",
+   "r": "ないしょ",
+   "mean": [
+    "sır, gizli",
+    "secret",
+    "秘密"
+   ],
+   "p": [
+    [
+     "内",
+     "ナイ",
+     [
+      "iç",
+      "inside",
+      "内"
+     ]
+    ],
+    [
+     "緒",
+     "ショ",
+     [
+      "ip ucu",
+      "thread end",
+      "线头"
+     ]
+    ]
+   ],
+   "tip": [
+    "内緒にする = sır olarak tutmak. 'これ、内緒ね' = bu aramızda kalsın.",
+    "内緒にする = keep secret. 'これ、内緒ね' = keep this between us.",
+    "内緒にする＝保密。“これ、内緒ね”＝这是我们之间的秘密。"
+   ],
+   "tr": [
+    "Bu konuyu kimseye söylemeden hep sır olarak tuttum.",
+    "I kept this story a secret and told no one.",
+    "这件事我一直保密，没告诉任何人。"
+   ]
+  },
+  {
+   "m": 4,
+   "s": "{水|みず}の{表面|ひょうめん}が[かがやいて]います。",
+   "o": [
+    "{止|と}まって",
+    "{揺|ゆ}れて",
+    "{汚|よご}れて",
+    "{光|ひか}って"
+   ],
+   "a": 3,
+   "w": "輝く",
+   "r": "かがやく",
+   "mean": [
+    "parlamak, ışıldamak",
+    "to shine, sparkle",
+    "闪耀"
+   ],
+   "p": [
+    [
+     "輝",
+     "キ / かがや(く)",
+     [
+      "光 (ışık) + 軍 → ışık saçmak",
+      "光 (light) + 軍 → radiating light",
+      "光＋軍 → 发出光芒"
+     ]
+    ]
+   ],
+   "tip": [
+    "輝く ≈ 光る (ışıldamak). 揺れる = sallanmak, 汚れる = kirlenmek, 止まる = durmak.",
+    "輝く ≈ 光る (shine). 揺れる = shake, 汚れる = get dirty, 止まる = stop.",
+    "輝く ≈ 光る（发光）。揺れる 摇晃，汚れる 变脏，止まる 停止。"
+   ],
+   "tr": [
+    "Suyun yüzeyi ışıldıyor.",
+    "The surface of the water is sparkling.",
+    "水面闪闪发光。"
+   ]
+  },
+  {
+   "m": 4,
+   "s": "その{知|し}らせを{聞|き}いたとき、わたしはとても[がっかりした]。",
+   "o": [
+    "{残念|ざんねん}だと{思|おも}った",
+    "うれしかった",
+    "{驚|おどろ}いた",
+    "{安心|あんしん}した"
+   ],
+   "a": 0,
+   "w": "がっかりする",
+   "r": "がっかりする",
+   "mean": [
+    "hayal kırıklığına uğramak",
+    "to be disappointed",
+    "失望"
+   ],
+   "p": [],
+   "tip": [
+    "がっかり = beklentin boşa çıkınca → 残念だと思う. 驚く = şaşırmak, 安心 = rahatlamak.",
+    "がっかり = when expectations fail → 残念だと思う. 驚く = be surprised, 安心 = relief.",
+    "がっかり＝期待落空 → 残念だと思う。驚く＝吃惊，安心＝放心。"
+   ],
+   "tr": [
+    "O haberi duyduğumda çok hayal kırıklığına uğradım.",
+    "I was very disappointed when I heard the news.",
+    "听到那个消息时我非常失望。"
+   ]
+  },
+  {
+   "m": 4,
+   "s": "{留学生活|りゅうがくせいかつ}に{不安|ふあん}は[{当然|とうぜん}]ありました。",
+   "o": [
+    "いろいろ",
+    "{少|すこ}し",
+    "もちろん",
+    "いつも"
+   ],
+   "a": 2,
+   "w": "当然",
+   "r": "とうぜん",
+   "mean": [
+    "doğal olarak, elbette",
+    "naturally, of course",
+    "当然"
+   ],
+   "p": [
+    [
+     "当",
+     "トウ",
+     [
+      "isabet etmek, uygun",
+      "to hit, appropriate",
+      "当、适合"
+     ]
+    ],
+    [
+     "然",
+     "ゼン",
+     [
+      "öyle, durum (自然 しぜん)",
+      "so, state (自然 しぜん)",
+      "然、样子（自然）"
+     ]
+    ]
+   ],
+   "tip": [
+    "当然 = olması doğal → もちろん. 当然です = 'Bu çok normal'.",
+    "当然 = natural that it is so → もちろん. 当然です = 'That's quite normal'.",
+    "当然＝理所当然 → もちろん。当然です＝“这很正常”。"
+   ],
+   "tr": [
+    "Yurt dışı öğrenci hayatında elbette kaygılarım vardı.",
+    "Of course I had worries about studying abroad.",
+    "留学生活当然有不安。"
+   ]
+  },
+  {
+   "m": 4,
+   "s": "パーティーの{料理|りょうり}が[あまりました]。",
+   "o": [
+    "{多|おお}すぎて{残|のこ}りました",
+    "{少|すこ}し{足|た}りませんでした",
+    "とてもおいしかったです",
+    "そんなにおいしくなかったです"
+   ],
+   "a": 0,
+   "w": "余る",
+   "r": "あまる",
+   "mean": [
+    "artmak, fazla kalmak",
+    "to be left over",
+    "剩下"
+   ],
+   "p": [
+    [
+     "余",
+     "ヨ / あま(る)",
+     [
+      "fazlalık (余裕 よゆう = boş zaman/pay)",
+      "surplus (余裕 よゆう = spare time/margin)",
+      "余（余裕＝余地）"
+     ]
+    ]
+   ],
+   "tip": [
+    "余る = gereğinden fazla olup artmak. Tuzak: あまり〜ない (pek değil) ile karıştırma! Karşıtı 足りない.",
+    "余る = be more than needed, be left over. Trap: don't mix with あまり〜ない (not very). Opposite: 足りない.",
+    "余る＝超过需要而剩下。陷阱：别和あまり〜ない（不太）混淆！反义：足りない。"
+   ],
+   "tr": [
+    "Partide yemek arttı.",
+    "There was food left over at the party.",
+    "聚会的菜剩下了。"
+   ]
+  },
+  {
+   "m": 4,
+   "s": "ここは[{横断禁止|おうだんきんし}]です。",
+   "o": [
+    "{座|すわ}ってはいけません",
+    "{渡|わた}ってはいけません",
+    "{走|はし}ってはいけません",
+    "{入|はい}ってはいけません"
+   ],
+   "a": 1,
+   "w": "横断禁止",
+   "r": "おうだんきんし",
+   "mean": [
+    "karşıya geçmek yasak",
+    "no crossing",
+    "禁止横穿"
+   ],
+   "p": [
+    [
+     "横",
+     "オウ / よこ",
+     [
+      "yan, enine",
+      "side, horizontal",
+      "横"
+     ]
+    ],
+    [
+     "断",
+     "ダン",
+     [
+      "kesmek",
+      "to cut",
+      "断"
+     ]
+    ],
+    [
+     "禁",
+     "キン",
+     [
+      "yasaklamak",
+      "to prohibit",
+      "禁止"
+     ]
+    ],
+    [
+     "止",
+     "シ",
+     [
+      "durdurmak",
+      "to stop",
+      "停止"
+     ]
+    ]
+   ],
+   "tip": [
+    "横断 = yolu enine kesmek = karşıya geçmek → 渡る. 横断歩道 おうだんほどう = yaya geçidi. 立入禁止 = girmek yasak.",
+    "横断 = cutting across a road = crossing → 渡る. 横断歩道 = crosswalk. 立入禁止 = no entry.",
+    "横断＝横穿马路 → 渡る。横断歩道＝人行横道。立入禁止＝禁止入内。"
+   ],
+   "tr": [
+    "Burada karşıya geçmek yasaktır.",
+    "Crossing is prohibited here.",
+    "这里禁止横穿马路。"
+   ]
+  },
+  {
+   "m": 5,
+   "s": "[{急|きゅう}]",
+   "o": [
+    "この{料理|りょうり}は{電子|でんし}レンジを{使|つか}って[{急|きゅう}に]できるので、とても{簡単|かんたん}だ。",
+    "あと10{分|ぷん}で{電車|でんしゃ}が{出発|しゅっぱつ}してしまうので、[{急|きゅう}に]{駅|えき}に{向|む}かった。",
+    "{部屋|へや}から[{急|きゅう}に]{人|ひと}が{飛|と}び{出|だ}してきたので、ぶつかりそうになった。",
+    "{新|あたら}しいゲームを{買|か}ったので、{家|いえ}に{帰|かえ}って[{急|きゅう}に]やってみた。"
+   ],
+   "a": 2,
+   "w": "急に",
+   "r": "きゅうに",
+   "mean": [
+    "aniden, birden",
+    "suddenly",
+    "突然"
+   ],
+   "p": [
+    [
+     "急",
+     "キュウ / いそ(ぐ)",
+     [
+      "acele; ani",
+      "hurry; sudden",
+      "急；突然"
+     ]
+    ]
+   ],
+   "tip": [
+    "急に = beklenmedik anda, aniden. 'Hızlıca' için すぐに / 急いで kullanılır (1, 2, 4 bu yüzden yanlış).",
+    "急に = suddenly, unexpectedly. For 'quickly' use すぐに / 急いで (so 1, 2, 4 are wrong).",
+    "急に＝突然。表示“快点”用すぐに／急いで（所以1、2、4错）。"
+   ],
+   "tr": [
+    "Odadan aniden biri fırladı, neredeyse çarpışıyorduk.",
+    "Someone suddenly ran out of the room and nearly hit me.",
+    "有人突然从房间里冲出来，差点撞上。"
+   ]
+  },
+  {
+   "m": 5,
+   "s": "[{沸騰|ふっとう}]",
+   "o": [
+    "{今日|きょう}は{朝|あさ}からどんどん{暑|あつ}くなり、{昼|ひる}には{気温|きおん}が[{沸騰|ふっとう}]した。",
+    "{鍋|なべ}のお{湯|ゆ}が[{沸騰|ふっとう}]したら、とうふを{入|い}れて{火|ひ}を{少|すこ}し{弱|よわ}くしてください。",
+    "{昼|ひる}ごろから{具合|ぐあい}が{悪|わる}くなり、{夕方|ゆうがた}{熱|ねつ}が[{沸騰|ふっとう}]したので{病院|びょういん}へ{行|い}った。",
+    "このストーブは[{沸騰|ふっとう}]するのが{早|はや}いので、すぐに{部屋|へや}が{暖|あたた}かくなる。"
+   ],
+   "a": 1,
+   "w": "沸騰",
+   "r": "ふっとう",
+   "mean": [
+    "kaynama",
+    "boiling",
+    "沸腾"
+   ],
+   "p": [
+    [
+     "沸",
+     "フツ / わ(く)",
+     [
+      "氵 (su) → su kaynamak (お湯が沸く)",
+      "氵 (water) → water boils (お湯が沸く)",
+      "氵（水）→ 水开（お湯が沸く）"
+     ]
+    ],
+    [
+     "騰",
+     "トウ",
+     [
+      "yükselmek",
+      "to rise",
+      "上升"
+     ]
+    ]
+   ],
+   "tip": [
+    "沸騰 sadece sıvılar için: su kaynar. Hava sıcaklığı 上がる, ateş 出る/上がる, oda 暖まる.",
+    "沸騰 is only for liquids. Temperature 上がる, fever 出る/上がる, room 暖まる.",
+    "沸騰只用于液体。气温用上がる，发烧用出る／上がる，房间用暖まる。"
+   ],
+   "tr": [
+    "Tencerede su kaynayınca tofuyu ekle ve ateşi biraz kıs.",
+    "When the water in the pot boils, add the tofu and lower the heat.",
+    "锅里的水沸腾后，放入豆腐并把火调小。"
+   ]
+  },
+  {
+   "m": 5,
+   "s": "[まげる]",
+   "o": [
+    "{今朝|けさ}は{寒|さむ}かったので、マフラーを{首|くび}に[まげて]{出|で}かけた。",
+    "けがは{良|よ}くなったが、{腕|うで}を{伸|の}ばしたり[まげたり]すると、まだ{少|すこ}し{痛|いた}む。",
+    "{一|ひと}つのパンを{半分|はんぶん}に[まげて]、{二人|ふたり}で{分|わ}けて{食|た}べた。",
+    "シャツをきちんと[まげたら]、たんすの{引|ひ}き{出|だ}しにしまってください。"
+   ],
+   "a": 1,
+   "w": "曲げる",
+   "r": "まげる",
+   "mean": [
+    "bükmek",
+    "to bend",
+    "弯曲"
+   ],
+   "p": [
+    [
+     "曲",
+     "キョク / ま(げる)",
+     [
+      "eğri (曲 = şarkı da: 名曲)",
+      "curved (曲 also = song: 名曲)",
+      "弯曲（曲也指歌曲：名曲）"
+     ]
+    ]
+   ],
+   "tip": [
+    "曲げる = bükmek (kol, diz, tel). Atkı 巻く まく, ekmek 割る/分ける, gömlek たたむ.",
+    "曲げる = bend (arm, knee, wire). Scarf 巻く, bread 割る/分ける, shirt たたむ.",
+    "曲げる＝弯曲（手臂、膝盖、铁丝）。围巾用巻く，面包用割る／分ける，衬衫用たたむ。"
+   ],
+   "tr": [
+    "Yara iyileşti ama kolumu uzatıp bükünce hâlâ biraz ağrıyor.",
+    "The injury is better, but it still hurts a little when I bend my arm.",
+    "伤好了，但伸直或弯曲手臂时还有点疼。"
+   ]
+  },
+  {
+   "m": 5,
+   "s": "[{出張|しゅっちょう}]",
+   "o": [
+    "{営業|えいぎょう}のため、{来週|らいしゅう}{一週間|いっしゅうかん}、{課長|かちょう}とアメリカに[{出張|しゅっちょう}]します。",
+    "{仕事|しごと}を{辞|や}めたら、{家族|かぞく}とゆっくり{海外|かいがい}に[{出張|しゅっちょう}]したいと{思|おも}う。",
+    "わたしは{毎朝|まいあさ}9{時|じ}に{会社|かいしゃ}に[{出張|しゅっちょう}]し、{残業|ざんぎょう}はしないで{家|いえ}に{帰|かえ}る。",
+    "あしたは{子|こ}どもの{運動会|うんどうかい}に[{出張|しゅっちょう}]するので、{仕事|しごと}を{休|やす}みます。"
+   ],
+   "a": 0,
+   "w": "出張",
+   "r": "しゅっちょう",
+   "mean": [
+    "iş seyahati",
+    "business trip",
+    "出差"
+   ],
+   "p": [
+    [
+     "出",
+     "シュツ",
+     [
+      "çıkmak",
+      "to go out",
+      "出"
+     ]
+    ],
+    [
+     "張",
+     "チョウ",
+     [
+      "germek, yaymak",
+      "to stretch, spread",
+      "张开、展开"
+     ]
+    ]
+   ],
+   "tip": [
+    "出張 = iş için başka yere gitmek. Tatil 旅行, her gün işe gitmek 出勤 しゅっきん, etkinliğe katılmak 参加.",
+    "出張 = going somewhere for work. Vacation 旅行, daily commute 出勤, joining an event 参加.",
+    "出張＝因工作去别处。旅游用旅行，每天上班用出勤，参加活动用参加。"
+   ],
+   "tr": [
+    "Satış için gelecek hafta bir haftalığına müdürle Amerika'ya iş seyahatine gidiyorum.",
+    "Next week I'm going to America on business with my manager for a week.",
+    "下周我要和科长去美国出差一周。"
+   ]
+  },
+  {
+   "m": 5,
+   "s": "[{慰|なぐさ}める]",
+   "o": [
+    "{祖母|そぼ}は{古|ふる}い{物|もの}でも{捨|す}てないで、{長|なが}い{間|あいだ}[{慰|なぐさ}めて]{使|つか}っている。",
+    "{試合|しあい}を{見|み}ながら、{優勝|ゆうしょう}を{願|ねが}って{一生懸命|いっしょうけんめい}{選手|せんしゅ}を[{慰|なぐさ}めた]。",
+    "{仕事|しごと}で{失敗|しっぱい}してしまったが、{友人|ゆうじん}が[{慰|なぐさ}めて]くれたので{元気|げんき}が{出|で}た。",
+    "{弟|おとうと}が{希望|きぼう}の{大学|だいがく}に{合格|ごうかく}したので、{家族|かぞく}で{外食|がいしょく}をして[{慰|なぐさ}めた]。"
+   ],
+   "a": 2,
+   "w": "慰める",
+   "r": "なぐさめる",
+   "mean": [
+    "teselli etmek",
+    "to comfort",
+    "安慰"
+   ],
+   "p": [
+    [
+     "慰",
+     "イ / なぐさ(める)",
+     [
+      "心 (kalp) → kalbi rahatlatmak",
+      "心 (heart) → easing the heart",
+      "心 → 抚慰内心"
+     ]
+    ]
+   ],
+   "tip": [
+    "慰める = üzgün birini teselli etmek. Eşyayı korumak 大切にする, oyuncuyu desteklemek 応援する, başarıyı kutlamak 祝う.",
+    "慰める = comfort someone who is sad. Take care of things 大切にする, cheer a player 応援する, celebrate 祝う.",
+    "慰める＝安慰伤心的人。爱惜物品用大切にする，为选手加油用応援する，祝贺用祝う。"
+   ],
+   "tr": [
+    "İşte hata yaptım ama arkadaşım teselli edince moralim düzeldi.",
+    "I failed at work, but a friend comforted me and I felt better.",
+    "工作失败了，但朋友安慰了我，我又振作起来了。"
+   ]
+  }
+ ],
+ "readings": {
+  "1": {
+   "t": "サッカーの{試合|しあい}",
+   "j": [
+    "{日曜日|にちようび}、{友達|ともだち}とサッカーの{試合|しあい}を{見|み}に{行|い}った。",
+    "{駅|えき}に[{到着|とうちゃく}]すると、もう[{観客|かんきゃく}]がたくさんいた。",
+    "チケット{代|だい}は{友達|ともだち}が[{払|はら}って]くれた。{値段|ねだん}には[{税金|ぜいきん}]も[{加|くわ}えられて]いた。",
+    "{選手|せんしゅ}たちは{毎日|まいにち}きびしい[{訓練|くんれん}]をしているそうだ。",
+    "{試合|しあい}のあと、[{豆|まめ}]のスープを{飲|の}みながら、{二人|ふたり}の[{共通|きょうつう}]の{趣味|しゅみ}について{話|はな}した。"
+   ],
+   "tr": [
+    "Pazar günü arkadaşımla futbol maçına gittim. İstasyona vardığımızda çok seyirci vardı. Bileti arkadaşım ödedi; fiyata vergi de eklenmişti. Oyuncular her gün sıkı antrenman yapıyormuş. Maçtan sonra fasulye çorbası içip ortak hobimiz hakkında konuştuk.",
+    "On Sunday I went to a soccer match with a friend. When we arrived at the station there were already many spectators. My friend paid for the tickets; tax was added to the price. The players apparently train hard every day. After the match we had bean soup and talked about our common hobby.",
+    "星期天我和朋友去看足球比赛。到车站时已经有很多观众了。票钱是朋友付的，价格里还加了税。听说选手们每天都进行严格的训练。比赛后我们喝着豆汤，聊了两人共同的爱好。"
+   ]
+  },
+  "2": {
+   "t": "{海|うみ}の{町|まち}",
+   "j": [
+    "わたしの{町|まち}には{大|おお}きな{港|みなと}があって、{魚|さかな}を{外国|がいこく}に[{輸出|ゆしゅつ}]している。",
+    "{夕方|ゆうがた}、{父|ちち}は{腕|うで}を[{組|く}んで]、{静|しず}かに[{波|なみ}]を{見|み}ている。",
+    "{父|ちち}は「この{町|まち}の{生活|せいかつ}に[{満足|まんぞく}]している」と{言|い}う。",
+    "{風|かぜ}が{冷|つめ}たくなったので、わたしたちは[{速|はや}く]{歩|ある}いて{家|いえ}に{帰|かえ}った。",
+    "その{夜|よる}は{波|なみ}の{音|おと}を{聞|き}きながら、ぐっすり[{眠|ねむ}った]。"
+   ],
+   "tr": [
+    "Kasabamda büyük bir liman var ve balık yurt dışına ihraç ediliyor. Akşamları babam kollarını kavuşturup sessizce dalgaları izler. Babam 'Bu kasabadaki hayatımdan memnunum' der. Rüzgâr soğuyunca hızlı yürüyüp eve döndük. O gece dalga sesini dinleyerek derin uyudum.",
+    "My town has a big port that exports fish abroad. In the evening my father crosses his arms and quietly watches the waves. He says he is satisfied with life here. The wind got cold, so we walked home quickly. That night I slept deeply, listening to the waves.",
+    "我的城市有一个大港口，向国外出口鱼。傍晚，父亲抱着胳膊静静地看着海浪。他说对这里的生活很满足。风变冷了，我们快步走回了家。那天晚上我听着海浪声睡得很香。"
+   ]
+  },
+  "3": {
+   "t": "ふるさとの{店|みせ}",
+   "j": [
+    "わたしのふるさとは[{農業|のうぎょう}]が{盛|さか}んな{町|まち}だ。",
+    "{駅前|えきまえ}のレストランは、{前|まえ}はいつも[がらがら]だった。",
+    "でも「{新|あたら}しいシェフが{来|き}た」という[うわさ]を{聞|き}いて、{行|い}ってみた。",
+    "{本当|ほんとう}かどうか[{確|たし}かめる]ためだ。{料理|りょうり}の[{特長|とくちょう}]は{地元|じもと}の{野菜|やさい}だった。",
+    "シェフは{背|せ}が{高|たか}くて[{姿勢|しせい}]がよく、こわい[イメージ]だったが、とてもやさしかった。",
+    "{家族|かぞく}でテーブルを[{囲|かこ}んで]{食|た}べていると、{日|ひ}が[{沈|しず}んで]いった。",
+    "{実|じつ}は{予約|よやく}を{忘|わす}れていたが、{店|みせ}の{人|ひと}は[{許|ゆる}して]くれた。これは{母|はは}には[{内緒|ないしょ}]だ。"
+   ],
+   "tr": [
+    "Memleketim tarımı gelişmiş bir kasaba. İstasyon önündeki restoran eskiden hep bomboştu. Ama 'yeni bir şef geldi' söylentisini duyunca gittim; doğru mu diye emin olmak için. Yemeklerin güçlü yanı yerel sebzelerdi. Şef uzun boylu, dik duruşluydu; korkutucu bir imajı vardı ama çok nazikti. Ailece masanın etrafında yerken güneş battı. Aslında rezervasyonu unutmuştum ama çalışanlar affetti. Bu anneme sır.",
+    "My hometown is a farming town. The restaurant by the station used to be always empty. But I heard a rumor that a new chef had come, so I went to check if it was true. The dish's strong point was local vegetables. The chef was tall with good posture and looked scary, but was very kind. As my family ate around the table, the sun went down. Actually I had forgotten my reservation, but the staff forgave me. That's a secret from my mother.",
+    "我的家乡是农业发达的小镇。车站前的餐厅以前总是空荡荡的。但听到“来了新厨师”的传闻，我就去确认是不是真的。菜的特点是本地蔬菜。厨师个子高、姿势端正，给人可怕的印象，但其实很温柔。家人围着桌子吃饭时，太阳落山了。其实我忘了预约，但店员原谅了我。这件事要对妈妈保密。"
+   ]
+  },
+  "4": {
+   "t": "パーティーの{夜|よる}",
+   "j": [
+    "{留学生|りゅうがくせい}のパーティーがあった。{日本|にほん}の{生活|せいかつ}に{不安|ふあん}があるのは[{当然|とうぜん}]だ。",
+    "でも、みんなの{目|め}が[{輝|かがや}いて]いて、{楽|たの}しそうだった。",
+    "{料理|りょうり}をたくさん{作|つく}ったので、{少|すこ}し[{余|あま}って]しまった。",
+    "{帰|かえ}り{道|みち}、{近|ちか}い{道|みち}は[{横断禁止|おうだんきんし}]で{渡|わた}れなかった。",
+    "バスも{行|い}ってしまって、ちょっと[がっかり]した。"
+   ],
+   "tr": [
+    "Yabancı öğrencilerin partisi vardı. Japonya'daki hayat hakkında kaygı olması doğal. Ama herkesin gözleri parlıyordu, mutlu görünüyorlardı. Çok yemek yaptığımız için biraz arttı. Dönüş yolunda kısa yolda karşıya geçmek yasaktı, geçemedik. Otobüsü de kaçırınca biraz hayal kırıklığına uğradım.",
+    "There was a party for international students. Of course people worry about life in Japan. But everyone's eyes were shining and they looked happy. We cooked so much that some food was left over. On the way home, crossing was prohibited on the short road. The bus had also left, so I was a bit disappointed.",
+    "有一个留学生聚会。对日本的生活感到不安是理所当然的。但大家的眼睛闪闪发光，看起来很开心。菜做得太多，剩下了一些。回家路上，近路禁止横穿，过不去。公交车也开走了，我有点失望。"
+   ]
+  },
+  "5": {
+   "t": "{出張|しゅっちょう}の{日|ひ}",
+   "j": [
+    "{来週|らいしゅう}、{課長|かちょう}と{大阪|おおさか}へ[{出張|しゅっちょう}]することになった。",
+    "{準備|じゅんび}をしていたら、[{急|きゅう}に]{会議|かいぎ}の{時間|じかん}が{変|か}わった。",
+    "{急|いそ}いで{動|うご}いたので、{膝|ひざ}を[{曲|ま}げる]と{少|すこ}し{痛|いた}い。",
+    "{夜|よる}、お{湯|ゆ}が[{沸騰|ふっとう}]するのを{待|ま}ちながら、{資料|しりょう}を{読|よ}んだ。",
+    "{失敗|しっぱい}しないか{心配|しんぱい}だったが、{同僚|どうりょう}が「{大丈夫|だいじょうぶ}だよ」と[{慰|なぐさ}めて]くれた。"
+   ],
+   "tr": [
+    "Gelecek hafta müdürle Osaka'ya iş seyahatine gideceğim. Hazırlanırken toplantı saati aniden değişti. Acele hareket ettiğim için dizimi bükünce biraz ağrıyor. Akşam suyun kaynamasını beklerken belgeleri okudum. Hata yaparım diye endişeliydim ama iş arkadaşım 'Merak etme' diye teselli etti.",
+    "Next week I'm going to Osaka on business with my manager. While preparing, the meeting time suddenly changed. I moved in a hurry, so my knee hurts a little when I bend it. At night I read the documents while waiting for the water to boil. I was worried about failing, but a colleague comforted me: 'It'll be fine.'",
+    "下周我要和科长去大阪出差。准备的时候，会议时间突然变了。因为匆忙行动，弯膝盖时有点疼。晚上一边等水沸腾一边看资料。我担心会失败，但同事安慰我说“没关系的”。"
+   ]
+  }
+ }
+}
