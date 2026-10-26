@@ -1,0 +1,5238 @@
+{
+ "hero": {
+  "title": "🌻 <span>N4 Japonca</span> Rehberim",
+  "lead": "Ramazan'a özel — JLPT N4 dilbilgisi (tam liste), N4 kanji &amp; kelime, romaji + Türkçe. Her konuda 5-6 örnek cümle, konu grupları için sınavlar.",
+  "badge": "🎓 N5 tamamlandı → şimdi N4! · Sağ alttaki 🌻 ile menü"
+ },
+ "toc": [
+  {
+   "label": "🈹 Fiil Formları (N4 belkemiği)",
+   "links": [
+    {
+     "id": "potential",
+     "emoji": "⚡",
+     "label": "可能形 — Yapabilmek (〜られる/せる)"
+    },
+    {
+     "id": "volitional",
+     "emoji": "🙋",
+     "label": "意向形 — 〜よう + と思う/とする"
+    },
+    {
+     "id": "imperative",
+     "emoji": "🗯️",
+     "label": "命令形・禁止形 — Emir & sert yasak"
+    },
+    {
+     "id": "passive",
+     "emoji": "🎭",
+     "label": "受身形 — Edilgen (〜られる)"
+    },
+    {
+     "id": "causative",
+     "emoji": "👉",
+     "label": "使役形 — Ettirgen (〜させる)"
+    },
+    {
+     "id": "caus-passive",
+     "emoji": "😣",
+     "label": "使役受身 — Zorunda bırakılmak"
+    }
+   ]
+  },
+  {
+   "label": "🔀 Koşullar",
+   "links": [
+    {
+     "id": "tara",
+     "emoji": "🔀",
+     "label": "〜たら — ...sa / ...ınca"
+    },
+    {
+     "id": "ba",
+     "emoji": "➰",
+     "label": "〜ば — ...sa (koşul)"
+    },
+    {
+     "id": "nara",
+     "emoji": "💡",
+     "label": "〜なら — ...ysa / konusundaysa"
+    }
+   ]
+  },
+  {
+   "label": "🤝 Verme & Alma",
+   "links": [
+    {
+     "id": "ageru",
+     "emoji": "🎁",
+     "label": "あげる・くれる・もらう"
+    },
+    {
+     "id": "te-juyo",
+     "emoji": "🤝",
+     "label": "〜てあげる・てくれる・てもらう"
+    }
+   ]
+  },
+  {
+   "label": "🔵 て形 Uzantıları",
+   "links": [
+    {
+     "id": "te-oku",
+     "emoji": "📦",
+     "label": "〜ておく — Önceden hazırlık"
+    },
+    {
+     "id": "te-shimau",
+     "emoji": "💥",
+     "label": "〜てしまう — Bitirme / pişmanlık"
+    },
+    {
+     "id": "te-miru",
+     "emoji": "🧪",
+     "label": "〜てみる — Deneme"
+    },
+    {
+     "id": "te-iku-kuru",
+     "emoji": "🚶",
+     "label": "〜ていく・〜てくる"
+    },
+    {
+     "id": "te-aru",
+     "emoji": "🪧",
+     "label": "〜てある — Hazırlanmış durum"
+    }
+   ]
+  },
+  {
+   "label": "🔮 Tahmin & Kip",
+   "links": [
+    {
+     "id": "sou-densetsu",
+     "emoji": "📻",
+     "label": "〜そうです — Söylenene göre"
+    },
+    {
+     "id": "sou-mitame",
+     "emoji": "👀",
+     "label": "〜そうです — Görünüşe göre"
+    },
+    {
+     "id": "you-mitai",
+     "emoji": "🌫️",
+     "label": "〜ようだ・〜みたいだ — ...gibi"
+    },
+    {
+     "id": "rashii",
+     "emoji": "🧩",
+     "label": "〜らしい — Anlaşılan / tipik"
+    },
+    {
+     "id": "hazu",
+     "emoji": "✔️",
+     "label": "〜はず — Olması gerek"
+    },
+    {
+     "id": "kamo",
+     "emoji": "🎲",
+     "label": "〜かもしれない — Olabilir"
+    },
+    {
+     "id": "darou",
+     "emoji": "🔮",
+     "label": "〜だろう・でしょう — Herhalde"
+    }
+   ]
+  },
+  {
+   "label": "⛔ Zorunluluk & İzin",
+   "links": [
+    {
+     "id": "nakereba",
+     "emoji": "⛔",
+     "label": "〜なければならない — Zorunluluk"
+    },
+    {
+     "id": "nakutemo",
+     "emoji": "🆗",
+     "label": "〜なくてもいい — Gerek yok"
+    },
+    {
+     "id": "permission",
+     "emoji": "✋",
+     "label": "〜てもいい・〜てはいけない"
+    }
+   ]
+  },
+  {
+   "label": "🔗 Sebep & Zıtlık",
+   "links": [
+    {
+     "id": "node",
+     "emoji": "🔗",
+     "label": "〜ので — Çünkü (nazik)"
+    },
+    {
+     "id": "noni",
+     "emoji": "😤",
+     "label": "〜のに — ...masına rağmen"
+    },
+    {
+     "id": "shi",
+     "emoji": "➕",
+     "label": "〜し — Hem...hem (sebep)"
+    },
+    {
+     "id": "tame",
+     "emoji": "🎯",
+     "label": "〜ために・ため — Amaç & sebep"
+    }
+   ]
+  },
+  {
+   "label": "🔄 Amaç, Değişim & Karar",
+   "links": [
+    {
+     "id": "youni",
+     "emoji": "🙏",
+     "label": "〜ように — ...sın diye"
+    },
+    {
+     "id": "youni-suru-naru",
+     "emoji": "🔄",
+     "label": "〜ようにする・〜ようになる"
+    },
+    {
+     "id": "koto-ni",
+     "emoji": "🧭",
+     "label": "〜ことにする・〜ことになる"
+    },
+    {
+     "id": "tsumori",
+     "emoji": "📝",
+     "label": "〜つもり — Niyet"
+    },
+    {
+     "id": "yotei",
+     "emoji": "📅",
+     "label": "〜予定 — Plan"
+    }
+   ]
+  },
+  {
+   "label": "🧱 Diğer Temel N4",
+   "links": [
+    {
+     "id": "nagara",
+     "emoji": "🎧",
+     "label": "〜ながら — Aynı anda"
+    },
+    {
+     "id": "sugiru",
+     "emoji": "🈵",
+     "label": "〜すぎる — Aşırı / fazla"
+    },
+    {
+     "id": "yasui-nikui",
+     "emoji": "⚖️",
+     "label": "〜やすい・〜にくい"
+    },
+    {
+     "id": "kata",
+     "emoji": "🛠️",
+     "label": "〜方 — Yapılış şekli"
+    },
+    {
+     "id": "kadouka",
+     "emoji": "❓",
+     "label": "〜かどうか — ...olup olmadığı"
+    },
+    {
+     "id": "to-omou",
+     "emoji": "💭",
+     "label": "〜と思う・〜と言っていた"
+    },
+    {
+     "id": "mama",
+     "emoji": "🔒",
+     "label": "〜まま — ...haliyle"
+    },
+    {
+     "id": "bahodo",
+     "emoji": "📈",
+     "label": "〜ば〜ほど — ...dıkça"
+    },
+    {
+     "id": "gimonshi",
+     "emoji": "✳️",
+     "label": "疑問詞＋も/でも/か"
+    },
+    {
+     "id": "jita",
+     "emoji": "🔁",
+     "label": "自動詞・他動詞 — Geçişli/geçişsiz"
+    },
+    {
+     "id": "keigo",
+     "emoji": "🎎",
+     "label": "敬語 — Saygı dili (giriş)"
+    }
+   ]
+  },
+  {
+   "label": "🈁 Kanji & Kelime",
+   "links": [
+    {
+     "id": "kanji-n4",
+     "emoji": "🈵",
+     "label": "N4 Kanji — Liste"
+    },
+    {
+     "id": "vocab-n4",
+     "emoji": "📝",
+     "label": "N4 Kelime — Temaya göre"
+    }
+   ]
+  },
+  {
+   "label": "🎓 Sınav Merkezi",
+   "links": [
+    {
+     "id": "exam-center",
+     "emoji": "🎓",
+     "label": "Sınav Merkezi — Tüm quizler"
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "potential",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "⚡",
+     "title": "<ruby>可能形<rt>かのうけい</rt></ruby> — Yapabilmek (Potansiyel)",
+     "sub": "\"...abilmek / ...ebilmek\" — bir şeyi yapma yeteneği/imkânı."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Çekim (grup grup):</strong><br> <strong>1. grup:</strong> son <code>う</code> sırası → <code>え</code> sırası + る → <ruby>話<rt>はな</rt></ruby>す→<ruby>話<rt>はな</rt></ruby>せる · <ruby>行<rt>い</rt></ruby>く→<ruby>行<rt>い</rt></ruby>ける · <ruby>飲<rt>の</rt></ruby>む→<ruby>飲<rt>の</rt></ruby>める<br> <strong>2. grup:</strong> る → <code>られる</code> → <ruby>食<rt>た</rt></ruby>べる→<ruby>食<rt>た</rt></ruby>べられる · <ruby>見<rt>み</rt></ruby>る→<ruby>見<rt>み</rt></ruby>られる<br> <strong>3. grup:</strong> する→<code>できる</code> · <ruby>来<rt>く</rt></ruby>る→<ruby>来<rt>こ</rt></ruby>られる"
+    },
+    {
+     "t": "rule",
+     "tone": "sky",
+     "html": "<strong>⚠️ Partikel değişir:</strong> nesne <code>を</code> çoğunlukla <code>が</code> olur → <ruby>日本語<rt>にほんご</rt></ruby><u>を</u><ruby>話<rt>はな</rt></ruby>す → <ruby>日本語<rt>にほんご</rt></ruby><u>が</u><ruby>話<rt>はな</rt></ruby>せる."
+    },
+    {
+     "t": "card",
+     "title": "📊 Çekim tablosu",
+     "blocks": [
+      {
+       "t": "table",
+       "html": "<table class=\"group-table\"> <tr><th>Sözlük</th><th>Grup</th><th>Potansiyel</th></tr> <tr><td><ruby>書<rt>か</rt></ruby>く</td><td class=\"g1\">1</td><td><ruby>書<rt>か</rt></ruby>ける</td></tr> <tr><td><ruby>泳<rt>およ</rt></ruby>ぐ</td><td class=\"g1\">1</td><td><ruby>泳<rt>およ</rt></ruby>げる</td></tr> <tr><td><ruby>買<rt>か</rt></ruby>う</td><td class=\"g1\">1</td><td><ruby>買<rt>か</rt></ruby>える</td></tr> <tr><td><ruby>食<rt>た</rt></ruby>べる</td><td class=\"g2\">2</td><td><ruby>食<rt>た</rt></ruby>べられる</td></tr> <tr><td>する</td><td class=\"g3\">3</td><td>できる</td></tr> <tr><td><ruby>来<rt>く</rt></ruby>る</td><td class=\"g3\">3</td><td><ruby>来<rt>こ</rt></ruby>られる</td></tr> </table>"
+      }
+     ]
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>私<rt>わたし</rt></ruby>は<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>少<rt>すこ</rt></ruby>し<mark><ruby>話<rt>はな</rt></ruby>せます</mark>。",
+     "romaji": "Watashi wa nihongo ga sukoshi hanasemasu.",
+     "tr": "Ben biraz Japonca konuşabiliyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>漢字<rt>かんじ</rt></ruby>が<mark><ruby>読<rt>よ</rt></ruby>めますか</mark>。",
+     "romaji": "Kono kanji ga yomemasu ka?",
+     "tr": "Bu kanjiyi okuyabiliyor musun?",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>明日<rt>あした</rt></ruby>は<ruby>早<rt>はや</rt></ruby>く<mark><ruby>来<rt>こ</rt></ruby>られます</mark>。",
+     "romaji": "Ashita wa hayaku koraremasu.",
+     "tr": "Yarın erken gelebilirim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>店<rt>みせ</rt></ruby>でクレジットカードが<mark><ruby>使<rt>つか</rt></ruby>えます</mark>。",
+     "romaji": "Kono mise de kurejitto kādo ga tsukaemasu.",
+     "tr": "Bu mağazada kredi kartı kullanılabiliyor.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>昨日<rt>きのう</rt></ruby>は<ruby>忙<rt>いそが</rt></ruby>しくて、<mark><ruby>寝<rt>ね</rt></ruby>られませんでした</mark>。",
+     "romaji": "Kinō wa isogashikute, neraremasen deshita.",
+     "tr": "Dün meşguldüm, uyuyamadım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>納豆<rt>なっとう</rt></ruby>が<mark><ruby>食<rt>た</rt></ruby>べられますか</mark>。 — いいえ、<mark><ruby>食<rt>た</rt></ruby>べられません</mark>。",
+     "romaji": "Nattō ga taberaremasu ka? — Iie, taberaremasen.",
+     "tr": "Natto yiyebiliyor musun? — Hayır, yiyemiyorum.",
+     "tag": "⚡ Potansiyel"
+    }
+   ]
+  },
+  {
+   "id": "volitional",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🙋",
+     "title": "<ruby>意向形<rt>いこうけい</rt></ruby> — 〜(よ)う (\"Hadi... / ...ayım\")",
+     "sub": "İrade formu: teklif, niyet (〜と<ruby>思<rt>おも</rt></ruby>う), çaba (〜とする)."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Çekim:</strong><br> <strong>1. grup:</strong> <code>う</code> sırası → <code>お</code> sırası + う → <ruby>行<rt>い</rt></ruby>く→<ruby>行<rt>い</rt></ruby>こう · <ruby>飲<rt>の</rt></ruby>む→<ruby>飲<rt>の</rt></ruby>もう · <ruby>話<rt>はな</rt></ruby>す→<ruby>話<rt>はな</rt></ruby>そう<br> <strong>2. grup:</strong> る → <code>よう</code> → <ruby>食<rt>た</rt></ruby>べる→<ruby>食<rt>た</rt></ruby>べよう<br> <strong>3. grup:</strong> する→<code>しよう</code> · <ruby>来<rt>く</rt></ruby>る→<ruby>来<rt>こ</rt></ruby>よう"
+    },
+    {
+     "t": "rule",
+     "tone": "sky",
+     "html": "<strong>Kullanımlar:</strong><br> ① <code>〜(よ)う</code> tek başına = arkadaşça \"hadi ...alım\" (= ましょう'nun samimi hâli).<br> ② <code>〜(よ)うと<ruby>思<rt>おも</rt></ruby>う</code> = \"...mayı düşünüyorum / niyetindeyim\".<br> ③ <code>〜(よ)うとする</code> = \"...maya çalışmak / ...mak üzereyken\"."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>週末<rt>しゅうまつ</rt></ruby>、<ruby>映画<rt>えいが</rt></ruby>を<mark><ruby>見<rt>み</rt></ruby>ようと<ruby>思<rt>おも</rt></ruby>います</mark>。",
+     "romaji": "Shūmatsu, eiga o miyō to omoimasu.",
+     "tr": "Hafta sonu film izlemeyi düşünüyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>日本<rt>にほん</rt></ruby>で<mark><ruby>働<rt>はたら</rt></ruby>こうと<ruby>思<rt>おも</rt></ruby>っています</mark>。",
+     "romaji": "Nihon de hatarakō to omotte imasu.",
+     "tr": "Japonya'da çalışmayı düşünüyorum. (uzun süredir niyet)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>一緒<rt>いっしょ</rt></ruby>に<mark><ruby>帰<rt>かえ</rt></ruby>ろう</mark>。",
+     "romaji": "Issho ni kaerō.",
+     "tr": "Beraber dönelim. (arkadaşça teklif)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>早<rt>はや</rt></ruby>く<mark><ruby>寝<rt>ね</rt></ruby>ようと<ruby>思<rt>おも</rt></ruby>いました</mark>が、<ruby>寝<rt>ね</rt></ruby>られませんでした。",
+     "romaji": "Hayaku neyō to omoimashita ga, neraremasen deshita.",
+     "tr": "Erken uyumaya niyetlendim ama uyuyamadım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "タクシーに<mark><ruby>乗<rt>の</rt></ruby>ろうとした</mark>とき、<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ってきました。",
+     "romaji": "Takushī ni norō to shita toki, ame ga futte kimashita.",
+     "tr": "Taksiye binmeye çalışırken yağmur başladı.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>大学<rt>だいがく</rt></ruby>で<ruby>日本語<rt>にほんご</rt></ruby>を<mark><ruby>勉強<rt>べんきょう</rt></ruby>しようと<ruby>思<rt>おも</rt></ruby>っています</mark>。",
+     "romaji": "Daigaku de nihongo o benkyō shiyō to omotte imasu.",
+     "tr": "Üniversitede Japonca çalışmayı düşünüyorum.",
+     "tag": "🙋 İrade / niyet"
+    }
+   ]
+  },
+  {
+   "id": "imperative",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🗯️",
+     "title": "<ruby>命令形<rt>めいれいけい</rt></ruby>・<ruby>禁止形<rt>きんしけい</rt></ruby> — Emir &amp; Sert Yasak",
+     "sub": "Kaba/güçlü emir (erkek dili, tabela, spor, aktarım) ve 〜な yasağı."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>命令形 (emir):</strong><br> <strong>1. grup:</strong> <code>う</code>→<code>え</code> → <ruby>行<rt>い</rt></ruby>く→<ruby>行<rt>い</rt></ruby>け · <ruby>飲<rt>の</rt></ruby>む→<ruby>飲<rt>の</rt></ruby>め · <ruby>止<rt>と</rt></ruby>まる→<ruby>止<rt>と</rt></ruby>まれ<br> <strong>2. grup:</strong> る→<code>ろ</code> → <ruby>食<rt>た</rt></ruby>べる→<ruby>食<rt>た</rt></ruby>べろ<br> <strong>3. grup:</strong> する→<code>しろ</code> · <ruby>来<rt>く</rt></ruby>る→<code>こい</code>"
+    },
+    {
+     "t": "rule",
+     "tone": "orange",
+     "html": "<strong>禁止形 (yasak):</strong> <code><ruby>辞書形<rt>じしょけい</rt></ruby> + な</code> → <ruby>行<rt>い</rt></ruby>く<u>な</u> (gitme!) · <ruby>見<rt>み</rt></ruby>る<u>な</u> (bakma!).<br> 💡 Yumuşak emir: <code>ますkökü + なさい</code> → <ruby>食<rt>た</rt></ruby>べなさい · <ruby>静<rt>しず</rt></ruby>かにしなさい (anne/öğretmen tonu)."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>早<rt>はや</rt></ruby>く<mark><ruby>起<rt>お</rt></ruby>きろ</mark>！",
+     "romaji": "Hayaku okiro!",
+     "tr": "Çabuk kalk!",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<mark><ruby>止<rt>と</rt></ruby>まれ</mark>！",
+     "romaji": "Tomare!",
+     "tr": "Dur! (trafik tabelası)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "ここに<mark><ruby>入<rt>はい</rt></ruby>るな</mark>。",
+     "romaji": "Koko ni hairu na.",
+     "tr": "Buraya girme. (yasak)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<mark><ruby>頑張<rt>がんば</rt></ruby>れ</mark>！<ruby>負<rt>ま</rt></ruby>けるな！",
+     "romaji": "Ganbare! Makeru na!",
+     "tr": "Dayan! Pes etme! (spor tezahüratı)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>子<rt>こ</rt></ruby>どもに「<ruby>静<rt>しず</rt></ruby>かに<mark>しなさい</mark>」と<ruby>言<rt>い</rt></ruby>いました。",
+     "romaji": "Kodomo ni \"shizuka ni shinasai\" to iimashita.",
+     "tr": "Çocuğa \"sessiz ol\" dedim. (yumuşak emir)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>先生<rt>せんせい</rt></ruby>は「<mark><ruby>逃<rt>に</rt></ruby>げろ</mark>」と<ruby>言<rt>い</rt></ruby>いました。",
+     "romaji": "Sensei wa \"nigero\" to iimashita.",
+     "tr": "Öğretmen \"kaçın!\" dedi. (aktarımda emir sık kullanılır)",
+     "tag": "🗯️ Sert emir"
+    }
+   ]
+  },
+  {
+   "id": "passive",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🎭",
+     "title": "<ruby>受身形<rt>うけみけい</rt></ruby> — Edilgen (\"...ıldı / ...e maruz kaldım\")",
+     "sub": "Eylemi yapan <code>に</code> ile gösterilir. Sık: başına iş gelme (<ruby>迷惑<rt>めいわく</rt></ruby>)."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Çekim:</strong><br> <strong>1. grup:</strong> <code>う</code>→<code>あ</code>+れる → <ruby>言<rt>い</rt></ruby>う→<ruby>言<rt>い</rt></ruby>われる · <ruby>読<rt>よ</rt></ruby>む→<ruby>読<rt>よ</rt></ruby>まれる · <ruby>取<rt>と</rt></ruby>る→<ruby>取<rt>と</rt></ruby>られる &#160;(う→<u>わ</u>れる!)<br> <strong>2. grup:</strong> る→<code>られる</code> → <ruby>食<rt>た</rt></ruby>べる→<ruby>食<rt>た</rt></ruby>べられる<br> <strong>3. grup:</strong> する→<code>される</code> · <ruby>来<rt>く</rt></ruby>る→<ruby>来<rt>こ</rt></ruby>られる"
+    },
+    {
+     "t": "rule",
+     "tone": "sky",
+     "html": "<strong>Yapı:</strong> <code>A は B に [fiil-受身]</code> → \"A, B tarafından ...ıldı\".<br> 😣 <strong>Zarar edilgeni:</strong> <ruby>雨<rt>あめ</rt></ruby>に<ruby>降<rt>ふ</rt></ruby>られた (yağmura yakalandım) gibi, başına gelen olumsuzluk."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>先生<rt>せんせい</rt></ruby>に<mark><ruby>褒<rt>ほ</rt></ruby>められました</mark>。",
+     "romaji": "Sensei ni homeraremashita.",
+     "tr": "Öğretmen tarafından övüldüm.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>弟<rt>おとうと</rt></ruby>に<ruby>私<rt>わたし</rt></ruby>のケーキを<mark><ruby>食<rt>た</rt></ruby>べられました</mark>。",
+     "romaji": "Otōto ni watashi no kēki o taberaremashita.",
+     "tr": "Kardeşim pastamı yedi (başıma iş açtı / canım sıkıldı).",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>電車<rt>でんしゃ</rt></ruby>で<ruby>足<rt>あし</rt></ruby>を<mark><ruby>踏<rt>ふ</rt></ruby>まれました</mark>。",
+     "romaji": "Densha de ashi o fumaremashita.",
+     "tr": "Trende ayağıma basıldı.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>帰<rt>かえ</rt></ruby>るとき、<ruby>雨<rt>あめ</rt></ruby>に<mark><ruby>降<rt>ふ</rt></ruby>られて</mark>、<ruby>濡<rt>ぬ</rt></ruby>れました。",
+     "romaji": "Kaeru toki, ame ni furarete, nuremashita.",
+     "tr": "Dönerken yağmura yakalanıp ıslandım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "このビルは1990<ruby>年<rt>ねん</rt></ruby>に<mark><ruby>建<rt>た</rt></ruby>てられました</mark>。",
+     "romaji": "Kono biru wa sen-kyūhyaku-kyūjū-nen ni tateraremashita.",
+     "tr": "Bu bina 1990 yılında inşa edildi.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "みんなに<mark><ruby>笑<rt>わら</rt></ruby>われました</mark>。",
+     "romaji": "Minna ni warawaremashita.",
+     "tr": "Herkes bana güldü.",
+     "tag": "🎭 Edilgen"
+    }
+   ]
+  },
+  {
+   "id": "causative",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "👉",
+     "title": "<ruby>使役形<rt>しえきけい</rt></ruby> — Ettirgen (\"...tırmak / izin vermek\")",
+     "sub": "Birine bir şey yaptırmak veya yapmasına izin vermek."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Çekim:</strong><br> <strong>1. grup:</strong> <code>う</code>→<code>あ</code>+せる → <ruby>行<rt>い</rt></ruby>く→<ruby>行<rt>い</rt></ruby>かせる · <ruby>飲<rt>の</rt></ruby>む→<ruby>飲<rt>の</rt></ruby>ませる · <ruby>待<rt>ま</rt></ruby>つ→<ruby>待<rt>ま</rt></ruby>たせる<br> <strong>2. grup:</strong> る→<code>させる</code> → <ruby>食<rt>た</rt></ruby>べる→<ruby>食<rt>た</rt></ruby>べさせる<br> <strong>3. grup:</strong> する→<code>させる</code> · <ruby>来<rt>く</rt></ruby>る→<ruby>来<rt>こ</rt></ruby>させる"
+    },
+    {
+     "t": "rule",
+     "tone": "sky",
+     "html": "<strong>Yapı:</strong> geçişsiz fiilde yaptırılan kişi <code>を</code> ya da <code>に</code>; geçişlide <code>に</code> +nesne <code>を</code>.<br> 🙏 <code>〜(さ)せてください</code> = \"...mama izin verin\" (kibar izin isteme)."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>母<rt>はは</rt></ruby>は<ruby>妹<rt>いもうと</rt></ruby>に<ruby>部屋<rt>へや</rt></ruby>を<mark><ruby>掃除<rt>そうじ</rt></ruby>させました</mark>。",
+     "romaji": "Haha wa imōto ni heya o sōji sasemashita.",
+     "tr": "Annem kız kardeşime odayı temizletti.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>先生<rt>せんせい</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>を<mark><ruby>読<rt>よ</rt></ruby>ませます</mark>。",
+     "romaji": "Sensei wa gakusei ni hon o yomasemasu.",
+     "tr": "Öğretmen öğrencilere kitap okutur.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>子<rt>こ</rt></ruby>どもを<ruby>公園<rt>こうえん</rt></ruby>で<mark><ruby>遊<rt>あそ</rt></ruby>ばせます</mark>。",
+     "romaji": "Kodomo o kōen de asobasemasu.",
+     "tr": "Çocuğu parkta oynatırım / oynamasına izin veririm.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "すみません、<ruby>少<rt>すこ</rt></ruby>し<mark><ruby>休<rt>やす</rt></ruby>ませてください</mark>。",
+     "romaji": "Sumimasen, sukoshi yasumasete kudasai.",
+     "tr": "Affedersiniz, biraz dinlenmeme izin verin.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "その<ruby>仕事<rt>しごと</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>に<mark>やらせてください</mark>。",
+     "romaji": "Sono shigoto wa watashi ni yarasete kudasai.",
+     "tr": "O işi bana yaptırın / bırakın ben yapayım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>待<rt>ま</rt></ruby><mark>たせて</mark>ごめんね。",
+     "romaji": "Matasete gomen ne.",
+     "tr": "Beklettiğim için özür dilerim.",
+     "tag": "👉 Ettirgen"
+    }
+   ]
+  },
+  {
+   "id": "caus-passive",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "😣",
+     "title": "<ruby>使役受身<rt>しえきうけみ</rt></ruby> — Zorunda Bırakılmak",
+     "sub": "\"İstemeden ...mek zorunda kaldım\" — ettirgen + edilgen birleşimi."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Çekim (ettirgen → edilgen):</strong><br> <strong>1. grup:</strong> <code>う</code>→<code>あ</code>+される → <ruby>飲<rt>の</rt></ruby>む→<ruby>飲<rt>の</rt></ruby>まされる · <ruby>待<rt>ま</rt></ruby>つ→<ruby>待<rt>ま</rt></ruby>たされる · <ruby>行<rt>い</rt></ruby>く→<ruby>行<rt>い</rt></ruby>かされる<br> <strong>2. grup:</strong> る→<code>させられる</code> → <ruby>食<rt>た</rt></ruby>べる→<ruby>食<rt>た</rt></ruby>べさせられる<br> <strong>3. grup:</strong> する→<code>させられる</code> · <ruby>来<rt>く</rt></ruby>る→<ruby>来<rt>こ</rt></ruby>させられる"
+    },
+    {
+     "t": "rule",
+     "tone": "orange",
+     "html": "<strong>Anlam:</strong> Ben istemedim ama biri (<code>に</code>) beni yaptırdı → ben mecbur kaldım. Genelde <u>şikâyet</u> tonu."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>子<rt>こ</rt></ruby>どものとき、<ruby>毎日<rt>まいにち</rt></ruby>ピアノを<mark><ruby>練習<rt>れんしゅう</rt></ruby>させられました</mark>。",
+     "romaji": "Kodomo no toki, mainichi piano o renshū saseraremashita.",
+     "tr": "Çocukken her gün piyano çalışmak zorunda bırakıldım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>部長<rt>ぶちょう</rt></ruby>に お<ruby>酒<rt>さけ</rt></ruby>を<mark><ruby>飲<rt>の</rt></ruby>まされました</mark>。",
+     "romaji": "Buchō ni osake o nomasaremashita.",
+     "tr": "Müdür bana zorla içki içirdi.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "1<ruby>時間<rt>じかん</rt></ruby>も<mark><ruby>待<rt>ま</rt></ruby>たされました</mark>。",
+     "romaji": "Ichi-jikan mo matasaremashita.",
+     "tr": "Bir saat boyunca bekletildim (mecburen bekledim).",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>兄<rt>あに</rt></ruby>に<ruby>宿題<rt>しゅくだい</rt></ruby>を<mark><ruby>手伝<rt>てつだ</rt></ruby>わされました</mark>。",
+     "romaji": "Ani ni shukudai o tetsudawasaremashita.",
+     "tr": "Ağabeyim bana ödevine zorla yardım ettirdi.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>嫌<rt>きら</rt></ruby>いな<ruby>野菜<rt>やさい</rt></ruby>を<mark><ruby>食<rt>た</rt></ruby>べさせられました</mark>。",
+     "romaji": "Kirai na yasai o tabesaseraremashita.",
+     "tr": "Sevmediğim sebzeleri yemek zorunda kaldım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>会議<rt>かいぎ</rt></ruby>で<ruby>長<rt>なが</rt></ruby>い<ruby>話<rt>はなし</rt></ruby>を<mark><ruby>聞<rt>き</rt></ruby>かされました</mark>。",
+     "romaji": "Kaigi de nagai hanashi o kikasaremashita.",
+     "tr": "Toplantıda uzun bir konuşma dinlemek zorunda kaldım.",
+     "tag": "😣 Zorunda bırakılma"
+    }
+   ]
+  },
+  {
+   "id": "tara",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🔀",
+     "title": "〜たら — \"...sa / ...ınca\" (en esnek koşul)",
+     "sub": "Hem koşul hem \"X olduktan sonra Y\". En çok kullanılan koşul."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>[Sade geçmiş] + ら</code><br> Fiil: <ruby>食<rt>た</rt></ruby>べた→<ruby>食<rt>た</rt></ruby>べ<u>たら</u> · <ruby>行<rt>い</rt></ruby>った→<ruby>行<rt>い</rt></ruby>っ<u>たら</u><br> いadj: <ruby>安<rt>やす</rt></ruby>かった→<ruby>安<rt>やす</rt></ruby>かっ<u>たら</u> · なadj/N: <ruby>暇<rt>ひま</rt></ruby>だった→<ruby>暇<rt>ひま</rt></ruby>だっ<u>たら</u>"
+    },
+    {
+     "t": "rule",
+     "tone": "sky",
+     "html": "💡 <code>もし</code> (eğer) sık eklenir. Sonuç kısmında <u>rica/emir/teklif serbesttir</u> (と'den farkı budur)."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>時間<rt>じかん</rt></ruby>が<mark>あったら</mark>、<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ます。",
+     "romaji": "Jikan ga attara, eiga o mimasu.",
+     "tr": "Vaktim olursa film izlerim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>家<rt>いえ</rt></ruby>に<mark><ruby>帰<rt>かえ</rt></ruby>ったら</mark>、<ruby>電話<rt>でんわ</rt></ruby>します。",
+     "romaji": "Ie ni kaettara, denwa shimasu.",
+     "tr": "Eve varınca telefon ederim. (kesin olay sonrası)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "もし<ruby>雨<rt>あめ</rt></ruby>が<mark><ruby>降<rt>ふ</rt></ruby>ったら</mark>、<ruby>行<rt>い</rt></ruby>きません。",
+     "romaji": "Moshi ame ga futtara, ikimasen.",
+     "tr": "Eğer yağmur yağarsa gitmem.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>安<rt>やす</rt></ruby><mark>かったら</mark>、<ruby>買<rt>か</rt></ruby>います。",
+     "romaji": "Yasukattara, kaimasu.",
+     "tr": "Ucuzsa alırım. (いadj koşul)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>日本<rt>にほん</rt></ruby>に<mark><ruby>行<rt>い</rt></ruby>ったら</mark>、お<ruby>寿司<rt>すし</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたいです。",
+     "romaji": "Nihon ni ittara, osushi o tabetai desu.",
+     "tr": "Japonya'ya gidersem suşi yemek isterim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>宿題<rt>しゅくだい</rt></ruby>が<mark><ruby>終<rt>お</rt></ruby>わったら</mark>、<ruby>遊<rt>あそ</rt></ruby>びに<ruby>行<rt>い</rt></ruby>こう。",
+     "romaji": "Shukudai ga owattara, asobi ni ikō.",
+     "tr": "Ödev bitince oynamaya gidelim.",
+     "tag": "🔀 Koşul / sonra"
+    }
+   ]
+  },
+  {
+   "id": "ba",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "➰",
+     "title": "〜ば — \"...sa\" (varsayımsal / genel koşul)",
+     "sub": "Genel doğrular, tavsiye (〜ばいい), varsayım. Sonuçta emir/rica olmaz."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong><br> Fiil: <code>う→えば</code> → <ruby>行<rt>い</rt></ruby>く→<ruby>行<rt>い</rt></ruby>けば · <ruby>飲<rt>の</rt></ruby>む→<ruby>飲<rt>の</rt></ruby>めば<br> いadj: <code>い→ければ</code> → <ruby>安<rt>やす</rt></ruby>い→<ruby>安<rt>やす</rt></ruby>ければ · いい→よ<u>ければ</u><br> なadj/N: <code>+なら(ば)</code> · Olumsuz: <code>〜なければ</code> (<ruby>行<rt>い</rt></ruby>かなければ)"
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "お<ruby>金<rt>かね</rt></ruby>が<mark>あれば</mark>、<ruby>車<rt>くるま</rt></ruby>を<ruby>買<rt>か</rt></ruby>います。",
+     "romaji": "Okane ga areba, kuruma o kaimasu.",
+     "tr": "Param olsa araba alırım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>早<rt>はや</rt></ruby>く<mark><ruby>行<rt>い</rt></ruby>けば</mark>、<ruby>間<rt>ま</rt></ruby>に<ruby>合<rt>あ</rt></ruby>います。",
+     "romaji": "Hayaku ikeba, maniaimasu.",
+     "tr": "Erken gidersen yetişirsin.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>分<rt>わ</rt></ruby>から<mark>なければ</mark>、<ruby>聞<rt>き</rt></ruby>いてください。",
+     "romaji": "Wakaranakereba, kiite kudasai.",
+     "tr": "Anlamazsan sor. (olumsuz koşul)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "どう<mark>すれば</mark>いいですか。",
+     "romaji": "Dō sureba ii desu ka?",
+     "tr": "Ne yapsam iyi olur? / Nasıl yapmalıyım?",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>薬<rt>くすり</rt></ruby>を<mark><ruby>飲<rt>の</rt></ruby>めば</mark>、よくなりますよ。",
+     "romaji": "Kusuri o nomeba, yoku narimasu yo.",
+     "tr": "İlaç içersen iyileşirsin.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>天気<rt>てんき</rt></ruby>がよ<mark>ければ</mark>、<ruby>散歩<rt>さんぽ</rt></ruby>します。",
+     "romaji": "Tenki ga yokereba, sanpo shimasu.",
+     "tr": "Hava güzelse yürüyüş yaparım. (いい→よければ)",
+     "tag": "➰ Varsayım"
+    }
+   ]
+  },
+  {
+   "id": "nara",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "💡",
+     "title": "〜なら — \"...ysa / ...konusundaysa\"",
+     "sub": "Karşının söylediği konuya/duruma göre şart. Tavsiye verirken sık."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>N + なら</code> · <code>[Sade form] + なら</code>.<br> Anlam: \"Madem X (öyle diyorsun / o konu) → o zaman...\". Konuşmacı, karşının verdiği bilgiyi alıp devam eder."
+    },
+    {
+     "t": "card",
+     "title": "📊 4 koşul — farkları (çok önemli!)",
+     "blocks": [
+      {
+       "t": "table",
+       "html": "<table class=\"group-table\"> <tr><th>Koşul</th><th>Ne zaman</th><th>Örnek</th></tr> <tr><td><code>と</code></td><td>Otomatik/kesin sonuç (N5)</td><td><ruby>押<rt>お</rt></ruby>すと<ruby>開<rt>あ</rt></ruby>く</td></tr> <tr><td><code>たら</code></td><td>En genel; \"olduğunda\"</td><td><ruby>帰<rt>かえ</rt></ruby>ったら<ruby>電話<rt>でんわ</rt></ruby></td></tr> <tr><td><code>ば</code></td><td>Varsayım / genel doğru</td><td>あれば<ruby>買<rt>か</rt></ruby>う</td></tr> <tr><td><code>なら</code></td><td>Karşının konusuna göre</td><td><ruby>温泉<rt>おんせん</rt></ruby>なら<ruby>箱根<rt>はこね</rt></ruby></td></tr> </table>"
+      }
+     ]
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>日本語<rt>にほんご</rt></ruby><mark>なら</mark>、<ruby>田中<rt>たなか</rt></ruby>さんに<ruby>聞<rt>き</rt></ruby>いてください。",
+     "romaji": "Nihongo nara, Tanaka-san ni kiite kudasai.",
+     "tr": "Japonca konusunda(ysa) Tanaka'ya sor.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>温泉<rt>おんせん</rt></ruby>に<mark><ruby>行<rt>い</rt></ruby>くなら</mark>、<ruby>箱根<rt>はこね</rt></ruby>がいいですよ。",
+     "romaji": "Onsen ni iku nara, Hakone ga ii desu yo.",
+     "tr": "Kaplıcaya gideceksen Hakone iyidir.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "あなたが<mark><ruby>行<rt>い</rt></ruby>くなら</mark>、<ruby>私<rt>わたし</rt></ruby>も<ruby>行<rt>い</rt></ruby>きます。",
+     "romaji": "Anata ga iku nara, watashi mo ikimasu.",
+     "tr": "Sen gidersen ben de giderim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "パソコンを<mark><ruby>買<rt>か</rt></ruby>うなら</mark>、この<ruby>店<rt>みせ</rt></ruby>がいいです。",
+     "romaji": "Pasokon o kau nara, kono mise ga ii desu.",
+     "tr": "Bilgisayar alacaksan bu mağaza iyidir.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>疲<rt>つか</rt></ruby>れている<mark>なら</mark>、<ruby>休<rt>やす</rt></ruby>んだほうがいいですよ。",
+     "romaji": "Tsukarete iru nara, yasunda hō ga ii desu yo.",
+     "tr": "Yorgunsan dinlensen iyi olur.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "A:<ruby>寒<rt>さむ</rt></ruby>いです。 B:<ruby>寒<rt>さむ</rt></ruby>い<mark>なら</mark>、<ruby>窓<rt>まど</rt></ruby>を<ruby>閉<rt>し</rt></ruby>めましょう。",
+     "romaji": "A: Samui desu. B: Samui nara, mado o shimemashō.",
+     "tr": "A: Üşüyorum. B: Üşüyorsan pencereyi kapatalım.",
+     "tag": "💡 Konuya göre şart"
+    }
+   ]
+  },
+  {
+   "id": "ageru",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🎁",
+     "title": "あげる・くれる・もらう — Verme &amp; Alma",
+     "sub": "Yön çok önemli: <code>くれる</code> hep BANA doğru gelir!"
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Üç fiil, üç yön:</strong><br> <code>あげる</code> = ben/biri → <u>başkasına</u> verir. (<ruby>私<rt>わたし</rt></ruby>は〜に〜をあげる)<br> <code>くれる</code> = biri → <u>BANA</u> verir. (〜が<ruby>私<rt>わたし</rt></ruby>に〜をくれる)<br> <code>もらう</code> = ben <u>alırım</u>. (<ruby>私<rt>わたし</rt></ruby>は〜に/から〜をもらう)"
+    },
+    {
+     "t": "rule",
+     "tone": "sky",
+     "html": "<strong>Kibar (keigo):</strong> あげる→<ruby>差<rt>さ</rt></ruby>し<ruby>上<rt>あ</rt></ruby>げる · くれる→くださる · もらう→いただく."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>私<rt>わたし</rt></ruby>は<ruby>妹<rt>いもうと</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>を<mark>あげました</mark>。",
+     "romaji": "Watashi wa imōto ni hon o agemashita.",
+     "tr": "Kız kardeşime kitap verdim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>友達<rt>ともだち</rt></ruby>が<ruby>私<rt>わたし</rt></ruby>に<ruby>花<rt>はな</rt></ruby>を<mark>くれました</mark>。",
+     "romaji": "Tomodachi ga watashi ni hana o kuremashita.",
+     "tr": "Arkadaşım bana çiçek verdi. (bana doğru → くれる)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>私<rt>わたし</rt></ruby>は<ruby>先生<rt>せんせい</rt></ruby>に ペンを<mark>もらいました</mark>。",
+     "romaji": "Watashi wa sensei ni pen o moraimashita.",
+     "tr": "Öğretmenden kalem aldım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>母<rt>はは</rt></ruby>が お<ruby>金<rt>かね</rt></ruby>を<mark>くれました</mark>。",
+     "romaji": "Haha ga okane o kuremashita.",
+     "tr": "Annem (bana) para verdi.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>誕生日<rt>たんじょうび</rt></ruby>に<ruby>何<rt>なに</rt></ruby>を<mark>もらいましたか</mark>。",
+     "romaji": "Tanjōbi ni nani o moraimashita ka?",
+     "tr": "Doğum gününde ne(ler) aldın?",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>部長<rt>ぶちょう</rt></ruby>にお<ruby>土産<rt>みやげ</rt></ruby>を<mark>いただきました</mark>。",
+     "romaji": "Buchō ni omiyage o itadakimashita.",
+     "tr": "Müdürden hediye aldım. (kibar もらう)",
+     "tag": "🎁 Verme/alma"
+    }
+   ]
+  },
+  {
+   "id": "te-juyo",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🤝",
+     "title": "〜てあげる・〜てくれる・〜てもらう — İyilik/Eylem",
+     "sub": "Bir <u>eylemi</u> birinin lehine yapmak / birine yaptırmak."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>て形 + yardım fiili:</strong><br> <code>〜てあげる</code> = birine iyilik olsun diye yaparım.<br> <code>〜てくれる</code> = biri BANA iyilik yapar. (minnet tonu)<br> <code>〜てもらう</code> = birine (benim için) yaptırırım / biri benim için yapar."
+    },
+    {
+     "t": "rule",
+     "tone": "sky",
+     "html": "🙏 Rica kalıpları: <code>〜てくれませんか</code> / <code>〜てもらえますか</code> = \"...yapabilir misiniz?\" (kibar)."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>友達<rt>ともだち</rt></ruby>が<ruby>駅<rt>えき</rt></ruby>まで<ruby>送<rt>おく</rt></ruby><mark>ってくれました</mark>。",
+     "romaji": "Tomodachi ga eki made okutte kuremashita.",
+     "tr": "Arkadaşım beni istasyona kadar bıraktı. (bana iyilik)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>私<rt>わたし</rt></ruby>は<ruby>弟<rt>おとうと</rt></ruby>に<ruby>宿題<rt>しゅくだい</rt></ruby>を<ruby>教<rt>おし</rt></ruby><mark>えてあげました</mark>。",
+     "romaji": "Watashi wa otōto ni shukudai o oshiete agemashita.",
+     "tr": "Kardeşime ödevini anlattım/yardım ettim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>先生<rt>せんせい</rt></ruby>に<ruby>文法<rt>ぶんぽう</rt></ruby>を<ruby>教<rt>おし</rt></ruby><mark>えてもらいました</mark>。",
+     "romaji": "Sensei ni bunpō o oshiete moraimashita.",
+     "tr": "Öğretmen bana dilbilgisini öğretti (öğrenmiş oldum).",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby><mark>ってくれませんか</mark>。",
+     "romaji": "Shashin o totte kuremasen ka?",
+     "tr": "Fotoğraf çeker misiniz? (kibar rica)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>道<rt>みち</rt></ruby>を<ruby>教<rt>おし</rt></ruby><mark>えてもらえますか</mark>。",
+     "romaji": "Michi o oshiete moraemasu ka?",
+     "tr": "Yolu tarif edebilir misiniz?",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>母<rt>はは</rt></ruby>にセーターを<ruby>作<rt>つく</rt></ruby><mark>ってもらいました</mark>。",
+     "romaji": "Haha ni sētā o tsukutte moraimashita.",
+     "tr": "Annem bana kazak ördü (benim için).",
+     "tag": "🤝 İyilik"
+    }
+   ]
+  },
+  {
+   "id": "te-oku",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "📦",
+     "title": "〜ておく — Önceden Hazırlık / Öylece Bırakma",
+     "sub": "Bir amaç için önceden yapmak, ya da durumu olduğu gibi bırakmak."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>て形 + おく</code>. Günlük konuşmada <code>〜とく</code> (<ruby>買<rt>か</rt></ruby>っておく→<ruby>買<rt>か</rt></ruby>っとく).<br> Anlam ①: gelecekte lazım olacak → <u>önceden yap</u>. ②: değiştirme → <u>öyle bırak</u>."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>旅行<rt>りょこう</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に、ホテルを<ruby>予約<rt>よやく</rt></ruby><mark>しておきます</mark>。",
+     "romaji": "Ryokō no mae ni, hoteru o yoyaku shite okimasu.",
+     "tr": "Seyahatten önce oteli önceden ayırtırım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "ビールを<ruby>冷蔵庫<rt>れいぞうこ</rt></ruby>に<ruby>入<rt>い</rt></ruby><mark>れておきました</mark>。",
+     "romaji": "Bīru o reizōko ni irete okimashita.",
+     "tr": "Birayı buzdolabına koydum (hazır olsun diye).",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>会議<rt>かいぎ</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>資料<rt>しりょう</rt></ruby>を<ruby>読<rt>よ</rt></ruby><mark>んでおいてください</mark>。",
+     "romaji": "Kaigi no mae ni shiryō o yonde oite kudasai.",
+     "tr": "Toplantıdan önce belgeleri okuyun (hazırlıklı gelin).",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>使<rt>つか</rt></ruby>ったら、<ruby>元<rt>もと</rt></ruby>に<ruby>戻<rt>もど</rt></ruby><mark>しておいて</mark>ください。",
+     "romaji": "Tsukattara, moto ni modoshite oite kudasai.",
+     "tr": "Kullandıktan sonra yerine geri koyun.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "パーティーのために、<ruby>料理<rt>りょうり</rt></ruby>を<ruby>作<rt>つく</rt></ruby><mark>っておきます</mark>。",
+     "romaji": "Pātī no tame ni, ryōri o tsukutte okimasu.",
+     "tr": "Parti için yemekleri önceden hazırlarım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>暑<rt>あつ</rt></ruby>いので、その<ruby>窓<rt>まど</rt></ruby>は<ruby>開<rt>あ</rt></ruby><mark>けておいて</mark>ください。",
+     "romaji": "Atsui node, sono mado wa akete oite kudasai.",
+     "tr": "Sıcak olduğu için o pencereyi açık bırakın.",
+     "tag": "📦 Hazırlık"
+    }
+   ]
+  },
+  {
+   "id": "te-shimau",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "💥",
+     "title": "〜てしまう — Tamamlama / Pişmanlık (\"...ıverdi, ah!\")",
+     "sub": "① Tam bitirme, ② istemeden olan/pişmanlık. Günlük: 〜ちゃう/〜じゃう."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>て形 + しまう</code>.<br> ① Tamamen bitirmek: <ruby>読<rt>よ</rt></ruby>んでしまった (okuyup bitirdim).<br> ② Kaza/pişmanlık: <ruby>忘<rt>わす</rt></ruby>れてしまった (unutuverdim — of!).<br> 💬 Kısaltma: <code>〜てしまう→〜ちゃう</code> · <code>〜でしまう→〜じゃう</code>."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>宿題<rt>しゅくだい</rt></ruby>はもう<ruby>終<rt>お</rt></ruby><mark>わってしまいました</mark>。",
+     "romaji": "Shukudai wa mō owatte shimaimashita.",
+     "tr": "Ödevi çoktan bitirdim (tamamen).",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>財布<rt>さいふ</rt></ruby>を<ruby>忘<rt>わす</rt></ruby><mark>れてしまいました</mark>。",
+     "romaji": "Saifu o wasurete shimaimashita.",
+     "tr": "Cüzdanımı unuttum (aksi gibi / eyvah).",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "ケーキを<ruby>全部<rt>ぜんぶ</rt></ruby><ruby>食<rt>た</rt></ruby><mark>べてしまった</mark>。",
+     "romaji": "Kēki o zenbu tabete shimatta.",
+     "tr": "Pastanın hepsini yiyip bitirdim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>電車<rt>でんしゃ</rt></ruby>で<ruby>寝<rt>ね</rt></ruby><mark>てしまって</mark>、<ruby>乗<rt>の</rt></ruby>り<ruby>過<rt>す</rt></ruby>ごしました。",
+     "romaji": "Densha de nete shimatte, norisugoshimashita.",
+     "tr": "Trende uyuyakaldım ve durağı geçtim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>大切<rt>たいせつ</rt></ruby>な<ruby>皿<rt>さら</rt></ruby>を<ruby>割<rt>わ</rt></ruby><mark>ってしまいました</mark>。",
+     "romaji": "Taisetsu na sara o watte shimaimashita.",
+     "tr": "Değerli tabağı kırdım (istemeden).",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "あ、また<ruby>遅刻<rt>ちこく</rt></ruby>し<mark>ちゃった</mark>。",
+     "romaji": "A, mata chikoku shichatta.",
+     "tr": "Ah, yine geç kaldım. (してしまった→しちゃった)",
+     "tag": "💥 Pişmanlık/bitirme"
+    }
+   ]
+  },
+  {
+   "id": "te-miru",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🧪",
+     "title": "〜てみる — Deneme (\"bir yapayım / deneyeyim\")",
+     "sub": "Nasıl olduğunu görmek için bir şeyi denemek."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>て形 + みる</code> (見る = bakmak → \"yapıp bir bakayım\")."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>日本<rt>にほん</rt></ruby>の<ruby>納豆<rt>なっとう</rt></ruby>を<ruby>食<rt>た</rt></ruby><mark>べてみました</mark>。",
+     "romaji": "Nihon no nattō o tabete mimashita.",
+     "tr": "Japon nattosunu bir denedim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>服<rt>ふく</rt></ruby>を<ruby>着<rt>き</rt></ruby><mark>てみて</mark>もいいですか。",
+     "romaji": "Kono fuku o kite mite mo ii desu ka?",
+     "tr": "Bu kıyafeti deneyebilir miyim? (giyip bakmak)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>新<rt>あたら</rt></ruby>しいレストランに<ruby>行<rt>い</rt></ruby><mark>ってみたい</mark>です。",
+     "romaji": "Atarashii resutoran ni itte mitai desu.",
+     "tr": "Yeni bir restorana gidip görmek istiyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>分<rt>わ</rt></ruby>からないので、<ruby>先生<rt>せんせい</rt></ruby>に<ruby>聞<rt>き</rt></ruby><mark>いてみます</mark>。",
+     "romaji": "Wakaranai node, sensei ni kiite mimasu.",
+     "tr": "Anlamadığım için öğretmene bir sorayım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>を<ruby>調<rt>しら</rt></ruby><mark>べてみて</mark>ください。",
+     "romaji": "Kono kanji no yomikata o shirabete mite kudasai.",
+     "tr": "Bu kanjinin okunuşunu bir araştırıver.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>一度<rt>いちど</rt></ruby><ruby>自分<rt>じぶん</rt></ruby>で<mark>やってみなければ</mark>、<ruby>分<rt>わ</rt></ruby>かりません。",
+     "romaji": "Ichido jibun de yatte minakereba, wakarimasen.",
+     "tr": "Bir kez kendin denemezsen anlayamazsın.",
+     "tag": "🧪 Deneme"
+    }
+   ]
+  },
+  {
+   "id": "te-iku-kuru",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🚶",
+     "title": "〜ていく・〜てくる — Yön &amp; Zaman Akışı",
+     "sub": "いく = uzaklaşan/geleceğe · くる = bize doğru/şimdiye kadar/gidip gelme."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Anlamlar:</strong><br> <code>〜ていく</code>: ① yaparak gitmek (<ruby>持<rt>も</rt></ruby>っていく = götürmek) ② şu andan geleceğe doğru sürme.<br> <code>〜てくる</code>: ① yaparak gelmek/bize yaklaşmak ② geçmişten şimdiye ③ gidip yapıp dönmek."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るので、<ruby>傘<rt>かさ</rt></ruby>を<ruby>持<rt>も</rt></ruby><mark>っていきます</mark>。",
+     "romaji": "Ame ga furu node, kasa o motte ikimasu.",
+     "tr": "Yağmur yağacağı için şemsiye götürürüm.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "だんだん<ruby>寒<rt>さむ</rt></ruby>く<mark>なってきました</mark>。",
+     "romaji": "Dandan samuku natte kimashita.",
+     "tr": "Yavaş yavaş soğumaya başladı (şimdiye dek).",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "ちょっとコンビニに<ruby>行<rt>い</rt></ruby><mark>ってきます</mark>。",
+     "romaji": "Chotto konbini ni itte kimasu.",
+     "tr": "Bir markete gidip geliyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "これからも<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby><mark>していきます</mark>。",
+     "romaji": "Kore kara mo nihongo o benkyō shite ikimasu.",
+     "tr": "Bundan sonra da Japonca çalışmaya devam edeceğim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>子<rt>こ</rt></ruby>どもが<ruby>走<rt>はし</rt></ruby><mark>ってきました</mark>。",
+     "romaji": "Kodomo ga hashitte kimashita.",
+     "tr": "Çocuk (bana doğru) koşarak geldi.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>朝<rt>あさ</rt></ruby>ごはんを<ruby>食<rt>た</rt></ruby><mark>べてきました</mark>。",
+     "romaji": "Asagohan o tabete kimashita.",
+     "tr": "Kahvaltıyı (evde) yapıp geldim.",
+     "tag": "🚶 Yön/zaman"
+    }
+   ]
+  },
+  {
+   "id": "te-aru",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🪧",
+     "title": "〜てある — Hazırlanmış / Yapılmış Durum",
+     "sub": "Biri bilerek yapmış ve o durum sürüyor. Partikel <code>が</code>."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>他動詞 て形 + ある</code> → \"...yapılmış (hâlâ öyle)\".<br> ⚖️ <strong>ている vs てある:</strong> <ruby>窓<rt>まど</rt></ruby>が<u>開いている</u> = pencere açık (durum). <ruby>窓<rt>まど</rt></ruby>が<u>開けてある</u> = pencere (biri tarafından) <u>bilerek</u> açılmış."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>壁<rt>かべ</rt></ruby>に<ruby>地図<rt>ちず</rt></ruby>が<ruby>貼<rt>は</rt></ruby><mark>ってあります</mark>。",
+     "romaji": "Kabe ni chizu ga hatte arimasu.",
+     "tr": "Duvara harita asılmış (öyle duruyor).",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby><mark>けてあります</mark>。",
+     "romaji": "Mado ga akete arimasu.",
+     "tr": "Pencere (bilerek) açık bırakılmış.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "テーブルに<ruby>料理<rt>りょうり</rt></ruby>が<ruby>並<rt>なら</rt></ruby><mark>べてあります</mark>。",
+     "romaji": "Tēburu ni ryōri ga narabete arimasu.",
+     "tr": "Masaya yemekler dizilmiş.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "ノートに<ruby>名前<rt>なまえ</rt></ruby>が<ruby>書<rt>か</rt></ruby><mark>いてあります</mark>。",
+     "romaji": "Nōto ni namae ga kaite arimasu.",
+     "tr": "Deftere isim yazılmış.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>会議<rt>かいぎ</rt></ruby>の<ruby>準備<rt>じゅんび</rt></ruby>はもう<mark>してあります</mark>。",
+     "romaji": "Kaigi no junbi wa mō shite arimasu.",
+     "tr": "Toplantı hazırlığı çoktan yapılmış (hazır).",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>冷蔵庫<rt>れいぞうこ</rt></ruby>にビールが<ruby>入<rt>い</rt></ruby><mark>れてあります</mark>。",
+     "romaji": "Reizōko ni bīru ga irete arimasu.",
+     "tr": "Buzdolabına bira konulmuş (hazır duruyor).",
+     "tag": "🪧 Hazır durum"
+    }
+   ]
+  },
+  {
+   "id": "sou-densetsu",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "📻",
+     "title": "〜そうです — Söylenene Göre (Aktarım)",
+     "sub": "Başkasından duyduğunu aktarmak: \"...mış / ...ymış\"."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>[Sade form] + そうです</code> (değişmez! N/なadj sonuna <code>だ</code> gelir).<br> <ruby>降<rt>ふ</rt></ruby>る→<ruby>降<rt>ふ</rt></ruby>るそうだ · おいしい→おいしいそうだ · <ruby>元気<rt>げんき</rt></ruby><u>だ</u>そうだ · <ruby>学生<rt>がくせい</rt></ruby><u>だ</u>そうだ<br> 💡 Kaynak: <code>〜によると</code> (...e göre)."
+    },
+    {
+     "t": "rule",
+     "tone": "orange",
+     "html": "⚠️ Bu <code>そう</code>, \"görünüş\" <code>そう</code>'suyla karışır! Aktarımda <u>sade form + そう</u>, görünüşte <u>kök + そう</u>."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>天気予報<rt>てんきよほう</rt></ruby>によると、<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る<mark>そうです</mark>。",
+     "romaji": "Tenki yohō ni yoru to, ashita wa ame ga furu sō desu.",
+     "tr": "Hava tahminine göre yarın yağmur yağacakmış.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>田中<rt>たなか</rt></ruby>さんは<ruby>来月<rt>らいげつ</rt></ruby><ruby>結婚<rt>けっこん</rt></ruby>する<mark>そうです</mark>。",
+     "romaji": "Tanaka-san wa raigetsu kekkon suru sō desu.",
+     "tr": "Tanaka gelecek ay evleniyormuş.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "あの<ruby>店<rt>みせ</rt></ruby>のラーメンはおいしい<mark>そうです</mark>。",
+     "romaji": "Ano mise no rāmen wa oishii sō desu.",
+     "tr": "O dükkânın rameni lezzetliymiş.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>だ<mark>そうです</mark>。",
+     "romaji": "Kare wa nihongo ga jōzu da sō desu.",
+     "tr": "O Japonca'da iyiymiş (diyorlar). (なadj + だ)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "ニュースによると、<ruby>事故<rt>じこ</rt></ruby>があった<mark>そうです</mark>。",
+     "romaji": "Nyūsu ni yoru to, jiko ga atta sō desu.",
+     "tr": "Habere göre kaza olmuş.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>佐藤<rt>さとう</rt></ruby>さんは<ruby>子<rt>こ</rt></ruby>どものとき、アメリカにいた<mark>そうです</mark>。",
+     "romaji": "Satō-san wa kodomo no toki, Amerika ni ita sō desu.",
+     "tr": "Sato çocukken Amerika'da yaşamış (diyorlar).",
+     "tag": "📻 Aktarım"
+    }
+   ]
+  },
+  {
+   "id": "sou-mitame",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "👀",
+     "title": "〜そうです — Görünüşe Göre (\"...gibi görünüyor\")",
+     "sub": "Gözle görüp tahmin: \"...acak gibi / ...görünüyor\"."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong><br> Fiil: ますkökü + <code>そう</code> → <ruby>降<rt>ふ</rt></ruby>ります→<ruby>降<rt>ふ</rt></ruby>りそう<br> いadj: い atıl + <code>そう</code> → おいしい→おいし<u>そう</u> · <ruby>難<rt>むずか</rt></ruby>しい→<ruby>難<rt>むずか</rt></ruby>し<u>そう</u><br> なadj: <ruby>元気<rt>げんき</rt></ruby>→<ruby>元気<rt>げんき</rt></ruby>そう · Sıfat + N: <code>〜そうな</code>"
+    },
+    {
+     "t": "rule",
+     "tone": "orange",
+     "html": "<strong>⚠️ İstisnalar:</strong> いい→<u>よさ</u>そう · ない→<u>なさ</u>そう."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>空<rt>そら</rt></ruby>が<ruby>暗<rt>くら</rt></ruby>いです。<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby><mark>りそうです</mark>。",
+     "romaji": "Sora ga kurai desu. Ame ga furisō desu.",
+     "tr": "Gökyüzü karanlık. Yağmur yağacak gibi.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "このケーキはおいし<mark>そうです</mark>。",
+     "romaji": "Kono kēki wa oishisō desu.",
+     "tr": "Bu pasta lezzetli görünüyor.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>元気<rt>げんき</rt></ruby><mark>そうです</mark>ね。",
+     "romaji": "Kare wa genkisō desu ne.",
+     "tr": "O keyifli/sağlıklı görünüyor.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>問題<rt>もんだい</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>し<mark>そうです</mark>。",
+     "romaji": "Kono mondai wa muzukashisō desu.",
+     "tr": "Bu soru zor görünüyor.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>今<rt>いま</rt></ruby>にも<ruby>泣<rt>な</rt></ruby>き<mark>そうな</mark><ruby>顔<rt>かお</rt></ruby>をしています。",
+     "romaji": "Ima ni mo nakisō na kao o shite imasu.",
+     "tr": "Şimdi ağlayacakmış gibi bir yüzü var. (〜そうな + N)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>仕事<rt>しごと</rt></ruby>は<ruby>大変<rt>たいへん</rt></ruby><mark>そうです</mark>が、おもしろ<mark>そうです</mark>。",
+     "romaji": "Kono shigoto wa taihensō desu ga, omoshirosō desu.",
+     "tr": "Bu iş zor görünüyor ama ilginç görünüyor.",
+     "tag": "👀 Görünüş"
+    }
+   ]
+  },
+  {
+   "id": "you-mitai",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🌫️",
+     "title": "〜ようだ・〜みたいだ — \"...gibi görünüyor / sanki...\"",
+     "sub": "Kanıta/duyuya dayalı tahmin, ya da benzetme. みたい = samimi."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong><br> <code>ようだ</code>: [Sade] + ようだ · N + <u>の</u>ようだ · なadj + <u>な</u>ようだ<br> <code>みたいだ</code>: [Sade] + みたい · N/なadj (だ'sız) + みたい (daha günlük)"
+    },
+    {
+     "t": "rule",
+     "tone": "sky",
+     "html": "Kullanım: ① <u>kanıttan çıkarım</u> (\"öyle görünüyor\"). ② <u>benzetme</u> (まるで〜ようだ = sanki...)."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>外<rt>そと</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>っている<mark>ようです</mark>。",
+     "romaji": "Soto wa ame ga futte iru yō desu.",
+     "tr": "Dışarıda yağmur yağıyor gibi. (ıslak insanlar → çıkarım)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>誰<rt>だれ</rt></ruby>か いる<mark>みたいです</mark>。",
+     "romaji": "Dareka iru mitai desu.",
+     "tr": "Birisi var gibi. (ses duyuldu)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>疲<rt>つか</rt></ruby>れている<mark>ようだ</mark>。",
+     "romaji": "Kare wa tsukarete iru yō da.",
+     "tr": "O yorgun gibi görünüyor.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>味<rt>あじ</rt></ruby>はチーズ<mark>みたいだ</mark>。",
+     "romaji": "Kono aji wa chīzu mitai da.",
+     "tr": "Bu tat peynir gibi. (benzetme)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>熱<rt>ねつ</rt></ruby>がある<mark>ようです</mark>。<ruby>病院<rt>びょういん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>ったほうがいいです。",
+     "romaji": "Netsu ga aru yō desu. Byōin e itta hō ga ii desu.",
+     "tr": "Ateşin var gibi. Hastaneye gitsen iyi olur.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "まるで<ruby>夢<rt>ゆめ</rt></ruby>の<mark>ようです</mark>。",
+     "romaji": "Marude yume no yō desu.",
+     "tr": "Sanki rüya gibi. (まるで〜ようだ)",
+     "tag": "🌫️ Çıkarım/benzetme"
+    }
+   ]
+  },
+  {
+   "id": "rashii",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🧩",
+     "title": "〜らしい — \"Anlaşılan / ...vari (tipik)\"",
+     "sub": "① Bilgiye dayalı çıkarım. ② \"-e yakışır, tam bir ...\" tipiklik."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>[Sade form] + らしい</code> · <code>N + らしい</code> (だ yok).<br> Anlam ①: dışarıdan aldığın bilgiye göre \"öyle görünüyor / ...mış\".<br> Anlam ②: <code>N + らしい</code> = o şeye <u>yakışan</u>, tipik → <ruby>男<rt>おとこ</rt></ruby>らしい (mert), <ruby>春<rt>はる</rt></ruby>らしい (bahar gibi)."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>田中<rt>たなか</rt></ruby>さんは<ruby>会社<rt>かいしゃ</rt></ruby>を やめた<mark>らしいです</mark>。",
+     "romaji": "Tanaka-san wa kaisha o yameta rashii desu.",
+     "tr": "Tanaka işten ayrılmış (öyle duydum/anlaşılıyor).",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "あの<ruby>二人<rt>ふたり</rt></ruby>は<ruby>付<rt>つ</rt></ruby>き<ruby>合<rt>あ</rt></ruby>っている<mark>らしい</mark>。",
+     "romaji": "Ano futari wa tsukiatte iru rashii.",
+     "tr": "O ikisi çıkıyormuş galiba.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby><mark>らしい</mark>ですよ。",
+     "romaji": "Kyō wa ame rashii desu yo.",
+     "tr": "Bugün yağmurluymuş. (N + らしい, çıkarım)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>本当<rt>ほんとう</rt></ruby>に<ruby>男<rt>おとこ</rt></ruby><mark>らしい</mark><ruby>人<rt>ひと</rt></ruby>だ。",
+     "romaji": "Kare wa hontō ni otokorashii hito da.",
+     "tr": "O gerçekten mert/erkeksi biri. (tipiklik)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>春<rt>はる</rt></ruby><mark>らしい</mark><ruby>天気<rt>てんき</rt></ruby>になりましたね。",
+     "romaji": "Harurashii tenki ni narimashita ne.",
+     "tr": "Bahara yakışır bir hava oldu.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>先生<rt>せんせい</rt></ruby><mark>らしくない</mark>。",
+     "romaji": "Kanojo wa senseirashikunai.",
+     "tr": "O öğretmene yakışmıyor / öğretmen gibi değil.",
+     "tag": "🧩 Çıkarım/tipiklik"
+    }
+   ]
+  },
+  {
+   "id": "hazu",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "✔️",
+     "title": "〜はずです — \"Olması gerek / beklenir\"",
+     "sub": "Mantıken böyle olmalı (dayanağı olan güçlü beklenti)."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>[Sade form] + はず</code> · <code>N + の + はず</code> · <code>なadj + な + はず</code>.<br> Olumsuz: <code>〜はずがない</code> = \"olması imkânsız / olamaz\"."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>田中<rt>たなか</rt></ruby>さんはもう<ruby>着<rt>つ</rt></ruby>いている<mark>はずです</mark>。",
+     "romaji": "Tanaka-san wa mō tsuite iru hazu desu.",
+     "tr": "Tanaka çoktan varmış olmalı.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>彼<rt>かれ</rt></ruby>は10<ruby>年<rt>ねん</rt></ruby><ruby>日本<rt>にほん</rt></ruby>にいたから、<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>な<mark>はずだ</mark>。",
+     "romaji": "Kare wa jū-nen Nihon ni ita kara, nihongo ga jōzu na hazu da.",
+     "tr": "10 yıl Japonya'da kaldı, Japoncası iyi olmalı.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>約束<rt>やくそく</rt></ruby>したから、<ruby>来<rt>く</rt></ruby>る<mark>はずです</mark>。",
+     "romaji": "Yakusoku shita kara, kuru hazu desu.",
+     "tr": "Söz verdi, gelmesi gerek.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "そんなことが ある<mark>はずがない</mark>。",
+     "romaji": "Sonna koto ga aru hazu ga nai.",
+     "tr": "Öyle bir şey olamaz (imkânsız).",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>会議<rt>かいぎ</rt></ruby>は3<ruby>時<rt>じ</rt></ruby>からの<mark>はずです</mark>。",
+     "romaji": "Kaigi wa san-ji kara no hazu desu.",
+     "tr": "Toplantı 3'ten itibaren olmalı. (N + の + はず)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>鍵<rt>かぎ</rt></ruby>はここに<ruby>置<rt>お</rt></ruby>いたから、ある<mark>はずだ</mark>。",
+     "romaji": "Kagi wa koko ni oita kara, aru hazu da.",
+     "tr": "Anahtarı buraya koydum, burada olması lazım.",
+     "tag": "✔️ Mantıklı beklenti"
+    }
+   ]
+  },
+  {
+   "id": "kamo",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🎲",
+     "title": "〜かもしれない — \"Olabilir / belki\"",
+     "sub": "Düşük-orta olasılık. <code>はず</code>'dan çok daha zayıf."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>[Sade form] + かもしれない/かもしれません</code>.<br> N/なadj sonuna <code>だ</code> GELMEZ → <ruby>雨<rt>あめ</rt></ruby>かもしれない · <ruby>元気<rt>げんき</rt></ruby>かもしれない.<br> 💬 Günlük kısaltma: <code>〜かも</code>."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る<mark>かもしれません</mark>。",
+     "romaji": "Ashita wa ame ga furu kamo shiremasen.",
+     "tr": "Yarın yağmur yağabilir.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>彼<rt>かれ</rt></ruby>はもう<ruby>帰<rt>かえ</rt></ruby>った<mark>かもしれない</mark>。",
+     "romaji": "Kare wa mō kaetta kamo shirenai.",
+     "tr": "O çoktan gitmiş olabilir.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>店<rt>みせ</rt></ruby>は<ruby>高<rt>たか</rt></ruby>い<mark>かもしれません</mark>。",
+     "romaji": "Kono mise wa takai kamo shiremasen.",
+     "tr": "Bu dükkân pahalı olabilir.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>田中<rt>たなか</rt></ruby>さんは<ruby>来<rt>こ</rt></ruby>ない<mark>かもしれない</mark>。",
+     "romaji": "Tanaka-san wa konai kamo shirenai.",
+     "tr": "Tanaka gelmeyebilir.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>道<rt>みち</rt></ruby>が<ruby>込<rt>こ</rt></ruby>んでいる<mark>かもしれない</mark>から、<ruby>早<rt>はや</rt></ruby>く<ruby>出<rt>で</rt></ruby>ましょう。",
+     "romaji": "Michi ga konde iru kamo shirenai kara, hayaku demashō.",
+     "tr": "Yol sıkışık olabilir, erken çıkalım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "それは<ruby>本当<rt>ほんとう</rt></ruby><mark>かも</mark>。",
+     "romaji": "Sore wa hontō kamo.",
+     "tr": "O doğru olabilir. (günlük kısaltma)",
+     "tag": "🎲 Olasılık"
+    }
+   ]
+  },
+  {
+   "id": "darou",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🔮",
+     "title": "〜だろう・でしょう — \"Herhalde / ...dır\"",
+     "sub": "Tahmin/kanaat. <code>でしょう</code> kibar; yükselen tonla teyit."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>[Sade form] + だろう/でしょう</code> (N/なadj'de だ düşer → <ruby>雨<rt>あめ</rt></ruby>だろう).<br> 💡 Sık <code>たぶん</code> (muhtemelen) ile. Yükselen ton: <code>〜でしょう？</code> = \"...değil mi?\" (teyit)."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>明日<rt>あした</rt></ruby>はたぶん<ruby>晴<rt>は</rt></ruby>れる<mark>でしょう</mark>。",
+     "romaji": "Ashita wa tabun hareru deshō.",
+     "tr": "Yarın muhtemelen hava açar.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>来<rt>こ</rt></ruby>ない<mark>だろう</mark>。",
+     "romaji": "Kare wa konai darō.",
+     "tr": "O gelmez herhalde.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>問題<rt>もんだい</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>しい<mark>でしょう</mark>。",
+     "romaji": "Kono mondai wa muzukashii deshō.",
+     "tr": "Bu soru zordur herhalde.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "あなたも<ruby>行<rt>い</rt></ruby>く<mark>でしょう</mark>？",
+     "romaji": "Anata mo iku deshō?",
+     "tr": "Sen de gidersin değil mi? (teyit)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>試合<rt>しあい</rt></ruby>は<ruby>日本<rt>にほん</rt></ruby>が<ruby>勝<rt>か</rt></ruby>つ<mark>だろう</mark>。",
+     "romaji": "Shiai wa Nihon ga katsu darō.",
+     "tr": "Maçı Japonya kazanır herhalde.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "もう<ruby>遅<rt>おそ</rt></ruby>いから、<ruby>寝<rt>ね</rt></ruby>ている<mark>でしょう</mark>。",
+     "romaji": "Mō osoi kara, nete iru deshō.",
+     "tr": "Geç oldu, uyuyordur herhalde.",
+     "tag": "🔮 Tahmin"
+    }
+   ]
+  },
+  {
+   "id": "nakereba",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "⛔",
+     "title": "〜なければならない — Zorunluluk (\"...mak zorundayım\")",
+     "sub": "Yapmak mecburiyeti. Günlük: 〜なきゃ / 〜なくちゃ."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>ない形 (い at) + ければならない</code> → <ruby>行<rt>い</rt></ruby>かない→<ruby>行<rt>い</rt></ruby>か<u>なければならない</u>.<br> Eş anlamlı: <code>〜なくてはいけない</code>. 💬 Kısaltma: <code>〜なきゃ</code> · <code>〜なくちゃ</code>."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>明日<rt>あした</rt></ruby>は<ruby>早<rt>はや</rt></ruby>く<ruby>起<rt>お</rt></ruby>き<mark>なければなりません</mark>。",
+     "romaji": "Ashita wa hayaku oki-nakereba narimasen.",
+     "tr": "Yarın erken kalkmam gerek.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "レポートを<ruby>金曜日<rt>きんようび</rt></ruby>までに<ruby>出<rt>だ</rt></ruby>さ<mark>なければなりません</mark>。",
+     "romaji": "Repōto o kin'yōbi made ni dasa-nakereba narimasen.",
+     "tr": "Raporu cumaya kadar teslim etmeliyim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>学生<rt>がくせい</rt></ruby>は<ruby>制服<rt>せいふく</rt></ruby>を<ruby>着<rt>き</rt></ruby><mark>なくてはいけません</mark>。",
+     "romaji": "Gakusei wa seifuku o ki-nakute wa ikemasen.",
+     "tr": "Öğrenciler üniforma giymek zorunda.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "ビザを<ruby>取<rt>と</rt></ruby>るために、<ruby>書類<rt>しょるい</rt></ruby>を<ruby>準備<rt>じゅんび</rt></ruby>し<mark>なければならない</mark>。",
+     "romaji": "Biza o toru tame ni, shorui o junbi shi-nakereba naranai.",
+     "tr": "Vize almak için belge hazırlamam gerek.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>薬<rt>くすり</rt></ruby>を<ruby>飲<rt>の</rt></ruby>ま<mark>なければならない</mark>。",
+     "romaji": "Kusuri o noma-nakereba naranai.",
+     "tr": "İlaç içmem lazım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "もう<ruby>行<rt>い</rt></ruby>か<mark>なきゃ</mark>。",
+     "romaji": "Mō ika-nakya.",
+     "tr": "Artık gitmem lazım. (günlük kısaltma)",
+     "tag": "⛔ Zorunluluk"
+    }
+   ]
+  },
+  {
+   "id": "nakutemo",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🆗",
+     "title": "〜なくてもいい — \"Yapmasan da olur\"",
+     "sub": "Gereksizlik: yapmak zorunda değilsin."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>ない形 (い at) + くてもいい</code> → <ruby>来<rt>こ</rt></ruby>ない→<ruby>来<rt>こ</rt></ruby>な<u>くてもいい</u>."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>明日<rt>あした</rt></ruby>は<ruby>来<rt>こ</rt></ruby><mark>なくてもいいです</mark>。",
+     "romaji": "Ashita wa ko-nakute mo ii desu.",
+     "tr": "Yarın gelmesen de olur.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>全部<rt>ぜんぶ</rt></ruby><ruby>食<rt>た</rt></ruby>べ<mark>なくてもいいですよ</mark>。",
+     "romaji": "Zenbu tabe-nakute mo ii desu yo.",
+     "tr": "Hepsini yemek zorunda değilsin.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "お<ruby>金<rt>かね</rt></ruby>を<ruby>払<rt>はら</rt></ruby>わ<mark>なくてもいいです</mark>。",
+     "romaji": "Okane o harawa-nakute mo ii desu.",
+     "tr": "Para ödemene gerek yok.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>急<rt>いそ</rt></ruby>が<mark>なくてもいいですよ</mark>。",
+     "romaji": "Isoga-nakute mo ii desu yo.",
+     "tr": "Acele etmene gerek yok.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>靴<rt>くつ</rt></ruby>を<ruby>脱<rt>ぬ</rt></ruby>が<mark>なくてもいいです</mark>。",
+     "romaji": "Kutsu o nuga-nakute mo ii desu.",
+     "tr": "Ayakkabını çıkarmana gerek yok.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>心配<rt>しんぱい</rt></ruby>し<mark>なくてもいいよ</mark>。",
+     "romaji": "Shinpai shi-nakute mo ii yo.",
+     "tr": "Endişelenmene gerek yok.",
+     "tag": "🆗 Gerek yok"
+    }
+   ]
+  },
+  {
+   "id": "permission",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "✋",
+     "title": "〜てもいい・〜てはいけない — İzin &amp; Yasak",
+     "sub": "İzin isteme/verme ve yasaklama (N5 tekrarı + pekiştirme)."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong><br> İzin: <code>て形 + もいい(です)</code> — soru: <code>〜てもいいですか</code><br> Yasak: <code>て形 + はいけない/いけません</code>"
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "ここで<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby><mark>ってもいいですか</mark>。",
+     "romaji": "Koko de shashin o totte mo ii desu ka?",
+     "tr": "Burada fotoğraf çekebilir miyim?",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "はい、<ruby>撮<rt>と</rt></ruby><mark>ってもいいです</mark>。",
+     "romaji": "Hai, totte mo ii desu.",
+     "tr": "Evet, çekebilirsin.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>部屋<rt>へや</rt></ruby>に<ruby>入<rt>はい</rt></ruby><mark>ってはいけません</mark>。",
+     "romaji": "Kono heya ni haitte wa ikemasen.",
+     "tr": "Bu odaya girmek yasak.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>授業中<rt>じゅぎょうちゅう</rt></ruby>に<ruby>話<rt>はな</rt></ruby><mark>してはいけません</mark>。",
+     "romaji": "Jugyō-chū ni hanashite wa ikemasen.",
+     "tr": "Ders sırasında konuşmak yasak.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "トイレを<ruby>使<rt>つか</rt></ruby><mark>ってもいいですか</mark>。",
+     "romaji": "Toire o tsukatte mo ii desu ka?",
+     "tr": "Tuvaleti kullanabilir miyim?",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "ここでタバコを<ruby>吸<rt>す</rt></ruby><mark>ってはいけません</mark>。",
+     "romaji": "Koko de tabako o sutte wa ikemasen.",
+     "tr": "Burada sigara içmek yasak.",
+     "tag": "✋ İzin/yasak"
+    }
+   ]
+  },
+  {
+   "id": "node",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🔗",
+     "title": "〜ので — \"Çünkü / ...dığı için\" (nazik)",
+     "sub": "Objektif, yumuşak sebep. から'dan daha kibar."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>[Sade form] + ので</code> · <code>N/なadj + な + ので</code> (<ruby>元気<rt>げんき</rt></ruby><u>な</u>ので).<br> ⚖️ <code>から</code> = öznel/güçlü sebep; <code>ので</code> = nazik/açıklayıcı (rica ve özürde tercih)."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>頭<rt>あたま</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>い<mark>ので</mark>、<ruby>早<rt>はや</rt></ruby>く<ruby>帰<rt>かえ</rt></ruby>ります。",
+     "romaji": "Atama ga itai node, hayaku kaerimasu.",
+     "tr": "Başım ağrıdığı için erken dönüyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>日曜日<rt>にちようび</rt></ruby><mark>なので</mark>、<ruby>店<rt>みせ</rt></ruby>が<ruby>込<rt>こ</rt></ruby>んでいます。",
+     "romaji": "Nichiyōbi na node, mise ga konde imasu.",
+     "tr": "Pazar olduğu için dükkân kalabalık. (N + な + ので)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>遅<rt>おく</rt></ruby>れた<mark>ので</mark>、<ruby>遅刻<rt>ちこく</rt></ruby>しました。",
+     "romaji": "Densha ga okureta node, chikoku shimashita.",
+     "tr": "Tren geciktiği için geç kaldım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "ここは<ruby>静<rt>しず</rt></ruby>か<mark>なので</mark>、よく<ruby>勉強<rt>べんきょう</rt></ruby>できます。",
+     "romaji": "Koko wa shizuka na node, yoku benkyō dekimasu.",
+     "tr": "Burası sessiz olduğu için iyi çalışabiliyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "まだ<ruby>子<rt>こ</rt></ruby>ども<mark>なので</mark>、お<ruby>酒<rt>さけ</rt></ruby>は<ruby>飲<rt>の</rt></ruby>めません。",
+     "romaji": "Mada kodomo na node, osake wa nomemasen.",
+     "tr": "Daha çocuk olduğu için içki içemez.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>忙<rt>いそが</rt></ruby>しい<mark>ので</mark>、また<ruby>今度<rt>こんど</rt></ruby>お<ruby>願<rt>ねが</rt></ruby>いします。",
+     "romaji": "Isogashii node, mata kondo onegai shimasu.",
+     "tr": "Meşgul olduğum için başka sefere rica edeyim.",
+     "tag": "🔗 Nazik sebep"
+    }
+   ]
+  },
+  {
+   "id": "noni",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "😤",
+     "title": "〜のに — \"...masına rağmen\" (beklenmedik)",
+     "sub": "Beklenenin tersi olduğunda; sitem/şaşkınlık tonu var."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>[Sade form] + のに</code> · <code>N/なadj + な + のに</code>.<br> ⚖️ <code>けど/が</code>'dan farkı: <code>のに</code>'de <u>hayal kırıklığı / beklenmedik</u> hissi güçlüdür."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>薬<rt>くすり</rt></ruby>を<ruby>飲<rt>の</rt></ruby>んだ<mark>のに</mark>、まだ<ruby>熱<rt>ねつ</rt></ruby>があります。",
+     "romaji": "Kusuri o nonda noni, mada netsu ga arimasu.",
+     "tr": "İlaç içtiğim halde hâlâ ateşim var.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>一生懸命<rt>いっしょうけんめい</rt></ruby><ruby>勉強<rt>べんきょう</rt></ruby>した<mark>のに</mark>、<ruby>試験<rt>しけん</rt></ruby>に<ruby>落<rt>お</rt></ruby>ちました。",
+     "romaji": "Isshōkenmei benkyō shita noni, shiken ni ochimashita.",
+     "tr": "Canla başla çalıştığım halde sınavda kaldım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>日曜日<rt>にちようび</rt></ruby><mark>なのに</mark>、<ruby>働<rt>はたら</rt></ruby>かなければなりません。",
+     "romaji": "Nichiyōbi na noni, hatarakanakereba narimasen.",
+     "tr": "Pazar olmasına rağmen çalışmam gerek.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "まだ8<ruby>時<rt>じ</rt></ruby><mark>なのに</mark>、もう<ruby>眠<rt>ねむ</rt></ruby>い。",
+     "romaji": "Mada hachi-ji na noni, mō nemui.",
+     "tr": "Daha saat 8 olmasına rağmen çoktan uykum geldi.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>約束<rt>やくそく</rt></ruby>した<mark>のに</mark>、<ruby>彼<rt>かれ</rt></ruby>は<ruby>来<rt>こ</rt></ruby>なかった。",
+     "romaji": "Yakusoku shita noni, kare wa konakatta.",
+     "tr": "Söz verdiği halde gelmedi. (sitem)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>店<rt>みせ</rt></ruby>は<ruby>高<rt>たか</rt></ruby>い<mark>のに</mark>、あまりおいしくない。",
+     "romaji": "Kono mise wa takai noni, amari oishikunai.",
+     "tr": "Bu dükkân pahalı olmasına rağmen pek lezzetli değil.",
+     "tag": "😤 Zıtlık/sitem"
+    }
+   ]
+  },
+  {
+   "id": "shi",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "➕",
+     "title": "〜し — \"Hem...hem / üstelik\" (sebep sıralama)",
+     "sub": "Birden fazla sebep/özellik sıralar; \"ayrıca\" nüansı verir."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>[Sade form] + し</code> (her cümlecikten sonra し). Sık: son し sebep, sonuç gelir."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>店<rt>みせ</rt></ruby>は<ruby>安<rt>やす</rt></ruby>い<mark>し</mark>、おいしい<mark>し</mark>、よく<ruby>来<rt>き</rt></ruby>ます。",
+     "romaji": "Kono mise wa yasui shi, oishii shi, yoku kimasu.",
+     "tr": "Bu dükkân hem ucuz hem lezzetli, sık gelirim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>田中<rt>たなか</rt></ruby>さんは<ruby>頭<rt>あたま</rt></ruby>がいい<mark>し</mark>、<ruby>性格<rt>せいかく</rt></ruby>もいいです。",
+     "romaji": "Tanaka-san wa atama ga ii shi, seikaku mo ii desu.",
+     "tr": "Tanaka hem zeki hem karakteri iyi.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>雨<rt>あめ</rt></ruby>も<ruby>降<rt>ふ</rt></ruby>っている<mark>し</mark>、<ruby>寒<rt>さむ</rt></ruby>い<mark>し</mark>、<ruby>家<rt>いえ</rt></ruby>にいましょう。",
+     "romaji": "Ame mo futte iru shi, samui shi, ie ni imashō.",
+     "tr": "Hem yağmur yağıyor hem soğuk, evde kalalım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "お<ruby>金<rt>かね</rt></ruby>もない<mark>し</mark>、<ruby>時間<rt>じかん</rt></ruby>もない<mark>ので</mark>、<ruby>旅行<rt>りょこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>けません。",
+     "romaji": "Okane mo nai shi, jikan mo nai node, ryokō ni ikemasen.",
+     "tr": "Hem param hem vaktim yok, o yüzden seyahate gidemem.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>部屋<rt>へや</rt></ruby>は<ruby>広<rt>ひろ</rt></ruby>い<mark>し</mark>、<ruby>静<rt>しず</rt></ruby>かだ<mark>し</mark>、<ruby>気<rt>き</rt></ruby>に<ruby>入<rt>い</rt></ruby>りました。",
+     "romaji": "Kono heya wa hiroi shi, shizuka da shi, ki ni irimashita.",
+     "tr": "Bu oda hem geniş hem sessiz, beğendim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>仕事<rt>しごと</rt></ruby>もできる<mark>し</mark>、みんなに<ruby>人気<rt>にんき</rt></ruby>があります。",
+     "romaji": "Kare wa shigoto mo dekiru shi, minna ni ninki ga arimasu.",
+     "tr": "Hem işini iyi yapar hem herkes tarafından sevilir.",
+     "tag": "➕ Sebep sıralama"
+    }
+   ]
+  },
+  {
+   "id": "tame",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🎯",
+     "title": "〜ために・〜ため — Amaç &amp; Sebep",
+     "sub": "\"...mak için\" (amaç) veya \"...nedeniyle\" (sebep)."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong><br> Amaç: <code><ruby>辞書形<rt>じしょけい</rt></ruby> / N + の + ために</code> → \"...mak için\".<br> Sebep: <code>[Sade / N + の] + ため(に)</code> → \"...nedeniyle\" (çoğu resmi/olumsuz olay)."
+    },
+    {
+     "t": "rule",
+     "tone": "sky",
+     "html": "💡 <code>ために</code> (amaç) ile <code>ように</code> (amaç) farkı: <code>ために</code> = <u>iradeli</u> fiil (aynı özne); <code>ように</code> = potansiyel/iradesiz fiil."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>日本<rt>にほん</rt></ruby>で<ruby>働<rt>はたら</rt></ruby>く<mark>ために</mark>、<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>しています。",
+     "romaji": "Nihon de hataraku tame ni, nihongo o benkyō shite imasu.",
+     "tr": "Japonya'da çalışmak için Japonca öğreniyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>家族<rt>かぞく</rt></ruby>の<mark>ために</mark>、<ruby>一生懸命<rt>いっしょうけんめい</rt></ruby><ruby>働<rt>はたら</rt></ruby>きます。",
+     "romaji": "Kazoku no tame ni, isshōkenmei hatarakimasu.",
+     "tr": "Ailem için canla başla çalışırım. (N + の + ために)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>健康<rt>けんこう</rt></ruby>の<mark>ために</mark>、<ruby>毎朝<rt>まいあさ</rt></ruby><ruby>走<rt>はし</rt></ruby>っています。",
+     "romaji": "Kenkō no tame ni, maiasa hashitte imasu.",
+     "tr": "Sağlığım için her sabah koşuyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>試験<rt>しけん</rt></ruby>に<ruby>合格<rt>ごうかく</rt></ruby>する<mark>ために</mark>、たくさん<ruby>勉強<rt>べんきょう</rt></ruby>しました。",
+     "romaji": "Shiken ni gōkaku suru tame ni, takusan benkyō shimashita.",
+     "tr": "Sınavı geçmek için çok çalıştım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>事故<rt>じこ</rt></ruby>の<mark>ために</mark>、<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>止<rt>と</rt></ruby>まりました。",
+     "romaji": "Jiko no tame ni, densha ga tomarimashita.",
+     "tr": "Kaza nedeniyle tren durdu. (sebep)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>大雨<rt>おおあめ</rt></ruby>の<mark>ため</mark>、<ruby>試合<rt>しあい</rt></ruby>は<ruby>中止<rt>ちゅうし</rt></ruby>になりました。",
+     "romaji": "Ōame no tame, shiai wa chūshi ni narimashita.",
+     "tr": "Şiddetli yağmur nedeniyle maç iptal edildi.",
+     "tag": "🎯 Amaç/sebep"
+    }
+   ]
+  },
+  {
+   "id": "youni",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🙏",
+     "title": "〜ように — \"...sın diye / ...mak için\" (amaç)",
+     "sub": "İradesiz/potansiyel fiil sonrası amaç. 〜ように言う = \"...masını söylemek\"."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>[<ruby>辞書形<rt>じしょけい</rt></ruby> / ない形 / potansiyel] + ように、〜</code>.<br> Genelde <u>potansiyel</u> (<ruby>見<rt>み</rt></ruby>える, <ruby>話<rt>はな</rt></ruby>せる), <u>olumsuz</u> (<ruby>忘<rt>わす</rt></ruby>れない) ya da geçişsiz fiille."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "よく<ruby>見<rt>み</rt></ruby>える<mark>ように</mark>、<ruby>前<rt>まえ</rt></ruby>に<ruby>座<rt>すわ</rt></ruby>りました。",
+     "romaji": "Yoku mieru yō ni, mae ni suwarimashita.",
+     "tr": "İyi görünsün diye öne oturdum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>忘<rt>わす</rt></ruby>れない<mark>ように</mark>、メモします。",
+     "romaji": "Wasurenai yō ni, memo shimasu.",
+     "tr": "Unutmayayım diye not alırım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>話<rt>はな</rt></ruby>せる<mark>ように</mark>、<ruby>毎日<rt>まいにち</rt></ruby><ruby>練習<rt>れんしゅう</rt></ruby>します。",
+     "romaji": "Nihongo ga hanaseru yō ni, mainichi renshū shimasu.",
+     "tr": "Japonca konuşabileyim diye her gün alıştırma yaparım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>学生<rt>がくせい</rt></ruby>に<ruby>静<rt>しず</rt></ruby>かにする<mark>ように</mark><ruby>言<rt>い</rt></ruby>いました。",
+     "romaji": "Gakusei ni shizuka ni suru yō ni iimashita.",
+     "tr": "Öğrencilere sessiz olmalarını söyledim. (〜ように言う)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>間<rt>ま</rt></ruby>に<ruby>合<rt>あ</rt></ruby>う<mark>ように</mark>、<ruby>早<rt>はや</rt></ruby>く<ruby>家<rt>いえ</rt></ruby>を<ruby>出<rt>で</rt></ruby>ました。",
+     "romaji": "Densha ni maniau yō ni, hayaku ie o demashita.",
+     "tr": "Trene yetişeyim diye erken çıktım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>病気<rt>びょうき</rt></ruby>が<ruby>早<rt>はや</rt></ruby>く<ruby>治<rt>なお</rt></ruby>る<mark>ように</mark>、<ruby>祈<rt>いの</rt></ruby>っています。",
+     "romaji": "Byōki ga hayaku naoru yō ni, inotte imasu.",
+     "tr": "Hastalığın çabuk geçsin diye dua ediyorum.",
+     "tag": "🙏 Amaç"
+    }
+   ]
+  },
+  {
+   "id": "youni-suru-naru",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🔄",
+     "title": "〜ようにする・〜ようになる — Çaba &amp; Hale Gelme",
+     "sub": "する = çaba/alışkanlık. なる = durum değişimi (...abilir oldu)."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong><br> <code>[<ruby>辞書形<rt>じしょけい</rt></ruby>/ない形] + ようにする</code> = \"...maya çalışmak / alışkanlık edinmek\".<br> <code>[<ruby>辞書形<rt>じしょけい</rt></ruby>/potansiyel] + ようになる</code> = \"...ır hale gelmek / ...abilir oldu\"."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>毎日<rt>まいにち</rt></ruby><ruby>野菜<rt>やさい</rt></ruby>を<ruby>食<rt>た</rt></ruby>べる<mark>ようにしています</mark>。",
+     "romaji": "Mainichi yasai o taberu yō ni shite imasu.",
+     "tr": "Her gün sebze yemeye çalışıyorum. (çaba)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>健康<rt>けんこう</rt></ruby>のために、お<ruby>酒<rt>さけ</rt></ruby>を<ruby>飲<rt>の</rt></ruby>まない<mark>ようにしています</mark>。",
+     "romaji": "Kenkō no tame ni, osake o nomanai yō ni shite imasu.",
+     "tr": "Sağlık için içki içmemeye çalışıyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>練習<rt>れんしゅう</rt></ruby>して、<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>話<rt>はな</rt></ruby>せる<mark>ようになりました</mark>。",
+     "romaji": "Renshū shite, nihongo ga hanaseru yō ni narimashita.",
+     "tr": "Alıştırma yapıp Japonca konuşabilir hale geldim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>漢字<rt>かんじ</rt></ruby>が<ruby>読<rt>よ</rt></ruby>める<mark>ようになりました</mark>。",
+     "romaji": "Kanji ga yomeru yō ni narimashita.",
+     "tr": "Kanji okuyabilir oldum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>毎朝<rt>まいあさ</rt></ruby><ruby>早<rt>はや</rt></ruby>く<ruby>起<rt>お</rt></ruby>きる<mark>ようにして</mark>ください。",
+     "romaji": "Maiasa hayaku okiru yō ni shite kudasai.",
+     "tr": "Her sabah erken kalkmaya çalışın.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>子<rt>こ</rt></ruby>どもは<ruby>一人<rt>ひとり</rt></ruby>で<ruby>歩<rt>ある</rt></ruby>ける<mark>ようになった</mark>。",
+     "romaji": "Kodomo wa hitori de arukeru yō ni natta.",
+     "tr": "Çocuk tek başına yürüyebilir oldu.",
+     "tag": "🔄 Çaba/değişim"
+    }
+   ]
+  },
+  {
+   "id": "koto-ni",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🧭",
+     "title": "〜ことにする・〜ことになる — Karar",
+     "sub": "する = kendi kararım. なる = (dışarıdan) kararlaştırıldı."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>[<ruby>辞書形<rt>じしょけい</rt></ruby>/ない形] + ことにする/ことになる</code>.<br> <code>ことにする</code> = <u>ben karar verdim</u>. <code>ことになる</code> = <u>(başkası/durum) karar verdi</u>, sonuç."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>来年<rt>らいねん</rt></ruby>、<ruby>日本<rt>にほん</rt></ruby>の<ruby>大学<rt>だいがく</rt></ruby>に<ruby>行<rt>い</rt></ruby>く<mark>ことにしました</mark>。",
+     "romaji": "Rainen, Nihon no daigaku ni iku koto ni shimashita.",
+     "tr": "Gelecek yıl Japon üniversitesine gitmeye karar verdim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>健康<rt>けんこう</rt></ruby>のために、<ruby>毎日<rt>まいにち</rt></ruby><ruby>運動<rt>うんどう</rt></ruby>する<mark>ことにしました</mark>。",
+     "romaji": "Kenkō no tame ni, mainichi undō suru koto ni shimashita.",
+     "tr": "Sağlık için her gün spor yapmaya karar verdim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "たばこをやめる<mark>ことにしました</mark>。",
+     "romaji": "Tabako o yameru koto ni shimashita.",
+     "tr": "Sigarayı bırakmaya karar verdim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>来月<rt>らいげつ</rt></ruby>、<ruby>大阪<rt>おおさか</rt></ruby>に<ruby>転勤<rt>てんきん</rt></ruby>する<mark>ことになりました</mark>。",
+     "romaji": "Raigetsu, Ōsaka ni tenkin suru koto ni narimashita.",
+     "tr": "Gelecek ay Osaka'ya tayin edildim. (dışarıdan karar)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>会議<rt>かいぎ</rt></ruby>は<ruby>金曜日<rt>きんようび</rt></ruby>に<ruby>変更<rt>へんこう</rt></ruby>する<mark>ことになりました</mark>。",
+     "romaji": "Kaigi wa kin'yōbi ni henkō suru koto ni narimashita.",
+     "tr": "Toplantının cumaya alınmasına karar verildi.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>二人<rt>ふたり</rt></ruby>は<ruby>結婚<rt>けっこん</rt></ruby>する<mark>ことになりました</mark>。",
+     "romaji": "Futari wa kekkon suru koto ni narimashita.",
+     "tr": "İkisinin evlenmesine karar verildi / evleniyorlar.",
+     "tag": "🧭 Karar"
+    }
+   ]
+  },
+  {
+   "id": "tsumori",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "📝",
+     "title": "〜つもり — Niyet (\"...mayı düşünüyorum\")",
+     "sub": "Kişisel niyet/plan (henüz kesin olmayabilir)."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code><ruby>辞書形<rt>じしょけい</rt></ruby> + つもり</code> (yapma niyeti) · <code>ない形 + つもり</code> (yapmama niyeti)."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>夏休<rt>なつやす</rt></ruby>みに<ruby>国<rt>くに</rt></ruby>へ<ruby>帰<rt>かえ</rt></ruby>る<mark>つもりです</mark>。",
+     "romaji": "Natsuyasumi ni kuni e kaeru tsumori desu.",
+     "tr": "Yaz tatilinde ülkeme dönmeyi düşünüyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>早<rt>はや</rt></ruby>く<ruby>寝<rt>ね</rt></ruby>る<mark>つもりです</mark>。",
+     "romaji": "Kyō wa hayaku neru tsumori desu.",
+     "tr": "Bugün erken yatmayı planlıyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "お<ruby>酒<rt>さけ</rt></ruby>はもう<ruby>飲<rt>の</rt></ruby>まない<mark>つもりです</mark>。",
+     "romaji": "Osake wa mō nomanai tsumori desu.",
+     "tr": "Artık içki içmemeyi düşünüyorum. (ない形 + つもり)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>大学<rt>だいがく</rt></ruby>で<ruby>経済<rt>けいざい</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>する<mark>つもりです</mark>。",
+     "romaji": "Daigaku de keizai o benkyō suru tsumori desu.",
+     "tr": "Üniversitede ekonomi okumaya niyetliyim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>週末<rt>しゅうまつ</rt></ruby>は<ruby>何<rt>なに</rt></ruby>をする<mark>つもりですか</mark>。",
+     "romaji": "Shūmatsu wa nani o suru tsumori desu ka?",
+     "tr": "Hafta sonu ne yapmayı düşünüyorsun?",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>車<rt>くるま</rt></ruby>を<ruby>買<rt>か</rt></ruby>う<mark>つもりでした</mark>が、やめました。",
+     "romaji": "Kuruma o kau tsumori deshita ga, yamemashita.",
+     "tr": "Araba almaya niyetliydim ama vazgeçtim.",
+     "tag": "📝 Niyet"
+    }
+   ]
+  },
+  {
+   "id": "yotei",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "📅",
+     "title": "〜<ruby>予定<rt>よてい</rt></ruby> — Plan/Program",
+     "sub": "Kesinleşmiş, programlanmış plan (つもり'den daha objektif)."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code><ruby>辞書形<rt>じしょけい</rt></ruby> + <ruby>予定<rt>よてい</rt></ruby></code> · <code>N + の + <ruby>予定<rt>よてい</rt></ruby></code>.<br> ⚖️ <code>つもり</code> = kişisel niyet; <code>予定</code> = takvime bağlı, dışarıdan da belli program."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>来週<rt>らいしゅう</rt></ruby>、<ruby>京都<rt>きょうと</rt></ruby>へ<ruby>行<rt>い</rt></ruby>く<mark><ruby>予定<rt>よてい</rt></ruby>です</mark>。",
+     "romaji": "Raishū, Kyōto e iku yotei desu.",
+     "tr": "Gelecek hafta Kyoto'ya gitme planım var.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>会議<rt>かいぎ</rt></ruby>は3<ruby>時<rt>じ</rt></ruby>から<ruby>始<rt>はじ</rt></ruby>まる<mark><ruby>予定<rt>よてい</rt></ruby>です</mark>。",
+     "romaji": "Kaigi wa san-ji kara hajimaru yotei desu.",
+     "tr": "Toplantı 3'ten itibaren başlayacak (planlı).",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>飛行機<rt>ひこうき</rt></ruby>は10<ruby>時<rt>じ</rt></ruby>に<ruby>着<rt>つ</rt></ruby>く<mark><ruby>予定<rt>よてい</rt></ruby>です</mark>。",
+     "romaji": "Hikōki wa jū-ji ni tsuku yotei desu.",
+     "tr": "Uçak 10'da varacak (planda).",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>明日<rt>あした</rt></ruby>は<ruby>出張<rt>しゅっちょう</rt></ruby>の<mark><ruby>予定<rt>よてい</rt></ruby>です</mark>。",
+     "romaji": "Ashita wa shutchō no yotei desu.",
+     "tr": "Yarın iş gezisi planım var. (N + の + 予定)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>来月<rt>らいげつ</rt></ruby>、<ruby>引<rt>ひ</rt></ruby>っ<ruby>越<rt>こ</rt></ruby>す<mark><ruby>予定<rt>よてい</rt></ruby>です</mark>。",
+     "romaji": "Raigetsu, hikkosu yotei desu.",
+     "tr": "Gelecek ay taşınma planım var.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "パーティーは<ruby>何時<rt>なんじ</rt></ruby>に<ruby>終<rt>お</rt></ruby>わる<mark><ruby>予定<rt>よてい</rt></ruby>ですか</mark>。",
+     "romaji": "Pātī wa nan-ji ni owaru yotei desu ka?",
+     "tr": "Parti kaçta bitecek (planda)?",
+     "tag": "📅 Program"
+    }
+   ]
+  },
+  {
+   "id": "nagara",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🎧",
+     "title": "〜ながら — \"...arak / aynı anda\"",
+     "sub": "Aynı kişi iki eylemi aynı anda yapar (asıl eylem sonda)."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>ますkök + ながら、〜</code> → <ruby>聞<rt>き</rt></ruby>きます→<ruby>聞<rt>き</rt></ruby>き<u>ながら</u>. İki eylem de aynı özneye ait."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聞<rt>き</rt></ruby>き<mark>ながら</mark>、<ruby>勉強<rt>べんきょう</rt></ruby>します。",
+     "romaji": "Ongaku o kikinagara, benkyō shimasu.",
+     "tr": "Müzik dinleyerek çalışırım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "テレビを<ruby>見<rt>み</rt></ruby><mark>ながら</mark>、ご<ruby>飯<rt>はん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べます。",
+     "romaji": "Terebi o minagara, gohan o tabemasu.",
+     "tr": "TV izleyerek yemek yerim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>歩<rt>ある</rt></ruby>き<mark>ながら</mark>、<ruby>電話<rt>でんわ</rt></ruby>しないでください。",
+     "romaji": "Arukinagara, denwa shinaide kudasai.",
+     "tr": "Yürürken telefonla konuşma.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "コーヒーを<ruby>飲<rt>の</rt></ruby>み<mark>ながら</mark>、<ruby>新聞<rt>しんぶん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>みます。",
+     "romaji": "Kōhī o nominagara, shinbun o yomimasu.",
+     "tr": "Kahve içerek gazete okurum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "アルバイトをし<mark>ながら</mark>、<ruby>大学<rt>だいがく</rt></ruby>に<ruby>通<rt>かよ</rt></ruby>っています。",
+     "romaji": "Arubaito o shinagara, daigaku ni kayotte imasu.",
+     "tr": "Yarı zamanlı çalışırken üniversiteye gidiyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>泣<rt>な</rt></ruby>き<mark>ながら</mark>、<ruby>話<rt>はな</rt></ruby>しました。",
+     "romaji": "Kanojo wa nakinagara, hanashimashita.",
+     "tr": "O ağlayarak konuştu.",
+     "tag": "🎧 Aynı anda"
+    }
+   ]
+  },
+  {
+   "id": "sugiru",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🈵",
+     "title": "〜すぎる — \"Aşırı / çok fazla\"",
+     "sub": "Gereğinden fazla; genelde olumsuz sonuç."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>ますkök + すぎる</code> · <code>いadj (い at) + すぎる</code> · <code>なadj + すぎる</code>.<br> <ruby>食<rt>た</rt></ruby>べます→<ruby>食<rt>た</rt></ruby>べすぎる · <ruby>高<rt>たか</rt></ruby>い→<ruby>高<rt>たか</rt></ruby>すぎる · <ruby>静<rt>しず</rt></ruby>か→<ruby>静<rt>しず</rt></ruby>かすぎる. (いい→よすぎる)"
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>食<rt>た</rt></ruby>べ<mark>すぎて</mark>、お<ruby>腹<rt>なか</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>いです。",
+     "romaji": "Tabesugite, onaka ga itai desu.",
+     "tr": "Çok yedim, karnım ağrıyor.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "このかばんは<ruby>高<rt>たか</rt></ruby><mark>すぎます</mark>。",
+     "romaji": "Kono kaban wa takasugimasu.",
+     "tr": "Bu çanta çok pahalı.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>昨日<rt>きのう</rt></ruby>、お<ruby>酒<rt>さけ</rt></ruby>を<ruby>飲<rt>の</rt></ruby>み<mark>すぎました</mark>。",
+     "romaji": "Kinō, osake o nomisugimashita.",
+     "tr": "Dün çok içki içtim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>問題<rt>もんだい</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>し<mark>すぎて</mark>、<ruby>分<rt>わ</rt></ruby>かりません。",
+     "romaji": "Kono mondai wa muzukashisugite, wakarimasen.",
+     "tr": "Bu soru çok zor, anlamıyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>運動<rt>うんどう</rt></ruby>し<mark>すぎる</mark>と、<ruby>体<rt>からだ</rt></ruby>に<ruby>悪<rt>わる</rt></ruby>いです。",
+     "romaji": "Undō shisugiru to, karada ni warui desu.",
+     "tr": "Aşırı spor yapmak vücuda zarar verir.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>部屋<rt>へや</rt></ruby>は<ruby>静<rt>しず</rt></ruby>か<mark>すぎて</mark>、<ruby>寂<rt>さび</rt></ruby>しいです。",
+     "romaji": "Kono heya wa shizukasugite, sabishii desu.",
+     "tr": "Bu oda fazla sessiz, iç sıkıcı.",
+     "tag": "🈵 Aşırılık"
+    }
+   ]
+  },
+  {
+   "id": "yasui-nikui",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "⚖️",
+     "title": "〜やすい・〜にくい — \"...ması kolay / zor\"",
+     "sub": "Bir eylemin kolay/zor oluşu. いadj gibi çekilir."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>ますkök + やすい</code> (kolay) · <code>+ にくい</code> (zor). → <ruby>読<rt>よ</rt></ruby>みます→<ruby>読<rt>よ</rt></ruby>み<u>やすい</u>/<ruby>読<rt>よ</rt></ruby>み<u>にくい</u>."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>本<rt>ほん</rt></ruby>は<ruby>字<rt>じ</rt></ruby>が<ruby>大<rt>おお</rt></ruby>きくて、<ruby>読<rt>よ</rt></ruby>み<mark>やすい</mark>です。",
+     "romaji": "Kono hon wa ji ga ōkikute, yomiyasui desu.",
+     "tr": "Bu kitabın yazısı büyük, okuması kolay.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "このペンは<ruby>書<rt>か</rt></ruby>き<mark>やすい</mark>です。",
+     "romaji": "Kono pen wa kakiyasui desu.",
+     "tr": "Bu kalemle yazmak kolay.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>薬<rt>くすり</rt></ruby>は<ruby>苦<rt>にが</rt></ruby>くて、<ruby>飲<rt>の</rt></ruby>み<mark>にくい</mark>です。",
+     "romaji": "Kono kusuri wa nigakute, nominikui desu.",
+     "tr": "Bu ilaç acı, içmesi zor.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>雨<rt>あめ</rt></ruby>の<ruby>日<rt>ひ</rt></ruby>は<ruby>道<rt>みち</rt></ruby>が<ruby>滑<rt>すべ</rt></ruby>り<mark>やすい</mark>です。",
+     "romaji": "Ame no hi wa michi ga suberiyasui desu.",
+     "tr": "Yağmurlu günlerde yol kaygandır.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>田中<rt>たなか</rt></ruby><ruby>先生<rt>せんせい</rt></ruby>の<ruby>話<rt>はなし</rt></ruby>は<ruby>分<rt>わ</rt></ruby>かり<mark>やすい</mark>です。",
+     "romaji": "Tanaka sensei no hanashi wa wakariyasui desu.",
+     "tr": "Tanaka öğretmenin anlatımı anlaşılır.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>肉<rt>にく</rt></ruby>は<ruby>硬<rt>かた</rt></ruby>くて、<ruby>食<rt>た</rt></ruby>べ<mark>にくい</mark>です。",
+     "romaji": "Kono niku wa katakute, tabenikui desu.",
+     "tr": "Bu et sert, yemesi zor.",
+     "tag": "⚖️ Kolay/zor"
+    }
+   ]
+  },
+  {
+   "id": "kata",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🛠️",
+     "title": "〜<ruby>方<rt>かた</rt></ruby> — \"...yapılış şekli / nasıl ...ılır\"",
+     "sub": "Bir eylemin yöntemi/biçimi."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>ますkök + <ruby>方<rt>かた</rt></ruby></code> → <ruby>作<rt>つく</rt></ruby>ります→<ruby>作<rt>つく</rt></ruby>り<u>方</u> (yapılışı). Nesne partikeli genelde <code>の</code> olur: <ruby>漢字<rt>かんじ</rt></ruby><u>の</u><ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>読<rt>よ</rt></ruby>み<mark><ruby>方<rt>かた</rt></ruby></mark>が<ruby>分<rt>わ</rt></ruby>かりません。",
+     "romaji": "Kono kanji no yomikata ga wakarimasen.",
+     "tr": "Bu kanjinin okunuşunu bilmiyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>料理<rt>りょうり</rt></ruby>の<ruby>作<rt>つく</rt></ruby>り<mark><ruby>方<rt>かた</rt></ruby></mark>を<ruby>教<rt>おし</rt></ruby>えてください。",
+     "romaji": "Ryōri no tsukurikata o oshiete kudasai.",
+     "tr": "Yemeğin yapılışını öğret.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>機械<rt>きかい</rt></ruby>の<ruby>使<rt>つか</rt></ruby>い<mark><ruby>方<rt>かた</rt></ruby></mark>は<ruby>簡単<rt>かんたん</rt></ruby>です。",
+     "romaji": "Kono kikai no tsukaikata wa kantan desu.",
+     "tr": "Bu makinenin kullanımı kolay.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>駅<rt>えき</rt></ruby>までの<ruby>行<rt>い</rt></ruby>き<mark><ruby>方<rt>かた</rt></ruby></mark>を<ruby>教<rt>おし</rt></ruby>えてもらえますか。",
+     "romaji": "Eki made no ikikata o oshiete moraemasu ka?",
+     "tr": "İstasyona nasıl gidileceğini söyler misin?",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>書<rt>か</rt></ruby>き<mark><ruby>方<rt>かた</rt></ruby></mark>を<ruby>練習<rt>れんしゅう</rt></ruby>します。",
+     "romaji": "Kanji no kakikata o renshū shimasu.",
+     "tr": "Kanji yazma şeklini çalışırım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>彼<rt>かれ</rt></ruby>の<ruby>考<rt>かんが</rt></ruby>え<mark><ruby>方<rt>かた</rt></ruby></mark>が<ruby>好<rt>す</rt></ruby>きです。",
+     "romaji": "Kare no kangaekata ga suki desu.",
+     "tr": "Onun düşünce tarzını seviyorum.",
+     "tag": "🛠️ Yöntem"
+    }
+   ]
+  },
+  {
+   "id": "kadouka",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "❓",
+     "title": "〜かどうか — \"...olup olmadığı\"",
+     "sub": "Evet/hayır sorusunu cümleye gömme."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>[Sade form] + かどうか</code> (N/なadj sonuna <code>だ</code> GELMEZ).<br> 💡 Soru kelimesi varsa <code>かどうか</code> yerine sadece <code>か</code>: <ruby>誰<rt>だれ</rt></ruby>が<ruby>来<rt>く</rt></ruby>るか<ruby>分<rt>わ</rt></ruby>からない."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>彼<rt>かれ</rt></ruby>が<ruby>来<rt>く</rt></ruby>る<mark>かどうか</mark><ruby>分<rt>わ</rt></ruby>かりません。",
+     "romaji": "Kare ga kuru ka dō ka wakarimasen.",
+     "tr": "Onun gelip gelmeyeceğini bilmiyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "これでいい<mark>かどうか</mark>、<ruby>見<rt>み</rt></ruby>てください。",
+     "romaji": "Kore de ii ka dō ka, mite kudasai.",
+     "tr": "Bu böyle iyi mi bir bakın.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>試験<rt>しけん</rt></ruby>に<ruby>合格<rt>ごうかく</rt></ruby>した<mark>かどうか</mark>、まだ<ruby>分<rt>わ</rt></ruby>かりません。",
+     "romaji": "Shiken ni gōkaku shita ka dō ka, mada wakarimasen.",
+     "tr": "Sınavı geçip geçmediğimi henüz bilmiyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>店<rt>みせ</rt></ruby>がおいしい<mark>かどうか</mark>、<ruby>食<rt>た</rt></ruby>べてみましょう。",
+     "romaji": "Kono mise ga oishii ka dō ka, tabete mimashō.",
+     "tr": "Bu dükkân lezzetli mi bir yiyip görelim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "パーティーに<ruby>行<rt>い</rt></ruby>く<mark>かどうか</mark>、まだ<ruby>決<rt>き</rt></ruby>めていません。",
+     "romaji": "Pātī ni iku ka dō ka, mada kimete imasen.",
+     "tr": "Partiye gidip gitmeyeceğime henüz karar vermedim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>本当<rt>ほんとう</rt></ruby><mark>かどうか</mark>、<ruby>確<rt>たし</rt></ruby>かめます。",
+     "romaji": "Hontō ka dō ka, tashikamemasu.",
+     "tr": "Doğru mu değil mi kontrol ederim.",
+     "tag": "❓ Olup olmadığı"
+    }
+   ]
+  },
+  {
+   "id": "to-omou",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "💭",
+     "title": "〜と<ruby>思<rt>おも</rt></ruby>う・〜と<ruby>言<rt>い</rt></ruby>っていた — Görüş &amp; Aktarım",
+     "sub": "Fikir belirtme ve başkasının sözünü aktarma."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>[Sade form] + と<ruby>思<rt>おも</rt></ruby>う</code> = \"...diye düşünüyorum\".<br> <code>[Sade form] + と<ruby>言<rt>い</rt></ruby>っていた</code> = \"...dedi / söylüyordu\" (aktarım)."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る<mark>と<ruby>思<rt>おも</rt></ruby>います</mark>。",
+     "romaji": "Ashita wa ame ga furu to omoimasu.",
+     "tr": "Yarın yağmur yağar diye düşünüyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>映画<rt>えいが</rt></ruby>はおもしろい<mark>と<ruby>思<rt>おも</rt></ruby>います</mark>。",
+     "romaji": "Kono eiga wa omoshiroi to omoimasu.",
+     "tr": "Bu filmin ilginç olduğunu düşünüyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>田中<rt>たなか</rt></ruby>さんは<ruby>来<rt>こ</rt></ruby>ない<mark>と<ruby>思<rt>おも</rt></ruby>う</mark>。",
+     "romaji": "Tanaka-san wa konai to omou.",
+     "tr": "Bence Tanaka gelmez.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>先生<rt>せんせい</rt></ruby>は<ruby>明日<rt>あした</rt></ruby><ruby>試験<rt>しけん</rt></ruby>がある<mark>と<ruby>言<rt>い</rt></ruby>っていました</mark>。",
+     "romaji": "Sensei wa ashita shiken ga aru to itte imashita.",
+     "tr": "Öğretmen yarın sınav olduğunu söylüyordu.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きたい<mark>と<ruby>言<rt>い</rt></ruby>っていました</mark>。",
+     "romaji": "Kare wa Nihon e ikitai to itte imashita.",
+     "tr": "O Japonya'ya gitmek istediğini söylüyordu.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "これが<ruby>一番<rt>いちばん</rt></ruby>いい<mark>と<ruby>思<rt>おも</rt></ruby>います</mark>。",
+     "romaji": "Kore ga ichiban ii to omoimasu.",
+     "tr": "Bunun en iyisi olduğunu düşünüyorum.",
+     "tag": "💭 Görüş/aktarım"
+    }
+   ]
+  },
+  {
+   "id": "mama",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🔒",
+     "title": "〜まま — \"...haliyle / ...bırakarak\"",
+     "sub": "Bir durum değişmeden başka bir şey yapmak/kalmak."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong> <code>Vた形 + まま</code> (yaptığı halde sürüyor) · <code>Vない形 + まま</code> · <code>N + の + まま</code> · <code>なadj + な + まま</code>."
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>電気<rt>でんき</rt></ruby>を つけた<mark>まま</mark>、<ruby>寝<rt>ね</rt></ruby>てしまいました。",
+     "romaji": "Denki o tsuketa mama, nete shimaimashita.",
+     "tr": "Işığı açık bırakarak uyuyakaldım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>靴<rt>くつ</rt></ruby>を <ruby>履<rt>は</rt></ruby>いた<mark>まま</mark>、<ruby>入<rt>はい</rt></ruby>らないでください。",
+     "romaji": "Kutsu o haita mama, hairanaide kudasai.",
+     "tr": "Ayakkabıyla (giymiş halde) girmeyin.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>窓<rt>まど</rt></ruby>を <ruby>開<rt>あ</rt></ruby>けた<mark>まま</mark>、<ruby>出<rt>で</rt></ruby>かけました。",
+     "romaji": "Mado o aketa mama, dekakemashita.",
+     "tr": "Pencereyi açık bırakarak çıktım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>立<rt>た</rt></ruby>った<mark>まま</mark>、<ruby>話<rt>はな</rt></ruby>しましょう。",
+     "romaji": "Tatta mama, hanashimashō.",
+     "tr": "Ayakta (durur halde) konuşalım.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>昔<rt>むかし</rt></ruby>の<mark>まま</mark>、<ruby>何<rt>なに</rt></ruby>も<ruby>変<rt>か</rt></ruby>わっていません。",
+     "romaji": "Mukashi no mama, nani mo kawatte imasen.",
+     "tr": "Eskisi gibi, hiçbir şey değişmemiş. (N + の + まま)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "テレビを つけた<mark>まま</mark>にしないでください。",
+     "romaji": "Terebi o tsuketa mama ni shinaide kudasai.",
+     "tr": "TV'yi açık bırakmayın.",
+     "tag": "🔒 Değişmeyen hal"
+    }
+   ]
+  },
+  {
+   "id": "bahodo",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "📈",
+     "title": "〜ば〜ほど — \"...dıkça (daha da)...\"",
+     "sub": "Bir şey arttıkça diğerinin de artması."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Yapım:</strong><br> Fiil: <code>〜ば + <ruby>辞書形<rt>じしょけい</rt></ruby> + ほど</code> → <ruby>練習<rt>れんしゅう</rt></ruby>すれば<ruby>練習<rt>れんしゅう</rt></ruby>するほど<br> いadj: <code>〜ければ + い + ほど</code> → <ruby>高<rt>たか</rt></ruby>ければ<ruby>高<rt>たか</rt></ruby>いほど<br> なadj: <code>〜なら + な + ほど</code> → <ruby>便利<rt>べんり</rt></ruby>なら<ruby>便利<rt>べんり</rt></ruby>なほど"
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>練習<rt>れんしゅう</rt></ruby><mark>すればするほど</mark>、<ruby>上手<rt>じょうず</rt></ruby>になります。",
+     "romaji": "Renshū sureba suru hodo, jōzu ni narimasu.",
+     "tr": "Alıştırma yaptıkça daha iyi olursun.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>考<rt>かんが</rt></ruby><mark>えれば<ruby>考<rt>かんが</rt></ruby>えるほど</mark>、<ruby>分<rt>わ</rt></ruby>からなくなります。",
+     "romaji": "Kangaereba kangaeru hodo, wakaranaku narimasu.",
+     "tr": "Düşündükçe daha da anlaşılmaz oluyor.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "この<ruby>本<rt>ほん</rt></ruby>は<ruby>読<rt>よ</rt></ruby><mark>めば<ruby>読<rt>よ</rt></ruby>むほど</mark>、おもしろいです。",
+     "romaji": "Kono hon wa yomeba yomu hodo, omoshiroi desu.",
+     "tr": "Bu kitap okudukça ilginçleşiyor.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>給料<rt>きゅうりょう</rt></ruby>は<ruby>高<rt>たか</rt></ruby><mark>ければ<ruby>高<rt>たか</rt></ruby>いほど</mark>いいです。",
+     "romaji": "Kyūryō wa takakereba takai hodo ii desu.",
+     "tr": "Maaş ne kadar yüksekse o kadar iyi.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>日本語<rt>にほんご</rt></ruby>は<ruby>勉強<rt>べんきょう</rt></ruby><mark>すればするほど</mark>、<ruby>好<rt>す</rt></ruby>きになります。",
+     "romaji": "Nihongo wa benkyō sureba suru hodo, suki ni narimasu.",
+     "tr": "Japoncayı çalıştıkça seviyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>道具<rt>どうぐ</rt></ruby>は<ruby>便利<rt>べんり</rt></ruby><mark>なら<ruby>便利<rt>べんり</rt></ruby>なほど</mark>いいです。",
+     "romaji": "Dōgu wa benri nara benri na hodo ii desu.",
+     "tr": "Alet ne kadar pratikse o kadar iyi.",
+     "tag": "📈 ...dıkça"
+    }
+   ]
+  },
+  {
+   "id": "gimonshi",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "✳️",
+     "title": "<ruby>疑問詞<rt>ぎもんし</rt></ruby>＋も／でも／か — Herkes / Hiç / Bir şey",
+     "sub": "Soru kelimesi + ek → belgisiz/kapsayıcı anlam."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Üç kalıp:</strong><br> <code>疑問詞 + も</code> (+ olumsuz) = hiç → <ruby>誰<rt>だれ</rt></ruby>も (kimse) · <ruby>何<rt>なに</rt></ruby>も (hiçbir şey)<br> <code>疑問詞 + か</code> = belirsiz → <ruby>誰<rt>だれ</rt></ruby>か (birisi) · <ruby>何<rt>なに</rt></ruby>か (bir şey) · どこか (bir yer)<br> <code>疑問詞 + でも</code> = tümü → <ruby>誰<rt>だれ</rt></ruby>でも (herkes) · <ruby>何<rt>なん</rt></ruby>でも (her şey) · いつでも (her zaman)"
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>教室<rt>きょうしつ</rt></ruby>には<mark><ruby>誰<rt>だれ</rt></ruby>も</mark>いません。",
+     "romaji": "Kyōshitsu ni wa dare mo imasen.",
+     "tr": "Sınıfta kimse yok.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<mark><ruby>何<rt>なに</rt></ruby>か</mark><ruby>食<rt>た</rt></ruby>べましたか。",
+     "romaji": "Nanika tabemashita ka?",
+     "tr": "Bir şey yedin mi?",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "このゲームは<mark><ruby>誰<rt>だれ</rt></ruby>でも</mark>できます。",
+     "romaji": "Kono gēmu wa dare demo dekimasu.",
+     "tr": "Bu oyunu herkes yapabilir.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<mark><ruby>何<rt>なん</rt></ruby>でも</mark><ruby>食<rt>た</rt></ruby>べます。",
+     "romaji": "Nan demo tabemasu.",
+     "tr": "Her şeyi yerim.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<mark>どこか</mark>へ<ruby>行<rt>い</rt></ruby>きたいです。",
+     "romaji": "Dokoka e ikitai desu.",
+     "tr": "Bir yere gitmek istiyorum.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<mark>いつでも</mark><ruby>来<rt>き</rt></ruby>てください。",
+     "romaji": "Itsu demo kite kudasai.",
+     "tr": "İstediğin zaman gel.",
+     "tag": "✳️ Belgisiz"
+    }
+   ]
+  },
+  {
+   "id": "jita",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🔁",
+     "title": "<ruby>自動詞<rt>じどうし</rt></ruby>・<ruby>他動詞<rt>たどうし</rt></ruby> — Geçişsiz / Geçişli Çiftler",
+     "sub": "他動詞 (özne yapar, を) vs 自動詞 (kendiliğinden olur, が)."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Kural:</strong> <code><ruby>他動詞<rt>たどうし</rt></ruby></code> = biri yapar → nesne <code>を</code>. <code><ruby>自動詞<rt>じどうし</rt></ruby></code> = kendi olur → özne <code>が</code>.<br> Durum: <code>自動詞 + ている</code> (kapı açık) · <code>他動詞 + てある</code> (bilerek açılmış)."
+    },
+    {
+     "t": "card",
+     "title": "📊 Sık çiftler",
+     "blocks": [
+      {
+       "t": "table",
+       "html": "<table class=\"group-table\"> <tr><th><ruby>他動詞<rt>たどうし</rt></ruby> (を)</th><th><ruby>自動詞<rt>じどうし</rt></ruby> (が)</th><th>Anlam</th></tr> <tr><td><ruby>開<rt>あ</rt></ruby>ける</td><td><ruby>開<rt>あ</rt></ruby>く</td><td>açmak / açılmak</td></tr> <tr><td><ruby>閉<rt>し</rt></ruby>める</td><td><ruby>閉<rt>し</rt></ruby>まる</td><td>kapatmak / kapanmak</td></tr> <tr><td>つける</td><td>つく</td><td>yakmak / yanmak</td></tr> <tr><td><ruby>消<rt>け</rt></ruby>す</td><td><ruby>消<rt>き</rt></ruby>える</td><td>söndürmek / sönmek</td></tr> <tr><td><ruby>始<rt>はじ</rt></ruby>める</td><td><ruby>始<rt>はじ</rt></ruby>まる</td><td>başlatmak / başlamak</td></tr> <tr><td><ruby>止<rt>と</rt></ruby>める</td><td><ruby>止<rt>と</rt></ruby>まる</td><td>durdurmak / durmak</td></tr> </table>"
+      }
+     ]
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "ドアを<mark><ruby>開<rt>あ</rt></ruby>けます</mark>。／ドアが<mark><ruby>開<rt>あ</rt></ruby>きます</mark>。",
+     "romaji": "Doa o akemasu. / Doa ga akimasu.",
+     "tr": "Kapıyı açarım. / Kapı açılır.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>電気<rt>でんき</rt></ruby>を<mark>つけました</mark>。／<ruby>電気<rt>でんき</rt></ruby>が<mark>つきました</mark>。",
+     "romaji": "Denki o tsukemashita. / Denki ga tsukimashita.",
+     "tr": "Işığı yaktım. / Işık yandı.",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>窓<rt>まど</rt></ruby>が<mark><ruby>閉<rt>し</rt></ruby>まっています</mark>。",
+     "romaji": "Mado ga shimatte imasu.",
+     "tr": "Pencere kapalı. (自動詞 + ている = durum)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>授業<rt>じゅぎょう</rt></ruby>が<mark><ruby>始<rt>はじ</rt></ruby>まりました</mark>。",
+     "romaji": "Jugyō ga hajimarimashita.",
+     "tr": "Ders başladı. (自動詞)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "バスが<mark><ruby>止<rt>と</rt></ruby>まりました</mark>。",
+     "romaji": "Basu ga tomarimashita.",
+     "tr": "Otobüs durdu. (自動詞)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "エアコンを<mark><ruby>消<rt>け</rt></ruby>して</mark>ください。",
+     "romaji": "Eakon o keshite kudasai.",
+     "tr": "Klimayı kapatın. (他動詞)",
+     "tag": "🔁 Geçişli/geçişsiz"
+    }
+   ]
+  },
+  {
+   "id": "keigo",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🎎",
+     "title": "<ruby>敬語<rt>けいご</rt></ruby> — Saygı Dili (Giriş)",
+     "sub": "尊敬語 (karşıyı yükselt) · 謙譲語 (kendini alçalt) · 丁寧語 (です/ます)."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "<strong>Genel kalıplar:</strong><br> <ruby>尊敬語<rt>そんけいご</rt></ruby>: <code>お + ますkök + になる</code> → お<ruby>帰<rt>かえ</rt></ruby>りになる. Ya da <code>〜(ら)れる</code>.<br> <ruby>謙譲語<rt>けんじょうご</rt></ruby>: <code>お + ますkök + する</code> → お<ruby>持<rt>も</rt></ruby>ちする."
+    },
+    {
+     "t": "card",
+     "title": "📊 Özel fiiller (ezberle)",
+     "blocks": [
+      {
+       "t": "table",
+       "html": "<table class=\"group-table\"> <tr><th>Normal</th><th>尊敬語 (saygı)</th><th>謙譲語 (alçak)</th></tr> <tr><td><ruby>行<rt>い</rt></ruby>く/<ruby>来<rt>く</rt></ruby>る</td><td>いらっしゃる</td><td><ruby>参<rt>まい</rt></ruby>る</td></tr> <tr><td><ruby>食<rt>た</rt></ruby>べる/<ruby>飲<rt>の</rt></ruby>む</td><td><ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がる</td><td>いただく</td></tr> <tr><td><ruby>見<rt>み</rt></ruby>る</td><td>ご<ruby>覧<rt>らん</rt></ruby>になる</td><td><ruby>拝見<rt>はいけん</rt></ruby>する</td></tr> <tr><td><ruby>言<rt>い</rt></ruby>う</td><td>おっしゃる</td><td><ruby>申<rt>もう</rt></ruby>す</td></tr> <tr><td>する</td><td>なさる</td><td>いたす</td></tr> </table>"
+      }
+     ]
+    },
+    {
+     "t": "heading",
+     "html": "📖 Örnek cümleler"
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>先生<rt>せんせい</rt></ruby>はもう お<ruby>帰<rt>かえ</rt></ruby>りに<mark>なりました</mark>。",
+     "romaji": "Sensei wa mō okaeri ni narimashita.",
+     "tr": "Öğretmen çoktan gitti. (尊敬語)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>何<rt>なに</rt></ruby>を<mark><ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がりますか</mark>。",
+     "romaji": "Nani o meshiagarimasu ka?",
+     "tr": "Ne yersiniz/içersiniz? (尊敬語)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>社長<rt>しゃちょう</rt></ruby>がそう<mark>おっしゃいました</mark>。",
+     "romaji": "Shachō ga sō osshaimashita.",
+     "tr": "Müdür öyle dedi. (尊敬語)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>私<rt>わたし</rt></ruby>が<ruby>荷物<rt>にもつ</rt></ruby>を<mark>お<ruby>持<rt>も</rt></ruby>ちします</mark>。",
+     "romaji": "Watashi ga nimotsu o omochi shimasu.",
+     "tr": "Bagajınızı ben taşıyayım. (謙譲語)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>明日<rt>あした</rt></ruby>、そちらへ<mark><ruby>参<rt>まい</rt></ruby>ります</mark>。",
+     "romaji": "Ashita, sochira e mairimasu.",
+     "tr": "Yarın oraya geleceğim. (謙譲語)",
+     "tag": ""
+    },
+    {
+     "t": "example",
+     "jp": "<ruby>資料<rt>しりょう</rt></ruby>を<mark><ruby>拝見<rt>はいけん</rt></ruby>しました</mark>。",
+     "romaji": "Shiryō o haiken shimashita.",
+     "tr": "Belgeyi inceledim/gördüm. (謙譲語)",
+     "tag": "🎎 Saygı dili"
+    }
+   ]
+  },
+  {
+   "id": "kanji-n4",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "🈵",
+     "title": "N4 Kanji — Çekirdek Liste (~150)",
+     "sub": "N5'in üstüne gelen yeni kanjiler. Okunuş (kana) + anlam + örnek kelime."
+    },
+    {
+     "t": "rule",
+     "tone": "gold",
+     "html": "💡 Sınavda kanji hem <u>okunuş</u> (kanji→kana) hem <u>yazım/anlam</u> (kelime→kanji) olarak çıkar. Örnek kelimeleri sesli oku."
+    },
+    {
+     "t": "card",
+     "title": "🧑‍🤝‍🧑 İnsan · Aile · Toplum",
+     "blocks": [
+      {
+       "t": "table",
+       "html": "<table class=\"group-table\"> <tr><th>Kanji</th><th>Okunuş</th><th>Anlam</th><th>Örnek</th></tr> <tr><td>力</td><td>ちから・リョク</td><td>güç</td><td><ruby>力<rt>ちから</rt></ruby> · <ruby>電力<rt>でんりょく</rt></ruby></td></tr> <tr><td>元</td><td>もと・ゲン</td><td>kaynak/asıl</td><td><ruby>元気<rt>げんき</rt></ruby></td></tr> <tr><td>兄</td><td>あに・キョウ</td><td>ağabey</td><td><ruby>兄<rt>あに</rt></ruby> · <ruby>兄弟<rt>きょうだい</rt></ruby></td></tr> <tr><td>姉</td><td>あね・シ</td><td>abla</td><td><ruby>姉<rt>あね</rt></ruby></td></tr> <tr><td>妹</td><td>いもうと</td><td>küçük kız kardeş</td><td><ruby>妹<rt>いもうと</rt></ruby></td></tr> <tr><td>弟</td><td>おとうと</td><td>küçük erkek kardeş</td><td><ruby>弟<rt>おとうと</rt></ruby></td></tr> <tr><td>親</td><td>おや・シン</td><td>ebeveyn</td><td><ruby>両親<rt>りょうしん</rt></ruby></td></tr> <tr><td>族</td><td>ゾク</td><td>klan/aile</td><td><ruby>家族<rt>かぞく</rt></ruby></td></tr> <tr><td>員</td><td>イン</td><td>üye/görevli</td><td><ruby>店員<rt>てんいん</rt></ruby> · <ruby>社員<rt>しゃいん</rt></ruby></td></tr> <tr><td>者</td><td>もの・シャ</td><td>kişi</td><td><ruby>医者<rt>いしゃ</rt></ruby></td></tr> <tr><td>民</td><td>ミン</td><td>halk</td><td><ruby>市民<rt>しみん</rt></ruby></td></tr> <tr><td>不</td><td>フ</td><td>-sız/değil</td><td><ruby>不便<rt>ふべん</rt></ruby></td></tr> </table>"
+      }
+     ]
+    },
+    {
+     "t": "card",
+     "title": "🏙️ Yer · Yön · Ulaşım",
+     "blocks": [
+      {
+       "t": "table",
+       "html": "<table class=\"group-table\"> <tr><th>Kanji</th><th>Okunuş</th><th>Anlam</th><th>Örnek</th></tr> <tr><td>場</td><td>ば・ジョウ</td><td>yer/alan</td><td><ruby>場所<rt>ばしょ</rt></ruby> · <ruby>会場<rt>かいじょう</rt></ruby></td></tr> <tr><td>屋</td><td>や・オク</td><td>dükkân/çatı</td><td><ruby>部屋<rt>へや</rt></ruby> · <ruby>本屋<rt>ほんや</rt></ruby></td></tr> <tr><td>室</td><td>シツ</td><td>oda</td><td><ruby>教室<rt>きょうしつ</rt></ruby></td></tr> <tr><td>院</td><td>イン</td><td>kurum</td><td><ruby>病院<rt>びょういん</rt></ruby></td></tr> <tr><td>館</td><td>カン</td><td>bina/salon</td><td><ruby>図書館<rt>としょかん</rt></ruby></td></tr> <tr><td>堂</td><td>ドウ</td><td>salon</td><td><ruby>食堂<rt>しょくどう</rt></ruby></td></tr> <tr><td>都</td><td>ト・みやこ</td><td>başkent</td><td><ruby>都会<rt>とかい</rt></ruby> · <ruby>京都<rt>きょうと</rt></ruby></td></tr> <tr><td>京</td><td>キョウ</td><td>başkent</td><td><ruby>東京<rt>とうきょう</rt></ruby></td></tr> <tr><td>州</td><td>シュウ</td><td>eyalet/kıta</td><td><ruby>九州<rt>きゅうしゅう</rt></ruby></td></tr> <tr><td>地</td><td>チ・ジ</td><td>toprak/yer</td><td><ruby>地図<rt>ちず</rt></ruby> · <ruby>地下<rt>ちか</rt></ruby></td></tr> <tr><td>鉄</td><td>テツ</td><td>demir</td><td><ruby>地下鉄<rt>ちかてつ</rt></ruby></td></tr> <tr><td>橋</td><td>はし・キョウ</td><td>köprü</td><td><ruby>橋<rt>はし</rt></ruby></td></tr> <tr><td>公</td><td>コウ</td><td>kamu</td><td><ruby>公園<rt>こうえん</rt></ruby></td></tr> <tr><td>園</td><td>エン・その</td><td>bahçe/park</td><td><ruby>公園<rt>こうえん</rt></ruby> · <ruby>動物園<rt>どうぶつえん</rt></ruby></td></tr> <tr><td>道</td><td>みち・ドウ</td><td>yol</td><td><ruby>道<rt>みち</rt></ruby> · <ruby>柔道<rt>じゅうどう</rt></ruby></td></tr> <tr><td>送</td><td>おく(る)・ソウ</td><td>göndermek</td><td><ruby>送<rt>おく</rt></ruby>る</td></tr> <tr><td>運</td><td>はこ(ぶ)・ウン</td><td>taşımak/kader</td><td><ruby>運転<rt>うんてん</rt></ruby></td></tr> <tr><td>転</td><td>テン・ころ(ぶ)</td><td>dönmek</td><td><ruby>運転<rt>うんてん</rt></ruby></td></tr> <tr><td>乗</td><td>の(る)・ジョウ</td><td>binmek</td><td><ruby>乗<rt>の</rt></ruby>る</td></tr> </table>"
+      }
+     ]
+    },
+    {
+     "t": "card",
+     "title": "🕐 Zaman · Doğa · Sayı",
+     "blocks": [
+      {
+       "t": "table",
+       "html": "<table class=\"group-table\"> <tr><th>Kanji</th><th>Okunuş</th><th>Anlam</th><th>Örnek</th></tr> <tr><td>秋</td><td>あき・シュウ</td><td>sonbahar</td><td><ruby>秋<rt>あき</rt></ruby></td></tr> <tr><td>春</td><td>はる・シュン</td><td>ilkbahar</td><td><ruby>春<rt>はる</rt></ruby></td></tr> <tr><td>夏</td><td>なつ・カ</td><td>yaz</td><td><ruby>夏<rt>なつ</rt></ruby> · <ruby>夏休<rt>なつやす</rt></ruby>み</td></tr> <tr><td>冬</td><td>ふゆ・トウ</td><td>kış</td><td><ruby>冬<rt>ふゆ</rt></ruby></td></tr> <tr><td>朝</td><td>あさ・チョウ</td><td>sabah</td><td><ruby>朝<rt>あさ</rt></ruby> · <ruby>今朝<rt>けさ</rt></ruby></td></tr> <tr><td>昼</td><td>ひる・チュウ</td><td>öğle</td><td><ruby>昼<rt>ひる</rt></ruby></td></tr> <tr><td>夜</td><td>よる・ヤ</td><td>gece</td><td><ruby>夜<rt>よる</rt></ruby> · <ruby>今夜<rt>こんや</rt></ruby></td></tr> <tr><td>世</td><td>よ・セ</td><td>dünya/nesil</td><td><ruby>世界<rt>せかい</rt></ruby></td></tr> <tr><td>界</td><td>カイ</td><td>dünya/alem</td><td><ruby>世界<rt>せかい</rt></ruby></td></tr> <tr><td>洋</td><td>ヨウ</td><td>okyanus/batı</td><td><ruby>洋服<rt>ようふく</rt></ruby></td></tr> <tr><td>海</td><td>うみ・カイ</td><td>deniz</td><td><ruby>海<rt>うみ</rt></ruby></td></tr> <tr><td>山</td><td>やま・サン</td><td>dağ</td><td><ruby>山<rt>やま</rt></ruby> · <ruby>富士山<rt>ふじさん</rt></ruby></td></tr> <tr><td>林</td><td>はやし・リン</td><td>orman</td><td><ruby>林<rt>はやし</rt></ruby></td></tr> <tr><td>森</td><td>もり・シン</td><td>büyük orman</td><td><ruby>森<rt>もり</rt></ruby></td></tr> <tr><td>風</td><td>かぜ・フウ</td><td>rüzgâr</td><td><ruby>風<rt>かぜ</rt></ruby> · <ruby>台風<rt>たいふう</rt></ruby></td></tr> <tr><td>雲</td><td>くも・ウン</td><td>bulut</td><td><ruby>雲<rt>くも</rt></ruby></td></tr> <tr><td>寒</td><td>さむ(い)・カン</td><td>soğuk</td><td><ruby>寒<rt>さむ</rt></ruby>い</td></tr> <tr><td>暑</td><td>あつ(い)・ショ</td><td>sıcak</td><td><ruby>暑<rt>あつ</rt></ruby>い</td></tr> <tr><td>数</td><td>かず・スウ</td><td>sayı</td><td><ruby>数<rt>かず</rt></ruby> · <ruby>数学<rt>すうがく</rt></ruby></td></tr> </table>"
+      }
+     ]
+    },
+    {
+     "t": "card",
+     "title": "🏃 Fiil Kanjileri",
+     "blocks": [
+      {
+       "t": "table",
+       "html": "<table class=\"group-table\"> <tr><th>Kanji</th><th>Okunuş</th><th>Anlam</th><th>Örnek</th></tr> <tr><td>使</td><td>つか(う)・シ</td><td>kullanmak</td><td><ruby>使<rt>つか</rt></ruby>う</td></tr> <tr><td>始</td><td>はじ(める)・シ</td><td>başlamak</td><td><ruby>始<rt>はじ</rt></ruby>める</td></tr> <tr><td>終</td><td>お(わる)・シュウ</td><td>bitmek</td><td><ruby>終<rt>お</rt></ruby>わる</td></tr> <tr><td>働</td><td>はたら(く)・ドウ</td><td>çalışmak</td><td><ruby>働<rt>はたら</rt></ruby>く</td></tr> <tr><td>急</td><td>いそ(ぐ)・キュウ</td><td>acele/acil</td><td><ruby>急<rt>いそ</rt></ruby>ぐ · <ruby>急行<rt>きゅうこう</rt></ruby></td></tr> <tr><td>待</td><td>ま(つ)・タイ</td><td>beklemek</td><td><ruby>待<rt>ま</rt></ruby>つ</td></tr> <tr><td>持</td><td>も(つ)・ジ</td><td>tutmak/taşımak</td><td><ruby>持<rt>も</rt></ruby>つ</td></tr> <tr><td>洗</td><td>あら(う)・セン</td><td>yıkamak</td><td><ruby>洗<rt>あら</rt></ruby>う</td></tr> <tr><td>教</td><td>おし(える)・キョウ</td><td>öğretmek</td><td><ruby>教<rt>おし</rt></ruby>える</td></tr> <tr><td>習</td><td>なら(う)・シュウ</td><td>öğrenmek</td><td><ruby>習<rt>なら</rt></ruby>う · <ruby>練習<rt>れんしゅう</rt></ruby></td></tr> <tr><td>研</td><td>ケン</td><td>araştırmak</td><td><ruby>研究<rt>けんきゅう</rt></ruby></td></tr> <tr><td>究</td><td>キュウ</td><td>incelemek</td><td><ruby>研究<rt>けんきゅう</rt></ruby></td></tr> <tr><td>動</td><td>うご(く)・ドウ</td><td>hareket etmek</td><td><ruby>動<rt>うご</rt></ruby>く · <ruby>運動<rt>うんどう</rt></ruby></td></tr> <tr><td>働</td><td>はたら(く)</td><td>çalışmak</td><td><ruby>働<rt>はたら</rt></ruby>く</td></tr> <tr><td>止</td><td>と(まる)・シ</td><td>durmak</td><td><ruby>止<rt>と</rt></ruby>まる · <ruby>中止<rt>ちゅうし</rt></ruby></td></tr> <tr><td>開</td><td>あ(く)・カイ</td><td>açmak</td><td><ruby>開<rt>あ</rt></ruby>く · <ruby>開始<rt>かいし</rt></ruby></td></tr> <tr><td>閉</td><td>し(まる)・ヘイ</td><td>kapanmak</td><td><ruby>閉<rt>し</rt></ruby>まる</td></tr> <tr><td>売</td><td>う(る)・バイ</td><td>satmak</td><td><ruby>売<rt>う</rt></ruby>る</td></tr> <tr><td>買</td><td>か(う)・バイ</td><td>satın almak</td><td><ruby>買<rt>か</rt></ruby>う · <ruby>買物<rt>かいもの</rt></ruby></td></tr> <tr><td>飲</td><td>の(む)・イン</td><td>içmek</td><td><ruby>飲<rt>の</rt></ruby>む</td></tr> </table>"
+      }
+     ]
+    },
+    {
+     "t": "card",
+     "title": "🧠 Kavram · Sıfat · Soyut",
+     "blocks": [
+      {
+       "t": "table",
+       "html": "<table class=\"group-table\"> <tr><th>Kanji</th><th>Okunuş</th><th>Anlam</th><th>Örnek</th></tr> <tr><td>意</td><td>イ</td><td>anlam/niyet</td><td><ruby>意味<rt>いみ</rt></ruby> · <ruby>意見<rt>いけん</rt></ruby></td></tr> <tr><td>味</td><td>あじ・ミ</td><td>tat</td><td><ruby>味<rt>あじ</rt></ruby> · <ruby>意味<rt>いみ</rt></ruby></td></tr> <tr><td>楽</td><td>たの(しい)・ガク</td><td>keyifli/müzik</td><td><ruby>楽<rt>たの</rt></ruby>しい · <ruby>音楽<rt>おんがく</rt></ruby></td></tr> <tr><td>音</td><td>おと・オン</td><td>ses</td><td><ruby>音<rt>おと</rt></ruby> · <ruby>音楽<rt>おんがく</rt></ruby></td></tr> <tr><td>字</td><td>ジ</td><td>harf/yazı</td><td><ruby>漢字<rt>かんじ</rt></ruby> · <ruby>字<rt>じ</rt></ruby></td></tr> <tr><td>漢</td><td>カン</td><td>Çin/kanji</td><td><ruby>漢字<rt>かんじ</rt></ruby></td></tr> <tr><td>英</td><td>エイ</td><td>İngiliz</td><td><ruby>英語<rt>えいご</rt></ruby></td></tr> <tr><td>質</td><td>シツ</td><td>nitelik/soru</td><td><ruby>質問<rt>しつもん</rt></ruby></td></tr> <tr><td>問</td><td>と(う)・モン</td><td>sormak</td><td><ruby>問題<rt>もんだい</rt></ruby> · <ruby>質問<rt>しつもん</rt></ruby></td></tr> <tr><td>題</td><td>ダイ</td><td>konu/başlık</td><td><ruby>問題<rt>もんだい</rt></ruby> · <ruby>宿題<rt>しゅくだい</rt></ruby></td></tr> <tr><td>宿</td><td>やど・シュク</td><td>konaklama</td><td><ruby>宿題<rt>しゅくだい</rt></ruby></td></tr> <tr><td>試</td><td>ため(す)・シ</td><td>denemek/sınav</td><td><ruby>試験<rt>しけん</rt></ruby> · <ruby>試合<rt>しあい</rt></ruby></td></tr> <tr><td>験</td><td>ケン</td><td>test/deneyim</td><td><ruby>試験<rt>しけん</rt></ruby> · <ruby>経験<rt>けいけん</rt></ruby></td></tr> <tr><td>特</td><td>トク</td><td>özel</td><td><ruby>特<rt>とく</rt></ruby>に · <ruby>特急<rt>とっきゅう</rt></ruby></td></tr> <tr><td>別</td><td>ベツ・わか(れる)</td><td>ayrı/farklı</td><td><ruby>特別<rt>とくべつ</rt></ruby></td></tr> <tr><td>便</td><td>ベン・ビン</td><td>rahat/posta</td><td><ruby>便利<rt>べんり</rt></ruby> · <ruby>不便<rt>ふべん</rt></ruby></td></tr> <tr><td>利</td><td>リ・き(く)</td><td>fayda</td><td><ruby>便利<rt>べんり</rt></ruby></td></tr> <tr><td>心</td><td>こころ・シン</td><td>kalp/zihin</td><td><ruby>心配<rt>しんぱい</rt></ruby> · <ruby>安心<rt>あんしん</rt></ruby></td></tr> <tr><td>配</td><td>ハイ・くば(る)</td><td>dağıtmak/endişe</td><td><ruby>心配<rt>しんぱい</rt></ruby></td></tr> <tr><td>集</td><td>あつ(める)・シュウ</td><td>toplamak</td><td><ruby>集<rt>あつ</rt></ruby>める</td></tr> </table>"
+      }
+     ]
+    },
+    {
+     "t": "card",
+     "title": "🏥 Beden · Sağlık · İş",
+     "blocks": [
+      {
+       "t": "table",
+       "html": "<table class=\"group-table\"> <tr><th>Kanji</th><th>Okunuş</th><th>Anlam</th><th>Örnek</th></tr> <tr><td>体</td><td>からだ・タイ</td><td>vücut</td><td><ruby>体<rt>からだ</rt></ruby></td></tr> <tr><td>顔</td><td>かお・ガン</td><td>yüz</td><td><ruby>顔<rt>かお</rt></ruby></td></tr> <tr><td>頭</td><td>あたま・トウ</td><td>kafa</td><td><ruby>頭<rt>あたま</rt></ruby></td></tr> <tr><td>首</td><td>くび・シュ</td><td>boyun</td><td><ruby>首<rt>くび</rt></ruby></td></tr> <tr><td>薬</td><td>くすり・ヤク</td><td>ilaç</td><td><ruby>薬<rt>くすり</rt></ruby></td></tr> <tr><td>医</td><td>イ</td><td>tıp/doktor</td><td><ruby>医者<rt>いしゃ</rt></ruby> · <ruby>医学<rt>いがく</rt></ruby></td></tr> <tr><td>病</td><td>やまい・ビョウ</td><td>hastalık</td><td><ruby>病気<rt>びょうき</rt></ruby> · <ruby>病院<rt>びょういん</rt></ruby></td></tr> <tr><td>死</td><td>し(ぬ)・シ</td><td>ölmek</td><td><ruby>死<rt>し</rt></ruby>ぬ</td></tr> <tr><td>仕</td><td>シ・つか(える)</td><td>iş/hizmet</td><td><ruby>仕事<rt>しごと</rt></ruby></td></tr> <tr><td>事</td><td>こと・ジ</td><td>iş/şey</td><td><ruby>仕事<rt>しごと</rt></ruby> · <ruby>事故<rt>じこ</rt></ruby></td></tr> <tr><td>業</td><td>ギョウ</td><td>meslek/sanayi</td><td><ruby>授業<rt>じゅぎょう</rt></ruby> · <ruby>工業<rt>こうぎょう</rt></ruby></td></tr> <tr><td>授</td><td>ジュ</td><td>vermek/ders</td><td><ruby>授業<rt>じゅぎょう</rt></ruby></td></tr> <tr><td>工</td><td>コウ</td><td>işçilik/fabrika</td><td><ruby>工場<rt>こうじょう</rt></ruby></td></tr> <tr><td>産</td><td>う(む)・サン</td><td>üretmek/doğurmak</td><td><ruby>産業<rt>さんぎょう</rt></ruby> · お<ruby>土産<rt>みやげ</rt></ruby></td></tr> <tr><td>銀</td><td>ギン</td><td>gümüş</td><td><ruby>銀行<rt>ぎんこう</rt></ruby></td></tr> <tr><td>建</td><td>た(てる)・ケン</td><td>inşa etmek</td><td><ruby>建<rt>た</rt></ruby>てる · <ruby>建物<rt>たてもの</rt></ruby></td></tr> <tr><td>物</td><td>もの・ブツ</td><td>şey/nesne</td><td><ruby>物<rt>もの</rt></ruby> · <ruby>荷物<rt>にもつ</rt></ruby></td></tr> <tr><td>品</td><td>しな・ヒン</td><td>ürün/mal</td><td><ruby>品物<rt>しなもの</rt></ruby> · <ruby>作品<rt>さくひん</rt></ruby></td></tr> </table>"
+      }
+     ]
+    },
+    {
+     "t": "rule",
+     "tone": "sky",
+     "html": "📌 Bu liste çekirdek N4 kanjilerini kapsar. Tam N4 seti ~180 kanjidir; sınavda en sık çıkanlara odaklandık. Örnek kelimeleri quizlerle pekiştir (aşağıda Sınav Merkezi)."
+    }
+   ]
+  },
+  {
+   "id": "vocab-n4",
+   "blocks": [
+    {
+     "t": "header",
+     "icon": "📝",
+     "title": "N4 Kelime — Temaya Göre",
+     "sub": "Sık çıkan N4 kelimeleri: okunuş + anlam. Sesli tekrar et."
+    },
+    {
+     "t": "card",
+     "title": "🏃 Fiiller (1)",
+     "blocks": [
+      {
+       "t": "table",
+       "html": "<table class=\"group-table\"> <tr><th>Kelime</th><th>Okunuş</th><th>Anlam</th></tr> <tr><td><ruby>払<rt>はら</rt></ruby>う</td><td>harau</td><td>ödemek</td></tr> <tr><td><ruby>探<rt>さが</rt></ruby>す</td><td>sagasu</td><td>aramak</td></tr> <tr><td><ruby>運<rt>はこ</rt></ruby>ぶ</td><td>hakobu</td><td>taşımak</td></tr> <tr><td><ruby>選<rt>えら</rt></ruby>ぶ</td><td>erabu</td><td>seçmek</td></tr> <tr><td><ruby>比<rt>くら</rt></ruby>べる</td><td>kuraberu</td><td>karşılaştırmak</td></tr> <tr><td><ruby>捨<rt>す</rt></ruby>てる</td><td>suteru</td><td>atmak (çöpe)</td></tr> <tr><td><ruby>拾<rt>ひろ</rt></ruby>う</td><td>hirou</td><td>yerden almak</td></tr> <tr><td><ruby>謝<rt>あやま</rt></ruby>る</td><td>ayamaru</td><td>özür dilemek</td></tr> <tr><td><ruby>怒<rt>おこ</rt></ruby>る</td><td>okoru</td><td>kızmak</td></tr> <tr><td><ruby>笑<rt>わら</rt></ruby>う</td><td>warau</td><td>gülmek</td></tr> <tr><td><ruby>泣<rt>な</rt></ruby>く</td><td>naku</td><td>ağlamak</td></tr> <tr><td><ruby>驚<rt>おどろ</rt></ruby>く</td><td>odoroku</td><td>şaşırmak</td></tr> </table>"
+      }
+     ]
+    },
+    {
+     "t": "card",
+     "title": "🏃 Fiiller (2)",
+     "blocks": [
+      {
+       "t": "table",
+       "html": "<table class=\"group-table\"> <tr><th>Kelime</th><th>Okunuş</th><th>Anlam</th></tr> <tr><td><ruby>準備<rt>じゅんび</rt></ruby>する</td><td>junbi suru</td><td>hazırlanmak</td></tr> <tr><td><ruby>予約<rt>よやく</rt></ruby>する</td><td>yoyaku suru</td><td>rezervasyon yapmak</td></tr> <tr><td><ruby>約束<rt>やくそく</rt></ruby>する</td><td>yakusoku suru</td><td>söz vermek</td></tr> <tr><td><ruby>案内<rt>あんない</rt></ruby>する</td><td>annai suru</td><td>rehberlik etmek</td></tr> <tr><td><ruby>連絡<rt>れんらく</rt></ruby>する</td><td>renraku suru</td><td>iletişim kurmak</td></tr> <tr><td><ruby>説明<rt>せつめい</rt></ruby>する</td><td>setsumei suru</td><td>açıklamak</td></tr> <tr><td><ruby>相談<rt>そうだん</rt></ruby>する</td><td>sōdan suru</td><td>danışmak</td></tr> <tr><td><ruby>注意<rt>ちゅうい</rt></ruby>する</td><td>chūi suru</td><td>dikkat etmek/uyarmak</td></tr> <tr><td><ruby>紹介<rt>しょうかい</rt></ruby>する</td><td>shōkai suru</td><td>tanıtmak</td></tr> <tr><td><ruby>招待<rt>しょうたい</rt></ruby>する</td><td>shōtai suru</td><td>davet etmek</td></tr> <tr><td><ruby>賛成<rt>さんせい</rt></ruby>する</td><td>sansei suru</td><td>katılmak/onaylamak</td></tr> <tr><td><ruby>変<rt>か</rt></ruby>わる</td><td>kawaru</td><td>değişmek</td></tr> </table>"
+      }
+     ]
+    },
+    {
+     "t": "card",
+     "title": "🎨 Sıfatlar (い / な)",
+     "blocks": [
+      {
+       "t": "table",
+       "html": "<table class=\"group-table\"> <tr><th>Kelime</th><th>Okunuş</th><th>Anlam</th></tr> <tr><td><ruby>硬<rt>かた</rt></ruby>い</td><td>katai</td><td>sert</td></tr> <tr><td><ruby>柔<rt>やわ</rt></ruby>らかい</td><td>yawarakai</td><td>yumuşak</td></tr> <tr><td><ruby>深<rt>ふか</rt></ruby>い</td><td>fukai</td><td>derin</td></tr> <tr><td><ruby>浅<rt>あさ</rt></ruby>い</td><td>asai</td><td>sığ</td></tr> <tr><td><ruby>苦<rt>にが</rt></ruby>い</td><td>nigai</td><td>acı (tat)</td></tr> <tr><td><ruby>珍<rt>めずら</rt></ruby>しい</td><td>mezurashii</td><td>nadir/ilginç</td></tr> <tr><td><ruby>寂<rt>さび</rt></ruby>しい</td><td>sabishii</td><td>yalnız/hüzünlü</td></tr> <tr><td><ruby>複雑<rt>ふくざつ</rt></ruby>な</td><td>fukuzatsu na</td><td>karmaşık</td></tr> <tr><td><ruby>簡単<rt>かんたん</rt></ruby>な</td><td>kantan na</td><td>basit/kolay</td></tr> <tr><td><ruby>危険<rt>きけん</rt></ruby>な</td><td>kiken na</td><td>tehlikeli</td></tr> <tr><td><ruby>安全<rt>あんぜん</rt></ruby>な</td><td>anzen na</td><td>güvenli</td></tr> <tr><td><ruby>丁寧<rt>ていねい</rt></ruby>な</td><td>teinei na</td><td>kibar/özenli</td></tr> </table>"
+      }
+     ]
+    },
+    {
+     "t": "card",
+     "title": "📦 İsimler",
+     "blocks": [
+      {
+       "t": "table",
+       "html": "<table class=\"group-table\"> <tr><th>Kelime</th><th>Okunuş</th><th>Anlam</th></tr> <tr><td><ruby>経験<rt>けいけん</rt></ruby></td><td>keiken</td><td>deneyim</td></tr> <tr><td><ruby>技術<rt>ぎじゅつ</rt></ruby></td><td>gijutsu</td><td>teknik/beceri</td></tr> <tr><td><ruby>研究<rt>けんきゅう</rt></ruby></td><td>kenkyū</td><td>araştırma</td></tr> <tr><td><ruby>会議<rt>かいぎ</rt></ruby></td><td>kaigi</td><td>toplantı</td></tr> <tr><td><ruby>約束<rt>やくそく</rt></ruby></td><td>yakusoku</td><td>söz/randevu</td></tr> <tr><td><ruby>都合<rt>つごう</rt></ruby></td><td>tsugō</td><td>uygunluk/durum</td></tr> <tr><td><ruby>理由<rt>りゆう</rt></ruby></td><td>riyū</td><td>sebep</td></tr> <tr><td><ruby>原因<rt>げんいん</rt></ruby></td><td>gen'in</td><td>neden (kök)</td></tr> <tr><td><ruby>興味<rt>きょうみ</rt></ruby></td><td>kyōmi</td><td>ilgi</td></tr> <tr><td><ruby>意見<rt>いけん</rt></ruby></td><td>iken</td><td>görüş</td></tr> <tr><td><ruby>将来<rt>しょうらい</rt></ruby></td><td>shōrai</td><td>gelecek</td></tr> <tr><td><ruby>最近<rt>さいきん</rt></ruby></td><td>saikin</td><td>son zamanlarda</td></tr> </table>"
+      }
+     ]
+    },
+    {
+     "t": "card",
+     "title": "⏱️ Zarflar &amp; Bağlaçlar",
+     "blocks": [
+      {
+       "t": "table",
+       "html": "<table class=\"group-table\"> <tr><th>Kelime</th><th>Okunuş</th><th>Anlam</th></tr> <tr><td>たぶん</td><td>tabun</td><td>muhtemelen</td></tr> <tr><td>きっと</td><td>kitto</td><td>kesinlikle/mutlaka</td></tr> <tr><td>もし</td><td>moshi</td><td>eğer</td></tr> <tr><td>ぜひ</td><td>zehi</td><td>mutlaka (istek)</td></tr> <tr><td>やっと</td><td>yatto</td><td>nihayet</td></tr> <tr><td>きゅうに / <ruby>急<rt>きゅう</rt></ruby>に</td><td>kyū ni</td><td>aniden</td></tr> <tr><td><ruby>特<rt>とく</rt></ruby>に</td><td>toku ni</td><td>özellikle</td></tr> <tr><td>それで</td><td>sorede</td><td>bu yüzden</td></tr> <tr><td>それに</td><td>soreni</td><td>ayrıca/üstelik</td></tr> <tr><td>でも / けれども</td><td>demo / keredomo</td><td>ama/fakat</td></tr> <tr><td>だから</td><td>dakara</td><td>bu yüzden</td></tr> <tr><td>また</td><td>mata</td><td>tekrar/ayrıca</td></tr> </table>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "exam-center",
+   "hub": true,
+   "blocks": []
+  }
+ ],
+ "quizzes": [
+  {
+   "n": 1,
+   "title": "Quiz 1 — Fiil Formları A",
+   "sub": "可能・意向・命令・禁止",
+   "items": [
+    {
+     "q": "「<ruby>話<rt>はな</rt></ruby>す」の<ruby>可能形<rt>かのうけい</rt></ruby>は？",
+     "opts": [
+      "話される",
+      "話せる",
+      "話される",
+      "話そう"
+     ],
+     "ans": 1,
+     "exp": "G1: う→える → 話せる"
+    },
+    {
+     "q": "「<ruby>食<rt>た</rt></ruby>べる」の可能形は？",
+     "opts": [
+      "食べれる",
+      "食べられる",
+      "食べさせる",
+      "食べよう"
+     ],
+     "ans": 1,
+     "exp": "G2: る→られる → 食べられる"
+    },
+    {
+     "q": "「する」の可能形は？",
+     "opts": [
+      "される",
+      "できる",
+      "させる",
+      "しよう"
+     ],
+     "ans": 1,
+     "exp": "する→できる"
+    },
+    {
+     "q": "「<ruby>日本語<rt>にほんご</rt></ruby>（　）<ruby>話<rt>はな</rt></ruby>せます」正しい助詞は？",
+     "opts": [
+      "を",
+      "が",
+      "に",
+      "で"
+     ],
+     "ans": 1,
+     "exp": "可能形では を→が"
+    },
+    {
+     "q": "「<ruby>行<rt>い</rt></ruby>く」の<ruby>意向形<rt>いこうけい</rt></ruby>は？",
+     "opts": [
+      "行こう",
+      "行けう",
+      "行きよう",
+      "行かう"
+     ],
+     "ans": 0,
+     "exp": "G1: う→おう → 行こう"
+    },
+    {
+     "q": "「<ruby>食<rt>た</rt></ruby>べる」の意向形は？",
+     "opts": [
+      "食べよう",
+      "食べろう",
+      "食べおう",
+      "食べさ"
+     ],
+     "ans": 0,
+     "exp": "G2: る→よう → 食べよう"
+    },
+    {
+     "q": "「映画を見（　）と<ruby>思<rt>おも</rt></ruby>います」",
+     "opts": [
+      "る",
+      "よう",
+      "ろ",
+      "た"
+     ],
+     "ans": 1,
+     "exp": "意向形+と思う: 見よう"
+    },
+    {
+     "q": "「<ruby>行<rt>い</rt></ruby>く」の<ruby>命令形<rt>めいれいけい</rt></ruby>は？",
+     "opts": [
+      "行け",
+      "行ろ",
+      "行こ",
+      "行きろ"
+     ],
+     "ans": 0,
+     "exp": "G1: う→え → 行け"
+    },
+    {
+     "q": "「<ruby>食<rt>た</rt></ruby>べる」の命令形は？",
+     "opts": [
+      "食べれ",
+      "食べろ",
+      "食べよ",
+      "食べ"
+     ],
+     "ans": 1,
+     "exp": "G2: る→ろ → 食べろ"
+    },
+    {
+     "q": "<ruby>禁止形<rt>きんしけい</rt></ruby>「<ruby>入<rt>はい</rt></ruby>る」→「入る（　）」",
+     "opts": [
+      "な",
+      "ろ",
+      "よ",
+      "ず"
+     ],
+     "ans": 0,
+     "exp": "辞書形+な = yasak: 入るな"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Quiz 2 — Fiil Formları B",
+   "sub": "受身・使役・使役受身",
+   "items": [
+    {
+     "q": "「<ruby>言<rt>い</rt></ruby>う」の<ruby>受身形<rt>うけみけい</rt></ruby>は？",
+     "opts": [
+      "言われる",
+      "言えられる",
+      "言らせる",
+      "言おれる"
+     ],
+     "ans": 0,
+     "exp": "G1: う→わ+れる → 言われる"
+    },
+    {
+     "q": "「<ruby>読<rt>よ</rt></ruby>む」の受身形は？",
+     "opts": [
+      "読める",
+      "読まれる",
+      "読ませる",
+      "読もれる"
+     ],
+     "ans": 1,
+     "exp": "む→ま+れる → 読まれる"
+    },
+    {
+     "q": "「<ruby>先生<rt>せんせい</rt></ruby>（　）<ruby>褒<rt>ほ</rt></ruby>められました」動作主の助詞は？",
+     "opts": [
+      "を",
+      "に",
+      "が",
+      "で"
+     ],
+     "ans": 1,
+     "exp": "受身の動作主は に"
+    },
+    {
+     "q": "「<ruby>雨<rt>あめ</rt></ruby>に<ruby>降<rt>ふ</rt></ruby>られた」の意味は？",
+     "opts": [
+      "yağmuru sevdim",
+      "yağmura yakalandım (kötü)",
+      "yağmuru durdurdum",
+      "yağmur yağdırdım"
+     ],
+     "ans": 1,
+     "exp": "迷惑の受身: başıma yağmur geldi"
+    },
+    {
+     "q": "「<ruby>行<rt>い</rt></ruby>く」の<ruby>使役形<rt>しえきけい</rt></ruby>は？",
+     "opts": [
+      "行かれる",
+      "行かせる",
+      "行ける",
+      "行かす"
+     ],
+     "ans": 1,
+     "exp": "G1: う→あ+せる → 行かせる"
+    },
+    {
+     "q": "「<ruby>食<rt>た</rt></ruby>べる」の使役形は？",
+     "opts": [
+      "食べされる",
+      "食べさせる",
+      "食べられる",
+      "食べらせる"
+     ],
+     "ans": 1,
+     "exp": "G2: る→させる → 食べさせる"
+    },
+    {
+     "q": "「<ruby>休<rt>やす</rt></ruby>ませてください」の意味は？",
+     "opts": [
+      "Dinlen!",
+      "Dinlenmeme izin verin",
+      "Beni dinlendir",
+      "Dinlenme"
+     ],
+     "ans": 1,
+     "exp": "使役+てください = izin isteme"
+    },
+    {
+     "q": "「<ruby>飲<rt>の</rt></ruby>む」の<ruby>使役受身<rt>しえきうけみ</rt></ruby>は？",
+     "opts": [
+      "飲まれる",
+      "飲ませる",
+      "飲まされる",
+      "飲ませられる ✓ ikisi de"
+     ],
+     "ans": 3,
+     "exp": "飲まされる / 飲ませられる"
+    },
+    {
+     "q": "「1<ruby>時間<rt>じかん</rt></ruby>も<ruby>待<rt>ま</rt></ruby>たされた」の意味は？",
+     "opts": [
+      "1 saat bekledim (istekle)",
+      "1 saat bekletildim (mecbur)",
+      "1 saat beklettim",
+      "beklemedim"
+     ],
+     "ans": 1,
+     "exp": "使役受身: mecburen bekledim"
+    },
+    {
+     "q": "使役受身「<ruby>食<rt>た</rt></ruby>べる」→",
+     "opts": [
+      "食べさせられる",
+      "食べされる",
+      "食べられる",
+      "食べさす"
+     ],
+     "ans": 0,
+     "exp": "G2: させられる"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Quiz 3 — Koşullar",
+   "sub": "たら・ば・なら (+と)",
+   "items": [
+    {
+     "q": "「<ruby>時間<rt>じかん</rt></ruby>が（　）、<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ます」(varsa)",
+     "opts": [
+      "あるたら",
+      "あったら",
+      "あれたら",
+      "ありたら"
+     ],
+     "ans": 1,
+     "exp": "sade geçmiş+ら: あったら"
+    },
+    {
+     "q": "「<ruby>安<rt>やす</rt></ruby>い」の たら-形は？",
+     "opts": [
+      "安いたら",
+      "安かったら",
+      "安くたら",
+      "安だったら"
+     ],
+     "ans": 1,
+     "exp": "いadj: 安かった+ら"
+    },
+    {
+     "q": "「お<ruby>金<rt>かね</rt></ruby>が（　）、<ruby>車<rt>くるま</rt></ruby>を<ruby>買<rt>か</rt></ruby>う」ば-形は？",
+     "opts": [
+      "あるば",
+      "あれば",
+      "あらば",
+      "ありば"
+     ],
+     "ans": 1,
+     "exp": "ある→あれば"
+    },
+    {
+     "q": "「<ruby>安<rt>やす</rt></ruby>い」の ば-形は？",
+     "opts": [
+      "安いば",
+      "安ければ",
+      "安くば",
+      "安えば"
+     ],
+     "ans": 1,
+     "exp": "いadj: い→ければ"
+    },
+    {
+     "q": "「<ruby>温泉<rt>おんせん</rt></ruby>に<ruby>行<rt>い</rt></ruby>く（　）、<ruby>箱根<rt>はこね</rt></ruby>がいい」(gideceksen)",
+     "opts": [
+      "たら",
+      "なら",
+      "と",
+      "ば"
+     ],
+     "ans": 1,
+     "exp": "karşının konusuna göre: なら"
+    },
+    {
+     "q": "「まっすぐ<ruby>行<rt>い</rt></ruby>く（　）、<ruby>右<rt>みぎ</rt></ruby>に<ruby>曲<rt>ま</rt></ruby>がってください」— hangisi YANLIŞ?",
+     "opts": [
+      "たら OK",
+      "と ✗ (sonra emir olmaz)",
+      "ば OK",
+      "なら OK"
+     ],
+     "ans": 1,
+     "exp": "と'den sonra emir/rica gelmez"
+    },
+    {
+     "q": "「<ruby>行<rt>い</rt></ruby>く」の否定条件(ば)は？",
+     "opts": [
+      "行かなば",
+      "行かなければ",
+      "行かないば",
+      "行けなば"
+     ],
+     "ans": 1,
+     "exp": "ない→なければ"
+    },
+    {
+     "q": "「<ruby>分<rt>わ</rt></ruby>から（　）、<ruby>聞<rt>き</rt></ruby>いてください」",
+     "opts": [
+      "なければ",
+      "たら",
+      "なら",
+      "ないと"
+     ],
+     "ans": 0,
+     "exp": "分からなければ"
+    },
+    {
+     "q": "En genel, 'olduğunda' anlamı olan koşul?",
+     "opts": [
+      "と",
+      "ば",
+      "たら",
+      "なら"
+     ],
+     "ans": 2,
+     "exp": "たら en esnek"
+    },
+    {
+     "q": "「<ruby>家<rt>いえ</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>っ（　）、<ruby>電話<rt>でんわ</rt></ruby>します」",
+     "opts": [
+      "たら",
+      "ば",
+      "なら",
+      "と"
+     ],
+     "ans": 0,
+     "exp": "帰ったら"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Quiz 4 — Verme & Alma",
+   "sub": "あげる/くれる/もらう + て形",
+   "items": [
+    {
+     "q": "「<ruby>友達<rt>ともだち</rt></ruby>が<ruby>私<rt>わたし</rt></ruby>に<ruby>花<rt>はな</rt></ruby>を（　）」(bana verdi)",
+     "opts": [
+      "あげました",
+      "くれました",
+      "もらいました",
+      "やりました"
+     ],
+     "ans": 1,
+     "exp": "bana doğru → くれる"
+    },
+    {
+     "q": "「<ruby>私<rt>わたし</rt></ruby>は<ruby>先生<rt>せんせい</rt></ruby>に ペンを（　）」(aldım)",
+     "opts": [
+      "あげました",
+      "くれました",
+      "もらいました",
+      "いました"
+     ],
+     "ans": 2,
+     "exp": "ben aldım → もらう"
+    },
+    {
+     "q": "「<ruby>私<rt>わたし</rt></ruby>は<ruby>妹<rt>いもうと</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>を（　）」(verdim)",
+     "opts": [
+      "あげました",
+      "くれました",
+      "もらいました",
+      "きました"
+     ],
+     "ans": 0,
+     "exp": "başkasına verdim → あげる"
+    },
+    {
+     "q": "「くれる」の<ruby>尊敬語<rt>そんけいご</rt></ruby>(kibar)は？",
+     "opts": [
+      "いただく",
+      "くださる",
+      "さしあげる",
+      "もらう"
+     ],
+     "ans": 1,
+     "exp": "くれる→くださる"
+    },
+    {
+     "q": "「<ruby>友達<rt>ともだち</rt></ruby>が<ruby>駅<rt>えき</rt></ruby>まで<ruby>送<rt>おく</rt></ruby>って（　）」(bana iyilik)",
+     "opts": [
+      "あげました",
+      "くれました",
+      "もらいました",
+      "おきました"
+     ],
+     "ans": 1,
+     "exp": "bana iyilik → てくれる"
+    },
+    {
+     "q": "「<ruby>先生<rt>せんせい</rt></ruby>に<ruby>文法<rt>ぶんぽう</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えて（　）」(öğretmen bana)",
+     "opts": [
+      "あげました",
+      "もらいました",
+      "くれました",
+      "やりました"
+     ],
+     "ans": 1,
+     "exp": "birine yaptırdım/aldım → てもらう"
+    },
+    {
+     "q": "「<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>って（　）か」(kibar rica)",
+     "opts": [
+      "あげません",
+      "くれませんか",
+      "もらいました",
+      "おきます"
+     ],
+     "ans": 1,
+     "exp": "rica: 〜てくれませんか"
+    },
+    {
+     "q": "「もらう」の kibar hali?",
+     "opts": [
+      "いただく",
+      "くださる",
+      "さしあげる",
+      "なさる"
+     ],
+     "ans": 0,
+     "exp": "もらう→いただく"
+    },
+    {
+     "q": "「<ruby>弟<rt>おとうと</rt></ruby>に<ruby>宿題<rt>しゅくだい</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えて（　）」(ben ona iyilik)",
+     "opts": [
+      "あげました",
+      "くれました",
+      "もらいました",
+      "いました"
+     ],
+     "ans": 0,
+     "exp": "ben birine → てあげる"
+    },
+    {
+     "q": "「<ruby>道<rt>みち</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えて（　）ますか」(rica: -ebilir misiniz)",
+     "opts": [
+      "もらえ",
+      "あげ",
+      "くれ",
+      "い"
+     ],
+     "ans": 0,
+     "exp": "〜てもらえますか"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Quiz 5 — て形 Uzantıları",
+   "sub": "ておく・てしまう・てみる・ていく/くる・てある",
+   "items": [
+    {
+     "q": "「<ruby>旅行<rt>りょこう</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に、ホテルを<ruby>予約<rt>よやく</rt></ruby>して（　）」(önceden)",
+     "opts": [
+      "おきます",
+      "しまいます",
+      "みます",
+      "あります"
+     ],
+     "ans": 0,
+     "exp": "hazırlık: 〜ておく"
+    },
+    {
+     "q": "「<ruby>財布<rt>さいふ</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れて（　）」(eyvah, unuttum)",
+     "opts": [
+      "おきました",
+      "しまいました",
+      "みました",
+      "いきました"
+     ],
+     "ans": 1,
+     "exp": "pişmanlık: 〜てしまう"
+    },
+    {
+     "q": "「〜てしまう」の günlük kısaltması?",
+     "opts": [
+      "〜ておく",
+      "〜ちゃう",
+      "〜てみる",
+      "〜とく"
+     ],
+     "ans": 1,
+     "exp": "てしまう→ちゃう"
+    },
+    {
+     "q": "「<ruby>納豆<rt>なっとう</rt></ruby>を<ruby>食<rt>た</rt></ruby>べて（　）」(deneyeyim/denedim)",
+     "opts": [
+      "おきました",
+      "しまいました",
+      "みました",
+      "ありました"
+     ],
+     "ans": 2,
+     "exp": "deneme: 〜てみる"
+    },
+    {
+     "q": "「だんだん<ruby>寒<rt>さむ</rt></ruby>くなって（　）」(şimdiye kadar)",
+     "opts": [
+      "いきました",
+      "きました",
+      "おきました",
+      "みました"
+     ],
+     "ans": 1,
+     "exp": "geçmişten şimdiye: 〜てくる"
+    },
+    {
+     "q": "「これからも<ruby>勉強<rt>べんきょう</rt></ruby>して（　）」(geleceğe doğru sürer)",
+     "opts": [
+      "いきます",
+      "きます",
+      "おきます",
+      "あります"
+     ],
+     "ans": 0,
+     "exp": "şimdiden geleceğe: 〜ていく"
+    },
+    {
+     "q": "「<ruby>壁<rt>かべ</rt></ruby>に<ruby>地図<rt>ちず</rt></ruby>が<ruby>貼<rt>は</rt></ruby>って（　）」(bilerek asılmış)",
+     "opts": [
+      "います",
+      "あります",
+      "おきます",
+      "みます"
+     ],
+     "ans": 1,
+     "exp": "他動詞+てある = durum"
+    },
+    {
+     "q": "「<ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby>いて（　）」(kendiliğinden açık durum)",
+     "opts": [
+      "います",
+      "あります",
+      "おきます",
+      "しまいます"
+     ],
+     "ans": 0,
+     "exp": "自動詞+ている = durum"
+    },
+    {
+     "q": "「ちょっとコンビニに<ruby>行<rt>い</rt></ruby>って（　）」(gidip gelirim)",
+     "opts": [
+      "いきます",
+      "きます",
+      "おきます",
+      "みます"
+     ],
+     "ans": 1,
+     "exp": "gidip gelme: 行ってくる"
+    },
+    {
+     "q": "「<ruby>会議<rt>かいぎ</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>資料<rt>しりょう</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んで（　）ください」(hazırlan)",
+     "opts": [
+      "おいて",
+      "しまって",
+      "みて",
+      "あって"
+     ],
+     "ans": 0,
+     "exp": "önceden yap: 〜ておく"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Quiz 6 — Tahmin A",
+   "sub": "そう×2・ようだ/みたい・らしい",
+   "items": [
+    {
+     "q": "「<ruby>天気予報<rt>てんきよほう</rt></ruby>によると、<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る（　）」(...mış)",
+     "opts": [
+      "そうです (aktarım)",
+      "そうです (görünüş)",
+      "ようです",
+      "らしい"
+     ],
+     "ans": 0,
+     "exp": "sade form+そう = aktarım"
+    },
+    {
+     "q": "「おいし（　）ケーキ」(görünüş: lezzetli görünen)",
+     "opts": [
+      "いそうな",
+      "そうな",
+      "だそうな",
+      "らしい"
+     ],
+     "ans": 1,
+     "exp": "いadj: い at + そうな"
+    },
+    {
+     "q": "görünüş: 「<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>（　）そうです」",
+     "opts": [
+      "る",
+      "り",
+      "った",
+      "って"
+     ],
+     "ans": 1,
+     "exp": "ますkök+そう: 降りそう"
+    },
+    {
+     "q": "aktarım「<ruby>元気<rt>げんき</rt></ruby>（　）そうです」(iyiymiş)",
+     "opts": [
+      "だ",
+      "な",
+      "の",
+      "-"
+     ],
+     "ans": 0,
+     "exp": "aktarımda なadj+だ+そう"
+    },
+    {
+     "q": "「いい」の görünüş-そう?",
+     "opts": [
+      "いそう",
+      "よさそう",
+      "いいそう",
+      "よそう"
+     ],
+     "ans": 1,
+     "exp": "istisna: いい→よさそう"
+    },
+    {
+     "q": "「<ruby>外<rt>そと</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>っている（　）」(kanıta göre görünüyor)",
+     "opts": [
+      "ようです",
+      "そうです(aktarım)",
+      "つもり",
+      "はず"
+     ],
+     "ans": 0,
+     "exp": "kanıttan çıkarım: ようだ"
+    },
+    {
+     "q": "「みたいだ」は「ようだ」の…",
+     "opts": [
+      "kibar hali",
+      "günlük/samimi hali",
+      "geçmişi",
+      "olumsuzu"
+     ],
+     "ans": 1,
+     "exp": "みたい = casual ようだ"
+    },
+    {
+     "q": "「<ruby>田中<rt>たなか</rt></ruby>さんは<ruby>会社<rt>かいしゃ</rt></ruby>をやめた（　）」(öyle diyorlar)",
+     "opts": [
+      "らしい",
+      "そうな",
+      "みたいな",
+      "ような"
+     ],
+     "ans": 0,
+     "exp": "çıkarım/söylenti: らしい"
+    },
+    {
+     "q": "「<ruby>男<rt>おとこ</rt></ruby>らしい<ruby>人<rt>ひと</rt></ruby>」の意味は？",
+     "opts": [
+      "erkek olan kişi",
+      "mert/erkeksi (tipik) kişi",
+      "erkek olmayan",
+      "erkek gibi görünen"
+     ],
+     "ans": 1,
+     "exp": "N+らしい = tipiklik"
+    },
+    {
+     "q": "「まるで<ruby>夢<rt>ゆめ</rt></ruby>の（　）です」(sanki rüya gibi)",
+     "opts": [
+      "よう",
+      "そう",
+      "らしい",
+      "はず"
+     ],
+     "ans": 0,
+     "exp": "benzetme: まるで〜ようだ"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Quiz 7 — Tahmin B",
+   "sub": "はず・かもしれない・だろう",
+   "items": [
+    {
+     "q": "「<ruby>約束<rt>やくそく</rt></ruby>したから、<ruby>来<rt>く</rt></ruby>る（　）です」(gelmesi gerek)",
+     "opts": [
+      "かも",
+      "はず",
+      "そう",
+      "つもり"
+     ],
+     "ans": 1,
+     "exp": "mantıklı beklenti: はず"
+    },
+    {
+     "q": "「そんなことがある（　）」(olamaz/imkânsız)",
+     "opts": [
+      "はずがない",
+      "はずだ",
+      "かもしれない",
+      "だろう"
+     ],
+     "ans": 0,
+     "exp": "〜はずがない"
+    },
+    {
+     "q": "「<ruby>会議<rt>かいぎ</rt></ruby>は3<ruby>時<rt>じ</rt></ruby>から（　）はずです」(N + ?)",
+     "opts": [
+      "な",
+      "の",
+      "だ",
+      "-"
+     ],
+     "ans": 1,
+     "exp": "N+の+はず"
+    },
+    {
+     "q": "「<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る（　）」(yağabilir)",
+     "opts": [
+      "はずです",
+      "かもしれません",
+      "だろう ✗",
+      "つもり"
+     ],
+     "ans": 1,
+     "exp": "olasılık: かもしれない"
+    },
+    {
+     "q": "「かもしれない」の前で N/なadjに だ は？",
+     "opts": [
+      "gerekli",
+      "gelmez",
+      "な olur",
+      "の olur"
+     ],
+     "ans": 1,
+     "exp": "雨かもしれない (だ yok)"
+    },
+    {
+     "q": "「<ruby>明日<rt>あした</rt></ruby>はたぶん<ruby>晴<rt>は</rt></ruby>れる（　）」(muhtemelen açar)",
+     "opts": [
+      "でしょう",
+      "はずがない",
+      "つもり",
+      "ながら"
+     ],
+     "ans": 0,
+     "exp": "tahmin: でしょう"
+    },
+    {
+     "q": "「あなたも<ruby>行<rt>い</rt></ruby>く（　）？」(değil mi? — teyit)",
+     "opts": [
+      "だろう",
+      "でしょう",
+      "はず",
+      "かも"
+     ],
+     "ans": 1,
+     "exp": "yükselen でしょう? = teyit"
+    },
+    {
+     "q": "En güçlü mantıklı beklenti hangisi?",
+     "opts": [
+      "かもしれない",
+      "でしょう",
+      "はず",
+      "らしい"
+     ],
+     "ans": 2,
+     "exp": "はず en güçlü/mantıklı"
+    },
+    {
+     "q": "「<ruby>彼<rt>かれ</rt></ruby>はもう<ruby>帰<rt>かえ</rt></ruby>った（　）」(gitmiş olabilir)",
+     "opts": [
+      "はずがない",
+      "かもしれない",
+      "つもり",
+      "ように"
+     ],
+     "ans": 1,
+     "exp": "olasılık: かもしれない"
+    },
+    {
+     "q": "「かも」は何の kısaltması?",
+     "opts": [
+      "かもしれない",
+      "かどうか",
+      "からも",
+      "かな"
+     ],
+     "ans": 0,
+     "exp": "かもしれない→かも"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Quiz 8 — Zorunluluk & İzin",
+   "sub": "なければ・なくてもいい・てもいい/てはいけない",
+   "items": [
+    {
+     "q": "「<ruby>行<rt>い</rt></ruby>く」→ zorunluluk",
+     "opts": [
+      "行かなければならない",
+      "行かなくてもいい",
+      "行ってもいい",
+      "行くな"
+     ],
+     "ans": 0,
+     "exp": "〜なければならない"
+    },
+    {
+     "q": "「<ruby>早<rt>はや</rt></ruby>く<ruby>起<rt>お</rt></ruby>き（　）なりません」",
+     "opts": [
+      "なくても",
+      "なければ",
+      "ないで",
+      "ずに"
+     ],
+     "ans": 1,
+     "exp": "起きなければなりません"
+    },
+    {
+     "q": "「〜なければならない」günlük?",
+     "opts": [
+      "〜なきゃ",
+      "〜ちゃう",
+      "〜とく",
+      "〜そう"
+     ],
+     "ans": 0,
+     "exp": "〜なきゃ / なくちゃ"
+    },
+    {
+     "q": "「<ruby>来<rt>こ</rt></ruby>ない」→ gerek yok",
+     "opts": [
+      "来なければならない",
+      "来なくてもいい",
+      "来てはいけない",
+      "来るな"
+     ],
+     "ans": 1,
+     "exp": "〜なくてもいい"
+    },
+    {
+     "q": "「<ruby>全部<rt>ぜんぶ</rt></ruby><ruby>食<rt>た</rt></ruby>べ（　）もいいですよ」(zorunda değilsin)",
+     "opts": [
+      "なくて",
+      "ないで",
+      "なければ",
+      "ずに"
+     ],
+     "ans": 0,
+     "exp": "食べなくてもいい"
+    },
+    {
+     "q": "izin: 「ここで<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>って（　）ですか」",
+     "opts": [
+      "はいけない",
+      "もいい",
+      "おく",
+      "しまう"
+     ],
+     "ans": 1,
+     "exp": "〜てもいいですか"
+    },
+    {
+     "q": "yasak: 「この<ruby>部屋<rt>へや</rt></ruby>に<ruby>入<rt>はい</rt></ruby>って（　）」",
+     "opts": [
+      "もいい",
+      "はいけません",
+      "おく",
+      "みる"
+     ],
+     "ans": 1,
+     "exp": "〜てはいけません"
+    },
+    {
+     "q": "「お<ruby>金<rt>かね</rt></ruby>を<ruby>払<rt>はら</rt></ruby>わ（　）いいです」(ödemene gerek yok)",
+     "opts": [
+      "なくても",
+      "なければ",
+      "ないでも",
+      "ずとも"
+     ],
+     "ans": 0,
+     "exp": "払わなくてもいい"
+    },
+    {
+     "q": "「<ruby>学生<rt>がくせい</rt></ruby>は<ruby>制服<rt>せいふく</rt></ruby>を<ruby>着<rt>き</rt></ruby>（　）はいけません」(zorunda)",
+     "opts": [
+      "なくて",
+      "なくては",
+      "ても",
+      "ないで"
+     ],
+     "ans": 1,
+     "exp": "着なくてはいけません = giymek zorunda"
+    },
+    {
+     "q": "「<ruby>急<rt>いそ</rt></ruby>が（　）いいですよ」(acele gerek yok)",
+     "opts": [
+      "なくても",
+      "なければ",
+      "ないと",
+      "ずに"
+     ],
+     "ans": 0,
+     "exp": "急がなくてもいい"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Quiz 9 — Sebep & Zıtlık",
+   "sub": "ので・のに・し・ために",
+   "items": [
+    {
+     "q": "「<ruby>頭<rt>あたま</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>い（　）、<ruby>帰<rt>かえ</rt></ruby>ります」(nazik sebep)",
+     "opts": [
+      "から",
+      "ので",
+      "のに",
+      "し"
+     ],
+     "ans": 1,
+     "exp": "nazik sebep: ので"
+    },
+    {
+     "q": "「<ruby>日曜日<rt>にちようび</rt></ruby>（　）ので、<ruby>込<rt>こ</rt></ruby>んでいます」(N + ?)",
+     "opts": [
+      "だ",
+      "な",
+      "の",
+      "-"
+     ],
+     "ans": 1,
+     "exp": "N+な+ので"
+    },
+    {
+     "q": "「<ruby>薬<rt>くすり</rt></ruby>を<ruby>飲<rt>の</rt></ruby>んだ（　）、まだ<ruby>熱<rt>ねつ</rt></ruby>がある」(rağmen)",
+     "opts": [
+      "ので",
+      "のに",
+      "から",
+      "し"
+     ],
+     "ans": 1,
+     "exp": "beklenmedik: のに"
+    },
+    {
+     "q": "「<ruby>日曜日<rt>にちようび</rt></ruby>（　）のに、<ruby>働<rt>はたら</rt></ruby>く」(N + ?)",
+     "opts": [
+      "だ",
+      "な",
+      "の",
+      "-"
+     ],
+     "ans": 1,
+     "exp": "N+な+のに"
+    },
+    {
+     "q": "「この<ruby>店<rt>みせ</rt></ruby>は<ruby>安<rt>やす</rt></ruby>い（　）、おいしい（　）、よく<ruby>来<rt>き</rt></ruby>ます」(hem-hem)",
+     "opts": [
+      "て/て",
+      "し/し",
+      "が/が",
+      "のに/のに"
+     ],
+     "ans": 1,
+     "exp": "sebep sıralama: し"
+    },
+    {
+     "q": "「<ruby>日本<rt>にほん</rt></ruby>で<ruby>働<rt>はたら</rt></ruby>く（　）、<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>する」(amaç)",
+     "opts": [
+      "ために",
+      "のに",
+      "ので",
+      "たら"
+     ],
+     "ans": 0,
+     "exp": "amaç: 辞書形+ために"
+    },
+    {
+     "q": "「<ruby>家族<rt>かぞく</rt></ruby>（　）ために、<ruby>働<rt>はたら</rt></ruby>く」(N + ?)",
+     "opts": [
+      "な",
+      "の",
+      "だ",
+      "-"
+     ],
+     "ans": 1,
+     "exp": "N+の+ために"
+    },
+    {
+     "q": "「<ruby>事故<rt>じこ</rt></ruby>の（　）、<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>止<rt>と</rt></ruby>まった」(sebep)",
+     "opts": [
+      "ために",
+      "ように",
+      "ので",
+      "のに"
+     ],
+     "ans": 0,
+     "exp": "ため(に) = sebep de olur"
+    },
+    {
+     "q": "「から」ile「ので」farkı?",
+     "opts": [
+      "aynı",
+      "ので daha nazik/objektif",
+      "から daha kibar",
+      "ので geçmiş"
+     ],
+     "ans": 1,
+     "exp": "ので nazik"
+    },
+    {
+     "q": "「<ruby>雨<rt>あめ</rt></ruby>も<ruby>降<rt>ふ</rt></ruby>っている（　）、<ruby>寒<rt>さむ</rt></ruby>い（　）、<ruby>家<rt>いえ</rt></ruby>にいよう」",
+     "opts": [
+      "し/し",
+      "て/て",
+      "のに/のに",
+      "ば/ば"
+     ],
+     "ans": 0,
+     "exp": "し ile sebep sırala"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "title": "Quiz 10 — Amaç & Karar & Niyet",
+   "sub": "ように・ことにする・つもり・予定",
+   "items": [
+    {
+     "q": "「よく<ruby>見<rt>み</rt></ruby>える（　）、<ruby>前<rt>まえ</rt></ruby>に<ruby>座<rt>すわ</rt></ruby>った」(...sın diye)",
+     "opts": [
+      "ために",
+      "ように",
+      "ので",
+      "つもり"
+     ],
+     "ans": 1,
+     "exp": "potansiyel+ように = amaç"
+    },
+    {
+     "q": "「ために」ile「ように」— ように ne zaman?",
+     "opts": [
+      "iradeli fiil",
+      "potansiyel/iradesiz fiil",
+      "isim",
+      "geçmiş"
+     ],
+     "ans": 1,
+     "exp": "ように: 見える, 話せる…"
+    },
+    {
+     "q": "「<ruby>毎日<rt>まいにち</rt></ruby><ruby>野菜<rt>やさい</rt></ruby>を<ruby>食<rt>た</rt></ruby>べる（　）しています」(çaba)",
+     "opts": [
+      "ように",
+      "ようで",
+      "ために",
+      "ことに"
+     ],
+     "ans": 0,
+     "exp": "çaba: 〜ようにする"
+    },
+    {
+     "q": "「<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>話<rt>はな</rt></ruby>せる（　）なりました」(...abilir oldum)",
+     "opts": [
+      "ように",
+      "ことに",
+      "ために",
+      "つもり"
+     ],
+     "ans": 0,
+     "exp": "değişim: 〜ようになる"
+    },
+    {
+     "q": "「<ruby>大学<rt>だいがく</rt></ruby>に<ruby>行<rt>い</rt></ruby>く（　）しました」(ben karar verdim)",
+     "opts": [
+      "ことに",
+      "ように",
+      "ために",
+      "はず"
+     ],
+     "ans": 0,
+     "exp": "kendi kararım: ことにする"
+    },
+    {
+     "q": "「<ruby>転勤<rt>てんきん</rt></ruby>する（　）なりました」(dışarıdan kararlaştırıldı)",
+     "opts": [
+      "ことに",
+      "ように",
+      "つもり",
+      "予定"
+     ],
+     "ans": 0,
+     "exp": "dışarıdan: ことになる"
+    },
+    {
+     "q": "「<ruby>国<rt>くに</rt></ruby>へ<ruby>帰<rt>かえ</rt></ruby>る（　）です」(niyetindeyim)",
+     "opts": [
+      "つもり",
+      "予定 ✗",
+      "はず",
+      "よう"
+     ],
+     "ans": 0,
+     "exp": "kişisel niyet: つもり"
+    },
+    {
+     "q": "「<ruby>会議<rt>かいぎ</rt></ruby>は3<ruby>時<rt>じ</rt></ruby>から<ruby>始<rt>はじ</rt></ruby>まる（　）です」(programlı)",
+     "opts": [
+      "つもり",
+      "予定",
+      "ように",
+      "こと"
+     ],
+     "ans": 1,
+     "exp": "program: 予定"
+    },
+    {
+     "q": "「つもり」ile「予定」farkı?",
+     "opts": [
+      "aynı",
+      "つもり kişisel niyet, 予定 program",
+      "予定 niyet",
+      "つもり geçmiş"
+     ],
+     "ans": 1,
+     "exp": "予定 daha objektif"
+    },
+    {
+     "q": "「お<ruby>酒<rt>さけ</rt></ruby>を<ruby>飲<rt>の</rt></ruby>まない（　）です」(içmeme niyeti)",
+     "opts": [
+      "つもり",
+      "予定",
+      "ように",
+      "はず"
+     ],
+     "ans": 0,
+     "exp": "ない形+つもり"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "title": "Quiz 11 — Diğer N4 A",
+   "sub": "ながら・すぎる・やすい/にくい・方",
+   "items": [
+    {
+     "q": "「<ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聞<rt>き</rt></ruby>き（　）、<ruby>勉強<rt>べんきょう</rt></ruby>する」(...arak)",
+     "opts": [
+      "ながら",
+      "たり",
+      "つつ",
+      "ので"
+     ],
+     "ans": 0,
+     "exp": "aynı anda: ますkök+ながら"
+    },
+    {
+     "q": "「<ruby>食<rt>た</rt></ruby>べる」の ながら-形は？",
+     "opts": [
+      "食べるながら",
+      "食べながら",
+      "食べてながら",
+      "食べたながら"
+     ],
+     "ans": 1,
+     "exp": "ますkök: 食べ+ながら"
+    },
+    {
+     "q": "「<ruby>食<rt>た</rt></ruby>べ（　）、お<ruby>腹<rt>なか</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>い」(çok yiyip)",
+     "opts": [
+      "すぎて",
+      "やすくて",
+      "にくくて",
+      "かたで"
+     ],
+     "ans": 0,
+     "exp": "aşırı: 〜すぎる"
+    },
+    {
+     "q": "「<ruby>高<rt>たか</rt></ruby>い」の すぎる-形は？",
+     "opts": [
+      "高いすぎる",
+      "高すぎる",
+      "高くすぎる",
+      "高さすぎる"
+     ],
+     "ans": 1,
+     "exp": "いadj: い at + すぎる"
+    },
+    {
+     "q": "「この<ruby>本<rt>ほん</rt></ruby>は<ruby>読<rt>よ</rt></ruby>み（　）」(okuması kolay)",
+     "opts": [
+      "やすい",
+      "にくい",
+      "すぎる",
+      "かた"
+     ],
+     "ans": 0,
+     "exp": "kolay: 〜やすい"
+    },
+    {
+     "q": "「この<ruby>薬<rt>くすり</rt></ruby>は<ruby>飲<rt>の</rt></ruby>み（　）」(içmesi zor)",
+     "opts": [
+      "やすい",
+      "にくい",
+      "すぎる",
+      "かた"
+     ],
+     "ans": 1,
+     "exp": "zor: 〜にくい"
+    },
+    {
+     "q": "「<ruby>読<rt>よ</rt></ruby>む」→ okunuş/yapılış şekli",
+     "opts": [
+      "読みかた",
+      "読むかた",
+      "読んでかた",
+      "読みやすい"
+     ],
+     "ans": 0,
+     "exp": "ますkök+方: 読み方"
+    },
+    {
+     "q": "「<ruby>作<rt>つく</rt></ruby>る」の 方(kata)?",
+     "opts": [
+      "作るかた",
+      "作りかた",
+      "作ってかた",
+      "作りやすい"
+     ],
+     "ans": 1,
+     "exp": "作り方 = yapılışı"
+    },
+    {
+     "q": "「<ruby>漢字<rt>かんじ</rt></ruby>（　）<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>」doğru partikel?",
+     "opts": [
+      "を",
+      "の",
+      "が",
+      "に"
+     ],
+     "ans": 1,
+     "exp": "〜の+読み方"
+    },
+    {
+     "q": "「<ruby>運動<rt>うんどう</rt></ruby>し（　）と、<ruby>体<rt>からだ</rt></ruby>に<ruby>悪<rt>わる</rt></ruby>い」(aşırı yaparsan)",
+     "opts": [
+      "すぎる",
+      "やすい",
+      "にくい",
+      "ながら"
+     ],
+     "ans": 0,
+     "exp": "しすぎる"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "title": "Quiz 12 — Diğer N4 B",
+   "sub": "かどうか・と思う・まま・ば〜ほど・敬語",
+   "items": [
+    {
+     "q": "「<ruby>彼<rt>かれ</rt></ruby>が<ruby>来<rt>く</rt></ruby>る（　）<ruby>分<rt>わ</rt></ruby>かりません」(gelip gelmeyeceği)",
+     "opts": [
+      "かどうか",
+      "と思う",
+      "そう",
+      "はず"
+     ],
+     "ans": 0,
+     "exp": "evet/hayır gömme: かどうか"
+    },
+    {
+     "q": "「<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る（　）<ruby>思<rt>おも</rt></ruby>います」(görüş)",
+     "opts": [
+      "と",
+      "かどうか",
+      "ように",
+      "ため"
+     ],
+     "ans": 0,
+     "exp": "〜と思う"
+    },
+    {
+     "q": "「<ruby>先生<rt>せんせい</rt></ruby>は<ruby>試験<rt>しけん</rt></ruby>があると（　）」(söylüyordu)",
+     "opts": [
+      "言っていました",
+      "思います",
+      "そうです",
+      "かどうか"
+     ],
+     "ans": 0,
+     "exp": "aktarım: と言っていた"
+    },
+    {
+     "q": "「<ruby>電気<rt>でんき</rt></ruby>をつけた（　）、<ruby>寝<rt>ね</rt></ruby>た」(açık bırakarak)",
+     "opts": [
+      "まま",
+      "ながら",
+      "こと",
+      "ように"
+     ],
+     "ans": 0,
+     "exp": "değişmeyen hal: 〜まま"
+    },
+    {
+     "q": "「<ruby>練習<rt>れんしゅう</rt></ruby>すれば（　）ほど、<ruby>上手<rt>じょうず</rt></ruby>になる」(çalıştıkça)",
+     "opts": [
+      "する",
+      "した",
+      "して",
+      "しない"
+     ],
+     "ans": 0,
+     "exp": "〜ば〜辞書形+ほど"
+    },
+    {
+     "q": "「<ruby>教室<rt>きょうしつ</rt></ruby>には<ruby>誰<rt>だれ</rt></ruby>（　）いません」(kimse)",
+     "opts": [
+      "か",
+      "も",
+      "でも",
+      "が"
+     ],
+     "ans": 1,
+     "exp": "疑問詞+も+否定 = hiç"
+    },
+    {
+     "q": "「<ruby>何<rt>なに</rt></ruby>（　）<ruby>食<rt>た</rt></ruby>べましたか」(bir şey)",
+     "opts": [
+      "も",
+      "か",
+      "でも",
+      "が"
+     ],
+     "ans": 1,
+     "exp": "何か = bir şey"
+    },
+    {
+     "q": "「このゲームは<ruby>誰<rt>だれ</rt></ruby>（　）できます」(herkes)",
+     "opts": [
+      "も",
+      "か",
+      "でも",
+      "が"
+     ],
+     "ans": 2,
+     "exp": "誰でも = herkes"
+    },
+    {
+     "q": "他動詞はどれ？「ドアを（　）」",
+     "opts": [
+      "開く",
+      "開ける",
+      "閉まる",
+      "つく"
+     ],
+     "ans": 1,
+     "exp": "を alan他動詞: 開ける"
+    },
+    {
+     "q": "「<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がる」は何の敬語?",
+     "opts": [
+      "行く(尊敬)",
+      "食べる(尊敬)",
+      "言う(謙譲)",
+      "する(謙譲)"
+     ],
+     "ans": 1,
+     "exp": "食べる/飲む の尊敬語"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "title": "Quiz 13 — N4 KANJI 🈵",
+   "sub": "Kanji → doğru okunuş",
+   "items": [
+    {
+     "q": "「<ruby>特急<rt>?</rt></ruby>」の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
+     "opts": [
+      "とっきゅう",
+      "とくきゅう",
+      "とくいそ",
+      "とうきゅう"
+     ],
+     "ans": 0,
+     "exp": "特急 = とっきゅう (ekspres tren)"
+    },
+    {
+     "q": "「<ruby>研究<rt>?</rt></ruby>」の読み方は？",
+     "opts": [
+      "けんきゅ",
+      "けんきゅう",
+      "げんきゅう",
+      "けんく"
+     ],
+     "ans": 1,
+     "exp": "研究 = けんきゅう (araştırma)"
+    },
+    {
+     "q": "「<ruby>会議<rt>?</rt></ruby>」の読み方は？",
+     "opts": [
+      "かいぎ",
+      "かいごう",
+      "えぎ",
+      "かいき"
+     ],
+     "ans": 0,
+     "exp": "会議 = かいぎ (toplantı)"
+    },
+    {
+     "q": "「<ruby>経験<rt>?</rt></ruby>」の読み方は？",
+     "opts": [
+      "けいけん",
+      "きょうけん",
+      "けいげん",
+      "きょうげん"
+     ],
+     "ans": 0,
+     "exp": "経験 = けいけん (deneyim)"
+    },
+    {
+     "q": "「<ruby>病院<rt>?</rt></ruby>」の読み方は？",
+     "opts": [
+      "びょうき",
+      "びょういん",
+      "へいいん",
+      "びよういん"
+     ],
+     "ans": 1,
+     "exp": "病院 = びょういん (hastane)"
+    },
+    {
+     "q": "「<ruby>質問<rt>?</rt></ruby>」の読み方は？",
+     "opts": [
+      "しつもん",
+      "しちもん",
+      "しつぶん",
+      "しゅつもん"
+     ],
+     "ans": 0,
+     "exp": "質問 = しつもん (soru)"
+    },
+    {
+     "q": "「<ruby>特別<rt>?</rt></ruby>」の読み方は？",
+     "opts": [
+      "とくべつ",
+      "とくべち",
+      "とくわけ",
+      "どくべつ"
+     ],
+     "ans": 0,
+     "exp": "特別 = とくべつ (özel)"
+    },
+    {
+     "q": "「<ruby>便利<rt>?</rt></ruby>」の読み方は？",
+     "opts": [
+      "びんり",
+      "べんり",
+      "べんとう",
+      "びんとう"
+     ],
+     "ans": 1,
+     "exp": "便利 = べんり (pratik)"
+    },
+    {
+     "q": "「<ruby>地下鉄<rt>?</rt></ruby>」の読み方は？",
+     "opts": [
+      "ちかてつ",
+      "じかてつ",
+      "ちげてつ",
+      "ちかどう"
+     ],
+     "ans": 0,
+     "exp": "地下鉄 = ちかてつ (metro)"
+    },
+    {
+     "q": "「<ruby>仕事<rt>?</rt></ruby>」の読み方は？",
+     "opts": [
+      "しごと",
+      "しじ",
+      "じこと",
+      "つかごと"
+     ],
+     "ans": 0,
+     "exp": "仕事 = しごと (iş)"
+    },
+    {
+     "q": "「<ruby>世界<rt>?</rt></ruby>」の読み方は？",
+     "opts": [
+      "せかい",
+      "せいかい",
+      "よかい",
+      "せがい"
+     ],
+     "ans": 0,
+     "exp": "世界 = せかい (dünya)"
+    },
+    {
+     "q": "「<ruby>心配<rt>?</rt></ruby>」の読み方は？",
+     "opts": [
+      "しんぱい",
+      "しんはい",
+      "こころくば",
+      "しんばい"
+     ],
+     "ans": 0,
+     "exp": "心配 = しんぱい (endişe)"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "title": "Quiz 14 — N4 KELİME 📝",
+   "sub": "Kelime → anlam",
+   "items": [
+    {
+     "q": "「<ruby>払<rt>はら</rt></ruby>う」の意味は？",
+     "opts": [
+      "aramak",
+      "ödemek",
+      "atmak",
+      "seçmek"
+     ],
+     "ans": 1,
+     "exp": "払う = ödemek"
+    },
+    {
+     "q": "「<ruby>探<rt>さが</rt></ruby>す」の意味は？",
+     "opts": [
+      "aramak",
+      "bulmak",
+      "kaybetmek",
+      "saklamak"
+     ],
+     "ans": 0,
+     "exp": "探す = aramak"
+    },
+    {
+     "q": "「<ruby>準備<rt>じゅんび</rt></ruby>する」の意味は？",
+     "opts": [
+      "temizlemek",
+      "hazırlanmak",
+      "dinlenmek",
+      "bitirmek"
+     ],
+     "ans": 1,
+     "exp": "準備する = hazırlanmak"
+    },
+    {
+     "q": "「<ruby>約束<rt>やくそく</rt></ruby>する」の意味は？",
+     "opts": [
+      "danışmak",
+      "söz vermek",
+      "davet etmek",
+      "tanıtmak"
+     ],
+     "ans": 1,
+     "exp": "約束する = söz vermek"
+    },
+    {
+     "q": "「<ruby>危険<rt>きけん</rt></ruby>な」の意味は？",
+     "opts": [
+      "güvenli",
+      "tehlikeli",
+      "karmaşık",
+      "basit"
+     ],
+     "ans": 1,
+     "exp": "危険な = tehlikeli"
+    },
+    {
+     "q": "「<ruby>簡単<rt>かんたん</rt></ruby>な」の意味は？",
+     "opts": [
+      "zor",
+      "basit/kolay",
+      "kibar",
+      "nadir"
+     ],
+     "ans": 1,
+     "exp": "簡単な = basit"
+    },
+    {
+     "q": "「<ruby>技術<rt>ぎじゅつ</rt></ruby>」の意味は？",
+     "opts": [
+      "deneyim",
+      "teknik/beceri",
+      "araştırma",
+      "toplantı"
+     ],
+     "ans": 1,
+     "exp": "技術 = teknik/beceri"
+    },
+    {
+     "q": "「<ruby>将来<rt>しょうらい</rt></ruby>」の意味は？",
+     "opts": [
+      "geçmiş",
+      "gelecek",
+      "şimdi",
+      "son zaman"
+     ],
+     "ans": 1,
+     "exp": "将来 = gelecek"
+    },
+    {
+     "q": "「たぶん」の意味は？",
+     "opts": [
+      "kesinlikle",
+      "muhtemelen",
+      "asla",
+      "hemen"
+     ],
+     "ans": 1,
+     "exp": "たぶん = muhtemelen"
+    },
+    {
+     "q": "「やっと」の意味は？",
+     "opts": [
+      "aniden",
+      "nihayet",
+      "tekrar",
+      "özellikle"
+     ],
+     "ans": 1,
+     "exp": "やっと = nihayet"
+    },
+    {
+     "q": "「<ruby>紹介<rt>しょうかい</rt></ruby>する」の意味は？",
+     "opts": [
+      "tanıtmak",
+      "açıklamak",
+      "uyarmak",
+      "seçmek"
+     ],
+     "ans": 0,
+     "exp": "紹介する = tanıtmak"
+    },
+    {
+     "q": "「<ruby>興味<rt>きょうみ</rt></ruby>」の意味は？",
+     "opts": [
+      "görüş",
+      "ilgi",
+      "sebep",
+      "uygunluk"
+     ],
+     "ans": 1,
+     "exp": "興味 = ilgi"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "title": "Quiz 15 — KARMA / Achievement 🏆",
+   "sub": "Tüm N4 konuları karışık",
+   "items": [
+    {
+     "q": "「<ruby>日本語<rt>にほんご</rt></ruby>が（　）ようになりました」(konuşabilir oldum)",
+     "opts": [
+      "話す",
+      "話せる",
+      "話される",
+      "話そう"
+     ],
+     "ans": 1,
+     "exp": "potansiyel+ようになる: 話せる"
+    },
+    {
+     "q": "「<ruby>子<rt>こ</rt></ruby>どものとき、ピアノを<ruby>練習<rt>れんしゅう</rt></ruby>（　）」(mecbur bırakıldım)",
+     "opts": [
+      "させました",
+      "させられました",
+      "されました",
+      "しました"
+     ],
+     "ans": 1,
+     "exp": "使役受身: させられる"
+    },
+    {
+     "q": "「<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る（　）から、<ruby>傘<rt>かさ</rt></ruby>を<ruby>持<rt>も</rt></ruby>っていく」(olabilir)",
+     "opts": [
+      "はず",
+      "かもしれない",
+      "つもり",
+      "ように"
+     ],
+     "ans": 1,
+     "exp": "olasılık: かもしれない"
+    },
+    {
+     "q": "「<ruby>薬<rt>くすり</rt></ruby>を<ruby>飲<rt>の</rt></ruby>んだ（　）、<ruby>熱<rt>ねつ</rt></ruby>がある」(rağmen)",
+     "opts": [
+      "ので",
+      "のに",
+      "から",
+      "ように"
+     ],
+     "ans": 1,
+     "exp": "のに = rağmen"
+    },
+    {
+     "q": "「<ruby>時間<rt>じかん</rt></ruby>が（　）、<ruby>手伝<rt>てつだ</rt></ruby>います」(varsa - たら)",
+     "opts": [
+      "あるたら",
+      "あったら",
+      "あれば ✗",
+      "ありたら"
+     ],
+     "ans": 1,
+     "exp": "あったら"
+    },
+    {
+     "q": "「<ruby>先生<rt>せんせい</rt></ruby>に<ruby>褒<rt>ほ</rt></ruby>め（　）」(övüldüm - edilgen)",
+     "opts": [
+      "られました",
+      "させました",
+      "させられました",
+      "ました"
+     ],
+     "ans": 0,
+     "exp": "受身: 褒められる"
+    },
+    {
+     "q": "「<ruby>健康<rt>けんこう</rt></ruby>の（　）、<ruby>運動<rt>うんどう</rt></ruby>する」(...için - N)",
+     "opts": [
+      "ように",
+      "ために",
+      "ので",
+      "のに"
+     ],
+     "ans": 1,
+     "exp": "N+の+ために"
+    },
+    {
+     "q": "「<ruby>友達<rt>ともだち</rt></ruby>が<ruby>手伝<rt>てつだ</rt></ruby>って（　）」(bana iyilik)",
+     "opts": [
+      "あげた",
+      "くれた",
+      "もらった",
+      "おいた"
+     ],
+     "ans": 1,
+     "exp": "bana iyilik: てくれる"
+    },
+    {
+     "q": "「<ruby>食<rt>た</rt></ruby>べ（　）、お<ruby>腹<rt>なか</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>い」(çok yedim)",
+     "opts": [
+      "やすくて",
+      "にくくて",
+      "すぎて",
+      "ながら"
+     ],
+     "ans": 2,
+     "exp": "食べすぎて"
+    },
+    {
+     "q": "「<ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聞<rt>き</rt></ruby>き（　）<ruby>歩<rt>ある</rt></ruby>く」(...arak)",
+     "opts": [
+      "ながら",
+      "たり",
+      "ので",
+      "まま"
+     ],
+     "ans": 0,
+     "exp": "ながら = aynı anda"
+    },
+    {
+     "q": "「この<ruby>店<rt>みせ</rt></ruby>は<ruby>安<rt>やす</rt></ruby>い（　）、おいしい（　）」(hem-hem)",
+     "opts": [
+      "て/て",
+      "し/し",
+      "のに/のに",
+      "ば/ば"
+     ],
+     "ans": 1,
+     "exp": "し ile sırala"
+    },
+    {
+     "q": "「<ruby>行<rt>い</rt></ruby>く」の<ruby>謙譲語<rt>けんじょうご</rt></ruby>は？",
+     "opts": [
+      "いらっしゃる",
+      "参る",
+      "おっしゃる",
+      "なさる"
+     ],
+     "ans": 1,
+     "exp": "行く/来る の謙譲語 = 参る"
+    }
+   ]
+  }
+ ]
+}

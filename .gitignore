@@ -10,3 +10,7 @@ ss_data/
 # Editor
 .vscode/
 .idea/
+
+node_modules/
+dist/
+*.local
