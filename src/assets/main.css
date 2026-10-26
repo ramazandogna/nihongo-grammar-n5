@@ -19,13 +19,15 @@
   }
   body {
     @apply bg-canvas text-ink font-sans antialiased;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.6;
   }
   /* The Latin face first, so ş ğ ı stay in one font; Japanese falls through. */
   :lang(ja),
   .jp {
     font-family: var(--font-jp);
+    /* Klee One's regular strokes are hairline-thin on screen; 600 reads. */
+    font-weight: 600;
   }
 }
 
@@ -35,9 +37,11 @@
    component: on <html>, a scoped `:global()` rule once compiled to hiding the
    whole document. */
 ruby rt {
-  font-size: 0.5em;
-  font-weight: 400;
+  font-size: 0.6em;
+  font-weight: 600;
   color: var(--color-ink-soft);
+  /* A little air between the reading and its kanji. */
+  padding-bottom: 0.1em;
 }
 .furigana-off rt {
   visibility: hidden;

@@ -14,7 +14,7 @@ defineProps<{ jp: string; meaning: string; romaji?: string; tag?: string }>()
 
 <template>
   <div class="border-hair rounded-control border-s-4 border-s-primary bg-surface border px-4 py-2.5">
-    <JpText :text="jp" as="p" class="text-lg leading-[2.2]" />
+    <JpText :text="jp" as="p" class="text-[1.4rem] leading-[2.3]" />
     <p v-if="romaji" class="text-ink-soft text-sm italic" v-html="romaji" />
     <p class="text-[15px]"><RevealText :text="meaning" /></p>
     <BaseBadge v-if="tag" tone="primary" class="mt-1.5"><span v-html="tag" /></BaseBadge>

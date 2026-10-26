@@ -3,6 +3,7 @@ import { computed, ref, watch } from 'vue'
 import { BaseButton, BaseCard } from 'rei-kit'
 
 import MasteryQuiz, { type Question } from '@/components/MasteryQuiz.vue'
+import PagerNav from '@/components/PagerNav.vue'
 import RevealText from '@/components/RevealText.vue'
 import SiteLayout from '@/components/SiteLayout.vue'
 import StudyHeader from '@/components/StudyHeader.vue'
@@ -46,7 +47,13 @@ const tabs = computed(() => [
   { value: 'learn' as const, label: t.value.learn },
   { value: 'test' as const, label: t.value.test },
 ])
-watch([scope, view], toTop)
+/** One kanji card on screen at a time while learning. */
+const card = ref(0)
+watch([scope, view], () => {
+  card.value = 0
+  toTop()
+})
+watch(card, toTop)
 
 function openUnit(u: number, v: 'learn' | 'test' = 'learn') {
   scope.value = { kind: 'unit', u }
@@ -140,7 +147,7 @@ const nextAfter = computed(() => {
         @back="scope = null"
       />
       <div v-if="view === 'learn'" class="grid gap-4">
-        <BaseCard v-for="(i, n) in idsOf(scope.u)" :key="i">
+        <BaseCard v-for="(i, n) in idsOf(scope.u)" v-show="card === n" :key="i">
           <p class="text-ink-soft text-sm">{{ scope.u + 1 }}.{{ n + 1 }}</p>
           <div class="flex items-center gap-4">
             <span class="jp w-20 text-center text-6xl leading-none">{{ all[i]!.k }}</span>
@@ -158,7 +165,8 @@ const nextAfter = computed(() => {
             </li>
           </ul>
         </BaseCard>
-        <div class="flex flex-wrap gap-3">
+        <PagerNav v-model="card" :count="idsOf(scope.u).length" />
+        <div v-show="card === idsOf(scope.u).length - 1" class="flex flex-wrap gap-3">
           <BaseButton @click="view = 'test'">Bu ünitenin testi</BaseButton>
           <BaseButton v-if="nextAfter" variant="secondary" @click="nextAfter.go">{{ nextAfter.label }}</BaseButton>
         </div>
@@ -177,7 +185,7 @@ const nextAfter = computed(() => {
         </p>
         <ul class="mt-2 grid gap-1">
           <li v-for="w in all[item]!.w" :key="w.w" class="flex gap-3">
-            <span class="jp min-w-28 text-lg leading-loose" lang="ja" v-html="rubyWord(w.w, w.r)" />
+            <span class="jp min-w-28 text-[1.4rem] leading-[2.3]" lang="ja" v-html="rubyWord(w.w, w.r)" />
             <span class="text-[15px]">{{ w.m }}</span>
           </li>
         </ul>

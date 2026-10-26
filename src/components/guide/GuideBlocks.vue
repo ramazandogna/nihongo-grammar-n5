@@ -30,7 +30,7 @@ const TONE: Record<string, string> = {
 
     <div
       v-else-if="b.t === 'rule'"
-      class="bg-muted rounded-control my-3 border-s-4 px-4 py-3 text-[15px] leading-loose"
+      class="bg-muted rounded-control my-3 border-s-4 px-4 py-3 text-[17px] leading-[2.1]"
       :class="TONE[b.tone] ?? TONE.base"
       v-html="b.html"
     />

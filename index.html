@@ -9,7 +9,7 @@
       // stored dark choice would otherwise flash white on every load.
       try {
         var s = localStorage.getItem('nihongo-theme')
-        if (s === 'dark' || ((!s || s === 'system') && matchMedia('(prefers-color-scheme: dark)').matches))
+        if (s === 'dark' || (s === 'system' && matchMedia('(prefers-color-scheme: dark)').matches))
           document.documentElement.classList.add('dark')
         if (localStorage.getItem('nihongo-furigana') === 'off') document.documentElement.classList.add('furigana-off')
       } catch (e) {}
