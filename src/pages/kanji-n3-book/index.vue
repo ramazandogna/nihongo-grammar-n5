@@ -3,6 +3,7 @@ import { computed, ref, watch } from 'vue'
 import { BaseButton, BaseCard } from 'rei-kit'
 
 import JpText from '@/components/JpText.vue'
+import ListeningLesson from '@/components/ListeningLesson.vue'
 import MasteryQuiz, { type Question } from '@/components/MasteryQuiz.vue'
 import PagerNav from '@/components/PagerNav.vue'
 import RevealText from '@/components/RevealText.vue'
@@ -11,6 +12,7 @@ import StudyHeader from '@/components/StudyHeader.vue'
 import { usePage } from '@/lib/page'
 import { toTop } from '@/lib/scroll'
 import data from './data.json'
+import { LISTENING } from './listening'
 
 type Tri = string[]
 interface Item {
@@ -50,6 +52,8 @@ type View = 'learn' | 'read' | 'test'
 const sec = ref<number | null>(null)
 const view = ref<View>('learn')
 const fullTest = ref(false)
+/** Which listening part is open (聴解 問題1 / 問題2), if any. */
+const listen = ref<number | null>(null)
 const tabs = computed(() => [
   { value: 'learn' as const, label: t.value.learn },
   { value: 'read' as const, label: t.value.reading },
@@ -57,7 +61,7 @@ const tabs = computed(() => [
 ])
 /** One word card on screen at a time while learning. */
 const card = ref(0)
-watch([sec, view, fullTest], () => {
+watch([sec, view, fullTest, listen], () => {
   card.value = 0
   toTop()
 })
@@ -72,6 +76,7 @@ function openSec(k: number, v: View = 'learn') {
 function home() {
   sec.value = null
   fullTest.value = false
+  listen.value = null
 }
 
 /** The sentence a card teaches from: the answer put back into the question. */
@@ -91,7 +96,7 @@ function build(i: number): Question {
 <template>
   <SiteLayout>
     <!-- Section list -->
-    <template v-if="sec === null && !fullTest">
+    <template v-if="sec === null && !fullTest && listen === null">
       <section class="py-6 text-center">
         <p class="font-jp text-primary text-6xl leading-none" aria-hidden="true">漢字</p>
         <p class="text-ink-soft mt-3">{{ pick(L.lead) }}</p>
@@ -110,6 +115,23 @@ function build(i: number): Question {
         </BaseCard>
         <BaseButton variant="secondary" block @click="fullTest = true">総 {{ pick(L.all) }}</BaseButton>
       </div>
+
+      <h2 class="text-ink-soft mt-8 mb-2 text-sm font-semibold">聴解 · Listening</h2>
+      <div class="grid gap-3">
+        <BaseCard v-for="(lp, k) in LISTENING" :key="lp.id" interactive as="button" class="text-start" @click="listen = k">
+          <p class="font-bold">聴 {{ lp.title }}</p>
+          <JpText :text="lp.name" class="text-ink-soft text-sm" />
+          <p class="text-primary mt-2 text-sm font-semibold">
+            {{ lp.items.length }} soru · anlatımlı, adım adım →
+          </p>
+        </BaseCard>
+      </div>
+    </template>
+
+    <!-- Listening -->
+    <template v-else-if="listen !== null">
+      <StudyHeader :title="LISTENING[listen]!.title" :sub="'問題' + (listen + 1)" @back="home" />
+      <ListeningLesson :part="LISTENING[listen]!" />
     </template>
 
     <!-- Full test -->
