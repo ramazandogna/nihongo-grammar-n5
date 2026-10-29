@@ -2,6 +2,7 @@
 import { BaseButton, SegmentedControl } from 'rei-kit'
 
 import { usePageContext } from '@/lib/page'
+import { notation } from '@/lib/ruby'
 
 /**
  * The bar above one section of a study page: back to the list, the section's
@@ -16,9 +17,9 @@ const { t } = usePageContext()
 <template>
   <div class="mb-5 flex flex-col gap-3">
     <div class="flex items-center gap-3">
-      <BaseButton variant="ghost" size="sm" @click="emit('back')">{{ t.back }}</BaseButton>
+      <BaseButton variant="ghost" size="sm" class="shrink-0 whitespace-nowrap" @click="emit('back')">{{ t.back }}</BaseButton>
       <div class="min-w-0">
-        <h1 class="jp truncate text-xl font-bold" v-html="title" />
+        <h1 class="jp text-xl font-bold" v-html="notation(title)" />
         <p v-if="sub" class="text-ink-soft text-sm">{{ sub }}</p>
       </div>
     </div>

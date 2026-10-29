@@ -36,6 +36,22 @@ export const HOME: SitePage = {
 
 export const PAGES: readonly SitePage[] = [
   {
+    path: '/blue-book/',
+    icon: '青',
+    title: 'Blue Book',
+    description: 'Okuldaki mavi kitap: okuma metinleri, gramer, kelime oyunu, alıştırma ve test — ders ders.',
+    palette: 'tokyo-night',
+    langs: ['tr'],
+  },
+  {
+    path: '/business-nihongo/',
+    icon: '商',
+    title: 'Business Nihongo',
+    description: 'ISI ビジネス日本語 中級Ⅰ: şirket duyurusu okuma, 敬語 ile davet, iş yazışması kalıpları.',
+    palette: 'rei',
+    langs: ['tr'],
+  },
+  {
     path: '/n5/',
     icon: '五',
     title: 'N5 Gramer',
