@@ -3,9 +3,13 @@ import { RouterLink } from 'vue-router'
 
 import SiteLayout from '@/components/SiteLayout.vue'
 import { usePage } from '@/lib/page'
-import { PAGES } from '@/site'
+import { LANG_FLAG, LANG_LABEL } from '@/lib/i18n'
+import { PAGES, type SitePage } from '@/site'
 
 const { pick } = usePage('/')
+
+/** “Türkçe · English · 中文” for a card’s flags. */
+const langNames = (p: SitePage, sep: string) => p.langs.map((x) => LANG_LABEL[x]).join(sep)
 
 const LEAD = ['Bir bölüm seç', 'Choose a section', '选择一个部分']
 </script>
@@ -31,7 +35,15 @@ const LEAD = ['Bir bölüm seç', 'Choose a section', '选择一个部分']
               >{{ p.icon }}</span
             >
             <span class="min-w-0 flex-1">
-              <span class="block font-bold">{{ p.title }}</span>
+              <span class="flex items-start justify-between gap-2">
+                <span class="font-bold">{{ p.title }}</span>
+                <span
+                  class="flex shrink-0 gap-0.5 text-base leading-none"
+                  :title="langNames(p, ' · ')"
+                  :aria-label="langNames(p, ', ')"
+                  ><span v-for="x in p.langs" :key="x" aria-hidden="true">{{ LANG_FLAG[x] }}</span></span
+                >
+              </span>
               <span class="text-ink-soft block text-sm">{{ p.description }}</span>
             </span>
             <span class="text-ink-soft group-hover:text-primary" aria-hidden="true">→</span>

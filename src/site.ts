@@ -92,6 +92,14 @@ export const PAGES: readonly SitePage[] = [
     langs: ['tr'],
   },
   {
+    path: '/radikaller/',
+    icon: '部',
+    title: 'Radikaller',
+    description: '43 radikal (部首), 347 N3 kanji ve kelimeleri: liste, arama ve radikal/kanji testleri.',
+    palette: 'sakura',
+    langs: ['tr'],
+  },
+  {
     path: '/matsuya/',
     icon: '丼',
     title: 'Matsuya Kelimeleri',
