@@ -25,8 +25,8 @@ const veiled = computed(() => hideAnswers.value && !opened.value)
     role="button"
     tabindex="0"
     :aria-label="t.reveal"
-    @click="opened = true"
-    @keydown.enter.prevent="opened = true"
+    @click.stop="opened = true"
+    @keydown.enter.prevent.stop="opened = true"
     @keydown.space.prevent="opened = true"
     v-html="notation(text)"
   />

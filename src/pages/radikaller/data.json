@@ -1,0 +1,6859 @@
+[
+ {
+  "id": 1,
+  "radical": "氵",
+  "variants": [
+   "水"
+  ],
+  "name_jp": "さんずい",
+  "name_romaji": "sanzui",
+  "meaning_tr": "su, sıvı",
+  "meaning_en": "water",
+  "kanji": [
+   {
+    "kanji": "海",
+    "on": [
+     "カイ"
+    ],
+    "kun": [
+     "うみ"
+    ],
+    "meaning_tr": "deniz",
+    "words": [
+     {
+      "word": "海外",
+      "reading": "かいがい",
+      "meaning_tr": "yurt dışı"
+     },
+     {
+      "word": "海岸",
+      "reading": "かいがん",
+      "meaning_tr": "sahil"
+     }
+    ]
+   },
+   {
+    "kanji": "泳",
+    "on": [
+     "エイ"
+    ],
+    "kun": [
+     "およ(ぐ)"
+    ],
+    "meaning_tr": "yüzmek",
+    "words": [
+     {
+      "word": "水泳",
+      "reading": "すいえい",
+      "meaning_tr": "yüzme"
+     }
+    ]
+   },
+   {
+    "kanji": "洗",
+    "on": [
+     "セン"
+    ],
+    "kun": [
+     "あら(う)"
+    ],
+    "meaning_tr": "yıkamak",
+    "words": [
+     {
+      "word": "洗濯",
+      "reading": "せんたく",
+      "meaning_tr": "çamaşır yıkama"
+     },
+     {
+      "word": "洗剤",
+      "reading": "せんざい",
+      "meaning_tr": "deterjan"
+     }
+    ]
+   },
+   {
+    "kanji": "港",
+    "on": [
+     "コウ"
+    ],
+    "kun": [
+     "みなと"
+    ],
+    "meaning_tr": "liman",
+    "words": [
+     {
+      "word": "空港",
+      "reading": "くうこう",
+      "meaning_tr": "havalimanı"
+     }
+    ]
+   },
+   {
+    "kanji": "活",
+    "on": [
+     "カツ"
+    ],
+    "kun": [],
+    "meaning_tr": "canlılık, faaliyet",
+    "words": [
+     {
+      "word": "生活",
+      "reading": "せいかつ",
+      "meaning_tr": "yaşam"
+     },
+     {
+      "word": "活動",
+      "reading": "かつどう",
+      "meaning_tr": "faaliyet"
+     }
+    ]
+   },
+   {
+    "kanji": "決",
+    "on": [
+     "ケツ"
+    ],
+    "kun": [
+     "き(める)"
+    ],
+    "meaning_tr": "karar vermek",
+    "words": [
+     {
+      "word": "決定",
+      "reading": "けってい",
+      "meaning_tr": "karar"
+     },
+     {
+      "word": "解決",
+      "reading": "かいけつ",
+      "meaning_tr": "çözüm"
+     }
+    ]
+   },
+   {
+    "kanji": "消",
+    "on": [
+     "ショウ"
+    ],
+    "kun": [
+     "け(す)",
+     "き(える)"
+    ],
+    "meaning_tr": "silmek, söndürmek",
+    "words": [
+     {
+      "word": "消費",
+      "reading": "しょうひ",
+      "meaning_tr": "tüketim"
+     },
+     {
+      "word": "消防",
+      "reading": "しょうぼう",
+      "meaning_tr": "itfaiye"
+     }
+    ]
+   },
+   {
+    "kanji": "深",
+    "on": [
+     "シン"
+    ],
+    "kun": [
+     "ふか(い)"
+    ],
+    "meaning_tr": "derin",
+    "words": [
+     {
+      "word": "深夜",
+      "reading": "しんや",
+      "meaning_tr": "gece yarısı"
+     }
+    ]
+   },
+   {
+    "kanji": "温",
+    "on": [
+     "オン"
+    ],
+    "kun": [
+     "あたた(かい)"
+    ],
+    "meaning_tr": "ılık",
+    "words": [
+     {
+      "word": "温度",
+      "reading": "おんど",
+      "meaning_tr": "sıcaklık"
+     },
+     {
+      "word": "気温",
+      "reading": "きおん",
+      "meaning_tr": "hava sıcaklığı"
+     }
+    ]
+   },
+   {
+    "kanji": "減",
+    "on": [
+     "ゲン"
+    ],
+    "kun": [
+     "へ(る)"
+    ],
+    "meaning_tr": "azalmak",
+    "words": [
+     {
+      "word": "減少",
+      "reading": "げんしょう",
+      "meaning_tr": "azalma"
+     }
+    ]
+   },
+   {
+    "kanji": "法",
+    "on": [
+     "ホウ"
+    ],
+    "kun": [],
+    "meaning_tr": "yasa, yöntem",
+    "words": [
+     {
+      "word": "方法",
+      "reading": "ほうほう",
+      "meaning_tr": "yöntem"
+     },
+     {
+      "word": "法律",
+      "reading": "ほうりつ",
+      "meaning_tr": "yasa"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "radical": "亻",
+  "variants": [
+   "人"
+  ],
+  "name_jp": "にんべん",
+  "name_romaji": "ninben",
+  "meaning_tr": "insan",
+  "meaning_en": "person",
+  "kanji": [
+   {
+    "kanji": "休",
+    "on": [
+     "キュウ"
+    ],
+    "kun": [
+     "やす(む)"
+    ],
+    "meaning_tr": "dinlenmek",
+    "words": [
+     {
+      "word": "休日",
+      "reading": "きゅうじつ",
+      "meaning_tr": "tatil günü"
+     },
+     {
+      "word": "休憩",
+      "reading": "きゅうけい",
+      "meaning_tr": "mola"
+     }
+    ]
+   },
+   {
+    "kanji": "作",
+    "on": [
+     "サク",
+     "サ"
+    ],
+    "kun": [
+     "つく(る)"
+    ],
+    "meaning_tr": "yapmak",
+    "words": [
+     {
+      "word": "作品",
+      "reading": "さくひん",
+      "meaning_tr": "eser"
+     },
+     {
+      "word": "作業",
+      "reading": "さぎょう",
+      "meaning_tr": "iş, çalışma"
+     }
+    ]
+   },
+   {
+    "kanji": "住",
+    "on": [
+     "ジュウ"
+    ],
+    "kun": [
+     "す(む)"
+    ],
+    "meaning_tr": "oturmak, yaşamak",
+    "words": [
+     {
+      "word": "住所",
+      "reading": "じゅうしょ",
+      "meaning_tr": "adres"
+     },
+     {
+      "word": "住民",
+      "reading": "じゅうみん",
+      "meaning_tr": "sakin"
+     }
+    ]
+   },
+   {
+    "kanji": "体",
+    "on": [
+     "タイ"
+    ],
+    "kun": [
+     "からだ"
+    ],
+    "meaning_tr": "beden",
+    "words": [
+     {
+      "word": "体験",
+      "reading": "たいけん",
+      "meaning_tr": "deneyim"
+     },
+     {
+      "word": "全体",
+      "reading": "ぜんたい",
+      "meaning_tr": "bütün"
+     }
+    ]
+   },
+   {
+    "kanji": "信",
+    "on": [
+     "シン"
+    ],
+    "kun": [],
+    "meaning_tr": "inanmak",
+    "words": [
+     {
+      "word": "信じる",
+      "reading": "しんじる",
+      "meaning_tr": "inanmak"
+     },
+     {
+      "word": "自信",
+      "reading": "じしん",
+      "meaning_tr": "özgüven"
+     }
+    ]
+   },
+   {
+    "kanji": "便",
+    "on": [
+     "ベン",
+     "ビン"
+    ],
+    "kun": [
+     "たよ(り)"
+    ],
+    "meaning_tr": "kolaylık, posta",
+    "words": [
+     {
+      "word": "便利",
+      "reading": "べんり",
+      "meaning_tr": "kullanışlı"
+     },
+     {
+      "word": "郵便",
+      "reading": "ゆうびん",
+      "meaning_tr": "posta"
+     }
+    ]
+   },
+   {
+    "kanji": "他",
+    "on": [
+     "タ"
+    ],
+    "kun": [
+     "ほか"
+    ],
+    "meaning_tr": "diğer",
+    "words": [
+     {
+      "word": "他人",
+      "reading": "たにん",
+      "meaning_tr": "yabancı (başkası)"
+     }
+    ]
+   },
+   {
+    "kanji": "低",
+    "on": [
+     "テイ"
+    ],
+    "kun": [
+     "ひく(い)"
+    ],
+    "meaning_tr": "alçak",
+    "words": [
+     {
+      "word": "最低",
+      "reading": "さいてい",
+      "meaning_tr": "en düşük"
+     }
+    ]
+   },
+   {
+    "kanji": "例",
+    "on": [
+     "レイ"
+    ],
+    "kun": [
+     "たと(える)"
+    ],
+    "meaning_tr": "örnek",
+    "words": [
+     {
+      "word": "例えば",
+      "reading": "たとえば",
+      "meaning_tr": "örneğin"
+     },
+     {
+      "word": "例外",
+      "reading": "れいがい",
+      "meaning_tr": "istisna"
+     }
+    ]
+   },
+   {
+    "kanji": "個",
+    "on": [
+     "コ"
+    ],
+    "kun": [],
+    "meaning_tr": "birey, adet",
+    "words": [
+     {
+      "word": "個人",
+      "reading": "こじん",
+      "meaning_tr": "birey"
+     }
+    ]
+   },
+   {
+    "kanji": "働",
+    "on": [
+     "ドウ"
+    ],
+    "kun": [
+     "はたら(く)"
+    ],
+    "meaning_tr": "çalışmak",
+    "words": [
+     {
+      "word": "労働",
+      "reading": "ろうどう",
+      "meaning_tr": "emek, iş gücü"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "radical": "言",
+  "variants": [
+   "訁"
+  ],
+  "name_jp": "ごんべん",
+  "name_romaji": "gonben",
+  "meaning_tr": "söz, konuşma",
+  "meaning_en": "speech",
+  "kanji": [
+   {
+    "kanji": "話",
+    "on": [
+     "ワ"
+    ],
+    "kun": [
+     "はな(す)"
+    ],
+    "meaning_tr": "konuşmak",
+    "words": [
+     {
+      "word": "会話",
+      "reading": "かいわ",
+      "meaning_tr": "sohbet"
+     },
+     {
+      "word": "電話",
+      "reading": "でんわ",
+      "meaning_tr": "telefon"
+     }
+    ]
+   },
+   {
+    "kanji": "読",
+    "on": [
+     "ドク"
+    ],
+    "kun": [
+     "よ(む)"
+    ],
+    "meaning_tr": "okumak",
+    "words": [
+     {
+      "word": "読書",
+      "reading": "どくしょ",
+      "meaning_tr": "kitap okuma"
+     }
+    ]
+   },
+   {
+    "kanji": "語",
+    "on": [
+     "ゴ"
+    ],
+    "kun": [
+     "かた(る)"
+    ],
+    "meaning_tr": "dil, anlatmak",
+    "words": [
+     {
+      "word": "単語",
+      "reading": "たんご",
+      "meaning_tr": "kelime"
+     },
+     {
+      "word": "物語",
+      "reading": "ものがたり",
+      "meaning_tr": "hikaye"
+     }
+    ]
+   },
+   {
+    "kanji": "説",
+    "on": [
+     "セツ"
+    ],
+    "kun": [
+     "と(く)"
+    ],
+    "meaning_tr": "açıklamak",
+    "words": [
+     {
+      "word": "説明",
+      "reading": "せつめい",
+      "meaning_tr": "açıklama"
+     },
+     {
+      "word": "小説",
+      "reading": "しょうせつ",
+      "meaning_tr": "roman"
+     }
+    ]
+   },
+   {
+    "kanji": "試",
+    "on": [
+     "シ"
+    ],
+    "kun": [
+     "ため(す)"
+    ],
+    "meaning_tr": "denemek",
+    "words": [
+     {
+      "word": "試験",
+      "reading": "しけん",
+      "meaning_tr": "sınav"
+     },
+     {
+      "word": "試合",
+      "reading": "しあい",
+      "meaning_tr": "maç"
+     }
+    ]
+   },
+   {
+    "kanji": "記",
+    "on": [
+     "キ"
+    ],
+    "kun": [
+     "しる(す)"
+    ],
+    "meaning_tr": "kaydetmek",
+    "words": [
+     {
+      "word": "記事",
+      "reading": "きじ",
+      "meaning_tr": "makale"
+     },
+     {
+      "word": "記憶",
+      "reading": "きおく",
+      "meaning_tr": "hafıza"
+     }
+    ]
+   },
+   {
+    "kanji": "調",
+    "on": [
+     "チョウ"
+    ],
+    "kun": [
+     "しら(べる)"
+    ],
+    "meaning_tr": "araştırmak",
+    "words": [
+     {
+      "word": "調査",
+      "reading": "ちょうさ",
+      "meaning_tr": "araştırma"
+     },
+     {
+      "word": "調子",
+      "reading": "ちょうし",
+      "meaning_tr": "durum, kondisyon"
+     }
+    ]
+   },
+   {
+    "kanji": "認",
+    "on": [
+     "ニン"
+    ],
+    "kun": [
+     "みと(める)"
+    ],
+    "meaning_tr": "kabul etmek",
+    "words": [
+     {
+      "word": "確認",
+      "reading": "かくにん",
+      "meaning_tr": "teyit"
+     }
+    ]
+   },
+   {
+    "kanji": "談",
+    "on": [
+     "ダン"
+    ],
+    "kun": [],
+    "meaning_tr": "konuşma",
+    "words": [
+     {
+      "word": "相談",
+      "reading": "そうだん",
+      "meaning_tr": "danışma"
+     },
+     {
+      "word": "冗談",
+      "reading": "じょうだん",
+      "meaning_tr": "şaka"
+     }
+    ]
+   },
+   {
+    "kanji": "議",
+    "on": [
+     "ギ"
+    ],
+    "kun": [],
+    "meaning_tr": "tartışma",
+    "words": [
+     {
+      "word": "会議",
+      "reading": "かいぎ",
+      "meaning_tr": "toplantı"
+     }
+    ]
+   },
+   {
+    "kanji": "訳",
+    "on": [
+     "ヤク"
+    ],
+    "kun": [
+     "わけ"
+    ],
+    "meaning_tr": "çeviri, sebep",
+    "words": [
+     {
+      "word": "翻訳",
+      "reading": "ほんやく",
+      "meaning_tr": "çeviri"
+     },
+     {
+      "word": "通訳",
+      "reading": "つうやく",
+      "meaning_tr": "tercüman"
+     }
+    ]
+   },
+   {
+    "kanji": "許",
+    "on": [
+     "キョ"
+    ],
+    "kun": [
+     "ゆる(す)"
+    ],
+    "meaning_tr": "izin vermek, affetmek",
+    "words": [
+     {
+      "word": "許可",
+      "reading": "きょか",
+      "meaning_tr": "izin"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 4,
+  "radical": "木",
+  "variants": [],
+  "name_jp": "き / きへん",
+  "name_romaji": "ki",
+  "meaning_tr": "ağaç",
+  "meaning_en": "tree",
+  "kanji": [
+   {
+    "kanji": "校",
+    "on": [
+     "コウ"
+    ],
+    "kun": [],
+    "meaning_tr": "okul",
+    "words": [
+     {
+      "word": "学校",
+      "reading": "がっこう",
+      "meaning_tr": "okul"
+     },
+     {
+      "word": "校長",
+      "reading": "こうちょう",
+      "meaning_tr": "okul müdürü"
+     }
+    ]
+   },
+   {
+    "kanji": "横",
+    "on": [
+     "オウ"
+    ],
+    "kun": [
+     "よこ"
+    ],
+    "meaning_tr": "yan",
+    "words": [
+     {
+      "word": "横断",
+      "reading": "おうだん",
+      "meaning_tr": "karşıya geçme"
+     }
+    ]
+   },
+   {
+    "kanji": "機",
+    "on": [
+     "キ"
+    ],
+    "kun": [
+     "はた"
+    ],
+    "meaning_tr": "makine, fırsat",
+    "words": [
+     {
+      "word": "機会",
+      "reading": "きかい",
+      "meaning_tr": "fırsat"
+     },
+     {
+      "word": "機械",
+      "reading": "きかい",
+      "meaning_tr": "makine"
+     }
+    ]
+   },
+   {
+    "kanji": "様",
+    "on": [
+     "ヨウ"
+    ],
+    "kun": [
+     "さま"
+    ],
+    "meaning_tr": "hal, bay/bayan",
+    "words": [
+     {
+      "word": "様子",
+      "reading": "ようす",
+      "meaning_tr": "durum"
+     },
+     {
+      "word": "様々",
+      "reading": "さまざま",
+      "meaning_tr": "çeşitli"
+     }
+    ]
+   },
+   {
+    "kanji": "構",
+    "on": [
+     "コウ"
+    ],
+    "kun": [
+     "かま(う)"
+    ],
+    "meaning_tr": "yapı",
+    "words": [
+     {
+      "word": "結構",
+      "reading": "けっこう",
+      "meaning_tr": "oldukça / gerek yok"
+     },
+     {
+      "word": "構造",
+      "reading": "こうぞう",
+      "meaning_tr": "yapı"
+     }
+    ]
+   },
+   {
+    "kanji": "植",
+    "on": [
+     "ショク"
+    ],
+    "kun": [
+     "う(える)"
+    ],
+    "meaning_tr": "dikmek",
+    "words": [
+     {
+      "word": "植物",
+      "reading": "しょくぶつ",
+      "meaning_tr": "bitki"
+     }
+    ]
+   },
+   {
+    "kanji": "根",
+    "on": [
+     "コン"
+    ],
+    "kun": [
+     "ね"
+    ],
+    "meaning_tr": "kök",
+    "words": [
+     {
+      "word": "根本",
+      "reading": "こんぽん",
+      "meaning_tr": "temel"
+     }
+    ]
+   },
+   {
+    "kanji": "板",
+    "on": [
+     "バン",
+     "ハン"
+    ],
+    "kun": [
+     "いた"
+    ],
+    "meaning_tr": "tahta",
+    "words": [
+     {
+      "word": "黒板",
+      "reading": "こくばん",
+      "meaning_tr": "kara tahta"
+     }
+    ]
+   },
+   {
+    "kanji": "極",
+    "on": [
+     "キョク"
+    ],
+    "kun": [
+     "きわ(める)"
+    ],
+    "meaning_tr": "uç, kutup",
+    "words": [
+     {
+      "word": "積極的",
+      "reading": "せっきょくてき",
+      "meaning_tr": "aktif, girişken"
+     }
+    ]
+   },
+   {
+    "kanji": "案",
+    "on": [
+     "アン"
+    ],
+    "kun": [],
+    "meaning_tr": "plan, fikir",
+    "words": [
+     {
+      "word": "案内",
+      "reading": "あんない",
+      "meaning_tr": "rehberlik"
+     },
+     {
+      "word": "提案",
+      "reading": "ていあん",
+      "meaning_tr": "öneri"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 5,
+  "radical": "心",
+  "variants": [
+   "忄"
+  ],
+  "name_jp": "こころ / りっしんべん",
+  "name_romaji": "kokoro",
+  "meaning_tr": "kalp, duygu",
+  "meaning_en": "heart",
+  "kanji": [
+   {
+    "kanji": "思",
+    "on": [
+     "シ"
+    ],
+    "kun": [
+     "おも(う)"
+    ],
+    "meaning_tr": "düşünmek",
+    "words": [
+     {
+      "word": "不思議",
+      "reading": "ふしぎ",
+      "meaning_tr": "gizemli"
+     },
+     {
+      "word": "思い出",
+      "reading": "おもいで",
+      "meaning_tr": "anı"
+     }
+    ]
+   },
+   {
+    "kanji": "悲",
+    "on": [
+     "ヒ"
+    ],
+    "kun": [
+     "かな(しい)"
+    ],
+    "meaning_tr": "üzgün",
+    "words": [
+     {
+      "word": "悲劇",
+      "reading": "ひげき",
+      "meaning_tr": "trajedi"
+     }
+    ]
+   },
+   {
+    "kanji": "情",
+    "on": [
+     "ジョウ"
+    ],
+    "kun": [
+     "なさ(け)"
+    ],
+    "meaning_tr": "duygu",
+    "words": [
+     {
+      "word": "情報",
+      "reading": "じょうほう",
+      "meaning_tr": "bilgi"
+     },
+     {
+      "word": "表情",
+      "reading": "ひょうじょう",
+      "meaning_tr": "yüz ifadesi"
+     }
+    ]
+   },
+   {
+    "kanji": "性",
+    "on": [
+     "セイ",
+     "ショウ"
+    ],
+    "kun": [],
+    "meaning_tr": "doğa, cinsiyet",
+    "words": [
+     {
+      "word": "性格",
+      "reading": "せいかく",
+      "meaning_tr": "karakter"
+     },
+     {
+      "word": "女性",
+      "reading": "じょせい",
+      "meaning_tr": "kadın"
+     }
+    ]
+   },
+   {
+    "kanji": "感",
+    "on": [
+     "カン"
+    ],
+    "kun": [],
+    "meaning_tr": "hissetmek",
+    "words": [
+     {
+      "word": "感謝",
+      "reading": "かんしゃ",
+      "meaning_tr": "teşekkür"
+     },
+     {
+      "word": "感動",
+      "reading": "かんどう",
+      "meaning_tr": "duygulanma"
+     }
+    ]
+   },
+   {
+    "kanji": "想",
+    "on": [
+     "ソウ"
+    ],
+    "kun": [],
+    "meaning_tr": "hayal etmek",
+    "words": [
+     {
+      "word": "予想",
+      "reading": "よそう",
+      "meaning_tr": "tahmin"
+     },
+     {
+      "word": "感想",
+      "reading": "かんそう",
+      "meaning_tr": "izlenim"
+     }
+    ]
+   },
+   {
+    "kanji": "慣",
+    "on": [
+     "カン"
+    ],
+    "kun": [
+     "な(れる)"
+    ],
+    "meaning_tr": "alışmak",
+    "words": [
+     {
+      "word": "習慣",
+      "reading": "しゅうかん",
+      "meaning_tr": "alışkanlık"
+     }
+    ]
+   },
+   {
+    "kanji": "必",
+    "on": [
+     "ヒツ"
+    ],
+    "kun": [
+     "かなら(ず)"
+    ],
+    "meaning_tr": "kesinlikle",
+    "words": [
+     {
+      "word": "必要",
+      "reading": "ひつよう",
+      "meaning_tr": "gerekli"
+     }
+    ]
+   },
+   {
+    "kanji": "忘",
+    "on": [
+     "ボウ"
+    ],
+    "kun": [
+     "わす(れる)"
+    ],
+    "meaning_tr": "unutmak",
+    "words": [
+     {
+      "word": "忘れ物",
+      "reading": "わすれもの",
+      "meaning_tr": "unutulan eşya"
+     }
+    ]
+   },
+   {
+    "kanji": "急",
+    "on": [
+     "キュウ"
+    ],
+    "kun": [
+     "いそ(ぐ)"
+    ],
+    "meaning_tr": "acele",
+    "words": [
+     {
+      "word": "急行",
+      "reading": "きゅうこう",
+      "meaning_tr": "ekspres"
+     },
+     {
+      "word": "緊急",
+      "reading": "きんきゅう",
+      "meaning_tr": "acil"
+     }
+    ]
+   },
+   {
+    "kanji": "意",
+    "on": [
+     "イ"
+    ],
+    "kun": [],
+    "meaning_tr": "niyet, anlam",
+    "words": [
+     {
+      "word": "意見",
+      "reading": "いけん",
+      "meaning_tr": "görüş"
+     },
+     {
+      "word": "意味",
+      "reading": "いみ",
+      "meaning_tr": "anlam"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 6,
+  "radical": "辶",
+  "variants": [
+   "辵"
+  ],
+  "name_jp": "しんにょう",
+  "name_romaji": "shinnyou",
+  "meaning_tr": "hareket, yol",
+  "meaning_en": "movement",
+  "kanji": [
+   {
+    "kanji": "進",
+    "on": [
+     "シン"
+    ],
+    "kun": [
+     "すす(む)"
+    ],
+    "meaning_tr": "ilerlemek",
+    "words": [
+     {
+      "word": "進歩",
+      "reading": "しんぽ",
+      "meaning_tr": "ilerleme"
+     },
+     {
+      "word": "進学",
+      "reading": "しんがく",
+      "meaning_tr": "üst okula geçme"
+     }
+    ]
+   },
+   {
+    "kanji": "道",
+    "on": [
+     "ドウ"
+    ],
+    "kun": [
+     "みち"
+    ],
+    "meaning_tr": "yol",
+    "words": [
+     {
+      "word": "水道",
+      "reading": "すいどう",
+      "meaning_tr": "şebeke suyu"
+     },
+     {
+      "word": "歩道",
+      "reading": "ほどう",
+      "meaning_tr": "kaldırım"
+     }
+    ]
+   },
+   {
+    "kanji": "返",
+    "on": [
+     "ヘン"
+    ],
+    "kun": [
+     "かえ(す)"
+    ],
+    "meaning_tr": "geri vermek",
+    "words": [
+     {
+      "word": "返事",
+      "reading": "へんじ",
+      "meaning_tr": "cevap"
+     }
+    ]
+   },
+   {
+    "kanji": "送",
+    "on": [
+     "ソウ"
+    ],
+    "kun": [
+     "おく(る)"
+    ],
+    "meaning_tr": "göndermek",
+    "words": [
+     {
+      "word": "送料",
+      "reading": "そうりょう",
+      "meaning_tr": "kargo ücreti"
+     },
+     {
+      "word": "放送",
+      "reading": "ほうそう",
+      "meaning_tr": "yayın"
+     }
+    ]
+   },
+   {
+    "kanji": "通",
+    "on": [
+     "ツウ"
+    ],
+    "kun": [
+     "とお(る)",
+     "かよ(う)"
+    ],
+    "meaning_tr": "geçmek, gidip gelmek",
+    "words": [
+     {
+      "word": "交通",
+      "reading": "こうつう",
+      "meaning_tr": "trafik, ulaşım"
+     },
+     {
+      "word": "普通",
+      "reading": "ふつう",
+      "meaning_tr": "normal"
+     }
+    ]
+   },
+   {
+    "kanji": "違",
+    "on": [
+     "イ"
+    ],
+    "kun": [
+     "ちが(う)"
+    ],
+    "meaning_tr": "farklı olmak",
+    "words": [
+     {
+      "word": "間違い",
+      "reading": "まちがい",
+      "meaning_tr": "hata"
+     }
+    ]
+   },
+   {
+    "kanji": "選",
+    "on": [
+     "セン"
+    ],
+    "kun": [
+     "えら(ぶ)"
+    ],
+    "meaning_tr": "seçmek",
+    "words": [
+     {
+      "word": "選手",
+      "reading": "せんしゅ",
+      "meaning_tr": "sporcu"
+     },
+     {
+      "word": "選挙",
+      "reading": "せんきょ",
+      "meaning_tr": "seçim"
+     }
+    ]
+   },
+   {
+    "kanji": "達",
+    "on": [
+     "タツ"
+    ],
+    "kun": [],
+    "meaning_tr": "ulaşmak",
+    "words": [
+     {
+      "word": "友達",
+      "reading": "ともだち",
+      "meaning_tr": "arkadaş"
+     },
+     {
+      "word": "配達",
+      "reading": "はいたつ",
+      "meaning_tr": "teslimat"
+     }
+    ]
+   },
+   {
+    "kanji": "遅",
+    "on": [
+     "チ"
+    ],
+    "kun": [
+     "おく(れる)",
+     "おそ(い)"
+    ],
+    "meaning_tr": "geç",
+    "words": [
+     {
+      "word": "遅刻",
+      "reading": "ちこく",
+      "meaning_tr": "geç kalma"
+     }
+    ]
+   },
+   {
+    "kanji": "過",
+    "on": [
+     "カ"
+    ],
+    "kun": [
+     "す(ぎる)"
+    ],
+    "meaning_tr": "geçmek, aşmak",
+    "words": [
+     {
+      "word": "過去",
+      "reading": "かこ",
+      "meaning_tr": "geçmiş"
+     }
+    ]
+   },
+   {
+    "kanji": "連",
+    "on": [
+     "レン"
+    ],
+    "kun": [
+     "つ(れる)"
+    ],
+    "meaning_tr": "bağlamak, götürmek",
+    "words": [
+     {
+      "word": "連絡",
+      "reading": "れんらく",
+      "meaning_tr": "iletişim, haber verme"
+     }
+    ]
+   },
+   {
+    "kanji": "迷",
+    "on": [
+     "メイ"
+    ],
+    "kun": [
+     "まよ(う)"
+    ],
+    "meaning_tr": "kaybolmak, kararsız kalmak",
+    "words": [
+     {
+      "word": "迷惑",
+      "reading": "めいわく",
+      "meaning_tr": "rahatsızlık"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 7,
+  "radical": "口",
+  "variants": [],
+  "name_jp": "くち / くちへん",
+  "name_romaji": "kuchi",
+  "meaning_tr": "ağız",
+  "meaning_en": "mouth",
+  "kanji": [
+   {
+    "kanji": "味",
+    "on": [
+     "ミ"
+    ],
+    "kun": [
+     "あじ"
+    ],
+    "meaning_tr": "tat",
+    "words": [
+     {
+      "word": "意味",
+      "reading": "いみ",
+      "meaning_tr": "anlam"
+     },
+     {
+      "word": "趣味",
+      "reading": "しゅみ",
+      "meaning_tr": "hobi"
+     }
+    ]
+   },
+   {
+    "kanji": "品",
+    "on": [
+     "ヒン"
+    ],
+    "kun": [
+     "しな"
+    ],
+    "meaning_tr": "ürün",
+    "words": [
+     {
+      "word": "商品",
+      "reading": "しょうひん",
+      "meaning_tr": "ürün"
+     },
+     {
+      "word": "作品",
+      "reading": "さくひん",
+      "meaning_tr": "eser"
+     }
+    ]
+   },
+   {
+    "kanji": "号",
+    "on": [
+     "ゴウ"
+    ],
+    "kun": [],
+    "meaning_tr": "numara, işaret",
+    "words": [
+     {
+      "word": "番号",
+      "reading": "ばんごう",
+      "meaning_tr": "numara"
+     },
+     {
+      "word": "信号",
+      "reading": "しんごう",
+      "meaning_tr": "trafik ışığı"
+     }
+    ]
+   },
+   {
+    "kanji": "命",
+    "on": [
+     "メイ"
+    ],
+    "kun": [
+     "いのち"
+    ],
+    "meaning_tr": "hayat, emir",
+    "words": [
+     {
+      "word": "生命",
+      "reading": "せいめい",
+      "meaning_tr": "yaşam"
+     },
+     {
+      "word": "命令",
+      "reading": "めいれい",
+      "meaning_tr": "emir"
+     }
+    ]
+   },
+   {
+    "kanji": "史",
+    "on": [
+     "シ"
+    ],
+    "kun": [],
+    "meaning_tr": "tarih",
+    "words": [
+     {
+      "word": "歴史",
+      "reading": "れきし",
+      "meaning_tr": "tarih"
+     }
+    ]
+   },
+   {
+    "kanji": "告",
+    "on": [
+     "コク"
+    ],
+    "kun": [
+     "つ(げる)"
+    ],
+    "meaning_tr": "bildirmek",
+    "words": [
+     {
+      "word": "報告",
+      "reading": "ほうこく",
+      "meaning_tr": "rapor"
+     },
+     {
+      "word": "広告",
+      "reading": "こうこく",
+      "meaning_tr": "reklam"
+     }
+    ]
+   },
+   {
+    "kanji": "周",
+    "on": [
+     "シュウ"
+    ],
+    "kun": [
+     "まわ(り)"
+    ],
+    "meaning_tr": "çevre",
+    "words": [
+     {
+      "word": "周辺",
+      "reading": "しゅうへん",
+      "meaning_tr": "civar"
+     }
+    ]
+   },
+   {
+    "kanji": "各",
+    "on": [
+     "カク"
+    ],
+    "kun": [
+     "おのおの"
+    ],
+    "meaning_tr": "her biri",
+    "words": [
+     {
+      "word": "各地",
+      "reading": "かくち",
+      "meaning_tr": "her yer"
+     }
+    ]
+   },
+   {
+    "kanji": "問",
+    "on": [
+     "モン"
+    ],
+    "kun": [
+     "と(う)"
+    ],
+    "meaning_tr": "sormak",
+    "words": [
+     {
+      "word": "質問",
+      "reading": "しつもん",
+      "meaning_tr": "soru"
+     },
+     {
+      "word": "問題",
+      "reading": "もんだい",
+      "meaning_tr": "sorun"
+     }
+    ]
+   },
+   {
+    "kanji": "喜",
+    "on": [
+     "キ"
+    ],
+    "kun": [
+     "よろこ(ぶ)"
+    ],
+    "meaning_tr": "sevinmek",
+    "words": [
+     {
+      "word": "喜び",
+      "reading": "よろこび",
+      "meaning_tr": "sevinç"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 8,
+  "radical": "日",
+  "variants": [
+   "曰"
+  ],
+  "name_jp": "ひ / ひへん",
+  "name_romaji": "hi",
+  "meaning_tr": "güneş, gün, zaman",
+  "meaning_en": "sun, day",
+  "kanji": [
+   {
+    "kanji": "晴",
+    "on": [
+     "セイ"
+    ],
+    "kun": [
+     "は(れる)"
+    ],
+    "meaning_tr": "açık hava",
+    "words": [
+     {
+      "word": "晴天",
+      "reading": "せいてん",
+      "meaning_tr": "açık hava"
+     }
+    ]
+   },
+   {
+    "kanji": "昔",
+    "on": [
+     "セキ"
+    ],
+    "kun": [
+     "むかし"
+    ],
+    "meaning_tr": "eskiden",
+    "words": [
+     {
+      "word": "昔話",
+      "reading": "むかしばなし",
+      "meaning_tr": "masal"
+     }
+    ]
+   },
+   {
+    "kanji": "暑",
+    "on": [
+     "ショ"
+    ],
+    "kun": [
+     "あつ(い)"
+    ],
+    "meaning_tr": "sıcak (hava)",
+    "words": [
+     {
+      "word": "残暑",
+      "reading": "ざんしょ",
+      "meaning_tr": "yaz sonu sıcağı"
+     }
+    ]
+   },
+   {
+    "kanji": "暗",
+    "on": [
+     "アン"
+    ],
+    "kun": [
+     "くら(い)"
+    ],
+    "meaning_tr": "karanlık",
+    "words": [
+     {
+      "word": "暗記",
+      "reading": "あんき",
+      "meaning_tr": "ezber"
+     }
+    ]
+   },
+   {
+    "kanji": "景",
+    "on": [
+     "ケイ"
+    ],
+    "kun": [],
+    "meaning_tr": "manzara",
+    "words": [
+     {
+      "word": "景色",
+      "reading": "けしき",
+      "meaning_tr": "manzara"
+     },
+     {
+      "word": "景気",
+      "reading": "けいき",
+      "meaning_tr": "ekonomik durum"
+     }
+    ]
+   },
+   {
+    "kanji": "最",
+    "on": [
+     "サイ"
+    ],
+    "kun": [
+     "もっと(も)"
+    ],
+    "meaning_tr": "en",
+    "words": [
+     {
+      "word": "最近",
+      "reading": "さいきん",
+      "meaning_tr": "son zamanlarda"
+     },
+     {
+      "word": "最初",
+      "reading": "さいしょ",
+      "meaning_tr": "ilk"
+     }
+    ]
+   },
+   {
+    "kanji": "映",
+    "on": [
+     "エイ"
+    ],
+    "kun": [
+     "うつ(る)"
+    ],
+    "meaning_tr": "yansımak",
+    "words": [
+     {
+      "word": "映画",
+      "reading": "えいが",
+      "meaning_tr": "film"
+     },
+     {
+      "word": "反映",
+      "reading": "はんえい",
+      "meaning_tr": "yansıtma"
+     }
+    ]
+   },
+   {
+    "kanji": "易",
+    "on": [
+     "エキ",
+     "イ"
+    ],
+    "kun": [
+     "やさ(しい)"
+    ],
+    "meaning_tr": "kolay, takas",
+    "words": [
+     {
+      "word": "貿易",
+      "reading": "ぼうえき",
+      "meaning_tr": "dış ticaret"
+     },
+     {
+      "word": "容易",
+      "reading": "ようい",
+      "meaning_tr": "kolay"
+     }
+    ]
+   },
+   {
+    "kanji": "普",
+    "on": [
+     "フ"
+    ],
+    "kun": [],
+    "meaning_tr": "genel",
+    "words": [
+     {
+      "word": "普通",
+      "reading": "ふつう",
+      "meaning_tr": "normal"
+     }
+    ]
+   },
+   {
+    "kanji": "昨",
+    "on": [
+     "サク"
+    ],
+    "kun": [],
+    "meaning_tr": "geçen",
+    "words": [
+     {
+      "word": "昨日",
+      "reading": "きのう",
+      "meaning_tr": "dün"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 9,
+  "radical": "月",
+  "variants": [
+   "⺼"
+  ],
+  "name_jp": "つき / にくづき",
+  "name_romaji": "tsuki",
+  "meaning_tr": "ay; (solda) vücut, et",
+  "meaning_en": "moon / flesh",
+  "kanji": [
+   {
+    "kanji": "期",
+    "on": [
+     "キ"
+    ],
+    "kun": [],
+    "meaning_tr": "dönem",
+    "words": [
+     {
+      "word": "期間",
+      "reading": "きかん",
+      "meaning_tr": "süre"
+     },
+     {
+      "word": "期待",
+      "reading": "きたい",
+      "meaning_tr": "beklenti"
+     }
+    ]
+   },
+   {
+    "kanji": "服",
+    "on": [
+     "フク"
+    ],
+    "kun": [],
+    "meaning_tr": "giysi",
+    "words": [
+     {
+      "word": "洋服",
+      "reading": "ようふく",
+      "meaning_tr": "kıyafet"
+     }
+    ]
+   },
+   {
+    "kanji": "望",
+    "on": [
+     "ボウ"
+    ],
+    "kun": [
+     "のぞ(む)"
+    ],
+    "meaning_tr": "dilemek",
+    "words": [
+     {
+      "word": "希望",
+      "reading": "きぼう",
+      "meaning_tr": "umut, istek"
+     }
+    ]
+   },
+   {
+    "kanji": "能",
+    "on": [
+     "ノウ"
+    ],
+    "kun": [],
+    "meaning_tr": "yetenek",
+    "words": [
+     {
+      "word": "能力",
+      "reading": "のうりょく",
+      "meaning_tr": "yetenek"
+     },
+     {
+      "word": "可能",
+      "reading": "かのう",
+      "meaning_tr": "mümkün"
+     }
+    ]
+   },
+   {
+    "kanji": "育",
+    "on": [
+     "イク"
+    ],
+    "kun": [
+     "そだ(てる)"
+    ],
+    "meaning_tr": "büyütmek",
+    "words": [
+     {
+      "word": "教育",
+      "reading": "きょういく",
+      "meaning_tr": "eğitim"
+     }
+    ]
+   },
+   {
+    "kanji": "背",
+    "on": [
+     "ハイ"
+    ],
+    "kun": [
+     "せ"
+    ],
+    "meaning_tr": "sırt, boy",
+    "words": [
+     {
+      "word": "背中",
+      "reading": "せなか",
+      "meaning_tr": "sırt"
+     }
+    ]
+   },
+   {
+    "kanji": "胸",
+    "on": [
+     "キョウ"
+    ],
+    "kun": [
+     "むね"
+    ],
+    "meaning_tr": "göğüs",
+    "words": [
+     {
+      "word": "胸",
+      "reading": "むね",
+      "meaning_tr": "göğüs"
+     }
+    ]
+   },
+   {
+    "kanji": "脳",
+    "on": [
+     "ノウ"
+    ],
+    "kun": [],
+    "meaning_tr": "beyin",
+    "words": [
+     {
+      "word": "頭脳",
+      "reading": "ずのう",
+      "meaning_tr": "beyin, zeka"
+     }
+    ]
+   },
+   {
+    "kanji": "腹",
+    "on": [
+     "フク"
+    ],
+    "kun": [
+     "はら"
+    ],
+    "meaning_tr": "karın",
+    "words": [
+     {
+      "word": "腹が立つ",
+      "reading": "はらがたつ",
+      "meaning_tr": "sinirlenmek"
+     }
+    ]
+   },
+   {
+    "kanji": "肩",
+    "on": [
+     "ケン"
+    ],
+    "kun": [
+     "かた"
+    ],
+    "meaning_tr": "omuz",
+    "words": [
+     {
+      "word": "肩こり",
+      "reading": "かたこり",
+      "meaning_tr": "omuz tutulması"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 10,
+  "radical": "女",
+  "variants": [],
+  "name_jp": "おんな / おんなへん",
+  "name_romaji": "onna",
+  "meaning_tr": "kadın",
+  "meaning_en": "woman",
+  "kanji": [
+   {
+    "kanji": "妻",
+    "on": [
+     "サイ"
+    ],
+    "kun": [
+     "つま"
+    ],
+    "meaning_tr": "eş (karı)",
+    "words": [
+     {
+      "word": "夫妻",
+      "reading": "ふさい",
+      "meaning_tr": "karı koca"
+     }
+    ]
+   },
+   {
+    "kanji": "始",
+    "on": [
+     "シ"
+    ],
+    "kun": [
+     "はじ(める)"
+    ],
+    "meaning_tr": "başlamak",
+    "words": [
+     {
+      "word": "開始",
+      "reading": "かいし",
+      "meaning_tr": "başlangıç"
+     }
+    ]
+   },
+   {
+    "kanji": "婚",
+    "on": [
+     "コン"
+    ],
+    "kun": [],
+    "meaning_tr": "evlilik",
+    "words": [
+     {
+      "word": "結婚",
+      "reading": "けっこん",
+      "meaning_tr": "evlilik"
+     }
+    ]
+   },
+   {
+    "kanji": "嫌",
+    "on": [
+     "ケン"
+    ],
+    "kun": [
+     "きら(い)"
+    ],
+    "meaning_tr": "sevmemek",
+    "words": [
+     {
+      "word": "機嫌",
+      "reading": "きげん",
+      "meaning_tr": "ruh hali"
+     }
+    ]
+   },
+   {
+    "kanji": "委",
+    "on": [
+     "イ"
+    ],
+    "kun": [],
+    "meaning_tr": "emanet etmek",
+    "words": [
+     {
+      "word": "委員",
+      "reading": "いいん",
+      "meaning_tr": "komite üyesi"
+     }
+    ]
+   },
+   {
+    "kanji": "娘",
+    "on": [
+     "ジョウ"
+    ],
+    "kun": [
+     "むすめ"
+    ],
+    "meaning_tr": "kız evlat",
+    "words": [
+     {
+      "word": "娘",
+      "reading": "むすめ",
+      "meaning_tr": "kız evlat"
+     }
+    ]
+   },
+   {
+    "kanji": "婦",
+    "on": [
+     "フ"
+    ],
+    "kun": [],
+    "meaning_tr": "kadın, eş",
+    "words": [
+     {
+      "word": "主婦",
+      "reading": "しゅふ",
+      "meaning_tr": "ev hanımı"
+     },
+     {
+      "word": "夫婦",
+      "reading": "ふうふ",
+      "meaning_tr": "karı koca"
+     }
+    ]
+   },
+   {
+    "kanji": "姿",
+    "on": [
+     "シ"
+    ],
+    "kun": [
+     "すがた"
+    ],
+    "meaning_tr": "görünüş",
+    "words": [
+     {
+      "word": "姿勢",
+      "reading": "しせい",
+      "meaning_tr": "duruş, tavır"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 11,
+  "radical": "扌",
+  "variants": [
+   "手"
+  ],
+  "name_jp": "てへん",
+  "name_romaji": "tehen",
+  "meaning_tr": "el, el ile iş",
+  "meaning_en": "hand",
+  "kanji": [
+   {
+    "kanji": "持",
+    "on": [
+     "ジ"
+    ],
+    "kun": [
+     "も(つ)"
+    ],
+    "meaning_tr": "tutmak",
+    "words": [
+     {
+      "word": "気持ち",
+      "reading": "きもち",
+      "meaning_tr": "his"
+     },
+     {
+      "word": "支持",
+      "reading": "しじ",
+      "meaning_tr": "destek"
+     }
+    ]
+   },
+   {
+    "kanji": "打",
+    "on": [
+     "ダ"
+    ],
+    "kun": [
+     "う(つ)"
+    ],
+    "meaning_tr": "vurmak",
+    "words": [
+     {
+      "word": "打ち合わせ",
+      "reading": "うちあわせ",
+      "meaning_tr": "ön görüşme"
+     }
+    ]
+   },
+   {
+    "kanji": "投",
+    "on": [
+     "トウ"
+    ],
+    "kun": [
+     "な(げる)"
+    ],
+    "meaning_tr": "atmak",
+    "words": [
+     {
+      "word": "投票",
+      "reading": "とうひょう",
+      "meaning_tr": "oy verme"
+     }
+    ]
+   },
+   {
+    "kanji": "指",
+    "on": [
+     "シ"
+    ],
+    "kun": [
+     "ゆび",
+     "さ(す)"
+    ],
+    "meaning_tr": "parmak, işaret etmek",
+    "words": [
+     {
+      "word": "指示",
+      "reading": "しじ",
+      "meaning_tr": "talimat"
+     },
+     {
+      "word": "指定",
+      "reading": "してい",
+      "meaning_tr": "belirleme"
+     }
+    ]
+   },
+   {
+    "kanji": "払",
+    "on": [
+     "フツ"
+    ],
+    "kun": [
+     "はら(う)"
+    ],
+    "meaning_tr": "ödemek",
+    "words": [
+     {
+      "word": "支払い",
+      "reading": "しはらい",
+      "meaning_tr": "ödeme"
+     }
+    ]
+   },
+   {
+    "kanji": "技",
+    "on": [
+     "ギ"
+    ],
+    "kun": [
+     "わざ"
+    ],
+    "meaning_tr": "teknik",
+    "words": [
+     {
+      "word": "技術",
+      "reading": "ぎじゅつ",
+      "meaning_tr": "teknoloji, teknik"
+     }
+    ]
+   },
+   {
+    "kanji": "探",
+    "on": [
+     "タン"
+    ],
+    "kun": [
+     "さが(す)"
+    ],
+    "meaning_tr": "aramak",
+    "words": [
+     {
+      "word": "探検",
+      "reading": "たんけん",
+      "meaning_tr": "keşif"
+     }
+    ]
+   },
+   {
+    "kanji": "捨",
+    "on": [
+     "シャ"
+    ],
+    "kun": [
+     "す(てる)"
+    ],
+    "meaning_tr": "atmak (çöpe)",
+    "words": [
+     {
+      "word": "捨てる",
+      "reading": "すてる",
+      "meaning_tr": "atmak"
+     }
+    ]
+   },
+   {
+    "kanji": "拾",
+    "on": [
+     "シュウ"
+    ],
+    "kun": [
+     "ひろ(う)"
+    ],
+    "meaning_tr": "yerden almak",
+    "words": [
+     {
+      "word": "拾う",
+      "reading": "ひろう",
+      "meaning_tr": "yerden almak"
+     }
+    ]
+   },
+   {
+    "kanji": "授",
+    "on": [
+     "ジュ"
+    ],
+    "kun": [
+     "さず(ける)"
+    ],
+    "meaning_tr": "vermek, öğretmek",
+    "words": [
+     {
+      "word": "授業",
+      "reading": "じゅぎょう",
+      "meaning_tr": "ders"
+     }
+    ]
+   },
+   {
+    "kanji": "接",
+    "on": [
+     "セツ"
+    ],
+    "kun": [],
+    "meaning_tr": "temas",
+    "words": [
+     {
+      "word": "直接",
+      "reading": "ちょくせつ",
+      "meaning_tr": "doğrudan"
+     },
+     {
+      "word": "面接",
+      "reading": "めんせつ",
+      "meaning_tr": "mülakat"
+     }
+    ]
+   },
+   {
+    "kanji": "担",
+    "on": [
+     "タン"
+    ],
+    "kun": [
+     "かつ(ぐ)"
+    ],
+    "meaning_tr": "taşımak, üstlenmek",
+    "words": [
+     {
+      "word": "担当",
+      "reading": "たんとう",
+      "meaning_tr": "sorumlu"
+     }
+    ]
+   },
+   {
+    "kanji": "招",
+    "on": [
+     "ショウ"
+    ],
+    "kun": [
+     "まね(く)"
+    ],
+    "meaning_tr": "davet etmek",
+    "words": [
+     {
+      "word": "招待",
+      "reading": "しょうたい",
+      "meaning_tr": "davet"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 12,
+  "radical": "艹",
+  "variants": [
+   "艸"
+  ],
+  "name_jp": "くさかんむり",
+  "name_romaji": "kusakanmuri",
+  "meaning_tr": "ot, bitki",
+  "meaning_en": "grass",
+  "kanji": [
+   {
+    "kanji": "薬",
+    "on": [
+     "ヤク"
+    ],
+    "kun": [
+     "くすり"
+    ],
+    "meaning_tr": "ilaç",
+    "words": [
+     {
+      "word": "薬局",
+      "reading": "やっきょく",
+      "meaning_tr": "eczane"
+     }
+    ]
+   },
+   {
+    "kanji": "落",
+    "on": [
+     "ラク"
+    ],
+    "kun": [
+     "お(ちる)"
+    ],
+    "meaning_tr": "düşmek",
+    "words": [
+     {
+      "word": "落とし物",
+      "reading": "おとしもの",
+      "meaning_tr": "kayıp eşya"
+     }
+    ]
+   },
+   {
+    "kanji": "葉",
+    "on": [
+     "ヨウ"
+    ],
+    "kun": [
+     "は"
+    ],
+    "meaning_tr": "yaprak",
+    "words": [
+     {
+      "word": "言葉",
+      "reading": "ことば",
+      "meaning_tr": "kelime, söz"
+     },
+     {
+      "word": "紅葉",
+      "reading": "こうよう",
+      "meaning_tr": "sonbahar yaprakları"
+     }
+    ]
+   },
+   {
+    "kanji": "苦",
+    "on": [
+     "ク"
+    ],
+    "kun": [
+     "くる(しい)",
+     "にが(い)"
+    ],
+    "meaning_tr": "acı, zor",
+    "words": [
+     {
+      "word": "苦労",
+      "reading": "くろう",
+      "meaning_tr": "zahmet"
+     }
+    ]
+   },
+   {
+    "kanji": "若",
+    "on": [
+     "ジャク"
+    ],
+    "kun": [
+     "わか(い)"
+    ],
+    "meaning_tr": "genç",
+    "words": [
+     {
+      "word": "若者",
+      "reading": "わかもの",
+      "meaning_tr": "genç insan"
+     }
+    ]
+   },
+   {
+    "kanji": "荷",
+    "on": [
+     "カ"
+    ],
+    "kun": [
+     "に"
+    ],
+    "meaning_tr": "yük",
+    "words": [
+     {
+      "word": "荷物",
+      "reading": "にもつ",
+      "meaning_tr": "bagaj, eşya"
+     }
+    ]
+   },
+   {
+    "kanji": "菜",
+    "on": [
+     "サイ"
+    ],
+    "kun": [
+     "な"
+    ],
+    "meaning_tr": "sebze",
+    "words": [
+     {
+      "word": "野菜",
+      "reading": "やさい",
+      "meaning_tr": "sebze"
+     }
+    ]
+   },
+   {
+    "kanji": "芸",
+    "on": [
+     "ゲイ"
+    ],
+    "kun": [],
+    "meaning_tr": "sanat",
+    "words": [
+     {
+      "word": "芸術",
+      "reading": "げいじゅつ",
+      "meaning_tr": "sanat"
+     },
+     {
+      "word": "芸能人",
+      "reading": "げいのうじん",
+      "meaning_tr": "ünlü"
+     }
+    ]
+   },
+   {
+    "kanji": "英",
+    "on": [
+     "エイ"
+    ],
+    "kun": [],
+    "meaning_tr": "İngiliz, üstün",
+    "words": [
+     {
+      "word": "英語",
+      "reading": "えいご",
+      "meaning_tr": "İngilizce"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 13,
+  "radical": "糸",
+  "variants": [
+   "糹"
+  ],
+  "name_jp": "いとへん",
+  "name_romaji": "itohen",
+  "meaning_tr": "iplik, bağ",
+  "meaning_en": "thread",
+  "kanji": [
+   {
+    "kanji": "紙",
+    "on": [
+     "シ"
+    ],
+    "kun": [
+     "かみ"
+    ],
+    "meaning_tr": "kağıt",
+    "words": [
+     {
+      "word": "手紙",
+      "reading": "てがみ",
+      "meaning_tr": "mektup"
+     }
+    ]
+   },
+   {
+    "kanji": "組",
+    "on": [
+     "ソ"
+    ],
+    "kun": [
+     "く(む)"
+    ],
+    "meaning_tr": "grup, birleştirmek",
+    "words": [
+     {
+      "word": "番組",
+      "reading": "ばんぐみ",
+      "meaning_tr": "TV programı"
+     }
+    ]
+   },
+   {
+    "kanji": "終",
+    "on": [
+     "シュウ"
+    ],
+    "kun": [
+     "お(わる)"
+    ],
+    "meaning_tr": "bitmek",
+    "words": [
+     {
+      "word": "終電",
+      "reading": "しゅうでん",
+      "meaning_tr": "son tren"
+     }
+    ]
+   },
+   {
+    "kanji": "経",
+    "on": [
+     "ケイ"
+    ],
+    "kun": [
+     "へ(る)"
+    ],
+    "meaning_tr": "geçmek",
+    "words": [
+     {
+      "word": "経済",
+      "reading": "けいざい",
+      "meaning_tr": "ekonomi"
+     },
+     {
+      "word": "経験",
+      "reading": "けいけん",
+      "meaning_tr": "deneyim"
+     }
+    ]
+   },
+   {
+    "kanji": "約",
+    "on": [
+     "ヤク"
+    ],
+    "kun": [],
+    "meaning_tr": "söz, yaklaşık",
+    "words": [
+     {
+      "word": "予約",
+      "reading": "よやく",
+      "meaning_tr": "rezervasyon"
+     },
+     {
+      "word": "約束",
+      "reading": "やくそく",
+      "meaning_tr": "söz verme"
+     }
+    ]
+   },
+   {
+    "kanji": "結",
+    "on": [
+     "ケツ"
+    ],
+    "kun": [
+     "むす(ぶ)"
+    ],
+    "meaning_tr": "bağlamak",
+    "words": [
+     {
+      "word": "結果",
+      "reading": "けっか",
+      "meaning_tr": "sonuç"
+     },
+     {
+      "word": "団結",
+      "reading": "だんけつ",
+      "meaning_tr": "birlik"
+     }
+    ]
+   },
+   {
+    "kanji": "続",
+    "on": [
+     "ゾク"
+    ],
+    "kun": [
+     "つづ(く)"
+    ],
+    "meaning_tr": "devam etmek",
+    "words": [
+     {
+      "word": "手続き",
+      "reading": "てつづき",
+      "meaning_tr": "işlem, prosedür"
+     }
+    ]
+   },
+   {
+    "kanji": "給",
+    "on": [
+     "キュウ"
+    ],
+    "kun": [],
+    "meaning_tr": "vermek, maaş",
+    "words": [
+     {
+      "word": "給料",
+      "reading": "きゅうりょう",
+      "meaning_tr": "maaş"
+     }
+    ]
+   },
+   {
+    "kanji": "練",
+    "on": [
+     "レン"
+    ],
+    "kun": [
+     "ね(る)"
+    ],
+    "meaning_tr": "yoğurmak, çalışmak",
+    "words": [
+     {
+      "word": "練習",
+      "reading": "れんしゅう",
+      "meaning_tr": "alıştırma"
+     }
+    ]
+   },
+   {
+    "kanji": "細",
+    "on": [
+     "サイ"
+    ],
+    "kun": [
+     "ほそ(い)",
+     "こま(かい)"
+    ],
+    "meaning_tr": "ince, ayrıntılı",
+    "words": [
+     {
+      "word": "詳細",
+      "reading": "しょうさい",
+      "meaning_tr": "ayrıntı"
+     }
+    ]
+   },
+   {
+    "kanji": "線",
+    "on": [
+     "セン"
+    ],
+    "kun": [],
+    "meaning_tr": "çizgi, hat",
+    "words": [
+     {
+      "word": "路線",
+      "reading": "ろせん",
+      "meaning_tr": "hat (tren/otobüs)"
+     }
+    ]
+   },
+   {
+    "kanji": "紹",
+    "on": [
+     "ショウ"
+    ],
+    "kun": [],
+    "meaning_tr": "tanıtmak",
+    "words": [
+     {
+      "word": "紹介",
+      "reading": "しょうかい",
+      "meaning_tr": "tanıtma"
+     }
+    ]
+   },
+   {
+    "kanji": "絡",
+    "on": [
+     "ラク"
+    ],
+    "kun": [
+     "から(む)"
+    ],
+    "meaning_tr": "dolanmak",
+    "words": [
+     {
+      "word": "連絡",
+      "reading": "れんらく",
+      "meaning_tr": "iletişim"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 14,
+  "radical": "金",
+  "variants": [
+   "釒"
+  ],
+  "name_jp": "かねへん",
+  "name_romaji": "kanehen",
+  "meaning_tr": "metal, para",
+  "meaning_en": "metal, gold",
+  "kanji": [
+   {
+    "kanji": "銀",
+    "on": [
+     "ギン"
+    ],
+    "kun": [],
+    "meaning_tr": "gümüş",
+    "words": [
+     {
+      "word": "銀行",
+      "reading": "ぎんこう",
+      "meaning_tr": "banka"
+     }
+    ]
+   },
+   {
+    "kanji": "鉄",
+    "on": [
+     "テツ"
+    ],
+    "kun": [],
+    "meaning_tr": "demir",
+    "words": [
+     {
+      "word": "地下鉄",
+      "reading": "ちかてつ",
+      "meaning_tr": "metro"
+     }
+    ]
+   },
+   {
+    "kanji": "針",
+    "on": [
+     "シン"
+    ],
+    "kun": [
+     "はり"
+    ],
+    "meaning_tr": "iğne",
+    "words": [
+     {
+      "word": "方針",
+      "reading": "ほうしん",
+      "meaning_tr": "politika, yön"
+     }
+    ]
+   },
+   {
+    "kanji": "録",
+    "on": [
+     "ロク"
+    ],
+    "kun": [],
+    "meaning_tr": "kaydetmek",
+    "words": [
+     {
+      "word": "記録",
+      "reading": "きろく",
+      "meaning_tr": "kayıt"
+     },
+     {
+      "word": "登録",
+      "reading": "とうろく",
+      "meaning_tr": "üyelik/kayıt"
+     }
+    ]
+   },
+   {
+    "kanji": "鏡",
+    "on": [
+     "キョウ"
+    ],
+    "kun": [
+     "かがみ"
+    ],
+    "meaning_tr": "ayna",
+    "words": [
+     {
+      "word": "鏡",
+      "reading": "かがみ",
+      "meaning_tr": "ayna"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 15,
+  "radical": "食",
+  "variants": [
+   "飠"
+  ],
+  "name_jp": "しょくへん",
+  "name_romaji": "shokuhen",
+  "meaning_tr": "yemek",
+  "meaning_en": "food",
+  "kanji": [
+   {
+    "kanji": "飲",
+    "on": [
+     "イン"
+    ],
+    "kun": [
+     "の(む)"
+    ],
+    "meaning_tr": "içmek",
+    "words": [
+     {
+      "word": "飲食",
+      "reading": "いんしょく",
+      "meaning_tr": "yeme içme"
+     }
+    ]
+   },
+   {
+    "kanji": "飯",
+    "on": [
+     "ハン"
+    ],
+    "kun": [
+     "めし"
+    ],
+    "meaning_tr": "pilav, yemek",
+    "words": [
+     {
+      "word": "夕飯",
+      "reading": "ゆうはん",
+      "meaning_tr": "akşam yemeği"
+     }
+    ]
+   },
+   {
+    "kanji": "館",
+    "on": [
+     "カン"
+    ],
+    "kun": [],
+    "meaning_tr": "bina, salon",
+    "words": [
+     {
+      "word": "図書館",
+      "reading": "としょかん",
+      "meaning_tr": "kütüphane"
+     },
+     {
+      "word": "旅館",
+      "reading": "りょかん",
+      "meaning_tr": "geleneksel otel"
+     }
+    ]
+   },
+   {
+    "kanji": "飼",
+    "on": [
+     "シ"
+    ],
+    "kun": [
+     "か(う)"
+    ],
+    "meaning_tr": "beslemek (hayvan)",
+    "words": [
+     {
+      "word": "飼い主",
+      "reading": "かいぬし",
+      "meaning_tr": "hayvan sahibi"
+     }
+    ]
+   },
+   {
+    "kanji": "飾",
+    "on": [
+     "ショク"
+    ],
+    "kun": [
+     "かざ(る)"
+    ],
+    "meaning_tr": "süslemek",
+    "words": [
+     {
+      "word": "装飾",
+      "reading": "そうしょく",
+      "meaning_tr": "dekorasyon"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 16,
+  "radical": "火",
+  "variants": [
+   "灬"
+  ],
+  "name_jp": "ひ / れっか",
+  "name_romaji": "hi / rekka",
+  "meaning_tr": "ateş, ısı",
+  "meaning_en": "fire",
+  "kanji": [
+   {
+    "kanji": "熱",
+    "on": [
+     "ネツ"
+    ],
+    "kun": [
+     "あつ(い)"
+    ],
+    "meaning_tr": "ısı, ateş",
+    "words": [
+     {
+      "word": "熱心",
+      "reading": "ねっしん",
+      "meaning_tr": "hevesli"
+     }
+    ]
+   },
+   {
+    "kanji": "点",
+    "on": [
+     "テン"
+    ],
+    "kun": [],
+    "meaning_tr": "nokta",
+    "words": [
+     {
+      "word": "点数",
+      "reading": "てんすう",
+      "meaning_tr": "puan"
+     },
+     {
+      "word": "欠点",
+      "reading": "けってん",
+      "meaning_tr": "kusur"
+     }
+    ]
+   },
+   {
+    "kanji": "無",
+    "on": [
+     "ム",
+     "ブ"
+    ],
+    "kun": [
+     "な(い)"
+    ],
+    "meaning_tr": "yok",
+    "words": [
+     {
+      "word": "無理",
+      "reading": "むり",
+      "meaning_tr": "imkansız"
+     },
+     {
+      "word": "無料",
+      "reading": "むりょう",
+      "meaning_tr": "ücretsiz"
+     }
+    ]
+   },
+   {
+    "kanji": "然",
+    "on": [
+     "ゼン",
+     "ネン"
+    ],
+    "kun": [],
+    "meaning_tr": "öyle, doğal",
+    "words": [
+     {
+      "word": "自然",
+      "reading": "しぜん",
+      "meaning_tr": "doğa"
+     },
+     {
+      "word": "全然",
+      "reading": "ぜんぜん",
+      "meaning_tr": "hiç"
+     }
+    ]
+   },
+   {
+    "kanji": "焼",
+    "on": [
+     "ショウ"
+    ],
+    "kun": [
+     "や(く)"
+    ],
+    "meaning_tr": "yakmak, pişirmek",
+    "words": [
+     {
+      "word": "焼肉",
+      "reading": "やきにく",
+      "meaning_tr": "ızgara et"
+     }
+    ]
+   },
+   {
+    "kanji": "燃",
+    "on": [
+     "ネン"
+    ],
+    "kun": [
+     "も(える)"
+    ],
+    "meaning_tr": "yanmak",
+    "words": [
+     {
+      "word": "燃料",
+      "reading": "ねんりょう",
+      "meaning_tr": "yakıt"
+     }
+    ]
+   },
+   {
+    "kanji": "照",
+    "on": [
+     "ショウ"
+    ],
+    "kun": [
+     "て(らす)"
+    ],
+    "meaning_tr": "aydınlatmak",
+    "words": [
+     {
+      "word": "参照",
+      "reading": "さんしょう",
+      "meaning_tr": "referans"
+     }
+    ]
+   },
+   {
+    "kanji": "煙",
+    "on": [
+     "エン"
+    ],
+    "kun": [
+     "けむり"
+    ],
+    "meaning_tr": "duman",
+    "words": [
+     {
+      "word": "禁煙",
+      "reading": "きんえん",
+      "meaning_tr": "sigara içilmez"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 17,
+  "radical": "阝",
+  "variants": [
+   "邑",
+   "阜"
+  ],
+  "name_jp": "こざとへん / おおざと",
+  "name_romaji": "kozatohen / oozato",
+  "meaning_tr": "solda: tepe; sağda: yerleşim",
+  "meaning_en": "hill / town",
+  "kanji": [
+   {
+    "kanji": "院",
+    "on": [
+     "イン"
+    ],
+    "kun": [],
+    "meaning_tr": "kurum",
+    "words": [
+     {
+      "word": "入院",
+      "reading": "にゅういん",
+      "meaning_tr": "hastaneye yatma"
+     }
+    ]
+   },
+   {
+    "kanji": "階",
+    "on": [
+     "カイ"
+    ],
+    "kun": [],
+    "meaning_tr": "kat",
+    "words": [
+     {
+      "word": "階段",
+      "reading": "かいだん",
+      "meaning_tr": "merdiven"
+     }
+    ]
+   },
+   {
+    "kanji": "都",
+    "on": [
+     "ト",
+     "ツ"
+    ],
+    "kun": [
+     "みやこ"
+    ],
+    "meaning_tr": "başkent",
+    "words": [
+     {
+      "word": "都合",
+      "reading": "つごう",
+      "meaning_tr": "uygunluk"
+     },
+     {
+      "word": "都市",
+      "reading": "とし",
+      "meaning_tr": "şehir"
+     }
+    ]
+   },
+   {
+    "kanji": "部",
+    "on": [
+     "ブ"
+    ],
+    "kun": [],
+    "meaning_tr": "bölüm",
+    "words": [
+     {
+      "word": "部屋",
+      "reading": "へや",
+      "meaning_tr": "oda"
+     },
+     {
+      "word": "部長",
+      "reading": "ぶちょう",
+      "meaning_tr": "bölüm müdürü"
+     }
+    ]
+   },
+   {
+    "kanji": "際",
+    "on": [
+     "サイ"
+    ],
+    "kun": [
+     "きわ"
+    ],
+    "meaning_tr": "kenar, an",
+    "words": [
+     {
+      "word": "国際",
+      "reading": "こくさい",
+      "meaning_tr": "uluslararası"
+     },
+     {
+      "word": "実際",
+      "reading": "じっさい",
+      "meaning_tr": "aslında"
+     }
+    ]
+   },
+   {
+    "kanji": "険",
+    "on": [
+     "ケン"
+    ],
+    "kun": [
+     "けわ(しい)"
+    ],
+    "meaning_tr": "dik, tehlikeli",
+    "words": [
+     {
+      "word": "危険",
+      "reading": "きけん",
+      "meaning_tr": "tehlike"
+     },
+     {
+      "word": "保険",
+      "reading": "ほけん",
+      "meaning_tr": "sigorta"
+     }
+    ]
+   },
+   {
+    "kanji": "限",
+    "on": [
+     "ゲン"
+    ],
+    "kun": [
+     "かぎ(る)"
+    ],
+    "meaning_tr": "sınır",
+    "words": [
+     {
+      "word": "制限",
+      "reading": "せいげん",
+      "meaning_tr": "kısıtlama"
+     },
+     {
+      "word": "期限",
+      "reading": "きげん",
+      "meaning_tr": "son tarih"
+     }
+    ]
+   },
+   {
+    "kanji": "防",
+    "on": [
+     "ボウ"
+    ],
+    "kun": [
+     "ふせ(ぐ)"
+    ],
+    "meaning_tr": "korumak",
+    "words": [
+     {
+      "word": "予防",
+      "reading": "よぼう",
+      "meaning_tr": "önleme"
+     }
+    ]
+   },
+   {
+    "kanji": "陽",
+    "on": [
+     "ヨウ"
+    ],
+    "kun": [],
+    "meaning_tr": "güneş",
+    "words": [
+     {
+      "word": "太陽",
+      "reading": "たいよう",
+      "meaning_tr": "güneş"
+     }
+    ]
+   },
+   {
+    "kanji": "除",
+    "on": [
+     "ジョ"
+    ],
+    "kun": [
+     "のぞ(く)"
+    ],
+    "meaning_tr": "çıkarmak",
+    "words": [
+     {
+      "word": "掃除",
+      "reading": "そうじ",
+      "meaning_tr": "temizlik"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 18,
+  "radical": "宀",
+  "variants": [],
+  "name_jp": "うかんむり",
+  "name_romaji": "ukanmuri",
+  "meaning_tr": "çatı, ev",
+  "meaning_en": "roof",
+  "kanji": [
+   {
+    "kanji": "家",
+    "on": [
+     "カ",
+     "ケ"
+    ],
+    "kun": [
+     "いえ"
+    ],
+    "meaning_tr": "ev",
+    "words": [
+     {
+      "word": "家族",
+      "reading": "かぞく",
+      "meaning_tr": "aile"
+     },
+     {
+      "word": "家賃",
+      "reading": "やちん",
+      "meaning_tr": "kira"
+     }
+    ]
+   },
+   {
+    "kanji": "安",
+    "on": [
+     "アン"
+    ],
+    "kun": [
+     "やす(い)"
+    ],
+    "meaning_tr": "ucuz, huzurlu",
+    "words": [
+     {
+      "word": "安心",
+      "reading": "あんしん",
+      "meaning_tr": "içi rahat olma"
+     },
+     {
+      "word": "不安",
+      "reading": "ふあん",
+      "meaning_tr": "endişe"
+     }
+    ]
+   },
+   {
+    "kanji": "客",
+    "on": [
+     "キャク"
+    ],
+    "kun": [],
+    "meaning_tr": "misafir, müşteri",
+    "words": [
+     {
+      "word": "乗客",
+      "reading": "じょうきゃく",
+      "meaning_tr": "yolcu"
+     }
+    ]
+   },
+   {
+    "kanji": "宿",
+    "on": [
+     "シュク"
+    ],
+    "kun": [
+     "やど"
+    ],
+    "meaning_tr": "konaklama",
+    "words": [
+     {
+      "word": "宿題",
+      "reading": "しゅくだい",
+      "meaning_tr": "ödev"
+     }
+    ]
+   },
+   {
+    "kanji": "守",
+    "on": [
+     "シュ"
+    ],
+    "kun": [
+     "まも(る)"
+    ],
+    "meaning_tr": "korumak",
+    "words": [
+     {
+      "word": "留守",
+      "reading": "るす",
+      "meaning_tr": "evde olmamak"
+     }
+    ]
+   },
+   {
+    "kanji": "完",
+    "on": [
+     "カン"
+    ],
+    "kun": [],
+    "meaning_tr": "tamam",
+    "words": [
+     {
+      "word": "完成",
+      "reading": "かんせい",
+      "meaning_tr": "tamamlanma"
+     },
+     {
+      "word": "完全",
+      "reading": "かんぜん",
+      "meaning_tr": "tam"
+     }
+    ]
+   },
+   {
+    "kanji": "定",
+    "on": [
+     "テイ"
+    ],
+    "kun": [
+     "さだ(める)"
+    ],
+    "meaning_tr": "belirlemek",
+    "words": [
+     {
+      "word": "予定",
+      "reading": "よてい",
+      "meaning_tr": "plan"
+     },
+     {
+      "word": "安定",
+      "reading": "あんてい",
+      "meaning_tr": "istikrar"
+     }
+    ]
+   },
+   {
+    "kanji": "実",
+    "on": [
+     "ジツ"
+    ],
+    "kun": [
+     "み"
+    ],
+    "meaning_tr": "gerçek, meyve",
+    "words": [
+     {
+      "word": "実験",
+      "reading": "じっけん",
+      "meaning_tr": "deney"
+     },
+     {
+      "word": "実は",
+      "reading": "じつは",
+      "meaning_tr": "aslında"
+     }
+    ]
+   },
+   {
+    "kanji": "害",
+    "on": [
+     "ガイ"
+    ],
+    "kun": [],
+    "meaning_tr": "zarar",
+    "words": [
+     {
+      "word": "被害",
+      "reading": "ひがい",
+      "meaning_tr": "hasar, zarar"
+     }
+    ]
+   },
+   {
+    "kanji": "容",
+    "on": [
+     "ヨウ"
+    ],
+    "kun": [],
+    "meaning_tr": "içerik",
+    "words": [
+     {
+      "word": "内容",
+      "reading": "ないよう",
+      "meaning_tr": "içerik"
+     }
+    ]
+   },
+   {
+    "kanji": "寝",
+    "on": [
+     "シン"
+    ],
+    "kun": [
+     "ね(る)"
+    ],
+    "meaning_tr": "uyumak",
+    "words": [
+     {
+      "word": "寝坊",
+      "reading": "ねぼう",
+      "meaning_tr": "uyuyakalmak"
+     }
+    ]
+   },
+   {
+    "kanji": "察",
+    "on": [
+     "サツ"
+    ],
+    "kun": [],
+    "meaning_tr": "gözlemlemek",
+    "words": [
+     {
+      "word": "警察",
+      "reading": "けいさつ",
+      "meaning_tr": "polis"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 19,
+  "radical": "門",
+  "variants": [],
+  "name_jp": "もんがまえ",
+  "name_romaji": "mongamae",
+  "meaning_tr": "kapı",
+  "meaning_en": "gate",
+  "kanji": [
+   {
+    "kanji": "間",
+    "on": [
+     "カン",
+     "ケン"
+    ],
+    "kun": [
+     "あいだ",
+     "ま"
+    ],
+    "meaning_tr": "ara",
+    "words": [
+     {
+      "word": "時間",
+      "reading": "じかん",
+      "meaning_tr": "zaman"
+     },
+     {
+      "word": "人間",
+      "reading": "にんげん",
+      "meaning_tr": "insan"
+     }
+    ]
+   },
+   {
+    "kanji": "開",
+    "on": [
+     "カイ"
+    ],
+    "kun": [
+     "あ(ける)",
+     "ひら(く)"
+    ],
+    "meaning_tr": "açmak",
+    "words": [
+     {
+      "word": "開発",
+      "reading": "かいはつ",
+      "meaning_tr": "geliştirme"
+     }
+    ]
+   },
+   {
+    "kanji": "閉",
+    "on": [
+     "ヘイ"
+    ],
+    "kun": [
+     "し(める)",
+     "と(じる)"
+    ],
+    "meaning_tr": "kapatmak",
+    "words": [
+     {
+      "word": "閉店",
+      "reading": "へいてん",
+      "meaning_tr": "dükkan kapanışı"
+     }
+    ]
+   },
+   {
+    "kanji": "関",
+    "on": [
+     "カン"
+    ],
+    "kun": [
+     "せき"
+    ],
+    "meaning_tr": "ilgili",
+    "words": [
+     {
+      "word": "関係",
+      "reading": "かんけい",
+      "meaning_tr": "ilişki"
+     },
+     {
+      "word": "関心",
+      "reading": "かんしん",
+      "meaning_tr": "ilgi"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 20,
+  "radical": "土",
+  "variants": [],
+  "name_jp": "つち / つちへん",
+  "name_romaji": "tsuchi",
+  "meaning_tr": "toprak",
+  "meaning_en": "earth",
+  "kanji": [
+   {
+    "kanji": "地",
+    "on": [
+     "チ",
+     "ジ"
+    ],
+    "kun": [],
+    "meaning_tr": "yer",
+    "words": [
+     {
+      "word": "地図",
+      "reading": "ちず",
+      "meaning_tr": "harita"
+     },
+     {
+      "word": "地震",
+      "reading": "じしん",
+      "meaning_tr": "deprem"
+     }
+    ]
+   },
+   {
+    "kanji": "場",
+    "on": [
+     "ジョウ"
+    ],
+    "kun": [
+     "ば"
+    ],
+    "meaning_tr": "yer",
+    "words": [
+     {
+      "word": "場所",
+      "reading": "ばしょ",
+      "meaning_tr": "yer"
+     },
+     {
+      "word": "工場",
+      "reading": "こうじょう",
+      "meaning_tr": "fabrika"
+     }
+    ]
+   },
+   {
+    "kanji": "増",
+    "on": [
+     "ゾウ"
+    ],
+    "kun": [
+     "ふ(える)"
+    ],
+    "meaning_tr": "artmak",
+    "words": [
+     {
+      "word": "増加",
+      "reading": "ぞうか",
+      "meaning_tr": "artış"
+     }
+    ]
+   },
+   {
+    "kanji": "報",
+    "on": [
+     "ホウ"
+    ],
+    "kun": [
+     "むく(いる)"
+    ],
+    "meaning_tr": "haber",
+    "words": [
+     {
+      "word": "情報",
+      "reading": "じょうほう",
+      "meaning_tr": "bilgi"
+     },
+     {
+      "word": "報告",
+      "reading": "ほうこく",
+      "meaning_tr": "rapor"
+     }
+    ]
+   },
+   {
+    "kanji": "境",
+    "on": [
+     "キョウ"
+    ],
+    "kun": [
+     "さかい"
+    ],
+    "meaning_tr": "sınır",
+    "words": [
+     {
+      "word": "環境",
+      "reading": "かんきょう",
+      "meaning_tr": "çevre"
+     }
+    ]
+   },
+   {
+    "kanji": "均",
+    "on": [
+     "キン"
+    ],
+    "kun": [],
+    "meaning_tr": "eşit",
+    "words": [
+     {
+      "word": "平均",
+      "reading": "へいきん",
+      "meaning_tr": "ortalama"
+     }
+    ]
+   },
+   {
+    "kanji": "基",
+    "on": [
+     "キ"
+    ],
+    "kun": [
+     "もと"
+    ],
+    "meaning_tr": "temel",
+    "words": [
+     {
+      "word": "基本",
+      "reading": "きほん",
+      "meaning_tr": "temel"
+     }
+    ]
+   },
+   {
+    "kanji": "在",
+    "on": [
+     "ザイ"
+    ],
+    "kun": [
+     "あ(る)"
+    ],
+    "meaning_tr": "var olmak",
+    "words": [
+     {
+      "word": "現在",
+      "reading": "げんざい",
+      "meaning_tr": "şu an"
+     },
+     {
+      "word": "存在",
+      "reading": "そんざい",
+      "meaning_tr": "varlık"
+     }
+    ]
+   },
+   {
+    "kanji": "型",
+    "on": [
+     "ケイ"
+    ],
+    "kun": [
+     "かた"
+    ],
+    "meaning_tr": "kalıp",
+    "words": [
+     {
+      "word": "大型",
+      "reading": "おおがた",
+      "meaning_tr": "büyük boy"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 21,
+  "radical": "竹",
+  "variants": [
+   "⺮"
+  ],
+  "name_jp": "たけかんむり",
+  "name_romaji": "takekanmuri",
+  "meaning_tr": "bambu",
+  "meaning_en": "bamboo",
+  "kanji": [
+   {
+    "kanji": "笑",
+    "on": [
+     "ショウ"
+    ],
+    "kun": [
+     "わら(う)"
+    ],
+    "meaning_tr": "gülmek",
+    "words": [
+     {
+      "word": "笑顔",
+      "reading": "えがお",
+      "meaning_tr": "gülümseme"
+     }
+    ]
+   },
+   {
+    "kanji": "第",
+    "on": [
+     "ダイ"
+    ],
+    "kun": [],
+    "meaning_tr": "-inci",
+    "words": [
+     {
+      "word": "第一",
+      "reading": "だいいち",
+      "meaning_tr": "birinci"
+     }
+    ]
+   },
+   {
+    "kanji": "答",
+    "on": [
+     "トウ"
+    ],
+    "kun": [
+     "こた(える)"
+    ],
+    "meaning_tr": "cevap",
+    "words": [
+     {
+      "word": "回答",
+      "reading": "かいとう",
+      "meaning_tr": "yanıt"
+     }
+    ]
+   },
+   {
+    "kanji": "算",
+    "on": [
+     "サン"
+    ],
+    "kun": [],
+    "meaning_tr": "hesap",
+    "words": [
+     {
+      "word": "計算",
+      "reading": "けいさん",
+      "meaning_tr": "hesap"
+     },
+     {
+      "word": "予算",
+      "reading": "よさん",
+      "meaning_tr": "bütçe"
+     }
+    ]
+   },
+   {
+    "kanji": "節",
+    "on": [
+     "セツ"
+    ],
+    "kun": [
+     "ふし"
+    ],
+    "meaning_tr": "eklem, dönem",
+    "words": [
+     {
+      "word": "季節",
+      "reading": "きせつ",
+      "meaning_tr": "mevsim"
+     }
+    ]
+   },
+   {
+    "kanji": "管",
+    "on": [
+     "カン"
+    ],
+    "kun": [
+     "くだ"
+    ],
+    "meaning_tr": "boru, yönetmek",
+    "words": [
+     {
+      "word": "管理",
+      "reading": "かんり",
+      "meaning_tr": "yönetim"
+     }
+    ]
+   },
+   {
+    "kanji": "等",
+    "on": [
+     "トウ"
+    ],
+    "kun": [
+     "ひと(しい)"
+    ],
+    "meaning_tr": "eşit",
+    "words": [
+     {
+      "word": "平等",
+      "reading": "びょうどう",
+      "meaning_tr": "eşitlik"
+     }
+    ]
+   },
+   {
+    "kanji": "簡",
+    "on": [
+     "カン"
+    ],
+    "kun": [],
+    "meaning_tr": "basit",
+    "words": [
+     {
+      "word": "簡単",
+      "reading": "かんたん",
+      "meaning_tr": "kolay"
+     }
+    ]
+   },
+   {
+    "kanji": "符",
+    "on": [
+     "フ"
+    ],
+    "kun": [],
+    "meaning_tr": "işaret",
+    "words": [
+     {
+      "word": "切符",
+      "reading": "きっぷ",
+      "meaning_tr": "bilet"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 22,
+  "radical": "雨",
+  "variants": [],
+  "name_jp": "あめかんむり",
+  "name_romaji": "amekanmuri",
+  "meaning_tr": "yağmur, hava olayı",
+  "meaning_en": "rain",
+  "kanji": [
+   {
+    "kanji": "雪",
+    "on": [
+     "セツ"
+    ],
+    "kun": [
+     "ゆき"
+    ],
+    "meaning_tr": "kar",
+    "words": [
+     {
+      "word": "雪",
+      "reading": "ゆき",
+      "meaning_tr": "kar"
+     }
+    ]
+   },
+   {
+    "kanji": "雲",
+    "on": [
+     "ウン"
+    ],
+    "kun": [
+     "くも"
+    ],
+    "meaning_tr": "bulut",
+    "words": [
+     {
+      "word": "雲",
+      "reading": "くも",
+      "meaning_tr": "bulut"
+     }
+    ]
+   },
+   {
+    "kanji": "電",
+    "on": [
+     "デン"
+    ],
+    "kun": [],
+    "meaning_tr": "elektrik",
+    "words": [
+     {
+      "word": "停電",
+      "reading": "ていでん",
+      "meaning_tr": "elektrik kesintisi"
+     }
+    ]
+   },
+   {
+    "kanji": "震",
+    "on": [
+     "シン"
+    ],
+    "kun": [
+     "ふる(える)"
+    ],
+    "meaning_tr": "titremek",
+    "words": [
+     {
+      "word": "地震",
+      "reading": "じしん",
+      "meaning_tr": "deprem"
+     }
+    ]
+   },
+   {
+    "kanji": "雰",
+    "on": [
+     "フン"
+    ],
+    "kun": [],
+    "meaning_tr": "atmosfer",
+    "words": [
+     {
+      "word": "雰囲気",
+      "reading": "ふんいき",
+      "meaning_tr": "atmosfer, hava"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 23,
+  "radical": "目",
+  "variants": [],
+  "name_jp": "め / めへん",
+  "name_romaji": "me",
+  "meaning_tr": "göz",
+  "meaning_en": "eye",
+  "kanji": [
+   {
+    "kanji": "相",
+    "on": [
+     "ソウ",
+     "ショウ"
+    ],
+    "kun": [
+     "あい"
+    ],
+    "meaning_tr": "karşılıklı",
+    "words": [
+     {
+      "word": "相手",
+      "reading": "あいて",
+      "meaning_tr": "karşı taraf"
+     },
+     {
+      "word": "首相",
+      "reading": "しゅしょう",
+      "meaning_tr": "başbakan"
+     }
+    ]
+   },
+   {
+    "kanji": "眠",
+    "on": [
+     "ミン"
+    ],
+    "kun": [
+     "ねむ(る)"
+    ],
+    "meaning_tr": "uyumak",
+    "words": [
+     {
+      "word": "睡眠",
+      "reading": "すいみん",
+      "meaning_tr": "uyku"
+     }
+    ]
+   },
+   {
+    "kanji": "直",
+    "on": [
+     "チョク"
+    ],
+    "kun": [
+     "なお(す)"
+    ],
+    "meaning_tr": "düzeltmek, doğrudan",
+    "words": [
+     {
+      "word": "正直",
+      "reading": "しょうじき",
+      "meaning_tr": "dürüst"
+     },
+     {
+      "word": "素直",
+      "reading": "すなお",
+      "meaning_tr": "uysal, içten"
+     }
+    ]
+   },
+   {
+    "kanji": "真",
+    "on": [
+     "シン"
+    ],
+    "kun": [
+     "ま"
+    ],
+    "meaning_tr": "gerçek",
+    "words": [
+     {
+      "word": "写真",
+      "reading": "しゃしん",
+      "meaning_tr": "fotoğraf"
+     },
+     {
+      "word": "真剣",
+      "reading": "しんけん",
+      "meaning_tr": "ciddi"
+     }
+    ]
+   },
+   {
+    "kanji": "省",
+    "on": [
+     "セイ",
+     "ショウ"
+    ],
+    "kun": [
+     "はぶ(く)"
+    ],
+    "meaning_tr": "düşünmek, kısmak",
+    "words": [
+     {
+      "word": "反省",
+      "reading": "はんせい",
+      "meaning_tr": "öz eleştiri"
+     }
+    ]
+   },
+   {
+    "kanji": "県",
+    "on": [
+     "ケン"
+    ],
+    "kun": [],
+    "meaning_tr": "il",
+    "words": [
+     {
+      "word": "県",
+      "reading": "けん",
+      "meaning_tr": "il (Japonya)"
+     }
+    ]
+   },
+   {
+    "kanji": "着",
+    "on": [
+     "チャク"
+    ],
+    "kun": [
+     "き(る)",
+     "つ(く)"
+    ],
+    "meaning_tr": "giymek, varmak",
+    "words": [
+     {
+      "word": "到着",
+      "reading": "とうちゃく",
+      "meaning_tr": "varış"
+     }
+    ]
+   },
+   {
+    "kanji": "眼",
+    "on": [
+     "ガン"
+    ],
+    "kun": [
+     "め"
+    ],
+    "meaning_tr": "göz",
+    "words": [
+     {
+      "word": "眼鏡",
+      "reading": "めがね",
+      "meaning_tr": "gözlük"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 24,
+  "radical": "力",
+  "variants": [],
+  "name_jp": "ちから",
+  "name_romaji": "chikara",
+  "meaning_tr": "güç, emek",
+  "meaning_en": "power",
+  "kanji": [
+   {
+    "kanji": "動",
+    "on": [
+     "ドウ"
+    ],
+    "kun": [
+     "うご(く)"
+    ],
+    "meaning_tr": "hareket etmek",
+    "words": [
+     {
+      "word": "運動",
+      "reading": "うんどう",
+      "meaning_tr": "egzersiz"
+     },
+     {
+      "word": "自動",
+      "reading": "じどう",
+      "meaning_tr": "otomatik"
+     }
+    ]
+   },
+   {
+    "kanji": "助",
+    "on": [
+     "ジョ"
+    ],
+    "kun": [
+     "たす(ける)"
+    ],
+    "meaning_tr": "yardım etmek",
+    "words": [
+     {
+      "word": "助手",
+      "reading": "じょしゅ",
+      "meaning_tr": "asistan"
+     }
+    ]
+   },
+   {
+    "kanji": "勉",
+    "on": [
+     "ベン"
+    ],
+    "kun": [],
+    "meaning_tr": "çaba",
+    "words": [
+     {
+      "word": "勉強",
+      "reading": "べんきょう",
+      "meaning_tr": "ders çalışma"
+     }
+    ]
+   },
+   {
+    "kanji": "加",
+    "on": [
+     "カ"
+    ],
+    "kun": [
+     "くわ(える)"
+    ],
+    "meaning_tr": "eklemek",
+    "words": [
+     {
+      "word": "参加",
+      "reading": "さんか",
+      "meaning_tr": "katılım"
+     },
+     {
+      "word": "追加",
+      "reading": "ついか",
+      "meaning_tr": "ekleme"
+     }
+    ]
+   },
+   {
+    "kanji": "務",
+    "on": [
+     "ム"
+    ],
+    "kun": [
+     "つと(める)"
+    ],
+    "meaning_tr": "görev",
+    "words": [
+     {
+      "word": "事務所",
+      "reading": "じむしょ",
+      "meaning_tr": "ofis"
+     },
+     {
+      "word": "義務",
+      "reading": "ぎむ",
+      "meaning_tr": "yükümlülük"
+     }
+    ]
+   },
+   {
+    "kanji": "労",
+    "on": [
+     "ロウ"
+    ],
+    "kun": [],
+    "meaning_tr": "emek",
+    "words": [
+     {
+      "word": "苦労",
+      "reading": "くろう",
+      "meaning_tr": "zahmet"
+     }
+    ]
+   },
+   {
+    "kanji": "効",
+    "on": [
+     "コウ"
+    ],
+    "kun": [
+     "き(く)"
+    ],
+    "meaning_tr": "etki",
+    "words": [
+     {
+      "word": "効果",
+      "reading": "こうか",
+      "meaning_tr": "etki"
+     }
+    ]
+   },
+   {
+    "kanji": "努",
+    "on": [
+     "ド"
+    ],
+    "kun": [
+     "つと(める)"
+    ],
+    "meaning_tr": "çabalamak",
+    "words": [
+     {
+      "word": "努力",
+      "reading": "どりょく",
+      "meaning_tr": "çaba"
+     }
+    ]
+   },
+   {
+    "kanji": "勝",
+    "on": [
+     "ショウ"
+    ],
+    "kun": [
+     "か(つ)"
+    ],
+    "meaning_tr": "kazanmak",
+    "words": [
+     {
+      "word": "勝負",
+      "reading": "しょうぶ",
+      "meaning_tr": "müsabaka"
+     }
+    ]
+   },
+   {
+    "kanji": "勤",
+    "on": [
+     "キン"
+    ],
+    "kun": [
+     "つと(める)"
+    ],
+    "meaning_tr": "çalışmak",
+    "words": [
+     {
+      "word": "通勤",
+      "reading": "つうきん",
+      "meaning_tr": "işe gidip gelme"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 25,
+  "radical": "⻊",
+  "variants": [
+   "足"
+  ],
+  "name_jp": "あしへん",
+  "name_romaji": "ashihen",
+  "meaning_tr": "ayak",
+  "meaning_en": "foot",
+  "kanji": [
+   {
+    "kanji": "路",
+    "on": [
+     "ロ"
+    ],
+    "kun": [],
+    "meaning_tr": "yol",
+    "words": [
+     {
+      "word": "道路",
+      "reading": "どうろ",
+      "meaning_tr": "yol"
+     }
+    ]
+   },
+   {
+    "kanji": "踊",
+    "on": [
+     "ヨウ"
+    ],
+    "kun": [
+     "おど(る)"
+    ],
+    "meaning_tr": "dans etmek",
+    "words": [
+     {
+      "word": "踊り",
+      "reading": "おどり",
+      "meaning_tr": "dans"
+     }
+    ]
+   },
+   {
+    "kanji": "距",
+    "on": [
+     "キョ"
+    ],
+    "kun": [],
+    "meaning_tr": "mesafe",
+    "words": [
+     {
+      "word": "距離",
+      "reading": "きょり",
+      "meaning_tr": "mesafe"
+     }
+    ]
+   },
+   {
+    "kanji": "踏",
+    "on": [
+     "トウ"
+    ],
+    "kun": [
+     "ふ(む)"
+    ],
+    "meaning_tr": "basmak",
+    "words": [
+     {
+      "word": "踏切",
+      "reading": "ふみきり",
+      "meaning_tr": "hemzemin geçit"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 26,
+  "radical": "田",
+  "variants": [],
+  "name_jp": "た",
+  "name_romaji": "ta",
+  "meaning_tr": "tarla",
+  "meaning_en": "rice field",
+  "kanji": [
+   {
+    "kanji": "男",
+    "on": [
+     "ダン"
+    ],
+    "kun": [
+     "おとこ"
+    ],
+    "meaning_tr": "erkek",
+    "words": [
+     {
+      "word": "男性",
+      "reading": "だんせい",
+      "meaning_tr": "erkek"
+     }
+    ]
+   },
+   {
+    "kanji": "界",
+    "on": [
+     "カイ"
+    ],
+    "kun": [],
+    "meaning_tr": "dünya, sınır",
+    "words": [
+     {
+      "word": "世界",
+      "reading": "せかい",
+      "meaning_tr": "dünya"
+     }
+    ]
+   },
+   {
+    "kanji": "留",
+    "on": [
+     "リュウ",
+     "ル"
+    ],
+    "kun": [
+     "と(める)"
+    ],
+    "meaning_tr": "durdurmak, kalmak",
+    "words": [
+     {
+      "word": "留学",
+      "reading": "りゅうがく",
+      "meaning_tr": "yurt dışında okumak"
+     }
+    ]
+   },
+   {
+    "kanji": "異",
+    "on": [
+     "イ"
+    ],
+    "kun": [
+     "こと"
+    ],
+    "meaning_tr": "farklı",
+    "words": [
+     {
+      "word": "異常",
+      "reading": "いじょう",
+      "meaning_tr": "anormal"
+     }
+    ]
+   },
+   {
+    "kanji": "画",
+    "on": [
+     "ガ",
+     "カク"
+    ],
+    "kun": [],
+    "meaning_tr": "resim, plan",
+    "words": [
+     {
+      "word": "計画",
+      "reading": "けいかく",
+      "meaning_tr": "plan"
+     },
+     {
+      "word": "映画",
+      "reading": "えいが",
+      "meaning_tr": "film"
+     }
+    ]
+   },
+   {
+    "kanji": "番",
+    "on": [
+     "バン"
+    ],
+    "kun": [],
+    "meaning_tr": "sıra, nöbet",
+    "words": [
+     {
+      "word": "順番",
+      "reading": "じゅんばん",
+      "meaning_tr": "sıra"
+     }
+    ]
+   },
+   {
+    "kanji": "申",
+    "on": [
+     "シン"
+    ],
+    "kun": [
+     "もう(す)"
+    ],
+    "meaning_tr": "söylemek (kibar)",
+    "words": [
+     {
+      "word": "申し込み",
+      "reading": "もうしこみ",
+      "meaning_tr": "başvuru"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 27,
+  "radical": "衤",
+  "variants": [
+   "衣"
+  ],
+  "name_jp": "ころもへん",
+  "name_romaji": "koromohen",
+  "meaning_tr": "giysi",
+  "meaning_en": "clothes",
+  "kanji": [
+   {
+    "kanji": "表",
+    "on": [
+     "ヒョウ"
+    ],
+    "kun": [
+     "おもて",
+     "あらわ(す)"
+    ],
+    "meaning_tr": "yüz, ifade etmek",
+    "words": [
+     {
+      "word": "発表",
+      "reading": "はっぴょう",
+      "meaning_tr": "sunum"
+     },
+     {
+      "word": "表現",
+      "reading": "ひょうげん",
+      "meaning_tr": "ifade"
+     }
+    ]
+   },
+   {
+    "kanji": "製",
+    "on": [
+     "セイ"
+    ],
+    "kun": [],
+    "meaning_tr": "üretmek",
+    "words": [
+     {
+      "word": "製品",
+      "reading": "せいひん",
+      "meaning_tr": "ürün"
+     }
+    ]
+   },
+   {
+    "kanji": "補",
+    "on": [
+     "ホ"
+    ],
+    "kun": [
+     "おぎな(う)"
+    ],
+    "meaning_tr": "tamamlamak",
+    "words": [
+     {
+      "word": "候補",
+      "reading": "こうほ",
+      "meaning_tr": "aday"
+     }
+    ]
+   },
+   {
+    "kanji": "複",
+    "on": [
+     "フク"
+    ],
+    "kun": [],
+    "meaning_tr": "çoklu",
+    "words": [
+     {
+      "word": "複雑",
+      "reading": "ふくざつ",
+      "meaning_tr": "karmaşık"
+     }
+    ]
+   },
+   {
+    "kanji": "被",
+    "on": [
+     "ヒ"
+    ],
+    "kun": [
+     "こうむ(る)"
+    ],
+    "meaning_tr": "maruz kalmak",
+    "words": [
+     {
+      "word": "被害",
+      "reading": "ひがい",
+      "meaning_tr": "zarar"
+     }
+    ]
+   },
+   {
+    "kanji": "裏",
+    "on": [
+     "リ"
+    ],
+    "kun": [
+     "うら"
+    ],
+    "meaning_tr": "arka",
+    "words": [
+     {
+      "word": "裏",
+      "reading": "うら",
+      "meaning_tr": "arka taraf"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 28,
+  "radical": "疒",
+  "variants": [],
+  "name_jp": "やまいだれ",
+  "name_romaji": "yamaidare",
+  "meaning_tr": "hastalık",
+  "meaning_en": "sickness",
+  "kanji": [
+   {
+    "kanji": "病",
+    "on": [
+     "ビョウ"
+    ],
+    "kun": [
+     "やまい"
+    ],
+    "meaning_tr": "hastalık",
+    "words": [
+     {
+      "word": "病院",
+      "reading": "びょういん",
+      "meaning_tr": "hastane"
+     },
+     {
+      "word": "病気",
+      "reading": "びょうき",
+      "meaning_tr": "hastalık"
+     }
+    ]
+   },
+   {
+    "kanji": "痛",
+    "on": [
+     "ツウ"
+    ],
+    "kun": [
+     "いた(い)"
+    ],
+    "meaning_tr": "acı",
+    "words": [
+     {
+      "word": "頭痛",
+      "reading": "ずつう",
+      "meaning_tr": "baş ağrısı"
+     }
+    ]
+   },
+   {
+    "kanji": "疲",
+    "on": [
+     "ヒ"
+    ],
+    "kun": [
+     "つか(れる)"
+    ],
+    "meaning_tr": "yorulmak",
+    "words": [
+     {
+      "word": "疲労",
+      "reading": "ひろう",
+      "meaning_tr": "yorgunluk"
+     }
+    ]
+   },
+   {
+    "kanji": "療",
+    "on": [
+     "リョウ"
+    ],
+    "kun": [],
+    "meaning_tr": "tedavi",
+    "words": [
+     {
+      "word": "治療",
+      "reading": "ちりょう",
+      "meaning_tr": "tedavi"
+     }
+    ]
+   },
+   {
+    "kanji": "症",
+    "on": [
+     "ショウ"
+    ],
+    "kun": [],
+    "meaning_tr": "belirti",
+    "words": [
+     {
+      "word": "症状",
+      "reading": "しょうじょう",
+      "meaning_tr": "semptom"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 29,
+  "radical": "貝",
+  "variants": [],
+  "name_jp": "かい / かいへん",
+  "name_romaji": "kai",
+  "meaning_tr": "kabuk; para, değer",
+  "meaning_en": "shell, money",
+  "kanji": [
+   {
+    "kanji": "買",
+    "on": [
+     "バイ"
+    ],
+    "kun": [
+     "か(う)"
+    ],
+    "meaning_tr": "satın almak",
+    "words": [
+     {
+      "word": "売買",
+      "reading": "ばいばい",
+      "meaning_tr": "alım satım"
+     }
+    ]
+   },
+   {
+    "kanji": "財",
+    "on": [
+     "ザイ",
+     "サイ"
+    ],
+    "kun": [],
+    "meaning_tr": "servet",
+    "words": [
+     {
+      "word": "財布",
+      "reading": "さいふ",
+      "meaning_tr": "cüzdan"
+     }
+    ]
+   },
+   {
+    "kanji": "貯",
+    "on": [
+     "チョ"
+    ],
+    "kun": [
+     "た(める)"
+    ],
+    "meaning_tr": "biriktirmek",
+    "words": [
+     {
+      "word": "貯金",
+      "reading": "ちょきん",
+      "meaning_tr": "birikim"
+     }
+    ]
+   },
+   {
+    "kanji": "費",
+    "on": [
+     "ヒ"
+    ],
+    "kun": [
+     "つい(やす)"
+    ],
+    "meaning_tr": "masraf",
+    "words": [
+     {
+      "word": "費用",
+      "reading": "ひよう",
+      "meaning_tr": "masraf"
+     },
+     {
+      "word": "会費",
+      "reading": "かいひ",
+      "meaning_tr": "aidat"
+     }
+    ]
+   },
+   {
+    "kanji": "貸",
+    "on": [
+     "タイ"
+    ],
+    "kun": [
+     "か(す)"
+    ],
+    "meaning_tr": "ödünç vermek",
+    "words": [
+     {
+      "word": "賃貸",
+      "reading": "ちんたい",
+      "meaning_tr": "kiralık"
+     }
+    ]
+   },
+   {
+    "kanji": "責",
+    "on": [
+     "セキ"
+    ],
+    "kun": [
+     "せ(める)"
+    ],
+    "meaning_tr": "suçlamak",
+    "words": [
+     {
+      "word": "責任",
+      "reading": "せきにん",
+      "meaning_tr": "sorumluluk"
+     }
+    ]
+   },
+   {
+    "kanji": "負",
+    "on": [
+     "フ"
+    ],
+    "kun": [
+     "ま(ける)",
+     "お(う)"
+    ],
+    "meaning_tr": "kaybetmek, yüklenmek",
+    "words": [
+     {
+      "word": "負担",
+      "reading": "ふたん",
+      "meaning_tr": "yük"
+     }
+    ]
+   },
+   {
+    "kanji": "賛",
+    "on": [
+     "サン"
+    ],
+    "kun": [],
+    "meaning_tr": "onaylamak",
+    "words": [
+     {
+      "word": "賛成",
+      "reading": "さんせい",
+      "meaning_tr": "onay"
+     }
+    ]
+   },
+   {
+    "kanji": "質",
+    "on": [
+     "シツ"
+    ],
+    "kun": [],
+    "meaning_tr": "nitelik",
+    "words": [
+     {
+      "word": "質問",
+      "reading": "しつもん",
+      "meaning_tr": "soru"
+     },
+     {
+      "word": "品質",
+      "reading": "ひんしつ",
+      "meaning_tr": "kalite"
+     }
+    ]
+   },
+   {
+    "kanji": "賃",
+    "on": [
+     "チン"
+    ],
+    "kun": [],
+    "meaning_tr": "ücret",
+    "words": [
+     {
+      "word": "家賃",
+      "reading": "やちん",
+      "meaning_tr": "kira"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 30,
+  "radical": "彳",
+  "variants": [],
+  "name_jp": "ぎょうにんべん",
+  "name_romaji": "gyouninben",
+  "meaning_tr": "yol, gitmek",
+  "meaning_en": "step",
+  "kanji": [
+   {
+    "kanji": "待",
+    "on": [
+     "タイ"
+    ],
+    "kun": [
+     "ま(つ)"
+    ],
+    "meaning_tr": "beklemek",
+    "words": [
+     {
+      "word": "期待",
+      "reading": "きたい",
+      "meaning_tr": "beklenti"
+     },
+     {
+      "word": "招待",
+      "reading": "しょうたい",
+      "meaning_tr": "davet"
+     }
+    ]
+   },
+   {
+    "kanji": "後",
+    "on": [
+     "ゴ",
+     "コウ"
+    ],
+    "kun": [
+     "あと",
+     "うし(ろ)"
+    ],
+    "meaning_tr": "sonra, arka",
+    "words": [
+     {
+      "word": "最後",
+      "reading": "さいご",
+      "meaning_tr": "son"
+     },
+     {
+      "word": "午後",
+      "reading": "ごご",
+      "meaning_tr": "öğleden sonra"
+     }
+    ]
+   },
+   {
+    "kanji": "役",
+    "on": [
+     "ヤク"
+    ],
+    "kun": [],
+    "meaning_tr": "görev, rol",
+    "words": [
+     {
+      "word": "役に立つ",
+      "reading": "やくにたつ",
+      "meaning_tr": "işe yaramak"
+     },
+     {
+      "word": "役所",
+      "reading": "やくしょ",
+      "meaning_tr": "belediye"
+     }
+    ]
+   },
+   {
+    "kanji": "得",
+    "on": [
+     "トク"
+    ],
+    "kun": [
+     "え(る)"
+    ],
+    "meaning_tr": "kazanmak",
+    "words": [
+     {
+      "word": "得意",
+      "reading": "とくい",
+      "meaning_tr": "iyi olduğu şey"
+     },
+     {
+      "word": "納得",
+      "reading": "なっとく",
+      "meaning_tr": "ikna olma"
+     }
+    ]
+   },
+   {
+    "kanji": "徒",
+    "on": [
+     "ト"
+    ],
+    "kun": [],
+    "meaning_tr": "yaya, öğrenci",
+    "words": [
+     {
+      "word": "生徒",
+      "reading": "せいと",
+      "meaning_tr": "öğrenci"
+     },
+     {
+      "word": "徒歩",
+      "reading": "とほ",
+      "meaning_tr": "yürüyerek"
+     }
+    ]
+   },
+   {
+    "kanji": "復",
+    "on": [
+     "フク"
+    ],
+    "kun": [],
+    "meaning_tr": "geri dönmek",
+    "words": [
+     {
+      "word": "復習",
+      "reading": "ふくしゅう",
+      "meaning_tr": "tekrar (ders)"
+     }
+    ]
+   },
+   {
+    "kanji": "律",
+    "on": [
+     "リツ"
+    ],
+    "kun": [],
+    "meaning_tr": "kural",
+    "words": [
+     {
+      "word": "法律",
+      "reading": "ほうりつ",
+      "meaning_tr": "yasa"
+     }
+    ]
+   },
+   {
+    "kanji": "彼",
+    "on": [
+     "ヒ"
+    ],
+    "kun": [
+     "かれ"
+    ],
+    "meaning_tr": "o (erkek)",
+    "words": [
+     {
+      "word": "彼女",
+      "reading": "かのじょ",
+      "meaning_tr": "o (kadın) / kız arkadaş"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 31,
+  "radical": "車",
+  "variants": [],
+  "name_jp": "くるま / くるまへん",
+  "name_romaji": "kuruma",
+  "meaning_tr": "araba, tekerlek",
+  "meaning_en": "vehicle",
+  "kanji": [
+   {
+    "kanji": "軽",
+    "on": [
+     "ケイ"
+    ],
+    "kun": [
+     "かる(い)"
+    ],
+    "meaning_tr": "hafif",
+    "words": [
+     {
+      "word": "軽食",
+      "reading": "けいしょく",
+      "meaning_tr": "hafif yemek"
+     }
+    ]
+   },
+   {
+    "kanji": "転",
+    "on": [
+     "テン"
+    ],
+    "kun": [
+     "ころ(ぶ)"
+    ],
+    "meaning_tr": "dönmek, düşmek",
+    "words": [
+     {
+      "word": "運転",
+      "reading": "うんてん",
+      "meaning_tr": "araç kullanma"
+     },
+     {
+      "word": "自転車",
+      "reading": "じてんしゃ",
+      "meaning_tr": "bisiklet"
+     }
+    ]
+   },
+   {
+    "kanji": "輸",
+    "on": [
+     "ユ"
+    ],
+    "kun": [],
+    "meaning_tr": "taşımak",
+    "words": [
+     {
+      "word": "輸入",
+      "reading": "ゆにゅう",
+      "meaning_tr": "ithalat"
+     },
+     {
+      "word": "輸出",
+      "reading": "ゆしゅつ",
+      "meaning_tr": "ihracat"
+     }
+    ]
+   },
+   {
+    "kanji": "軍",
+    "on": [
+     "グン"
+    ],
+    "kun": [],
+    "meaning_tr": "ordu",
+    "words": [
+     {
+      "word": "軍隊",
+      "reading": "ぐんたい",
+      "meaning_tr": "ordu"
+     }
+    ]
+   },
+   {
+    "kanji": "輪",
+    "on": [
+     "リン"
+    ],
+    "kun": [
+     "わ"
+    ],
+    "meaning_tr": "çember",
+    "words": [
+     {
+      "word": "指輪",
+      "reading": "ゆびわ",
+      "meaning_tr": "yüzük"
+     }
+    ]
+   },
+   {
+    "kanji": "較",
+    "on": [
+     "カク"
+    ],
+    "kun": [],
+    "meaning_tr": "karşılaştırmak",
+    "words": [
+     {
+      "word": "比較",
+      "reading": "ひかく",
+      "meaning_tr": "karşılaştırma"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 32,
+  "radical": "石",
+  "variants": [],
+  "name_jp": "いし / いしへん",
+  "name_romaji": "ishi",
+  "meaning_tr": "taş",
+  "meaning_en": "stone",
+  "kanji": [
+   {
+    "kanji": "研",
+    "on": [
+     "ケン"
+    ],
+    "kun": [
+     "と(ぐ)"
+    ],
+    "meaning_tr": "bilemek, araştırmak",
+    "words": [
+     {
+      "word": "研究",
+      "reading": "けんきゅう",
+      "meaning_tr": "araştırma"
+     },
+     {
+      "word": "研修",
+      "reading": "けんしゅう",
+      "meaning_tr": "eğitim, staj"
+     }
+    ]
+   },
+   {
+    "kanji": "破",
+    "on": [
+     "ハ"
+    ],
+    "kun": [
+     "やぶ(る)"
+    ],
+    "meaning_tr": "yırtmak, bozmak",
+    "words": [
+     {
+      "word": "破れる",
+      "reading": "やぶれる",
+      "meaning_tr": "yırtılmak"
+     }
+    ]
+   },
+   {
+    "kanji": "砂",
+    "on": [
+     "サ"
+    ],
+    "kun": [
+     "すな"
+    ],
+    "meaning_tr": "kum",
+    "words": [
+     {
+      "word": "砂糖",
+      "reading": "さとう",
+      "meaning_tr": "şeker"
+     }
+    ]
+   },
+   {
+    "kanji": "確",
+    "on": [
+     "カク"
+    ],
+    "kun": [
+     "たし(か)"
+    ],
+    "meaning_tr": "kesin",
+    "words": [
+     {
+      "word": "確認",
+      "reading": "かくにん",
+      "meaning_tr": "teyit"
+     },
+     {
+      "word": "正確",
+      "reading": "せいかく",
+      "meaning_tr": "doğru, kesin"
+     }
+    ]
+   },
+   {
+    "kanji": "硬",
+    "on": [
+     "コウ"
+    ],
+    "kun": [
+     "かた(い)"
+    ],
+    "meaning_tr": "sert",
+    "words": [
+     {
+      "word": "硬貨",
+      "reading": "こうか",
+      "meaning_tr": "madeni para"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 33,
+  "radical": "礻",
+  "variants": [
+   "示"
+  ],
+  "name_jp": "しめすへん",
+  "name_romaji": "shimesuhen",
+  "meaning_tr": "tanrı, ritüel",
+  "meaning_en": "altar, spirit",
+  "kanji": [
+   {
+    "kanji": "社",
+    "on": [
+     "シャ"
+    ],
+    "kun": [
+     "やしろ"
+    ],
+    "meaning_tr": "şirket, tapınak",
+    "words": [
+     {
+      "word": "会社",
+      "reading": "かいしゃ",
+      "meaning_tr": "şirket"
+     },
+     {
+      "word": "社会",
+      "reading": "しゃかい",
+      "meaning_tr": "toplum"
+     }
+    ]
+   },
+   {
+    "kanji": "神",
+    "on": [
+     "シン",
+     "ジン"
+    ],
+    "kun": [
+     "かみ"
+    ],
+    "meaning_tr": "tanrı",
+    "words": [
+     {
+      "word": "神社",
+      "reading": "じんじゃ",
+      "meaning_tr": "Şinto tapınağı"
+     },
+     {
+      "word": "神経",
+      "reading": "しんけい",
+      "meaning_tr": "sinir"
+     }
+    ]
+   },
+   {
+    "kanji": "祝",
+    "on": [
+     "シュク"
+    ],
+    "kun": [
+     "いわ(う)"
+    ],
+    "meaning_tr": "kutlamak",
+    "words": [
+     {
+      "word": "祝日",
+      "reading": "しゅくじつ",
+      "meaning_tr": "resmi tatil"
+     }
+    ]
+   },
+   {
+    "kanji": "礼",
+    "on": [
+     "レイ"
+    ],
+    "kun": [],
+    "meaning_tr": "nezaket",
+    "words": [
+     {
+      "word": "失礼",
+      "reading": "しつれい",
+      "meaning_tr": "kabalık / pardon"
+     }
+    ]
+   },
+   {
+    "kanji": "祭",
+    "on": [
+     "サイ"
+    ],
+    "kun": [
+     "まつ(り)"
+    ],
+    "meaning_tr": "festival",
+    "words": [
+     {
+      "word": "祭り",
+      "reading": "まつり",
+      "meaning_tr": "festival"
+     }
+    ]
+   },
+   {
+    "kanji": "福",
+    "on": [
+     "フク"
+    ],
+    "kun": [],
+    "meaning_tr": "şans, mutluluk",
+    "words": [
+     {
+      "word": "幸福",
+      "reading": "こうふく",
+      "meaning_tr": "mutluluk"
+     }
+    ]
+   },
+   {
+    "kanji": "禁",
+    "on": [
+     "キン"
+    ],
+    "kun": [],
+    "meaning_tr": "yasak",
+    "words": [
+     {
+      "word": "禁止",
+      "reading": "きんし",
+      "meaning_tr": "yasak"
+     }
+    ]
+   },
+   {
+    "kanji": "祖",
+    "on": [
+     "ソ"
+    ],
+    "kun": [],
+    "meaning_tr": "ata",
+    "words": [
+     {
+      "word": "祖父",
+      "reading": "そふ",
+      "meaning_tr": "dede"
+     }
+    ]
+   },
+   {
+    "kanji": "票",
+    "on": [
+     "ヒョウ"
+    ],
+    "kun": [],
+    "meaning_tr": "oy pusulası",
+    "words": [
+     {
+      "word": "投票",
+      "reading": "とうひょう",
+      "meaning_tr": "oylama"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 34,
+  "radical": "刂",
+  "variants": [
+   "刀"
+  ],
+  "name_jp": "りっとう / かたな",
+  "name_romaji": "rittou",
+  "meaning_tr": "bıçak, kesmek",
+  "meaning_en": "knife",
+  "kanji": [
+   {
+    "kanji": "別",
+    "on": [
+     "ベツ"
+    ],
+    "kun": [
+     "わか(れる)"
+    ],
+    "meaning_tr": "ayrı",
+    "words": [
+     {
+      "word": "特別",
+      "reading": "とくべつ",
+      "meaning_tr": "özel"
+     },
+     {
+      "word": "区別",
+      "reading": "くべつ",
+      "meaning_tr": "ayrım"
+     }
+    ]
+   },
+   {
+    "kanji": "割",
+    "on": [
+     "カツ"
+    ],
+    "kun": [
+     "わ(る)"
+    ],
+    "meaning_tr": "bölmek, kırmak",
+    "words": [
+     {
+      "word": "割引",
+      "reading": "わりびき",
+      "meaning_tr": "indirim"
+     },
+     {
+      "word": "割合",
+      "reading": "わりあい",
+      "meaning_tr": "oran"
+     }
+    ]
+   },
+   {
+    "kanji": "利",
+    "on": [
+     "リ"
+    ],
+    "kun": [],
+    "meaning_tr": "fayda",
+    "words": [
+     {
+      "word": "便利",
+      "reading": "べんり",
+      "meaning_tr": "kullanışlı"
+     },
+     {
+      "word": "利用",
+      "reading": "りよう",
+      "meaning_tr": "kullanma"
+     }
+    ]
+   },
+   {
+    "kanji": "切",
+    "on": [
+     "セツ"
+    ],
+    "kun": [
+     "き(る)"
+    ],
+    "meaning_tr": "kesmek",
+    "words": [
+     {
+      "word": "大切",
+      "reading": "たいせつ",
+      "meaning_tr": "önemli"
+     },
+     {
+      "word": "親切",
+      "reading": "しんせつ",
+      "meaning_tr": "nazik"
+     }
+    ]
+   },
+   {
+    "kanji": "初",
+    "on": [
+     "ショ"
+    ],
+    "kun": [
+     "はじ(め)",
+     "はつ"
+    ],
+    "meaning_tr": "ilk",
+    "words": [
+     {
+      "word": "最初",
+      "reading": "さいしょ",
+      "meaning_tr": "ilk"
+     },
+     {
+      "word": "初心者",
+      "reading": "しょしんしゃ",
+      "meaning_tr": "yeni başlayan"
+     }
+    ]
+   },
+   {
+    "kanji": "列",
+    "on": [
+     "レツ"
+    ],
+    "kun": [],
+    "meaning_tr": "sıra",
+    "words": [
+     {
+      "word": "行列",
+      "reading": "ぎょうれつ",
+      "meaning_tr": "kuyruk"
+     }
+    ]
+   },
+   {
+    "kanji": "判",
+    "on": [
+     "ハン",
+     "バン"
+    ],
+    "kun": [],
+    "meaning_tr": "yargılamak",
+    "words": [
+     {
+      "word": "判断",
+      "reading": "はんだん",
+      "meaning_tr": "karar, yargı"
+     },
+     {
+      "word": "評判",
+      "reading": "ひょうばん",
+      "meaning_tr": "itibar"
+     }
+    ]
+   },
+   {
+    "kanji": "刻",
+    "on": [
+     "コク"
+    ],
+    "kun": [
+     "きざ(む)"
+    ],
+    "meaning_tr": "oymak, an",
+    "words": [
+     {
+      "word": "遅刻",
+      "reading": "ちこく",
+      "meaning_tr": "geç kalma"
+     },
+     {
+      "word": "時刻",
+      "reading": "じこく",
+      "meaning_tr": "saat"
+     }
+    ]
+   },
+   {
+    "kanji": "制",
+    "on": [
+     "セイ"
+    ],
+    "kun": [],
+    "meaning_tr": "sistem, kontrol",
+    "words": [
+     {
+      "word": "制度",
+      "reading": "せいど",
+      "meaning_tr": "sistem"
+     }
+    ]
+   },
+   {
+    "kanji": "到",
+    "on": [
+     "トウ"
+    ],
+    "kun": [],
+    "meaning_tr": "varmak",
+    "words": [
+     {
+      "word": "到着",
+      "reading": "とうちゃく",
+      "meaning_tr": "varış"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 35,
+  "radical": "頁",
+  "variants": [],
+  "name_jp": "おおがい",
+  "name_romaji": "oogai",
+  "meaning_tr": "baş, kafa",
+  "meaning_en": "head",
+  "kanji": [
+   {
+    "kanji": "顔",
+    "on": [
+     "ガン"
+    ],
+    "kun": [
+     "かお"
+    ],
+    "meaning_tr": "yüz",
+    "words": [
+     {
+      "word": "笑顔",
+      "reading": "えがお",
+      "meaning_tr": "gülümseme"
+     }
+    ]
+   },
+   {
+    "kanji": "頭",
+    "on": [
+     "トウ",
+     "ズ"
+    ],
+    "kun": [
+     "あたま"
+    ],
+    "meaning_tr": "baş",
+    "words": [
+     {
+      "word": "頭痛",
+      "reading": "ずつう",
+      "meaning_tr": "baş ağrısı"
+     }
+    ]
+   },
+   {
+    "kanji": "題",
+    "on": [
+     "ダイ"
+    ],
+    "kun": [],
+    "meaning_tr": "konu, başlık",
+    "words": [
+     {
+      "word": "問題",
+      "reading": "もんだい",
+      "meaning_tr": "sorun"
+     },
+     {
+      "word": "話題",
+      "reading": "わだい",
+      "meaning_tr": "gündem konusu"
+     }
+    ]
+   },
+   {
+    "kanji": "願",
+    "on": [
+     "ガン"
+    ],
+    "kun": [
+     "ねが(う)"
+    ],
+    "meaning_tr": "dilemek",
+    "words": [
+     {
+      "word": "お願い",
+      "reading": "おねがい",
+      "meaning_tr": "rica"
+     }
+    ]
+   },
+   {
+    "kanji": "頼",
+    "on": [
+     "ライ"
+    ],
+    "kun": [
+     "たの(む)"
+    ],
+    "meaning_tr": "rica etmek, güvenmek",
+    "words": [
+     {
+      "word": "依頼",
+      "reading": "いらい",
+      "meaning_tr": "talep"
+     },
+     {
+      "word": "信頼",
+      "reading": "しんらい",
+      "meaning_tr": "güven"
+     }
+    ]
+   },
+   {
+    "kanji": "順",
+    "on": [
+     "ジュン"
+    ],
+    "kun": [],
+    "meaning_tr": "sıra",
+    "words": [
+     {
+      "word": "順番",
+      "reading": "じゅんばん",
+      "meaning_tr": "sıra"
+     }
+    ]
+   },
+   {
+    "kanji": "預",
+    "on": [
+     "ヨ"
+    ],
+    "kun": [
+     "あず(ける)"
+    ],
+    "meaning_tr": "emanet etmek",
+    "words": [
+     {
+      "word": "預金",
+      "reading": "よきん",
+      "meaning_tr": "mevduat"
+     }
+    ]
+   },
+   {
+    "kanji": "領",
+    "on": [
+     "リョウ"
+    ],
+    "kun": [],
+    "meaning_tr": "bölge, almak",
+    "words": [
+     {
+      "word": "領収書",
+      "reading": "りょうしゅうしょ",
+      "meaning_tr": "makbuz"
+     }
+    ]
+   },
+   {
+    "kanji": "類",
+    "on": [
+     "ルイ"
+    ],
+    "kun": [],
+    "meaning_tr": "tür",
+    "words": [
+     {
+      "word": "種類",
+      "reading": "しゅるい",
+      "meaning_tr": "tür"
+     },
+     {
+      "word": "書類",
+      "reading": "しょるい",
+      "meaning_tr": "belge"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 36,
+  "radical": "攵",
+  "variants": [
+   "攴"
+  ],
+  "name_jp": "ぼくづくり / のぶん",
+  "name_romaji": "bokuzukuri",
+  "meaning_tr": "vurmak, eylem",
+  "meaning_en": "strike, action",
+  "kanji": [
+   {
+    "kanji": "教",
+    "on": [
+     "キョウ"
+    ],
+    "kun": [
+     "おし(える)"
+    ],
+    "meaning_tr": "öğretmek",
+    "words": [
+     {
+      "word": "教育",
+      "reading": "きょういく",
+      "meaning_tr": "eğitim"
+     }
+    ]
+   },
+   {
+    "kanji": "数",
+    "on": [
+     "スウ"
+    ],
+    "kun": [
+     "かず",
+     "かぞ(える)"
+    ],
+    "meaning_tr": "sayı",
+    "words": [
+     {
+      "word": "数字",
+      "reading": "すうじ",
+      "meaning_tr": "rakam"
+     }
+    ]
+   },
+   {
+    "kanji": "放",
+    "on": [
+     "ホウ"
+    ],
+    "kun": [
+     "はな(す)"
+    ],
+    "meaning_tr": "bırakmak",
+    "words": [
+     {
+      "word": "放送",
+      "reading": "ほうそう",
+      "meaning_tr": "yayın"
+     }
+    ]
+   },
+   {
+    "kanji": "政",
+    "on": [
+     "セイ"
+    ],
+    "kun": [],
+    "meaning_tr": "yönetim",
+    "words": [
+     {
+      "word": "政治",
+      "reading": "せいじ",
+      "meaning_tr": "siyaset"
+     }
+    ]
+   },
+   {
+    "kanji": "散",
+    "on": [
+     "サン"
+    ],
+    "kun": [
+     "ち(る)"
+    ],
+    "meaning_tr": "dağılmak",
+    "words": [
+     {
+      "word": "散歩",
+      "reading": "さんぽ",
+      "meaning_tr": "yürüyüş"
+     }
+    ]
+   },
+   {
+    "kanji": "敗",
+    "on": [
+     "ハイ"
+    ],
+    "kun": [
+     "やぶ(れる)"
+    ],
+    "meaning_tr": "yenilmek",
+    "words": [
+     {
+      "word": "失敗",
+      "reading": "しっぱい",
+      "meaning_tr": "başarısızlık"
+     }
+    ]
+   },
+   {
+    "kanji": "救",
+    "on": [
+     "キュウ"
+    ],
+    "kun": [
+     "すく(う)"
+    ],
+    "meaning_tr": "kurtarmak",
+    "words": [
+     {
+      "word": "救急車",
+      "reading": "きゅうきゅうしゃ",
+      "meaning_tr": "ambulans"
+     }
+    ]
+   },
+   {
+    "kanji": "改",
+    "on": [
+     "カイ"
+    ],
+    "kun": [
+     "あらた(める)"
+    ],
+    "meaning_tr": "yenilemek",
+    "words": [
+     {
+      "word": "改札",
+      "reading": "かいさつ",
+      "meaning_tr": "bilet turnikesi"
+     }
+    ]
+   },
+   {
+    "kanji": "敬",
+    "on": [
+     "ケイ"
+    ],
+    "kun": [
+     "うやま(う)"
+    ],
+    "meaning_tr": "saygı",
+    "words": [
+     {
+      "word": "敬語",
+      "reading": "けいご",
+      "meaning_tr": "saygı dili"
+     }
+    ]
+   },
+   {
+    "kanji": "故",
+    "on": [
+     "コ"
+    ],
+    "kun": [],
+    "meaning_tr": "sebep, eski",
+    "words": [
+     {
+      "word": "事故",
+      "reading": "じこ",
+      "meaning_tr": "kaza"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 37,
+  "radical": "广",
+  "variants": [],
+  "name_jp": "まだれ",
+  "name_romaji": "madare",
+  "meaning_tr": "çatı, bina",
+  "meaning_en": "building",
+  "kanji": [
+   {
+    "kanji": "店",
+    "on": [
+     "テン"
+    ],
+    "kun": [
+     "みせ"
+    ],
+    "meaning_tr": "dükkan",
+    "words": [
+     {
+      "word": "店員",
+      "reading": "てんいん",
+      "meaning_tr": "tezgahtar"
+     }
+    ]
+   },
+   {
+    "kanji": "広",
+    "on": [
+     "コウ"
+    ],
+    "kun": [
+     "ひろ(い)"
+    ],
+    "meaning_tr": "geniş",
+    "words": [
+     {
+      "word": "広告",
+      "reading": "こうこく",
+      "meaning_tr": "reklam"
+     }
+    ]
+   },
+   {
+    "kanji": "庭",
+    "on": [
+     "テイ"
+    ],
+    "kun": [
+     "にわ"
+    ],
+    "meaning_tr": "bahçe",
+    "words": [
+     {
+      "word": "家庭",
+      "reading": "かてい",
+      "meaning_tr": "aile, ev"
+     }
+    ]
+   },
+   {
+    "kanji": "度",
+    "on": [
+     "ド"
+    ],
+    "kun": [],
+    "meaning_tr": "derece, kez",
+    "words": [
+     {
+      "word": "今度",
+      "reading": "こんど",
+      "meaning_tr": "bu sefer / gelecek sefer"
+     },
+     {
+      "word": "温度",
+      "reading": "おんど",
+      "meaning_tr": "sıcaklık"
+     }
+    ]
+   },
+   {
+    "kanji": "座",
+    "on": [
+     "ザ"
+    ],
+    "kun": [
+     "すわ(る)"
+    ],
+    "meaning_tr": "oturmak",
+    "words": [
+     {
+      "word": "座席",
+      "reading": "ざせき",
+      "meaning_tr": "koltuk"
+     }
+    ]
+   },
+   {
+    "kanji": "康",
+    "on": [
+     "コウ"
+    ],
+    "kun": [],
+    "meaning_tr": "sağlık",
+    "words": [
+     {
+      "word": "健康",
+      "reading": "けんこう",
+      "meaning_tr": "sağlık"
+     }
+    ]
+   },
+   {
+    "kanji": "府",
+    "on": [
+     "フ"
+    ],
+    "kun": [],
+    "meaning_tr": "hükümet",
+    "words": [
+     {
+      "word": "政府",
+      "reading": "せいふ",
+      "meaning_tr": "hükümet"
+     }
+    ]
+   },
+   {
+    "kanji": "底",
+    "on": [
+     "テイ"
+    ],
+    "kun": [
+     "そこ"
+    ],
+    "meaning_tr": "dip",
+    "words": [
+     {
+      "word": "海底",
+      "reading": "かいてい",
+      "meaning_tr": "deniz dibi"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 38,
+  "radical": "犭",
+  "variants": [
+   "犬"
+  ],
+  "name_jp": "けものへん",
+  "name_romaji": "kemonohen",
+  "meaning_tr": "hayvan",
+  "meaning_en": "beast",
+  "kanji": [
+   {
+    "kanji": "犯",
+    "on": [
+     "ハン"
+    ],
+    "kun": [
+     "おか(す)"
+    ],
+    "meaning_tr": "suç işlemek",
+    "words": [
+     {
+      "word": "犯人",
+      "reading": "はんにん",
+      "meaning_tr": "suçlu"
+     },
+     {
+      "word": "犯罪",
+      "reading": "はんざい",
+      "meaning_tr": "suç"
+     }
+    ]
+   },
+   {
+    "kanji": "独",
+    "on": [
+     "ドク"
+    ],
+    "kun": [
+     "ひと(り)"
+    ],
+    "meaning_tr": "tek başına",
+    "words": [
+     {
+      "word": "独身",
+      "reading": "どくしん",
+      "meaning_tr": "bekar"
+     }
+    ]
+   },
+   {
+    "kanji": "狭",
+    "on": [
+     "キョウ"
+    ],
+    "kun": [
+     "せま(い)"
+    ],
+    "meaning_tr": "dar",
+    "words": [
+     {
+      "word": "狭い",
+      "reading": "せまい",
+      "meaning_tr": "dar"
+     }
+    ]
+   },
+   {
+    "kanji": "猫",
+    "on": [
+     "ビョウ"
+    ],
+    "kun": [
+     "ねこ"
+    ],
+    "meaning_tr": "kedi",
+    "words": [
+     {
+      "word": "猫",
+      "reading": "ねこ",
+      "meaning_tr": "kedi"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 39,
+  "radical": "冫",
+  "variants": [],
+  "name_jp": "にすい",
+  "name_romaji": "nisui",
+  "meaning_tr": "buz, soğuk",
+  "meaning_en": "ice",
+  "kanji": [
+   {
+    "kanji": "冷",
+    "on": [
+     "レイ"
+    ],
+    "kun": [
+     "つめ(たい)",
+     "ひ(える)"
+    ],
+    "meaning_tr": "soğuk",
+    "words": [
+     {
+      "word": "冷蔵庫",
+      "reading": "れいぞうこ",
+      "meaning_tr": "buzdolabı"
+     },
+     {
+      "word": "冷静",
+      "reading": "れいせい",
+      "meaning_tr": "sakin"
+     }
+    ]
+   },
+   {
+    "kanji": "凍",
+    "on": [
+     "トウ"
+    ],
+    "kun": [
+     "こお(る)"
+    ],
+    "meaning_tr": "donmak",
+    "words": [
+     {
+      "word": "冷凍",
+      "reading": "れいとう",
+      "meaning_tr": "dondurma (işlemi)"
+     }
+    ]
+   },
+   {
+    "kanji": "冬",
+    "on": [
+     "トウ"
+    ],
+    "kun": [
+     "ふゆ"
+    ],
+    "meaning_tr": "kış",
+    "words": [
+     {
+      "word": "冬休み",
+      "reading": "ふゆやすみ",
+      "meaning_tr": "kış tatili"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 40,
+  "radical": "尸",
+  "variants": [],
+  "name_jp": "しかばね / かばね",
+  "name_romaji": "shikabane",
+  "meaning_tr": "eğik beden, ev",
+  "meaning_en": "corpse, roof",
+  "kanji": [
+   {
+    "kanji": "屋",
+    "on": [
+     "オク"
+    ],
+    "kun": [
+     "や"
+    ],
+    "meaning_tr": "ev, dükkan",
+    "words": [
+     {
+      "word": "屋上",
+      "reading": "おくじょう",
+      "meaning_tr": "çatı katı"
+     },
+     {
+      "word": "居酒屋",
+      "reading": "いざかや",
+      "meaning_tr": "izakaya"
+     }
+    ]
+   },
+   {
+    "kanji": "届",
+    "on": [],
+    "kun": [],
+    "meaning_tr": "ulaşmak",
+    "words": [
+     {
+      "word": "届く",
+      "reading": "とどく",
+      "meaning_tr": "ulaşmak"
+     },
+     {
+      "word": "届ける",
+      "reading": "とどける",
+      "meaning_tr": "teslim etmek"
+     }
+    ]
+   },
+   {
+    "kanji": "局",
+    "on": [
+     "キョク"
+    ],
+    "kun": [],
+    "meaning_tr": "büro",
+    "words": [
+     {
+      "word": "郵便局",
+      "reading": "ゆうびんきょく",
+      "meaning_tr": "postane"
+     },
+     {
+      "word": "薬局",
+      "reading": "やっきょく",
+      "meaning_tr": "eczane"
+     }
+    ]
+   },
+   {
+    "kanji": "居",
+    "on": [
+     "キョ"
+    ],
+    "kun": [
+     "い(る)"
+    ],
+    "meaning_tr": "bulunmak",
+    "words": [
+     {
+      "word": "住居",
+      "reading": "じゅうきょ",
+      "meaning_tr": "konut"
+     }
+    ]
+   },
+   {
+    "kanji": "展",
+    "on": [
+     "テン"
+    ],
+    "kun": [],
+    "meaning_tr": "yaymak, sergi",
+    "words": [
+     {
+      "word": "展示",
+      "reading": "てんじ",
+      "meaning_tr": "sergi"
+     },
+     {
+      "word": "発展",
+      "reading": "はってん",
+      "meaning_tr": "gelişme"
+     }
+    ]
+   },
+   {
+    "kanji": "属",
+    "on": [
+     "ゾク"
+    ],
+    "kun": [],
+    "meaning_tr": "ait olmak",
+    "words": [
+     {
+      "word": "所属",
+      "reading": "しょぞく",
+      "meaning_tr": "bağlı olma"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 41,
+  "radical": "欠",
+  "variants": [],
+  "name_jp": "あくび / けんづくり",
+  "name_romaji": "akubi",
+  "meaning_tr": "esneme, eksik",
+  "meaning_en": "lack",
+  "kanji": [
+   {
+    "kanji": "次",
+    "on": [
+     "ジ"
+    ],
+    "kun": [
+     "つぎ"
+    ],
+    "meaning_tr": "sonraki",
+    "words": [
+     {
+      "word": "次回",
+      "reading": "じかい",
+      "meaning_tr": "gelecek sefer"
+     }
+    ]
+   },
+   {
+    "kanji": "欠",
+    "on": [
+     "ケツ"
+    ],
+    "kun": [
+     "か(ける)"
+    ],
+    "meaning_tr": "eksik",
+    "words": [
+     {
+      "word": "欠席",
+      "reading": "けっせき",
+      "meaning_tr": "devamsızlık"
+     }
+    ]
+   },
+   {
+    "kanji": "歌",
+    "on": [
+     "カ"
+    ],
+    "kun": [
+     "うた"
+    ],
+    "meaning_tr": "şarkı",
+    "words": [
+     {
+      "word": "歌手",
+      "reading": "かしゅ",
+      "meaning_tr": "şarkıcı"
+     }
+    ]
+   },
+   {
+    "kanji": "欲",
+    "on": [
+     "ヨク"
+    ],
+    "kun": [
+     "ほ(しい)"
+    ],
+    "meaning_tr": "istemek",
+    "words": [
+     {
+      "word": "食欲",
+      "reading": "しょくよく",
+      "meaning_tr": "iştah"
+     }
+    ]
+   },
+   {
+    "kanji": "歓",
+    "on": [
+     "カン"
+    ],
+    "kun": [],
+    "meaning_tr": "sevinç",
+    "words": [
+     {
+      "word": "歓迎",
+      "reading": "かんげい",
+      "meaning_tr": "karşılama"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 42,
+  "radical": "耳",
+  "variants": [],
+  "name_jp": "みみ / みみへん",
+  "name_romaji": "mimi",
+  "meaning_tr": "kulak",
+  "meaning_en": "ear",
+  "kanji": [
+   {
+    "kanji": "聞",
+    "on": [
+     "ブン",
+     "モン"
+    ],
+    "kun": [
+     "き(く)"
+    ],
+    "meaning_tr": "duymak",
+    "words": [
+     {
+      "word": "新聞",
+      "reading": "しんぶん",
+      "meaning_tr": "gazete"
+     }
+    ]
+   },
+   {
+    "kanji": "職",
+    "on": [
+     "ショク"
+    ],
+    "kun": [],
+    "meaning_tr": "meslek",
+    "words": [
+     {
+      "word": "職業",
+      "reading": "しょくぎょう",
+      "meaning_tr": "meslek"
+     },
+     {
+      "word": "就職",
+      "reading": "しゅうしょく",
+      "meaning_tr": "işe girme"
+     }
+    ]
+   },
+   {
+    "kanji": "聴",
+    "on": [
+     "チョウ"
+    ],
+    "kun": [
+     "き(く)"
+    ],
+    "meaning_tr": "dinlemek",
+    "words": [
+     {
+      "word": "聴解",
+      "reading": "ちょうかい",
+      "meaning_tr": "dinleme (sınav bölümü)"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 43,
+  "radical": "山",
+  "variants": [],
+  "name_jp": "やま / やまへん",
+  "name_romaji": "yama",
+  "meaning_tr": "dağ",
+  "meaning_en": "mountain",
+  "kanji": [
+   {
+    "kanji": "島",
+    "on": [
+     "トウ"
+    ],
+    "kun": [
+     "しま"
+    ],
+    "meaning_tr": "ada",
+    "words": [
+     {
+      "word": "半島",
+      "reading": "はんとう",
+      "meaning_tr": "yarımada"
+     }
+    ]
+   },
+   {
+    "kanji": "岩",
+    "on": [
+     "ガン"
+    ],
+    "kun": [
+     "いわ"
+    ],
+    "meaning_tr": "kaya",
+    "words": [
+     {
+      "word": "岩",
+      "reading": "いわ",
+      "meaning_tr": "kaya"
+     }
+    ]
+   },
+   {
+    "kanji": "岸",
+    "on": [
+     "ガン"
+    ],
+    "kun": [
+     "きし"
+    ],
+    "meaning_tr": "kıyı",
+    "words": [
+     {
+      "word": "海岸",
+      "reading": "かいがん",
+      "meaning_tr": "sahil"
+     }
+    ]
+   },
+   {
+    "kanji": "峠",
+    "on": [],
+    "kun": [
+     "とうげ"
+    ],
+    "meaning_tr": "dağ geçidi",
+    "words": [
+     {
+      "word": "峠",
+      "reading": "とうげ",
+      "meaning_tr": "dağ geçidi"
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,5 +1,5 @@
 import { ViteSSG } from 'vite-ssg'
-import { setThemeStorageKey } from 'rei-kit'
+import { setThemeStorageKey, useTheme } from 'rei-kit'
 
 import App from './App.vue'
 import { routes } from './routes'
@@ -23,6 +23,13 @@ export const createApp = ViteSSG(
     },
   },
   ({ router, isClient }) => {
+    // The theme controller's watcher belongs to whichever scope first calls
+    // useTheme(). Called from a page's layout, it died with that page on the
+    // first navigation: the button kept changing the preference but nothing
+    // wrote `.dark` to <html> any more, until a reload. Created here, outside
+    // every component, it lives as long as the app.
+    if (isClient) useTheme()
+
     // After hydration, so the first client render matches the prerendered HTML.
     if (isClient) router.isReady().then(() => setTimeout(loadPrefs))
   },

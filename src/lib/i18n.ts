@@ -112,3 +112,6 @@ const zh: Dict = {
 
 export const DICT: Record<Lang, Dict> = { tr, en, zh }
 export const LANG_LABEL: Record<Lang, string> = { tr: 'Türkçe', en: 'English', zh: '中文' }
+
+/** Shown on the home menu so a reader knows which languages a page has before opening it. */
+export const LANG_FLAG: Record<Lang, string> = { tr: '🇹🇷', en: '🇬🇧', zh: '🇨🇳' }
