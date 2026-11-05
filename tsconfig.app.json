@@ -1,6 +1,6 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/**/*.json"],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/**/*.json", "assets/past-n3/app/**/*.ts"],
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,

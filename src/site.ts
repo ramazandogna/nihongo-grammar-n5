@@ -52,6 +52,14 @@ export const PAGES: readonly SitePage[] = [
     langs: ['tr'],
   },
   {
+    path: '/past-n3/',
+    icon: '過',
+    title: 'N3 Çıkmış Sorular',
+    description: 'Çıkmış JLPT N3 sınavları: her soru çözümüyle, okuma metinleri satır satır, dinleme sesli ve metinli.',
+    palette: 'solarized',
+    langs: ['tr'],
+  },
+  {
     path: '/n5/',
     icon: '五',
     title: 'N5 Gramer',

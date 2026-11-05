@@ -13,7 +13,10 @@ import { rubyWord } from '@/lib/ruby'
 import { toTop } from '@/lib/scroll'
 import { shuffle } from '@/lib/shuffle'
 import data from './data.json'
-import { EXTRA_CATEGORIES, SCENES, SLIPS } from './work'
+import { MENU_CATEGORIES, ONLINE_SLIPS } from './menu'
+import { EXTRA_CATEGORIES, SCENES, SLIPS as BASE_SLIPS } from './work'
+
+const SLIPS = [...ONLINE_SLIPS, ...BASE_SLIPS]
 
 interface Word {
   w: string
@@ -27,7 +30,7 @@ interface Word {
 const { t } = usePage('/matsuya/')
 
 // The extracted vocabulary first, then the work categories written for the site.
-const source = [...data, ...EXTRA_CATEGORIES]
+const source = [...MENU_CATEGORIES, ...data, ...EXTRA_CATEGORIES]
 const cats = source.map((c) => ({ title: c.title, note: c.note }))
 const all: Word[] = source.flatMap((c, cat) => c.words.map((w) => ({ ...w, cat })))
 const idsOf = (cat: number) => all.map((w, i) => (w.cat === cat ? i : -1)).filter((i) => i >= 0)
