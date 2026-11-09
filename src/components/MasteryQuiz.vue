@@ -3,8 +3,10 @@ import { computed, onMounted, ref, watch } from 'vue'
 import { BaseButton, BaseCard, ProgressBar } from 'rei-kit'
 
 import { usePageContext } from '@/lib/page'
+import { addAttempt, loadRun, saveRun } from '@/lib/quiz-store'
 import { notation, plain } from '@/lib/ruby'
 import { shuffle } from '@/lib/shuffle'
+import QuizHistory from './QuizHistory.vue'
 
 export interface Question {
   /** Small line above the question: its type or section. */
@@ -29,10 +31,17 @@ export interface Question {
  *
  * `build` is called on every showing rather than once, so a page can vary the
  * question type for the same key (kanji → meaning, word → reading …).
+ *
+ * With a `storageKey` the run survives leaving the page — it resumes on the
+ * same question — and each finished run goes into the test's history, named
+ * item by item through `label`.
  */
-const { pool, build } = defineProps<{
+const { pool, build, storageKey, label } = defineProps<{
   pool: readonly K[]
   build: (key: K) => Question
+  storageKey?: string
+  /** How an item is named in the mistakes list (notation allowed). */
+  label?: (key: K) => string
 }>()
 defineSlots<{
   feedback?: (p: { item: K; correct: boolean }) => unknown
@@ -50,20 +59,77 @@ const picked = ref<number | null>(null)
 const tries = ref(0)
 const wrong = ref(0)
 const finished = ref(false)
+/** This run's mistakes, per item. */
+const misses = ref(new Map<K, number>())
+const resumed = ref(false)
+const showHistory = ref(false)
+/** The finished run's mistakes, kept for the end screen. */
+const lastMisses = ref<{ label: string; n: number }[]>([])
 
 function start() {
   queue.value = shuffle(pool)
   counts.value = new Map(pool.map((k) => [k, 0]))
+  misses.value = new Map()
   tries.value = 0
   wrong.value = 0
   finished.value = false
+  resumed.value = false
+  showHistory.value = false
   next()
+}
+function persist() {
+  if (!storageKey) return
+  saveRun<K>(storageKey, {
+    pool: [...pool],
+    queue: queue.value,
+    counts: [...counts.value],
+    current: current.value,
+    question: question.value,
+    order: order.value,
+    picked: picked.value,
+    tries: tries.value,
+    wrong: wrong.value,
+    misses: [...misses.value],
+  })
+}
+/** The saved run, if it belongs to this same test. */
+function resume(): boolean {
+  if (!storageKey) return false
+  const run = loadRun<K>(storageKey)
+  const same = run && run.pool.length === pool.length && run.pool.every((k) => pool.includes(k))
+  if (!run || !same || run.current === null) return false
+  queue.value = run.queue
+  counts.value = new Map(run.counts)
+  current.value = run.current
+  question.value = run.question as Question
+  order.value = run.order
+  picked.value = run.picked
+  tries.value = run.tries
+  wrong.value = run.wrong
+  misses.value = new Map(run.misses)
+  finished.value = false
+  resumed.value = true
+  return true
+}
+function finish() {
+  finished.value = true
+  current.value = null
+  lastMisses.value = [...misses.value]
+    .sort((a, b) => b[1] - a[1])
+    .map(([k, n]) => ({ label: label ? label(k) : String(k), n }))
+  if (storageKey) {
+    saveRun(storageKey, null)
+    addAttempt(storageKey, { at: new Date().toISOString(), tries: tries.value, wrong: wrong.value, misses: lastMisses.value })
+  }
+}
+function restart() {
+  if (storageKey) saveRun(storageKey, null)
+  start()
 }
 function next() {
   const k = queue.value.shift()
   if (k === undefined) {
-    finished.value = true
-    current.value = null
+    finish()
     return
   }
   current.value = k
@@ -82,20 +148,36 @@ function pick(i: number) {
     if (c < 2) queue.value.splice(Math.min(queue.value.length, 4 + Math.floor(Math.random() * 4)), 0, k)
   } else {
     wrong.value++
+    misses.value.set(k, (misses.value.get(k) ?? 0) + 1)
     queue.value.splice(Math.min(queue.value.length, 2), 0, k)
   }
+  persist()
 }
 function proceed() {
   next()
+  persist()
   if (typeof window !== 'undefined') window.scrollTo({ top: 0 })
 }
 
-onMounted(start)
-watch(() => pool, start)
-defineExpose({ start })
+onMounted(() => {
+  if (!resume()) {
+    start()
+    persist()
+  }
+})
+watch(
+  () => pool,
+  () => {
+    if (!resume()) start()
+  },
+)
+defineExpose({ start: restart })
 
 const total = computed(() => pool.length)
 const done = computed(() => [...counts.value.values()].filter((c) => c >= 2).length)
+/** Correct answers still owed: two per item, minus what is already in. */
+const owed = computed(() => [...counts.value.values()].reduce((s, c) => s + Math.max(0, 2 - c), 0))
+const percent = computed(() => Math.round(((total.value * 2 - owed.value) / (total.value * 2 || 1)) * 100))
 const count = computed(() => (current.value === null ? 0 : (counts.value.get(current.value) ?? 0)))
 const correct = computed(() => picked.value !== null && picked.value === question.value?.answer)
 const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o).length > 12))
@@ -105,10 +187,11 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
   <div class="flex flex-col gap-4">
     <template v-if="!finished && question">
       <div>
-        <ProgressBar :value="done" :max="total" :label="t.progress" size="sm" />
-        <div class="text-ink-soft mt-1.5 flex justify-between text-sm">
-          <span>{{ t.mastered }} {{ done }}/{{ total }}</span>
-          <span>{{ t.mistakes }} {{ wrong }}</span>
+        <p v-if="resumed" class="text-primary mb-2 text-sm font-semibold">↩ Kaldığın yerden devam ediyorsun.</p>
+        <ProgressBar :value="total * 2 - owed" :max="total * 2" :label="t.progress" size="sm" />
+        <div class="text-ink-soft mt-1.5 flex flex-wrap justify-between gap-x-3 text-sm">
+          <span><b class="text-ink">%{{ percent }}</b> bitti · kalan {{ owed }} doğru cevap</span>
+          <span>{{ t.mastered }} {{ done }}/{{ total }} · {{ t.mistakes }} {{ wrong }}</span>
         </div>
       </div>
 
@@ -182,11 +265,26 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
         合格
       </div>
       <h2 class="mt-6 text-2xl font-bold">{{ t.doneTitle }}</h2>
-      <p class="text-ink-soft">{{ t.doneStats(tries, wrong) }}</p>
+      <p class="text-ink-soft">
+        {{ t.doneStats(tries, wrong) }} · doğru oranı %{{ tries ? Math.round(((tries - wrong) / tries) * 100) : 0 }}
+      </p>
+      <BaseCard v-if="lastMisses.length" class="mx-auto mt-5 max-w-md text-start">
+        <p class="mb-2 font-bold">❌ Bu denemede yanlış yaptıkların</p>
+        <ul class="grid gap-1">
+          <li v-for="m in lastMisses" :key="m.label" class="bg-muted rounded-control flex justify-between gap-3 px-3 py-1.5">
+            <span class="jp min-w-0 text-lg" v-html="notation(m.label)" />
+            <span class="text-negative shrink-0 text-sm font-bold">{{ m.n }}×</span>
+          </li>
+        </ul>
+      </BaseCard>
       <div class="mt-6 flex flex-wrap justify-center gap-3">
-        <BaseButton variant="secondary" @click="start">{{ t.again }}</BaseButton>
+        <BaseButton variant="secondary" @click="restart">{{ t.again }}</BaseButton>
+        <BaseButton v-if="storageKey" variant="ghost" @click="showHistory = !showHistory">📊 Geçmiş</BaseButton>
         <slot name="actions" />
       </div>
+      <BaseCard v-if="storageKey && showHistory" class="mx-auto mt-4 max-w-md">
+        <QuizHistory :storage-key="storageKey" />
+      </BaseCard>
     </div>
   </div>
 </template>

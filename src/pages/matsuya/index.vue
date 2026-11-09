@@ -11,6 +11,8 @@ import StudyHeader from '@/components/StudyHeader.vue'
 import { usePage } from '@/lib/page'
 import { rubyWord } from '@/lib/ruby'
 import { toTop } from '@/lib/scroll'
+import { jlptQuestion, KIND_LABEL, type Vocab } from '@/lib/jlpt'
+import { similarKanji } from '@/lib/kanji-similar'
 import { shuffle } from '@/lib/shuffle'
 import data from './data.json'
 import { MENU_CATEGORIES, ONLINE_SLIPS } from './menu'
@@ -59,21 +61,23 @@ function open(c: number, v: 'learn' | 'test' = 'learn') {
 
 const pool = computed(() => (cat.value === -1 ? all.map((_, i) => i) : cat.value === null ? [] : idsOf(cat.value)))
 
-/** The word to its meaning, or the meaning to the word — chosen per showing. */
+const allVocab: Vocab[] = all.map((w) => ({ word: w.w, reading: w.r, meaning: w.tr }))
+const similar = (c: string) => similarKanji(c, [...new Set(all.flatMap((w) => [...w.w]).filter((x) => /[\u3400-\u9fff]/.test(x)))].slice(0, 40))
+
+/**
+ * JLPT-style where the word allows it (reading / spelling with look-alike
+ * kanji); otherwise the meaning, or — for whole phrases — which phrase fits
+ * the situation, the way the counter actually asks it.
+ */
 function build(i: number): Question {
   const w = all[i]!
-  const toMeaning = Math.random() < 0.5
-  const others = shuffle(pool.value.length >= 8 ? pool.value : all.map((_, j) => j)).filter((j) => j !== i)
-  const value = (x: Word) => (toMeaning ? x.tr : rubyWord(x.w, x.r))
-  const options = [value(w)]
-  for (const j of others) {
-    const v = value(all[j]!)
-    if (!options.includes(v)) options.push(v)
-    if (options.length === 4) break
+  const sameCat = all.filter((x) => x.cat === w.cat)
+  if ([...w.w].length > 8 && Math.random() < 0.5) {
+    const options = [rubyWord(w.w, w.r), ...shuffle(sameCat.filter((x) => x !== w)).slice(0, 3).map((x) => rubyWord(x.w, x.r))]
+    return { kind: 'Bu durumda ne dersin?', prompt: w.tr, size: 'text', options, answer: 0 }
   }
-  return toMeaning
-    ? { kind: 'Anlamı ne?', prompt: rubyWord(w.w, w.r), size: 'big', options, answer: 0 }
-    : { kind: 'Hangi kelime?', prompt: w.tr, size: 'text', options, answer: 0 }
+  const q = jlptQuestion({ word: w.w, reading: w.r, meaning: w.tr }, sameCat.length >= 6 ? sameCat.map((x) => ({ word: x.w, reading: x.r, meaning: x.tr })) : allVocab, similar)
+  return q.kind === KIND_LABEL.imi ? { ...q, prompt: rubyWord(w.w, w.r) } : q
 }
 </script>
 
@@ -196,7 +200,7 @@ function build(i: number): Question {
         <BaseButton @click="view = 'test'">{{ t.test }} →</BaseButton>
       </div>
 
-      <MasteryQuiz v-else :key="cat" :pool="pool" :build="build">
+      <MasteryQuiz v-else :key="cat" :pool="pool" :build="build" :storage-key="`matsuya:${cat}`" :label="(i: number) => `${rubyWord(all[i]!.w, all[i]!.r)} · ${all[i]!.tr}`">
         <template #feedback="{ item }">
           <p class="mt-2">
             <span class="jp text-xl" lang="ja" v-html="rubyWord(all[item]!.w, all[item]!.r)" /> =

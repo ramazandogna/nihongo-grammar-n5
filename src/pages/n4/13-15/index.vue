@@ -139,7 +139,7 @@ function open(n: 1 | 2 | null) {
       <p class="text-ink-soft mb-4 text-[15px]">{{ t.rule }}</p>
       <template v-if="active">
         <BaseButton variant="ghost" size="sm" class="mb-3" @click="open(null)">{{ t.back }}</BaseButton>
-        <MasteryQuiz :key="active" :pool="pool" :build="build">
+        <MasteryQuiz :key="active" :pool="pool" :build="build" :storage-key="`1315:test${active}`" :label="(i: number) => questions[i]!.q">
           <template #actions>
             <BaseButton v-if="active === 1" @click="open(2)">{{ testName(2) }} →</BaseButton>
           </template>

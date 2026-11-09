@@ -137,7 +137,7 @@ function build(i: number): Question {
     <!-- Full test -->
     <template v-else-if="fullTest">
       <StudyHeader :title="pick(L.all)" @back="home" />
-      <MasteryQuiz :pool="pool" :build="build">
+      <MasteryQuiz :pool="pool" :build="build" storage-key="kanji-n3:all" :label="(i: number) => `${items[i]!.w} · ${pick(items[i]!.mean)}`">
         <template #feedback="{ item }">
           <p class="mt-2"><JpText :text="items[item]!.w" class="text-xl" /> {{ items[item]!.r }} = <b>{{ pick(items[item]!.mean) }}</b></p>
           <p class="border-negative mt-2 border-s-4 ps-3 text-[15px]">{{ pick(items[item]!.tip) }}</p>
@@ -188,7 +188,7 @@ function build(i: number): Question {
         <p class="border-primary mt-4 border-s-4 ps-3 text-[15px]"><RevealText :text="pick(readings[current.m]!.tr)" /></p>
       </BaseCard>
 
-      <MasteryQuiz v-else :key="current.m" :pool="pool" :build="build">
+      <MasteryQuiz v-else :key="current.m" :pool="pool" :build="build" :storage-key="`kanji-n3:${current.m}`" :label="(i: number) => `${items[i]!.w} · ${pick(items[i]!.mean)}`">
         <template #feedback="{ item }">
           <p class="mt-2"><JpText :text="items[item]!.w" class="text-xl" /> {{ items[item]!.r }} = <b>{{ pick(items[item]!.mean) }}</b></p>
           <p class="border-negative mt-2 border-s-4 ps-3 text-[15px]">{{ pick(items[item]!.tip) }}</p>

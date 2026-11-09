@@ -11,7 +11,8 @@ import type { GuideData } from './types'
 
 /** The body of a grammar guide: contents, every section, and its quizzes. */
 const { data } = defineProps<{ data: GuideData }>()
-const { t } = usePageContext()
+const pageCtx = usePageContext()
+const { t } = pageCtx
 
 // One topic per screen: the contents, each section, then the quizzes.
 const sections = data.sections.filter((s) => !s.hub)
@@ -78,7 +79,7 @@ function open(n: number | null) {
     <p class="text-ink-soft mb-4 text-[15px]">{{ t.rule }}</p>
     <template v-if="quiz">
       <BaseButton variant="ghost" size="sm" class="mb-3" @click="open(null)">{{ t.back }}</BaseButton>
-      <MasteryQuiz :key="quiz.n" :pool="pool" :build="build">
+      <MasteryQuiz :key="quiz.n" :pool="pool" :build="build" :storage-key="`${pageCtx.page.path}quiz${quiz.n}`" :label="(i: number) => quiz!.items[i]!.q">
         <template #actions>
           <BaseButton @click="open(null)">{{ t.quizzes }}</BaseButton>
         </template>

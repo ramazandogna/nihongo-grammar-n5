@@ -2,6 +2,9 @@
 import { computed, ref, watch } from 'vue'
 import { BaseButton, BaseCard } from 'rei-kit'
 
+import { usePageContext } from '@/lib/page'
+import { jlptQuestion, KIND_LABEL, type Vocab } from '@/lib/jlpt'
+import { similarKanji } from '@/lib/kanji-similar'
 import { plain } from '@/lib/ruby'
 import { toTop } from '@/lib/scroll'
 import { shuffle } from '@/lib/shuffle'
@@ -19,6 +22,7 @@ import type { Lesson } from './types'
  */
 const { lesson } = defineProps<{ lesson: Lesson }>()
 const emit = defineEmits<{ back: [] }>()
+const { page: sitePage } = usePageContext()
 
 type Tab = 'read' | 'grammar' | 'words' | 'practice' | 'test'
 const tab = ref<Tab>('read')
@@ -42,14 +46,22 @@ watch(page, toTop)
 const grammarPages = computed(() => lesson.grammar.length + (lesson.boxes?.length ?? 0))
 
 const wordPool = computed(() => lesson.words.map((_, i) => i))
+/** A notation word as the exam sees it: the kanji, and the reading spelled out. */
+const asVocab = ([w, m]: [string, string]): Vocab => ({
+  word: w.replace(/\{([^|}]+)\|[^}]+\}/g, '$1'),
+  reading: w.replace(/\{[^|}]+\|([^}]+)\}/g, '$1'),
+  meaning: m,
+})
+const lessonVocab = computed(() => lesson.words.map(asVocab))
+/** JLPT-style: reading and spelling traps where the word has kanji, else the meaning or the word for a meaning. */
 function buildWord(i: number): Question {
-  const [w, m] = lesson.words[i]!
-  const toMeaning = Math.random() < 0.6
-  const others = shuffle(wordPool.value.filter((j) => j !== i)).slice(0, 3)
-  const options = [toMeaning ? m : w, ...others.map((j) => (toMeaning ? lesson.words[j]![1] : lesson.words[j]![0]))]
-  return toMeaning
-    ? { kind: 'Anlamı ne?', prompt: w, size: 'big', options, answer: 0 }
-    : { kind: 'Hangi kelime?', prompt: m, size: 'text', options, answer: 0 }
+  const v = lessonVocab.value[i]!
+  if (Math.random() < 0.25) {
+    const others = shuffle(wordPool.value.filter((j) => j !== i)).slice(0, 3)
+    return { kind: 'Hangi kelime?', prompt: v.meaning, size: 'text', options: [lesson.words[i]![0], ...others.map((j) => lesson.words[j]![0])], answer: 0 }
+  }
+  const q = jlptQuestion(v, lessonVocab.value, (c) => similarKanji(c))
+  return q.kind === KIND_LABEL.imi ? { ...q, prompt: lesson.words[i]![0] } : q
 }
 const quizPool = computed(() => lesson.quiz.map((_, i) => i))
 function buildQuiz(i: number): Question {
@@ -141,7 +153,7 @@ const longWords = computed(() => lesson.words.some(([w]) => plain(w).length > 7)
     </template>
     <template v-else>
       <BaseButton variant="ghost" size="sm" class="mb-3" @click="wordGame = false">← Kelime listesi</BaseButton>
-      <MasteryQuiz :pool="wordPool" :build="buildWord">
+      <MasteryQuiz :pool="wordPool" :build="buildWord" :storage-key="`${sitePage.path}${lesson.id}:words`" :label="(i: number) => `${lesson.words[i]![0]} · ${lesson.words[i]![1]}`">
         <template #feedback="{ item }">
           <p class="mt-2"><JpText :text="lesson.words[item]![0]" class="text-xl" /> = <b>{{ lesson.words[item]![1] }}</b></p>
         </template>
@@ -164,5 +176,5 @@ const longWords = computed(() => lesson.words.some(([w]) => plain(w).length > 7)
   </template>
 
   <!-- Test -->
-  <MasteryQuiz v-else :pool="quizPool" :build="buildQuiz" />
+  <MasteryQuiz v-else :pool="quizPool" :build="buildQuiz" :storage-key="`${sitePage.path}${lesson.id}:quiz`" :label="(i: number) => lesson.quiz[i]!.q" />
 </template>

@@ -10,6 +10,8 @@ import StudyHeader from '@/components/StudyHeader.vue'
 import { usePage } from '@/lib/page'
 import { rubyWord } from '@/lib/ruby'
 import { toTop } from '@/lib/scroll'
+import { jlptQuestion, type Vocab } from '@/lib/jlpt'
+import { similarKanji } from '@/lib/kanji-similar'
 import { shuffle } from '@/lib/shuffle'
 import data from './data.json'
 
@@ -75,27 +77,24 @@ const pool = computed(() => {
  * of one of its words, or the word for a meaning. Wrong options come from the
  * same test, so they look like the right one.
  */
+/** Every word of every unit, for wrong options. */
+const allWords: Vocab[] = all.flatMap((k) => k.w.map((w) => ({ word: w.w, reading: w.r, meaning: w.m })))
+/** Look-alikes: the radical list's, plus the other kanji of this book. */
+const similar = (c: string) => similarKanji(c, shuffle(all.map((x) => x.k)).slice(0, 6))
+
+/**
+ * JLPT-style: one of the kanji's words, asked as reading, spelling or
+ * meaning; now and then the kanji itself, among look-alikes.
+ */
 function build(i: number): Question {
   const k = all[i]!
-  const type = Math.floor(Math.random() * 3)
-  const word = k.w[Math.floor(Math.random() * k.w.length)]!
-  const valueOf = (x: Kanji) => {
-    const w = x.w[Math.floor(Math.random() * x.w.length)]!
-    return type === 0 ? x.m : type === 1 ? w.r : w.w
+  const w = k.w[Math.floor(Math.random() * k.w.length)]!
+  if (Math.random() < 0.2) {
+    const look = shuffle(similar(k.k).map((c) => all.find((x) => x.k === c)?.m).filter((m): m is string => !!m && m !== k.m))
+    const options = [k.m, ...[...new Set([...look, ...shuffle(all.map((x) => x.m))])].filter((m) => m !== k.m).slice(0, 3)]
+    return { kind: '意味 · bu kanjinin anlamı', prompt: k.k, size: 'big', options, answer: 0 }
   }
-  const right = type === 0 ? k.m : type === 1 ? word.r : word.w
-  const others = shuffle(pool.value.length >= 8 ? pool.value : all.map((_, j) => j)).filter((j) => j !== i)
-  const options = [right]
-  for (const j of others) {
-    const v = valueOf(all[j]!)
-    if (!options.includes(v)) options.push(v)
-    if (options.length === 4) break
-  }
-  return [
-    { kind: 'Bu kanjinin anlamı?', prompt: k.k, size: 'big' as const, options, answer: 0 },
-    { kind: 'Bu kelimenin okunuşu?', prompt: word.w, size: 'big' as const, options, answer: 0 },
-    { kind: 'Hangi kelime?', prompt: word.m, size: 'text' as const, options, answer: 0 },
-  ][type]!
+  return jlptQuestion({ word: w.w, reading: w.r, meaning: w.m }, allWords, similar)
 }
 
 const nextAfter = computed(() => {
@@ -177,7 +176,14 @@ const nextAfter = computed(() => {
       <StudyHeader :title="`${blockName(scope.b)} testi`" @back="scope = null" />
     </template>
 
-    <MasteryQuiz v-if="scope && view === 'test'" :key="JSON.stringify(scope)" :pool="pool" :build="build">
+    <MasteryQuiz
+      v-if="scope && view === 'test'"
+      :key="JSON.stringify(scope)"
+      :pool="pool"
+      :build="build"
+      :storage-key="`kb2:${scope.kind === 'unit' ? `u${scope.u}` : `b${scope.b}`}`"
+      :label="(i: number) => `${all[i]!.k} · ${all[i]!.m}`"
+    >
       <template #feedback="{ item }">
         <p class="mt-2">
           <span class="jp text-2xl">{{ all[item]!.k }}</span> = <b>{{ all[item]!.m }}</b>
