@@ -271,8 +271,10 @@ const itemLabel = (i: number) => {
       <template v-if="tab === 'learn'">
         <BaseInput v-model="query" label="Ara" type="search" label-hidden placeholder="Ara: su, 氵, deniz, 進, しんぽ…" class="mb-4" />
         <p v-if="!shown.length" class="text-ink-soft">Sonuç yok.</p>
-        <ul class="grid gap-2">
-          <li v-for="r in shown" :key="r.id">
+        <!-- minmax(0,1fr) + min-w-0: a grid item is otherwise as wide as its
+             longest line, and the kanji row is one long unbroken line. -->
+        <ul class="grid grid-cols-[minmax(0,1fr)] gap-2">
+          <li v-for="r in shown" :key="r.id" class="min-w-0">
             <button
               type="button"
               class="surface focus-ring rounded-card flex w-full min-w-0 items-center gap-4 p-3 text-start"

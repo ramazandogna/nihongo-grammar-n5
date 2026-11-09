@@ -14,6 +14,11 @@
 }
 
 @layer base {
+  /* Long Japanese runs and URLs have no spaces to break at; let them wrap
+     anywhere rather than widen the page on a phone. */
+  main {
+    overflow-wrap: anywhere;
+  }
   html {
     -webkit-text-size-adjust: 100%;
   }
