@@ -21,6 +21,22 @@ export interface SavedRun<K> {
   tries: number
   wrong: number
   misses: [K, number][]
+  /** Questions answered wrong, kept so they come back exactly the same. */
+  retry?: [K, unknown][]
+}
+
+/** One missed item. `group` gathers items under a parent — a kanji under its radical. */
+export interface Miss {
+  label: string
+  n: number
+  group?: string
+}
+
+export interface MissGroup {
+  /** Empty for items that belong to no group. */
+  group: string
+  n: number
+  items: { label: string; n: number }[]
 }
 
 export interface Attempt {
@@ -29,7 +45,7 @@ export interface Attempt {
   tries: number
   wrong: number
   /** Items missed in this run, with how many times. */
-  misses: { label: string; n: number }[]
+  misses: Miss[]
 }
 
 const RUN = (key: string) => `nihongo-run:${key}`
@@ -66,12 +82,31 @@ export const clearHistory = (key: string) => write(HISTORY(key), null)
 export const accuracy = (a: { tries: number; wrong: number }) =>
   a.tries ? Math.round(((a.tries - a.wrong) / a.tries) * 100) : 0
 
-/** Across every run: the items missed most often. */
-export function mostMissed(history: Attempt[], top = 10) {
-  const m = new Map<string, number>()
-  for (const a of history) for (const x of a.misses) m.set(x.label, (m.get(x.label) ?? 0) + x.n)
-  return [...m.entries()]
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, top)
-    .map(([label, n]) => ({ label, n }))
+/**
+ * Sum misses by group, then by item inside each group, both most-missed
+ * first. A group's total is its items' sum, so a radical whose kanji were
+ * missed 4 + 2 times ranks as 6 even if no single kanji reaches that.
+ */
+export function groupMisses(misses: Miss[], top = 10): MissGroup[] {
+  const groups = new Map<string, Map<string, number>>()
+  for (const x of misses) {
+    const g = groups.get(x.group ?? '') ?? new Map<string, number>()
+    g.set(x.label, (g.get(x.label) ?? 0) + x.n)
+    groups.set(x.group ?? '', g)
+  }
+  const out = [...groups].map(([group, items]) => ({
+    group,
+    n: [...items.values()].reduce((s, n) => s + n, 0),
+    items: [...items].map(([label, n]) => ({ label, n })).sort((a, b) => b.n - a.n),
+  }))
+  // Ungrouped items rank one by one, as groups of their own.
+  const flat = out.filter((g) => !g.group).flatMap((g) => g.items.map((it) => ({ group: '', n: it.n, items: [it] })))
+  return [...out.filter((g) => g.group), ...flat].sort((a, b) => b.n - a.n).slice(0, top)
 }
+
+/** Across every run: the items (or groups) missed most often. */
+export const mostMissed = (history: Attempt[], top = 10) =>
+  groupMisses(
+    history.flatMap((a) => a.misses),
+    top,
+  )

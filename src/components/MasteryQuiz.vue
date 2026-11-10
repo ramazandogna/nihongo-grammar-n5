@@ -3,9 +3,10 @@ import { computed, onMounted, ref, watch } from 'vue'
 import { BaseButton, BaseCard, BaseSheet, ProgressBar } from 'rei-kit'
 
 import { usePageContext } from '@/lib/page'
-import { addAttempt, loadRun, saveRun } from '@/lib/quiz-store'
+import { addAttempt, groupMisses, loadRun, saveRun, type Miss } from '@/lib/quiz-store'
 import { notation, plain } from '@/lib/ruby'
 import { shuffle } from '@/lib/shuffle'
+import MissList from './MissList.vue'
 import QuizHistory from './QuizHistory.vue'
 
 export interface Question {
@@ -36,12 +37,14 @@ export interface Question {
  * same question — and each finished run goes into the test's history, named
  * item by item through `label`.
  */
-const { pool, build, storageKey, label } = defineProps<{
+const { pool, build, storageKey, label, group } = defineProps<{
   pool: readonly K[]
   build: (key: K) => Question
   storageKey?: string
   /** How an item is named in the mistakes list (notation allowed). */
   label?: (key: K) => string
+  /** The parent an item's mistakes add up under — a kanji's radical. */
+  group?: (key: K) => string
 }>()
 defineSlots<{
   feedback?: (p: { item: K; correct: boolean }) => unknown
@@ -67,12 +70,16 @@ const showHistory = ref(false)
 const explaining = ref(false)
 const actions = ref<HTMLElement | null>(null)
 /** The finished run's mistakes, kept for the end screen. */
-const lastMisses = ref<{ label: string; n: number }[]>([])
+const lastMisses = ref<Miss[]>([])
+const lastGroups = computed(() => groupMisses(lastMisses.value, Infinity))
+/** Questions answered wrong: they come back exactly as they were, not rebuilt. */
+const retry = ref(new Map<K, Question>())
 
 function start() {
   queue.value = shuffle(pool)
   counts.value = new Map(pool.map((k) => [k, 0]))
   misses.value = new Map()
+  retry.value = new Map()
   tries.value = 0
   wrong.value = 0
   finished.value = false
@@ -93,6 +100,7 @@ function persist() {
     tries: tries.value,
     wrong: wrong.value,
     misses: [...misses.value],
+    retry: [...retry.value],
   })
 }
 /** The saved run, if it belongs to this same test. */
@@ -110,6 +118,7 @@ function resume(): boolean {
   tries.value = run.tries
   wrong.value = run.wrong
   misses.value = new Map(run.misses)
+  retry.value = new Map((run.retry ?? []) as [K, Question][])
   finished.value = false
   resumed.value = true
   return true
@@ -119,7 +128,7 @@ function finish() {
   current.value = null
   lastMisses.value = [...misses.value]
     .sort((a, b) => b[1] - a[1])
-    .map(([k, n]) => ({ label: label ? label(k) : String(k), n }))
+    .map(([k, n]) => ({ label: label ? label(k) : String(k), n, ...(group ? { group: group(k) } : {}) }))
   if (storageKey) {
     saveRun(storageKey, null)
     addAttempt(storageKey, {
@@ -141,7 +150,7 @@ function next() {
     return
   }
   current.value = k
-  question.value = build(k)
+  question.value = retry.value.get(k) ?? build(k)
   order.value = shuffle(question.value.options.map((_, i) => i))
   picked.value = null
 }
@@ -151,12 +160,14 @@ function pick(i: number) {
   tries.value++
   const k = current.value
   if (i === question.value.answer) {
+    retry.value.delete(k)
     const c = (counts.value.get(k) ?? 0) + 1
     counts.value.set(k, c)
     if (c < 2) queue.value.splice(Math.min(queue.value.length, 4 + Math.floor(Math.random() * 4)), 0, k)
   } else {
     wrong.value++
     misses.value.set(k, (misses.value.get(k) ?? 0) + 1)
+    retry.value.set(k, question.value)
     queue.value.splice(Math.min(queue.value.length, 2), 0, k)
   }
   persist()
@@ -302,16 +313,7 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
       </p>
       <BaseCard v-if="lastMisses.length" class="mx-auto mt-5 max-w-md text-start">
         <p class="mb-2 font-bold">❌ {{ t.runMisses }}</p>
-        <ul class="grid gap-1">
-          <li
-            v-for="m in lastMisses"
-            :key="m.label"
-            class="bg-muted rounded-control flex justify-between gap-3 px-3 py-1.5"
-          >
-            <span class="jp min-w-0 text-lg" v-html="notation(m.label)" />
-            <span class="text-negative shrink-0 text-sm font-bold">{{ m.n }}×</span>
-          </li>
-        </ul>
+        <MissList :groups="lastGroups" />
       </BaseCard>
       <div class="mt-6 flex flex-wrap justify-center gap-3">
         <BaseButton variant="secondary" @click="restart">{{ t.again }}</BaseButton>

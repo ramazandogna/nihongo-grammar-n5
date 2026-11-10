@@ -240,6 +240,7 @@ function build(i: number): Question {
         size: 'big',
         options: [m(r), ...pick3(radicals.map(m), m(r))],
         answer: 0,
+        explain: `${r.radical} = ${m(r)} · ${r.name_jp} · ${r.kanji.map((x) => x.kanji).join(' ')}`,
       }
     }
     const k = shuffle(r.kanji)[0]!
@@ -277,6 +278,11 @@ const itemLabel = (i: number) => {
   if (test.kind === 'rad') return `${radicals[i]!.radical} ${m(radicals[i]!)}`
   return `${all[i]!.kanji} ${m(all[i]!)}`
 }
+/** Kanji mistakes add up under their radical; radical tests have no groups. */
+const itemGroup = (i: number) => {
+  const r = radicals[all[i]!.ri]!
+  return `${r.radical} ${m(r)}`
+}
 </script>
 
 <template>
@@ -290,6 +296,7 @@ const itemLabel = (i: number) => {
         :build="build"
         :storage-key="storageKey(running)"
         :label="itemLabel"
+        :group="running.kind === 'kan' ? itemGroup : undefined"
       >
         <template #feedback="{ item }">
           <div v-if="running.kind === 'kan'" class="mt-2 text-[15px]">

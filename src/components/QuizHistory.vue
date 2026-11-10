@@ -3,8 +3,8 @@ import { computed, ref } from 'vue'
 import { BaseButton } from 'rei-kit'
 
 import { usePageContext } from '@/lib/page'
-import { notation } from '@/lib/ruby'
-import { accuracy, clearHistory, loadHistory, mostMissed, type Attempt } from '@/lib/quiz-store'
+import { accuracy, clearHistory, groupMisses, loadHistory, mostMissed, type Attempt } from '@/lib/quiz-store'
+import MissList from './MissList.vue'
 
 /**
  * A test's record on this device: the latest score as a ring, the trend of
@@ -114,15 +114,7 @@ function reset() {
       <!-- Most missed -->
       <div v-if="worst.length">
         <p class="text-ink-soft mb-1.5 text-xs font-semibold tracking-wide uppercase">{{ pick(S.worst) }}</p>
-        <ul class="grid gap-1.5">
-          <li v-for="w in worst" :key="w.label" class="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3">
-            <span class="jp min-w-0 truncate text-lg" v-html="notation(w.label)" />
-            <span class="text-negative text-sm font-bold">{{ w.n }}×</span>
-            <span class="bg-muted col-span-2 h-1.5 overflow-hidden rounded-full">
-              <span class="bg-negative block h-full rounded-full" :style="{ width: `${(w.n / worst[0]!.n) * 100}%` }" />
-            </span>
-          </li>
-        </ul>
+        <MissList :groups="worst" />
       </div>
 
       <!-- Every run -->
@@ -143,10 +135,7 @@ function reset() {
             </button>
             <ul v-if="open === i" class="border-hair grid gap-1 border-t px-3 py-2">
               <li v-if="!a.misses.length" class="text-positive text-sm">{{ pick(S.clean) }}</li>
-              <li v-for="m in a.misses" :key="m.label" class="flex justify-between gap-3">
-                <span class="jp min-w-0" v-html="notation(m.label)" />
-                <span class="text-negative shrink-0 text-sm">{{ m.n }}×</span>
-              </li>
+              <li v-if="a.misses.length"><MissList :groups="groupMisses(a.misses, Infinity)" /></li>
             </ul>
           </li>
         </ul>
