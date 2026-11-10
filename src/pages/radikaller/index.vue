@@ -59,7 +59,10 @@ const U = {
   search: ['Ara: su, 氵, deniz, 進, しんぽ…', 'Search: water, 氵, sea, 進, しんぽ…'],
   searchLabel: ['Ara', 'Search'],
   none: ['Sonuç yok.', 'No results.'],
-  lead: [(r: number, k: number, w: number) => `${r} radikal · ${k} kanji · ${w} kelime`, (r: number, k: number, w: number) => `${r} radicals · ${k} kanji · ${w} words`],
+  lead: [
+    (r: number, k: number, w: number) => `${r} radikal · ${k} kanji · ${w} kelime`,
+    (r: number, k: number, w: number) => `${r} radicals · ${k} kanji · ${w} words`,
+  ],
   other: ['Diğer biçim:', 'Other form:'],
   where: ['📍 Nerede?', '📍 Where?'],
   origin: ['🖼️ Neyin resmi?', '🖼️ A picture of what?'],
@@ -72,12 +75,18 @@ const U = {
   same: ['🔊 Aynı okunan:', '🔊 Same reading:'],
   sameNote: [' — 表記 sorularında bunlar şık olarak gelir', ' — these show up as options in 表記 questions'],
   sameRad: ['👀 Aynı radikal:', '👀 Same radical:'],
-  radTest: [(r: string) => `試 ${r} kanjilerinin testi (JLPT tarzı)`, (r: string) => `試 Test the ${r} kanji (JLPT style)`],
+  radTest: [
+    (r: string) => `試 ${r} kanjilerinin testi (JLPT tarzı)`,
+    (r: string) => `試 Test the ${r} kanji (JLPT style)`,
+  ],
   testsLead: [
     'Sorular JLPT tarzında: 漢字読み (okunuş, ゛・uzun ses・っ tuzaklarıyla), 表記 (aynı radikalli/aynı okunan kanjiler arasından doğru yazılış) ve anlam. Testten çıksan da kaldığın yerden devam eder.',
     'Questions are JLPT style: 漢字読み (reading, with ゛ / long-vowel / っ traps), 表記 (the right spelling among kanji with the same radical or reading) and meaning. Leave a test and it picks up where you stopped.',
   ],
-  runSub: ['Her soru 2 kez doğru bilinene kadar · ilerleme kaydedilir', 'Until every question is right twice · progress is saved'],
+  runSub: [
+    'Her soru 2 kez doğru bilinene kadar · ilerleme kaydedilir',
+    'Until every question is right twice · progress is saved',
+  ],
   radN: [(n: number) => `${n} radikal`, (n: number) => `${n} radicals`],
   kanN: [(n: number) => `${n} kanji`, (n: number) => `${n} kanji`],
   runs: [(n: number, p: number) => `${n} deneme · son %${p}`, (n: number, p: number) => `${n} runs · last ${p}%`],
@@ -93,11 +102,12 @@ const U = {
 } as const
 const u = <K extends keyof typeof U>(k: K): (typeof U)[K][0] => U[k][en.value ? 1 : 0] as (typeof U)[K][0]
 
-
 const radicals = data as Radical[]
 const all = radicals.flatMap((r, ri) => r.kanji.map((k) => ({ ...k, ri })))
 const wordCount = all.reduce((n, k) => n + k.words.length, 0)
-const vocab: Vocab[] = all.flatMap((k) => k.words.map((w) => ({ word: w.word, reading: w.reading, meaning: w.meaning_tr })))
+const vocab: Vocab[] = all.flatMap((k) =>
+  k.words.map((w) => ({ word: w.word, reading: w.reading, meaning: w.meaning_tr })),
+)
 const byChar = new Map(all.map((k) => [k.kanji, k]))
 
 /* ── What the learn cards work out for each kanji ── */
@@ -114,7 +124,8 @@ function readingUsed(k: Kanji, w: Word): string {
 const sameSound = (k: Kanji) =>
   all.filter((x) => x.kanji !== k.kanji && x.on.some((o) => k.on.includes(o))).map((x) => x.kanji)
 /** Look-alikes: same radical. */
-const sameRadical = (k: Kanji & { ri: number }) => radicals[k.ri]!.kanji.filter((x) => x.kanji !== k.kanji).map((x) => x.kanji)
+const sameRadical = (k: Kanji & { ri: number }) =>
+  radicals[k.ri]!.kanji.filter((x) => x.kanji !== k.kanji).map((x) => x.kanji)
 const similar = (c: string) => {
   const k = byChar.get(c)
   if (!k) return []
@@ -138,7 +149,8 @@ const reading = ref<number | null>(null)
 
 /* ── Tests: short sets, JLPT-style ── */
 const SIZE = 10
-const chunk = <T,>(xs: T[], n: number) => Array.from({ length: Math.ceil(xs.length / n) }, (_, i) => xs.slice(i * n, i * n + n))
+const chunk = <T,>(xs: T[], n: number) =>
+  Array.from({ length: Math.ceil(xs.length / n) }, (_, i) => xs.slice(i * n, i * n + n))
 interface TestDef {
   id: string
   n?: number
@@ -177,7 +189,8 @@ function radicalTest(ri: number): TestDef {
 }
 
 const running = ref<TestDef | null>(null)
-const title = (x: TestDef) => (x.radical ? u('kanjiOf')(x.radical) : x.kind === 'rad' ? u('radTitle')(x.n!) : `Kanji ${x.n}`)
+const title = (x: TestDef) =>
+  x.radical ? u('kanjiOf')(x.radical) : x.kind === 'rad' ? u('radTitle')(x.n!) : `Kanji ${x.n}`
 const historyOf = ref<string | null>(null)
 watch([tab, running, reading], toTop)
 
@@ -198,7 +211,8 @@ const score = (x: TestDef) => {
   const h = loadHistory(storageKey(x))
   return h.length ? accuracy(h.at(-1)!) : null
 }
-const tone = (p: number) => (p >= 85 ? 'var(--color-positive)' : p >= 60 ? 'var(--color-warning)' : 'var(--color-negative)')
+const tone = (p: number) =>
+  p >= 85 ? 'var(--color-positive)' : p >= 60 ? 'var(--color-warning)' : 'var(--color-negative)'
 
 const pick3 = (xs: string[], not: string) => shuffle([...new Set(xs)].filter((x) => x && x !== not)).slice(0, 3)
 
@@ -208,10 +222,23 @@ function build(i: number): Question {
     const r = radicals[i]!
     const label = (x: Radical) => `${x.radical}　${m(x)}`
     if (Math.random() < 0.5) {
-      return { kind: u('kRadMean'), prompt: r.radical, size: 'big', options: [m(r), ...pick3(radicals.map(m), m(r))], answer: 0 }
+      return {
+        kind: u('kRadMean'),
+        prompt: r.radical,
+        size: 'big',
+        options: [m(r), ...pick3(radicals.map(m), m(r))],
+        answer: 0,
+      }
     }
     const k = shuffle(r.kanji)[0]!
-    return { kind: u('kRad'), prompt: k.kanji, size: 'big', options: [label(r), ...pick3(radicals.map(label), label(r))], answer: 0, explain: `${k.kanji} = ${m(k)} · ${u('radicalOf')(r.radical, m(r))}` }
+    return {
+      kind: u('kRad'),
+      prompt: k.kanji,
+      size: 'big',
+      options: [label(r), ...pick3(radicals.map(label), label(r))],
+      answer: 0,
+      explain: `${k.kanji} = ${m(k)} · ${u('radicalOf')(r.radical, m(r))}`,
+    }
   }
   const k = all[i]!
   const w = shuffle(k.words)[0]
@@ -225,7 +252,8 @@ function build(i: number): Question {
   }
   if (w && roll < 0.8 && hasKanji(w.word)) {
     const opts = spellingOptions({ word: w.word, reading: w.reading, meaning: m(w) }, similar)
-    if (opts.length === 4) return { kind: u('hyouki'), prompt: `[${w.reading}]`, size: 'jp', options: opts, answer: 0, explain }
+    if (opts.length === 4)
+      return { kind: u('hyouki'), prompt: `[${w.reading}]`, size: 'jp', options: opts, answer: 0, explain }
   }
   // Meaning, with look-alike kanji as the wrong options.
   const lookalike = shuffle([...sameRadical(k), ...sameSound(k)].map((c) => m(byChar.get(c)!)))
@@ -244,7 +272,13 @@ const itemLabel = (i: number) => {
     <!-- A test running -->
     <template v-if="running">
       <StudyHeader :title="title(running)" :sub="u('runSub')" @back="running = null" />
-      <MasteryQuiz :key="running.id" :pool="running.pool" :build="build" :storage-key="storageKey(running)" :label="itemLabel">
+      <MasteryQuiz
+        :key="running.id"
+        :pool="running.pool"
+        :build="build"
+        :storage-key="storageKey(running)"
+        :label="itemLabel"
+      >
         <template #feedback="{ item }">
           <div v-if="running.kind === 'kan'" class="mt-2 text-[15px]">
             <p class="jp text-ink-soft">{{ all[item]!.on.join('・') }} ／ {{ all[item]!.kun.join('・') }}</p>
@@ -278,12 +312,25 @@ const itemLabel = (i: number) => {
               </div>
             </div>
             <dl v-if="guide(r.radical)" class="mt-4 grid gap-2 text-[15px]">
-              <div><dt class="font-bold">{{ u('where') }}</dt><dd>{{ guide(r.radical)!.where }}</dd></div>
-              <div><dt class="font-bold">{{ u('origin') }}</dt><dd>{{ guide(r.radical)!.origin }}</dd></div>
-              <div><dt class="font-bold">{{ u('lends') }}</dt><dd>{{ guide(r.radical)!.lends }}</dd></div>
-              <div class="border-primary border-s-4 ps-3"><dt class="font-bold">{{ u('hook') }}</dt><dd>{{ guide(r.radical)!.hook }}</dd></div>
+              <div>
+                <dt class="font-bold">{{ u('where') }}</dt>
+                <dd>{{ guide(r.radical)!.where }}</dd>
+              </div>
+              <div>
+                <dt class="font-bold">{{ u('origin') }}</dt>
+                <dd>{{ guide(r.radical)!.origin }}</dd>
+              </div>
+              <div>
+                <dt class="font-bold">{{ u('lends') }}</dt>
+                <dd>{{ guide(r.radical)!.lends }}</dd>
+              </div>
+              <div class="border-primary border-s-4 ps-3">
+                <dt class="font-bold">{{ u('hook') }}</dt>
+                <dd>{{ guide(r.radical)!.hook }}</dd>
+              </div>
               <div v-if="guide(r.radical)!.confuse" class="border-negative border-s-4 ps-3">
-                <dt class="font-bold">{{ u('confuse') }}</dt><dd>{{ guide(r.radical)!.confuse }}</dd>
+                <dt class="font-bold">{{ u('confuse') }}</dt>
+                <dd>{{ guide(r.radical)!.confuse }}</dd>
               </div>
             </dl>
           </BaseCard>
@@ -295,16 +342,28 @@ const itemLabel = (i: number) => {
                 <p class="text-lg font-bold"><RevealText :text="m(k)" /></p>
                 <p class="text-ink-soft text-sm">{{ u('radicalOf')(r.radical, m(r)) }}</p>
                 <div class="mt-1.5 grid gap-1 text-[15px]">
-                  <p v-if="k.on.length"><b>音読み</b> <span class="jp text-lg">{{ k.on.join('・') }}</span> <span class="text-ink-soft text-sm">{{ u('on') }}</span></p>
-                  <p v-if="k.kun.length"><b>訓読み</b> <span class="jp text-lg">{{ k.kun.join('・') }}</span> <span class="text-ink-soft text-sm">{{ u('kun') }}</span></p>
+                  <p v-if="k.on.length">
+                    <b>音読み</b> <span class="jp text-lg">{{ k.on.join('・') }}</span>
+                    <span class="text-ink-soft text-sm">{{ u('on') }}</span>
+                  </p>
+                  <p v-if="k.kun.length">
+                    <b>訓読み</b> <span class="jp text-lg">{{ k.kun.join('・') }}</span>
+                    <span class="text-ink-soft text-sm">{{ u('kun') }}</span>
+                  </p>
                 </div>
               </div>
             </div>
             <ul class="mt-3 grid gap-1.5">
-              <li v-for="w in k.words" :key="w.word" class="bg-muted rounded-control flex flex-wrap items-center gap-x-3 gap-y-0.5 px-3 py-1.5">
+              <li
+                v-for="w in k.words"
+                :key="w.word"
+                class="bg-muted rounded-control flex flex-wrap items-center gap-x-3 gap-y-0.5 px-3 py-1.5"
+              >
                 <span class="jp min-w-24 text-xl leading-loose" lang="ja" v-html="rubyWord(w.word, w.reading)" />
                 <span class="text-[15px]"><RevealText :text="m(w)" /></span>
-                <span v-if="readingUsed(k, w)" class="jp text-primary ms-auto text-sm font-semibold">{{ readingUsed(k, w) }}</span>
+                <span v-if="readingUsed(k, w)" class="jp text-primary ms-auto text-sm font-semibold">{{
+                  readingUsed(k, w)
+                }}</span>
               </li>
             </ul>
             <div v-if="sameSound(k).length || sameRadical({ ...k, ri }).length" class="mt-3 grid gap-1 text-sm">
@@ -312,7 +371,9 @@ const itemLabel = (i: number) => {
                 <b>{{ u('same') }}</b> <span class="jp text-lg">{{ sameSound(k).join(' ') }}</span>
                 <span class="text-ink-soft">{{ u('sameNote') }}</span>
               </p>
-              <p><b>{{ u('sameRad') }}</b> <span class="jp text-lg">{{ sameRadical({ ...k, ri }).join(' ') }}</span></p>
+              <p>
+                <b>{{ u('sameRad') }}</b> <span class="jp text-lg">{{ sameRadical({ ...k, ri }).join(' ') }}</span>
+              </p>
             </div>
           </BaseCard>
 
@@ -331,7 +392,14 @@ const itemLabel = (i: number) => {
       <SegmentedControl v-model="tab" :options="tabs" class="mb-4" />
 
       <template v-if="tab === 'learn'">
-        <BaseInput v-model="query" :label="u('searchLabel')" type="search" label-hidden :placeholder="u('search')" class="mb-4" />
+        <BaseInput
+          v-model="query"
+          :label="u('searchLabel')"
+          type="search"
+          label-hidden
+          :placeholder="u('search')"
+          class="mb-4"
+        />
         <p v-if="!shown.length" class="text-ink-soft">{{ u('none') }}</p>
         <!-- minmax(0,1fr) + min-w-0: a grid item is otherwise as wide as its
              longest line, and the kanji row is one long unbroken line. -->
@@ -346,7 +414,9 @@ const itemLabel = (i: number) => {
               <span class="min-w-0 flex-1">
                 <span class="block font-bold">{{ m(r) }}</span>
                 <span class="jp text-ink-soft block text-sm">{{ r.name_jp }}</span>
-                <span class="jp text-ink-soft block truncate text-lg tracking-[0.12em]">{{ r.kanji.map((k) => k.kanji).join('') }}</span>
+                <span class="jp text-ink-soft block truncate text-lg tracking-[0.12em]">{{
+                  r.kanji.map((k) => k.kanji).join('')
+                }}</span>
               </span>
               <span class="text-ink-soft shrink-0" aria-hidden="true">→</span>
             </button>
@@ -367,12 +437,17 @@ const itemLabel = (i: number) => {
               >
               <div class="min-w-0 flex-1">
                 <p class="font-bold">{{ title(x) }}</p>
-                <p class="text-ink-soft text-sm">{{ x.kind === 'rad' ? u('radN')(x.pool.length) : u('kanN')(x.pool.length) }}</p>
+                <p class="text-ink-soft text-sm">
+                  {{ x.kind === 'rad' ? u('radN')(x.pool.length) : u('kanN')(x.pool.length) }}
+                </p>
               </div>
               <span
                 v-if="score(x) !== null"
                 class="shrink-0 rounded-full px-2 py-0.5 text-sm font-bold"
-                :style="{ color: tone(score(x)!), background: `color-mix(in oklab, ${tone(score(x)!)} 14%, transparent)` }"
+                :style="{
+                  color: tone(score(x)!),
+                  background: `color-mix(in oklab, ${tone(score(x)!)} 14%, transparent)`,
+                }"
                 >{{ score(x) }}%</span
               >
             </div>
@@ -387,7 +462,9 @@ const itemLabel = (i: number) => {
                 @click="historyOf = historyOf === x.id ? null : x.id"
               >
                 <svg viewBox="0 0 20 20" class="size-4" fill="currentColor" aria-hidden="true">
-                  <rect x="2" y="11" width="4" height="7" rx="1" /><rect x="8" y="6" width="4" height="12" rx="1" /><rect x="14" y="2" width="4" height="16" rx="1" />
+                  <rect x="2" y="11" width="4" height="7" rx="1" />
+                  <rect x="8" y="6" width="4" height="12" rx="1" />
+                  <rect x="14" y="2" width="4" height="16" rx="1" />
                 </svg>
                 {{ u('stats') }}
               </BaseButton>

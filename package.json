@@ -2,7 +2,10 @@
   "name": "nihongo",
   "version": "1.0.0",
   "private": true,
-  "description": "Kişisel Japonca çalışma sitesi: okul dersleri, iş yeri Japoncası, JLPT N5–N3 hazırlığı.",
+  "description": "Personal Japanese study site: school lessons, workplace Japanese, JLPT N5–N3 prep.",
+  "author": "Ramazan Doğan",
+  "license": "UNLICENSED",
+  "homepage": "https://ramazandogna.github.io/nihongo-grammar-n5/",
   "type": "module",
   "scripts": {
     "dev": "vite",

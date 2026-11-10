@@ -12,8 +12,16 @@ export type Lang = 'tr' | 'en' | 'zh'
 
 /** rei-kit's palettes. Each page picks one; the shared layout does the rest. */
 export type Palette =
-  | 'rei' | 'nord' | 'dracula' | 'catppuccin' | 'solarized'
-  | 'gruvbox' | 'tokyo-night' | 'rose-pine' | 'sakura' | 'matcha'
+  | 'rei'
+  | 'nord'
+  | 'dracula'
+  | 'catppuccin'
+  | 'solarized'
+  | 'gruvbox'
+  | 'tokyo-night'
+  | 'rose-pine'
+  | 'sakura'
+  | 'matcha'
 
 export interface SitePage {
   path: string
@@ -25,23 +33,56 @@ export interface SitePage {
   langs: readonly Lang[]
   /** Which home-menu folder it sits in. */
   group?: Group
+  /** The menu card in English (title and description above are Turkish). */
+  en: { title: string; description: string }
 }
 
 export type Group = 'school' | 'work' | 'self'
+
+export interface MenuGroup {
+  id: Group
+  icon: string
+  title: string
+  description: string
+  en: { title: string; description: string }
+}
+
 /** The home menu's folders, in order. */
-export const GROUPS: readonly { id: Group; icon: string; title: string; description: string }[] = [
-  { id: 'school', icon: '📁', title: 'Okul Dersleri', description: 'Derste gördüğümüz kitaplar ve çalışma yerleri' },
-  { id: 'work', icon: '💼', title: 'İş Yeri Japoncası', description: 'İşte kullandığım Japonca: müşteri, sipariş, menü' },
-  { id: 'self', icon: '📚', title: 'Kendi Çalışmam', description: 'Sınav hazırlığı, radikaller, ek kitaplar' },
+export const GROUPS: readonly MenuGroup[] = [
+  {
+    id: 'school',
+    icon: '📁',
+    title: 'Okul Dersleri',
+    description: 'Derste gördüğümüz kitaplar ve çalışma yerleri',
+    en: { title: 'School Lessons', description: 'The books and study material from class' },
+  },
+  {
+    id: 'work',
+    icon: '💼',
+    title: 'İş Yeri Japoncası',
+    description: 'İşte kullandığım Japonca: müşteri, sipariş, menü',
+    en: { title: 'Workplace Japanese', description: 'The Japanese I use at work: customers, orders, menu' },
+  },
+  {
+    id: 'self',
+    icon: '📚',
+    title: 'Kendi Çalışmam',
+    description: 'Sınav hazırlığı ve radikaller',
+    en: { title: 'Self Study', description: 'Exam preparation and radicals' },
+  },
 ]
 
 export const HOME: SitePage = {
   path: '/',
   icon: '日',
   title: 'Nihongo',
-  description: 'Kişisel Japonca çalışma sitesi: N5 ve N4 gramer, kanji kitapları ve kelime setleri.',
+  description: 'Kişisel Japonca çalışma sitesi: okul dersleri, iş yeri Japoncası, JLPT N5–N3 hazırlığı.',
   palette: 'nord',
-  langs: ['tr', 'en', 'zh'],
+  langs: ['tr', 'en'],
+  en: {
+    title: 'Nihongo',
+    description: 'Personal Japanese study site: school lessons, workplace Japanese, JLPT N5–N3 prep.',
+  },
 }
 
 export const PAGES: readonly SitePage[] = [
@@ -53,6 +94,11 @@ export const PAGES: readonly SitePage[] = [
     palette: 'tokyo-night',
     langs: ['tr'],
     group: 'school',
+    en: {
+      title: 'Blue Book',
+      description:
+        'The blue book from school: reading texts, grammar, word game, exercises and tests, lesson by lesson.',
+    },
   },
   {
     path: '/business-nihongo/',
@@ -62,6 +108,10 @@ export const PAGES: readonly SitePage[] = [
     palette: 'rei',
     langs: ['tr'],
     group: 'school',
+    en: {
+      title: 'Business Nihongo',
+      description: 'ISI ビジネス日本語 中級Ⅰ: reading company notices, inviting with 敬語, business writing patterns.',
+    },
   },
   {
     path: '/past-n3/',
@@ -71,6 +121,11 @@ export const PAGES: readonly SitePage[] = [
     palette: 'solarized',
     langs: ['tr'],
     group: 'self',
+    en: {
+      title: 'Past N3 Papers',
+      description:
+        'Past JLPT N3 exams: every question explained, readings line by line, listening with audio and script.',
+    },
   },
   {
     path: '/n5/',
@@ -79,7 +134,11 @@ export const PAGES: readonly SitePage[] = [
     description: 'N5 dilbilgisi: fiil çekimleri, partikeller, N5 kanjileri, örnek cümleler ve quizler.',
     palette: 'rose-pine',
     langs: ['tr'],
-    group: 'self',
+    group: 'school',
+    en: {
+      title: 'N5 Grammar',
+      description: 'N5 grammar: verb forms, particles, N5 kanji, example sentences and quizzes.',
+    },
   },
   {
     path: '/n4/',
@@ -89,6 +148,10 @@ export const PAGES: readonly SitePage[] = [
     palette: 'gruvbox',
     langs: ['tr'],
     group: 'school',
+    en: {
+      title: 'N4 Grammar',
+      description: 'All of JLPT N4 grammar: 46 topics, romaji and examples, N4 kanji and vocabulary, quizzes.',
+    },
   },
   {
     path: '/n4/13-15/',
@@ -98,6 +161,7 @@ export const PAGES: readonly SitePage[] = [
     palette: 'catppuccin',
     langs: ['tr', 'en', 'zh'],
     group: 'school',
+    en: { title: 'N4 Grammar 13–15', description: 'Lessons 13・14・15: grammar points, dialogues and two tests.' },
   },
   {
     path: '/kanji-n3-book/',
@@ -107,6 +171,10 @@ export const PAGES: readonly SitePage[] = [
     palette: 'sakura',
     langs: ['tr', 'en', 'zh'],
     group: 'school',
+    en: {
+      title: 'N3 Kanji Book',
+      description: 'N3 vocabulary/kanji questions 1–35, reading (問題4・5), listening lessons and tests.',
+    },
   },
   {
     path: '/kanji-book-2/',
@@ -115,7 +183,11 @@ export const PAGES: readonly SitePage[] = [
     description: '18 ünitede 210 kanji: en bilinen kelimeler, furigana, ünite ve dört ünitelik testler.',
     palette: 'sakura',
     langs: ['tr'],
-    group: 'self',
+    group: 'school',
+    en: {
+      title: 'Kanji Book 2',
+      description: '210 kanji in 18 units: common words, furigana, unit tests and four-unit tests.',
+    },
   },
   {
     path: '/radikaller/',
@@ -125,6 +197,10 @@ export const PAGES: readonly SitePage[] = [
     palette: 'dracula',
     langs: ['tr', 'en'],
     group: 'self',
+    en: {
+      title: 'Radicals',
+      description: '43 radicals (部首), 347 N3 kanji and their words: in-depth lessons and tests.',
+    },
   },
   {
     path: '/matsuya/',
@@ -134,6 +210,10 @@ export const PAGES: readonly SitePage[] = [
     palette: 'matcha',
     langs: ['tr'],
     group: 'work',
+    en: {
+      title: 'Matsuya Vocabulary',
+      description: 'Matsuya workplace Japanese: menu, orders, slips, kitchen and instructions.',
+    },
   },
 ]
 

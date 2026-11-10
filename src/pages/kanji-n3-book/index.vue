@@ -42,7 +42,11 @@ const sections = [1, 2, 3, 4, 5].map((m) => {
 
 const L = {
   section: [(k: number) => `Bölüm ${k}`, (k: number) => `Section ${k}`, (k: number) => `第${k}部分`],
-  lead: ['35 soru · 5 bölüm · önce öğren, sonra test', '35 questions · 5 sections · learn first, then test', '35 题 · 5 个部分 · 先学习，再测试'],
+  lead: [
+    '35 soru · 5 bölüm · önce öğren, sonra test',
+    '35 questions · 5 sections · learn first, then test',
+    '35 题 · 5 个部分 · 先学习，再测试',
+  ],
   all: ['Genel test (1–35)', 'Full test (1–35)', '综合测试（1–35）'],
   nextSec: ['Sonraki bölüm →', 'Next section →', '下一部分 →'],
   words: ['bölümün kelimeleri altı çizili', 'words of this section are underlined', '本部分的词汇带下划线'],
@@ -125,7 +129,14 @@ function build(i: number): Question {
 
       <h2 class="text-ink-soft mt-8 mb-2 text-sm font-semibold">読解 · Okuma</h2>
       <div class="grid gap-3">
-        <BaseCard v-for="m in [4, 5] as const" :key="m" interactive as="button" class="text-start" @click="readPart = m">
+        <BaseCard
+          v-for="m in [4, 5] as const"
+          :key="m"
+          interactive
+          as="button"
+          class="text-start"
+          @click="readPart = m"
+        >
           <p class="font-bold">読 問題{{ m }} · {{ m === 4 ? 'Kısa metinler' : 'Orta metinler' }}</p>
           <p class="text-ink-soft text-sm">
             {{ READING.filter((g) => g.mondai === m).length }} metin ·
@@ -137,19 +148,28 @@ function build(i: number): Question {
 
       <h2 class="text-ink-soft mt-8 mb-2 text-sm font-semibold">聴解 · Listening</h2>
       <div class="grid gap-3">
-        <BaseCard v-for="(lp, k) in LISTENING" :key="lp.id" interactive as="button" class="text-start" @click="listen = k">
+        <BaseCard
+          v-for="(lp, k) in LISTENING"
+          :key="lp.id"
+          interactive
+          as="button"
+          class="text-start"
+          @click="listen = k"
+        >
           <p class="font-bold">聴 {{ lp.title }}</p>
           <JpText :text="lp.name" class="text-ink-soft text-sm" />
-          <p class="text-primary mt-2 text-sm font-semibold">
-            {{ lp.items.length }} soru · anlatımlı, adım adım →
-          </p>
+          <p class="text-primary mt-2 text-sm font-semibold">{{ lp.items.length }} soru · anlatımlı, adım adım →</p>
         </BaseCard>
       </div>
     </template>
 
     <!-- Reading -->
     <template v-else-if="readPart !== null">
-      <StudyHeader :title="'読解 問題' + readPart" :sub="readPart === 4 ? 'Kısa metinler' : 'Orta metinler'" @back="home" />
+      <StudyHeader
+        :title="'読解 問題' + readPart"
+        :sub="readPart === 4 ? 'Kısa metinler' : 'Orta metinler'"
+        @back="home"
+      />
       <ReadingLesson :groups="readGroups" :how="readHow" />
     </template>
 
@@ -162,9 +182,17 @@ function build(i: number): Question {
     <!-- Full test -->
     <template v-else-if="fullTest">
       <StudyHeader :title="pick(L.all)" @back="home" />
-      <MasteryQuiz :pool="pool" :build="build" storage-key="kanji-n3:all" :label="(i: number) => `${items[i]!.w} · ${pick(items[i]!.mean)}`">
+      <MasteryQuiz
+        :pool="pool"
+        :build="build"
+        storage-key="kanji-n3:all"
+        :label="(i: number) => `${items[i]!.w} · ${pick(items[i]!.mean)}`"
+      >
         <template #feedback="{ item }">
-          <p class="mt-2"><JpText :text="items[item]!.w" class="text-xl" /> {{ items[item]!.r }} = <b>{{ pick(items[item]!.mean) }}</b></p>
+          <p class="mt-2">
+            <JpText :text="items[item]!.w" class="text-xl" /> {{ items[item]!.r }} =
+            <b>{{ pick(items[item]!.mean) }}</b>
+          </p>
           <p class="border-negative mt-2 border-s-4 ps-3 text-[15px]">{{ pick(items[item]!.tip) }}</p>
         </template>
       </MasteryQuiz>
@@ -189,9 +217,16 @@ function build(i: number): Question {
           </div>
           <p class="mt-1 text-lg font-bold"><RevealText :text="pick(items[i]!.mean)" /></p>
           <div v-if="items[i]!.p.length" class="my-3 grid gap-1.5">
-            <div v-for="p in items[i]!.p" :key="p[0]" class="bg-muted rounded-control flex items-center gap-3 px-3 py-2">
+            <div
+              v-for="p in items[i]!.p"
+              :key="p[0]"
+              class="bg-muted rounded-control flex items-center gap-3 px-3 py-2"
+            >
               <span class="jp w-9 text-center text-3xl">{{ p[0] }}</span>
-              <span class="text-[15px]"><b class="jp">{{ p[1] }}</b><br />{{ pick(p[2]) }}</span>
+              <span class="text-[15px]"
+                ><b class="jp">{{ p[1] }}</b
+                ><br />{{ pick(p[2]) }}</span
+              >
             </div>
           </div>
           <p class="border-negative my-3 border-s-4 ps-3 text-[15px]">{{ pick(items[i]!.tip) }}</p>
@@ -210,12 +245,24 @@ function build(i: number): Question {
           as="p"
           class="text-lg leading-[2.3]"
         />
-        <p class="border-primary mt-4 border-s-4 ps-3 text-[15px]"><RevealText :text="pick(readings[current.m]!.tr)" /></p>
+        <p class="border-primary mt-4 border-s-4 ps-3 text-[15px]">
+          <RevealText :text="pick(readings[current.m]!.tr)" />
+        </p>
       </BaseCard>
 
-      <MasteryQuiz v-else :key="current.m" :pool="pool" :build="build" :storage-key="`kanji-n3:${current.m}`" :label="(i: number) => `${items[i]!.w} · ${pick(items[i]!.mean)}`">
+      <MasteryQuiz
+        v-else
+        :key="current.m"
+        :pool="pool"
+        :build="build"
+        :storage-key="`kanji-n3:${current.m}`"
+        :label="(i: number) => `${items[i]!.w} · ${pick(items[i]!.mean)}`"
+      >
         <template #feedback="{ item }">
-          <p class="mt-2"><JpText :text="items[item]!.w" class="text-xl" /> {{ items[item]!.r }} = <b>{{ pick(items[item]!.mean) }}</b></p>
+          <p class="mt-2">
+            <JpText :text="items[item]!.w" class="text-xl" /> {{ items[item]!.r }} =
+            <b>{{ pick(items[item]!.mean) }}</b>
+          </p>
           <p class="border-negative mt-2 border-s-4 ps-3 text-[15px]">{{ pick(items[item]!.tip) }}</p>
           <p class="text-ink-soft mt-1 text-[15px]">{{ pick(items[item]!.tr) }}</p>
         </template>

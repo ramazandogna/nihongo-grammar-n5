@@ -1,78 +1,107 @@
-# 日本語 Nihongo — kişisel Japonca çalışma sitesi
+# 日本語 Nihongo
 
-**🔗 https://ramazandogna.github.io/nihongo-grammar-n5/**
+A personal Japanese study site: the books from my Japanese classes, the Japanese I use at work, and JLPT N5–N3 preparation.
 
-Japonya'da çalışırken N5'ten N3'e ilerlemek için kendime yaptığım çalışma sitesi:
-okulda gördüğümüz kitaplar, iş yerinde kullandığım Japonca, JLPT hazırlığı.
-Açıklamalar Türkçe; bazı sayfalar İngilizce ve Çince de.
+**Live:** https://ramazandogna.github.io/nihongo-grammar-n5/
 
-- **Her kanjide furigana** — tek tuşla aç/kapa.
-- **Anlamlar bulanık** — önce kendin tahmin et, dokununca açılır.
-- **Bir sayfada tek konu** — uzun listeler sayfa sayfa.
-- **JLPT tarzı testler** — 漢字読み (゛, uzun ses, っ tuzakları), 表記 (benzer kanjiler), anlam.
-  Her soru iki kez doğru bilinene kadar sorulur; yarıda bırakılan test kaldığı yerden
-  devam eder; her testin geçmişi ve en çok yanlış yapılanlar istatistiği tutulur.
-- **Telefona göre** — 360px'te bile taşmaz; açık / koyu tema.
+Explanations are in Turkish, and the menu is in Turkish and English. Some pages are also in English and Chinese.
 
-## İçerik
+## Features
 
-Ana menü üç klasör:
+- **Furigana on every kanji.** One switch turns it on or off.
+- **Hidden meanings.** Translations are blurred until you tap them, so you guess first.
+- **One topic per page.** Long lists are split into pages.
+- **JLPT-style tests.**
+  - Three question types: 漢字読み (readings, with ゛ / long-vowel / っ traps), 表記 (the right kanji among look-alikes) and meaning.
+  - A question keeps coming back until you get it right twice.
+  - If you leave a test, it continues where you stopped.
+  - Each test keeps a history: score trend and the items you missed most.
+- **Works on phones.** No horizontal scrolling at 360px. Light and dark themes.
 
-### 📁 Okul Dersleri
+## Contents
 
-| Sayfa | İçerik | Dil |
+The home menu has three folders.
+
+### 📁 School Lessons
+
+| Page | Content | Languages |
 | --- | --- | --- |
-| [Blue Book](https://ramazandogna.github.io/nihongo-grammar-n5/blue-book/) | Okuma, gramer, kelime oyunu, alıştırma, test — ders ders | TR |
-| [Business Nihongo](https://ramazandogna.github.io/nihongo-grammar-n5/business-nihongo/) | ISI ビジネス日本語 中級Ⅰ: duyuru okuma, 敬語, iş yazışması | TR |
-| [N4 Gramer](https://ramazandogna.github.io/nihongo-grammar-n5/n4/) | N4 gramerin tamamı, kanji, kelime, quizler | TR |
-| [N4 Gramer 13–15](https://ramazandogna.github.io/nihongo-grammar-n5/n4/13-15/) | 13・14・15課 gramer, diyaloglar, testler | TR · EN · 中 |
-| [N3 Kanji Book](https://ramazandogna.github.io/nihongo-grammar-n5/kanji-n3-book/) | Kelime soruları 1–35, okuma (問題4・5), dinleme dersleri | TR · EN · 中 |
+| [Blue Book](https://ramazandogna.github.io/nihongo-grammar-n5/blue-book/) | Reading, grammar, word game, exercises and tests, lesson by lesson | TR |
+| [Business Nihongo](https://ramazandogna.github.io/nihongo-grammar-n5/business-nihongo/) | ISI ビジネス日本語 中級Ⅰ: notices, 敬語, business writing | TR |
+| [N5 Grammar](https://ramazandogna.github.io/nihongo-grammar-n5/n5/) | N5 grammar, kanji, quizzes | TR |
+| [N4 Grammar](https://ramazandogna.github.io/nihongo-grammar-n5/n4/) | All N4 grammar, kanji, vocabulary, quizzes | TR |
+| [N4 Grammar 13–15](https://ramazandogna.github.io/nihongo-grammar-n5/n4/13-15/) | Lessons 13・14・15: grammar, dialogues, tests | TR · EN · ZH |
+| [N3 Kanji Book](https://ramazandogna.github.io/nihongo-grammar-n5/kanji-n3-book/) | Questions 1–35, reading (問題4・5), listening | TR · EN · ZH |
+| [Kanji Book 2](https://ramazandogna.github.io/nihongo-grammar-n5/kanji-book-2/) | 210 kanji in 18 units | TR |
 
-### 💼 İş Yeri Japoncası
+### 💼 Workplace Japanese
 
-| Sayfa | İçerik | Dil |
+| Page | Content | Languages |
 | --- | --- | --- |
-| [Matsuya](https://ramazandogna.github.io/nihongo-grammar-n5/matsuya/) | Menü, müşteri diyalogları, sipariş fişleri, online siparişler | TR |
+| [Matsuya](https://ramazandogna.github.io/nihongo-grammar-n5/matsuya/) | Menu, customer dialogues, order slips, online orders | TR |
 
-### 📚 Kendi Çalışmam
+### 📚 Self Study
 
-| Sayfa | İçerik | Dil |
+| Page | Content | Languages |
 | --- | --- | --- |
-| [N3 Çıkmış Sorular](https://ramazandogna.github.io/nihongo-grammar-n5/past-n3/) | Çıkmış JLPT N3 sınavları, çözümlü; dinleme sesli | TR |
-| [N5](https://ramazandogna.github.io/nihongo-grammar-n5/n5/) | N5 gramer, kanji, sınav merkezi | TR |
-| [Kanji Book 2](https://ramazandogna.github.io/nihongo-grammar-n5/kanji-book-2/) | 18 ünite, 210 kanji | TR |
-| [Radikaller](https://ramazandogna.github.io/nihongo-grammar-n5/radikaller/) | 43 radikal, 347 N3 kanjisi, 470 kelime; ayrıntılı anlatım ve testler | TR · EN |
+| [Past N3 Papers](https://ramazandogna.github.io/nihongo-grammar-n5/past-n3/) | Past JLPT N3 exams, fully explained, with audio | TR |
+| [Radicals](https://ramazandogna.github.io/nihongo-grammar-n5/radikaller/) | 43 radicals, 347 N3 kanji, 470 words, in-depth lessons and tests | TR · EN |
 
-> Çıkmış sınavların metinleri ve ses dosyaları telif hakkı nedeniyle repoda yok
-> (`assets/past-n3/` gitignore'da); yayındaki sitede bu sayfa içeriksiz görünür.
+> The past exam papers and their audio are copyrighted. They are kept out of the repository (`assets/past-n3/` is gitignored), so the public site shows that page without its content.
 
-## Teknoloji
+## Tech stack
 
-Vue 3 · TypeScript · Tailwind 4 · [rei-kit](https://github.com/ramazandogna/rei-kit) (kendi UI kitim) ·
-`vite-ssg` — her sayfa önceden HTML'e çevrilir, GitHub Actions ile GitHub Pages'e yayınlanır.
+- [Vue 3](https://vuejs.org) + TypeScript
+- [Tailwind CSS 4](https://tailwindcss.com)
+- [rei-kit](https://github.com/ramazandogna/rei-kit): the UI kit, created and licensed by Ramazan Doğan
+- [vite-ssg](https://github.com/antfu-collective/vite-ssg): every page is prerendered to HTML
+- GitHub Actions deploys to GitHub Pages on every push to `main`
+
+## Getting started
+
+Requires Node ≥ 22.18 and pnpm.
 
 ```sh
 pnpm install
-pnpm dev      # http://localhost:5173
-pnpm build    # tip kontrolü + dist/
+pnpm dev        # http://localhost:5173
+pnpm build      # type-check + prerendered site in dist/
+pnpm preview
 ```
 
-Alt dizinde yayın: `VITE_BASE=/nihongo-grammar-n5/ pnpm build`.
+To build for a sub-path, as GitHub Pages does: `VITE_BASE=/nihongo-grammar-n5/ pnpm build`.
 
-## Yapı
+## Project structure
 
 ```
 src/
-  site.ts                  her sayfanın kaydı: adres, başlık, palet, diller, menü klasörü
-  pages/<adres>/index.vue  sayfa — klasör adı = URL (pages/n4/13-15 → /n4/13-15/)
+  site.ts                  page registry: path, title, palette, languages, menu folder
+  pages/<path>/index.vue   one page per folder; the folder is the URL
+                           (pages/n4/13-15 → /n4/13-15/)
   components/              SiteLayout, MasteryQuiz, QuizHistory, ReadingLesson,
-                           ListeningLesson, textbook/* (ders kitabı şablonu)
-  lib/                     jlpt.ts (soru üretimi), kanji-similar.ts, quiz-store.ts, ruby.ts
+                           ListeningLesson, textbook/* (course template)
+  lib/                     jlpt.ts (question builder), kanji-similar.ts,
+                           quiz-store.ts (resume + history), ruby.ts (furigana notation)
+legacy/                    the original single-file HTML pages (data source for n5/n4)
+scripts/extract-legacy.ts  legacy/ → data.json
 ```
 
-Yeni sayfa: `src/pages/<klasör>/index.vue` + `src/site.ts` içine bir satır.
-Veri notasyonu: `{漢字|かんじ}` furigana, `[[vurgu]]`, `[kelime]` sorulan kelime.
+### Adding a page
 
----
+1. Create `src/pages/<folder>/index.vue`, calling `usePage('/<folder>/')` and wrapping its content in `<SiteLayout>`.
+2. Add an entry to `PAGES` in `src/site.ts`: title, description, English menu text, palette, languages and menu folder.
 
-Ramazan Doğan · [Instagram](https://www.instagram.com/ramazandogna/)
+The route, menu card, `<head>` and prerendering all come from these two files.
+
+### Content notation
+
+| Syntax | Meaning |
+| --- | --- |
+| `{漢字\|かんじ}` | kanji with furigana |
+| `[[text]]` | highlighted part |
+| `[word]` | the word being tested (underlined) |
+
+## License
+
+© 2026 Ramazan Doğan. All rights reserved. See [LICENSE](LICENSE).
+
+Built with [rei-kit](https://github.com/ramazandogna/rei-kit), created and licensed by Ramazan Doğan.

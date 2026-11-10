@@ -33,10 +33,13 @@ const open = ref<number | null>(null)
 const worst = computed(() => mostMissed(runs.value, 8))
 const scores = computed(() => runs.value.map(accuracy))
 const last = computed(() => scores.value.at(-1) ?? 0)
-const avg = computed(() => (scores.value.length ? Math.round(scores.value.reduce((s, a) => s + a, 0) / scores.value.length) : 0))
+const avg = computed(() =>
+  scores.value.length ? Math.round(scores.value.reduce((s, a) => s + a, 0) / scores.value.length) : 0,
+)
 const best = computed(() => Math.max(0, ...scores.value))
 const recent = computed(() => scores.value.slice(-12))
-const tone = (p: number) => (p >= 85 ? 'var(--color-positive)' : p >= 60 ? 'var(--color-warning)' : 'var(--color-negative)')
+const tone = (p: number) =>
+  p >= 85 ? 'var(--color-positive)' : p >= 60 ? 'var(--color-warning)' : 'var(--color-negative)'
 /** Circumference of the r=42 ring. */
 const C = 2 * Math.PI * 42
 const date = (iso: string) =>

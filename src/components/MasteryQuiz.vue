@@ -119,7 +119,12 @@ function finish() {
     .map(([k, n]) => ({ label: label ? label(k) : String(k), n }))
   if (storageKey) {
     saveRun(storageKey, null)
-    addAttempt(storageKey, { at: new Date().toISOString(), tries: tries.value, wrong: wrong.value, misses: lastMisses.value })
+    addAttempt(storageKey, {
+      at: new Date().toISOString(),
+      tries: tries.value,
+      wrong: wrong.value,
+      misses: lastMisses.value,
+    })
   }
 }
 function restart() {
@@ -225,7 +230,9 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
             class="control focus-ring rounded-control jp min-h-14 px-3 py-2.5 text-xl leading-[2] [--control-border-width:2px]"
             :class="[
               wide ? 'text-start' : 'text-center',
-              picked !== null && i === question.answer ? 'bg-positive/15 [--surface-border-color:var(--color-positive)]' : '',
+              picked !== null && i === question.answer
+                ? 'bg-positive/15 [--surface-border-color:var(--color-positive)]'
+                : '',
               picked !== null && i === picked && i !== question.answer
                 ? 'bg-negative/15 [--surface-border-color:var(--color-negative)]'
                 : '',
@@ -271,7 +278,11 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
       <BaseCard v-if="lastMisses.length" class="mx-auto mt-5 max-w-md text-start">
         <p class="mb-2 font-bold">❌ {{ t.runMisses }}</p>
         <ul class="grid gap-1">
-          <li v-for="m in lastMisses" :key="m.label" class="bg-muted rounded-control flex justify-between gap-3 px-3 py-1.5">
+          <li
+            v-for="m in lastMisses"
+            :key="m.label"
+            class="bg-muted rounded-control flex justify-between gap-3 px-3 py-1.5"
+          >
             <span class="jp min-w-0 text-lg" v-html="notation(m.label)" />
             <span class="text-negative shrink-0 text-sm font-bold">{{ m.n }}×</span>
           </li>
@@ -279,7 +290,12 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
       </BaseCard>
       <div class="mt-6 flex flex-wrap justify-center gap-3">
         <BaseButton variant="secondary" @click="restart">{{ t.again }}</BaseButton>
-        <BaseButton v-if="storageKey" :variant="showHistory ? 'secondary' : 'ghost'" @click="showHistory = !showHistory">{{ t.history }}</BaseButton>
+        <BaseButton
+          v-if="storageKey"
+          :variant="showHistory ? 'secondary' : 'ghost'"
+          @click="showHistory = !showHistory"
+          >{{ t.history }}</BaseButton
+        >
         <slot name="actions" />
       </div>
       <BaseCard v-if="storageKey && showHistory" class="mx-auto mt-4 max-w-md">

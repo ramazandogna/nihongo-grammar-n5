@@ -8,7 +8,11 @@ import { ref } from 'vue'
 
 import { GROUPS, PAGES, type Group, type SitePage } from '@/site'
 
-const { pick } = usePage('/')
+const { pick, lang } = usePage('/')
+
+/** Title and description in the menu's language. */
+const text = (x: { title: string; description: string; en: { title: string; description: string } }) =>
+  lang.value === 'en' ? x.en : x
 
 /** “Türkçe · English · 中文” for a card’s flags. */
 const langNames = (p: SitePage, sep: string) => p.langs.map((x) => LANG_LABEL[x]).join(sep)
@@ -26,7 +30,7 @@ function toggle(g: Group) {
 }
 const inGroup = (g: Group) => PAGES.filter((p) => (p.group ?? 'self') === g)
 
-const LEAD = ['Bir bölüm seç', 'Choose a section', '选择一个部分']
+const LEAD = ['Bir bölüm seç', 'Choose a section']
 </script>
 
 <template>
@@ -48,10 +52,12 @@ const LEAD = ['Bir bölüm seç', 'Choose a section', '选择一个部分']
             open === g.id && g.id === 'school' ? '📂' : g.icon
           }}</span>
           <span class="min-w-0 flex-1">
-            <span class="block font-bold">{{ g.title }}</span>
-            <span class="text-ink-soft block text-sm">{{ g.description }} · {{ inGroup(g.id).length }}</span>
+            <span class="block font-bold">{{ text(g).title }}</span>
+            <span class="text-ink-soft block text-sm">{{ text(g).description }} · {{ inGroup(g.id).length }}</span>
           </span>
-          <span class="text-ink-soft transition-transform" :class="open === g.id ? 'rotate-90' : ''" aria-hidden="true">›</span>
+          <span class="text-ink-soft transition-transform" :class="open === g.id ? 'rotate-90' : ''" aria-hidden="true"
+            >›</span
+          >
         </button>
         <ul v-if="open === g.id" class="border-hair grid gap-2 border-t p-3">
           <li v-for="p in inGroup(g.id)" :key="p.path">
@@ -67,7 +73,7 @@ const LEAD = ['Bir bölüm seç', 'Choose a section', '选择一个部分']
               >
               <span class="min-w-0 flex-1">
                 <span class="flex items-start justify-between gap-2">
-                  <span class="font-bold">{{ p.title }}</span>
+                  <span class="font-bold">{{ text(p).title }}</span>
                   <span
                     class="flex shrink-0 gap-0.5 text-base leading-none"
                     :title="langNames(p, ' · ')"
@@ -75,7 +81,7 @@ const LEAD = ['Bir bölüm seç', 'Choose a section', '选择一个部分']
                     ><span v-for="x in p.langs" :key="x" aria-hidden="true">{{ LANG_FLAG[x] }}</span></span
                   >
                 </span>
-                <span class="text-ink-soft block text-sm">{{ p.description }}</span>
+                <span class="text-ink-soft block text-sm">{{ text(p).description }}</span>
               </span>
               <span class="text-ink-soft group-hover:text-primary" aria-hidden="true">→</span>
             </RouterLink>
