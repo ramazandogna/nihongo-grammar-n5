@@ -2,7 +2,7 @@
   "name": "nihongo",
   "version": "1.0.0",
   "private": true,
-  "description": "Kişisel Japonca çalışma sitesi: N5/N4 gramer, kanji kitapları ve kelime setleri.",
+  "description": "Kişisel Japonca çalışma sitesi: okul dersleri, iş yeri Japoncası, JLPT N5–N3 hazırlığı.",
   "type": "module",
   "scripts": {
     "dev": "vite",

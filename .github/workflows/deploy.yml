@@ -10,9 +10,11 @@ permissions:
   pages: write
   id-token: write
 
+# Queue deploys instead of killing one mid-sync: a cancelled Pages deployment
+# can leave the next one waiting in syncing_files.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -29,6 +31,8 @@ jobs:
       - run: pnpm build
         env:
           VITE_BASE: /${{ github.event.repository.name }}/
+      # Build-only manifests, not part of the site.
+      - run: rm -rf dist/.vite
       # Without this file Pages runs Jekyll, which drops folders starting with _.
       - run: touch dist/.nojekyll
       - uses: actions/upload-pages-artifact@v3
@@ -44,3 +48,5 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 1200000

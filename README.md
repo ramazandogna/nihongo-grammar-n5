@@ -1,62 +1,78 @@
-# 🌸 Nihongo — kişisel Japonca çalışma sitesi
+# 日本語 Nihongo — kişisel Japonca çalışma sitesi
 
-N5 ve N4 gramer rehberleri, iki kanji kitabı ve iş yeri kelime seti; hepsi tek bir
-tasarımla. Açıklamalar Türkçe; bazı sayfalar İngilizce ve Çince de.
+**🔗 https://ramazandogna.github.io/nihongo-grammar-n5/**
 
-Vue 3 + [rei-kit](https://github.com/ramazandogna/rei-kit) + Tailwind 4, `vite-ssg`
-ile her sayfa önceden HTML'e çevrilir: sayfa JavaScript yüklenmeden içerikle açılır,
-arama motorları furiganalı metnin tamamını görür.
+Japonya'da çalışırken N5'ten N3'e ilerlemek için kendime yaptığım çalışma sitesi:
+okulda gördüğümüz kitaplar, iş yerinde kullandığım Japonca, JLPT hazırlığı.
+Açıklamalar Türkçe; bazı sayfalar İngilizce ve Çince de.
 
-## Sayfalar
+- **Her kanjide furigana** — tek tuşla aç/kapa.
+- **Anlamlar bulanık** — önce kendin tahmin et, dokununca açılır.
+- **Bir sayfada tek konu** — uzun listeler sayfa sayfa.
+- **JLPT tarzı testler** — 漢字読み (゛, uzun ses, っ tuzakları), 表記 (benzer kanjiler), anlam.
+  Her soru iki kez doğru bilinene kadar sorulur; yarıda bırakılan test kaldığı yerden
+  devam eder; her testin geçmişi ve en çok yanlış yapılanlar istatistiği tutulur.
+- **Telefona göre** — 360px'te bile taşmaz; açık / koyu tema.
 
-| Adres | İçerik | Palet | Dil |
-| --- | --- | --- | --- |
-| `/` | Ana menü | Nord | TR · EN · 中 |
-| `/n5/` | N5 gramer, kanji, sınav merkezi, 14 quiz | Rosé Pine | TR |
-| `/n4/` | N4 gramerin tamamı, kanji, kelime, 15 quiz | Gruvbox | TR |
-| `/n4/13-15/` | 13・14・15課 gramer, diyaloglar, 2 test | Catppuccin | TR · EN · 中 |
-| `/kanji-n3-book/` | N3 kelime soruları 1–35, okuma metinleri | Sakura | TR · EN · 中 |
-| `/kanji-book-2/` | 18 ünite, 210 kanji | Sakura | TR |
-| `/matsuya/` | Matsuya iş yeri kelimeleri | Matcha | TR |
+## İçerik
 
-Her sayfada aynı üst bar: dil seçici (sayfanın birden fazla dili varsa), ふりがな
-aç/kapa, cevapları bulanıklaştır, tema. Tüm testler aynı motoru kullanır: her soru
-iki kez doğru bilinene kadar sorulur, yanlışlar kısa süre sonra geri gelir.
+Ana menü üç klasör:
 
-## Geliştirme
+### 📁 Okul Dersleri
+
+| Sayfa | İçerik | Dil |
+| --- | --- | --- |
+| [Blue Book](https://ramazandogna.github.io/nihongo-grammar-n5/blue-book/) | Okuma, gramer, kelime oyunu, alıştırma, test — ders ders | TR |
+| [Business Nihongo](https://ramazandogna.github.io/nihongo-grammar-n5/business-nihongo/) | ISI ビジネス日本語 中級Ⅰ: duyuru okuma, 敬語, iş yazışması | TR |
+| [N4 Gramer](https://ramazandogna.github.io/nihongo-grammar-n5/n4/) | N4 gramerin tamamı, kanji, kelime, quizler | TR |
+| [N4 Gramer 13–15](https://ramazandogna.github.io/nihongo-grammar-n5/n4/13-15/) | 13・14・15課 gramer, diyaloglar, testler | TR · EN · 中 |
+| [N3 Kanji Book](https://ramazandogna.github.io/nihongo-grammar-n5/kanji-n3-book/) | Kelime soruları 1–35, okuma (問題4・5), dinleme dersleri | TR · EN · 中 |
+
+### 💼 İş Yeri Japoncası
+
+| Sayfa | İçerik | Dil |
+| --- | --- | --- |
+| [Matsuya](https://ramazandogna.github.io/nihongo-grammar-n5/matsuya/) | Menü, müşteri diyalogları, sipariş fişleri, online siparişler | TR |
+
+### 📚 Kendi Çalışmam
+
+| Sayfa | İçerik | Dil |
+| --- | --- | --- |
+| [N3 Çıkmış Sorular](https://ramazandogna.github.io/nihongo-grammar-n5/past-n3/) | Çıkmış JLPT N3 sınavları, çözümlü; dinleme sesli | TR |
+| [N5](https://ramazandogna.github.io/nihongo-grammar-n5/n5/) | N5 gramer, kanji, sınav merkezi | TR |
+| [Kanji Book 2](https://ramazandogna.github.io/nihongo-grammar-n5/kanji-book-2/) | 18 ünite, 210 kanji | TR |
+| [Radikaller](https://ramazandogna.github.io/nihongo-grammar-n5/radikaller/) | 43 radikal, 347 N3 kanjisi, 470 kelime; ayrıntılı anlatım ve testler | TR · EN |
+
+> Çıkmış sınavların metinleri ve ses dosyaları telif hakkı nedeniyle repoda yok
+> (`assets/past-n3/` gitignore'da); yayındaki sitede bu sayfa içeriksiz görünür.
+
+## Teknoloji
+
+Vue 3 · TypeScript · Tailwind 4 · [rei-kit](https://github.com/ramazandogna/rei-kit) (kendi UI kitim) ·
+`vite-ssg` — her sayfa önceden HTML'e çevrilir, GitHub Actions ile GitHub Pages'e yayınlanır.
 
 ```sh
 pnpm install
-pnpm dev          # http://localhost:5173
-pnpm build        # tip kontrolü + dist/ içine önceden çizilmiş sayfalar
-pnpm preview
+pnpm dev      # http://localhost:5173
+pnpm build    # tip kontrolü + dist/
 ```
 
-GitHub Pages gibi alt dizinde yayınlanacaksa: `VITE_BASE=/nihongo-grammar-n5/ pnpm build`.
+Alt dizinde yayın: `VITE_BASE=/nihongo-grammar-n5/ pnpm build`.
 
 ## Yapı
 
 ```
 src/
-  site.ts                 her sayfanın kaydı: adres, başlık, açıklama, palet, diller
-  pages/<adres>/index.vue sayfa — klasör adı = URL (pages/n4/13-15 → /n4/13-15/)
-  pages/<adres>/data.json sayfanın verisi
-  components/             ortak parçalar: SiteLayout, MasteryQuiz, JpText,
-                          RevealText, ExampleSentence, StudyHeader, guide/*
-  lib/                    tercihler, dil, furigana gösterimi
-legacy/                   eski tek dosyalık HTML sayfalar (verinin kaynağı)
-scripts/extract-legacy.ts legacy/ → data.json
+  site.ts                  her sayfanın kaydı: adres, başlık, palet, diller, menü klasörü
+  pages/<adres>/index.vue  sayfa — klasör adı = URL (pages/n4/13-15 → /n4/13-15/)
+  components/              SiteLayout, MasteryQuiz, QuizHistory, ReadingLesson,
+                           ListeningLesson, textbook/* (ders kitabı şablonu)
+  lib/                     jlpt.ts (soru üretimi), kanji-similar.ts, quiz-store.ts, ruby.ts
 ```
 
-### Yeni sayfa eklemek
+Yeni sayfa: `src/pages/<klasör>/index.vue` + `src/site.ts` içine bir satır.
+Veri notasyonu: `{漢字|かんじ}` furigana, `[[vurgu]]`, `[kelime]` sorulan kelime.
 
-1. `src/pages/<klasör>/index.vue` ve yanına `data.json`.
-2. `src/site.ts` içindeki `PAGES` listesine bir satır (başlık, açıklama, palet, diller).
+---
 
-Rota, menü kartı, `<head>` ve önceden çizim bu ikisinden otomatik gelir. Sayfa
-`usePage('/<klasör>/')` çağırır ve içeriğini `<SiteLayout>` içine koyar.
-
-### Veri notasyonu
-
-`{漢字|かんじ}` furigana, `[[vurgu]]` işaretli kısım, `[kelime]` sorulan kelime.
-n5 / n4 sayfaları eski HTML'lerinden blok blok çıkarıldı (`pnpm extract`).
+Ramazan Doğan · [Instagram](https://www.instagram.com/ramazandogna/)
