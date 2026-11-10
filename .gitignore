@@ -1,7 +1,7 @@
 pdf/
 data-ss/
 ss_data/
-past-n3/
+/assets/past-n3/
 
 # macOS
 .DS_Store
