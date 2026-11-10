@@ -1,6 +1,6 @@
 <script setup lang="ts" generic="K extends string | number">
 import { computed, onMounted, ref, watch } from 'vue'
-import { BaseButton, BaseCard, ProgressBar } from 'rei-kit'
+import { BaseButton, BaseCard, BaseSheet, ProgressBar } from 'rei-kit'
 
 import { usePageContext } from '@/lib/page'
 import { addAttempt, loadRun, saveRun } from '@/lib/quiz-store'
@@ -63,6 +63,9 @@ const finished = ref(false)
 const misses = ref(new Map<K, number>())
 const resumed = ref(false)
 const showHistory = ref(false)
+/** The explanation sheet, opened from the bar after answering. */
+const explaining = ref(false)
+const card = ref<{ $el: HTMLElement } | null>(null)
 /** The finished run's mistakes, kept for the end screen. */
 const lastMisses = ref<{ label: string; n: number }[]>([])
 
@@ -157,8 +160,11 @@ function pick(i: number) {
     queue.value.splice(Math.min(queue.value.length, 2), 0, k)
   }
   persist()
+  // Keep the whole question above the pinned bar on short screens.
+  requestAnimationFrame(() => card.value?.$el?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }))
 }
 function proceed() {
+  explaining.value = false
   next()
   persist()
   if (typeof window !== 'undefined') window.scrollTo({ top: 0 })
@@ -185,6 +191,8 @@ const owed = computed(() => [...counts.value.values()].reduce((s, c) => s + Math
 const percent = computed(() => Math.round(((total.value * 2 - owed.value) / (total.value * 2 || 1)) * 100))
 const count = computed(() => (current.value === null ? 0 : (counts.value.get(current.value) ?? 0)))
 const correct = computed(() => picked.value !== null && picked.value === question.value?.answer)
+/** Furigana needs tall lines; plain options can sit tighter. */
+const ruby = computed(() => (question.value?.options ?? []).some((o) => o.includes('{')))
 const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o).length > 12))
 </script>
 
@@ -200,7 +208,7 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
         </div>
       </div>
 
-      <BaseCard>
+      <BaseCard ref="card" class="scroll-mb-28">
         <div class="text-ink-soft flex items-center gap-2 text-sm">
           <span v-if="question.kind" v-html="notation(question.kind)" />
           <span class="ms-auto flex gap-1" :aria-label="`${count}/2`">
@@ -227,9 +235,10 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
             v-for="i in order"
             :key="i"
             type="button"
-            class="control focus-ring rounded-control jp min-h-14 px-3 py-2.5 text-xl leading-[2] [--control-border-width:2px]"
+            class="control focus-ring rounded-control jp min-h-12 px-3 py-2 text-xl [--control-border-width:2px]"
             :class="[
               wide ? 'text-start' : 'text-center',
+              ruby ? 'leading-[2]' : 'leading-snug',
               picked !== null && i === question.answer
                 ? 'bg-positive/15 [--surface-border-color:var(--color-positive)]'
                 : '',
@@ -245,23 +254,39 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
         </div>
       </BaseCard>
 
-      <div
-        v-if="picked !== null"
-        class="bg-surface rounded-card border-s-4 p-4"
-        :class="correct ? 'border-positive' : 'border-negative'"
-        role="status"
-      >
-        <p class="font-bold">
-          <template v-if="correct">{{ count >= 2 ? t.correctDone : t.correctOnce }}</template>
-          <template v-else>
-            {{ t.wrong }} <span class="jp" v-html="notation(question.options[question.answer]!)" />
-            <span class="text-ink-soft block text-sm font-normal">{{ t.wrongBack }}</span>
-          </template>
+      <!-- After answering: a short verdict in place, and a bar pinned above the
+           footer — explanation on the left, next question on the right — so a
+           test on a phone never needs scrolling between questions. -->
+      <template v-if="picked !== null">
+        <p class="font-bold" :class="correct ? 'text-positive' : 'text-negative'" role="status">
+          <template v-if="correct">✓ {{ count >= 2 ? t.correctDone : t.correctOnce }}</template>
+          <template v-else
+            >✗ {{ t.wrong }} <span class="jp" v-html="notation(question.options[question.answer]!)"
+          /></template>
         </p>
-        <div v-if="question.explain" class="mt-2 text-[15px]" v-html="notation(question.explain)" />
-        <slot v-if="current !== null" name="feedback" :item="current" :correct="correct" />
-        <BaseButton block class="mt-4" @click="proceed">{{ t.continue }}</BaseButton>
-      </div>
+        <!-- Room for the pinned bar, so it never covers the options. -->
+        <div class="h-20" aria-hidden="true" />
+        <div class="fixed inset-x-0 bottom-8 z-30 px-4 pb-2">
+          <div
+            class="bg-surface border-hair rounded-card mx-auto flex max-w-3xl items-center gap-3 border p-2 shadow-lg"
+            :class="correct ? 'border-s-positive border-s-4' : 'border-s-negative border-s-4'"
+          >
+            <BaseButton variant="secondary" class="flex-1" @click="explaining = true">💡 {{ t.explain }}</BaseButton>
+            <BaseButton class="flex-1" @click="proceed">{{ t.nextQuestion }} →</BaseButton>
+          </div>
+        </div>
+        <BaseSheet v-model="explaining" :title="correct ? t.correctTitle : t.wrongTitle" :close-label="t.close">
+          <div class="grid gap-3 pb-2">
+            <p v-if="!correct">
+              {{ t.wrong }} <b class="jp text-lg" v-html="notation(question.options[question.answer]!)" />
+              <span class="text-ink-soft block text-sm">{{ t.wrongBack }}</span>
+            </p>
+            <div v-if="question.explain" class="text-[15px]" v-html="notation(question.explain)" />
+            <slot v-if="current !== null" name="feedback" :item="current" :correct="correct" />
+            <BaseButton block @click="explaining = false">{{ t.understood }}</BaseButton>
+          </div>
+        </BaseSheet>
+      </template>
     </template>
 
     <div v-else-if="finished" class="py-10 text-center">

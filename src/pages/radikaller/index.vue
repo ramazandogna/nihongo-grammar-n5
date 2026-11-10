@@ -8,11 +8,13 @@ import QuizHistory from '@/components/QuizHistory.vue'
 import RevealText from '@/components/RevealText.vue'
 import SiteLayout from '@/components/SiteLayout.vue'
 import StudyHeader from '@/components/StudyHeader.vue'
+import LeaveTestSheet from '@/components/LeaveTestSheet.vue'
 import { hasKanji, KIND_LABEL, readingOptions, spellingOptions, type Vocab } from '@/lib/jlpt'
 import { usePage } from '@/lib/page'
 import { accuracy, loadHistory } from '@/lib/quiz-store'
 import { rubyWord } from '@/lib/ruby'
 import { toTop } from '@/lib/scroll'
+import { useTestRoute } from '@/lib/test-route'
 import { shuffle } from '@/lib/shuffle'
 import data from './data.json'
 import { GUIDE, POSITION_TR } from './guide'
@@ -188,7 +190,17 @@ function radicalTest(ri: number): TestDef {
   return { id: `r-${radicals[ri]!.id}`, radical: radicals[ri]!.radical, kind: 'kan', keys: '', pool: ids }
 }
 
-const running = ref<TestDef | null>(null)
+const { testId, openTest, askClose, asking, leave, stay } = useTestRoute()
+/** The open test, read from the URL so the back button closes it. */
+const running = computed<TestDef | null>(() => {
+  const id = testId.value
+  if (!id) return null
+  if (id.startsWith('r-')) {
+    const ri = radicals.findIndex((r) => `r-${r.id}` === id)
+    return ri >= 0 ? radicalTest(ri) : null
+  }
+  return tests.find((x) => x.id === id) ?? null
+})
 const title = (x: TestDef) =>
   x.radical ? u('kanjiOf')(x.radical) : x.kind === 'rad' ? u('radTitle')(x.n!) : `Kanji ${x.n}`
 const historyOf = ref<string | null>(null)
@@ -271,7 +283,7 @@ const itemLabel = (i: number) => {
   <SiteLayout>
     <!-- A test running -->
     <template v-if="running">
-      <StudyHeader :title="title(running)" :sub="u('runSub')" @back="running = null" />
+      <StudyHeader :title="title(running)" :sub="u('runSub')" @back="askClose" />
       <MasteryQuiz
         :key="running.id"
         :pool="running.pool"
@@ -290,6 +302,7 @@ const itemLabel = (i: number) => {
           </div>
         </template>
       </MasteryQuiz>
+      <LeaveTestSheet :open="asking" @leave="leave" @stay="stay" />
     </template>
 
     <!-- One radical, learned in depth -->
@@ -377,7 +390,7 @@ const itemLabel = (i: number) => {
             </div>
           </BaseCard>
 
-          <BaseButton block @click="running = radicalTest(ri)">{{ u('radTest')(r.radical) }}</BaseButton>
+          <BaseButton block @click="openTest(radicalTest(ri).id)">{{ u('radTest')(r.radical) }}</BaseButton>
         </div>
       </template>
       <PagerNav v-model="reading" :count="radicals.length" />
@@ -454,7 +467,7 @@ const itemLabel = (i: number) => {
             <p class="jp text-ink-soft mt-2 truncate text-lg tracking-widest">{{ x.keys }}</p>
             <p class="text-ink-soft text-xs">{{ summary(x) || u('never') }}</p>
             <div class="mt-3 flex gap-2">
-              <BaseButton size="sm" class="flex-1" @click="running = x">{{ t.start }} →</BaseButton>
+              <BaseButton size="sm" class="flex-1" @click="openTest(x.id)">{{ t.start }} →</BaseButton>
               <BaseButton
                 size="sm"
                 :variant="historyOf === x.id ? 'secondary' : 'ghost'"
