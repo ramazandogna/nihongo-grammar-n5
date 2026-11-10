@@ -5,6 +5,7 @@ import SiteLayout from '@/components/SiteLayout.vue'
 import { usePage } from '@/lib/page'
 import { LANG_FLAG, LANG_LABEL } from '@/lib/i18n'
 import { ref } from 'vue'
+import { BriefcaseBusiness, Folder, FolderOpen, Info, Library } from 'lucide-vue-next'
 
 import { GROUPS, PAGES, type Group, type SitePage } from '@/site'
 
@@ -28,6 +29,9 @@ function toggle(g: Group) {
     sessionStorage.setItem('nihongo-folder', open.value ?? '')
   } catch {}
 }
+/** Each folder's icon; the school folder opens when expanded. */
+const groupIcon = (name: 'library' | 'folder' | 'briefcase', isOpen: boolean) =>
+  name === 'folder' ? (isOpen ? FolderOpen : Folder) : name === 'library' ? Library : BriefcaseBusiness
 const inGroup = (g: Group) => PAGES.filter((p) => (p.group ?? 'self') === g)
 
 const aboutOpen = ref(false)
@@ -68,9 +72,9 @@ const LEAD = ['Bir bölüm seç', 'Choose a section']
           :aria-expanded="open === g.id"
           @click="toggle(g.id)"
         >
-          <span class="bg-muted rounded-control grid size-12 shrink-0 place-items-center text-2xl" aria-hidden="true">{{
-            open === g.id && g.id === 'school' ? '📂' : g.icon
-          }}</span>
+          <span class="bg-muted rounded-control grid size-12 shrink-0 place-items-center text-2xl" aria-hidden="true"
+            ><component :is="groupIcon(g.icon, open === g.id)" class="text-primary size-6" aria-hidden="true"
+          /></span>
           <span class="min-w-0 flex-1">
             <span class="block font-bold">{{ text(g).title }}</span>
             <span class="text-ink-soft block text-sm">{{ text(g).description }} · {{ inGroup(g.id).length }}</span>
@@ -120,8 +124,8 @@ const LEAD = ['Bir bölüm seç', 'Choose a section']
         @click="aboutOpen = !aboutOpen"
       >
         <span class="bg-muted rounded-control grid size-12 shrink-0 place-items-center text-2xl" aria-hidden="true"
-          >ℹ️</span
-        >
+          ><Info class="text-primary size-6"
+        /></span>
         <span class="min-w-0 flex-1">
           <span class="block font-bold">{{ pick(ABOUT.title) }}</span>
           <span class="text-ink-soft block text-sm">{{ pick(ABOUT.sub) }}</span>

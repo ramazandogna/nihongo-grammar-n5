@@ -41,7 +41,8 @@ export type Group = 'school' | 'work' | 'self'
 
 export interface MenuGroup {
   id: Group
-  icon: string
+  /** Icon name, drawn by the home page (lucide). */
+  icon: 'library' | 'folder' | 'briefcase'
   title: string
   description: string
   en: { title: string; description: string }
@@ -51,25 +52,25 @@ export interface MenuGroup {
 export const GROUPS: readonly MenuGroup[] = [
   {
     id: 'self',
-    icon: '📚',
+    icon: 'library',
     title: 'Kendi Çalışmam',
     description: 'Sınav hazırlığı ve radikaller',
     en: { title: 'Self Study', description: 'Exam preparation and radicals' },
-  },  {
+  },
+  {
     id: 'school',
-    icon: '📁',
+    icon: 'folder',
     title: 'Okul Dersleri',
     description: 'Derste gördüğümüz kitaplar ve çalışma yerleri',
     en: { title: 'School Lessons', description: 'The books and study material from class' },
   },
   {
     id: 'work',
-    icon: '💼',
+    icon: 'briefcase',
     title: 'İş Yeri Japoncası',
     description: 'İşte kullandığım Japonca: müşteri, sipariş, menü',
     en: { title: 'Workplace Japanese', description: 'The Japanese I use at work: customers, orders, menu' },
   },
-
 ]
 
 export const HOME: SitePage = {

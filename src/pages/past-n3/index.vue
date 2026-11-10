@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
+import { Check, Headphones, Target } from 'lucide-vue-next'
 import { BaseButton, BaseCard, SegmentedControl } from 'rei-kit'
 
 import JpText from '@/components/JpText.vue'
@@ -106,6 +107,11 @@ function build(i: number): Question {
   const q = testItems.value[i]!
   return { kind: `${section.value!.title} · ${q.no}`, prompt: q.q, options: q.opts, answer: q.a, explain: q.why }
 }
+/** Back to the exam's section list. */
+function closeSection() {
+  section.value = null
+  mode.value = 'learn'
+}
 </script>
 
 <template>
@@ -115,8 +121,8 @@ function build(i: number): Question {
       <p class="font-jp text-primary text-5xl" aria-hidden="true">過去問</p>
       <p class="mt-3 font-bold">Sınav verisi bu cihazda yok.</p>
       <p class="text-ink-soft mt-1 text-[15px]">
-        Geçmiş sınavlar telif hakkı nedeniyle depoya konmuyor. Verileri <code>assets/past-n3/app/</code> klasörüne koyunca
-        burada açılır.
+        Geçmiş sınavlar telif hakkı nedeniyle depoya konmuyor. Verileri <code>assets/past-n3/app/</code> klasörüne
+        koyunca burada açılır.
       </p>
     </BaseCard>
 
@@ -131,7 +137,12 @@ function build(i: number): Question {
           <p class="jp text-lg font-bold">{{ e.title }}</p>
           <p class="text-ink-soft text-sm">
             {{ e.sections.reduce((n, s) => n + s.groups.reduce((m, g) => m + g.items.length, 0), 0) }} soru ·
-            {{ audioOf(e) ? '🎧 ses var' : 'ses yok' }}
+            <template v-if="audioOf(e)"
+              ><Headphones
+                class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle"
+                aria-hidden="true"
+              />ses var</template
+            ><template v-else>ses yok</template>
           </p>
         </BaseCard>
       </div>
@@ -142,7 +153,12 @@ function build(i: number): Question {
       <StudyHeader :title="exam.title" sub="Bir bölüm seç" @back="exam = null" />
       <SegmentedControl v-model="part" :options="partTabs" class="mb-4" />
       <BaseCard v-if="part === '聴解' && audioOf(exam)" class="mb-4">
-        <p class="mb-2 text-sm font-semibold">🎧 Dinleme sesi (bütün bölüm)</p>
+        <p class="mb-2 text-sm font-semibold">
+          <Headphones
+            class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle"
+            aria-hidden="true"
+          />Dinleme sesi (bütün bölüm)
+        </p>
         <audio :src="audioOf(exam)" controls preload="none" class="w-full" />
       </BaseCard>
       <div class="grid gap-3">
@@ -157,15 +173,27 @@ function build(i: number): Question {
 
     <!-- One section -->
     <template v-else>
-      <StudyHeader v-model="mode" :title="section.title" :sub="exam.title" :tabs="testable ? modeTabs : undefined" @back="section = null; mode = 'learn'" />
+      <StudyHeader
+        v-model="mode"
+        :title="section.title"
+        :sub="exam.title"
+        :tabs="testable ? modeTabs : undefined"
+        @back="closeSection"
+      />
 
       <template v-if="mode === 'learn' || !testable">
         <BaseCard v-if="page === 0" class="mb-4">
-          <p class="mb-1 text-sm font-semibold">🎯 Bu soru tipi nasıl çözülür?</p>
+          <p class="mb-1 text-sm font-semibold">
+            <Target class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />Bu soru
+            tipi nasıl çözülür?
+          </p>
           <p class="text-[15px]">{{ section.how }}</p>
         </BaseCard>
         <BaseCard v-if="section.part === '聴解' && audioOf(exam)" class="mb-4">
-          <p class="text-ink-soft mb-1 text-sm">🎧 Ses · her sorunun “▶” düğmesi sesi o soruya götürür</p>
+          <p class="text-ink-soft mb-1 text-sm">
+            <Headphones class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />Ses
+            · her sorunun “▶” düğmesi sesi o soruya götürür
+          </p>
           <audio ref="player" :src="audioOf(exam)" controls preload="metadata" class="w-full" />
         </BaseCard>
 
@@ -183,7 +211,12 @@ function build(i: number): Question {
           <BaseCard v-if="g.script">
             <div class="flex items-center justify-between gap-3">
               <JpText :text="g.title ?? 'Dinleme'" as="h2" class="text-lg font-bold" />
-              <BaseButton v-if="g.start !== undefined && audioOf(exam)" size="sm" class="ms-auto" @click="playFrom(g.start)">
+              <BaseButton
+                v-if="g.start !== undefined && audioOf(exam)"
+                size="sm"
+                class="ms-auto"
+                @click="playFrom(g.start)"
+              >
                 ▶ {{ clock(g.start) }}
               </BaseButton>
               <BaseButton
@@ -225,13 +258,16 @@ function build(i: number): Question {
                 class="control focus-ring rounded-control jp px-3 py-2 text-start text-lg leading-loose [--control-border-width:2px]"
                 :class="[
                   solved(q) && oi === q.a ? 'bg-positive/15 [--surface-border-color:var(--color-positive)]' : '',
-                  picks[key(q)] === oi && oi !== q.a ? 'bg-negative/15 [--surface-border-color:var(--color-negative)]' : '',
+                  picks[key(q)] === oi && oi !== q.a
+                    ? 'bg-negative/15 [--surface-border-color:var(--color-negative)]'
+                    : '',
                 ]"
                 :disabled="picks[key(q)] !== undefined"
                 :aria-pressed="picks[key(q)] === oi"
                 @click="pick(q, oi)"
               >
-                <span class="text-ink-soft me-2 text-sm">{{ oi + 1 }}</span><span v-html="notation(o)" />
+                <span class="text-ink-soft me-2 text-sm">{{ oi + 1 }}</span
+                ><span v-html="notation(o)" />
               </button>
             </div>
             <BaseButton v-if="!solved(q)" variant="ghost" size="sm" class="mt-2" @click="shown[key(q)] = true">
@@ -243,7 +279,12 @@ function build(i: number): Question {
               :class="picks[key(q)] === q.a ? 'border-positive' : 'border-negative'"
             >
               <p class="font-bold">
-                {{ picks[key(q)] === q.a ? '✔ Doğru!' : `Doğrusu ${q.a + 1}` }}
+                <template v-if="picks[key(q)] === q.a"
+                  ><Check
+                    class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle"
+                    aria-hidden="true"
+                  />Doğru!</template
+                ><template v-else>Doğrusu {{ q.a + 1 }}</template>
               </p>
               <p v-html="notation(q.why)" />
             </div>

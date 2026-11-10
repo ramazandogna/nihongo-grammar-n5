@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
+import { Eye, Image, Lightbulb, MapPin, Puzzle, TriangleAlert, Volume2 } from 'lucide-vue-next'
 import { BaseButton, BaseCard, BaseInput, SegmentedControl } from 'rei-kit'
 
 import MasteryQuiz, { type Question } from '@/components/MasteryQuiz.vue'
@@ -66,17 +67,17 @@ const U = {
     (r: number, k: number, w: number) => `${r} radicals · ${k} kanji · ${w} words`,
   ],
   other: ['Diğer biçim:', 'Other form:'],
-  where: ['📍 Nerede?', '📍 Where?'],
-  origin: ['🖼️ Neyin resmi?', '🖼️ A picture of what?'],
-  lends: ['🧩 Kanjiye kattığı anlam', '🧩 What it lends the kanji'],
-  hook: ['💡 Akılda tutma', '💡 Memory hook'],
-  confuse: ['⚠️ Karıştırma (JLPT tuzağı)', '⚠️ Do not confuse (JLPT trap)'],
+  where: ['Nerede?', 'Where?'],
+  origin: ['Neyin resmi?', 'A picture of what?'],
+  lends: ['Kanjiye kattığı anlam', 'What it lends the kanji'],
+  hook: ['Akılda tutma', 'Memory hook'],
+  confuse: ['Karıştırma (JLPT tuzağı)', 'Do not confuse (JLPT trap)'],
   radicalOf: [(r: string, mm: string) => `${r} (${mm}) radikali`, (r: string, mm: string) => `radical ${r} (${mm})`],
   on: ['· Çince kökenli; çoğunlukla bileşik kelimelerde', '· from Chinese; mostly in compounds'],
   kun: ['· Japonca; çoğunlukla tek başına / fiillerde', '· native Japanese; mostly alone / in verbs'],
-  same: ['🔊 Aynı okunan:', '🔊 Same reading:'],
+  same: ['Aynı okunan:', 'Same reading:'],
   sameNote: [' — 表記 sorularında bunlar şık olarak gelir', ' — these show up as options in 表記 questions'],
-  sameRad: ['👀 Aynı radikal:', '👀 Same radical:'],
+  sameRad: ['Aynı radikal:', 'Same radical:'],
   radTest: [
     (r: string) => `試 ${r} kanjilerinin testi (JLPT tarzı)`,
     (r: string) => `試 Test the ${r} kanji (JLPT style)`,
@@ -155,9 +156,15 @@ const shown = computed(() => {
 const reading = ref<number | null>(null)
 
 /* ── Tests: short sets, JLPT-style ── */
-const SIZE = 10
-const chunk = <T,>(xs: T[], n: number) =>
-  Array.from({ length: Math.ceil(xs.length / n) }, (_, i) => xs.slice(i * n, i * n + n))
+/** About this many items per test (each answered right twice → ~30 answers). */
+const SIZE = 15
+/** Split into sets of about `n`, evened out so the last one is not a stub. */
+const chunk = <T,>(xs: T[], n: number) => {
+  const sets = Math.max(1, Math.round(xs.length / n))
+  return Array.from({ length: sets }, (_, i) =>
+    xs.slice(Math.round((i * xs.length) / sets), Math.round(((i + 1) * xs.length) / sets)),
+  )
+}
 interface TestDef {
   id: string
   n?: number
@@ -170,9 +177,10 @@ interface TestDef {
 const tests: TestDef[] = [
   ...chunk(
     radicals.map((_, i) => i),
-    11,
+    SIZE,
   ).map((ids, n) => ({
-    id: `rad${n + 1}`,
+    // Ids carry the set size: tests of 10/11 kept their old history under the old ids.
+    id: `rad15-${n + 1}`,
     n: n + 1,
     kind: 'rad' as const,
     keys: ids.map((i) => radicals[i]!.radical).join(''),
@@ -182,7 +190,7 @@ const tests: TestDef[] = [
     all.map((_, i) => i),
     SIZE,
   ).map((ids, n) => ({
-    id: `kan${n + 1}`,
+    id: `kan15-${n + 1}`,
     n: n + 1,
     kind: 'kan' as const,
     keys: ids.map((i) => all[i]!.kanji).join(''),
@@ -410,21 +418,6 @@ const itemLabel = (i: number) => {
                 </li>
               </ul>
             </div>
-            <div v-if="sameRadical(all[item]!).length">
-              <p class="text-ink-soft mb-1 text-sm font-semibold">
-                {{ u('familyLabel')(radicals[all[item]!.ri]!.radical) }}
-              </p>
-              <ul class="grid grid-cols-4 gap-2">
-                <li
-                  v-for="c in sameRadical(all[item]!)"
-                  :key="c"
-                  class="bg-muted rounded-control px-1 py-1.5 text-center"
-                >
-                  <span class="jp block text-3xl leading-tight">{{ c }}</span>
-                  <span class="block truncate text-xs">{{ m(byChar.get(c)!) }}</span>
-                </li>
-              </ul>
-            </div>
           </div>
           <div v-else class="grid gap-2">
             <p class="text-ink-soft text-sm font-semibold">{{ u('familyLabel')(radicals[item]!.radical) }}</p>
@@ -438,6 +431,25 @@ const itemLabel = (i: number) => {
                 <span class="block text-xs">{{ m(k) }}</span>
               </li>
             </ul>
+          </div>
+        </template>
+        <template #more="{ item }">
+          <div v-if="running.kind === 'kan'">
+            <template v-if="sameRadical(all[item]!).length">
+              <p class="text-ink-soft mb-1 text-sm font-semibold">
+                {{ u('familyLabel')(radicals[all[item]!.ri]!.radical) }}
+              </p>
+              <ul class="grid grid-cols-4 gap-2">
+                <li
+                  v-for="c in sameRadical(all[item]!)"
+                  :key="c"
+                  class="bg-muted rounded-control px-1 py-1.5 text-center"
+                >
+                  <span class="jp block text-3xl leading-tight">{{ c }}</span>
+                  <span class="block truncate text-xs">{{ m(byChar.get(c)!) }}</span>
+                </li>
+              </ul>
+            </template>
           </div>
         </template>
       </MasteryQuiz>
@@ -465,23 +477,45 @@ const itemLabel = (i: number) => {
             </div>
             <dl v-if="guide(r.radical)" class="mt-4 grid gap-2 text-[15px]">
               <div>
-                <dt class="font-bold">{{ u('where') }}</dt>
+                <dt class="font-bold">
+                  <MapPin class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />{{
+                    u('where')
+                  }}
+                </dt>
                 <dd>{{ guide(r.radical)!.where }}</dd>
               </div>
               <div>
-                <dt class="font-bold">{{ u('origin') }}</dt>
+                <dt class="font-bold">
+                  <Image class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />{{
+                    u('origin')
+                  }}
+                </dt>
                 <dd>{{ guide(r.radical)!.origin }}</dd>
               </div>
               <div>
-                <dt class="font-bold">{{ u('lends') }}</dt>
+                <dt class="font-bold">
+                  <Puzzle class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />{{
+                    u('lends')
+                  }}
+                </dt>
                 <dd>{{ guide(r.radical)!.lends }}</dd>
               </div>
               <div class="border-primary border-s-4 ps-3">
-                <dt class="font-bold">{{ u('hook') }}</dt>
+                <dt class="font-bold">
+                  <Lightbulb
+                    class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle"
+                    aria-hidden="true"
+                  />{{ u('hook') }}
+                </dt>
                 <dd>{{ guide(r.radical)!.hook }}</dd>
               </div>
               <div v-if="guide(r.radical)!.confuse" class="border-negative border-s-4 ps-3">
-                <dt class="font-bold">{{ u('confuse') }}</dt>
+                <dt class="font-bold">
+                  <TriangleAlert
+                    class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle"
+                    aria-hidden="true"
+                  />{{ u('confuse') }}
+                </dt>
                 <dd>{{ guide(r.radical)!.confuse }}</dd>
               </div>
             </dl>
@@ -520,11 +554,22 @@ const itemLabel = (i: number) => {
             </ul>
             <div v-if="sameSound(k).length || sameRadical({ ...k, ri }).length" class="mt-3 grid gap-1 text-sm">
               <p v-if="sameSound(k).length">
-                <b>{{ u('same') }}</b> <span class="jp text-lg">{{ sameSound(k).join(' ') }}</span>
+                <b
+                  ><Volume2
+                    class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle"
+                    aria-hidden="true"
+                  />{{ u('same') }}</b
+                >
+                <span class="jp text-lg">{{ sameSound(k).join(' ') }}</span>
                 <span class="text-ink-soft">{{ u('sameNote') }}</span>
               </p>
               <p>
-                <b>{{ u('sameRad') }}</b> <span class="jp text-lg">{{ sameRadical({ ...k, ri }).join(' ') }}</span>
+                <b
+                  ><Eye class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />{{
+                    u('sameRad')
+                  }}</b
+                >
+                <span class="jp text-lg">{{ sameRadical({ ...k, ri }).join(' ') }}</span>
               </p>
             </div>
           </BaseCard>

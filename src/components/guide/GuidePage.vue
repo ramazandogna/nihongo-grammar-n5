@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { Flag, List } from 'lucide-vue-next'
 import { BaseButton, BaseCard } from 'rei-kit'
 
 import { usePageContext } from '@/lib/page'
@@ -29,7 +30,10 @@ sections.forEach((s, i) => {
     })
   walk(s.blocks)
 })
-const page = usePaged(() => ids, () => alias)
+const page = usePaged(
+  () => ids,
+  () => alias,
+)
 
 const active = ref<number | null>(null)
 const quiz = computed(() => data.quizzes.find((q) => q.n === active.value))
@@ -56,30 +60,41 @@ function open(n: number | null) {
       <p v-if="g.label" class="text-ink-soft mb-1 text-sm font-semibold">{{ g.label }}</p>
       <ul class="grid gap-1 sm:grid-cols-2">
         <li v-for="l in g.links" :key="l.id">
-          <a
-            :href="`#${l.id}`"
-            class="focus-ring rounded-control hover:bg-muted flex gap-2 px-2 py-1 text-[15px]"
-          >
-            <span aria-hidden="true">{{ l.emoji }}</span><span class="jp">{{ l.label }}</span>
+          <a :href="`#${l.id}`" class="focus-ring rounded-control hover:bg-muted flex gap-2 px-2 py-1 text-[15px]">
+            <span aria-hidden="true">{{ l.emoji }}</span
+            ><span class="jp">{{ l.label }}</span>
           </a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <a v-show="page > 0" href="#contents" class="text-primary focus-ring rounded-cell mb-2 inline-block text-sm font-semibold"
-    >☰ {{ t.contents }}</a
+  <a
+    v-show="page > 0"
+    href="#contents"
+    class="text-primary focus-ring rounded-cell mb-2 inline-block text-sm font-semibold"
+    ><List class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />{{
+      t.contents
+    }}</a
   >
   <section v-for="(s, i) in sections" v-show="page === i + 1" :key="s.id" class="lesson py-2">
     <GuideBlocks :blocks="s.blocks" />
   </section>
 
   <section v-show="page === ids.length - 1" class="py-2">
-    <h2 class="mb-1 text-2xl font-bold">🏁 {{ t.quizzes }}</h2>
+    <h2 class="mb-1 text-2xl font-bold">
+      <Flag class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />{{ t.quizzes }}
+    </h2>
     <p class="text-ink-soft mb-4 text-[15px]">{{ t.rule }}</p>
     <template v-if="quiz">
       <BaseButton variant="ghost" size="sm" class="mb-3" @click="open(null)">{{ t.back }}</BaseButton>
-      <MasteryQuiz :key="quiz.n" :pool="pool" :build="build" :storage-key="`${pageCtx.page.path}quiz${quiz.n}`" :label="(i: number) => quiz!.items[i]!.q">
+      <MasteryQuiz
+        :key="quiz.n"
+        :pool="pool"
+        :build="build"
+        :storage-key="`${pageCtx.page.path}quiz${quiz.n}`"
+        :label="(i: number) => quiz!.items[i]!.q"
+      >
         <template #actions>
           <BaseButton @click="open(null)">{{ t.quizzes }}</BaseButton>
         </template>

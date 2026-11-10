@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
+import { CircleHelp, Lightbulb, MessageCircle, MessagesSquare, ReceiptText } from 'lucide-vue-next'
 import { BaseButton, BaseCard } from 'rei-kit'
 
 import JpText from '@/components/JpText.vue'
@@ -62,7 +63,8 @@ function open(c: number, v: 'learn' | 'test' = 'learn') {
 const pool = computed(() => (cat.value === -1 ? all.map((_, i) => i) : cat.value === null ? [] : idsOf(cat.value)))
 
 const allVocab: Vocab[] = all.map((w) => ({ word: w.w, reading: w.r, meaning: w.tr }))
-const similar = (c: string) => similarKanji(c, [...new Set(all.flatMap((w) => [...w.w]).filter((x) => /[\u3400-\u9fff]/.test(x)))].slice(0, 40))
+const similar = (c: string) =>
+  similarKanji(c, [...new Set(all.flatMap((w) => [...w.w]).filter((x) => /[\u3400-\u9fff]/.test(x)))].slice(0, 40))
 
 /**
  * JLPT-style where the word allows it (reading / spelling with look-alike
@@ -73,10 +75,19 @@ function build(i: number): Question {
   const w = all[i]!
   const sameCat = all.filter((x) => x.cat === w.cat)
   if ([...w.w].length > 8 && Math.random() < 0.5) {
-    const options = [rubyWord(w.w, w.r), ...shuffle(sameCat.filter((x) => x !== w)).slice(0, 3).map((x) => rubyWord(x.w, x.r))]
+    const options = [
+      rubyWord(w.w, w.r),
+      ...shuffle(sameCat.filter((x) => x !== w))
+        .slice(0, 3)
+        .map((x) => rubyWord(x.w, x.r)),
+    ]
     return { kind: 'Bu durumda ne dersin?', prompt: w.tr, size: 'text', options, answer: 0 }
   }
-  const q = jlptQuestion({ word: w.w, reading: w.r, meaning: w.tr }, sameCat.length >= 6 ? sameCat.map((x) => ({ word: x.w, reading: x.r, meaning: x.tr })) : allVocab, similar)
+  const q = jlptQuestion(
+    { word: w.w, reading: w.r, meaning: w.tr },
+    sameCat.length >= 6 ? sameCat.map((x) => ({ word: x.w, reading: x.r, meaning: x.tr })) : allVocab,
+    similar,
+  )
   return q.kind === KIND_LABEL.imi ? { ...q, prompt: rubyWord(w.w, w.r) } : q
 }
 </script>
@@ -90,12 +101,24 @@ function build(i: number): Question {
       </section>
       <div class="mb-6 grid gap-3 sm:grid-cols-2">
         <BaseCard interactive as="button" class="text-start" @click="open(TALK)">
-          <p class="font-bold">💬 Müşteriyle konuşma</p>
-          <p class="text-ink-soft text-sm">{{ SCENES.length }} sahne: fiş alma, pilav boyu, numara çağırma, ekstra, özür, müdür talimatı</p>
+          <p class="font-bold">
+            <MessageCircle
+              class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle"
+              aria-hidden="true"
+            />Müşteriyle konuşma
+          </p>
+          <p class="text-ink-soft text-sm">
+            {{ SCENES.length }} sahne: fiş alma, pilav boyu, numara çağırma, ekstra, özür, müdür talimatı
+          </p>
         </BaseCard>
         <BaseCard interactive as="button" class="text-start" @click="open(SLIP)">
-          <p class="font-bold">🧾 Fiş okuma</p>
-          <p class="text-ink-soft text-sm">{{ SLIPS.length }} sipariş fişi: ürün, değişiklik, poşete girecek ekstralar</p>
+          <p class="font-bold">
+            <ReceiptText class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />Fiş
+            okuma
+          </p>
+          <p class="text-ink-soft text-sm">
+            {{ SLIPS.length }} sipariş fişi: ürün, değişiklik, poşete girecek ekstralar
+          </p>
         </BaseCard>
       </div>
       <h2 class="text-ink-soft mb-2 text-sm font-semibold">Kelimeler</h2>
@@ -110,13 +133,15 @@ function build(i: number): Question {
             <BaseButton size="sm" @click="open(k, 'test')">試 {{ t.test }}</BaseButton>
           </div>
         </BaseCard>
-        <BaseButton variant="secondary" block @click="open(-1, 'test')">総 Genel test ({{ all.length }} kelime)</BaseButton>
+        <BaseButton variant="secondary" block @click="open(-1, 'test')"
+          >総 Genel test ({{ all.length }} kelime)</BaseButton
+        >
       </div>
     </template>
 
     <!-- Dialogues: one scene per page -->
     <template v-else-if="cat === TALK">
-      <StudyHeader title="💬 Müşteriyle konuşma" sub="店 = sen · 客 = müşteri · 長 = müdür" @back="cat = null" />
+      <StudyHeader title="Müşteriyle konuşma" sub="店 = sen · 客 = müşteri · 長 = müdür" @back="cat = null" />
       <div v-for="(sc, k) in SCENES" v-show="page === k" :key="k" class="grid gap-4">
         <BaseCard>
           <JpText :text="sc.title" as="h2" class="text-xl font-bold" />
@@ -136,13 +161,23 @@ function build(i: number): Question {
           </div>
         </BaseCard>
         <BaseCard>
-          <p class="mb-2 font-bold">💡 İpuçları</p>
+          <p class="mb-2 font-bold">
+            <Lightbulb
+              class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle"
+              aria-hidden="true"
+            />İpuçları
+          </p>
           <ul class="grid gap-1.5 text-[15px]">
             <li v-for="(tip, j) in sc.tips" :key="j" class="border-primary border-s-4 ps-3" v-html="tip" />
           </ul>
         </BaseCard>
         <BaseCard>
-          <p class="mb-2 font-bold">🗣️ Sen söyle</p>
+          <p class="mb-2 font-bold">
+            <MessagesSquare
+              class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle"
+              aria-hidden="true"
+            />Sen söyle
+          </p>
           <p class="text-ink-soft mb-2 text-sm">Önce kendin Japonca söylemeyi dene, sonra bulanığa dokun.</p>
           <div v-for="(sy, j) in sc.say" :key="j" class="bg-muted rounded-control mb-2 px-3 py-2">
             <p class="text-[15px] font-semibold">{{ sy[0] }}</p>
@@ -155,17 +190,28 @@ function build(i: number): Question {
 
     <!-- Order slips: one per page -->
     <template v-else-if="cat === SLIP">
-      <StudyHeader title="🧾 Fiş okuma" sub="Fişi oku, soruları cevapla, sonra bulanığa dokun" @back="cat = null" />
+      <StudyHeader title="Fiş okuma" sub="Fişi oku, soruları cevapla, sonra bulanığa dokun" @back="cat = null" />
       <div v-for="(sl, k) in SLIPS" v-show="page === k" :key="k" class="grid gap-4">
         <BaseCard>
           <JpText :text="sl.title" as="h2" class="text-xl font-bold" />
           <p class="text-ink-soft mt-1 text-[15px]">{{ sl.setting }}</p>
           <div class="bg-surface border-hair rounded-control mt-3 border-2 border-dashed px-4 py-3">
-            <JpText v-for="(ln, j) in sl.lines" :key="j" :text="ln" as="p" class="text-lg leading-[2.1] whitespace-pre" />
+            <JpText
+              v-for="(ln, j) in sl.lines"
+              :key="j"
+              :text="ln"
+              as="p"
+              class="text-lg leading-[2.1] whitespace-pre"
+            />
           </div>
         </BaseCard>
         <BaseCard>
-          <p class="mb-2 font-bold">❓ Sorular</p>
+          <p class="mb-2 font-bold">
+            <CircleHelp
+              class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle"
+              aria-hidden="true"
+            />Sorular
+          </p>
           <div v-for="(q, j) in sl.questions" :key="j" class="bg-muted rounded-control mb-2 px-3 py-2">
             <p class="text-[15px] font-semibold">{{ q[0] }}</p>
             <p class="text-[17px]">→ <RevealText :text="q[1]" /></p>
@@ -176,13 +222,7 @@ function build(i: number): Question {
     </template>
 
     <template v-else>
-      <StudyHeader
-        v-if="cat >= 0"
-        v-model="view"
-        :title="cats[cat]!.title"
-        :tabs="tabs"
-        @back="cat = null"
-      />
+      <StudyHeader v-if="cat >= 0" v-model="view" :title="cats[cat]!.title" :tabs="tabs" @back="cat = null" />
       <StudyHeader v-else title="Genel test" @back="cat = null" />
 
       <div v-if="cat >= 0 && view === 'learn'" class="grid gap-3">
@@ -200,7 +240,14 @@ function build(i: number): Question {
         <BaseButton @click="view = 'test'">{{ t.test }} →</BaseButton>
       </div>
 
-      <MasteryQuiz v-else :key="cat" :pool="pool" :build="build" :storage-key="`matsuya:${cat}`" :label="(i: number) => `${rubyWord(all[i]!.w, all[i]!.r)} · ${all[i]!.tr}`">
+      <MasteryQuiz
+        v-else
+        :key="cat"
+        :pool="pool"
+        :build="build"
+        :storage-key="`matsuya:${cat}`"
+        :label="(i: number) => `${rubyWord(all[i]!.w, all[i]!.r)} · ${all[i]!.tr}`"
+      >
         <template #feedback="{ item }">
           <p class="mt-2">
             <span class="jp text-xl" lang="ja" v-html="rubyWord(all[item]!.w, all[item]!.r)" /> =

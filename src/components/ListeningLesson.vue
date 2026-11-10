@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
+import { BookOpen, Check, Headphones, MessagesSquare, Target, X } from 'lucide-vue-next'
 import { BaseBadge, BaseButton, BaseCard } from 'rei-kit'
 
 import type { ListeningPart } from '@/pages/kanji-n3-book/listening'
@@ -53,13 +54,21 @@ const SPEAKER = { M: '男', F: '女' } as const
       <p v-for="(p, i) in part.intro" :key="i" class="mt-3 text-[17px]" v-html="p" />
     </BaseCard>
     <BaseCard>
-      <h3 class="mb-2 text-lg font-bold">🎯 Nasıl çözülür?</h3>
+      <h3 class="mb-2 text-lg font-bold">
+        <Target class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />Nasıl
+        çözülür?
+      </h3>
       <ol class="grid list-decimal gap-2 ps-5 text-[17px]">
         <li v-for="(s, i) in part.steps" :key="i" v-html="notation(s)" />
       </ol>
     </BaseCard>
     <BaseCard>
-      <h3 class="mb-2 text-lg font-bold">🗣️ Sınavda hep duyacağın cümleler</h3>
+      <h3 class="mb-2 text-lg font-bold">
+        <MessagesSquare
+          class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle"
+          aria-hidden="true"
+        />Sınavda hep duyacağın cümleler
+      </h3>
       <ul class="grid gap-2">
         <li v-for="(p, i) in part.phrases" :key="i" class="bg-muted rounded-control px-3 py-2">
           <JpText :text="p[0]" as="p" class="text-xl leading-[2.2]" />
@@ -85,7 +94,12 @@ const SPEAKER = { M: '男', F: '女' } as const
       <p class="text-ink-soft mt-3 text-sm font-semibold">Soru</p>
       <JpText :text="item.question" as="p" class="border-primary border-s-4 ps-3 text-[1.4rem] leading-[2.3]" />
       <p class="text-[15px]"><RevealText :text="item.questionTr" /></p>
-      <p class="bg-muted rounded-control mt-3 px-3 py-2 text-[15px]">🎧 <b>Neye dikkat et:</b> {{ item.focus }}</p>
+      <p class="bg-muted rounded-control mt-3 px-3 py-2 text-[15px]">
+        <Headphones class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" /><b
+          >Neye dikkat et:</b
+        >
+        {{ item.focus }}
+      </p>
     </BaseCard>
 
     <BaseCard v-if="item.pictures">
@@ -158,8 +172,13 @@ const SPEAKER = { M: '男', F: '女' } as const
 
     <BaseCard v-if="solved" :class="picked === item.answer ? 'border-positive' : ''">
       <p class="text-lg font-bold">
-        <template v-if="picked === item.answer">✔ Doğru! </template>
-        <template v-else-if="picked !== undefined">✘ Doğrusu {{ item.answer + 1 }}: </template>
+        <template v-if="picked === item.answer"
+          ><Check class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />Doğru!
+        </template>
+        <template v-else-if="picked !== undefined"
+          ><X class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />Doğrusu
+          {{ item.answer + 1 }}:
+        </template>
         <template v-else>Cevap {{ item.answer + 1 }}: </template>
         <JpText :text="item.options[item.answer]!.jp" />
       </p>
@@ -167,9 +186,15 @@ const SPEAKER = { M: '男', F: '女' } as const
       <ul class="grid gap-2 text-[17px]">
         <li v-for="(s, i) in item.solution" :key="i" class="border-primary border-s-4 ps-3" v-html="notation(s)" />
       </ul>
-      <h3 class="mt-4 mb-2 font-bold">📒 Kelimeler</h3>
+      <h3 class="mt-4 mb-2 font-bold">
+        <BookOpen class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />Kelimeler
+      </h3>
       <ul class="grid gap-1.5">
-        <li v-for="w in item.words" :key="w[0]" class="bg-muted rounded-control flex flex-wrap items-center gap-x-3 px-3 py-1.5">
+        <li
+          v-for="w in item.words"
+          :key="w[0]"
+          class="bg-muted rounded-control flex flex-wrap items-center gap-x-3 px-3 py-1.5"
+        >
           <JpText :text="w[0]" class="min-w-28 text-lg leading-[2.1]" />
           <span class="text-[15px]">{{ w[1] }}</span>
         </li>

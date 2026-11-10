@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { reactive, ref, watch } from 'vue'
+import { Check, Lightbulb, X } from 'lucide-vue-next'
 import { BaseCard } from 'rei-kit'
 
 import type { ExamGroup } from '@/pages/past-n3/types'
@@ -25,7 +26,11 @@ const unmark = (s: string) => s.replace(/\[\[([^\]]+)\]\]/g, '$1')
   <template v-for="(g, i) in groups" :key="i">
     <div v-if="page === i" class="grid gap-4">
       <BaseCard v-if="how?.(g)" class="border-warning border-s-4">
-        <p class="text-[15px]">💡 {{ how(g) }}</p>
+        <p class="text-[15px]">
+          <Lightbulb class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />{{
+            how(g)
+          }}
+        </p>
       </BaseCard>
       <BaseCard>
         <JpText v-if="g.title" :text="g.title" as="h2" class="mb-3 text-xl font-bold" />
@@ -61,7 +66,12 @@ const unmark = (s: string) => s.replace(/\[\[([^\]]+)\]\]/g, '$1')
           </button>
         </div>
         <p v-if="chosen[q.no] !== undefined" class="bg-muted rounded-control mt-3 px-3 py-2 text-[15px]">
-          {{ chosen[q.no] === q.a ? '✅ Doğru.' : `❌ Doğrusu ${q.a + 1}.` }} {{ q.why }}
+          <component
+            :is="chosen[q.no] === q.a ? Check : X"
+            :class="chosen[q.no] === q.a ? 'text-positive' : 'text-negative'"
+            class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle"
+            aria-hidden="true"
+          />{{ chosen[q.no] === q.a ? 'Doğru.' : `Doğrusu ${q.a + 1}.` }} {{ q.why }}
         </p>
       </BaseCard>
     </div>

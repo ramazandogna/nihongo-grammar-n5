@@ -201,6 +201,83 @@ u.target {
     animation: quiz-confetti 750ms cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
   }
 }
+@media (prefers-reduced-motion: no-preference) {
+  .quiz-toast {
+    animation: quiz-toast 2.6s ease both;
+  }
+  .quiz-flash {
+    animation: quiz-flash 700ms ease-out forwards;
+  }
+  .quiz-flicker {
+    animation: quiz-flicker 1.2s ease-in-out infinite;
+    transform-origin: 50% 90%;
+  }
+  .quiz-flicker-fast {
+    animation: quiz-flicker 0.7s ease-in-out infinite;
+    transform-origin: 50% 90%;
+  }
+  .quiz-glow-soft {
+    box-shadow: 0 0 14px color-mix(in oklab, var(--color-warning) 45%, transparent);
+  }
+  .quiz-ring {
+    animation: quiz-ring 1.4s ease-out infinite;
+  }
+}
+/* Without motion the milestone flash is not shown at all. */
+.quiz-flash {
+  opacity: 0;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    color-mix(in oklab, var(--color-warning) 45%, transparent),
+    transparent 65%
+  );
+}
+@keyframes quiz-toast {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -8px);
+  }
+  8%,
+  80% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -4px);
+  }
+}
+@keyframes quiz-flash {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes quiz-flicker {
+  0%,
+  100% {
+    transform: scale(1) rotate(0);
+  }
+  30% {
+    transform: scale(1.08, 1.14) rotate(-4deg);
+  }
+  60% {
+    transform: scale(0.97, 1.04) rotate(3deg);
+  }
+}
+@keyframes quiz-ring {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-negative) 45%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
 @keyframes quiz-pop {
   50% {
     transform: scale(1.07);

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
+import { CircleHelp, Gamepad2, Target } from 'lucide-vue-next'
 import { BaseButton, BaseCard } from 'rei-kit'
 
 import { usePageContext } from '@/lib/page'
@@ -58,7 +59,13 @@ function buildWord(i: number): Question {
   const v = lessonVocab.value[i]!
   if (Math.random() < 0.25) {
     const others = shuffle(wordPool.value.filter((j) => j !== i)).slice(0, 3)
-    return { kind: 'Hangi kelime?', prompt: v.meaning, size: 'text', options: [lesson.words[i]![0], ...others.map((j) => lesson.words[j]![0])], answer: 0 }
+    return {
+      kind: 'Hangi kelime?',
+      prompt: v.meaning,
+      size: 'text',
+      options: [lesson.words[i]![0], ...others.map((j) => lesson.words[j]![0])],
+      answer: 0,
+    }
   }
   const q = jlptQuestion(v, lessonVocab.value, (c) => similarKanji(c))
   return q.kind === KIND_LABEL.imi ? { ...q, prompt: lesson.words[i]![0] } : q
@@ -77,7 +84,10 @@ const longWords = computed(() => lesson.words.some(([w]) => plain(w).length > 7)
   <!-- Reading: one text per page -->
   <template v-if="tab === 'read'">
     <BaseCard v-if="lesson.goals && page === 0" class="mb-4">
-      <p class="mb-1 text-sm font-semibold">🎯 Bu dersin hedefi</p>
+      <p class="mb-1 text-sm font-semibold">
+        <Target class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />Bu dersin
+        hedefi
+      </p>
       <ul class="grid list-disc gap-1 ps-5 text-[15px]">
         <li v-for="(g, i) in lesson.goals" :key="i">{{ g }}</li>
       </ul>
@@ -95,7 +105,12 @@ const longWords = computed(() => lesson.words.some(([w]) => plain(w).length > 7)
         </div>
       </div>
       <div v-if="r.questions?.length" class="border-hair mt-5 border-t pt-4">
-        <p class="mb-2 font-bold">❓ Sorular</p>
+        <p class="mb-2 font-bold">
+          <CircleHelp
+            class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle"
+            aria-hidden="true"
+          />Sorular
+        </p>
         <div v-for="(q, j) in r.questions" :key="j" class="bg-muted rounded-control mb-2 px-3 py-2">
           <JpText :text="q.q" as="p" class="text-lg leading-[2.1]" />
           <p class="text-[15px]">→ <RevealText :text="q.a" /></p>
@@ -115,10 +130,18 @@ const longWords = computed(() => lesson.words.some(([w]) => plain(w).length > 7)
         class="text-primary border-negative my-2 border-s-4 ps-3 text-2xl leading-[1.9] font-bold"
       />
       <p class="text-[17px]" v-html="g.meaning" />
-      <JpText :text="`接続：${g.form}`" as="div" class="bg-muted rounded-control my-3 block px-3 py-2 text-lg leading-[2.1]" />
+      <JpText
+        :text="`接続：${g.form}`"
+        as="div"
+        class="bg-muted rounded-control my-3 block px-3 py-2 text-lg leading-[2.1]"
+      />
       <p v-if="g.note" class="border-warning mb-3 border-s-4 ps-3 text-[15px]" v-html="g.note" />
       <div class="grid gap-2.5">
-        <div v-for="(e, j) in g.examples" :key="j" class="border-hair rounded-control border border-s-4 border-s-primary px-4 py-2.5">
+        <div
+          v-for="(e, j) in g.examples"
+          :key="j"
+          class="border-hair rounded-control border border-s-4 border-s-primary px-4 py-2.5"
+        >
           <JpText :text="e[0]" as="p" class="text-[1.3rem] leading-[2.2]" />
           <p class="text-[15px]"><RevealText :text="e[1]" /></p>
         </div>
@@ -127,7 +150,11 @@ const longWords = computed(() => lesson.words.some(([w]) => plain(w).length > 7)
     <BaseCard v-for="(b, i) in lesson.boxes ?? []" v-show="page === lesson.grammar.length + i" :key="`b${i}`">
       <JpText :text="b.title" as="h2" class="mb-3 text-xl font-bold" />
       <ul class="grid gap-1.5">
-        <li v-for="(it, j) in b.items" :key="j" class="bg-muted rounded-control flex flex-wrap items-center gap-x-4 px-3 py-1.5">
+        <li
+          v-for="(it, j) in b.items"
+          :key="j"
+          class="bg-muted rounded-control flex flex-wrap items-center gap-x-4 px-3 py-1.5"
+        >
           <JpText :text="it[0]" class="min-w-32 text-xl leading-[2.1]" />
           <span class="text-[15px]"><RevealText :text="it[1]" /></span>
         </li>
@@ -139,7 +166,10 @@ const longWords = computed(() => lesson.words.some(([w]) => plain(w).length > 7)
   <!-- Words: the list, then the game -->
   <template v-else-if="tab === 'words'">
     <template v-if="!wordGame">
-      <BaseButton block class="mb-4" @click="wordGame = true">🎮 Kelime oyunu ({{ lesson.words.length }} kelime)</BaseButton>
+      <BaseButton block class="mb-4" @click="wordGame = true"
+        ><Gamepad2 class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />Kelime
+        oyunu ({{ lesson.words.length }} kelime)</BaseButton
+      >
       <ul class="grid gap-1.5">
         <li
           v-for="(w, i) in lesson.words"
@@ -153,9 +183,16 @@ const longWords = computed(() => lesson.words.some(([w]) => plain(w).length > 7)
     </template>
     <template v-else>
       <BaseButton variant="ghost" size="sm" class="mb-3" @click="wordGame = false">← Kelime listesi</BaseButton>
-      <MasteryQuiz :pool="wordPool" :build="buildWord" :storage-key="`${sitePage.path}${lesson.id}:words`" :label="(i: number) => `${lesson.words[i]![0]} · ${lesson.words[i]![1]}`">
+      <MasteryQuiz
+        :pool="wordPool"
+        :build="buildWord"
+        :storage-key="`${sitePage.path}${lesson.id}:words`"
+        :label="(i: number) => `${lesson.words[i]![0]} · ${lesson.words[i]![1]}`"
+      >
         <template #feedback="{ item }">
-          <p class="mt-2"><JpText :text="lesson.words[item]![0]" class="text-xl" /> = <b>{{ lesson.words[item]![1] }}</b></p>
+          <p class="mt-2">
+            <JpText :text="lesson.words[item]![0]" class="text-xl" /> = <b>{{ lesson.words[item]![1] }}</b>
+          </p>
         </template>
       </MasteryQuiz>
     </template>
@@ -166,9 +203,13 @@ const longWords = computed(() => lesson.words.some(([w]) => plain(w).length > 7)
     <BaseCard v-for="(set, i) in lesson.exercises" v-show="page === i" :key="i">
       <JpText :text="set.title" as="h2" class="mb-3 text-xl font-bold" />
       <div v-for="(e, j) in set.items" :key="j" class="border-hair mb-3 border-b pb-3 last:border-0">
-        <p class="text-ink-soft text-sm">{{ j + 1 }}.<span v-if="e.hint"> {{ e.hint }}</span></p>
+        <p class="text-ink-soft text-sm">
+          {{ j + 1 }}.<span v-if="e.hint"> {{ e.hint }}</span>
+        </p>
         <JpText :text="e.q" as="p" class="text-[1.25rem] leading-[2.2]" />
-        <p class="text-[17px]">→ <span class="jp"><RevealText :text="e.a" /></span></p>
+        <p class="text-[17px]">
+          → <span class="jp"><RevealText :text="e.a" /></span>
+        </p>
         <p v-if="e.note" class="text-ink-soft text-sm" v-html="e.note" />
       </div>
     </BaseCard>
@@ -176,5 +217,11 @@ const longWords = computed(() => lesson.words.some(([w]) => plain(w).length > 7)
   </template>
 
   <!-- Test -->
-  <MasteryQuiz v-else :pool="quizPool" :build="buildQuiz" :storage-key="`${sitePage.path}${lesson.id}:quiz`" :label="(i: number) => lesson.quiz[i]!.q" />
+  <MasteryQuiz
+    v-else
+    :pool="quizPool"
+    :build="buildQuiz"
+    :storage-key="`${sitePage.path}${lesson.id}:quiz`"
+    :label="(i: number) => lesson.quiz[i]!.q"
+  />
 </template>

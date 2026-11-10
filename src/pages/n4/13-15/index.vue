@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { List } from 'lucide-vue-next'
 import { BaseButton, BaseCard } from 'rei-kit'
 
 import ExampleSentence from '@/components/ExampleSentence.vue'
@@ -46,11 +47,18 @@ const units = [...new Set(grammar.map((g) => g.sec))]
 
 // One topic per screen: contents, each grammar point, each dialogue, the tests.
 const ids = ['contents', ...grammar.map((_, i) => `g${i}`), ...dialogues.map((_, i) => `d${i}`), 'tests']
-const page = usePaged(() => ids, () => ({ dialogues: grammar.length + 1 }))
+const page = usePaged(
+  () => ids,
+  () => ({ dialogues: grammar.length + 1 }),
+)
 const pageOf = (id: string) => ids.indexOf(id)
 
 const L = {
-  unit: [(n: string) => `${parseInt(n)}. Ünite`, (n: string) => `Lesson ${parseInt(n)}`, (n: string) => `第${parseInt(n)}课`],
+  unit: [
+    (n: string) => `${parseInt(n)}. Ünite`,
+    (n: string) => `Lesson ${parseInt(n)}`,
+    (n: string) => `第${parseInt(n)}课`,
+  ],
   dialogues: ['Diyaloglar', 'Dialogues', '对话'],
   tests: ['Testler', 'Tests', '测试'],
   test: [(n: number) => `Test ${n}`, (n: number) => `Test ${n}`, (n: number) => `测试 ${n}`],
@@ -79,8 +87,13 @@ function open(n: 1 | 2 | null) {
 
 <template>
   <SiteLayout>
-    <a v-show="page > 0" href="#contents" class="text-primary focus-ring rounded-cell mb-2 inline-block text-sm font-semibold"
-      >☰ {{ t.contents }}</a
+    <a
+      v-show="page > 0"
+      href="#contents"
+      class="text-primary focus-ring rounded-cell mb-2 inline-block text-sm font-semibold"
+      ><List class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />{{
+        t.contents
+      }}</a
     >
 
     <div v-show="page === 0">
@@ -102,7 +115,9 @@ function open(n: 1 | 2 | null) {
         <p class="text-ink-soft mb-1 text-sm font-semibold">{{ pick(L.dialogues) }}</p>
         <ul class="grid gap-1 sm:grid-cols-2">
           <li v-for="(d, i) in dialogues" :key="i">
-            <a :href="`#d${i}`" class="jp focus-ring rounded-control hover:bg-muted block px-2 py-1 text-[15px]">{{ d.title }}</a>
+            <a :href="`#d${i}`" class="jp focus-ring rounded-control hover:bg-muted block px-2 py-1 text-[15px]">{{
+              d.title
+            }}</a>
           </li>
         </ul>
         <p class="mt-3">
@@ -111,7 +126,12 @@ function open(n: 1 | 2 | null) {
       </nav>
     </div>
 
-    <article v-for="(g, i) in grammar" v-show="page === pageOf(`g${i}`)" :key="`g${i}`" class="surface rounded-card p-4">
+    <article
+      v-for="(g, i) in grammar"
+      v-show="page === pageOf(`g${i}`)"
+      :key="`g${i}`"
+      class="surface rounded-card p-4"
+    >
       <p class="text-ink-soft text-sm font-semibold">{{ unitName(g.sec) }} · {{ pick(g.name) }}</p>
       <JpText
         :text="g.pattern"
@@ -125,7 +145,12 @@ function open(n: 1 | 2 | null) {
       </div>
     </article>
 
-    <article v-for="(d, i) in dialogues" v-show="page === pageOf(`d${i}`)" :key="`d${i}`" class="surface rounded-card p-4">
+    <article
+      v-for="(d, i) in dialogues"
+      v-show="page === pageOf(`d${i}`)"
+      :key="`d${i}`"
+      class="surface rounded-card p-4"
+    >
       <p class="text-ink-soft text-sm font-semibold">{{ pick(L.dialogues) }}</p>
       <h2 class="jp mb-2 text-xl font-bold">{{ d.title }}</h2>
       <div v-for="(l, j) in d.lines" :key="j" class="flex gap-3 text-[1.4rem] leading-[2.3]">
@@ -139,7 +164,13 @@ function open(n: 1 | 2 | null) {
       <p class="text-ink-soft mb-4 text-[15px]">{{ t.rule }}</p>
       <template v-if="active">
         <BaseButton variant="ghost" size="sm" class="mb-3" @click="open(null)">{{ t.back }}</BaseButton>
-        <MasteryQuiz :key="active" :pool="pool" :build="build" :storage-key="`1315:test${active}`" :label="(i: number) => questions[i]!.q">
+        <MasteryQuiz
+          :key="active"
+          :pool="pool"
+          :build="build"
+          :storage-key="`1315:test${active}`"
+          :label="(i: number) => questions[i]!.q"
+        >
           <template #actions>
             <BaseButton v-if="active === 1" @click="open(2)">{{ testName(2) }} →</BaseButton>
           </template>

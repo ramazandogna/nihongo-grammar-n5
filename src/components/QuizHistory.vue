@@ -24,7 +24,7 @@ const S = {
   worst: ['En çok yanlış yaptıkların', 'Missed most often', '最常错的'],
   all: ['Tüm denemeler', 'All runs', '所有记录'],
   wrong: ['yanlış', 'wrong', '错'],
-  clean: ['Hiç yanlış yok 🎉', 'No mistakes 🎉', '全对 🎉'],
+  clean: ['Hiç yanlış yok', 'No mistakes', '全对'],
   clear: ['Geçmişi sil', 'Clear history', '清除记录'],
 }
 

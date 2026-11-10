@@ -1,6 +1,7 @@
 <script setup lang="ts" generic="K extends string | number">
 import { computed, onMounted, ref, watch } from 'vue'
 import { BaseButton, BaseCard, BaseSheet } from 'rei-kit'
+import { Check, CircleX, Flame, History, Lightbulb, PartyPopper, X } from 'lucide-vue-next'
 
 import { usePageContext } from '@/lib/page'
 import { addAttempt, groupMisses, loadRun, saveRun, type Miss } from '@/lib/quiz-store'
@@ -61,6 +62,7 @@ const { pool, build, storageKey, label } = defineProps<{
 const emit = defineEmits<{ finish: [] }>()
 defineSlots<{
   feedback?: (p: { item: K; correct: boolean }) => unknown
+  more?: (p: { item: K }) => unknown
   actions?: () => unknown
 }>()
 
@@ -83,6 +85,18 @@ const burst = ref<'right' | 'mastered' | 'wrong' | null>(null)
 /** This run's mistakes, keyed by their stat label. */
 const misses = ref(new Map<string, Miss>())
 const resumed = ref(false)
+/** A short note at the top that fades on its own (resumed, streak milestones). */
+const toast = ref('')
+const toastIcon = ref<typeof History>(History)
+let toastTimer: ReturnType<typeof setTimeout> | undefined
+function showToast(text: string, icon: typeof History) {
+  toast.value = text
+  toastIcon.value = icon
+  clearTimeout(toastTimer)
+  toastTimer = setTimeout(() => (toast.value = ''), 2600)
+}
+/** Bumped at each streak milestone to replay the screen flash. */
+const flash = ref(0)
 const showHistory = ref(false)
 /** The explanation sheet, opened from the bar after answering. */
 const explaining = ref(false)
@@ -153,6 +167,7 @@ function resume(): boolean {
   best.value = run.best ?? 0
   finished.value = false
   resumed.value = true
+  showToast(t.value.resumed.replace(/^↩\s*/, ''), History)
   return true
 }
 function finish() {
@@ -202,6 +217,10 @@ function pick(i: number) {
     else queue.value.splice(Math.min(queue.value.length, 4 + Math.floor(Math.random() * 4)), 0, k)
     streak.value++
     best.value = Math.max(best.value, streak.value)
+    if (streak.value % 5 === 0) {
+      flash.value++
+      showToast(t.value.milestone(streak.value), Flame)
+    }
     burst.value = c >= 2 ? 'mastered' : 'right'
     buzz(c >= 2 ? [10, 30, 10, 30, 40] : 15)
   } else {
@@ -295,17 +314,37 @@ function confetti(n: number) {
     background: colors[n % colors.length],
   }
 }
+/** How the streak chip looks as the run heats up: 3+, 5+, 10+, 15+. */
+const streakTier = computed(() => {
+  const n = streak.value
+  if (n >= 15)
+    return { chip: 'bg-negative/15 text-negative quiz-ring', icon: 'size-7 quiz-flicker-fast', text: 'text-lg' }
+  if (n >= 10)
+    return { chip: 'bg-warning/20 text-negative quiz-glow-soft', icon: 'size-6 quiz-flicker-fast', text: 'text-base' }
+  if (n >= 5) return { chip: 'bg-warning/15 text-warning', icon: 'size-5 quiz-flicker', text: 'text-base' }
+  return { chip: 'bg-warning/15 text-warning', icon: 'size-4', text: 'text-sm' }
+})
 const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o).length > 12))
 </script>
 
 <template>
   <div class="flex flex-col gap-4">
+    <!-- Resumed: a passing note, not a row of its own. -->
+    <p
+      v-if="toast"
+      :key="toast"
+      role="status"
+      class="quiz-toast bg-ink text-canvas fixed start-1/2 bottom-12 z-40 flex -translate-x-1/2 items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-semibold whitespace-nowrap shadow-lg"
+    >
+      <component :is="toastIcon" class="size-4" aria-hidden="true" /> {{ toast }}
+    </p>
+    <!-- Streak milestone (5, 10, 15 …): a warm flash over the whole screen. -->
+    <div v-if="flash" :key="flash" class="quiz-flash pointer-events-none fixed inset-0 z-30" aria-hidden="true" />
     <template v-if="!finished && question">
       <!-- The run at a glance: one segment per item — grey never right, half
            green right once, green mastered; red underline = still owed after
            a miss; ring = the current one. -->
       <div>
-        <p v-if="resumed" class="text-primary mb-2 text-sm font-semibold">{{ t.resumed }}</p>
         <div class="flex items-center gap-3">
           <div
             class="flex flex-1 items-end"
@@ -325,17 +364,23 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
               <span class="h-0.5 rounded-full" :class="retry.has(k) ? 'bg-negative' : ''" />
             </span>
           </div>
+          <!-- The streak grows with the run: bigger, hotter, livelier. -->
           <span
             v-if="streak >= 3"
             :key="streak"
-            class="quiz-pop bg-warning/15 text-warning shrink-0 rounded-full px-2.5 py-0.5 text-sm font-bold"
+            class="quiz-pop flex shrink-0 items-center gap-0.5 rounded-full px-2 py-0.5 font-bold"
+            :class="streakTier.chip"
             :aria-label="t.streak(streak)"
-            >🔥 {{ streak }}</span
           >
+            <Flame :class="streakTier.icon" aria-hidden="true" />
+            <span :class="streakTier.text">{{ streak }}</span>
+          </span>
         </div>
         <p class="text-ink-soft mt-1.5 text-sm">
           {{ t.mastered }} <b class="text-ink">{{ done }}/{{ total }}</b> · {{ percent }}% ·
-          <span :class="wrong ? 'text-negative' : ''">✗ {{ wrong }}</span>
+          <span class="inline-flex items-center gap-0.5" :class="wrong ? 'text-negative' : ''"
+            ><X class="size-3.5" aria-hidden="true" />{{ wrong }}</span
+          >
         </p>
       </div>
 
@@ -407,15 +452,22 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
               <span v-for="n in 12" :key="n" class="quiz-confetti" :style="confetti(n)" />
             </span>
           </template>
-          <p class="mb-2.5 font-bold" :class="correct ? 'text-positive' : 'text-negative'" role="status">
-            <template v-if="correct">{{ count >= 2 ? '🎉 ' + t.correctDone : '✓ ' + t.correctOnce }}</template>
-            <template v-else
-              >✗ {{ t.wrong }} <span class="jp" v-html="notation(question.options[question.answer]!)"
-            /></template>
+          <p
+            class="mb-2.5 flex items-center gap-1.5 font-bold"
+            :class="correct ? 'text-positive' : 'text-negative'"
+            role="status"
+          >
+            <component
+              :is="correct ? (count >= 2 ? PartyPopper : Check) : X"
+              class="size-5 shrink-0"
+              aria-hidden="true"
+            />
+            <span v-if="correct">{{ count >= 2 ? t.correctDone : t.correctOnce }}</span>
+            <span v-else>{{ t.wrong }} <span class="jp" v-html="notation(question.options[question.answer]!)" /></span>
           </p>
           <div class="flex gap-3">
             <BaseButton variant="secondary" class="flex-1 whitespace-nowrap" @click="explaining = true"
-              >💡 {{ t.explain }}</BaseButton
+              ><Lightbulb class="size-4" aria-hidden="true" /> {{ t.explain }}</BaseButton
             >
             <BaseButton class="flex-1 whitespace-nowrap" @click="proceed">{{ t.nextQuestion }} →</BaseButton>
           </div>
@@ -429,6 +481,8 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
             <div v-if="question.explain" class="text-[15px]" v-html="notation(question.explain)" />
             <slot v-if="current !== null" name="feedback" :item="current" :correct="correct" />
             <BaseButton block @click="explaining = false">{{ t.understood }}</BaseButton>
+            <!-- Extra reading below the button: browsing, not needed to go on. -->
+            <slot v-if="current !== null" name="more" :item="current" />
           </div>
         </BaseSheet>
       </template>
@@ -448,7 +502,9 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
           <dt class="text-ink-soft text-xs">{{ t.accuracy }}</dt>
         </div>
         <div class="surface rounded-card px-2 py-3">
-          <dd class="text-2xl font-bold">🔥 {{ best }}</dd>
+          <dd class="text-warning flex items-center justify-center gap-1 text-2xl font-bold">
+            <Flame class="size-6" aria-hidden="true" />{{ best }}
+          </dd>
           <dt class="text-ink-soft text-xs">{{ t.bestStreak }}</dt>
         </div>
         <div class="surface rounded-card px-2 py-3">
@@ -458,7 +514,9 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
       </dl>
       <p class="text-ink-soft mt-2 text-sm">{{ t.doneStats(tries, wrong) }}</p>
       <BaseCard v-if="lastMisses.length" class="mx-auto mt-5 max-w-md text-start">
-        <p class="mb-2 font-bold">❌ {{ t.runMisses }}</p>
+        <p class="mb-2 flex items-center gap-1.5 font-bold">
+          <CircleX class="text-negative size-5" aria-hidden="true" /> {{ t.runMisses }}
+        </p>
         <MissList :groups="lastGroups" />
       </BaseCard>
       <div class="mt-6 flex flex-wrap justify-center gap-3">
