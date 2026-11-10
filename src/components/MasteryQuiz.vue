@@ -20,13 +20,27 @@ export interface Question {
   answer: number
   /** Shown after answering, under the verdict. */
   explain?: string
+  /**
+   * How a mistake on this exact question is filed in the statistics: its own
+   * label, and the groups it sits under (radical → kanji). Without it the
+   * item's `label` is used.
+   */
+  stat?: { label: string; path?: string[] }
+}
+
+/** A question answered wrong, waiting to be answered right twice. */
+interface Retry {
+  q: Question
+  /** Wrong answers to this exact question so far. */
+  wrong: number
 }
 
 /**
  * The one test engine of the site.
  *
- * Every question is asked until it has been answered correctly twice. A wrong
- * answer brings it back two questions later; a first right answer sends it a
+ * Every item is asked until it has been answered correctly twice. A wrong
+ * answer brings that exact question back two questions later, resets the
+ * item's count, and after two misses cuts it to two options; a first right answer sends it a
  * few places further. Options are shuffled on every showing, so the second
  * time cannot be answered by remembering where the right one was.
  *
@@ -37,14 +51,12 @@ export interface Question {
  * same question — and each finished run goes into the test's history, named
  * item by item through `label`.
  */
-const { pool, build, storageKey, label, group } = defineProps<{
+const { pool, build, storageKey, label } = defineProps<{
   pool: readonly K[]
   build: (key: K) => Question
   storageKey?: string
   /** How an item is named in the mistakes list (notation allowed). */
   label?: (key: K) => string
-  /** The parent an item's mistakes add up under — a kanji's radical. */
-  group?: (key: K) => string
 }>()
 defineSlots<{
   feedback?: (p: { item: K; correct: boolean }) => unknown
@@ -62,8 +74,8 @@ const picked = ref<number | null>(null)
 const tries = ref(0)
 const wrong = ref(0)
 const finished = ref(false)
-/** This run's mistakes, per item. */
-const misses = ref(new Map<K, number>())
+/** This run's mistakes, keyed by their stat label. */
+const misses = ref(new Map<string, Miss>())
 const resumed = ref(false)
 const showHistory = ref(false)
 /** The explanation sheet, opened from the bar after answering. */
@@ -72,8 +84,12 @@ const actions = ref<HTMLElement | null>(null)
 /** The finished run's mistakes, kept for the end screen. */
 const lastMisses = ref<Miss[]>([])
 const lastGroups = computed(() => groupMisses(lastMisses.value, Infinity))
-/** Questions answered wrong: they come back exactly as they were, not rebuilt. */
-const retry = ref(new Map<K, Question>())
+/**
+ * Questions answered wrong. Until such a question is answered right twice in
+ * a row it comes back exactly as it was — not rebuilt as another question
+ * about the same item — and the item cannot be mastered.
+ */
+const retry = ref(new Map<K, Retry>())
 
 function start() {
   queue.value = shuffle(pool)
@@ -108,7 +124,9 @@ function resume(): boolean {
   if (!storageKey) return false
   const run = loadRun<K>(storageKey)
   const same = run && run.pool.length === pool.length && run.pool.every((k) => pool.includes(k))
-  if (!run || !same || run.current === null) return false
+  // Runs saved before misses were filed per question cannot be resumed.
+  const filedPerQuestion = run?.misses.every(([, m]) => typeof m === 'object')
+  if (!run || !same || !filedPerQuestion || run.current === null) return false
   queue.value = run.queue
   counts.value = new Map(run.counts)
   current.value = run.current
@@ -117,8 +135,8 @@ function resume(): boolean {
   picked.value = run.picked
   tries.value = run.tries
   wrong.value = run.wrong
-  misses.value = new Map(run.misses)
-  retry.value = new Map((run.retry ?? []) as [K, Question][])
+  misses.value = new Map(run.misses as [string, Miss][])
+  retry.value = new Map((run.retry ?? []) as [K, Retry][])
   finished.value = false
   resumed.value = true
   return true
@@ -126,9 +144,7 @@ function resume(): boolean {
 function finish() {
   finished.value = true
   current.value = null
-  lastMisses.value = [...misses.value]
-    .sort((a, b) => b[1] - a[1])
-    .map(([k, n]) => ({ label: label ? label(k) : String(k), n, ...(group ? { group: group(k) } : {}) }))
+  lastMisses.value = [...misses.value.values()]
   if (storageKey) {
     saveRun(storageKey, null)
     addAttempt(storageKey, {
@@ -150,7 +166,7 @@ function next() {
     return
   }
   current.value = k
-  question.value = retry.value.get(k) ?? build(k)
+  question.value = retry.value.get(k)?.q ?? build(k)
   order.value = shuffle(question.value.options.map((_, i) => i))
   picked.value = null
 }
@@ -159,20 +175,40 @@ function pick(i: number) {
   picked.value = i
   tries.value++
   const k = current.value
-  if (i === question.value.answer) {
-    retry.value.delete(k)
+  const q = question.value
+  if (i === q.answer) {
     const c = (counts.value.get(k) ?? 0) + 1
     counts.value.set(k, c)
-    if (c < 2) queue.value.splice(Math.min(queue.value.length, 4 + Math.floor(Math.random() * 4)), 0, k)
+    if (c >= 2) retry.value.delete(k)
+    else queue.value.splice(Math.min(queue.value.length, 4 + Math.floor(Math.random() * 4)), 0, k)
   } else {
     wrong.value++
-    misses.value.set(k, (misses.value.get(k) ?? 0) + 1)
-    retry.value.set(k, question.value)
+    fileMiss(k, q)
+    // Back to zero: this exact question now has to be right twice.
+    counts.value.set(k, 0)
+    const r = retry.value.get(k) ?? { q, wrong: 0 }
+    r.wrong++
+    if (r.wrong >= 2) r.q = halve(r.q)
+    retry.value.set(k, r)
     queue.value.splice(Math.min(queue.value.length, 2), 0, k)
   }
   persist()
   // On a short screen, bring the buttons under the question into view.
   requestAnimationFrame(() => actions.value?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }))
+}
+/** Count a mistake under the question's own label and groups. */
+function fileMiss(k: K, q: Question) {
+  const stat = q.stat ?? { label: label ? label(k) : String(k) }
+  const m = misses.value.get(stat.label) ?? { label: stat.label, n: 0, ...(stat.path ? { path: stat.path } : {}) }
+  m.n++
+  misses.value.set(stat.label, m)
+}
+/** Missed twice: keep the right option and one wrong one at random — a 50% guess. */
+function halve(q: Question): Question {
+  if (q.options.length <= 2) return q
+  const wrongs = q.options.map((_, i) => i).filter((i) => i !== q.answer)
+  const w = wrongs[Math.floor(Math.random() * wrongs.length)]!
+  return { ...q, options: [q.options[q.answer]!, q.options[w]!], answer: 0 }
 }
 function proceed() {
   explaining.value = false

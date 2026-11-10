@@ -98,6 +98,11 @@ const U = {
   kanjiOf: [(r: string) => `${r} kanjileri`, (r: string) => `${r} kanji`],
   kRad: ['部首 · bu kanjinin radikali', '部首 · this kanji’s radical'],
   kRadMean: ['Radikalin anlamı', 'Meaning of the radical'],
+  meaningQ: ['anlam sorusu', 'meaning question'],
+  onLabel: ['音読み · Çince kökenli okunuş', '音読み · on reading (from Chinese)'],
+  kunLabel: ['訓読み · Japonca okunuş', '訓読み · kun reading (native)'],
+  wordsLabel: ['Kelimeler', 'Words'],
+  familyLabel: [(r: string) => `${r} radikalli diğer kanjiler`, (r: string) => `Other kanji with ${r}`],
   kMean: ['意味 · bu kanjinin anlamı (benzer kanjiler arasından)', '意味 · this kanji’s meaning (among look-alikes)'],
   yomi: [KIND_LABEL.yomi, '問題1 漢字読み · reading of the underlined word'],
   hyouki: [KIND_LABEL.hyouki, '問題2 表記 · the right kanji for the hiragana word'],
@@ -240,7 +245,7 @@ function build(i: number): Question {
         size: 'big',
         options: [m(r), ...pick3(radicals.map(m), m(r))],
         answer: 0,
-        explain: `${r.radical} = ${m(r)} · ${r.name_jp} · ${r.kanji.map((x) => x.kanji).join(' ')}`,
+        explain: `${r.radical} = ${m(r)} · ${r.name_jp}`,
       }
     }
     const k = shuffle(r.kanji)[0]!
@@ -254,34 +259,49 @@ function build(i: number): Question {
     }
   }
   const k = all[i]!
+  const r = radicals[k.ri]!
   const w = shuffle(k.words)[0]
+  // Statistics: the word under its kanji under its radical.
+  const path = [`${r.radical} ${m(r)}`, `${k.kanji} ${m(k)}`]
+  const stat = { label: w ? `{${w.word}|${w.reading}} ${m(w)}` : `${k.kanji} · ${u('meaningQ')}`, path }
   const explain = w
     ? `<b class="jp">${rubyWord(w.word, w.reading)}</b> = ${m(w)} · ${k.kanji}: ${readingUsed(k, w) || [...k.on, ...k.kun].join('・')}`
     : `${k.kanji} = ${m(k)}`
   const roll = Math.random()
   if (w && roll < 0.45) {
     const v = { word: w.word, reading: w.reading, meaning: m(w) }
-    return { kind: u('yomi'), prompt: `[${w.word}]`, size: 'jp', options: readingOptions(v, vocab), answer: 0, explain }
+    return {
+      kind: u('yomi'),
+      prompt: `[${w.word}]`,
+      size: 'jp',
+      options: readingOptions(v, vocab),
+      answer: 0,
+      explain,
+      stat,
+    }
   }
   if (w && roll < 0.8 && hasKanji(w.word)) {
     const opts = spellingOptions({ word: w.word, reading: w.reading, meaning: m(w) }, similar)
     if (opts.length === 4)
-      return { kind: u('hyouki'), prompt: `[${w.reading}]`, size: 'jp', options: opts, answer: 0, explain }
+      return { kind: u('hyouki'), prompt: `[${w.reading}]`, size: 'jp', options: opts, answer: 0, explain, stat }
   }
   // Meaning, with look-alike kanji as the wrong options.
   const lookalike = shuffle([...sameRadical(k), ...sameSound(k)].map((c) => m(byChar.get(c)!)))
   const opts = [m(k), ...pick3([...lookalike, ...all.map(m)], m(k))]
-  return { kind: u('kMean'), prompt: k.kanji, size: 'big', options: opts, answer: 0, explain }
+  return {
+    kind: u('kMean'),
+    prompt: k.kanji,
+    size: 'big',
+    options: opts,
+    answer: 0,
+    explain,
+    stat: { ...stat, label: `${k.kanji} · ${u('meaningQ')}` },
+  }
 }
 const itemLabel = (i: number) => {
   const test = running.value!
   if (test.kind === 'rad') return `${radicals[i]!.radical} ${m(radicals[i]!)}`
   return `${all[i]!.kanji} ${m(all[i]!)}`
-}
-/** Kanji mistakes add up under their radical; radical tests have no groups. */
-const itemGroup = (i: number) => {
-  const r = radicals[all[i]!.ri]!
-  return `${r.radical} ${m(r)}`
 }
 </script>
 
@@ -296,14 +316,68 @@ const itemGroup = (i: number) => {
         :build="build"
         :storage-key="storageKey(running)"
         :label="itemLabel"
-        :group="running.kind === 'kan' ? itemGroup : undefined"
       >
         <template #feedback="{ item }">
-          <div v-if="running.kind === 'kan'" class="mt-2 text-[15px]">
-            <p class="jp text-ink-soft">{{ all[item]!.on.join('・') }} ／ {{ all[item]!.kun.join('・') }}</p>
-            <ul class="mt-1.5 flex flex-wrap gap-1.5">
-              <li v-for="w in all[item]!.words" :key="w.word" class="bg-muted rounded-control px-2 py-1 text-sm">
-                <span class="jp text-lg" lang="ja" v-html="rubyWord(w.word, w.reading)" /> {{ m(w) }}
+          <!-- The kanji large, its readings labelled, its words with furigana,
+               and the other kanji of its radical. -->
+          <div v-if="running.kind === 'kan'" class="grid gap-4">
+            <div class="flex items-center gap-4">
+              <span class="jp text-primary w-20 shrink-0 text-center text-7xl leading-none">{{
+                all[item]!.kanji
+              }}</span>
+              <dl class="grid min-w-0 gap-1.5">
+                <div v-if="all[item]!.on.length">
+                  <dt class="text-ink-soft text-xs">{{ u('onLabel') }}</dt>
+                  <dd class="jp text-2xl">{{ all[item]!.on.join('・') }}</dd>
+                </div>
+                <div v-if="all[item]!.kun.length">
+                  <dt class="text-ink-soft text-xs">{{ u('kunLabel') }}</dt>
+                  <dd class="jp text-2xl">{{ all[item]!.kun.join('・') }}</dd>
+                </div>
+              </dl>
+            </div>
+            <div>
+              <p class="text-ink-soft mb-1 text-sm font-semibold">{{ u('wordsLabel') }}</p>
+              <ul class="grid gap-1.5">
+                <li
+                  v-for="w in all[item]!.words"
+                  :key="w.word"
+                  class="bg-muted rounded-control flex flex-wrap items-center gap-x-3 px-3 py-1"
+                >
+                  <span class="jp text-2xl leading-[2.1]" lang="ja" v-html="rubyWord(w.word, w.reading)" />
+                  <span class="text-[15px]">{{ m(w) }}</span>
+                  <span v-if="readingUsed(all[item]!, w)" class="jp text-primary ms-auto text-sm font-semibold">{{
+                    readingUsed(all[item]!, w)
+                  }}</span>
+                </li>
+              </ul>
+            </div>
+            <div v-if="sameRadical(all[item]!).length">
+              <p class="text-ink-soft mb-1 text-sm font-semibold">
+                {{ u('familyLabel')(radicals[all[item]!.ri]!.radical) }}
+              </p>
+              <ul class="grid grid-cols-4 gap-2">
+                <li
+                  v-for="c in sameRadical(all[item]!)"
+                  :key="c"
+                  class="bg-muted rounded-control px-1 py-1.5 text-center"
+                >
+                  <span class="jp block text-3xl leading-tight">{{ c }}</span>
+                  <span class="block truncate text-xs">{{ m(byChar.get(c)!) }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div v-else class="grid gap-2">
+            <p class="text-ink-soft text-sm font-semibold">{{ u('familyLabel')(radicals[item]!.radical) }}</p>
+            <ul class="grid grid-cols-3 gap-2">
+              <li
+                v-for="k in radicals[item]!.kanji"
+                :key="k.kanji"
+                class="bg-muted rounded-control px-1 py-2 text-center"
+              >
+                <span class="jp block text-4xl leading-tight">{{ k.kanji }}</span>
+                <span class="block text-xs">{{ m(k) }}</span>
               </li>
             </ul>
           </div>

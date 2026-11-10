@@ -20,23 +20,29 @@ export interface SavedRun<K> {
   picked: number | null
   tries: number
   wrong: number
-  misses: [K, number][]
+  /** Mistakes so far, keyed by their stat label. */
+  misses: [string, unknown][]
   /** Questions answered wrong, kept so they come back exactly the same. */
   retry?: [K, unknown][]
 }
 
-/** One missed item. `group` gathers items under a parent — a kanji under its radical. */
+/**
+ * One missed question. `path` files it under its groups, outermost first —
+ * a word under its kanji under its radical. (`group` is the older one-level
+ * form, still read from saved history.)
+ */
 export interface Miss {
   label: string
   n: number
+  path?: string[]
   group?: string
 }
 
-export interface MissGroup {
-  /** Empty for items that belong to no group. */
-  group: string
+/** A node of the mistakes tree: a group with its total, or a single miss. */
+export interface MissNode {
+  label: string
   n: number
-  items: { label: string; n: number }[]
+  children: MissNode[]
 }
 
 export interface Attempt {
@@ -83,28 +89,31 @@ export const accuracy = (a: { tries: number; wrong: number }) =>
   a.tries ? Math.round(((a.tries - a.wrong) / a.tries) * 100) : 0
 
 /**
- * Sum misses by group, then by item inside each group, both most-missed
- * first. A group's total is its items' sum, so a radical whose kanji were
- * missed 4 + 2 times ranks as 6 even if no single kanji reaches that.
+ * Build the mistakes tree, most-missed first at every level. A group's count
+ * is the sum of everything under it, so a radical whose kanji were missed
+ * 4 + 2 times ranks as 6. A level with a single group (every kanji from the
+ * same radical) is skipped at the top — it would only repeat the total.
  */
-export function groupMisses(misses: Miss[], top = 10): MissGroup[] {
-  const groups = new Map<string, Map<string, number>>()
-  for (const x of misses) {
-    const g = groups.get(x.group ?? '') ?? new Map<string, number>()
-    g.set(x.label, (g.get(x.label) ?? 0) + x.n)
-    groups.set(x.group ?? '', g)
+export function groupMisses(misses: Miss[], top = 10): MissNode[] {
+  const root: MissNode = { label: '', n: 0, children: [] }
+  for (const m of misses) {
+    let node = root
+    for (const name of [...(m.path ?? (m.group ? [m.group] : [])), m.label]) {
+      let child = node.children.find((c) => c.label === name)
+      if (!child) node.children.push((child = { label: name, n: 0, children: [] }))
+      child.n += m.n
+      node = child
+    }
   }
-  const out = [...groups].map(([group, items]) => ({
-    group,
-    n: [...items.values()].reduce((s, n) => s + n, 0),
-    items: [...items].map(([label, n]) => ({ label, n })).sort((a, b) => b.n - a.n),
-  }))
-  // Ungrouped items rank one by one, as groups of their own.
-  const flat = out.filter((g) => !g.group).flatMap((g) => g.items.map((it) => ({ group: '', n: it.n, items: [it] })))
-  return [...out.filter((g) => g.group), ...flat].sort((a, b) => b.n - a.n).slice(0, top)
+  const tidy = (nodes: MissNode[]): MissNode[] =>
+    nodes.map((c) => ({ ...c, children: tidy(c.children) })).sort((a, b) => b.n - a.n)
+  // Only the outermost level is dropped; a lone kanji still lists its words.
+  const only = root.children.length === 1 ? root.children[0]! : null
+  const level = only && only.children.some((c) => c.children.length) ? only.children : root.children
+  return tidy(level).slice(0, top)
 }
 
-/** Across every run: the items (or groups) missed most often. */
+/** Across every run: the mistakes tree. */
 export const mostMissed = (history: Attempt[], top = 10) =>
   groupMisses(
     history.flatMap((a) => a.misses),

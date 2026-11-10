@@ -1,36 +1,34 @@
 <script setup lang="ts">
-import type { MissGroup } from '@/lib/quiz-store'
+import type { MissNode } from '@/lib/quiz-store'
 import { notation } from '@/lib/ruby'
 
 /**
- * Missed items, most-missed first, each with a bar scaled to the top one.
- * Grouped items (kanji under their radical) show the group's total on top and
- * the items with their own counts beneath it.
+ * The mistakes tree, most-missed first: groups (radical, then kanji) with
+ * their totals, and the missed words under them. Only the top level gets a
+ * bar, scaled to the largest — enough to see what to study first.
  */
-const { groups } = defineProps<{ groups: MissGroup[] }>()
+const { groups, depth = 0 } = defineProps<{ groups: MissNode[]; depth?: number }>()
 const width = (n: number) => `${(n / (groups[0]?.n || 1)) * 100}%`
 </script>
 
 <template>
-  <ul class="grid gap-2.5">
-    <li v-for="g in groups" :key="g.group || g.items[0]!.label">
+  <ul class="grid" :class="depth === 0 ? 'gap-3' : 'border-hair mt-1 ms-2 gap-1 border-s-2 ps-3'">
+    <li v-for="g in groups" :key="g.label">
       <div class="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3">
         <span
-          class="jp min-w-0 truncate text-lg"
-          :class="g.group ? 'font-bold' : ''"
-          v-html="notation(g.group || g.items[0]!.label)"
+          class="jp min-w-0"
+          :class="[
+            depth === 0 ? 'text-xl' : depth === 1 ? 'text-lg' : 'text-ink-soft text-lg',
+            g.children.length ? 'font-bold' : '',
+          ]"
+          v-html="notation(g.label)"
         />
-        <span class="text-negative text-sm font-bold">{{ g.n }}×</span>
-        <span class="bg-muted col-span-2 h-1.5 overflow-hidden rounded-full">
+        <span class="text-negative text-sm" :class="g.children.length ? 'font-bold' : ''">{{ g.n }}×</span>
+        <span v-if="depth === 0" class="bg-muted col-span-2 mt-0.5 h-1.5 overflow-hidden rounded-full">
           <span class="bg-negative block h-full rounded-full" :style="{ width: width(g.n) }" />
         </span>
       </div>
-      <ul v-if="g.group" class="border-hair mt-1 ms-2 grid gap-0.5 border-s-2 ps-3">
-        <li v-for="it in g.items" :key="it.label" class="flex justify-between gap-3">
-          <span class="jp text-ink-soft min-w-0" v-html="notation(it.label)" />
-          <span class="text-negative shrink-0 text-sm">{{ it.n }}×</span>
-        </li>
-      </ul>
+      <MissList v-if="g.children.length" :groups="g.children" :depth="depth + 1" />
     </li>
   </ul>
 </template>
