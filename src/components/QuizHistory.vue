@@ -32,7 +32,7 @@ const runs = ref<Attempt[]>(typeof window === 'undefined' ? [] : loadHistory(sto
 const open = ref<number | null>(null)
 const worst = computed(() => mostMissed(runs.value, 8))
 const scores = computed(() => runs.value.map(accuracy))
-const last = computed(() => scores.value.at(-1) ?? 0)
+const last = computed(() => scores.value[scores.value.length - 1] ?? 0)
 const avg = computed(() =>
   scores.value.length ? Math.round(scores.value.reduce((s, a) => s + a, 0) / scores.value.length) : 0,
 )

@@ -37,7 +37,7 @@ const types = data.types as Record<string, Tri>
 const readings = data.readings as Record<string, { t: string; j: string[]; tr: Tri }>
 const sections = [1, 2, 3, 4, 5].map((m) => {
   const ids = items.map((d, i) => (d.m === m ? i : -1)).filter((i) => i >= 0)
-  return { m, ids, from: ids[0]! + 1, to: ids.at(-1)! + 1 }
+  return { m, ids, from: ids[0]! + 1, to: ids[ids.length - 1]! + 1 }
 })
 
 const L = {

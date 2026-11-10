@@ -40,7 +40,7 @@ const idsOf = (unit: number) => all.map((k, i) => (k.unit === unit ? i : -1)).fi
 const blocks: number[][] = []
 for (let i = 0; i < units.length; i += 4) blocks.push(units.slice(i, i + 4).map((_, j) => i + j))
 const blockOf = (u: number) => blocks.findIndex((b) => b.includes(u))
-const blockName = (b: number) => `Ünite ${blocks[b]![0]! + 1}–${blocks[b]!.at(-1)! + 1}`
+const blockName = (b: number) => `Ünite ${blocks[b]![0]! + 1}–${blocks[b]![blocks[b]!.length - 1]! + 1}`
 
 type Scope = { kind: 'unit'; u: number } | { kind: 'block'; b: number }
 const scope = ref<Scope | null>(null)
@@ -102,7 +102,7 @@ const nextAfter = computed(() => {
   if (!s) return null
   if (s.kind === 'unit') {
     const b = blockOf(s.u)
-    if (blocks[b]!.at(-1) === s.u) return { label: `${blockName(b)} genel testi`, go: () => openBlock(b) }
+    if (blocks[b]![blocks[b]!.length - 1] === s.u) return { label: `${blockName(b)} genel testi`, go: () => openBlock(b) }
     return s.u < units.length - 1 ? { label: 'Sonraki ünite →', go: () => openUnit(s.u + 1) } : null
   }
   return s.b < blocks.length - 1 ? { label: 'Sonraki ünite →', go: () => openUnit(blocks[s.b + 1]![0]!) } : null

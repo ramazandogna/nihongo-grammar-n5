@@ -4,6 +4,7 @@ import { setThemeStorageKey, useTheme } from 'rei-kit'
 import App from './App.vue'
 import { routes } from './routes'
 import { loadPrefs } from './lib/prefs'
+import { installErrorBar, showError } from './lib/error-bar'
 
 import './assets/main.css'
 
@@ -22,7 +23,18 @@ export const createApp = ViteSSG(
       return { top: 0 }
     },
   },
-  ({ router, isClient }) => {
+  ({ app, router, isClient }) => {
+    // Errors inside Vue (event handlers, lifecycle hooks) do not reach
+    // window.onerror; send both to the on-screen bar.
+    if (isClient) {
+      installErrorBar()
+      app.config.errorHandler = (err) => {
+        console.error(err)
+        showError(err)
+      }
+      router.onError((err) => showError(err))
+    }
+
     // The theme controller's watcher belongs to whichever scope first calls
     // useTheme(). Called from a page's layout, it died with that page on the
     // first navigation: the button kept changing the preference but nothing

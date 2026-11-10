@@ -11,6 +11,8 @@ export default defineConfig({
   // GitHub Pages serves the repo under /<repo>/; set VITE_BASE for that, `/` elsewhere.
   base: process.env.VITE_BASE ?? '/',
   plugins: [vue(), tailwindcss()],
+  // Older phone browsers too (Safari 14 / Chrome 87): newer syntax is compiled down.
+  build: { target: ['es2020', 'safari14', 'chrome87'] },
   resolve: {
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
   },

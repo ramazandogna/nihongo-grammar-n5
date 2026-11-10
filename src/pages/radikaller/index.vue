@@ -238,7 +238,7 @@ function readStates() {
     const live = run && run.current !== null ? run : null
     m.set(x.id, {
       runs: h.length,
-      last: h.length ? accuracy(h.at(-1)!) : null,
+      last: h.length ? accuracy(h[h.length - 1]!) : null,
       open: live ? runProgress(live) : null,
       at: live?.at ?? '',
     })
