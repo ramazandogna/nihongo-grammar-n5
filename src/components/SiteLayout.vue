@@ -86,7 +86,7 @@ function cycleTheme() {
     >
       {{ t.credit }}
       <a
-        href="https://www.instagram.com/ramazandogna/"
+        href="https://github.com/ramazandogna"
         target="_blank"
         rel="noopener noreferrer"
         class="focus-ring text-primary rounded-cell font-semibold"
