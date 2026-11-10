@@ -4,6 +4,7 @@ import { BaseButton, BaseCard } from 'rei-kit'
 
 import JpText from '@/components/JpText.vue'
 import ListeningLesson from '@/components/ListeningLesson.vue'
+import ReadingLesson from '@/components/ReadingLesson.vue'
 import MasteryQuiz, { type Question } from '@/components/MasteryQuiz.vue'
 import PagerNav from '@/components/PagerNav.vue'
 import RevealText from '@/components/RevealText.vue'
@@ -13,6 +14,7 @@ import { usePage } from '@/lib/page'
 import { toTop } from '@/lib/scroll'
 import data from './data.json'
 import { LISTENING } from './listening'
+import { READING, READING_HOW } from './reading'
 
 type Tri = string[]
 interface Item {
@@ -54,6 +56,10 @@ const view = ref<View>('learn')
 const fullTest = ref(false)
 /** Which listening part is open (聴解 問題1 / 問題2), if any. */
 const listen = ref<number | null>(null)
+/** Which reading part is open (問題4 / 問題5), if any. */
+const readPart = ref<4 | 5 | null>(null)
+const readHow = () => (readPart.value ? READING_HOW[readPart.value] : undefined)
+const readGroups = computed(() => READING.filter((g) => g.mondai === readPart.value))
 const tabs = computed(() => [
   { value: 'learn' as const, label: t.value.learn },
   { value: 'read' as const, label: t.value.reading },
@@ -61,7 +67,7 @@ const tabs = computed(() => [
 ])
 /** One word card on screen at a time while learning. */
 const card = ref(0)
-watch([sec, view, fullTest, listen], () => {
+watch([sec, view, fullTest, listen, readPart], () => {
   card.value = 0
   toTop()
 })
@@ -77,6 +83,7 @@ function home() {
   sec.value = null
   fullTest.value = false
   listen.value = null
+  readPart.value = null
 }
 
 /** The sentence a card teaches from: the answer put back into the question. */
@@ -96,7 +103,7 @@ function build(i: number): Question {
 <template>
   <SiteLayout>
     <!-- Section list -->
-    <template v-if="sec === null && !fullTest && listen === null">
+    <template v-if="sec === null && !fullTest && listen === null && readPart === null">
       <section class="py-6 text-center">
         <p class="font-jp text-primary text-6xl leading-none" aria-hidden="true">漢字</p>
         <p class="text-ink-soft mt-3">{{ pick(L.lead) }}</p>
@@ -116,6 +123,18 @@ function build(i: number): Question {
         <BaseButton variant="secondary" block @click="fullTest = true">総 {{ pick(L.all) }}</BaseButton>
       </div>
 
+      <h2 class="text-ink-soft mt-8 mb-2 text-sm font-semibold">読解 · Okuma</h2>
+      <div class="grid gap-3">
+        <BaseCard v-for="m in [4, 5] as const" :key="m" interactive as="button" class="text-start" @click="readPart = m">
+          <p class="font-bold">読 問題{{ m }} · {{ m === 4 ? 'Kısa metinler' : 'Orta metinler' }}</p>
+          <p class="text-ink-soft text-sm">
+            {{ READING.filter((g) => g.mondai === m).length }} metin ·
+            {{ READING.filter((g) => g.mondai === m).reduce((n, g) => n + g.items.length, 0) }} soru
+          </p>
+          <p class="text-primary mt-2 text-sm font-semibold">Oku, cevapla, nedenini gör →</p>
+        </BaseCard>
+      </div>
+
       <h2 class="text-ink-soft mt-8 mb-2 text-sm font-semibold">聴解 · Listening</h2>
       <div class="grid gap-3">
         <BaseCard v-for="(lp, k) in LISTENING" :key="lp.id" interactive as="button" class="text-start" @click="listen = k">
@@ -126,6 +145,12 @@ function build(i: number): Question {
           </p>
         </BaseCard>
       </div>
+    </template>
+
+    <!-- Reading -->
+    <template v-else-if="readPart !== null">
+      <StudyHeader :title="'読解 問題' + readPart" :sub="readPart === 4 ? 'Kısa metinler' : 'Orta metinler'" @back="home" />
+      <ReadingLesson :groups="readGroups" :how="readHow" />
     </template>
 
     <!-- Listening -->

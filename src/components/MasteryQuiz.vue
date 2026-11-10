@@ -187,10 +187,10 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
   <div class="flex flex-col gap-4">
     <template v-if="!finished && question">
       <div>
-        <p v-if="resumed" class="text-primary mb-2 text-sm font-semibold">↩ Kaldığın yerden devam ediyorsun.</p>
+        <p v-if="resumed" class="text-primary mb-2 text-sm font-semibold">{{ t.resumed }}</p>
         <ProgressBar :value="total * 2 - owed" :max="total * 2" :label="t.progress" size="sm" />
         <div class="text-ink-soft mt-1.5 flex flex-wrap justify-between gap-x-3 text-sm">
-          <span><b class="text-ink">%{{ percent }}</b> bitti · kalan {{ owed }} doğru cevap</span>
+          <span>{{ t.done(percent, owed) }}</span>
           <span>{{ t.mastered }} {{ done }}/{{ total }} · {{ t.mistakes }} {{ wrong }}</span>
         </div>
       </div>
@@ -266,10 +266,10 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
       </div>
       <h2 class="mt-6 text-2xl font-bold">{{ t.doneTitle }}</h2>
       <p class="text-ink-soft">
-        {{ t.doneStats(tries, wrong) }} · doğru oranı %{{ tries ? Math.round(((tries - wrong) / tries) * 100) : 0 }}
+        {{ t.doneStats(tries, wrong) }} · {{ t.rate(tries ? Math.round(((tries - wrong) / tries) * 100) : 0) }}
       </p>
       <BaseCard v-if="lastMisses.length" class="mx-auto mt-5 max-w-md text-start">
-        <p class="mb-2 font-bold">❌ Bu denemede yanlış yaptıkların</p>
+        <p class="mb-2 font-bold">❌ {{ t.runMisses }}</p>
         <ul class="grid gap-1">
           <li v-for="m in lastMisses" :key="m.label" class="bg-muted rounded-control flex justify-between gap-3 px-3 py-1.5">
             <span class="jp min-w-0 text-lg" v-html="notation(m.label)" />
@@ -279,7 +279,7 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
       </BaseCard>
       <div class="mt-6 flex flex-wrap justify-center gap-3">
         <BaseButton variant="secondary" @click="restart">{{ t.again }}</BaseButton>
-        <BaseButton v-if="storageKey" variant="ghost" @click="showHistory = !showHistory">📊 Geçmiş</BaseButton>
+        <BaseButton v-if="storageKey" :variant="showHistory ? 'secondary' : 'ghost'" @click="showHistory = !showHistory">{{ t.history }}</BaseButton>
         <slot name="actions" />
       </div>
       <BaseCard v-if="storageKey && showHistory" class="mx-auto mt-4 max-w-md">

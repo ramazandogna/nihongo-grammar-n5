@@ -23,7 +23,17 @@ export interface SitePage {
   palette: Palette
   /** Languages the page's content exists in. One means no language switch. */
   langs: readonly Lang[]
+  /** Which home-menu folder it sits in. */
+  group?: Group
 }
+
+export type Group = 'school' | 'work' | 'self'
+/** The home menu's folders, in order. */
+export const GROUPS: readonly { id: Group; icon: string; title: string; description: string }[] = [
+  { id: 'school', icon: '📁', title: 'Okul Dersleri', description: 'Derste gördüğümüz kitaplar ve çalışma yerleri' },
+  { id: 'work', icon: '💼', title: 'İş Yeri Japoncası', description: 'İşte kullandığım Japonca: müşteri, sipariş, menü' },
+  { id: 'self', icon: '📚', title: 'Kendi Çalışmam', description: 'Sınav hazırlığı, radikaller, ek kitaplar' },
+]
 
 export const HOME: SitePage = {
   path: '/',
@@ -42,6 +52,7 @@ export const PAGES: readonly SitePage[] = [
     description: 'Okuldaki mavi kitap: okuma metinleri, gramer, kelime oyunu, alıştırma ve test — ders ders.',
     palette: 'tokyo-night',
     langs: ['tr'],
+    group: 'school',
   },
   {
     path: '/business-nihongo/',
@@ -50,6 +61,7 @@ export const PAGES: readonly SitePage[] = [
     description: 'ISI ビジネス日本語 中級Ⅰ: şirket duyurusu okuma, 敬語 ile davet, iş yazışması kalıpları.',
     palette: 'rei',
     langs: ['tr'],
+    group: 'school',
   },
   {
     path: '/past-n3/',
@@ -58,6 +70,7 @@ export const PAGES: readonly SitePage[] = [
     description: 'Çıkmış JLPT N3 sınavları: her soru çözümüyle, okuma metinleri satır satır, dinleme sesli ve metinli.',
     palette: 'solarized',
     langs: ['tr'],
+    group: 'self',
   },
   {
     path: '/n5/',
@@ -66,6 +79,7 @@ export const PAGES: readonly SitePage[] = [
     description: 'N5 dilbilgisi: fiil çekimleri, partikeller, N5 kanjileri, örnek cümleler ve quizler.',
     palette: 'rose-pine',
     langs: ['tr'],
+    group: 'self',
   },
   {
     path: '/n4/',
@@ -74,6 +88,7 @@ export const PAGES: readonly SitePage[] = [
     description: 'JLPT N4 dilbilgisinin tamamı: 46 konu, romaji ve Türkçe örnekler, N4 kanji ve kelime, quizler.',
     palette: 'gruvbox',
     langs: ['tr'],
+    group: 'school',
   },
   {
     path: '/n4/13-15/',
@@ -82,6 +97,7 @@ export const PAGES: readonly SitePage[] = [
     description: '13・14・15課 gramer konuları, diyaloglar ve iki test.',
     palette: 'catppuccin',
     langs: ['tr', 'en', 'zh'],
+    group: 'school',
   },
   {
     path: '/kanji-n3-book/',
@@ -90,6 +106,7 @@ export const PAGES: readonly SitePage[] = [
     description: 'N3 kelime/kanji soruları 1–35: okunuş, anlam, kanji parçaları, okuma metinleri ve testler.',
     palette: 'sakura',
     langs: ['tr', 'en', 'zh'],
+    group: 'school',
   },
   {
     path: '/kanji-book-2/',
@@ -98,14 +115,16 @@ export const PAGES: readonly SitePage[] = [
     description: '18 ünitede 210 kanji: en bilinen kelimeler, furigana, ünite ve dört ünitelik testler.',
     palette: 'sakura',
     langs: ['tr'],
+    group: 'self',
   },
   {
     path: '/radikaller/',
     icon: '部',
     title: 'Radikaller',
     description: '43 radikal (部首), 347 N3 kanji ve kelimeleri: liste, arama ve radikal/kanji testleri.',
-    palette: 'sakura',
-    langs: ['tr'],
+    palette: 'dracula',
+    langs: ['tr', 'en'],
+    group: 'self',
   },
   {
     path: '/matsuya/',
@@ -114,6 +133,7 @@ export const PAGES: readonly SitePage[] = [
     description: 'Matsuya iş yeri kelimeleri: menü, sipariş, fiş, mutfak ve talimatlar.',
     palette: 'matcha',
     langs: ['tr'],
+    group: 'work',
   },
 ]
 

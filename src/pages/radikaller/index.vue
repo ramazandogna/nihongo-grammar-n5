@@ -16,17 +16,20 @@ import { toTop } from '@/lib/scroll'
 import { shuffle } from '@/lib/shuffle'
 import data from './data.json'
 import { GUIDE, POSITION_TR } from './guide'
+import { GUIDE_EN, POSITION_EN } from './guide-en'
 
 interface Word {
   word: string
   reading: string
   meaning_tr: string
+  meaning_en: string
 }
 interface Kanji {
   kanji: string
   on: string[]
   kun: string[]
   meaning_tr: string
+  meaning_en: string
   words: Word[]
 }
 interface Radical {
@@ -40,7 +43,56 @@ interface Radical {
   kanji: Kanji[]
 }
 
-const { t } = usePage('/radikaller/')
+const { t, lang } = usePage('/radikaller/')
+const en = computed(() => lang.value === 'en')
+/** A meaning in the page's language. */
+const m = (x: { meaning_tr: string; meaning_en: string }) => (en.value ? x.meaning_en : x.meaning_tr)
+const guide = (c: string) => {
+  const g = GUIDE[c]
+  if (!g) return undefined
+  return en.value ? { ...g, ...GUIDE_EN[c]! } : g
+}
+const position = (c: string) => (en.value ? POSITION_EN : POSITION_TR)[GUIDE[c]!.pos]
+const U = {
+  learn: ['Öğren', 'Learn'],
+  tests: ['Testler', 'Tests'],
+  search: ['Ara: su, 氵, deniz, 進, しんぽ…', 'Search: water, 氵, sea, 進, しんぽ…'],
+  searchLabel: ['Ara', 'Search'],
+  none: ['Sonuç yok.', 'No results.'],
+  lead: [(r: number, k: number, w: number) => `${r} radikal · ${k} kanji · ${w} kelime`, (r: number, k: number, w: number) => `${r} radicals · ${k} kanji · ${w} words`],
+  other: ['Diğer biçim:', 'Other form:'],
+  where: ['📍 Nerede?', '📍 Where?'],
+  origin: ['🖼️ Neyin resmi?', '🖼️ A picture of what?'],
+  lends: ['🧩 Kanjiye kattığı anlam', '🧩 What it lends the kanji'],
+  hook: ['💡 Akılda tutma', '💡 Memory hook'],
+  confuse: ['⚠️ Karıştırma (JLPT tuzağı)', '⚠️ Do not confuse (JLPT trap)'],
+  radicalOf: [(r: string, mm: string) => `${r} (${mm}) radikali`, (r: string, mm: string) => `radical ${r} (${mm})`],
+  on: ['· Çince kökenli; çoğunlukla bileşik kelimelerde', '· from Chinese; mostly in compounds'],
+  kun: ['· Japonca; çoğunlukla tek başına / fiillerde', '· native Japanese; mostly alone / in verbs'],
+  same: ['🔊 Aynı okunan:', '🔊 Same reading:'],
+  sameNote: [' — 表記 sorularında bunlar şık olarak gelir', ' — these show up as options in 表記 questions'],
+  sameRad: ['👀 Aynı radikal:', '👀 Same radical:'],
+  radTest: [(r: string) => `試 ${r} kanjilerinin testi (JLPT tarzı)`, (r: string) => `試 Test the ${r} kanji (JLPT style)`],
+  testsLead: [
+    'Sorular JLPT tarzında: 漢字読み (okunuş, ゛・uzun ses・っ tuzaklarıyla), 表記 (aynı radikalli/aynı okunan kanjiler arasından doğru yazılış) ve anlam. Testten çıksan da kaldığın yerden devam eder.',
+    'Questions are JLPT style: 漢字読み (reading, with ゛ / long-vowel / っ traps), 表記 (the right spelling among kanji with the same radical or reading) and meaning. Leave a test and it picks up where you stopped.',
+  ],
+  runSub: ['Her soru 2 kez doğru bilinene kadar · ilerleme kaydedilir', 'Until every question is right twice · progress is saved'],
+  radN: [(n: number) => `${n} radikal`, (n: number) => `${n} radicals`],
+  kanN: [(n: number) => `${n} kanji`, (n: number) => `${n} kanji`],
+  runs: [(n: number, p: number) => `${n} deneme · son %${p}`, (n: number, p: number) => `${n} runs · last ${p}%`],
+  stats: ['İstatistik', 'Stats'],
+  never: ['Henüz çözülmedi', 'Not taken yet'],
+  radTitle: [(n: number) => `Radikal ${n}`, (n: number) => `Radicals ${n}`],
+  kanjiOf: [(r: string) => `${r} kanjileri`, (r: string) => `${r} kanji`],
+  kRad: ['部首 · bu kanjinin radikali', '部首 · this kanji’s radical'],
+  kRadMean: ['Radikalin anlamı', 'Meaning of the radical'],
+  kMean: ['意味 · bu kanjinin anlamı (benzer kanjiler arasından)', '意味 · this kanji’s meaning (among look-alikes)'],
+  yomi: [KIND_LABEL.yomi, '問題1 漢字読み · reading of the underlined word'],
+  hyouki: [KIND_LABEL.hyouki, '問題2 表記 · the right kanji for the hiragana word'],
+} as const
+const u = <K extends keyof typeof U>(k: K): (typeof U)[K][0] => U[k][en.value ? 1 : 0] as (typeof U)[K][0]
+
 
 const radicals = data as Radical[]
 const all = radicals.flatMap((r, ri) => r.kanji.map((k) => ({ ...k, ri })))
@@ -72,10 +124,10 @@ const similar = (c: string) => {
 /* ── Views ── */
 type Tab = 'learn' | 'tests'
 const tab = ref<Tab>('learn')
-const tabs = [
-  { value: 'learn' as const, label: 'Öğren' },
-  { value: 'tests' as const, label: 'Testler' },
-]
+const tabs = computed(() => [
+  { value: 'learn' as const, label: u('learn') },
+  { value: 'tests' as const, label: u('tests') },
+])
 const query = ref('')
 const shown = computed(() => {
   const q = query.value.trim().toLowerCase()
@@ -89,7 +141,9 @@ const SIZE = 10
 const chunk = <T,>(xs: T[], n: number) => Array.from({ length: Math.ceil(xs.length / n) }, (_, i) => xs.slice(i * n, i * n + n))
 interface TestDef {
   id: string
-  title: string
+  n?: number
+  /** For the per-radical test. */
+  radical?: string
   kind: 'rad' | 'kan'
   keys: string
   pool: number[]
@@ -100,7 +154,7 @@ const tests: TestDef[] = [
     11,
   ).map((ids, n) => ({
     id: `rad${n + 1}`,
-    title: `Radikal ${n + 1}`,
+    n: n + 1,
     kind: 'rad' as const,
     keys: ids.map((i) => radicals[i]!.radical).join(''),
     pool: ids,
@@ -110,7 +164,7 @@ const tests: TestDef[] = [
     SIZE,
   ).map((ids, n) => ({
     id: `kan${n + 1}`,
-    title: `Kanji ${n + 1}`,
+    n: n + 1,
     kind: 'kan' as const,
     keys: ids.map((i) => all[i]!.kanji).join(''),
     pool: ids,
@@ -119,10 +173,11 @@ const tests: TestDef[] = [
 /** The per-radical test from learn mode: that radical's kanji. */
 function radicalTest(ri: number): TestDef {
   const ids = all.map((k, i) => (k.ri === ri ? i : -1)).filter((i) => i >= 0)
-  return { id: `r-${radicals[ri]!.id}`, title: `${radicals[ri]!.radical} kanjileri`, kind: 'kan', keys: '', pool: ids }
+  return { id: `r-${radicals[ri]!.id}`, radical: radicals[ri]!.radical, kind: 'kan', keys: '', pool: ids }
 }
 
 const running = ref<TestDef | null>(null)
+const title = (x: TestDef) => (x.radical ? u('kanjiOf')(x.radical) : x.kind === 'rad' ? u('radTitle')(x.n!) : `Kanji ${x.n}`)
 const historyOf = ref<string | null>(null)
 watch([tab, running, reading], toTop)
 
@@ -134,46 +189,53 @@ onMounted(() => (mounted.value = true))
 const summary = (x: TestDef) => {
   if (!mounted.value) return ''
   const h = loadHistory(storageKey(x))
-  return h.length ? `${h.length} deneme · son %${accuracy(h.at(-1)!)}` : ''
+  return h.length ? u('runs')(h.length, accuracy(h.at(-1)!)) : ''
 }
 
+/** Last run's accuracy, for the badge on the card. */
+const score = (x: TestDef) => {
+  if (!mounted.value) return null
+  const h = loadHistory(storageKey(x))
+  return h.length ? accuracy(h.at(-1)!) : null
+}
+const tone = (p: number) => (p >= 85 ? 'var(--color-positive)' : p >= 60 ? 'var(--color-warning)' : 'var(--color-negative)')
+
 const pick3 = (xs: string[], not: string) => shuffle([...new Set(xs)].filter((x) => x && x !== not)).slice(0, 3)
-const RAD_KIND = '部首 · bu kanjinin radikali'
 
 function build(i: number): Question {
   const test = running.value!
   if (test.kind === 'rad') {
     const r = radicals[i]!
-    const label = (x: Radical) => `${x.radical}　${x.meaning_tr}`
+    const label = (x: Radical) => `${x.radical}　${m(x)}`
     if (Math.random() < 0.5) {
-      return { kind: 'Radikalin anlamı', prompt: r.radical, size: 'big', options: [r.meaning_tr, ...pick3(radicals.map((x) => x.meaning_tr), r.meaning_tr)], answer: 0 }
+      return { kind: u('kRadMean'), prompt: r.radical, size: 'big', options: [m(r), ...pick3(radicals.map(m), m(r))], answer: 0 }
     }
     const k = shuffle(r.kanji)[0]!
-    return { kind: RAD_KIND, prompt: k.kanji, size: 'big', options: [label(r), ...pick3(radicals.map(label), label(r))], answer: 0, explain: `${k.kanji} = ${k.meaning_tr} · radikali ${r.radical} (${r.meaning_tr})` }
+    return { kind: u('kRad'), prompt: k.kanji, size: 'big', options: [label(r), ...pick3(radicals.map(label), label(r))], answer: 0, explain: `${k.kanji} = ${m(k)} · ${u('radicalOf')(r.radical, m(r))}` }
   }
   const k = all[i]!
   const w = shuffle(k.words)[0]
   const explain = w
-    ? `<b class="jp">${rubyWord(w.word, w.reading)}</b> = ${w.meaning_tr} · ${k.kanji}: ${readingUsed(k, w) || [...k.on, ...k.kun].join('・')}`
-    : `${k.kanji} = ${k.meaning_tr}`
+    ? `<b class="jp">${rubyWord(w.word, w.reading)}</b> = ${m(w)} · ${k.kanji}: ${readingUsed(k, w) || [...k.on, ...k.kun].join('・')}`
+    : `${k.kanji} = ${m(k)}`
   const roll = Math.random()
   if (w && roll < 0.45) {
-    const v = { word: w.word, reading: w.reading, meaning: w.meaning_tr }
-    return { kind: KIND_LABEL.yomi, prompt: `[${w.word}]`, size: 'jp', options: readingOptions(v, vocab), answer: 0, explain }
+    const v = { word: w.word, reading: w.reading, meaning: m(w) }
+    return { kind: u('yomi'), prompt: `[${w.word}]`, size: 'jp', options: readingOptions(v, vocab), answer: 0, explain }
   }
   if (w && roll < 0.8 && hasKanji(w.word)) {
-    const opts = spellingOptions({ word: w.word, reading: w.reading, meaning: w.meaning_tr }, similar)
-    if (opts.length === 4) return { kind: KIND_LABEL.hyouki, prompt: `[${w.reading}]`, size: 'jp', options: opts, answer: 0, explain }
+    const opts = spellingOptions({ word: w.word, reading: w.reading, meaning: m(w) }, similar)
+    if (opts.length === 4) return { kind: u('hyouki'), prompt: `[${w.reading}]`, size: 'jp', options: opts, answer: 0, explain }
   }
   // Meaning, with look-alike kanji as the wrong options.
-  const lookalike = shuffle([...sameRadical(k), ...sameSound(k)].map((c) => byChar.get(c)!.meaning_tr))
-  const opts = [k.meaning_tr, ...pick3([...lookalike, ...all.map((x) => x.meaning_tr)], k.meaning_tr)]
-  return { kind: '意味 · bu kanjinin anlamı (benzer kanjiler arasından)', prompt: k.kanji, size: 'big', options: opts, answer: 0, explain }
+  const lookalike = shuffle([...sameRadical(k), ...sameSound(k)].map((c) => m(byChar.get(c)!)))
+  const opts = [m(k), ...pick3([...lookalike, ...all.map(m)], m(k))]
+  return { kind: u('kMean'), prompt: k.kanji, size: 'big', options: opts, answer: 0, explain }
 }
 const itemLabel = (i: number) => {
   const test = running.value!
-  if (test.kind === 'rad') return `${radicals[i]!.radical} ${radicals[i]!.meaning_tr}`
-  return `${all[i]!.kanji} ${all[i]!.meaning_tr}`
+  if (test.kind === 'rad') return `${radicals[i]!.radical} ${m(radicals[i]!)}`
+  return `${all[i]!.kanji} ${m(all[i]!)}`
 }
 </script>
 
@@ -181,14 +243,14 @@ const itemLabel = (i: number) => {
   <SiteLayout>
     <!-- A test running -->
     <template v-if="running">
-      <StudyHeader :title="running.title" sub="Her soru 2 kez doğru bilinene kadar · ilerleme kaydedilir" @back="running = null" />
+      <StudyHeader :title="title(running)" :sub="u('runSub')" @back="running = null" />
       <MasteryQuiz :key="running.id" :pool="running.pool" :build="build" :storage-key="storageKey(running)" :label="itemLabel">
         <template #feedback="{ item }">
           <div v-if="running.kind === 'kan'" class="mt-2 text-[15px]">
             <p class="jp text-ink-soft">{{ all[item]!.on.join('・') }} ／ {{ all[item]!.kun.join('・') }}</p>
             <ul class="mt-1.5 flex flex-wrap gap-1.5">
               <li v-for="w in all[item]!.words" :key="w.word" class="bg-muted rounded-control px-2 py-1 text-sm">
-                <span class="jp text-lg" lang="ja" v-html="rubyWord(w.word, w.reading)" /> {{ w.meaning_tr }}
+                <span class="jp text-lg" lang="ja" v-html="rubyWord(w.word, w.reading)" /> {{ m(w) }}
               </li>
             </ul>
           </div>
@@ -205,23 +267,23 @@ const itemLabel = (i: number) => {
             <div class="flex items-center gap-4">
               <span class="jp text-primary w-20 shrink-0 text-center text-7xl leading-none">{{ r.radical }}</span>
               <div class="min-w-0">
-                <p class="text-xl font-bold"><RevealText :text="r.meaning_tr" /></p>
+                <p class="text-xl font-bold"><RevealText :text="m(r)" /></p>
                 <p class="jp text-ink-soft">{{ r.name_jp }} · {{ r.name_romaji }}</p>
                 <p v-if="r.variants.length" class="text-ink-soft text-sm">
-                  Diğer biçim: <span class="jp text-ink text-lg">{{ r.variants.join(' ') }}</span>
+                  {{ u('other') }} <span class="jp text-ink text-lg">{{ r.variants.join(' ') }}</span>
                 </p>
                 <p v-if="GUIDE[r.radical]" class="bg-muted rounded-cell mt-1 inline-block px-2 text-sm font-semibold">
-                  {{ POSITION_TR[GUIDE[r.radical]!.pos] }}
+                  {{ position(r.radical) }}
                 </p>
               </div>
             </div>
-            <dl v-if="GUIDE[r.radical]" class="mt-4 grid gap-2 text-[15px]">
-              <div><dt class="font-bold">📍 Nerede?</dt><dd>{{ GUIDE[r.radical]!.where }}</dd></div>
-              <div><dt class="font-bold">🖼️ Neyin resmi?</dt><dd>{{ GUIDE[r.radical]!.origin }}</dd></div>
-              <div><dt class="font-bold">🧩 Kanjiye kattığı anlam</dt><dd>{{ GUIDE[r.radical]!.lends }}</dd></div>
-              <div class="border-primary border-s-4 ps-3"><dt class="font-bold">💡 Akılda tutma</dt><dd>{{ GUIDE[r.radical]!.hook }}</dd></div>
-              <div v-if="GUIDE[r.radical]!.confuse" class="border-negative border-s-4 ps-3">
-                <dt class="font-bold">⚠️ Karıştırma (JLPT tuzağı)</dt><dd>{{ GUIDE[r.radical]!.confuse }}</dd>
+            <dl v-if="guide(r.radical)" class="mt-4 grid gap-2 text-[15px]">
+              <div><dt class="font-bold">{{ u('where') }}</dt><dd>{{ guide(r.radical)!.where }}</dd></div>
+              <div><dt class="font-bold">{{ u('origin') }}</dt><dd>{{ guide(r.radical)!.origin }}</dd></div>
+              <div><dt class="font-bold">{{ u('lends') }}</dt><dd>{{ guide(r.radical)!.lends }}</dd></div>
+              <div class="border-primary border-s-4 ps-3"><dt class="font-bold">{{ u('hook') }}</dt><dd>{{ guide(r.radical)!.hook }}</dd></div>
+              <div v-if="guide(r.radical)!.confuse" class="border-negative border-s-4 ps-3">
+                <dt class="font-bold">{{ u('confuse') }}</dt><dd>{{ guide(r.radical)!.confuse }}</dd>
               </div>
             </dl>
           </BaseCard>
@@ -230,31 +292,31 @@ const itemLabel = (i: number) => {
             <div class="flex items-start gap-4">
               <span class="jp w-16 shrink-0 text-center text-6xl leading-none">{{ k.kanji }}</span>
               <div class="min-w-0 flex-1">
-                <p class="text-lg font-bold"><RevealText :text="k.meaning_tr" /></p>
-                <p class="text-ink-soft text-sm">{{ r.radical }} ({{ r.meaning_tr }}) radikali</p>
+                <p class="text-lg font-bold"><RevealText :text="m(k)" /></p>
+                <p class="text-ink-soft text-sm">{{ u('radicalOf')(r.radical, m(r)) }}</p>
                 <div class="mt-1.5 grid gap-1 text-[15px]">
-                  <p v-if="k.on.length"><b>音読み</b> <span class="jp text-lg">{{ k.on.join('・') }}</span> <span class="text-ink-soft text-sm">· Çince kökenli; çoğunlukla bileşik kelimelerde</span></p>
-                  <p v-if="k.kun.length"><b>訓読み</b> <span class="jp text-lg">{{ k.kun.join('・') }}</span> <span class="text-ink-soft text-sm">· Japonca; çoğunlukla tek başına / fiillerde</span></p>
+                  <p v-if="k.on.length"><b>音読み</b> <span class="jp text-lg">{{ k.on.join('・') }}</span> <span class="text-ink-soft text-sm">{{ u('on') }}</span></p>
+                  <p v-if="k.kun.length"><b>訓読み</b> <span class="jp text-lg">{{ k.kun.join('・') }}</span> <span class="text-ink-soft text-sm">{{ u('kun') }}</span></p>
                 </div>
               </div>
             </div>
             <ul class="mt-3 grid gap-1.5">
               <li v-for="w in k.words" :key="w.word" class="bg-muted rounded-control flex flex-wrap items-center gap-x-3 gap-y-0.5 px-3 py-1.5">
                 <span class="jp min-w-24 text-xl leading-loose" lang="ja" v-html="rubyWord(w.word, w.reading)" />
-                <span class="text-[15px]"><RevealText :text="w.meaning_tr" /></span>
+                <span class="text-[15px]"><RevealText :text="m(w)" /></span>
                 <span v-if="readingUsed(k, w)" class="jp text-primary ms-auto text-sm font-semibold">{{ readingUsed(k, w) }}</span>
               </li>
             </ul>
             <div v-if="sameSound(k).length || sameRadical({ ...k, ri }).length" class="mt-3 grid gap-1 text-sm">
               <p v-if="sameSound(k).length">
-                <b>🔊 Aynı okunan:</b> <span class="jp text-lg">{{ sameSound(k).join(' ') }}</span>
-                <span class="text-ink-soft"> — 表記 sorularında bunlar şık olarak gelir</span>
+                <b>{{ u('same') }}</b> <span class="jp text-lg">{{ sameSound(k).join(' ') }}</span>
+                <span class="text-ink-soft">{{ u('sameNote') }}</span>
               </p>
-              <p><b>👀 Aynı radikal:</b> <span class="jp text-lg">{{ sameRadical({ ...k, ri }).join(' ') }}</span></p>
+              <p><b>{{ u('sameRad') }}</b> <span class="jp text-lg">{{ sameRadical({ ...k, ri }).join(' ') }}</span></p>
             </div>
           </BaseCard>
 
-          <BaseButton block @click="running = radicalTest(ri)">試 {{ r.radical }} kanjilerinin testi (JLPT tarzı)</BaseButton>
+          <BaseButton block @click="running = radicalTest(ri)">{{ u('radTest')(r.radical) }}</BaseButton>
         </div>
       </template>
       <PagerNav v-model="reading" :count="radicals.length" />
@@ -264,13 +326,13 @@ const itemLabel = (i: number) => {
     <template v-else>
       <section class="py-6 text-center">
         <p class="font-jp text-primary text-6xl leading-none" aria-hidden="true">部首</p>
-        <p class="text-ink-soft mt-3">{{ radicals.length }} radikal · {{ all.length }} kanji · {{ wordCount }} kelime</p>
+        <p class="text-ink-soft mt-3">{{ u('lead')(radicals.length, all.length, wordCount) }}</p>
       </section>
       <SegmentedControl v-model="tab" :options="tabs" class="mb-4" />
 
       <template v-if="tab === 'learn'">
-        <BaseInput v-model="query" label="Ara" type="search" label-hidden placeholder="Ara: su, 氵, deniz, 進, しんぽ…" class="mb-4" />
-        <p v-if="!shown.length" class="text-ink-soft">Sonuç yok.</p>
+        <BaseInput v-model="query" :label="u('searchLabel')" type="search" label-hidden :placeholder="u('search')" class="mb-4" />
+        <p v-if="!shown.length" class="text-ink-soft">{{ u('none') }}</p>
         <!-- minmax(0,1fr) + min-w-0: a grid item is otherwise as wide as its
              longest line, and the kanji row is one long unbroken line. -->
         <ul class="grid grid-cols-[minmax(0,1fr)] gap-2">
@@ -282,7 +344,7 @@ const itemLabel = (i: number) => {
             >
               <span class="jp text-primary w-14 shrink-0 text-center text-5xl leading-none">{{ r.radical }}</span>
               <span class="min-w-0 flex-1">
-                <span class="block font-bold">{{ r.meaning_tr }}</span>
+                <span class="block font-bold">{{ m(r) }}</span>
                 <span class="jp text-ink-soft block text-sm">{{ r.name_jp }}</span>
                 <span class="jp text-ink-soft block truncate text-lg tracking-[0.12em]">{{ r.kanji.map((k) => k.kanji).join('') }}</span>
               </span>
@@ -293,18 +355,42 @@ const itemLabel = (i: number) => {
       </template>
 
       <template v-else>
-        <p class="text-ink-soft mb-3 text-[15px]">
-          Sorular JLPT tarzında: 漢字読み (okunuş, ゛・uzun ses・っ tuzaklarıyla), 表記 (aynı radikalli/aynı okunan kanjiler
-          arasından doğru yazılış) ve anlam. Testten çıksan da kaldığın yerden devam eder.
-        </p>
+        <p class="text-ink-soft mb-3 text-[15px]">{{ u('testsLead') }}</p>
         <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <BaseCard v-for="x in tests" :key="x.id" class="min-w-0">
-            <p class="font-bold">{{ x.title }}</p>
-            <p class="jp text-ink-soft truncate text-lg tracking-widest">{{ x.keys }}</p>
-            <p class="text-ink-soft text-sm">{{ x.pool.length }} {{ x.kind === 'rad' ? 'radikal' : 'kanji' }}<template v-if="summary(x)"> · {{ summary(x) }}</template></p>
-            <div class="mt-2 flex gap-2">
+            <div class="flex items-start gap-3">
+              <span
+                class="jp rounded-control grid size-11 shrink-0 place-items-center text-xl font-bold"
+                :class="x.kind === 'rad' ? 'bg-primary text-canvas' : 'bg-muted text-primary'"
+                aria-hidden="true"
+                >{{ x.kind === 'rad' ? '部' : '漢' }}</span
+              >
+              <div class="min-w-0 flex-1">
+                <p class="font-bold">{{ title(x) }}</p>
+                <p class="text-ink-soft text-sm">{{ x.kind === 'rad' ? u('radN')(x.pool.length) : u('kanN')(x.pool.length) }}</p>
+              </div>
+              <span
+                v-if="score(x) !== null"
+                class="shrink-0 rounded-full px-2 py-0.5 text-sm font-bold"
+                :style="{ color: tone(score(x)!), background: `color-mix(in oklab, ${tone(score(x)!)} 14%, transparent)` }"
+                >{{ score(x) }}%</span
+              >
+            </div>
+            <p class="jp text-ink-soft mt-2 truncate text-lg tracking-widest">{{ x.keys }}</p>
+            <p class="text-ink-soft text-xs">{{ summary(x) || u('never') }}</p>
+            <div class="mt-3 flex gap-2">
               <BaseButton size="sm" class="flex-1" @click="running = x">{{ t.start }} →</BaseButton>
-              <BaseButton size="sm" variant="ghost" @click="historyOf = historyOf === x.id ? null : x.id">📊</BaseButton>
+              <BaseButton
+                size="sm"
+                :variant="historyOf === x.id ? 'secondary' : 'ghost'"
+                :aria-expanded="historyOf === x.id"
+                @click="historyOf = historyOf === x.id ? null : x.id"
+              >
+                <svg viewBox="0 0 20 20" class="size-4" fill="currentColor" aria-hidden="true">
+                  <rect x="2" y="11" width="4" height="7" rx="1" /><rect x="8" y="6" width="4" height="12" rx="1" /><rect x="14" y="2" width="4" height="16" rx="1" />
+                </svg>
+                {{ u('stats') }}
+              </BaseButton>
             </div>
             <div v-if="historyOf === x.id" class="border-hair mt-3 border-t pt-3">
               <QuizHistory :storage-key="storageKey(x)" />

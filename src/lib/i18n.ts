@@ -36,6 +36,11 @@ const tr = {
   quizzes: 'Quizler',
   questions: (n: number) => `${n} soru`,
   start: 'Başla',
+  resumed: '↩ Kaldığın yerden devam ediyorsun.',
+  done: (p: number, n: number) => `%${p} bitti · kalan ${n} doğru cevap`,
+  rate: (p: number) => `doğru oranı %${p}`,
+  runMisses: 'Bu denemede yanlış yaptıkların',
+  history: 'Geçmiş ve istatistik',
   credit: 'Created by',
 }
 type Dict = typeof tr
@@ -72,6 +77,11 @@ const en: Dict = {
   quizzes: 'Quizzes',
   questions: (n) => `${n} questions`,
   start: 'Start',
+  resumed: '↩ Picking up where you left off.',
+  done: (p: number, n: number) => `${p}% done · ${n} correct answers to go`,
+  rate: (p: number) => `${p}% correct`,
+  runMisses: 'What you missed this run',
+  history: 'History & stats',
   credit: 'Created by',
 }
 
@@ -107,6 +117,11 @@ const zh: Dict = {
   quizzes: '测验',
   questions: (n) => `${n} 题`,
   start: '开始',
+  resumed: '↩ 从上次的地方继续。',
+  done: (p: number, n: number) => `已完成 ${p}% · 还需答对 ${n} 次`,
+  rate: (p: number) => `正确率 ${p}%`,
+  runMisses: '这次答错的',
+  history: '记录与统计',
   credit: 'Created by',
 }
 
