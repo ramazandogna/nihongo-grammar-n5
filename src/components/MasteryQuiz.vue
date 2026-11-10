@@ -65,7 +65,7 @@ const resumed = ref(false)
 const showHistory = ref(false)
 /** The explanation sheet, opened from the bar after answering. */
 const explaining = ref(false)
-const card = ref<{ $el: HTMLElement } | null>(null)
+const actions = ref<HTMLElement | null>(null)
 /** The finished run's mistakes, kept for the end screen. */
 const lastMisses = ref<{ label: string; n: number }[]>([])
 
@@ -160,8 +160,8 @@ function pick(i: number) {
     queue.value.splice(Math.min(queue.value.length, 2), 0, k)
   }
   persist()
-  // Keep the whole question above the pinned bar on short screens.
-  requestAnimationFrame(() => card.value?.$el?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }))
+  // On a short screen, bring the buttons under the question into view.
+  requestAnimationFrame(() => actions.value?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }))
 }
 function proceed() {
   explaining.value = false
@@ -208,7 +208,7 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
         </div>
       </div>
 
-      <BaseCard ref="card" class="scroll-mb-28">
+      <BaseCard>
         <div class="text-ink-soft flex items-center gap-2 text-sm">
           <span v-if="question.kind" v-html="notation(question.kind)" />
           <span class="ms-auto flex gap-1" :aria-label="`${count}/2`">
@@ -254,25 +254,25 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
         </div>
       </BaseCard>
 
-      <!-- After answering: a short verdict in place, and a bar pinned above the
-           footer — explanation on the left, next question on the right — so a
-           test on a phone never needs scrolling between questions. -->
+      <!-- After answering: the verdict and two buttons right under the
+           question — explanation on the left, next question on the right. -->
       <template v-if="picked !== null">
-        <p class="font-bold" :class="correct ? 'text-positive' : 'text-negative'" role="status">
-          <template v-if="correct">✓ {{ count >= 2 ? t.correctDone : t.correctOnce }}</template>
-          <template v-else
-            >✗ {{ t.wrong }} <span class="jp" v-html="notation(question.options[question.answer]!)"
-          /></template>
-        </p>
-        <!-- Room for the pinned bar, so it never covers the options. -->
-        <div class="h-20" aria-hidden="true" />
-        <div class="fixed inset-x-0 bottom-8 z-30 px-4 pb-2">
-          <div
-            class="bg-surface border-hair rounded-card mx-auto flex max-w-3xl items-center gap-3 border p-2 shadow-lg"
-            :class="correct ? 'border-s-positive border-s-4' : 'border-s-negative border-s-4'"
-          >
-            <BaseButton variant="secondary" class="flex-1" @click="explaining = true">💡 {{ t.explain }}</BaseButton>
-            <BaseButton class="flex-1" @click="proceed">{{ t.nextQuestion }} →</BaseButton>
+        <div
+          ref="actions"
+          class="bg-surface border-hair rounded-card -mt-2 scroll-mb-12 border border-s-4 p-3"
+          :class="correct ? 'border-s-positive' : 'border-s-negative'"
+        >
+          <p class="mb-2.5 font-bold" :class="correct ? 'text-positive' : 'text-negative'" role="status">
+            <template v-if="correct">✓ {{ count >= 2 ? t.correctDone : t.correctOnce }}</template>
+            <template v-else
+              >✗ {{ t.wrong }} <span class="jp" v-html="notation(question.options[question.answer]!)"
+            /></template>
+          </p>
+          <div class="flex gap-3">
+            <BaseButton variant="secondary" class="flex-1 whitespace-nowrap" @click="explaining = true"
+              >💡 {{ t.explain }}</BaseButton
+            >
+            <BaseButton class="flex-1 whitespace-nowrap" @click="proceed">{{ t.nextQuestion }} →</BaseButton>
           </div>
         </div>
         <BaseSheet v-model="explaining" :title="correct ? t.correctTitle : t.wrongTitle" :close-label="t.close">
