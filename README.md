@@ -22,6 +22,13 @@ Explanations are in Turkish, and the menu is in Turkish and English. Some pages 
 
 The home menu has three folders.
 
+### 📚 Self Study
+
+| Page | Content | Languages |
+| --- | --- | --- |
+| [Past N3 Papers](https://ramazandogna.github.io/nihongo-grammar-n5/past-n3/) | Past JLPT N3 exams, fully explained, with audio | TR |
+| [Radicals](https://ramazandogna.github.io/nihongo-grammar-n5/radikaller/) | 43 radicals, 347 N3 kanji, 470 words, in-depth lessons and tests | TR · EN |
+
 ### 📁 School Lessons
 
 | Page | Content | Languages |
@@ -39,13 +46,6 @@ The home menu has three folders.
 | Page | Content | Languages |
 | --- | --- | --- |
 | [Matsuya](https://ramazandogna.github.io/nihongo-grammar-n5/matsuya/) | Menu, customer dialogues, order slips, online orders | TR |
-
-### 📚 Self Study
-
-| Page | Content | Languages |
-| --- | --- | --- |
-| [Past N3 Papers](https://ramazandogna.github.io/nihongo-grammar-n5/past-n3/) | Past JLPT N3 exams, fully explained, with audio | TR |
-| [Radicals](https://ramazandogna.github.io/nihongo-grammar-n5/radikaller/) | 43 radicals, 347 N3 kanji, 470 words, in-depth lessons and tests | TR · EN |
 
 > The past exam papers and their audio are copyrighted. They are kept out of the repository (`assets/past-n3/` is gitignored), so the public site shows that page without its content.
 
@@ -103,5 +103,8 @@ The route, menu card, `<head>` and prerendering all come from these two files.
 ## License
 
 © 2026 Ramazan Doğan. All rights reserved. See [LICENSE](LICENSE).
+
+This project is proprietary. Copying, sharing or distributing it without written permission is prohibited and is a copyright infringement.
+For questions and permission requests: doganrmzn40 [ at ] gmail [ . ] com
 
 Built with [rei-kit](https://github.com/ramazandogna/rei-kit), created and licensed by Ramazan Doğan.

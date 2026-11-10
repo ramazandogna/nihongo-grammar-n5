@@ -50,6 +50,12 @@ export interface MenuGroup {
 /** The home menu's folders, in order. */
 export const GROUPS: readonly MenuGroup[] = [
   {
+    id: 'self',
+    icon: '📚',
+    title: 'Kendi Çalışmam',
+    description: 'Sınav hazırlığı ve radikaller',
+    en: { title: 'Self Study', description: 'Exam preparation and radicals' },
+  },  {
     id: 'school',
     icon: '📁',
     title: 'Okul Dersleri',
@@ -63,13 +69,7 @@ export const GROUPS: readonly MenuGroup[] = [
     description: 'İşte kullandığım Japonca: müşteri, sipariş, menü',
     en: { title: 'Workplace Japanese', description: 'The Japanese I use at work: customers, orders, menu' },
   },
-  {
-    id: 'self',
-    icon: '📚',
-    title: 'Kendi Çalışmam',
-    description: 'Sınav hazırlığı ve radikaller',
-    en: { title: 'Self Study', description: 'Exam preparation and radicals' },
-  },
+
 ]
 
 export const HOME: SitePage = {

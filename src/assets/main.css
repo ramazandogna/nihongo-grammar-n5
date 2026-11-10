@@ -10,7 +10,8 @@
 @theme {
   --font-sans: 'Plus Jakarta Sans Variable', system-ui, sans-serif;
   /* Latin first so Turkish letters never fall to a Japanese face's Latin. */
-  --font-jp: 'Plus Jakarta Sans Variable', 'Klee One', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic', sans-serif;
+  --font-jp:
+    'Plus Jakarta Sans Variable', 'Klee One', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic', sans-serif;
 }
 
 @layer base {
@@ -156,5 +157,104 @@ u.target {
 @media (prefers-reduced-motion: no-preference) {
   .veil {
     transition: filter var(--duration-fast, 150ms) ease;
+  }
+}
+
+/* ── Test feedback ────────────────────────────────────────────────────────
+   Small, quick and never in the way of the next tap. With reduced motion
+   only the colours change. */
+.quiz-seg {
+  transition: background-color 300ms ease;
+}
+.quiz-seg-half {
+  background: linear-gradient(90deg, var(--color-positive) 50%, var(--color-hair) 50%);
+}
+.quiz-confetti {
+  position: absolute;
+  width: 6px;
+  height: 10px;
+  border-radius: 2px;
+  opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .quiz-pop {
+    animation: quiz-pop 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .quiz-glow {
+    animation:
+      quiz-pop 220ms cubic-bezier(0.34, 1.56, 0.64, 1),
+      quiz-glow 500ms ease-out;
+  }
+  .quiz-shake {
+    animation: quiz-shake 300ms ease-in-out;
+  }
+  .quiz-in {
+    animation: quiz-in 180ms ease-out;
+  }
+  .quiz-stamp {
+    animation: quiz-stamp 260ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+  .quiz-seg-pulse {
+    animation: quiz-seg-pulse 450ms ease-out;
+  }
+  .quiz-confetti {
+    animation: quiz-confetti 750ms cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+  }
+}
+@keyframes quiz-pop {
+  50% {
+    transform: scale(1.07);
+  }
+}
+@keyframes quiz-glow {
+  from {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-positive) 45%, transparent);
+  }
+  to {
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
+@keyframes quiz-shake {
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+}
+@keyframes quiz-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+@keyframes quiz-stamp {
+  from {
+    opacity: 0;
+    transform: scale(1.6) rotate(-14deg);
+  }
+  to {
+    transform: scale(1) rotate(-6deg);
+  }
+}
+@keyframes quiz-seg-pulse {
+  40% {
+    transform: scaleY(2);
+  }
+}
+@keyframes quiz-confetti {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) rotate(var(--r));
   }
 }

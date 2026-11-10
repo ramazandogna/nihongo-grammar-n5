@@ -30,6 +30,26 @@ function toggle(g: Group) {
 }
 const inGroup = (g: Group) => PAGES.filter((p) => (p.group ?? 'self') === g)
 
+const aboutOpen = ref(false)
+const ABOUT = {
+  title: ['Hakkında', 'About'],
+  sub: ['Lisans ve iletişim', 'License and contact'],
+  what: [
+    'Ramazan Doğan’ın Japonca çalışmak için hazırladığı kişisel site: okul dersleri, iş yeri Japoncası ve JLPT hazırlığı.',
+    'A personal site Ramazan Doğan made to study Japanese: school lessons, workplace Japanese and JLPT preparation.',
+  ],
+  rights: ['Tüm hakları saklıdır.', 'All rights reserved.'],
+  license: [
+    'Bu sitenin kodu, metinleri, açıklamaları ve verileri lisanslıdır. Yazılı izin olmadan kopyalanması, paylaşılması, çoğaltılması veya yayılması yasaktır; izinsiz paylaşım ve yayma telif hakkı ihlalidir ve suçtur.',
+    'The code, texts, explanations and data of this site are licensed. Copying, sharing, reproducing or distributing them without written permission is prohibited; unauthorized sharing and distribution is copyright infringement and a crime.',
+  ],
+  kit: [
+    'Ramazan Doğan’ın geliştirdiği ve lisansladığı rei-kit arayüz kiti ile yapıldı.',
+    'Built with rei-kit, the UI kit created and licensed by Ramazan Doğan.',
+  ],
+  contact: ['Sorular ve izin talepleri için:', 'For questions and permission requests:'],
+}
+
 const LEAD = ['Bir bölüm seç', 'Choose a section']
 </script>
 
@@ -89,5 +109,39 @@ const LEAD = ['Bir bölüm seç', 'Choose a section']
         </ul>
       </section>
     </nav>
+
+    <!-- About: who made it, the license, and how to get in touch. The address
+         is written out, not linked, so it is not harvested by spam bots. -->
+    <section class="surface rounded-card mt-3 overflow-hidden">
+      <button
+        type="button"
+        class="focus-ring flex w-full items-center gap-4 p-4 text-start"
+        :aria-expanded="aboutOpen"
+        @click="aboutOpen = !aboutOpen"
+      >
+        <span class="bg-muted rounded-control grid size-12 shrink-0 place-items-center text-2xl" aria-hidden="true"
+          >ℹ️</span
+        >
+        <span class="min-w-0 flex-1">
+          <span class="block font-bold">{{ pick(ABOUT.title) }}</span>
+          <span class="text-ink-soft block text-sm">{{ pick(ABOUT.sub) }}</span>
+        </span>
+        <span class="text-ink-soft transition-transform" :class="aboutOpen ? 'rotate-90' : ''" aria-hidden="true"
+          >›</span
+        >
+      </button>
+      <div v-if="aboutOpen" class="border-hair grid gap-3 border-t p-4 text-[15px]">
+        <p>{{ pick(ABOUT.what) }}</p>
+        <div class="border-warning bg-muted rounded-control border-s-4 px-3 py-2">
+          <p class="font-bold">© 2026 Ramazan Doğan · {{ pick(ABOUT.rights) }}</p>
+          <p class="mt-1">{{ pick(ABOUT.license) }}</p>
+        </div>
+        <p>{{ pick(ABOUT.kit) }}</p>
+        <p>
+          {{ pick(ABOUT.contact) }}
+          <span class="font-mono font-semibold whitespace-nowrap select-all">doganrmzn40 [ at ] gmail [ . ] com</span>
+        </p>
+      </div>
+    </section>
   </SiteLayout>
 </template>

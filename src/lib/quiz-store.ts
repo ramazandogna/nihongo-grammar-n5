@@ -24,6 +24,11 @@ export interface SavedRun<K> {
   misses: [string, unknown][]
   /** Questions answered wrong, kept so they come back exactly the same. */
   retry?: [K, unknown][]
+  /** Right answers in a row now, and the best so far. */
+  streak?: number
+  best?: number
+  /** When it was last saved, ISO — to find the most recent unfinished test. */
+  at?: string
 }
 
 /**
@@ -75,6 +80,11 @@ function write(k: string, v: unknown) {
 }
 
 export const loadRun = <K>(key: string) => read<SavedRun<K>>(RUN(key))
+/** How far a saved run is, 0–100: right answers given of the two per item owed. */
+export function runProgress(run: SavedRun<unknown>): number {
+  const owed = run.counts.reduce((s, [, c]) => s + Math.max(0, 2 - c), 0)
+  return Math.round(((run.pool.length * 2 - owed) / (run.pool.length * 2 || 1)) * 100)
+}
 export const saveRun = <K>(key: string, run: SavedRun<K> | null) => write(RUN(key), run)
 
 export const loadHistory = (key: string) => read<Attempt[]>(HISTORY(key)) ?? []

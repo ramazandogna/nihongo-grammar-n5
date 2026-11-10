@@ -1,6 +1,6 @@
 <script setup lang="ts" generic="K extends string | number">
 import { computed, onMounted, ref, watch } from 'vue'
-import { BaseButton, BaseCard, BaseSheet, ProgressBar } from 'rei-kit'
+import { BaseButton, BaseCard, BaseSheet } from 'rei-kit'
 
 import { usePageContext } from '@/lib/page'
 import { addAttempt, groupMisses, loadRun, saveRun, type Miss } from '@/lib/quiz-store'
@@ -58,6 +58,7 @@ const { pool, build, storageKey, label } = defineProps<{
   /** How an item is named in the mistakes list (notation allowed). */
   label?: (key: K) => string
 }>()
+const emit = defineEmits<{ finish: [] }>()
 defineSlots<{
   feedback?: (p: { item: K; correct: boolean }) => unknown
   actions?: () => unknown
@@ -74,6 +75,11 @@ const picked = ref<number | null>(null)
 const tries = ref(0)
 const wrong = ref(0)
 const finished = ref(false)
+/** Right answers in a row, and the best run of them. */
+const streak = ref(0)
+const best = ref(0)
+/** Set for one answer: what to celebrate (re-keyed by `tries` so it replays). */
+const burst = ref<'right' | 'mastered' | 'wrong' | null>(null)
 /** This run's mistakes, keyed by their stat label. */
 const misses = ref(new Map<string, Miss>())
 const resumed = ref(false)
@@ -98,6 +104,9 @@ function start() {
   retry.value = new Map()
   tries.value = 0
   wrong.value = 0
+  streak.value = 0
+  best.value = 0
+  burst.value = null
   finished.value = false
   resumed.value = false
   showHistory.value = false
@@ -117,6 +126,9 @@ function persist() {
     wrong: wrong.value,
     misses: [...misses.value],
     retry: [...retry.value],
+    streak: streak.value,
+    best: best.value,
+    at: new Date().toISOString(),
   })
 }
 /** The saved run, if it belongs to this same test. */
@@ -137,12 +149,15 @@ function resume(): boolean {
   wrong.value = run.wrong
   misses.value = new Map(run.misses as [string, Miss][])
   retry.value = new Map((run.retry ?? []) as [K, Retry][])
+  streak.value = run.streak ?? 0
+  best.value = run.best ?? 0
   finished.value = false
   resumed.value = true
   return true
 }
 function finish() {
   finished.value = true
+  emit('finish')
   current.value = null
   lastMisses.value = [...misses.value.values()]
   if (storageKey) {
@@ -166,7 +181,11 @@ function next() {
     return
   }
   current.value = k
-  question.value = retry.value.get(k)?.q ?? build(k)
+  // A missed question comes back as it was; after two misses it shows two
+  // options, the wrong one re-picked at random on every showing.
+  const r = retry.value.get(k)
+  question.value = r ? (r.wrong >= 2 ? halve(r.q) : r.q) : build(k)
+  burst.value = null
   order.value = shuffle(question.value.options.map((_, i) => i))
   picked.value = null
 }
@@ -181,14 +200,21 @@ function pick(i: number) {
     counts.value.set(k, c)
     if (c >= 2) retry.value.delete(k)
     else queue.value.splice(Math.min(queue.value.length, 4 + Math.floor(Math.random() * 4)), 0, k)
+    streak.value++
+    best.value = Math.max(best.value, streak.value)
+    burst.value = c >= 2 ? 'mastered' : 'right'
+    buzz(c >= 2 ? [10, 30, 10, 30, 40] : 15)
   } else {
     wrong.value++
+    streak.value = 0
+    burst.value = 'wrong'
+    buzz([30, 40, 30])
     fileMiss(k, q)
     // Back to zero: this exact question now has to be right twice.
     counts.value.set(k, 0)
+    // Keep the original question (all its options) so halving can re-pick.
     const r = retry.value.get(k) ?? { q, wrong: 0 }
     r.wrong++
-    if (r.wrong >= 2) r.q = halve(r.q)
     retry.value.set(k, r)
     queue.value.splice(Math.min(queue.value.length, 2), 0, k)
   }
@@ -210,10 +236,19 @@ function halve(q: Question): Question {
   const w = wrongs[Math.floor(Math.random() * wrongs.length)]!
   return { ...q, options: [q.options[q.answer]!, q.options[w]!], answer: 0 }
 }
+/** A short vibration where the phone supports it. */
+function buzz(pattern: number | number[]) {
+  try {
+    if (typeof navigator !== 'undefined' && 'vibrate' in navigator) navigator.vibrate(pattern)
+  } catch {
+    // Not allowed here: no haptics.
+  }
+}
 function proceed() {
   explaining.value = false
   next()
-  persist()
+  // finish() already cleared the saved run; writing it back would leave a dead one.
+  if (!finished.value) persist()
   if (typeof window !== 'undefined') window.scrollTo({ top: 0 })
 }
 
@@ -226,7 +261,10 @@ onMounted(() => {
 watch(
   () => pool,
   () => {
-    if (!resume()) start()
+    if (!resume()) {
+      start()
+      persist()
+    }
   },
 )
 defineExpose({ start: restart })
@@ -240,19 +278,65 @@ const count = computed(() => (current.value === null ? 0 : (counts.value.get(cur
 const correct = computed(() => picked.value !== null && picked.value === question.value?.answer)
 /** Furigana needs tall lines; plain options can sit tighter. */
 const ruby = computed(() => (question.value?.options ?? []).some((o) => o.includes('{')))
+/** A strip segment's colour from how many times the item was answered right. */
+function segClass(k: K) {
+  const c = counts.value.get(k) ?? 0
+  return c >= 2 ? 'bg-positive' : c === 1 ? 'quiz-seg-half' : 'bg-hair'
+}
+/** Where confetti piece `n` flies: evenly round a circle, a little jitter. */
+function confetti(n: number) {
+  const a = (n / 12) * Math.PI * 2
+  const d = 40 + (n % 3) * 14
+  const colors = ['var(--color-positive)', 'var(--color-primary)', 'var(--color-warning)', 'var(--color-accent)']
+  return {
+    '--x': `${Math.cos(a) * d}px`,
+    '--y': `${Math.sin(a) * d - 20}px`,
+    '--r': `${n * 47}deg`,
+    background: colors[n % colors.length],
+  }
+}
 const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o).length > 12))
 </script>
 
 <template>
   <div class="flex flex-col gap-4">
     <template v-if="!finished && question">
+      <!-- The run at a glance: one segment per item — grey never right, half
+           green right once, green mastered; red underline = still owed after
+           a miss; ring = the current one. -->
       <div>
         <p v-if="resumed" class="text-primary mb-2 text-sm font-semibold">{{ t.resumed }}</p>
-        <ProgressBar :value="total * 2 - owed" :max="total * 2" :label="t.progress" size="sm" />
-        <div class="text-ink-soft mt-1.5 flex flex-wrap justify-between gap-x-3 text-sm">
-          <span>{{ t.done(percent, owed) }}</span>
-          <span>{{ t.mastered }} {{ done }}/{{ total }} · {{ t.mistakes }} {{ wrong }}</span>
+        <div class="flex items-center gap-3">
+          <div
+            class="flex flex-1 items-end"
+            :class="pool.length > 40 ? 'gap-px' : 'gap-1'"
+            role="img"
+            :aria-label="t.done(percent, owed)"
+          >
+            <span v-for="k in pool" :key="String(k)" class="flex flex-1 flex-col gap-0.5">
+              <span
+                class="quiz-seg h-2.5 rounded-full"
+                :class="[
+                  segClass(k),
+                  k === current ? 'ring-primary ring-2 ring-offset-1 ring-offset-[var(--color-canvas)]' : '',
+                  k === current && burst === 'mastered' ? 'quiz-seg-pulse' : '',
+                ]"
+              />
+              <span class="h-0.5 rounded-full" :class="retry.has(k) ? 'bg-negative' : ''" />
+            </span>
+          </div>
+          <span
+            v-if="streak >= 3"
+            :key="streak"
+            class="quiz-pop bg-warning/15 text-warning shrink-0 rounded-full px-2.5 py-0.5 text-sm font-bold"
+            :aria-label="t.streak(streak)"
+            >🔥 {{ streak }}</span
+          >
         </div>
+        <p class="text-ink-soft mt-1.5 text-sm">
+          {{ t.mastered }} <b class="text-ink">{{ done }}/{{ total }}</b> · {{ percent }}% ·
+          <span :class="wrong ? 'text-negative' : ''">✗ {{ wrong }}</span>
+        </p>
       </div>
 
       <BaseCard>
@@ -261,9 +345,9 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
           <span class="ms-auto flex gap-1" :aria-label="`${count}/2`">
             <span
               v-for="n in 2"
-              :key="n"
-              class="border-positive size-2.5 rounded-full border-2"
-              :class="count >= n ? 'bg-positive' : ''"
+              :key="`${n}-${count >= n}`"
+              class="border-positive size-3 rounded-full border-2"
+              :class="count >= n ? 'bg-positive quiz-pop' : ''"
             />
           </span>
         </div>
@@ -282,8 +366,10 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
             v-for="i in order"
             :key="i"
             type="button"
-            class="control focus-ring rounded-control jp min-h-12 px-3 py-2 text-xl [--control-border-width:2px]"
+            class="control focus-ring rounded-control jp px-3 py-2 text-xl transition-colors [--control-border-width:2px]"
             :class="[
+              question.options.length === 2 ? 'min-h-16' : 'min-h-12',
+              picked === i ? (i === question.answer ? 'quiz-pop quiz-glow' : 'quiz-shake') : '',
               wide ? 'text-start' : 'text-center',
               ruby ? 'leading-[2]' : 'leading-snug',
               picked !== null && i === question.answer
@@ -306,11 +392,23 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
       <template v-if="picked !== null">
         <div
           ref="actions"
-          class="bg-surface border-hair rounded-card -mt-2 scroll-mb-12 border border-s-4 p-3"
+          :key="tries"
+          class="quiz-in bg-surface border-hair rounded-card relative -mt-2 scroll-mb-12 border border-s-4 p-3"
           :class="correct ? 'border-s-positive' : 'border-s-negative'"
         >
+          <!-- Mastered: a stamp and a small burst of confetti. -->
+          <template v-if="burst === 'mastered'">
+            <span
+              class="quiz-stamp font-jp text-positive border-positive absolute -top-4 end-3 grid size-14 place-items-center rounded-full border-[3px] bg-[var(--color-surface)] text-lg font-bold"
+              aria-hidden="true"
+              >習得</span
+            >
+            <span class="pointer-events-none absolute end-10 top-2" aria-hidden="true">
+              <span v-for="n in 12" :key="n" class="quiz-confetti" :style="confetti(n)" />
+            </span>
+          </template>
           <p class="mb-2.5 font-bold" :class="correct ? 'text-positive' : 'text-negative'" role="status">
-            <template v-if="correct">✓ {{ count >= 2 ? t.correctDone : t.correctOnce }}</template>
+            <template v-if="correct">{{ count >= 2 ? '🎉 ' + t.correctDone : '✓ ' + t.correctOnce }}</template>
             <template v-else
               >✗ {{ t.wrong }} <span class="jp" v-html="notation(question.options[question.answer]!)"
             /></template>
@@ -338,15 +436,27 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
 
     <div v-else-if="finished" class="py-10 text-center">
       <div
-        class="font-jp text-negative border-negative mx-auto grid size-28 -rotate-6 place-items-center rounded-full border-4 text-4xl"
+        class="quiz-stamp font-jp text-negative border-negative mx-auto grid size-28 -rotate-6 place-items-center rounded-full border-4 text-4xl"
         aria-hidden="true"
       >
         合格
       </div>
       <h2 class="mt-6 text-2xl font-bold">{{ t.doneTitle }}</h2>
-      <p class="text-ink-soft">
-        {{ t.doneStats(tries, wrong) }} · {{ t.rate(tries ? Math.round(((tries - wrong) / tries) * 100) : 0) }}
-      </p>
+      <dl class="mx-auto mt-4 grid max-w-md grid-cols-3 gap-2">
+        <div class="surface rounded-card px-2 py-3">
+          <dd class="text-2xl font-bold">{{ tries ? Math.round(((tries - wrong) / tries) * 100) : 0 }}%</dd>
+          <dt class="text-ink-soft text-xs">{{ t.accuracy }}</dt>
+        </div>
+        <div class="surface rounded-card px-2 py-3">
+          <dd class="text-2xl font-bold">🔥 {{ best }}</dd>
+          <dt class="text-ink-soft text-xs">{{ t.bestStreak }}</dt>
+        </div>
+        <div class="surface rounded-card px-2 py-3">
+          <dd class="text-2xl font-bold" :class="wrong ? 'text-negative' : 'text-positive'">{{ wrong }}</dd>
+          <dt class="text-ink-soft text-xs">{{ t.mistakes }}</dt>
+        </div>
+      </dl>
+      <p class="text-ink-soft mt-2 text-sm">{{ t.doneStats(tries, wrong) }}</p>
       <BaseCard v-if="lastMisses.length" class="mx-auto mt-5 max-w-md text-start">
         <p class="mb-2 font-bold">❌ {{ t.runMisses }}</p>
         <MissList :groups="lastGroups" />

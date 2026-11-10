@@ -11,7 +11,7 @@ import StudyHeader from '@/components/StudyHeader.vue'
 import LeaveTestSheet from '@/components/LeaveTestSheet.vue'
 import { hasKanji, KIND_LABEL, readingOptions, spellingOptions, type Vocab } from '@/lib/jlpt'
 import { usePage } from '@/lib/page'
-import { accuracy, loadHistory } from '@/lib/quiz-store'
+import { accuracy, loadHistory, loadRun, runProgress, saveRun } from '@/lib/quiz-store'
 import { rubyWord } from '@/lib/ruby'
 import { toTop } from '@/lib/scroll'
 import { useTestRoute } from '@/lib/test-route'
@@ -195,7 +195,7 @@ function radicalTest(ri: number): TestDef {
   return { id: `r-${radicals[ri]!.id}`, radical: radicals[ri]!.radical, kind: 'kan', keys: '', pool: ids }
 }
 
-const { testId, openTest, askClose, asking, leave, stay } = useTestRoute()
+const { testId, openTest, askClose, asking, leave, stay, leftOnPurpose, markFinished } = useTestRoute()
 /** The open test, read from the URL so the back button closes it. */
 const running = computed<TestDef | null>(() => {
   const id = testId.value
@@ -212,22 +212,79 @@ const historyOf = ref<string | null>(null)
 watch([tab, running, reading], toTop)
 
 const storageKey = (x: TestDef) => `radikaller:${x.id}`
-// History lives in this browser only; read it after hydration so the
-// prerendered page and the first client render agree.
-const mounted = ref(false)
-onMounted(() => (mounted.value = true))
+/** Per test, read once from storage: the last score and the unfinished run, if any. */
+interface TestState {
+  runs: number
+  last: number | null
+  /** Progress of an unfinished run, 0–100. */
+  open: number | null
+  at: string
+}
+const states = ref(new Map<string, TestState>())
+const allTests = () => [...tests, ...radicals.map((_, ri) => radicalTest(ri))]
+function readStates() {
+  const m = new Map<string, TestState>()
+  for (const x of allTests()) {
+    const h = loadHistory(storageKey(x))
+    const run = loadRun<number>(storageKey(x))
+    const live = run && run.current !== null ? run : null
+    m.set(x.id, {
+      runs: h.length,
+      last: h.length ? accuracy(h.at(-1)!) : null,
+      open: live ? runProgress(live) : null,
+      at: live?.at ?? '',
+    })
+  }
+  states.value = m
+}
 const summary = (x: TestDef) => {
-  if (!mounted.value) return ''
-  const h = loadHistory(storageKey(x))
-  return h.length ? u('runs')(h.length, accuracy(h.at(-1)!)) : ''
+  const st = states.value.get(x.id)
+  return st?.runs ? u('runs')(st.runs, st.last!) : ''
+}
+/** Last run's accuracy, for the badge on the card. */
+const score = (x: TestDef) => states.value.get(x.id)?.last ?? null
+/** Progress of the unfinished run, or null. */
+const openOf = (x: TestDef) => states.value.get(x.id)?.open ?? null
+function startOver(x: TestDef) {
+  saveRun(storageKey(x), null)
+  openTest(x.id)
 }
 
-/** Last run's accuracy, for the badge on the card. */
-const score = (x: TestDef) => {
-  if (!mounted.value) return null
-  const h = loadHistory(storageKey(x))
-  return h.length ? accuracy(h.at(-1)!) : null
-}
+/* ── Pick up where the reader left off ──
+   Storage is read after hydration, so the prerendered page stays the list. */
+const LAST_LESSON = 'nihongo-radikaller:lesson'
+onMounted(() => {
+  readStates()
+  if (testId.value || leftOnPurpose()) return
+  // The most recently touched unfinished test opens straight away…
+  const open = allTests()
+    .map((x) => ({ x, st: states.value.get(x.id)! }))
+    .filter(({ st }) => st.open !== null)
+    .sort((a, b) => b.st.at.localeCompare(a.st.at))[0]
+  if (open) {
+    openTest(open.x.id)
+    return
+  }
+  // …otherwise the last radical lesson that was open.
+  try {
+    const saved = localStorage.getItem(LAST_LESSON)
+    if (saved !== null && radicals[Number(saved)]) reading.value = Number(saved)
+  } catch {
+    // No storage: start on the list.
+  }
+})
+watch(reading, (i) => {
+  try {
+    if (i === null) localStorage.removeItem(LAST_LESSON)
+    else localStorage.setItem(LAST_LESSON, String(i))
+  } catch {
+    // No storage: nothing to remember.
+  }
+})
+// Back on the list after a test: refresh scores and progress.
+watch(running, (x) => {
+  if (!x) readStates()
+})
 const tone = (p: number) =>
   p >= 85 ? 'var(--color-positive)' : p >= 60 ? 'var(--color-warning)' : 'var(--color-negative)'
 
@@ -315,6 +372,7 @@ const itemLabel = (i: number) => {
         :pool="running.pool"
         :build="build"
         :storage-key="storageKey(running)"
+        @finish="markFinished"
         :label="itemLabel"
       >
         <template #feedback="{ item }">
@@ -547,8 +605,24 @@ const itemLabel = (i: number) => {
             </div>
             <p class="jp text-ink-soft mt-2 truncate text-lg tracking-widest">{{ x.keys }}</p>
             <p class="text-ink-soft text-xs">{{ summary(x) || u('never') }}</p>
+            <div v-if="openOf(x) !== null" class="bg-muted mt-2 h-1.5 overflow-hidden rounded-full">
+              <span class="bg-primary block h-full rounded-full" :style="{ width: `${openOf(x)}%` }" />
+            </div>
             <div class="mt-3 flex gap-2">
-              <BaseButton size="sm" class="flex-1" @click="openTest(x.id)">{{ t.start }} →</BaseButton>
+              <template v-if="openOf(x) !== null">
+                <BaseButton size="sm" class="flex-1" @click="openTest(x.id)"
+                  >{{ t.continueTest }} · {{ openOf(x) }}% →</BaseButton
+                >
+                <BaseButton
+                  size="sm"
+                  variant="ghost"
+                  :aria-label="t.restartTest"
+                  :title="t.restartTest"
+                  @click="startOver(x)"
+                  >↺</BaseButton
+                >
+              </template>
+              <BaseButton v-else size="sm" class="flex-1" @click="openTest(x.id)">{{ t.start }} →</BaseButton>
               <BaseButton
                 size="sm"
                 :variant="historyOf === x.id ? 'secondary' : 'ghost'"
