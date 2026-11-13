@@ -1,40 +1,18 @@
 <script setup lang="ts" generic="K extends string | number">
-import { computed, onMounted, ref, watch } from 'vue'
+import { computed, onMounted, reactive, ref, toRefs, watch } from 'vue'
 import { BaseButton, BaseCard, BaseSheet } from 'rei-kit'
 import { Check, CircleX, Flame, History, Lightbulb, PartyPopper, X } from 'lucide-vue-next'
 
 import { usePageContext } from '@/lib/page'
 import { addAttempt, groupMisses, loadRun, saveRun, type Miss } from '@/lib/quiz-store'
 import { notation, plain } from '@/lib/ruby'
-import { shuffle } from '@/lib/shuffle'
+import * as engine from '@/engine/mastery'
 import MissList from './MissList.vue'
 import QuizHistory from './QuizHistory.vue'
 
-export interface Question {
-  /** Small line above the question: its type or section. */
-  kind?: string
-  /** Notation or HTML. */
-  prompt: string
-  /** `big` for a lone kanji or word; `text` for a Turkish/English prompt. */
-  size?: 'big' | 'jp' | 'text'
-  options: string[]
-  answer: number
-  /** Shown after answering, under the verdict. */
-  explain?: string
-  /**
-   * How a mistake on this exact question is filed in the statistics: its own
-   * label, and the groups it sits under (radical → kanji). Without it the
-   * item's `label` is used.
-   */
-  stat?: { label: string; path?: string[] }
-}
-
-/** A question answered wrong, waiting to be answered right twice. */
-interface Retry {
-  q: Question
-  /** Wrong answers to this exact question so far. */
-  wrong: number
-}
+export type { Question } from '@/engine/mastery'
+type Question = engine.Question
+type Retry = engine.Retry
 
 /**
  * The one test engine of the site.
@@ -68,22 +46,13 @@ defineSlots<{
 
 const { t } = usePageContext()
 
-const queue = ref<K[]>([]) as { value: K[] }
-const counts = ref(new Map<K, number>())
-const current = ref<K | null>(null) as { value: K | null }
-const question = ref<Question | null>(null)
-const order = ref<number[]>([])
-const picked = ref<number | null>(null)
-const tries = ref(0)
-const wrong = ref(0)
+/** The run itself, driven by the pure rules in engine/mastery.ts. */
+const run = reactive(engine.emptyState<K>()) as engine.RunState<K>
+const { queue, counts, current, question, order, picked, tries, wrong, streak, best, misses, retry } = toRefs(run)
+const rng = Math.random
 const finished = ref(false)
-/** Right answers in a row, and the best run of them. */
-const streak = ref(0)
-const best = ref(0)
 /** Set for one answer: what to celebrate (re-keyed by `tries` so it replays). */
 const burst = ref<'right' | 'mastered' | 'wrong' | null>(null)
-/** This run's mistakes, keyed by their stat label. */
-const misses = ref(new Map<string, Miss>())
 const resumed = ref(false)
 /** A short note at the top that fades on its own (resumed, streak milestones). */
 const toast = ref('')
@@ -104,22 +73,8 @@ const actions = ref<HTMLElement | null>(null)
 /** The finished run's mistakes, kept for the end screen. */
 const lastMisses = ref<Miss[]>([])
 const lastGroups = computed(() => groupMisses(lastMisses.value, Infinity))
-/**
- * Questions answered wrong. Until such a question is answered right twice in
- * a row it comes back exactly as it was — not rebuilt as another question
- * about the same item — and the item cannot be mastered.
- */
-const retry = ref(new Map<K, Retry>())
-
 function start() {
-  queue.value = shuffle(pool)
-  counts.value = new Map(pool.map((k) => [k, 0]))
-  misses.value = new Map()
-  retry.value = new Map()
-  tries.value = 0
-  wrong.value = 0
-  streak.value = 0
-  best.value = 0
+  engine.reset(run, pool, rng)
   burst.value = null
   finished.value = false
   resumed.value = false
@@ -148,23 +103,23 @@ function persist() {
 /** The saved run, if it belongs to this same test. */
 function resume(): boolean {
   if (!storageKey) return false
-  const run = loadRun<K>(storageKey)
-  const same = run && run.pool.length === pool.length && run.pool.every((k) => pool.includes(k))
+  const saved = loadRun<K>(storageKey)
+  const same = saved && saved.pool.length === pool.length && saved.pool.every((k) => pool.includes(k))
   // Runs saved before misses were filed per question cannot be resumed.
-  const filedPerQuestion = run?.misses.every(([, m]) => typeof m === 'object')
-  if (!run || !same || !filedPerQuestion || run.current === null) return false
-  queue.value = run.queue
-  counts.value = new Map(run.counts)
-  current.value = run.current
-  question.value = run.question as Question
-  order.value = run.order
-  picked.value = run.picked
-  tries.value = run.tries
-  wrong.value = run.wrong
-  misses.value = new Map(run.misses as [string, Miss][])
-  retry.value = new Map((run.retry ?? []) as [K, Retry][])
-  streak.value = run.streak ?? 0
-  best.value = run.best ?? 0
+  const filedPerQuestion = saved?.misses.every(([, m]) => typeof m === 'object')
+  if (!saved || !same || !filedPerQuestion || saved.current === null) return false
+  queue.value = saved.queue
+  counts.value = new Map(saved.counts)
+  current.value = saved.current
+  question.value = saved.question as Question
+  order.value = saved.order
+  picked.value = saved.picked
+  tries.value = saved.tries
+  wrong.value = saved.wrong
+  misses.value = new Map(saved.misses as [string, Miss][])
+  retry.value = new Map((saved.retry ?? []) as [K, Retry][])
+  streak.value = saved.streak ?? 0
+  best.value = saved.best ?? 0
   finished.value = false
   resumed.value = true
   showToast(t.value.resumed.replace(/^↩\s*/, ''), History)
@@ -190,75 +145,35 @@ function restart() {
   start()
 }
 function next() {
-  const k = queue.value.shift()
-  if (k === undefined) {
-    finish()
-    return
-  }
-  current.value = k
-  // A missed question comes back as it was; after two misses it shows two
-  // options, the wrong one re-picked at random on every showing.
-  const r = retry.value.get(k)
-  question.value = r ? (r.wrong >= 2 ? halve(r.q) : r.q) : build(k)
   burst.value = null
-  order.value = shuffle(question.value.options.map((_, i) => i))
-  picked.value = null
+  if (!engine.next(run, build, rng)) finish()
 }
 function pick(i: number) {
-  if (picked.value !== null || current.value === null || !question.value) return
-  picked.value = i
-  tries.value++
-  const k = current.value
-  const q = question.value
-  if (i === q.answer) {
-    const c = (counts.value.get(k) ?? 0) + 1
-    counts.value.set(k, c)
-    if (c >= 2) retry.value.delete(k)
-    else queue.value.splice(Math.min(queue.value.length, 4 + Math.floor(Math.random() * 4)), 0, k)
-    streak.value++
-    best.value = Math.max(best.value, streak.value)
-    if (streak.value % 5 === 0) {
+  const out = engine.answer(run, i, rng, label)
+  if (!out) return
+  if (out.correct) {
+    if (out.milestone) {
       flash.value++
-      showToast(t.value.milestone(streak.value), Flame)
+      showToast(t.value.milestone(out.milestone), Flame)
     }
-    burst.value = c >= 2 ? 'mastered' : 'right'
-    buzz(c >= 2 ? [10, 30, 10, 30, 40] : 15)
+    burst.value = out.mastered ? 'mastered' : 'right'
+    buzz(out.mastered ? [10, 30, 10, 30, 40] : 15)
   } else {
-    wrong.value++
-    streak.value = 0
     burst.value = 'wrong'
     buzz([30, 40, 30])
-    fileMiss(k, q)
-    // Back to zero: this exact question now has to be right twice.
-    counts.value.set(k, 0)
-    // Keep the original question (all its options) so halving can re-pick.
-    const r = retry.value.get(k) ?? { q, wrong: 0 }
-    r.wrong++
-    retry.value.set(k, r)
-    queue.value.splice(Math.min(queue.value.length, 2), 0, k)
   }
   persist()
   // On a short screen, bring the buttons under the question into view.
-  requestAnimationFrame(() => actions.value?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }))
+  requestAnimationFrame(() =>
+    actions.value?.scrollIntoView({ block: 'nearest', behavior: reduceMotion() ? 'auto' : 'smooth' }),
+  )
 }
-/** Count a mistake under the question's own label and groups. */
-function fileMiss(k: K, q: Question) {
-  const stat = q.stat ?? { label: label ? label(k) : String(k) }
-  const m = misses.value.get(stat.label) ?? { label: stat.label, n: 0, ...(stat.path ? { path: stat.path } : {}) }
-  m.n++
-  misses.value.set(stat.label, m)
-}
-/** Missed twice: keep the right option and one wrong one at random — a 50% guess. */
-function halve(q: Question): Question {
-  if (q.options.length <= 2) return q
-  const wrongs = q.options.map((_, i) => i).filter((i) => i !== q.answer)
-  const w = wrongs[Math.floor(Math.random() * wrongs.length)]!
-  return { ...q, options: [q.options[q.answer]!, q.options[w]!], answer: 0 }
-}
+const reduceMotion = () =>
+  typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 /** A short vibration where the phone supports it. */
 function buzz(pattern: number | number[]) {
   try {
-    if (typeof navigator !== 'undefined' && 'vibrate' in navigator) navigator.vibrate(pattern)
+    if (!reduceMotion() && typeof navigator !== 'undefined' && 'vibrate' in navigator) navigator.vibrate(pattern)
   } catch {
     // Not allowed here: no haptics.
   }
@@ -289,10 +204,10 @@ watch(
 defineExpose({ start: restart })
 
 const total = computed(() => pool.length)
-const done = computed(() => [...counts.value.values()].filter((c) => c >= 2).length)
-/** Correct answers still owed: two per item, minus what is already in. */
-const owed = computed(() => [...counts.value.values()].reduce((s, c) => s + Math.max(0, 2 - c), 0))
-const percent = computed(() => Math.round(((total.value * 2 - owed.value) / (total.value * 2 || 1)) * 100))
+const prog = computed(() => engine.progress(run, total.value))
+const done = computed(() => prog.value.done)
+const percent = computed(() => prog.value.percent)
+const owed = computed(() => prog.value.owed)
 const count = computed(() => (current.value === null ? 0 : (counts.value.get(current.value) ?? 0)))
 const correct = computed(() => picked.value !== null && picked.value === question.value?.answer)
 /** Furigana needs tall lines; plain options can sit tighter. */
@@ -334,7 +249,7 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
       v-if="toast"
       :key="toast"
       role="status"
-      class="quiz-toast bg-ink text-canvas fixed start-1/2 bottom-12 z-40 flex -translate-x-1/2 items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-semibold whitespace-nowrap shadow-lg"
+      class="quiz-toast bg-ink text-canvas fixed start-1/2 bottom-[calc(1rem+env(safe-area-inset-bottom))] z-40 flex -translate-x-1/2 items-center gap-1.5 max-w-[calc(100vw-32px)] rounded-full px-3.5 py-1.5 text-center text-[13px] font-semibold shadow-lg"
     >
       <component :is="toastIcon" class="size-4" aria-hidden="true" /> {{ toast }}
     </p>

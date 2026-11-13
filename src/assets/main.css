@@ -43,7 +43,7 @@
    component: on <html>, a scoped `:global()` rule once compiled to hiding the
    whole document. */
 ruby rt {
-  font-size: 0.6em;
+  font-size: max(0.6em, 10px);
   font-weight: 600;
   color: var(--color-ink-soft);
   /* A little air between the reading and its kanji. */

@@ -2,11 +2,14 @@
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import { BaseButton, BaseSwitch, PageContainer, SegmentedControl, useTheme } from 'rei-kit'
-import { ChevronLeft, Languages, Menu, Moon, Sun, X } from 'lucide-vue-next'
+import { ChevronLeft, DatabaseBackup, Languages, Menu, Moon, Sun, TriangleAlert, X } from 'lucide-vue-next'
 
 import { LANG_LABEL } from '@/lib/i18n'
 import { usePageContext } from '@/lib/page'
 import { furigana, hideAnswers, lang } from '@/lib/prefs'
+import { daysSinceExport, needsBackup } from '@/lib/backup'
+import { storageError } from '@/lib/quiz-store'
+import BackupSheet from './BackupSheet.vue'
 
 /**
  * The frame every page shares: one column width, one header, one set of
@@ -27,7 +30,7 @@ const playing = computed(() => typeof route.query.test === 'string')
 
 /* ── Settings menu: language, furigana, hidden answers ──
    Behind one button, so a phone keeps its screen for the content. */
-const hasSettings = computed(() => page.langs.length > 1 || furiganaSwitch || hideSwitch)
+const hasSettings = true
 const menuOpen = ref(false)
 const menuButton = ref<{ $el: HTMLElement } | null>(null)
 const menuPanel = ref<HTMLElement | null>(null)
@@ -63,8 +66,7 @@ const shownLang = computed({
   set: (v) => (lang.value = v),
 })
 
-// Light or dark, nothing else: a stored "system" (from before) reads as
-// whatever it currently resolves to, and the first press picks a real side.
+// The header button is a quick light/dark flip; the menu offers all three.
 const isDark = computed(
   () =>
     theme.value === 'dark' ||
@@ -77,6 +79,43 @@ const themeLabel = computed(() => `${t.value.theme}: ${isDark.value ? t.value.da
 function cycleTheme() {
   theme.value = isDark.value ? 'light' : 'dark'
 }
+const themeOptions = computed(() => [
+  { value: 'system', label: t.value.system },
+  { value: 'light', label: t.value.light },
+  { value: 'dark', label: t.value.dark },
+])
+const themeChoice = computed({
+  get: () => theme.value as string,
+  set: (v: string) => (theme.value = v as typeof theme.value),
+})
+
+/* ── Backup ── */
+const backupOpen = ref(false)
+function openBackup() {
+  closeMenu()
+  backupOpen.value = true
+}
+/** Remind on the home page only, once there is progress and no recent export. */
+const remindBackup = ref(false)
+const backupDays = ref<number | null>(null)
+onMounted(() => {
+  if (page.path !== '/') return
+  try {
+    if (sessionStorage.getItem('nihongo-left:backup-reminder') === '1') return
+  } catch {
+    // no session storage: remind anyway
+  }
+  remindBackup.value = needsBackup()
+  backupDays.value = daysSinceExport()
+})
+function dismissReminder() {
+  remindBackup.value = false
+  try {
+    sessionStorage.setItem('nihongo-left:backup-reminder', '1')
+  } catch {
+    // nothing to remember it in
+  }
+}
 </script>
 
 <template>
@@ -86,7 +125,7 @@ function cycleTheme() {
         <RouterLink
           v-if="page.path !== '/' && !playing"
           to="/"
-          class="focus-ring text-ink-soft hover:text-ink rounded-control -ms-1 grid size-10 shrink-0 place-items-center"
+          class="focus-ring text-ink-soft hover:text-ink rounded-control -ms-1 grid size-11 shrink-0 place-items-center"
           :aria-label="t.home"
           :title="t.home"
         >
@@ -134,20 +173,43 @@ function cycleTheme() {
           </div>
           <BaseSwitch v-if="furiganaSwitch" v-model="furigana" :label="t.furigana" />
           <BaseSwitch v-if="hideSwitch" v-model="hideAnswers" :label="t.hide" />
+          <div class="grid gap-1.5">
+            <span class="text-ink-soft text-xs font-semibold">{{ t.theme }}</span>
+            <SegmentedControl v-model="themeChoice" :options="themeOptions" />
+          </div>
+          <BaseButton variant="ghost" size="sm" class="justify-start" @click="openBackup">
+            <DatabaseBackup class="size-4" aria-hidden="true" />{{ t.backup }}
+          </BaseButton>
         </div>
       </PageContainer>
     </header>
 
     <main class="flex-1">
       <PageContainer width="reading" class="py-6">
+        <p
+          v-if="storageError"
+          role="alert"
+          class="border-warning bg-muted rounded-control mb-4 flex items-start gap-2 border-s-4 px-3 py-2 text-sm"
+        >
+          <TriangleAlert class="text-warning mt-0.5 size-4 shrink-0" aria-hidden="true" />{{ t.storageError }}
+        </p>
+        <div
+          v-if="remindBackup && !playing"
+          role="status"
+          class="border-primary bg-muted rounded-control mb-4 flex flex-wrap items-center gap-2 border-s-4 px-3 py-2 text-sm"
+        >
+          <span class="min-w-0 flex-1">{{ t.backupReminder(backupDays) }}</span>
+          <BaseButton size="sm" @click="openBackup">{{ t.backupNow }}</BaseButton>
+          <BaseButton size="sm" variant="ghost" @click="dismissReminder">{{ t.dismiss }}</BaseButton>
+        </div>
         <slot />
       </PageContainer>
     </main>
 
-    <!-- Fixed to the bottom of every page; the padding below keeps it off the content. -->
-    <div class="h-8" aria-hidden="true" />
+    <!-- In the flow, not fixed: a credit line should not cover a quiz on a phone. -->
     <footer
-      class="bg-canvas/95 border-hair text-ink-soft fixed inset-x-0 bottom-0 z-30 border-t py-1.5 text-center text-xs backdrop-blur"
+      v-if="!playing"
+      class="border-hair text-ink-soft border-t py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] text-center text-xs"
     >
       {{ t.credit }}
       <a
@@ -158,5 +220,6 @@ function cycleTheme() {
         >Ramazan Dogna</a
       >
     </footer>
+    <BackupSheet v-model="backupOpen" @exported="remindBackup = false" />
   </div>
 </template>

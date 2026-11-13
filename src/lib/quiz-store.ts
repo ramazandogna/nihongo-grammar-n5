@@ -1,3 +1,5 @@
+import { ref } from 'vue'
+
 /**
  * Where a test lives between visits, and what it remembers after it ends.
  *
@@ -70,16 +72,97 @@ function read<T>(k: string): T | null {
     return null
   }
 }
+/** Set once a write fails (quota, private mode), so the layout can say progress is not being kept. */
+export const storageError = ref(false)
 function write(k: string, v: unknown) {
   try {
     if (v === null) localStorage.removeItem(k)
     else localStorage.setItem(k, JSON.stringify(v))
   } catch {
-    // Storage blocked: this run simply is not kept.
+    // Storage blocked or full: this run is not kept — say so once.
+    storageError.value = true
   }
 }
 
-export const loadRun = <K>(key: string) => read<SavedRun<K>>(RUN(key))
+const isArr = Array.isArray
+const isInt = (n: unknown) => typeof n === 'number' && Number.isInteger(n) && n >= 0
+const isKey = (k: unknown) => typeof k === 'string' || typeof k === 'number'
+/**
+ * Stored question text is rendered as markup, so it may only hold the tags
+ * the content itself uses — no attributes beyond class, no handlers.
+ */
+const SAFE_TAG =
+  /^<\/?(ruby|rt|rp|b|i|u|s|mark|br|span|small|strong|em|code|sub|sup|p|div)(\s+class="[\w\s:/\[\]-]*")?\s*\/?>$/i
+export const safeMarkup = (s: string) => (s.match(/<[^>]*>?/g) ?? []).every((t) => SAFE_TAG.test(t))
+const safeText = (x: unknown) => typeof x !== 'string' || safeMarkup(x)
+const isQuestion = (q: unknown): boolean => {
+  if (!q || typeof q !== 'object') return false
+  const o = q as Record<string, unknown>
+  return (
+    typeof o.prompt === 'string' &&
+    isArr(o.options) &&
+    o.options.length > 0 &&
+    o.options.every((x) => typeof x === 'string') &&
+    isInt(o.answer) &&
+    (o.answer as number) < o.options.length &&
+    [o.prompt, o.kind, o.explain, ...o.options].every(safeText) &&
+    (o.stat === undefined || safeText((o.stat as { label?: unknown })?.label))
+  )
+}
+const isMiss = (m: unknown): boolean =>
+  !!m && typeof m === 'object' && typeof (m as Miss).label === 'string' && isInt((m as Miss).n)
+
+/**
+ * Whether a stored value has the shape of a saved run. Anything else — a
+ * hand-edited key, an older format, a half-written value — is ignored rather
+ * than crashing the page on every visit.
+ */
+export function isSavedRun(v: unknown): v is SavedRun<string | number> {
+  if (!v || typeof v !== 'object') return false
+  const r = v as Record<string, unknown>
+  if (!isArr(r.pool) || !r.pool.every(isKey)) return false
+  if (!isArr(r.queue) || !r.queue.every(isKey)) return false
+  if (!isArr(r.counts) || !r.counts.every((c) => isArr(c) && c.length === 2 && isKey(c[0]) && isInt(c[1]))) return false
+  if (r.current !== null && !isKey(r.current)) return false
+  if (r.current !== null && !isQuestion(r.question)) return false
+  if (!isArr(r.order) || !r.order.every(isInt)) return false
+  if (r.picked !== null && !isInt(r.picked)) return false
+  if (!isInt(r.tries) || !isInt(r.wrong)) return false
+  if (!isArr(r.misses) || !r.misses.every((m) => isArr(m) && typeof m[0] === 'string' && isMiss(m[1]))) return false
+  if (
+    r.retry !== undefined &&
+    (!isArr(r.retry) ||
+      !r.retry.every(
+        (x) =>
+          isArr(x) &&
+          isKey(x[0]) &&
+          !!x[1] &&
+          isQuestion((x[1] as { q: unknown }).q) &&
+          isInt((x[1] as { wrong: unknown }).wrong),
+      ))
+  )
+    return false
+  if (r.streak !== undefined && !isInt(r.streak)) return false
+  if (r.best !== undefined && !isInt(r.best)) return false
+  if (r.question && isQuestion(r.question)) {
+    const n = (r.question as { options: unknown[] }).options.length
+    if (r.order.length !== n) return false
+  }
+  return true
+}
+export const isAttempt = (a: unknown): a is Attempt =>
+  !!a &&
+  typeof a === 'object' &&
+  typeof (a as Attempt).at === 'string' &&
+  isInt((a as Attempt).tries) &&
+  isInt((a as Attempt).wrong) &&
+  isArr((a as Attempt).misses) &&
+  (a as Attempt).misses.every(isMiss)
+
+export function loadRun<K>(key: string): SavedRun<K> | null {
+  const v = read<unknown>(RUN(key))
+  return isSavedRun(v) ? (v as SavedRun<K>) : null
+}
 /** How far a saved run is, 0–100: right answers given of the two per item owed. */
 export function runProgress(run: SavedRun<unknown>): number {
   const owed = run.counts.reduce((s, [, c]) => s + Math.max(0, 2 - c), 0)
@@ -87,10 +170,15 @@ export function runProgress(run: SavedRun<unknown>): number {
 }
 export const saveRun = <K>(key: string, run: SavedRun<K> | null) => write(RUN(key), run)
 
-export const loadHistory = (key: string) => read<Attempt[]>(HISTORY(key)) ?? []
+export function loadHistory(key: string): Attempt[] {
+  const v = read<unknown>(HISTORY(key))
+  return Array.isArray(v) ? v.filter(isAttempt) : []
+}
+/** How many attempts a test's history keeps. */
+export const HISTORY_CAP = 50
 export function addAttempt(key: string, a: Attempt) {
   // The last 50 runs are plenty to see a trend, and keep storage small.
-  write(HISTORY(key), [...loadHistory(key), a].slice(-50))
+  write(HISTORY(key), [...loadHistory(key), a].slice(-HISTORY_CAP))
 }
 export const clearHistory = (key: string) => write(HISTORY(key), null)
 

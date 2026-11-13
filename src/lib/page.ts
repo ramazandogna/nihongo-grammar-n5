@@ -2,7 +2,7 @@ import { computed, inject, provide, type ComputedRef, type InjectionKey } from '
 import { useHead } from '@unhead/vue'
 
 import { HOME, PAGES, type Lang, type SitePage } from '@/site'
-import { DICT } from './i18n'
+import { DICT, uiLang } from './i18n'
 import { lang } from './prefs'
 
 interface PageContext {
@@ -30,7 +30,7 @@ export function usePage(path: string): PageContext {
   const ctx: PageContext = {
     page,
     lang: shown,
-    t: computed(() => DICT[shown.value]),
+    t: computed(() => DICT[uiLang(shown.value)]),
     pick: (v) => (typeof v === 'string' ? v : (v[idx.value] ?? v[0] ?? '')),
   }
 

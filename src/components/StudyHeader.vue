@@ -41,7 +41,7 @@ onBeforeUnmount(() => {
     <div class="flex min-h-11 items-center gap-1">
       <button
         type="button"
-        class="focus-ring text-ink-soft hover:text-ink rounded-control -ms-2 grid size-10 shrink-0 place-items-center"
+        class="focus-ring text-ink-soft hover:text-ink rounded-control -ms-2 grid size-11 shrink-0 place-items-center"
         :aria-label="t.back"
         :title="t.back"
         @click="emit('back')"
@@ -52,7 +52,7 @@ onBeforeUnmount(() => {
       <div v-if="sub" ref="infoRoot" class="relative shrink-0">
         <button
           type="button"
-          class="focus-ring text-ink-soft hover:text-primary rounded-control grid size-8 place-items-center"
+          class="focus-ring text-ink-soft hover:text-primary rounded-control grid size-11 place-items-center"
           :aria-label="t.info"
           :aria-expanded="infoOpen"
           aria-controls="study-info"

@@ -3,13 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#16161d" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>" />
     <script>
       // Before the first paint: the prerendered HTML carries no theme, so a
       // stored dark choice would otherwise flash white on every load.
       try {
         var s = localStorage.getItem('nihongo-theme')
-        if (s === 'dark' || (s === 'system' && matchMedia('(prefers-color-scheme: dark)').matches))
+        // Nothing stored yet means "system", the kit's default: a dark phone gets dark from the first paint.
+        if (s === 'dark' || ((s === null || s === 'system') && matchMedia('(prefers-color-scheme: dark)').matches))
           document.documentElement.classList.add('dark')
         if (localStorage.getItem('nihongo-furigana') === 'off') document.documentElement.classList.add('furigana-off')
       } catch (e) {}

@@ -33,6 +33,28 @@ export const createApp = ViteSSG(
         showError(err)
       }
       router.onError((err) => showError(err))
+      // After a deploy, an open tab may ask for a chunk that no longer exists:
+      // reload once to get the new HTML instead of showing a broken page.
+      // Loaded fine: a later deploy may reload again.
+      router.isReady().then(() =>
+        setTimeout(() => {
+          try {
+            sessionStorage.removeItem('nihongo-left:reloaded')
+          } catch {
+            // nothing to clear
+          }
+        }, 5000),
+      )
+      window.addEventListener('vite:preloadError', (e) => {
+        try {
+          if (sessionStorage.getItem('nihongo-left:reloaded') === '1') return
+          sessionStorage.setItem('nihongo-left:reloaded', '1')
+        } catch {
+          return
+        }
+        e.preventDefault()
+        window.location.reload()
+      })
     }
 
     // The theme controller's watcher belongs to whichever scope first calls

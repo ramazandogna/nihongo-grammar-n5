@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 
+import HomeDashboard from '@/components/HomeDashboard.vue'
 import SiteLayout from '@/components/SiteLayout.vue'
 import { usePage } from '@/lib/page'
 import { LANG_FLAG, LANG_LABEL } from '@/lib/i18n'
@@ -64,6 +65,7 @@ const LEAD = ['Bir bölüm seç', 'Choose a section']
       <h1 class="mt-4 text-3xl font-bold">Nihongo</h1>
       <p class="text-ink-soft mt-1">{{ pick(LEAD) }}</p>
     </section>
+    <HomeDashboard class="mb-6" />
     <nav aria-label="Nihongo" class="grid gap-3">
       <section v-for="g in GROUPS" :key="g.id" class="surface rounded-card overflow-hidden">
         <button
@@ -99,10 +101,17 @@ const LEAD = ['Bir bölüm seç', 'Choose a section']
                 <span class="flex items-start justify-between gap-2">
                   <span class="font-bold">{{ text(p).title }}</span>
                   <span
-                    class="flex shrink-0 gap-0.5 text-base leading-none"
+                    class="flex shrink-0 gap-1 leading-none"
+                    role="img"
                     :title="langNames(p, ' · ')"
                     :aria-label="langNames(p, ', ')"
-                    ><span v-for="x in p.langs" :key="x" aria-hidden="true">{{ LANG_FLAG[x] }}</span></span
+                    ><span
+                      v-for="x in p.langs"
+                      :key="x"
+                      class="bg-muted text-ink-soft rounded-cell px-1.5 py-1 text-[11px] font-bold"
+                      aria-hidden="true"
+                      >{{ LANG_FLAG[x] }}</span
+                    ></span
                   >
                 </span>
                 <span class="text-ink-soft block text-sm">{{ text(p).description }}</span>

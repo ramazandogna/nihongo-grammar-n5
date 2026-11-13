@@ -3,6 +3,7 @@ import { computed, ref, watch } from 'vue'
 import { Check, Headphones, Target } from 'lucide-vue-next'
 import { BaseButton, BaseCard, SegmentedControl } from 'rei-kit'
 
+import JlptExam from '@/components/JlptExam.vue'
 import JpText from '@/components/JpText.vue'
 import MasteryQuiz, { type Question } from '@/components/MasteryQuiz.vue'
 import PagerNav from '@/components/PagerNav.vue'
@@ -43,7 +44,7 @@ const PART_TR: Record<Part, string> = { '文字・語彙': 'Kelime', 文法: 'Gr
 const exam = ref<Exam | null>(null)
 const part = ref<Part>('文字・語彙')
 const section = ref<ExamSection | null>(null)
-const mode = ref<'learn' | 'test'>('learn')
+const mode = ref<'learn' | 'test' | 'exam'>('learn')
 const page = ref(0)
 /** Picks per question number, per section: `${section.id}:${no}`. */
 const picks = ref<Record<string, number>>({})
@@ -58,10 +59,22 @@ watch(page, toTop)
 
 const sections = computed(() => exam.value?.sections.filter((s) => s.part === part.value) ?? [])
 const partTabs = PARTS.map((p) => ({ value: p, label: PART_TR[p] }))
-const modeTabs = [
-  { value: 'learn' as const, label: 'Öğrenerek çöz' },
-  { value: 'test' as const, label: 'Test' },
-]
+const modeTabs = computed(() => [
+  { value: 'learn' as const, label: 'Öğren' },
+  ...(testable.value ? [{ value: 'test' as const, label: 'Test' }] : []),
+  { value: 'exam' as const, label: 'Sınav' },
+])
+/**
+ * A rough time for a sitting: about the real paper's pace per question.
+ * Listening has none — the recording sets the pace.
+ */
+const examMinutes = computed(() => {
+  const s = section.value
+  if (!s || s.part === '聴解') return null
+  const n = s.groups.reduce((m, g) => m + g.items.length, 0)
+  const per = s.part === '読解' ? 3 : s.part === '文法' ? 1.5 : 1
+  return Math.max(5, Math.ceil(n * per))
+})
 
 const key = (q: ExamQuestion) => `${section.value!.id}:${q.no}`
 function pick(q: ExamQuestion, i: number) {
@@ -173,15 +186,17 @@ function closeSection() {
 
     <!-- One section -->
     <template v-else>
-      <StudyHeader
-        v-model="mode"
-        :title="section.title"
-        :sub="exam.title"
-        :tabs="testable ? modeTabs : undefined"
-        @back="closeSection"
-      />
+      <StudyHeader v-model="mode" :title="section.title" :sub="exam.title" :tabs="modeTabs" @back="closeSection" />
 
-      <template v-if="mode === 'learn' || !testable">
+      <JlptExam
+        v-if="mode === 'exam'"
+        :key="`${exam.id}:${section.id}`"
+        :exam-id="exam.id"
+        :section="section"
+        :audio="audioOf(exam)"
+        :minutes="examMinutes"
+      />
+      <template v-else-if="mode === 'learn' || !testable">
         <BaseCard v-if="page === 0" class="mb-4">
           <p class="mb-1 text-sm font-semibold">
             <Target class="me-1 inline size-[1.1em] shrink-0 -translate-y-px align-middle" aria-hidden="true" />Bu soru
@@ -266,8 +281,7 @@ function closeSection() {
                 :aria-pressed="picks[key(q)] === oi"
                 @click="pick(q, oi)"
               >
-                <span class="text-ink-soft me-2 text-sm">{{ oi + 1 }}</span
-                ><span v-html="notation(o)" />
+                <span class="text-ink-soft me-2 text-sm">{{ oi + 1 }}</span><span v-html="notation(o)" />
               </button>
             </div>
             <BaseButton v-if="!solved(q)" variant="ghost" size="sm" class="mt-2" @click="shown[key(q)] = true">
