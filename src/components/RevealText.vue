@@ -4,6 +4,7 @@ import { computed, ref, watch } from 'vue'
 import { usePageContext } from '@/lib/page'
 import { hideAnswers } from '@/lib/prefs'
 import { notation } from '@/lib/ruby'
+import { useRevealAll } from '@/lib/reveal'
 
 /**
  * An answer kept behind a blur until it is tapped, so the reader can guess
@@ -15,20 +16,23 @@ const { t } = usePageContext()
 
 const opened = ref(false)
 watch(hideAnswers, () => (opened.value = false))
-const veiled = computed(() => hideAnswers.value && !opened.value)
+const all = useRevealAll()
+const veiled = computed(() => hideAnswers.value && !opened.value && !all?.value)
 </script>
 
 <template>
+  <!-- One element in both states, so the blur fades away instead of swapping
+       nodes; while veiled the text is hidden from screen readers, which hear
+       the "tap to reveal" button instead of the answer. -->
   <span
-    v-if="veiled"
-    class="veil veiled focus-ring rounded-cell"
-    role="button"
-    tabindex="0"
-    :aria-label="t.reveal"
+    class="veil rounded-cell"
+    :class="veiled ? 'veiled focus-ring' : opened || all ? 'is-open' : ''"
+    :role="veiled ? 'button' : undefined"
+    :tabindex="veiled ? 0 : undefined"
+    :aria-label="veiled ? t.reveal : undefined"
     @click.stop="opened = true"
     @keydown.enter.prevent.stop="opened = true"
     @keydown.space.prevent="opened = true"
-    v-html="notation(text)"
-  />
-  <span v-else class="veil" v-html="notation(text)" />
+    ><span :aria-hidden="veiled ? 'true' : undefined" v-html="notation(text)"
+  /></span>
 </template>

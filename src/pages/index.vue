@@ -6,7 +6,7 @@ import SiteLayout from '@/components/SiteLayout.vue'
 import { usePage } from '@/lib/page'
 import { LANG_FLAG, LANG_LABEL } from '@/lib/i18n'
 import { ref } from 'vue'
-import { BriefcaseBusiness, Folder, FolderOpen, Info, Library } from 'lucide-vue-next'
+import { BriefcaseBusiness, ChevronRight, Folder, FolderOpen, Library, Mail, Scale } from 'lucide-vue-next'
 
 import { GROUPS, PAGES, type Group, type SitePage } from '@/site'
 
@@ -35,7 +35,6 @@ const groupIcon = (name: 'library' | 'folder' | 'briefcase', isOpen: boolean) =>
   name === 'folder' ? (isOpen ? FolderOpen : Folder) : name === 'library' ? Library : BriefcaseBusiness
 const inGroup = (g: Group) => PAGES.filter((p) => (p.group ?? 'self') === g)
 
-const aboutOpen = ref(false)
 const ABOUT = {
   title: ['Hakkında', 'About'],
   sub: ['Lisans ve iletişim', 'License and contact'],
@@ -55,104 +54,138 @@ const ABOUT = {
   contact: ['Sorular ve izin talepleri için:', 'For questions and permission requests:'],
 }
 
-const LEAD = ['Bir bölüm seç', 'Choose a section']
+const LEAD = ['Bugün ne çalışalım?', 'What shall we study today?']
+const SECTIONS = ['Bölümler', 'Sections']
+/** A greeting by the hour, in the menu's language. */
+const hello = (() => {
+  const h = new Date().getHours()
+  return h < 5
+    ? ['İyi geceler', 'Good night']
+    : h < 12
+      ? ['Günaydın', 'Good morning']
+      : h < 18
+        ? ['İyi günler', 'Good afternoon']
+        : ['İyi akşamlar', 'Good evening']
+})()
 </script>
 
 <template>
   <SiteLayout :furigana-switch="false" :hide-switch="false">
-    <section class="py-6 text-center">
-      <p class="font-jp text-primary text-6xl leading-none" aria-hidden="true">日本語</p>
-      <h1 class="mt-4 text-3xl font-bold">Nihongo</h1>
-      <p class="text-ink-soft mt-1">{{ pick(LEAD) }}</p>
+    <!-- Compact welcome: the brand mark and one question, so the first screen is the study itself. -->
+    <section class="rise-in mb-5 flex items-center gap-4 pt-1">
+      <span
+        class="bg-primary text-on-primary font-jp rounded-card grid size-16 shrink-0 place-items-center text-3xl shadow-sm"
+        aria-hidden="true"
+        >日</span
+      >
+      <div class="min-w-0">
+        <p class="text-ink-soft text-sm" data-allow-mismatch="text">
+          {{ pick(hello) }} · <span class="font-jp">こんにちは</span>
+        </p>
+        <h1 class="text-2xl leading-tight font-bold">{{ pick(LEAD) }}</h1>
+      </div>
     </section>
-    <HomeDashboard class="mb-6" />
+
+    <HomeDashboard class="mb-8" />
+
+    <h2 class="text-ink-soft mb-2 px-1 text-xs font-bold tracking-wider uppercase">{{ pick(SECTIONS) }}</h2>
     <nav aria-label="Nihongo" class="grid gap-3">
-      <section v-for="g in GROUPS" :key="g.id" class="surface rounded-card overflow-hidden">
+      <section
+        v-for="(g, gi) in GROUPS"
+        :key="g.id"
+        class="surface rounded-card rise-in overflow-hidden"
+        :style="{ '--stagger': gi }"
+      >
         <button
           type="button"
-          class="focus-ring flex w-full items-center gap-4 p-4 text-start"
+          class="focus-ring press flex min-h-16 w-full items-center gap-4 p-4 text-start"
           :aria-expanded="open === g.id"
           @click="toggle(g.id)"
         >
-          <span class="bg-muted rounded-control grid size-12 shrink-0 place-items-center text-2xl" aria-hidden="true"
+          <span class="bg-primary/10 rounded-control grid size-12 shrink-0 place-items-center" aria-hidden="true"
             ><component :is="groupIcon(g.icon, open === g.id)" class="text-primary size-6" aria-hidden="true"
           /></span>
           <span class="min-w-0 flex-1">
             <span class="block font-bold">{{ text(g).title }}</span>
-            <span class="text-ink-soft block text-sm">{{ text(g).description }} · {{ inGroup(g.id).length }}</span>
+            <span class="text-ink-soft block text-sm">{{ text(g).description }}</span>
           </span>
-          <span class="text-ink-soft transition-transform" :class="open === g.id ? 'rotate-90' : ''" aria-hidden="true"
-            >›</span
-          >
+          <span class="bg-muted text-ink-soft rounded-full px-2 py-0.5 text-xs font-bold tabular-nums">{{
+            inGroup(g.id).length
+          }}</span>
+          <ChevronRight
+            class="text-ink-soft size-5 shrink-0 transition-transform duration-300"
+            :class="open === g.id ? 'rotate-90' : ''"
+            aria-hidden="true"
+          />
         </button>
-        <ul v-if="open === g.id" class="border-hair grid gap-2 border-t p-3">
-          <li v-for="p in inGroup(g.id)" :key="p.path">
-            <RouterLink
-              :to="p.path"
-              class="bg-muted focus-ring rounded-control group flex items-center gap-3 p-3 transition-transform hover:-translate-y-0.5"
-            >
-              <span
-                :data-palette="p.palette"
-                class="bg-surface text-primary font-jp rounded-control grid size-10 shrink-0 place-items-center text-xl"
-                aria-hidden="true"
-                >{{ p.icon }}</span
+        <Transition name="fade-up">
+          <ul v-if="open === g.id" class="border-hair grid gap-2 border-t p-3">
+            <li v-for="p in inGroup(g.id)" :key="p.path">
+              <RouterLink
+                :to="p.path"
+                class="bg-muted focus-ring rounded-control press lift group flex items-center gap-3 p-3"
               >
-              <span class="min-w-0 flex-1">
-                <span class="flex items-start justify-between gap-2">
-                  <span class="font-bold">{{ text(p).title }}</span>
+                <span
+                  :data-palette="p.palette"
+                  class="bg-surface text-primary font-jp rounded-control grid size-11 shrink-0 place-items-center text-xl"
+                  aria-hidden="true"
+                  >{{ p.icon }}</span
+                >
+                <span class="min-w-0 flex-1">
+                  <span class="block font-bold">{{ text(p).title }}</span>
+                  <span class="text-ink-soft line-clamp-2 block text-sm">{{ text(p).description }}</span>
                   <span
-                    class="flex shrink-0 gap-1 leading-none"
+                    class="mt-1.5 flex gap-1"
                     role="img"
-                    :title="langNames(p, ' · ')"
                     :aria-label="langNames(p, ', ')"
+                    :title="langNames(p, ' · ')"
                     ><span
                       v-for="x in p.langs"
                       :key="x"
-                      class="bg-muted text-ink-soft rounded-cell px-1.5 py-1 text-[11px] font-bold"
+                      class="bg-surface text-ink-soft rounded-cell px-1.5 py-0.5 text-[11px] font-bold"
                       aria-hidden="true"
                       >{{ LANG_FLAG[x] }}</span
                     ></span
                   >
                 </span>
-                <span class="text-ink-soft block text-sm">{{ text(p).description }}</span>
-              </span>
-              <span class="text-ink-soft group-hover:text-primary" aria-hidden="true">→</span>
-            </RouterLink>
-          </li>
-        </ul>
+                <ChevronRight class="text-ink-soft group-hover:text-primary size-5 shrink-0" aria-hidden="true" />
+              </RouterLink>
+            </li>
+          </ul>
+        </Transition>
       </section>
     </nav>
 
     <!-- About: who made it, the license, and how to get in touch. The address
          is written out, not linked, so it is not harvested by spam bots. -->
-    <section class="surface rounded-card mt-3 overflow-hidden">
-      <button
-        type="button"
-        class="focus-ring flex w-full items-center gap-4 p-4 text-start"
-        :aria-expanded="aboutOpen"
-        @click="aboutOpen = !aboutOpen"
-      >
-        <span class="bg-muted rounded-control grid size-12 shrink-0 place-items-center text-2xl" aria-hidden="true"
-          ><Info class="text-primary size-6"
-        /></span>
-        <span class="min-w-0 flex-1">
-          <span class="block font-bold">{{ pick(ABOUT.title) }}</span>
-          <span class="text-ink-soft block text-sm">{{ pick(ABOUT.sub) }}</span>
-        </span>
-        <span class="text-ink-soft transition-transform" :class="aboutOpen ? 'rotate-90' : ''" aria-hidden="true"
-          >›</span
-        >
-      </button>
-      <div v-if="aboutOpen" class="border-hair grid gap-3 border-t p-4 text-[15px]">
-        <p>{{ pick(ABOUT.what) }}</p>
-        <div class="border-warning bg-muted rounded-control border-s-4 px-3 py-2">
-          <p class="font-bold">© 2026 Ramazan Doğan · {{ pick(ABOUT.rights) }}</p>
-          <p class="mt-1">{{ pick(ABOUT.license) }}</p>
+    <section id="about" class="mt-10 grid gap-4 scroll-mt-16" aria-labelledby="about-title">
+      <div class="flex items-center gap-3">
+        <span class="bg-hair h-px flex-1" aria-hidden="true" />
+        <h2 id="about-title" class="text-ink-soft text-xs font-bold tracking-wider uppercase">
+          {{ pick(ABOUT.title) }}
+        </h2>
+        <span class="bg-hair h-px flex-1" aria-hidden="true" />
+      </div>
+      <div class="surface rounded-card grid gap-4 p-5">
+        <div class="flex items-center gap-3">
+          <span class="font-jp text-primary text-3xl leading-none" aria-hidden="true">日本語</span>
+          <div class="min-w-0">
+            <p class="font-bold">Nihongo</p>
+            <p class="text-ink-soft text-sm">Ramazan Doğan</p>
+          </div>
         </div>
-        <p>{{ pick(ABOUT.kit) }}</p>
-        <p>
-          {{ pick(ABOUT.contact) }}
-          <span class="font-mono font-semibold whitespace-nowrap select-all">doganrmzn40 [ at ] gmail [ . ] com</span>
+        <p class="text-[15px] leading-relaxed">{{ pick(ABOUT.what) }}</p>
+        <div class="bg-muted rounded-control grid gap-1.5 p-3 text-sm">
+          <p class="flex items-center gap-1.5 font-bold">
+            <Scale class="size-4 shrink-0" aria-hidden="true" />© 2026 Ramazan Doğan · {{ pick(ABOUT.rights) }}
+          </p>
+          <p class="text-ink-soft leading-relaxed">{{ pick(ABOUT.license) }}</p>
+        </div>
+        <p class="text-ink-soft text-sm">{{ pick(ABOUT.kit) }}</p>
+        <p class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
+          <Mail class="text-ink-soft size-4 shrink-0" aria-hidden="true" />
+          <span class="text-ink-soft">{{ pick(ABOUT.contact) }}</span>
+          <span class="font-mono font-semibold select-all">doganrmzn40 [ at ] gmail [ . ] com</span>
         </p>
       </div>
     </section>

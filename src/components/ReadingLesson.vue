@@ -7,6 +7,7 @@ import type { ExamGroup } from '@/pages/past-n3/types'
 import { toTop } from '@/lib/scroll'
 import JpText from './JpText.vue'
 import PagerNav from './PagerNav.vue'
+import RevealAll from './RevealAll.vue'
 import RevealText from './RevealText.vue'
 
 /**
@@ -34,12 +35,14 @@ const unmark = (s: string) => s.replace(/\[\[([^\]]+)\]\]/g, '$1')
       </BaseCard>
       <BaseCard>
         <JpText v-if="g.title" :text="g.title" as="h2" class="mb-3 text-xl font-bold" />
-        <div class="grid gap-3">
-          <div v-for="(l, j) in g.passage" :key="j">
-            <JpText :text="answered(g) ? l.jp : unmark(l.jp)" as="p" class="text-[1.25rem] leading-[2.2]" />
-            <p class="text-ink-soft text-[15px]"><RevealText :text="l.tr" /></p>
+        <RevealAll>
+          <div class="grid gap-3">
+            <div v-for="(l, j) in g.passage" :key="j">
+              <JpText :text="answered(g) ? l.jp : unmark(l.jp)" as="p" class="text-[1.25rem] leading-[2.2]" />
+              <p class="text-ink-soft text-[15px]"><RevealText :text="l.tr" /></p>
+            </div>
           </div>
-        </div>
+        </RevealAll>
       </BaseCard>
       <BaseCard v-for="q in g.items" :key="q.no">
         <p class="text-ink-soft text-sm">問 {{ q.no }}</p>
@@ -49,7 +52,7 @@ const unmark = (s: string) => s.replace(/\[\[([^\]]+)\]\]/g, '$1')
             v-for="(o, k) in q.opts"
             :key="k"
             type="button"
-            class="control rounded-control focus-ring px-3 py-2 text-start"
+            class="control rounded-control focus-ring press px-3 py-2 text-start"
             :class="
               chosen[q.no] === undefined
                 ? ''

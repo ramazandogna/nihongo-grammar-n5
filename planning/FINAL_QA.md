@@ -50,3 +50,23 @@ The CI guard fails a deploy that contains `.mp3` or `.pdf`.
 - **Strings:** radikaller and QuizHistory strings are still page-local (TR/EN, not mixed).
 - **Fonts:** the font `woff` duplicates are not removed (about 490 files in `dist/`).
 - **Commit status:** nothing has been committed or pushed.
+
+
+# Round 2 verification (2026-11-14, production build plus dev)
+
+| Check | Status | Evidence |
+|---|---|---|
+| Type-check, 54 unit tests, content validation | PASS | exit 0, 54/54, 0 errors |
+| Production build | PASS | exit 0, 2 mp3 in `dist/assets` (local build) |
+| 11 routes × 360/1280, no overflow, no errors | PASS | smoke: 22/22 |
+| StudyTabs at 360–1440: no split labels, sticky, arrow/Home/End keys, aria-selected | PASS | QA run plus sticky.cjs (top 57px after a scroll of 900px) |
+| Before/after screenshots | PASS | `ux-audit/shots/` at 360, 390, 768, 1024, 1440, light and dark for home |
+| Reveal semantics (button while veiled, text aria-hidden) | PASS | QA DOM check |
+| Reveal-all per passage | PASS | 17 → 6 veiled, back to 17 |
+| Touch targets on header and footer | PASS | all 44px measured |
+| Listening exam with real audio, production build | PASS | 206, 0:03 elapsed, once-only, result, retry |
+| Mastery quiz regression | PASS | e2e on the production build |
+| Dark first paint, EN UI, continue card, export | PASS | smoke |
+| Real iOS/Android, screen reader, measured contrast | NOT VERIFIED | |
+| Recordings on the public site | NOT DONE (declined, copyright) | |
+| Open items | | Toast over the footer (low). Router `next()` warning (low, pre-existing). Matsuya emoji titles. Two back chevrons. Vocabulary "mark difficult" / quick review. Word lookup in reading |

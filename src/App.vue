@@ -3,5 +3,10 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <RouterView />
+  <!-- Pages rise in on navigation (main.css .page-*); nothing on the first, prerendered paint. -->
+  <RouterView v-slot="{ Component, route }">
+    <Transition name="page" :appear="false">
+      <component :is="Component" :key="route.path" />
+    </Transition>
+  </RouterView>
 </template>

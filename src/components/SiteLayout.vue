@@ -135,12 +135,13 @@ function dismissReminder() {
           <span class="font-jp text-primary text-xl leading-none" aria-hidden="true">{{ page.icon }}</span>
           <span class="truncate text-base font-bold">{{ page.title }}</span>
         </span>
-        <BaseButton variant="ghost" size="sm" icon :aria-label="themeLabel" :title="themeLabel" @click="cycleTheme">
+        <BaseButton variant="ghost" size="sm" icon class="size-11" :aria-label="themeLabel" :title="themeLabel" @click="cycleTheme">
           <component :is="themeIcon" class="size-5" aria-hidden="true" />
         </BaseButton>
         <BaseButton
           v-if="hasSettings"
           ref="menuButton"
+          class="relative size-11"
           variant="ghost"
           size="sm"
           icon
@@ -207,18 +208,28 @@ function dismissReminder() {
     </main>
 
     <!-- In the flow, not fixed: a credit line should not cover a quiz on a phone. -->
-    <footer
-      v-if="!playing"
-      class="border-hair text-ink-soft border-t py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] text-center text-xs"
-    >
-      {{ t.credit }}
-      <a
-        href="https://github.com/ramazandogna"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="focus-ring text-primary rounded-cell font-semibold"
-        >Ramazan Dogna</a
+    <footer v-if="!playing" class="border-hair mt-8 border-t pb-[env(safe-area-inset-bottom)]">
+      <PageContainer
+        width="reading"
+        class="text-ink-soft flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-4 text-sm"
       >
+        <span class="flex items-center gap-2">
+          <span class="font-jp text-primary text-base leading-none" aria-hidden="true">日本語</span>
+          <span>© 2026 Ramazan Doğan</span>
+        </span>
+        <span class="flex items-center gap-1">
+          <RouterLink to="/#about" class="focus-ring hover:text-ink rounded-control inline-flex min-h-11 items-center px-2">{{
+            t.about
+          }}</RouterLink>
+          <a
+            href="https://github.com/ramazandogna"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="focus-ring hover:text-ink rounded-control inline-flex min-h-11 items-center px-2"
+            >GitHub</a
+          >
+        </span>
+      </PageContainer>
     </footer>
     <BackupSheet v-model="backupOpen" @exported="remindBackup = false" />
   </div>

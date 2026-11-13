@@ -152,7 +152,7 @@ const SPEAKER = { M: '男', F: '女' } as const
           v-for="(o, i) in item.options"
           :key="i"
           type="button"
-          class="control focus-ring rounded-control jp px-3 py-2.5 text-start text-lg leading-loose [--control-border-width:2px]"
+          class="control focus-ring rounded-control press jp px-3 py-2.5 text-start text-lg leading-loose [--control-border-width:2px]"
           :class="[
             solved && i === item.answer ? 'bg-positive/15 [--surface-border-color:var(--color-positive)]' : '',
             picked === i && i !== item.answer ? 'bg-negative/15 [--surface-border-color:var(--color-negative)]' : '',

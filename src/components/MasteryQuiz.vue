@@ -326,7 +326,7 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
             v-for="i in order"
             :key="i"
             type="button"
-            class="control focus-ring rounded-control jp px-3 py-2 text-[1.45rem] transition-colors [--control-border-width:2px]"
+            class="control focus-ring rounded-control press jp px-3 py-2 text-[1.45rem] [--control-border-width:2px]"
             :class="[
               question.options.length === 2 ? 'min-h-16' : 'min-h-12',
               picked === i ? (i === question.answer ? 'quiz-pop quiz-glow' : 'quiz-shake') : '',

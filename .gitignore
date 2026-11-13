@@ -18,3 +18,9 @@ dist/
 
 # Source material being turned into content (photos, PDFs): never committed
 /inbox/
+
+# Internal planning, audit and architecture notes: kept locally, never published
+/planning/
+/ARCHITECTURE.md
+/DATA_MODEL.md
+/PLAN.md

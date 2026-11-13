@@ -37,3 +37,19 @@
 | 9 | `null` miss entries passed validation | `isMiss` check |
 | 10 | Reload-once flag never cleared | Cleared 5 s after a good load |
 | 8 | Theme icon hydration mismatch | Not reproduced. Left as NOT VERIFIED |
+
+# Round 2: UX/UI transformation (2026-11-14)
+
+**Ownership.** The lead implemented. QA (sonnet) independently inspected the real screens at 4 widths in light and dark and reported 5 defects. The high and medium ones were fixed and re-verified. Specialists stayed read-only by definition, so this was not specialist-implemented.
+
+| Step | Result |
+|---|---|
+| Git and Markdown audit, untracking internal docs | Done. See GIT_CLEANUP.md |
+| Baseline screenshots | Done: `ux-audit/shots/before-*` |
+| Rendering decision | Keep SSG (`architecture/RENDERING_STRATEGY.md`) |
+| StudyTabs (critical mobile tab bar) | Done. QA found the bar was not sticky. Fixed with `contents` on the StudyHeader root. Verified the tablist stays at 57px after scrolling |
+| Home redesign (greeting, JLPT level picker, folders, About, footer) | Done. Screenshots at 5 widths |
+| Motion tokens, press/lift/rise/page/fade-up transitions | Done |
+| Reveal: animated, screen-reader safe, reveal-all per passage | Done. Browser check: 17 hidden → 6 after show-all (the rest are question answers, by design) |
+| Touch targets on header, footer and level picker | Fixed to 44px, measured |
+| QA low items | Toast overlapping the footer: open. Router `next()` deprecation warning: open, existed before this round |

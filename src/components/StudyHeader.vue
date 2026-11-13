@@ -1,10 +1,10 @@
 <script setup lang="ts" generic="V extends string">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
-import { SegmentedControl } from 'rei-kit'
 import { ChevronLeft, Info } from 'lucide-vue-next'
 
 import { usePageContext } from '@/lib/page'
 import { notation } from '@/lib/ruby'
+import StudyTabs from './StudyTabs.vue'
 
 /**
  * The bar above one section of a study page, in one compact row: back, the
@@ -37,8 +37,9 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="mb-4 flex flex-col gap-3">
-    <div class="flex min-h-11 items-center gap-1">
+  <!-- `contents`: the tab bar's parent is the page, so it can stay stuck while the page scrolls. -->
+  <div class="contents">
+    <div class="flex min-h-11 items-center gap-1" :class="tabs ? 'mb-1' : 'mb-4'">
       <button
         type="button"
         class="focus-ring text-ink-soft hover:text-ink rounded-control -ms-2 grid size-11 shrink-0 place-items-center"
@@ -71,6 +72,6 @@ onBeforeUnmount(() => {
       </div>
       <div class="ms-auto flex shrink-0 items-center"><slot name="end" /></div>
     </div>
-    <SegmentedControl v-if="tabs && view !== undefined" v-model="view" :options="tabs" />
+    <StudyTabs v-if="tabs && view !== undefined" v-model="view" :tabs="tabs" class="mb-3" />
   </div>
 </template>

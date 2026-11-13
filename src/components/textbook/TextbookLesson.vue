@@ -13,6 +13,7 @@ import JpText from '../JpText.vue'
 import MasteryQuiz, { type Question } from '../MasteryQuiz.vue'
 import PagerNav from '../PagerNav.vue'
 import RevealText from '../RevealText.vue'
+import RevealAll from '../RevealAll.vue'
 import StudyHeader from '../StudyHeader.vue'
 import type { Lesson } from './types'
 
@@ -95,15 +96,17 @@ const longWords = computed(() => lesson.words.some(([w]) => plain(w).length > 7)
     <BaseCard v-for="(r, i) in lesson.readings" v-show="page === i" :key="i">
       <JpText :text="r.title" as="h2" class="text-2xl font-bold" />
       <p v-if="r.intro" class="text-ink-soft mt-1 text-[15px]">{{ r.intro }}</p>
-      <div class="mt-3 grid gap-3">
-        <div v-for="(l, j) in r.lines" :key="j" class="flex gap-3">
-          <span v-if="l.who" class="jp text-primary w-10 shrink-0 pt-2 text-lg font-bold">{{ l.who }}</span>
-          <div class="min-w-0">
-            <JpText :text="l.jp" as="p" class="text-[1.3rem] leading-[2.2]" />
-            <p class="text-ink-soft text-[15px]"><RevealText :text="l.tr" /></p>
+      <RevealAll class="mt-3">
+        <div class="grid gap-3">
+          <div v-for="(l, j) in r.lines" :key="j" class="flex gap-3">
+            <span v-if="l.who" class="jp text-primary w-10 shrink-0 pt-2 text-lg font-bold">{{ l.who }}</span>
+            <div class="min-w-0">
+              <JpText :text="l.jp" as="p" class="text-[1.3rem] leading-[2.2]" />
+              <p class="text-ink-soft text-[15px]"><RevealText :text="l.tr" /></p>
+            </div>
           </div>
         </div>
-      </div>
+      </RevealAll>
       <div v-if="r.questions?.length" class="border-hair mt-5 border-t pt-4">
         <p class="mb-2 font-bold">
           <CircleHelp

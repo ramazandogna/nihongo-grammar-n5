@@ -378,7 +378,7 @@ watch(stage, (st) => {
             type="button"
             role="radio"
             :aria-checked="sitting.answers[cur.item.id] === oi"
-            class="control focus-ring rounded-control jp min-h-12 px-3 py-2 text-start text-lg leading-loose [--control-border-width:2px]"
+            class="control focus-ring rounded-control press jp min-h-12 px-3 py-2 text-start text-lg leading-loose [--control-border-width:2px]"
             :class="
               sitting.answers[cur.item.id] === oi ? 'bg-primary/15 [--surface-border-color:var(--color-primary)]' : ''
             "

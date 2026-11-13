@@ -8,6 +8,22 @@
 @import 'rei-kit/web.css';
 
 @theme {
+  /* ── Motion: one vocabulary for every transition on the site ──
+     fast = a press or hover, medium = a tab or a reveal, slow = a page. */
+  --motion-fast: 120ms;
+  --motion-medium: 240ms;
+  --motion-slow: 360ms;
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Type scale: UI text and Japanese text have separate steps ── */
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.35;
+  --text-jp-body: 1.2rem;
+  --text-jp-body--line-height: 2.2;
+  --text-jp-lead: 1.45rem;
+  --text-jp-lead--line-height: 2.15;
+
   --font-sans: 'Plus Jakarta Sans Variable', system-ui, sans-serif;
   /* Latin first so Turkish letters never fall to a Japanese face's Latin. */
   --font-jp:
@@ -153,10 +169,29 @@ u.target {
   filter: blur(6px);
   user-select: none;
   cursor: pointer;
+  /* A faint wash says "there is something here to tap". */
+  background: color-mix(in oklab, var(--color-primary) 10%, transparent);
+}
+@media (hover: hover) {
+  .veiled:hover {
+    filter: blur(4px);
+    background: color-mix(in oklab, var(--color-primary) 18%, transparent);
+  }
 }
 @media (prefers-reduced-motion: no-preference) {
   .veil {
-    transition: filter var(--duration-fast, 150ms) ease;
+    transition:
+      filter var(--motion-medium) var(--ease-out-soft),
+      background-color var(--motion-medium);
+  }
+  .veil.is-open {
+    animation: veil-open var(--motion-medium) var(--ease-out-soft);
+  }
+}
+@keyframes veil-open {
+  from {
+    filter: blur(6px);
+    background: color-mix(in oklab, var(--color-primary) 18%, transparent);
   }
 }
 
@@ -333,5 +368,66 @@ u.target {
   100% {
     opacity: 0;
     transform: translate(var(--x), var(--y)) rotate(var(--r));
+  }
+}
+
+
+/* ── Interaction feedback ─────────────────────────────────────────────────
+   `.press`: anything tappable dips slightly while held, so a tap is felt even
+   before the result arrives. Cheap (transform only), off for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .press {
+    transition:
+      transform var(--motion-fast) var(--ease-out-soft),
+      background-color var(--motion-medium),
+      color var(--motion-medium),
+      box-shadow var(--motion-medium);
+  }
+  .press:active {
+    transform: scale(0.97);
+  }
+  /* Lift on hover where a pointer can hover — not on touch, where it sticks. */
+  @media (hover: hover) {
+    .lift {
+      transition:
+        transform var(--motion-medium) var(--ease-out-soft),
+        box-shadow var(--motion-medium) var(--ease-out-soft);
+    }
+    .lift:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px -12px color-mix(in oklab, var(--color-ink) 35%, transparent);
+    }
+  }
+
+  /* Route change: the new page rises in; the old one simply goes. */
+  .page-enter-active {
+    transition:
+      opacity var(--motion-slow) var(--ease-out-soft),
+      transform var(--motion-slow) var(--ease-out-soft);
+  }
+  .page-enter-from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  /* Content switched in place (a tab, a card, a reveal). */
+  .fade-up-enter-active {
+    transition:
+      opacity var(--motion-medium) var(--ease-out-soft),
+      transform var(--motion-medium) var(--ease-out-soft);
+  }
+  .fade-up-enter-from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  .rise-in {
+    animation: rise-in var(--motion-slow) var(--ease-out-soft) both;
+    animation-delay: calc(var(--stagger, 0) * 60ms);
+  }
+}
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
 }

@@ -270,7 +270,7 @@ function closeSection() {
                 v-for="(o, oi) in q.opts"
                 :key="oi"
                 type="button"
-                class="control focus-ring rounded-control jp px-3 py-2 text-start text-lg leading-loose [--control-border-width:2px]"
+                class="control focus-ring rounded-control press jp px-3 py-2 text-start text-lg leading-loose [--control-border-width:2px]"
                 :class="[
                   solved(q) && oi === q.a ? 'bg-positive/15 [--surface-border-color:var(--color-positive)]' : '',
                   picks[key(q)] === oi && oi !== q.a

@@ -56,3 +56,10 @@
   - checks the base path;
   - fails if exam audio or PDFs reach a public build.
 - Read `planning/INGESTION.md` before adding material.
+
+## Round 2: design (2026-11-14)
+
+- **New stage bar on every topic page.** Okuma, Gramer, Kelime, Alıştırma and Test (and Öğren / Test / Sınav) show an icon with a whole label. The bar stays under the header while you scroll and works with the arrow keys.
+- **New home page.** A compact greeting, the continue card first, and the JLPT levels as one picker. Folders have counts, rotating chevrons and a gentle entrance. About is now its own section, and the footer is a clean © line with About and GitHub links.
+- **Motion.** Taps press, cards lift on hover, pages and swapped content rise in. All of it is off when the system asks for reduced motion.
+- **Hidden meanings.** They fade in instead of popping, are tinted so it is clear they can be tapped, and are no longer read aloud before they are revealed. Reading passages have a "Tüm çevirileri göster" button.
