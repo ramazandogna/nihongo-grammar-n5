@@ -64,8 +64,16 @@ function showToast(text: string, icon: typeof History) {
   clearTimeout(toastTimer)
   toastTimer = setTimeout(() => (toast.value = ''), 2600)
 }
-/** Bumped at each streak milestone to replay the screen flash. */
+/** Bumped on every right answer from 5 in a row, to replay the flash, quake and banner. */
 const flash = ref(0)
+const hype = ref(0)
+/** The streak just before an answer, to say what a miss broke. */
+const lostStreak = ref(0)
+/** 0 calm · 1 hot (5+) · 2 on fire (10+) · 3 blazing (15+). */
+const heat = computed(() => (streak.value >= 15 ? 3 : streak.value >= 10 ? 2 : streak.value >= 5 ? 1 : 0))
+const hypeText = computed(() =>
+  heat.value === 3 ? t.value.hype3 : heat.value === 2 ? t.value.hype2 : t.value.hype1,
+)
 const showHistory = ref(false)
 /** The explanation sheet, opened from the bar after answering. */
 const explaining = ref(false)
@@ -149,16 +157,21 @@ function next() {
   if (!engine.next(run, build, rng)) finish()
 }
 function pick(i: number) {
+  lostStreak.value = streak.value
   const out = engine.answer(run, i, rng, label)
   if (!out) return
   if (out.correct) {
-    if (out.milestone) {
+    const s = streak.value
+    if (s >= 5) {
+      // From 5 in a row every right answer celebrates, hotter as it grows.
       flash.value++
-      showToast(t.value.milestone(out.milestone), Flame)
-    }
+      hype.value++
+      quake(Math.min(3, Math.floor(s / 5)))
+      buzz(s >= 15 ? [40, 30, 60, 30, 90] : s >= 10 ? [30, 30, 50] : [25, 20, 25])
+    } else buzz(out.mastered ? [10, 30, 10, 30, 40] : 15)
     burst.value = out.mastered ? 'mastered' : 'right'
-    buzz(out.mastered ? [10, 30, 10, 30, 40] : 15)
   } else {
+    if (lostStreak.value >= 5) showToast(t.value.streakLost(lostStreak.value), Flame)
     burst.value = 'wrong'
     buzz([30, 40, 30])
   }
@@ -167,6 +180,15 @@ function pick(i: number) {
   requestAnimationFrame(() =>
     actions.value?.scrollIntoView({ block: 'nearest', behavior: reduceMotion() ? 'auto' : 'smooth' }),
   )
+}
+const root = ref<HTMLElement | null>(null)
+/** Shake the whole quiz; level 1–3 grows with the streak. */
+function quake(level: number) {
+  const el = root.value
+  if (!el || reduceMotion()) return
+  el.classList.remove('quiz-quake-1', 'quiz-quake-2', 'quiz-quake-3')
+  void el.offsetWidth
+  el.classList.add(`quiz-quake-${level}`)
 }
 const reduceMotion = () =>
   typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
@@ -232,18 +254,16 @@ function confetti(n: number) {
 /** How the streak chip looks as the run heats up: 3+, 5+, 10+, 15+. */
 const streakTier = computed(() => {
   const n = streak.value
-  if (n >= 15)
-    return { chip: 'bg-negative/15 text-negative quiz-ring', icon: 'size-7 quiz-flicker-fast', text: 'text-lg' }
-  if (n >= 10)
-    return { chip: 'bg-warning/20 text-negative quiz-glow-soft', icon: 'size-6 quiz-flicker-fast', text: 'text-base' }
-  if (n >= 5) return { chip: 'bg-warning/15 text-warning', icon: 'size-5 quiz-flicker', text: 'text-base' }
+  if (n >= 15) return { chip: 'quiz-fire quiz-blaze text-white quiz-ring', icon: 'size-7 quiz-flicker-fast', text: 'text-xl' }
+  if (n >= 10) return { chip: 'quiz-fire text-white quiz-glow-soft', icon: 'size-6 quiz-flicker-fast', text: 'text-lg' }
+  if (n >= 5) return { chip: 'bg-warning/25 text-warning', icon: 'size-5 quiz-flicker', text: 'text-base' }
   return { chip: 'bg-warning/15 text-warning', icon: 'size-4', text: 'text-sm' }
 })
 const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o).length > 12))
 </script>
 
 <template>
-  <div class="flex flex-col gap-4">
+  <div ref="root" class="flex flex-col gap-4">
     <!-- Resumed: a passing note, not a row of its own. -->
     <p
       v-if="toast"
@@ -254,7 +274,27 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
       <component :is="toastIcon" class="size-4" aria-hidden="true" /> {{ toast }}
     </p>
     <!-- Streak milestone (5, 10, 15 …): a warm flash over the whole screen. -->
-    <div v-if="flash" :key="flash" class="quiz-flash pointer-events-none fixed inset-0 z-30" aria-hidden="true" />
+    <div
+      v-if="flash"
+      :key="flash"
+      class="quiz-flash pointer-events-none fixed inset-0 z-30"
+      :class="`quiz-flash-${heat}`"
+      aria-hidden="true"
+    />
+    <!-- From 5 in a row: a banner on every right answer, hotter with the streak. -->
+    <div
+      v-if="hype && heat && picked !== null && correct"
+      :key="`h${hype}`"
+      class="quiz-hype bg-surface/90 rounded-[2rem] pointer-events-none fixed start-1/2 top-[18%] z-40 px-6 py-3 text-center shadow-2xl backdrop-blur-sm"
+      :class="`quiz-hype-${heat}`"
+      role="status"
+    >
+      <span class="block leading-none"><span class="quiz-hype-fire" aria-hidden="true">🔥</span><span class="quiz-hype-n font-black">{{ streak }}</span></span>
+      <span class="block text-lg font-extrabold tracking-wide">{{ hypeText }}</span>
+      <span v-if="heat >= 2" class="quiz-embers" aria-hidden="true">
+        <span v-for="n in heat * 6" :key="n" :style="{ '--i': n }" />
+      </span>
+    </div>
     <template v-if="!finished && question">
       <!-- The run at a glance: one segment per item — grey never right, half
            green right once, green mastered; red underline = still owed after
@@ -299,7 +339,7 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
         </p>
       </div>
 
-      <BaseCard>
+      <BaseCard :class="heat >= 2 ? (heat === 3 ? 'quiz-card-hot quiz-card-blaze' : 'quiz-card-hot') : ''">
         <div class="text-ink-soft flex items-center gap-2 text-sm">
           <span v-if="question.kind" v-html="notation(question.kind)" />
           <span class="ms-auto flex gap-1" :aria-label="`${count}/2`">
