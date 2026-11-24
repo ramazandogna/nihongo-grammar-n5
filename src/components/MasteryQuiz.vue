@@ -342,8 +342,14 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
             :aria-pressed="picked === i"
             :disabled="picked !== null && i !== picked && i !== question.answer"
             @click="pick(i)"
-            v-html="notation(question.options[i]!)"
-          />
+          >
+            <span class="block" v-html="notation(question.options[i]!)" />
+            <span
+              v-if="picked !== null && (i === picked || i === question.answer) && question.glosses?.[i]"
+              class="mt-0.5 block font-sans text-sm leading-snug text-ink-soft [overflow-wrap:anywhere]"
+              v-html="notation(question.glosses[i]!)"
+            />
+          </button>
         </div>
       </BaseCard>
 

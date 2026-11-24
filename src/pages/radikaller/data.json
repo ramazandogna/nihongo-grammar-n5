@@ -257,6 +257,119 @@
           }
         ],
         "meaning_en": "law, method"
+      },
+      {
+        "kanji": "沈",
+        "on": [
+          "チン"
+        ],
+        "kun": [
+          "しず(む)",
+          "しず(める)"
+        ],
+        "meaning_tr": "batmak",
+        "words": [
+          {
+            "word": "沈む",
+            "reading": "しずむ",
+            "meaning_tr": "batmak",
+            "meaning_en": "to sink"
+          },
+          {
+            "word": "沈黙",
+            "reading": "ちんもく",
+            "meaning_tr": "sessizlik",
+            "meaning_en": "silence"
+          }
+        ],
+        "meaning_en": "sink",
+        "n3": true
+      },
+      {
+        "kanji": "沸",
+        "on": [
+          "フツ"
+        ],
+        "kun": [
+          "わ(く)",
+          "わ(かす)"
+        ],
+        "meaning_tr": "kaynamak",
+        "words": [
+          {
+            "word": "沸騰",
+            "reading": "ふっとう",
+            "meaning_tr": "kaynama",
+            "meaning_en": "boiling"
+          },
+          {
+            "word": "沸く",
+            "reading": "わく",
+            "meaning_tr": "kaynamak",
+            "meaning_en": "to boil"
+          }
+        ],
+        "meaning_en": "boil",
+        "n3": true
+      },
+      {
+        "kanji": "波",
+        "on": [
+          "ハ"
+        ],
+        "kun": [
+          "なみ"
+        ],
+        "meaning_tr": "dalga",
+        "words": [
+          {
+            "word": "波",
+            "reading": "なみ",
+            "meaning_tr": "dalga",
+            "meaning_en": "wave"
+          },
+          {
+            "word": "電波",
+            "reading": "でんぱ",
+            "meaning_tr": "radyo dalgası",
+            "meaning_en": "radio wave"
+          }
+        ],
+        "meaning_en": "wave",
+        "n3": true
+      },
+      {
+        "kanji": "満",
+        "on": [
+          "マン"
+        ],
+        "kun": [
+          "み(ちる)",
+          "み(たす)"
+        ],
+        "meaning_tr": "dolu, tam",
+        "words": [
+          {
+            "word": "満足",
+            "reading": "まんぞく",
+            "meaning_tr": "memnuniyet",
+            "meaning_en": "satisfaction"
+          },
+          {
+            "word": "満員",
+            "reading": "まんいん",
+            "meaning_tr": "tıklım tıklım dolu",
+            "meaning_en": "full (of people)"
+          },
+          {
+            "word": "不満",
+            "reading": "ふまん",
+            "meaning_tr": "memnuniyetsizlik",
+            "meaning_en": "dissatisfaction"
+          }
+        ],
+        "meaning_en": "full",
+        "n3": true
       }
     ]
   },
@@ -519,6 +632,71 @@
           }
         ],
         "meaning_en": "work"
+      },
+      {
+        "kanji": "余",
+        "on": [
+          "ヨ"
+        ],
+        "kun": [
+          "あま(る)",
+          "あま(す)"
+        ],
+        "meaning_tr": "artan, fazla",
+        "words": [
+          {
+            "word": "余る",
+            "reading": "あまる",
+            "meaning_tr": "artmak, fazla kalmak",
+            "meaning_en": "to be left over"
+          },
+          {
+            "word": "余計",
+            "reading": "よけい",
+            "meaning_tr": "gereksiz, fazladan",
+            "meaning_en": "unnecessary, extra"
+          },
+          {
+            "word": "余裕",
+            "reading": "よゆう",
+            "meaning_tr": "pay, rahatlık",
+            "meaning_en": "margin, leeway"
+          }
+        ],
+        "meaning_en": "surplus, excess",
+        "n3": true
+      },
+      {
+        "kanji": "内",
+        "on": [
+          "ナイ"
+        ],
+        "kun": [
+          "うち"
+        ],
+        "meaning_tr": "iç",
+        "words": [
+          {
+            "word": "内緒",
+            "reading": "ないしょ",
+            "meaning_tr": "sır, gizli",
+            "meaning_en": "secret"
+          },
+          {
+            "word": "案内",
+            "reading": "あんない",
+            "meaning_tr": "rehberlik",
+            "meaning_en": "guidance"
+          },
+          {
+            "word": "国内",
+            "reading": "こくない",
+            "meaning_tr": "yurt içi",
+            "meaning_en": "domestic"
+          }
+        ],
+        "meaning_en": "inside",
+        "n3": true
       }
     ]
   },
@@ -801,9 +979,40 @@
             "reading": "きょか",
             "meaning_tr": "izin",
             "meaning_en": "permission"
+          },
+          {
+            "word": "許す",
+            "reading": "ゆるす",
+            "meaning_tr": "affetmek, izin vermek",
+            "meaning_en": "to forgive"
           }
         ],
-        "meaning_en": "permit, forgive"
+        "meaning_en": "permit, forgive",
+        "n3": true
+      },
+      {
+        "kanji": "訓",
+        "on": [
+          "クン"
+        ],
+        "kun": [],
+        "meaning_tr": "öğretmek; kun okunuşu",
+        "words": [
+          {
+            "word": "訓練",
+            "reading": "くんれん",
+            "meaning_tr": "eğitim, talim",
+            "meaning_en": "training, drill"
+          },
+          {
+            "word": "訓読み",
+            "reading": "くんよみ",
+            "meaning_tr": "kun okunuşu",
+            "meaning_en": "Japanese reading of kanji"
+          }
+        ],
+        "meaning_en": "instruction; Japanese reading",
+        "n3": true
       }
     ]
   },
@@ -854,9 +1063,16 @@
             "reading": "おうだん",
             "meaning_tr": "karşıya geçme",
             "meaning_en": "crossing"
+          },
+          {
+            "word": "横断禁止",
+            "reading": "おうだんきんし",
+            "meaning_tr": "karşıya geçmek yasak",
+            "meaning_en": "no crossing"
           }
         ],
-        "meaning_en": "side"
+        "meaning_en": "side",
+        "n3": true
       },
       {
         "kanji": "機",
@@ -1032,6 +1248,39 @@
           }
         ],
         "meaning_en": "plan, idea"
+      },
+      {
+        "kanji": "業",
+        "on": [
+          "ギョウ",
+          "ゴウ"
+        ],
+        "kun": [
+          "わざ"
+        ],
+        "meaning_tr": "iş, endüstri",
+        "words": [
+          {
+            "word": "農業",
+            "reading": "のうぎょう",
+            "meaning_tr": "tarım",
+            "meaning_en": "agriculture"
+          },
+          {
+            "word": "授業",
+            "reading": "じゅぎょう",
+            "meaning_tr": "ders",
+            "meaning_en": "class, lesson"
+          },
+          {
+            "word": "工業",
+            "reading": "こうぎょう",
+            "meaning_tr": "sanayi",
+            "meaning_en": "industry"
+          }
+        ],
+        "meaning_en": "business, industry",
+        "n3": true
       }
     ]
   },
@@ -1263,9 +1512,16 @@
             "reading": "きんきゅう",
             "meaning_tr": "acil",
             "meaning_en": "emergency"
+          },
+          {
+            "word": "急に",
+            "reading": "きゅうに",
+            "meaning_tr": "aniden, birden",
+            "meaning_en": "suddenly"
           }
         ],
-        "meaning_en": "hurry"
+        "meaning_en": "hurry",
+        "n3": true
       },
       {
         "kanji": "意",
@@ -1289,6 +1545,32 @@
           }
         ],
         "meaning_en": "intention, meaning"
+      },
+      {
+        "kanji": "慰",
+        "on": [
+          "イ"
+        ],
+        "kun": [
+          "なぐさ(める)"
+        ],
+        "meaning_tr": "teselli etmek",
+        "words": [
+          {
+            "word": "慰める",
+            "reading": "なぐさめる",
+            "meaning_tr": "teselli etmek",
+            "meaning_en": "to comfort"
+          },
+          {
+            "word": "慰め",
+            "reading": "なぐさめ",
+            "meaning_tr": "teselli",
+            "meaning_en": "consolation"
+          }
+        ],
+        "meaning_en": "console",
+        "n3": true
       }
     ]
   },
@@ -1419,9 +1701,16 @@
             "reading": "ふつう",
             "meaning_tr": "normal",
             "meaning_en": "ordinary"
+          },
+          {
+            "word": "共通",
+            "reading": "きょうつう",
+            "meaning_tr": "ortak",
+            "meaning_en": "common, shared"
           }
         ],
-        "meaning_en": "pass, commute"
+        "meaning_en": "pass, commute",
+        "n3": true
       },
       {
         "kanji": "違",
@@ -1566,6 +1855,39 @@
           }
         ],
         "meaning_en": "get lost, hesitate"
+      },
+      {
+        "kanji": "速",
+        "on": [
+          "ソク"
+        ],
+        "kun": [
+          "はや(い)",
+          "すみ(やか)"
+        ],
+        "meaning_tr": "hızlı",
+        "words": [
+          {
+            "word": "速い",
+            "reading": "はやい",
+            "meaning_tr": "hızlı",
+            "meaning_en": "fast"
+          },
+          {
+            "word": "速度",
+            "reading": "そくど",
+            "meaning_tr": "hız",
+            "meaning_en": "speed"
+          },
+          {
+            "word": "高速",
+            "reading": "こうそく",
+            "meaning_tr": "yüksek hız",
+            "meaning_en": "high speed"
+          }
+        ],
+        "meaning_en": "fast",
+        "n3": true
       }
     ]
   },
@@ -1799,6 +2121,30 @@
           }
         ],
         "meaning_en": "rejoice"
+      },
+      {
+        "kanji": "噂",
+        "on": [],
+        "kun": [
+          "うわさ"
+        ],
+        "meaning_tr": "söylenti",
+        "words": [
+          {
+            "word": "噂",
+            "reading": "うわさ",
+            "meaning_tr": "söylenti, dedikodu",
+            "meaning_en": "rumor"
+          },
+          {
+            "word": "噂話",
+            "reading": "うわさばなし",
+            "meaning_tr": "dedikodu",
+            "meaning_en": "gossip"
+          }
+        ],
+        "meaning_en": "rumor",
+        "n3": true
       }
     ]
   },
@@ -2021,6 +2367,39 @@
           }
         ],
         "meaning_en": "last, previous"
+      },
+      {
+        "kanji": "曲",
+        "on": [
+          "キョク"
+        ],
+        "kun": [
+          "ま(がる)",
+          "ま(げる)"
+        ],
+        "meaning_tr": "bükmek; müzik parçası",
+        "words": [
+          {
+            "word": "曲げる",
+            "reading": "まげる",
+            "meaning_tr": "bükmek",
+            "meaning_en": "to bend"
+          },
+          {
+            "word": "曲がる",
+            "reading": "まがる",
+            "meaning_tr": "dönmek, bükülmek",
+            "meaning_en": "to turn, to bend"
+          },
+          {
+            "word": "作曲",
+            "reading": "さっきょく",
+            "meaning_tr": "beste",
+            "meaning_en": "composition"
+          }
+        ],
+        "meaning_en": "bend; tune",
+        "n3": true
       }
     ]
   },
@@ -2228,6 +2607,30 @@
           }
         ],
         "meaning_en": "shoulder"
+      },
+      {
+        "kanji": "騰",
+        "on": [
+          "トウ"
+        ],
+        "kun": [],
+        "meaning_tr": "yükselmek",
+        "words": [
+          {
+            "word": "沸騰",
+            "reading": "ふっとう",
+            "meaning_tr": "kaynama",
+            "meaning_en": "boiling"
+          },
+          {
+            "word": "高騰",
+            "reading": "こうとう",
+            "meaning_tr": "(fiyat) fırlaması",
+            "meaning_en": "sharp price rise"
+          }
+        ],
+        "meaning_en": "rise, soar",
+        "n3": true
       }
     ]
   },
@@ -2390,7 +2793,8 @@
             "meaning_en": "posture, attitude"
           }
         ],
-        "meaning_en": "figure"
+        "meaning_en": "figure",
+        "n3": true
       }
     ]
   },
@@ -2509,9 +2913,16 @@
             "reading": "しはらい",
             "meaning_tr": "ödeme",
             "meaning_en": "payment"
+          },
+          {
+            "word": "払う",
+            "reading": "はらう",
+            "meaning_tr": "ödemek",
+            "meaning_en": "to pay"
           }
         ],
-        "meaning_en": "pay"
+        "meaning_en": "pay",
+        "n3": true
       },
       {
         "kanji": "技",
@@ -2909,9 +3320,16 @@
             "reading": "ばんぐみ",
             "meaning_tr": "TV programı",
             "meaning_en": "TV program"
+          },
+          {
+            "word": "組む",
+            "reading": "くむ",
+            "meaning_tr": "kavuşturmak, birleştirmek",
+            "meaning_en": "to cross (arms), to join"
           }
         ],
-        "meaning_en": "group, assemble"
+        "meaning_en": "group, assemble",
+        "n3": true
       },
       {
         "kanji": "終",
@@ -3056,9 +3474,16 @@
             "reading": "れんしゅう",
             "meaning_tr": "alıştırma",
             "meaning_en": "practice"
+          },
+          {
+            "word": "訓練",
+            "reading": "くんれん",
+            "meaning_tr": "eğitim, talim",
+            "meaning_en": "training, drill"
           }
         ],
-        "meaning_en": "knead, practice"
+        "meaning_en": "knead, practice",
+        "n3": true
       },
       {
         "kanji": "細",
@@ -3132,6 +3557,33 @@
           }
         ],
         "meaning_en": "entwine"
+      },
+      {
+        "kanji": "緒",
+        "on": [
+          "ショ",
+          "チョ"
+        ],
+        "kun": [
+          "お"
+        ],
+        "meaning_tr": "ip; başlangıç",
+        "words": [
+          {
+            "word": "内緒",
+            "reading": "ないしょ",
+            "meaning_tr": "sır, gizli",
+            "meaning_en": "secret"
+          },
+          {
+            "word": "一緒",
+            "reading": "いっしょ",
+            "meaning_tr": "birlikte",
+            "meaning_en": "together"
+          }
+        ],
+        "meaning_en": "cord; beginning",
+        "n3": true
       }
     ]
   },
@@ -3240,6 +3692,40 @@
           }
         ],
         "meaning_en": "mirror"
+      },
+      {
+        "kanji": "金",
+        "on": [
+          "キン",
+          "コン"
+        ],
+        "kun": [
+          "かね",
+          "かな"
+        ],
+        "meaning_tr": "altın, para",
+        "words": [
+          {
+            "word": "税金",
+            "reading": "ぜいきん",
+            "meaning_tr": "vergi",
+            "meaning_en": "tax"
+          },
+          {
+            "word": "お金",
+            "reading": "おかね",
+            "meaning_tr": "para",
+            "meaning_en": "money"
+          },
+          {
+            "word": "料金",
+            "reading": "りょうきん",
+            "meaning_tr": "ücret",
+            "meaning_en": "fee"
+          }
+        ],
+        "meaning_en": "gold, money",
+        "n3": true
       }
     ]
   },
@@ -3454,9 +3940,16 @@
             "reading": "ぜんぜん",
             "meaning_tr": "hiç",
             "meaning_en": "not at all"
+          },
+          {
+            "word": "当然",
+            "reading": "とうぜん",
+            "meaning_tr": "doğal olarak, elbette",
+            "meaning_en": "naturally, of course"
           }
         ],
-        "meaning_en": "so, nature"
+        "meaning_en": "so, nature",
+        "n3": true
       },
       {
         "kanji": "焼",
@@ -3836,9 +4329,16 @@
             "reading": "じょうきゃく",
             "meaning_tr": "yolcu",
             "meaning_en": "passenger"
+          },
+          {
+            "word": "観客",
+            "reading": "かんきゃく",
+            "meaning_tr": "seyirci",
+            "meaning_en": "audience, spectators"
           }
         ],
-        "meaning_en": "guest, customer"
+        "meaning_en": "guest, customer",
+        "n3": true
       },
       {
         "kanji": "宿",
@@ -4663,9 +5163,16 @@
             "reading": "すいみん",
             "meaning_tr": "uyku",
             "meaning_en": "sleep"
+          },
+          {
+            "word": "眠る",
+            "reading": "ねむる",
+            "meaning_tr": "uyumak",
+            "meaning_en": "to sleep"
           }
         ],
-        "meaning_en": "sleep"
+        "meaning_en": "sleep",
+        "n3": true
       },
       {
         "kanji": "直",
@@ -4772,7 +5279,8 @@
             "meaning_en": "arrival"
           }
         ],
-        "meaning_en": "wear, arrive"
+        "meaning_en": "wear, arrive",
+        "n3": true
       },
       {
         "kanji": "眼",
@@ -4886,9 +5394,16 @@
             "reading": "ついか",
             "meaning_tr": "ekleme",
             "meaning_en": "addition"
+          },
+          {
+            "word": "加える",
+            "reading": "くわえる",
+            "meaning_tr": "eklemek",
+            "meaning_en": "to add"
           }
         ],
-        "meaning_en": "add"
+        "meaning_en": "add",
+        "n3": true
       },
       {
         "kanji": "務",
@@ -5007,6 +5522,38 @@
           }
         ],
         "meaning_en": "work"
+      },
+      {
+        "kanji": "勢",
+        "on": [
+          "セイ"
+        ],
+        "kun": [
+          "いきお(い)"
+        ],
+        "meaning_tr": "güç, kuvvet",
+        "words": [
+          {
+            "word": "姿勢",
+            "reading": "しせい",
+            "meaning_tr": "duruş, postür",
+            "meaning_en": "posture"
+          },
+          {
+            "word": "勢い",
+            "reading": "いきおい",
+            "meaning_tr": "hız, güç",
+            "meaning_en": "momentum, force"
+          },
+          {
+            "word": "大勢",
+            "reading": "おおぜい",
+            "meaning_tr": "çok sayıda insan",
+            "meaning_en": "crowd, many people"
+          }
+        ],
+        "meaning_en": "force, power",
+        "n3": true
       }
     ]
   },
@@ -5092,6 +5639,40 @@
           }
         ],
         "meaning_en": "step on"
+      },
+      {
+        "kanji": "足",
+        "on": [
+          "ソク"
+        ],
+        "kun": [
+          "あし",
+          "た(りる)",
+          "た(す)"
+        ],
+        "meaning_tr": "ayak; yetmek",
+        "words": [
+          {
+            "word": "満足",
+            "reading": "まんぞく",
+            "meaning_tr": "memnuniyet",
+            "meaning_en": "satisfaction"
+          },
+          {
+            "word": "足りる",
+            "reading": "たりる",
+            "meaning_tr": "yetmek",
+            "meaning_en": "to be enough"
+          },
+          {
+            "word": "不足",
+            "reading": "ふそく",
+            "meaning_tr": "eksiklik",
+            "meaning_en": "shortage"
+          }
+        ],
+        "meaning_en": "foot; be enough",
+        "n3": true
       }
     ]
   },
@@ -5947,7 +6528,8 @@
             "meaning_en": "export"
           }
         ],
-        "meaning_en": "transport"
+        "meaning_en": "transport",
+        "n3": true
       },
       {
         "kanji": "軍",
@@ -6001,6 +6583,32 @@
           }
         ],
         "meaning_en": "compare"
+      },
+      {
+        "kanji": "輝",
+        "on": [
+          "キ"
+        ],
+        "kun": [
+          "かがや(く)"
+        ],
+        "meaning_tr": "parlamak",
+        "words": [
+          {
+            "word": "輝く",
+            "reading": "かがやく",
+            "meaning_tr": "parlamak, ışıldamak",
+            "meaning_en": "to shine, sparkle"
+          },
+          {
+            "word": "輝き",
+            "reading": "かがやき",
+            "meaning_tr": "parıltı",
+            "meaning_en": "brilliance"
+          }
+        ],
+        "meaning_en": "shine",
+        "n3": true
       }
     ]
   },
@@ -6097,9 +6705,16 @@
             "reading": "せいかく",
             "meaning_tr": "doğru, kesin",
             "meaning_en": "accurate"
+          },
+          {
+            "word": "確かめる",
+            "reading": "たしかめる",
+            "meaning_tr": "kontrol etmek, emin olmak",
+            "meaning_en": "to check, to make sure"
           }
         ],
-        "meaning_en": "certain"
+        "meaning_en": "certain",
+        "n3": true
       },
       {
         "kanji": "硬",
@@ -6269,9 +6884,16 @@
             "reading": "きんし",
             "meaning_tr": "yasak",
             "meaning_en": "prohibition"
+          },
+          {
+            "word": "横断禁止",
+            "reading": "おうだんきんし",
+            "meaning_tr": "karşıya geçmek yasak",
+            "meaning_en": "no crossing"
           }
         ],
-        "meaning_en": "forbid"
+        "meaning_en": "forbid",
+        "n3": true
       },
       {
         "kanji": "祖",
@@ -6542,7 +7164,8 @@
             "meaning_en": "arrival"
           }
         ],
-        "meaning_en": "arrive"
+        "meaning_en": "arrive",
+        "n3": true
       }
     ]
   },
@@ -7670,6 +8293,553 @@
           }
         ],
         "meaning_en": "mountain pass"
+      },
+      {
+        "kanji": "出",
+        "on": [
+          "シュツ",
+          "スイ"
+        ],
+        "kun": [
+          "で(る)",
+          "だ(す)"
+        ],
+        "meaning_tr": "çıkmak",
+        "words": [
+          {
+            "word": "輸出",
+            "reading": "ゆしゅつ",
+            "meaning_tr": "ihracat",
+            "meaning_en": "export"
+          },
+          {
+            "word": "出張",
+            "reading": "しゅっちょう",
+            "meaning_tr": "iş seyahati",
+            "meaning_en": "business trip"
+          },
+          {
+            "word": "出発",
+            "reading": "しゅっぱつ",
+            "meaning_tr": "hareket, kalkış",
+            "meaning_en": "departure"
+          }
+        ],
+        "meaning_en": "exit, go out",
+        "n3": true
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "radical": "囗",
+    "variants": [],
+    "name_jp": "くにがまえ",
+    "name_romaji": "kunigamae",
+    "meaning_tr": "çevre, kuşatma",
+    "meaning_en": "enclosure",
+    "kanji": [
+      {
+        "kanji": "囲",
+        "on": [
+          "イ"
+        ],
+        "kun": [
+          "かこ(む)",
+          "かこ(う)"
+        ],
+        "meaning_tr": "çevrelemek",
+        "words": [
+          {
+            "word": "囲む",
+            "reading": "かこむ",
+            "meaning_tr": "etrafını çevirmek",
+            "meaning_en": "to surround"
+          },
+          {
+            "word": "周囲",
+            "reading": "しゅうい",
+            "meaning_tr": "çevre",
+            "meaning_en": "surroundings"
+          },
+          {
+            "word": "範囲",
+            "reading": "はんい",
+            "meaning_tr": "kapsam",
+            "meaning_en": "range, scope"
+          }
+        ],
+        "meaning_en": "surround",
+        "n3": true
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "radical": "八",
+    "variants": [
+      "ハ"
+    ],
+    "name_jp": "はち",
+    "name_romaji": "hachi",
+    "meaning_tr": "sekiz, bölünme",
+    "meaning_en": "eight, divide",
+    "kanji": [
+      {
+        "kanji": "共",
+        "on": [
+          "キョウ"
+        ],
+        "kun": [
+          "とも"
+        ],
+        "meaning_tr": "ortak, birlikte",
+        "words": [
+          {
+            "word": "共通",
+            "reading": "きょうつう",
+            "meaning_tr": "ortak",
+            "meaning_en": "common, shared"
+          },
+          {
+            "word": "共に",
+            "reading": "ともに",
+            "meaning_tr": "birlikte",
+            "meaning_en": "together"
+          },
+          {
+            "word": "公共",
+            "reading": "こうきょう",
+            "meaning_tr": "kamu",
+            "meaning_en": "public"
+          }
+        ],
+        "meaning_en": "together, common",
+        "n3": true
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "radical": "弓",
+    "variants": [],
+    "name_jp": "ゆみへん",
+    "name_romaji": "yumihen",
+    "meaning_tr": "yay",
+    "meaning_en": "bow",
+    "kanji": [
+      {
+        "kanji": "張",
+        "on": [
+          "チョウ"
+        ],
+        "kun": [
+          "は(る)"
+        ],
+        "meaning_tr": "germek, yaymak",
+        "words": [
+          {
+            "word": "出張",
+            "reading": "しゅっちょう",
+            "meaning_tr": "iş seyahati",
+            "meaning_en": "business trip"
+          },
+          {
+            "word": "頑張る",
+            "reading": "がんばる",
+            "meaning_tr": "gayret etmek",
+            "meaning_en": "to do one's best"
+          },
+          {
+            "word": "緊張",
+            "reading": "きんちょう",
+            "meaning_tr": "gerginlik",
+            "meaning_en": "tension, nervousness"
+          }
+        ],
+        "meaning_en": "stretch",
+        "n3": true
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "radical": "⺌",
+    "variants": [
+      "小"
+    ],
+    "name_jp": "しょう",
+    "name_romaji": "shou",
+    "meaning_tr": "küçük",
+    "meaning_en": "small",
+    "kanji": [
+      {
+        "kanji": "当",
+        "on": [
+          "トウ"
+        ],
+        "kun": [
+          "あ(たる)",
+          "あ(てる)"
+        ],
+        "meaning_tr": "isabet etmek, uygun",
+        "words": [
+          {
+            "word": "当然",
+            "reading": "とうぜん",
+            "meaning_tr": "doğal olarak, elbette",
+            "meaning_en": "naturally, of course"
+          },
+          {
+            "word": "本当",
+            "reading": "ほんとう",
+            "meaning_tr": "gerçek",
+            "meaning_en": "truth, really"
+          },
+          {
+            "word": "担当",
+            "reading": "たんとう",
+            "meaning_tr": "sorumluluk",
+            "meaning_en": "in charge"
+          }
+        ],
+        "meaning_en": "hit, appropriate",
+        "n3": true
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "radical": "斤",
+    "variants": [],
+    "name_jp": "おのづくり",
+    "name_romaji": "onozukuri",
+    "meaning_tr": "balta",
+    "meaning_en": "axe",
+    "kanji": [
+      {
+        "kanji": "断",
+        "on": [
+          "ダン"
+        ],
+        "kun": [
+          "ことわ(る)",
+          "た(つ)"
+        ],
+        "meaning_tr": "kesmek, reddetmek",
+        "words": [
+          {
+            "word": "横断禁止",
+            "reading": "おうだんきんし",
+            "meaning_tr": "karşıya geçmek yasak",
+            "meaning_en": "no crossing"
+          },
+          {
+            "word": "断る",
+            "reading": "ことわる",
+            "meaning_tr": "reddetmek",
+            "meaning_en": "to refuse"
+          },
+          {
+            "word": "判断",
+            "reading": "はんだん",
+            "meaning_tr": "yargı, karar",
+            "meaning_en": "judgment"
+          }
+        ],
+        "meaning_en": "cut off, refuse",
+        "n3": true
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "radical": "止",
+    "variants": [],
+    "name_jp": "とめる",
+    "name_romaji": "tomeru",
+    "meaning_tr": "durmak",
+    "meaning_en": "stop",
+    "kanji": [
+      {
+        "kanji": "止",
+        "on": [
+          "シ"
+        ],
+        "kun": [
+          "と(まる)",
+          "と(める)"
+        ],
+        "meaning_tr": "durmak",
+        "words": [
+          {
+            "word": "横断禁止",
+            "reading": "おうだんきんし",
+            "meaning_tr": "karşıya geçmek yasak",
+            "meaning_en": "no crossing"
+          },
+          {
+            "word": "止まる",
+            "reading": "とまる",
+            "meaning_tr": "durmak",
+            "meaning_en": "to stop"
+          },
+          {
+            "word": "中止",
+            "reading": "ちゅうし",
+            "meaning_tr": "iptal",
+            "meaning_en": "cancellation"
+          }
+        ],
+        "meaning_en": "stop",
+        "n3": true
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "radical": "牛",
+    "variants": [
+      "牜"
+    ],
+    "name_jp": "うしへん",
+    "name_romaji": "ushihen",
+    "meaning_tr": "sığır",
+    "meaning_en": "cow",
+    "kanji": [
+      {
+        "kanji": "特",
+        "on": [
+          "トク"
+        ],
+        "kun": [],
+        "meaning_tr": "özel",
+        "words": [
+          {
+            "word": "特長",
+            "reading": "とくちょう",
+            "meaning_tr": "güçlü özellik, avantaj",
+            "meaning_en": "strong point, merit"
+          },
+          {
+            "word": "特に",
+            "reading": "とくに",
+            "meaning_tr": "özellikle",
+            "meaning_en": "especially"
+          },
+          {
+            "word": "特別",
+            "reading": "とくべつ",
+            "meaning_tr": "özel",
+            "meaning_en": "special"
+          }
+        ],
+        "meaning_en": "special",
+        "n3": true
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "radical": "禾",
+    "variants": [],
+    "name_jp": "のぎへん",
+    "name_romaji": "nogihen",
+    "meaning_tr": "tahıl",
+    "meaning_en": "grain",
+    "kanji": [
+      {
+        "kanji": "税",
+        "on": [
+          "ゼイ"
+        ],
+        "kun": [],
+        "meaning_tr": "vergi",
+        "words": [
+          {
+            "word": "税金",
+            "reading": "ぜいきん",
+            "meaning_tr": "vergi",
+            "meaning_en": "tax"
+          },
+          {
+            "word": "消費税",
+            "reading": "しょうひぜい",
+            "meaning_tr": "tüketim vergisi",
+            "meaning_en": "consumption tax"
+          }
+        ],
+        "meaning_en": "tax",
+        "n3": true
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "radical": "見",
+    "variants": [],
+    "name_jp": "みる",
+    "name_romaji": "miru",
+    "meaning_tr": "görmek",
+    "meaning_en": "see",
+    "kanji": [
+      {
+        "kanji": "観",
+        "on": [
+          "カン"
+        ],
+        "kun": [],
+        "meaning_tr": "izlemek, görüş",
+        "words": [
+          {
+            "word": "観客",
+            "reading": "かんきゃく",
+            "meaning_tr": "seyirci",
+            "meaning_en": "audience, spectators"
+          },
+          {
+            "word": "観光",
+            "reading": "かんこう",
+            "meaning_tr": "turizm",
+            "meaning_en": "sightseeing"
+          },
+          {
+            "word": "観察",
+            "reading": "かんさつ",
+            "meaning_tr": "gözlem",
+            "meaning_en": "observation"
+          }
+        ],
+        "meaning_en": "view, observe",
+        "n3": true
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "radical": "豆",
+    "variants": [],
+    "name_jp": "まめ",
+    "name_romaji": "mame",
+    "meaning_tr": "fasulye",
+    "meaning_en": "bean",
+    "kanji": [
+      {
+        "kanji": "豆",
+        "on": [
+          "トウ",
+          "ズ"
+        ],
+        "kun": [
+          "まめ"
+        ],
+        "meaning_tr": "fasulye",
+        "words": [
+          {
+            "word": "豆",
+            "reading": "まめ",
+            "meaning_tr": "fasulye, bakla",
+            "meaning_en": "beans"
+          },
+          {
+            "word": "豆腐",
+            "reading": "とうふ",
+            "meaning_tr": "tofu",
+            "meaning_en": "tofu"
+          },
+          {
+            "word": "大豆",
+            "reading": "だいず",
+            "meaning_tr": "soya fasulyesi",
+            "meaning_en": "soybean"
+          }
+        ],
+        "meaning_en": "bean",
+        "n3": true
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "radical": "辰",
+    "variants": [],
+    "name_jp": "しんのたつ",
+    "name_romaji": "shin no tatsu",
+    "meaning_tr": "ejderha (burç)",
+    "meaning_en": "dragon (zodiac)",
+    "kanji": [
+      {
+        "kanji": "農",
+        "on": [
+          "ノウ"
+        ],
+        "kun": [],
+        "meaning_tr": "tarım",
+        "words": [
+          {
+            "word": "農業",
+            "reading": "のうぎょう",
+            "meaning_tr": "tarım",
+            "meaning_en": "agriculture"
+          },
+          {
+            "word": "農家",
+            "reading": "のうか",
+            "meaning_tr": "çiftçi ailesi",
+            "meaning_en": "farmer, farmhouse"
+          },
+          {
+            "word": "農村",
+            "reading": "のうそん",
+            "meaning_tr": "köy",
+            "meaning_en": "farming village"
+          }
+        ],
+        "meaning_en": "farming",
+        "n3": true
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "radical": "長",
+    "variants": [],
+    "name_jp": "ながい",
+    "name_romaji": "nagai",
+    "meaning_tr": "uzun",
+    "meaning_en": "long",
+    "kanji": [
+      {
+        "kanji": "長",
+        "on": [
+          "チョウ"
+        ],
+        "kun": [
+          "なが(い)"
+        ],
+        "meaning_tr": "uzun; şef",
+        "words": [
+          {
+            "word": "特長",
+            "reading": "とくちょう",
+            "meaning_tr": "güçlü özellik, avantaj",
+            "meaning_en": "strong point, merit"
+          },
+          {
+            "word": "社長",
+            "reading": "しゃちょう",
+            "meaning_tr": "şirket başkanı",
+            "meaning_en": "company president"
+          },
+          {
+            "word": "成長",
+            "reading": "せいちょう",
+            "meaning_tr": "büyüme",
+            "meaning_en": "growth"
+          }
+        ],
+        "meaning_en": "long; chief",
+        "n3": true
       }
     ]
   }

@@ -17,6 +17,7 @@ import { rubyWord } from '@/lib/ruby'
 import { toTop } from '@/lib/scroll'
 import { useTestRoute } from '@/lib/test-route'
 import { shuffle } from '@/lib/shuffle'
+import { band, groupsOf, mixedSets } from '@/lib/radikal-sets'
 import data from './data.json'
 import { GUIDE, POSITION_TR } from './guide'
 import { GUIDE_EN, POSITION_EN } from './guide-en'
@@ -34,6 +35,8 @@ interface Kanji {
   meaning_tr: string
   meaning_en: string
   words: Word[]
+  /** Marked by the teacher as N3-relevant. */
+  n3?: boolean
 }
 interface Radical {
   id: number
@@ -106,6 +109,18 @@ const U = {
   familyLabel: [(r: string) => `${r} radikalli diğer kanjiler`, (r: string) => `Other kanji with ${r}`],
   kMean: ['意味 · bu kanjinin anlamı (benzer kanjiler arasından)', '意味 · this kanji’s meaning (among look-alikes)'],
   yomi: [KIND_LABEL.yomi, '問題1 漢字読み · reading of the underlined word'],
+  studied: ['çalıştım', 'studied'],
+  groupTest: [(a: string) => `${a}. radikal testi`, (a: string) => `Radicals ${a} test`],
+  groupSub: [(rs: string) => `${rs} radikallerinin tüm kanjileri`, (rs: string) => `All kanji of ${rs}`],
+  genel: [(n: number) => `Genel hazırlık ${n}`, (n: number) => `General review ${n}`],
+  genelLead: [
+    'Genel hazırlık: tüm radikallerden karışık kanji (N3 işaretliler öncelikli).',
+    'General review: mixed kanji from all radicals (N3-marked first).',
+  ],
+  allRads: ['Tüm radikaller', 'All radicals'],
+  nextRad: ['Sonraki radikal →', 'Next radical →'],
+  retry: ['Tekrar çöz', 'Take it again'],
+  failed: ['kaldı', 'failed'],
   hyouki: [KIND_LABEL.hyouki, '問題2 表記 · the right kanji for the hiragana word'],
 } as const
 const u = <K extends keyof typeof U>(k: K): (typeof U)[K][0] => U[k][en.value ? 1 : 0] as (typeof U)[K][0]
@@ -170,6 +185,8 @@ interface TestDef {
   n?: number
   /** For the per-radical test. */
   radical?: string
+  /** For group tests: "1·2·3". */
+  group?: string
   kind: 'rad' | 'kan'
   keys: string
   pool: number[]
@@ -197,6 +214,55 @@ const tests: TestDef[] = [
     pool: ids,
   })),
 ]
+/** General review: mixed kanji across all radicals, n3 first; pools are hash-stable. */
+const GENEL = 4
+const genelTests: TestDef[] = [
+  ...mixedSets(
+    all.map((k) => ({ key: k.kanji, n3: k.n3 === true })),
+    GENEL,
+    20,
+  ).map((ids, n) => ({
+    id: `genel-${n + 1}`,
+    n: n + 1,
+    kind: 'kan' as const,
+    keys: ids.map((i) => all[i]!.kanji).join(''),
+    pool: ids,
+  })),
+  (() => {
+    // One kanji per radical: an n3 one if any, else a stable pick.
+    const ids = radicals.flatMap((_, ri) => {
+      const own = all.map((k, i) => ({ k, i })).filter(({ k }) => k.ri === ri)
+      const n3 = own.filter(({ k }) => k.n3 === true)
+      return mixedSets(
+        (n3.length ? n3 : own).map(({ k }) => ({ key: k.kanji })),
+        1,
+        1,
+        'tum',
+      )[0]?.map((j) => (n3.length ? n3 : own)[j]!.i) ?? []
+    })
+    return { id: 'genel-tum', kind: 'kan' as const, keys: ids.map((i) => all[i]!.kanji).join(''), pool: ids }
+  })(),
+]
+/** Learn-list groups of three radicals (indices), each with a test of all their kanji. */
+const groups = groupsOf(radicals.map((_, i) => i))
+function groupTest(g: number[]): TestDef {
+  const first = radicals[g[0]!]!
+  const last = radicals[g[g.length - 1]!]!
+  const ids = all.map((k, i) => (g.includes(k.ri) ? i : -1)).filter((i) => i >= 0)
+  return {
+    id: `g-${first.id}-${last.id}`,
+    kind: 'kan',
+    keys: ids.map((i) => all[i]!.kanji).join(''),
+    pool: ids,
+    group: g.map((i) => i + 1).join('·'),
+  }
+}
+const groupTests = groups.map(groupTest)
+/** The group a radical closes (it is the last of its three), if any. */
+const closesGroup = (ri: number) => {
+  const g = groups.find((x) => x[x.length - 1] === ri)
+  return g ? groupTest(g) : null
+}
 /** The per-radical test from learn mode: that radical's kanji. */
 function radicalTest(ri: number): TestDef {
   const ids = all.map((k, i) => (k.ri === ri ? i : -1)).filter((i) => i >= 0)
@@ -212,10 +278,20 @@ const running = computed<TestDef | null>(() => {
     const ri = radicals.findIndex((r) => `r-${r.id}` === id)
     return ri >= 0 ? radicalTest(ri) : null
   }
-  return tests.find((x) => x.id === id) ?? null
+  return [...genelTests, ...groupTests, ...tests].find((x) => x.id === id) ?? null
 })
 const title = (x: TestDef) =>
-  x.radical ? u('kanjiOf')(x.radical) : x.kind === 'rad' ? u('radTitle')(x.n!) : `Kanji ${x.n}`
+  x.radical
+    ? u('kanjiOf')(x.radical)
+    : x.group
+      ? u('groupTest')(x.group)
+      : x.id === 'genel-tum'
+        ? u('allRads')
+        : x.id.startsWith('genel-')
+          ? u('genel')(x.n!)
+          : x.kind === 'rad'
+            ? u('radTitle')(x.n!)
+            : `Kanji ${x.n}`
 const historyOf = ref<string | null>(null)
 watch([tab, running, reading], toTop)
 
@@ -229,7 +305,7 @@ interface TestState {
   at: string
 }
 const states = ref(new Map<string, TestState>())
-const allTests = () => [...tests, ...radicals.map((_, ri) => radicalTest(ri))]
+const allTests = () => [...genelTests, ...groupTests, ...tests, ...radicals.map((_, ri) => radicalTest(ri))]
 function readStates() {
   const m = new Map<string, TestState>()
   for (const x of allTests()) {
@@ -293,12 +369,93 @@ watch(reading, (i) => {
 watch(running, (x) => {
   if (!x) readStates()
 })
-const tone = (p: number) =>
-  p >= 85 ? 'var(--color-positive)' : p >= 60 ? 'var(--color-warning)' : 'var(--color-negative)'
+/** Score colour: <75 failed (red), ≥75 pass (yellow), ≥85 green, ≥90 filled green. */
+const tone = (p: number) => {
+  const b = band(p)
+  return b === 'fail' ? 'var(--color-negative)' : b === 'pass' ? 'var(--color-warning)' : 'var(--color-positive)'
+}
+const badge = (p: number) =>
+  band(p) === 'strong'
+    ? { color: 'var(--color-canvas)', background: tone(p) }
+    : { color: tone(p), background: `color-mix(in oklab, ${tone(p)} 14%, transparent)` }
+
+/* ── "Studied" ticks per radical (by id), kept in this browser ── */
+const STUDIED = 'nihongo-radikaller:studied'
+const studied = ref(new Set<number>())
+onMounted(() => {
+  try {
+    const raw = localStorage.getItem(STUDIED)
+    if (raw) studied.value = new Set((JSON.parse(raw) as unknown[]).filter((x): x is number => typeof x === 'number'))
+  } catch {
+    // No storage or bad data: nothing ticked.
+  }
+})
+function toggleStudied(id: number) {
+  const s = new Set(studied.value)
+  if (s.has(id)) s.delete(id)
+  else s.add(id)
+  studied.value = s
+  try {
+    localStorage.setItem(STUDIED, JSON.stringify([...s]))
+  } catch {
+    // No storage: the tick lasts for this visit.
+  }
+}
+
+const groupAfter = (ri: number) => (query.value.trim() ? null : closesGroup(ri))
+const radScore = (ri: number) => score(radicalTest(ri))
+const nextRad = (ri: number) => {
+  if (ri + 1 < radicals.length) reading.value = ri + 1
+  else reading.value = null
+}
 
 const pick3 = (xs: string[], not: string) => shuffle([...new Set(xs)].filter((x) => x && x !== not)).slice(0, 3)
 
+/** Attach per-option glosses (aligned with options) without depending on Question declaring them yet. */
+const withGlosses = (q: Question, glosses: string[]): Question => Object.assign(q, { glosses })
+const kanjiGloss = (k: Kanji) => `${k.kanji} · ${[...k.on, ...k.kun].join('・')} · ${m(k)}`
+const words = all.flatMap((k) => k.words)
+/** Words read `r`, as "word · meaning". */
+const readGloss = (r: string) =>
+  [...new Set(words.filter((w) => w.reading === r).map((w) => `${w.word} · ${m(w)}`))].slice(0, 2).join(' / ')
+/** A spelled word or kanji: "reading · meaning" if known. */
+const spellGloss = (s: string) => {
+  const w = words.find((x) => x.word === s)
+  if (w) return `${w.reading} · ${m(w)}`
+  const k = byChar.get(s)
+  if (k) return kanjiGloss(k)
+  // A made-up spelling: gloss its kanji one by one.
+  return [...s]
+    .map((c) => byChar.get(c))
+    .filter((k): k is NonNullable<typeof k> => !!k)
+    .map((k) => `${k.kanji} ${m(k)}`)
+    .join(' · ')
+}
+/** Kanji (or radicals) whose meaning is `mean`. */
+const meanGloss = (mean: string) => {
+  const k = all.find((x) => m(x) === mean)
+  return k ? kanjiGloss(k) : ''
+}
+
 function build(i: number): Question {
+  return glossed(rawBuild(i))
+}
+function glossed(q: Question): Question {
+  const test = running.value!
+  if (test.kind === 'rad') {
+    const rg = (o: string) => {
+      const r = radicals.find((x) => m(x) === o || `${x.radical}　${m(x)}` === o)
+      return r ? `${r.radical} · ${r.name_jp} · ${m(r)}` : ''
+    }
+    return withGlosses(q, q.options.map(rg))
+  }
+  const kind = q.kind
+  const g = q.options.map((o) =>
+    kind === u('yomi') ? readGloss(o) : kind === u('hyouki') ? spellGloss(o) : meanGloss(o),
+  )
+  return withGlosses(q, g)
+}
+function rawBuild(i: number): Question {
   const test = running.value!
   if (test.kind === 'rad') {
     const r = radicals[i]!
@@ -574,7 +731,46 @@ const itemLabel = (i: number) => {
             </div>
           </BaseCard>
 
-          <BaseButton block @click="openTest(radicalTest(ri).id)">{{ u('radTest')(r.radical) }}</BaseButton>
+          <div class="grid gap-2">
+            <label class="flex cursor-pointer items-center gap-2 text-[15px] font-semibold">
+              <input
+                type="checkbox"
+                class="accent-primary size-5"
+                :checked="studied.has(r.id)"
+                @change="toggleStudied(r.id)"
+              />
+              {{ u('studied') }}
+            </label>
+            <div class="flex items-center gap-2">
+              <BaseButton
+                class="min-w-0 flex-1"
+                :variant="radScore(ri) !== null && radScore(ri)! >= 75 ? 'secondary' : 'primary'"
+                @click="
+                  radScore(ri) !== null && openOf(radicalTest(ri)) === null
+                    ? startOver(radicalTest(ri))
+                    : openTest(radicalTest(ri).id)
+                "
+                >{{ radScore(ri) !== null && radScore(ri)! < 75 ? u('retry') : u('radTest')(r.radical) }}</BaseButton
+              >
+              <span
+                v-if="radScore(ri) !== null"
+                class="shrink-0 rounded-full px-2 py-0.5 text-sm font-bold"
+                :style="badge(radScore(ri)!)"
+                >{{ radScore(ri) }}%</span
+              >
+            </div>
+            <template v-if="radScore(ri) !== null && radScore(ri)! >= 75">
+              <BaseButton v-if="closesGroup(ri)" block @click="openTest(closesGroup(ri)!.id)"
+                >{{ u('groupTest')(closesGroup(ri)!.group!)
+                }}<template v-if="score(closesGroup(ri)!) !== null">
+                  · {{ score(closesGroup(ri)!) }}%</template
+                ></BaseButton
+              >
+              <BaseButton v-if="ri + 1 < radicals.length" block variant="secondary" @click="nextRad(ri)">{{
+                u('nextRad')
+              }}</BaseButton>
+            </template>
+          </div>
         </div>
       </template>
       <PagerNav v-model="reading" :count="radicals.length" />
@@ -601,30 +797,92 @@ const itemLabel = (i: number) => {
         <!-- minmax(0,1fr) + min-w-0: a grid item is otherwise as wide as its
              longest line, and the kanji row is one long unbroken line. -->
         <ul class="grid grid-cols-[minmax(0,1fr)] gap-2">
-          <li v-for="r in shown" :key="r.id" class="min-w-0">
-            <button
-              type="button"
-              class="surface focus-ring rounded-card flex w-full min-w-0 items-center gap-4 p-3 text-start"
-              @click="reading = radicals.indexOf(r)"
-            >
-              <span class="jp text-primary w-14 shrink-0 text-center text-5xl leading-none">{{ r.radical }}</span>
-              <span class="min-w-0 flex-1">
-                <span class="block font-bold">{{ m(r) }}</span>
-                <span class="jp text-ink-soft block text-sm">{{ r.name_jp }}</span>
-                <span class="jp text-ink-soft block truncate text-lg tracking-[0.12em]">{{
-                  r.kanji.map((k) => k.kanji).join('')
-                }}</span>
-              </span>
-              <span class="text-ink-soft shrink-0" aria-hidden="true">→</span>
-            </button>
-          </li>
+          <template v-for="r in shown" :key="r.id">
+            <li class="flex min-w-0 items-stretch gap-2">
+              <button
+                type="button"
+                class="surface focus-ring rounded-card flex w-full min-w-0 items-center gap-4 p-3 text-start"
+                @click="reading = radicals.indexOf(r)"
+              >
+                <span class="jp text-primary w-14 shrink-0 text-center text-5xl leading-none">{{ r.radical }}</span>
+                <span class="min-w-0 flex-1">
+                  <span class="block font-bold">{{ m(r) }}</span>
+                  <span class="jp text-ink-soft block text-sm">{{ r.name_jp }}</span>
+                  <span class="jp text-ink-soft block truncate text-lg tracking-[0.12em]">{{
+                    r.kanji.map((k) => k.kanji).join('')
+                  }}</span>
+                </span>
+                <span
+                  v-if="radScore(radicals.indexOf(r)) !== null"
+                  class="shrink-0 rounded-full px-2 py-0.5 text-sm font-bold"
+                  :style="badge(radScore(radicals.indexOf(r))!)"
+                  >{{ radScore(radicals.indexOf(r)) }}%<template v-if="radScore(radicals.indexOf(r))! < 75">
+                    · {{ u('failed') }}</template
+                  ></span
+                >
+                <span class="text-ink-soft shrink-0" aria-hidden="true">→</span>
+              </button>
+              <label
+                class="surface rounded-card flex w-12 shrink-0 cursor-pointer flex-col items-center justify-center gap-1 text-[10px] leading-tight"
+                :title="u('studied')"
+              >
+                <input
+                  type="checkbox"
+                  class="accent-primary size-5"
+                  :checked="studied.has(r.id)"
+                  @change="toggleStudied(r.id)"
+                />
+                {{ u('studied') }}
+              </label>
+            </li>
+            <li v-if="groupAfter(radicals.indexOf(r))" class="min-w-0">
+              <BaseCard class="border-primary border-s-4">
+                <div class="flex items-start gap-3">
+                  <div class="min-w-0 flex-1">
+                    <p class="font-bold">{{ title(groupAfter(radicals.indexOf(r))!) }}</p>
+                    <p class="text-ink-soft text-sm">
+                      {{ u('kanN')(groupAfter(radicals.indexOf(r))!.pool.length) }} ·
+                      <span class="jp">{{
+                        groups
+                          .find((g) => g.includes(radicals.indexOf(r)))!
+                          .map((i) => radicals[i]!.radical)
+                          .join(' ')
+                      }}</span>
+                    </p>
+                  </div>
+                  <span
+                    v-if="score(groupAfter(radicals.indexOf(r))!) !== null"
+                    class="shrink-0 rounded-full px-2 py-0.5 text-sm font-bold"
+                    :style="badge(score(groupAfter(radicals.indexOf(r))!)!)"
+                    >{{ score(groupAfter(radicals.indexOf(r))!) }}%</span
+                  >
+                </div>
+                <div
+                  v-if="openOf(groupAfter(radicals.indexOf(r))!) !== null"
+                  class="bg-muted mt-2 h-1.5 overflow-hidden rounded-full"
+                >
+                  <span
+                    class="bg-primary block h-full rounded-full"
+                    :style="{ width: `${openOf(groupAfter(radicals.indexOf(r))!)}%` }"
+                  />
+                </div>
+                <BaseButton size="sm" block class="mt-3" @click="openTest(groupAfter(radicals.indexOf(r))!.id)">
+                  <template v-if="openOf(groupAfter(radicals.indexOf(r))!) !== null"
+                    >{{ t.continueTest }} · {{ openOf(groupAfter(radicals.indexOf(r))!) }}% →</template
+                  >
+                  <template v-else>{{ t.start }} →</template>
+                </BaseButton>
+              </BaseCard>
+            </li>
+          </template>
         </ul>
       </template>
 
       <template v-else>
+        <p class="text-ink-soft mb-3 text-[15px]">{{ u('genelLead') }}</p>
         <p class="text-ink-soft mb-3 text-[15px]">{{ u('testsLead') }}</p>
         <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          <BaseCard v-for="x in tests" :key="x.id" class="min-w-0">
+          <BaseCard v-for="x in [...genelTests, ...tests]" :key="x.id" class="min-w-0">
             <div class="flex items-start gap-3">
               <span
                 class="jp rounded-control grid size-11 shrink-0 place-items-center text-xl font-bold"
@@ -641,10 +899,7 @@ const itemLabel = (i: number) => {
               <span
                 v-if="score(x) !== null"
                 class="shrink-0 rounded-full px-2 py-0.5 text-sm font-bold"
-                :style="{
-                  color: tone(score(x)!),
-                  background: `color-mix(in oklab, ${tone(score(x)!)} 14%, transparent)`,
-                }"
+                :style="badge(score(x)!)"
                 >{{ score(x) }}%</span
               >
             </div>

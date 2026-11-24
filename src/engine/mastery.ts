@@ -22,6 +22,8 @@ export interface Question {
   prompt: string
   size?: 'big' | 'jp' | 'text'
   options: string[]
+  /** Optional per-option gloss (reading + meaning), aligned with `options`. */
+  glosses?: string[]
   answer: number
   explain?: string
   stat?: { label: string; path?: string[] }
@@ -105,7 +107,9 @@ export function halve(q: Question, rng: Rng): Question {
   if (q.options.length <= 2) return q
   const wrongs = q.options.map((_, i) => i).filter((i) => i !== q.answer)
   const w = wrongs[Math.floor(rng() * wrongs.length)]!
-  return { ...q, options: [q.options[q.answer]!, q.options[w]!], answer: 0 }
+  const out: Question = { ...q, options: [q.options[q.answer]!, q.options[w]!], answer: 0 }
+  if (q.glosses) out.glosses = [q.glosses[q.answer] ?? '', q.glosses[w] ?? '']
+  return out
 }
 
 /** Show the next item. Returns false when the queue is empty (run finished). */

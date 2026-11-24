@@ -112,6 +112,14 @@ describe('mastery engine', () => {
     expect(halve({ ...base, options: ['x-ok', 'y'] }, seq(0)).options).toEqual(['x-ok', 'y'])
   })
 
+  it('halving keeps glosses aligned with the kept options', () => {
+    const base = { ...q('x'), glosses: ['g-ok', 'g-a', 'g-b', 'g-c'] }
+    expect(halve(base, seq(0)).glosses).toEqual(['g-ok', 'g-a'])
+    expect(halve(base, seq(0.99)).glosses).toEqual(['g-ok', 'g-c'])
+    expect(halve({ ...base, answer: 2 }, seq(0)).glosses).toEqual(['g-b', 'g-ok'])
+    expect(halve(q('x'), seq(0)).glosses).toBeUndefined()
+  })
+
   it('a miss on a halved showing keeps the original full question in retry', () => {
     const { s, build, rng } = setup(['a'])
     miss(s)
