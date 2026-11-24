@@ -194,8 +194,8 @@ export const PAGES: readonly SitePage[] = [
     path: '/radikaller/',
     icon: '部',
     title: 'Radikaller',
-    description: '43 radikal (部首), 347 N3 kanji ve kelimeleri: liste, arama ve radikal/kanji testleri.',
-    palette: 'dracula',
+    description: '55 radikal (部首), 378 N3 kanji ve kelimeleri: liste, arama ve radikal/kanji testleri.',
+    palette: 'sakura',
     langs: ['tr', 'en'],
     group: 'self',
     en: {
