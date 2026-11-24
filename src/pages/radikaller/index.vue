@@ -9,6 +9,7 @@ import QuizHistory from '@/components/QuizHistory.vue'
 import RevealText from '@/components/RevealText.vue'
 import SiteLayout from '@/components/SiteLayout.vue'
 import StudyHeader from '@/components/StudyHeader.vue'
+import StudyPlan from '@/components/StudyPlan.vue'
 import LeaveTestSheet from '@/components/LeaveTestSheet.vue'
 import { hasKanji, KIND_LABEL, readingOptions, spellingOptions, type Vocab } from '@/lib/jlpt'
 import { usePage } from '@/lib/page'
@@ -17,7 +18,7 @@ import { rubyWord } from '@/lib/ruby'
 import { toTop } from '@/lib/scroll'
 import { useTestRoute } from '@/lib/test-route'
 import { shuffle } from '@/lib/shuffle'
-import { band, coverSets, groupsOf, tallyMisses, type Band } from '@/lib/radikal-sets'
+import { band, groupsOf, hash, tallyMisses, type Band } from '@/lib/radikal-sets'
 import type { Miss } from '@/lib/quiz-store'
 import data from './data.json'
 import { GUIDE, POSITION_TR } from './guide'
@@ -212,7 +213,9 @@ interface TestDef {
   keys: string
   pool: number[]
 }
-const kanjiItems = all.map((k) => ({ key: k.kanji, n3: k.n3 === true }))
+/** Test items are keyed by the kanji itself, so saved runs survive data growing. */
+const indexOf = new Map(all.map((k, i) => [k.kanji, i]))
+const ix = (c: string) => indexOf.get(c) ?? 0
 const prepSet = (prefix: string, ids: number[], n?: number): TestDef => ({
   id: n ? `${prefix}-${n}` : prefix,
   n,
@@ -220,10 +223,19 @@ const prepSet = (prefix: string, ids: number[], n?: number): TestDef => ({
   keys: ids.map((i) => all[i]!.kanji).join(''),
   pool: ids,
 })
-/** General prep: 8 short (10) and 8 long (20) hash-stable mixed sets, plus every N3 kanji. */
+/**
+ * General prep. Every kanji is in exactly one long test: all kanji in a
+ * hash-stable shuffled order, cut into 13 even sets of ~30. Short tests are
+ * the first 80 of another such order, in sets of 10. Plus every N3 kanji.
+ */
+const LONG = 13
+const hashed = (seed: string) =>
+  all.map((_, i) => i).sort((a, b) => hash(seed + all[a]!.kanji) - hash(seed + all[b]!.kanji))
+const cut = (xs: number[], n: number) =>
+  Array.from({ length: n }, (_, k) => xs.slice(Math.round((k * xs.length) / n), Math.round(((k + 1) * xs.length) / n)))
 const prepTests: TestDef[] = [
-  ...coverSets(kanjiItems, 8, 10, 'kisa').map((ids, i) => prepSet('kisa', ids, i + 1)),
-  ...coverSets(kanjiItems, 8, 20, 'uzun').map((ids, i) => prepSet('uzun', ids, i + 1)),
+  ...cut(hashed('kisa').slice(0, 80), 8).map((ids, i) => prepSet('kisa10', ids, i + 1)),
+  ...cut(hashed('uzun'), LONG).map((ids, i) => prepSet('uzun30', ids, i + 1)),
   prepSet(
     'n3',
     all.map((k, i) => (k.n3 === true ? i : -1)).filter((i) => i >= 0),
@@ -273,9 +285,9 @@ const title = (x: TestDef) =>
       ? u('groupTest')(x.group)
       : x.id === 'n3'
         ? u('n3Test')
-        : x.id.startsWith('kisa-')
+        : x.id.startsWith('kisa')
           ? u('short')(x.n!)
-          : x.id.startsWith('uzun-')
+          : x.id.startsWith('uzun')
             ? u('long')(x.n!)
             : `Kanji ${x.n}`
 const historyOf = ref<string | null>(null)
@@ -605,11 +617,11 @@ const itemLabel = (i: number) => {
       <StudyHeader :title="title(running)" :sub="u('runSub')" @back="askClose" />
       <MasteryQuiz
         :key="running.id"
-        :pool="running.pool"
-        :build="build"
+        :pool="running.pool.map((i) => all[i]!.kanji)"
+        :build="(c: string) => build(ix(c))"
         :storage-key="storageKey(running)"
         @finish="markFinished"
-        :label="itemLabel"
+        :label="(c: string) => itemLabel(ix(c))"
       >
         <template #feedback="{ item }">
           <!-- The kanji large, its readings labelled, its words with furigana,
@@ -617,16 +629,16 @@ const itemLabel = (i: number) => {
           <div v-if="running.kind === 'kan'" class="grid gap-4">
             <div class="flex items-center gap-4">
               <span class="jp text-primary w-20 shrink-0 text-center text-7xl leading-none">{{
-                all[item]!.kanji
+                all[ix(item)]!.kanji
               }}</span>
               <dl class="grid min-w-0 gap-1.5">
-                <div v-if="all[item]!.on.length">
+                <div v-if="all[ix(item)]!.on.length">
                   <dt class="text-ink-soft text-xs">{{ u('onLabel') }}</dt>
-                  <dd class="jp text-xl">{{ all[item]!.on.join('・') }}</dd>
+                  <dd class="jp text-xl">{{ all[ix(item)]!.on.join('・') }}</dd>
                 </div>
-                <div v-if="all[item]!.kun.length">
+                <div v-if="all[ix(item)]!.kun.length">
                   <dt class="text-ink-soft text-xs">{{ u('kunLabel') }}</dt>
-                  <dd class="jp text-xl">{{ all[item]!.kun.join('・') }}</dd>
+                  <dd class="jp text-xl">{{ all[ix(item)]!.kun.join('・') }}</dd>
                 </div>
               </dl>
             </div>
@@ -634,24 +646,24 @@ const itemLabel = (i: number) => {
               <p class="text-ink-soft mb-1 text-sm font-semibold">{{ u('wordsLabel') }}</p>
               <ul class="grid gap-1.5">
                 <li
-                  v-for="w in all[item]!.words"
+                  v-for="w in all[ix(item)]!.words"
                   :key="w.word"
                   class="bg-muted rounded-control flex min-w-0 flex-wrap items-center gap-x-3 px-3 py-1.5"
                 >
                   <span class="jp word-ruby text-2xl leading-[2.2] break-all min-[400px]:text-3xl" lang="ja" v-html="rubyWord(w.word, w.reading)" />
                   <span class="text-base">{{ m(w) }}</span>
-                  <span v-if="readingUsed(all[item]!, w)" class="jp text-primary ms-auto text-sm font-semibold">{{
-                    readingUsed(all[item]!, w)
+                  <span v-if="readingUsed(all[ix(item)]!, w)" class="jp text-primary ms-auto text-sm font-semibold">{{
+                    readingUsed(all[ix(item)]!, w)
                   }}</span>
                 </li>
               </ul>
             </div>
           </div>
           <div v-else class="grid gap-2">
-            <p class="text-ink-soft text-sm font-semibold">{{ u('familyLabel')(radicals[item]!.radical) }}</p>
+            <p class="text-ink-soft text-sm font-semibold">{{ u('familyLabel')(radicals[ix(item)]!.radical) }}</p>
             <ul class="grid grid-cols-3 gap-2">
               <li
-                v-for="k in radicals[item]!.kanji"
+                v-for="k in radicals[ix(item)]!.kanji"
                 :key="k.kanji"
                 class="bg-muted rounded-control px-1 py-2 text-center"
               >
@@ -663,13 +675,13 @@ const itemLabel = (i: number) => {
         </template>
         <template #more="{ item }">
           <div v-if="running.kind === 'kan'">
-            <template v-if="sameRadical(all[item]!).length">
+            <template v-if="sameRadical(all[ix(item)]!).length">
               <p class="text-ink-soft mb-1 text-sm font-semibold">
-                {{ u('familyLabel')(radicals[all[item]!.ri]!.radical) }}
+                {{ u('familyLabel')(radicals[all[ix(item)]!.ri]!.radical) }}
               </p>
               <ul class="grid grid-cols-4 gap-2">
                 <li
-                  v-for="c in sameRadical(all[item]!)"
+                  v-for="c in sameRadical(all[ix(item)]!)"
                   :key="c"
                   class="bg-muted rounded-control px-1 py-1.5 text-center"
                 >
@@ -875,6 +887,7 @@ const itemLabel = (i: number) => {
       <SegmentedControl v-model="tab" :options="tabs" class="mb-4" />
 
       <template v-if="tab === 'learn'">
+        <StudyPlan :open="studied.size === 0" />
         <BaseInput
           v-model="query"
           :label="u('searchLabel')"
@@ -971,6 +984,7 @@ const itemLabel = (i: number) => {
       </template>
 
       <template v-else-if="tab === 'tests'">
+        <StudyPlan />
         <p class="text-ink-soft mb-3 text-[15px]">{{ u('prepLead') }}</p>
         <p class="text-ink-soft mb-3 text-[15px]">{{ u('testsLead') }}</p>
         <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
