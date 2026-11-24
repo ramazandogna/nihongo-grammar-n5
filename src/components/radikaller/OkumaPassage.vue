@@ -4,6 +4,7 @@ import { BookOpen, ChevronDown, Languages } from 'lucide-vue-next'
 import { BaseCard } from 'rei-kit'
 
 import { segments, shownTarget, type Okuma } from '@/lib/okuma'
+import { notation, rubyWord } from '@/lib/ruby'
 
 /**
  * The reading passage above an okuma question: collapsible, no furigana, the
@@ -24,6 +25,10 @@ const props = defineProps<{
 
 const open = ref(true)
 const showTr = ref(false)
+/** Furigana over every kanji, offered once the exam is over (never during it). */
+const furi = ref(false)
+const hasRuby = computed(() => typeof props.okuma.text_ruby === 'string')
+const rubyOn = computed(() => props.finished && furi.value && hasRuby.value)
 watch(
   () => props.finished,
   (f) => {
@@ -48,13 +53,13 @@ function follow() {
 }
 watch(() => [props.current, open.value], follow, { immediate: true })
 const byN = computed(() => new Map(props.okuma.questions.map((q) => [q.n, q])))
-const parts = computed(() => segments(props.okuma.text))
+const parts = computed(() => segments(rubyOn.value ? props.okuma.text_ruby! : props.okuma.text))
 const shown = (n: number, word: string) =>
   shownTarget(byN.value.get(n), word, props.finished || (props.answered && n === props.current))
 const L = computed(() =>
   props.en
-    ? { text: 'Passage', tr: 'Translation', trHint: 'Shows the Turkish translation' }
-    : { text: 'Metin', tr: 'Çeviri', trHint: 'Türkçe çeviriyi gösterir' },
+    ? { text: 'Passage', tr: 'Translation', trHint: 'Shows the Turkish translation', furi: 'Furigana' }
+    : { text: 'Metin', tr: 'Çeviri', trHint: 'Türkçe çeviriyi gösterir', furi: 'Furigana' },
 )
 </script>
 
@@ -79,17 +84,28 @@ const L = computed(() =>
     <div v-if="open" class="mt-3 grid gap-3">
       <p ref="body" class="okuma-text jp relative max-h-[38vh] overflow-y-auto overscroll-contain pe-1 text-[1.15rem] leading-[2.1]" lang="ja" tabindex="0">
         <template v-for="(s, i) in parts" :key="i">
-          <template v-if="'text' in s">{{ s.text }}</template>
+          <span v-if="'text' in s && rubyOn" v-html="notation(s.text)" /><template v-else-if="'text' in s">{{ s.text }}</template>
           <span
             v-else
             class="okuma-target"
             :class="s.n === current && !finished ? 'okuma-now' : ''"
             :aria-current="s.n === current && !finished ? 'true' : undefined"
-            ><sup class="okuma-num">{{ s.n }}</sup>{{ shown(s.n, s.word) }}</span
+            ><sup class="okuma-num">{{ s.n }}</sup><span v-if="rubyOn" v-html="rubyWord(s.word, byN.get(s.n)?.reading ?? s.word)" /><template v-else>{{ shown(s.n, s.word) }}</template></span
           >
         </template>
       </p>
-      <div>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <button
+          v-if="finished && hasRuby"
+          type="button"
+          role="switch"
+          class="focus-ring rounded-control flex min-h-9 items-center gap-1.5 px-2 text-sm font-semibold"
+          :class="furi ? 'bg-primary text-canvas' : 'bg-muted text-primary'"
+          :aria-checked="furi"
+          @click="furi = !furi"
+        >
+          <span class="jp" aria-hidden="true">ふ</span>{{ L.furi }}
+        </button>
         <button
           type="button"
           class="focus-ring rounded-control text-primary flex items-center gap-1 text-sm font-semibold"

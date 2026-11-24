@@ -21,6 +21,8 @@ export interface Okuma {
   title: string
   title_tr: string
   text: string
+  /** The passage with {漢字|かな} readings over every kanji, for after the exam. */
+  text_ruby?: string
   text_tr: string
   questions: OkumaQuestion[]
 }
