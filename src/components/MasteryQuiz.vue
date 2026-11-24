@@ -72,9 +72,12 @@ const hype = ref(0)
 /** The streak just before an answer, to say what a miss broke. */
 const lostStreak = ref(0)
 /** 0 calm · 1 hot (5+) · 2 on fire (10+) · 3 blazing (15+). */
-const heat = computed(() => (streak.value >= 15 ? 3 : streak.value >= 10 ? 2 : streak.value >= 5 ? 1 : 0))
+/** 0 calm, then one step per 5 in a row up to 6 at 30: the effects keep growing to 30. */
+const heat = computed(() => Math.min(6, Math.floor(streak.value / 5)))
+/** 0–1 over the first 30 answers in a row, for effects that scale smoothly. */
+const fire = computed(() => Math.min(streak.value, 30) / 30)
 const hypeText = computed(() =>
-  heat.value === 3 ? t.value.hype3 : heat.value === 2 ? t.value.hype2 : t.value.hype1,
+  [t.value.hype1, t.value.hype1, t.value.hype2, t.value.hype3, t.value.hype4, t.value.hype5, t.value.hype6][heat.value]!,
 )
 const showHistory = ref(false)
 /** The explanation sheet, opened from the bar after answering. */
@@ -166,6 +169,8 @@ function restart() {
 function next() {
   burst.value = null
   if (!engine.next(run, build, rng)) finish()
+  // Still on a run of 10+: the new question lands with a small tremor.
+  else if (heat.value >= 2) requestAnimationFrame(() => quake(1))
 }
 function pick(i: number) {
   lostStreak.value = streak.value
@@ -177,7 +182,7 @@ function pick(i: number) {
       // From 5 in a row every right answer celebrates, hotter as it grows.
       flash.value++
       hype.value++
-      quake(Math.min(3, Math.floor(s / 5)))
+      quake(Math.min(3, Math.ceil(heat.value / 2)))
       buzz(s >= 15 ? [40, 30, 60, 30, 90] : s >= 10 ? [30, 30, 50] : [25, 20, 25])
     } else buzz(out.mastered ? [10, 30, 10, 30, 40] : 15)
     burst.value = out.mastered ? 'mastered' : 'right'
@@ -193,10 +198,11 @@ function pick(i: number) {
   )
 }
 const root = ref<HTMLElement | null>(null)
-/** Shake the whole quiz; level 1–3 grows with the streak. */
+/** Shake the whole quiz; level 1–3, and the shake distance keeps growing to 30. */
 function quake(level: number) {
   const el = root.value
   if (!el || reduceMotion()) return
+  el.style.setProperty('--q', `${3 + fire.value * 9}px`)
   el.classList.remove('quiz-quake-1', 'quiz-quake-2', 'quiz-quake-3')
   void el.offsetWidth
   el.classList.add(`quiz-quake-${level}`)
@@ -265,6 +271,7 @@ function confetti(n: number) {
 /** How the streak chip looks as the run heats up: 3+, 5+, 10+, 15+. */
 const streakTier = computed(() => {
   const n = streak.value
+  if (n >= 25) return { chip: 'quiz-fire quiz-blaze text-white quiz-ring quiz-inferno', icon: 'size-8 quiz-flicker-fast', text: 'text-2xl' }
   if (n >= 15) return { chip: 'quiz-fire quiz-blaze text-white quiz-ring', icon: 'size-7 quiz-flicker-fast', text: 'text-xl' }
   if (n >= 10) return { chip: 'quiz-fire text-white quiz-glow-soft', icon: 'size-6 quiz-flicker-fast', text: 'text-lg' }
   if (n >= 5) return { chip: 'bg-warning/25 text-warning', icon: 'size-5 quiz-flicker', text: 'text-base' }
@@ -303,14 +310,19 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
     <div
       v-if="hype && heat && !finished && picked !== null && correct"
       :key="`h${hype}`"
-      class="quiz-hype bg-surface/90 rounded-[2rem] pointer-events-none fixed start-1/2 top-[18%] z-40 px-6 py-3 text-center shadow-2xl backdrop-blur-sm"
-      :class="`quiz-hype-${heat}`"
+      class="quiz-hype quiz-seal pointer-events-none fixed start-1/2 top-[16%] z-40 grid place-items-center rounded-full text-center"
+      :class="`quiz-hype-${Math.min(heat, 3)} quiz-heat-${heat}`"
+      :style="{ '--fire': fire }"
       role="status"
     >
-      <span class="block leading-none"><span class="quiz-hype-fire" aria-hidden="true">🔥</span><span class="quiz-hype-n font-black">{{ streak }}</span></span>
-      <span class="block text-lg font-extrabold tracking-wide">{{ hypeText }}</span>
+      <span class="quiz-seal-ring" aria-hidden="true" />
+      <span class="relative block leading-none">
+        <span class="quiz-hype-fire block" aria-hidden="true">🔥</span>
+        <span class="quiz-hype-n block font-black">{{ streak }}</span>
+        <span class="quiz-seal-text mt-1 block font-extrabold tracking-wide">{{ hypeText }}</span>
+      </span>
       <span v-if="heat >= 2" class="quiz-embers" aria-hidden="true">
-        <span v-for="n in heat * 6" :key="n" :style="{ '--i': n }" />
+        <span v-for="n in heat * 5" :key="n" :style="{ '--i': n }" />
       </span>
     </div>
     <template v-if="!finished && question">
@@ -357,7 +369,10 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
         </p>
       </div>
 
-      <BaseCard :class="heat >= 2 ? (heat === 3 ? 'quiz-card-hot quiz-card-blaze' : 'quiz-card-hot') : ''">
+      <BaseCard
+        :class="[heat >= 2 ? 'quiz-card-hot' : '', heat >= 3 ? 'quiz-card-blaze' : '']"
+        :style="{ '--fire': fire }"
+      >
         <div class="text-ink-soft flex items-center gap-2 text-sm">
           <span v-if="question.kind" v-html="notation(question.kind)" />
           <span class="ms-auto flex gap-1" :aria-label="`${count}/2`">

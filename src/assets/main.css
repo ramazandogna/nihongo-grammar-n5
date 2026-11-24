@@ -910,3 +910,100 @@ u.target {
     transition: background-color 200ms ease;
   }
 }
+
+/* ── Streak to 30: the hanko seal banner and heat that keeps growing ──
+   --fire runs 0→1 over 30 in a row. */
+.quiz-seal {
+  --seal: color-mix(in oklab, var(--color-negative) calc(55% + var(--fire, 0) * 45%), var(--color-warning));
+  width: calc(9.5rem + var(--fire, 0) * 4rem);
+  height: calc(9.5rem + var(--fire, 0) * 4rem);
+  background: color-mix(in oklab, var(--color-surface) 88%, transparent);
+  color: var(--seal);
+  border: 4px solid var(--seal);
+  box-shadow:
+    0 0 0 3px var(--color-surface),
+    0 0 0 6px var(--seal),
+    0 10px calc(20px + var(--fire, 0) * 40px) color-mix(in oklab, var(--seal) 45%, transparent);
+  rotate: -9deg;
+  backdrop-filter: blur(4px);
+}
+.quiz-seal .quiz-hype-n {
+  font-size: calc(2.8rem + var(--fire, 0) * 1.8rem);
+  line-height: 0.95;
+}
+.quiz-seal .quiz-hype-fire {
+  font-size: calc(1.4rem + var(--fire, 0) * 1.2rem);
+  vertical-align: 0;
+  margin: 0;
+}
+.quiz-seal-text {
+  font-size: calc(0.8rem + var(--fire, 0) * 0.35rem);
+  max-width: 8.5rem;
+  white-space: normal;
+}
+.quiz-seal-ring {
+  position: absolute;
+  inset: 7px;
+  border-radius: 9999px;
+  border: 1.5px dashed currentColor;
+  opacity: 0.55;
+}
+.quiz-card-hot {
+  box-shadow:
+    0 0 0 calc(2px + var(--fire, 0) * 2px) color-mix(in oklab, #ff3b1f calc(60% + var(--fire, 0) * 40%), #ff9f1c),
+    0 0 calc(18px + var(--fire, 0) * 36px) color-mix(in oklab, #ff3b1f calc(30% + var(--fire, 0) * 40%), transparent);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .quiz-seal.quiz-hype {
+    animation: quiz-seal-press 1.15s cubic-bezier(0.2, 0.9, 0.3, 1.2) forwards;
+  }
+  .quiz-heat-5.quiz-hype,
+  .quiz-heat-6.quiz-hype {
+    animation-duration: 1.5s;
+  }
+  .quiz-seal-ring {
+    animation: quiz-seal-spin 6s linear infinite;
+  }
+  .quiz-inferno {
+    animation:
+      quiz-fire-move 0.4s ease-in-out infinite,
+      quiz-ring 0.7s ease-out infinite;
+  }
+  .quiz-card-blaze {
+    animation-duration: calc(1.1s - var(--fire, 0) * 0.6s);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .quiz-seal.quiz-hype {
+    animation: quiz-flash 1.1s ease-out forwards;
+  }
+}
+@keyframes quiz-seal-press {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(2.4);
+    filter: blur(3px);
+  }
+  22% {
+    opacity: 1;
+    transform: translateX(-50%) scale(0.92);
+    filter: blur(0);
+  }
+  32% {
+    transform: translateX(-50%) scale(1.04);
+  }
+  42%,
+  78% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.96);
+  }
+}
+@keyframes quiz-seal-spin {
+  to {
+    rotate: 360deg;
+  }
+}

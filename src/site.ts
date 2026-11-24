@@ -195,7 +195,7 @@ export const PAGES: readonly SitePage[] = [
     icon: '部',
     title: 'Radikaller',
     description: '55 radikal (部首), 378 N3 kanji ve kelimeleri: liste, arama ve radikal/kanji testleri.',
-    palette: 'matcha',
+    palette: 'rei',
     langs: ['tr', 'en'],
     group: 'self',
     en: {
