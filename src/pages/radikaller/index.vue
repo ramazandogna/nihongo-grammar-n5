@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
 import { Eye, Image, Lightbulb, MapPin, Puzzle, TriangleAlert, Volume2 } from 'lucide-vue-next'
-import { BaseButton, BaseCard, BaseInput, SegmentedControl } from 'rei-kit'
+import { BaseButton, BaseCard, BaseInput, CircularProgress, SegmentedControl } from 'rei-kit'
 
 import MasteryQuiz, { type Question } from '@/components/MasteryQuiz.vue'
 import PagerNav from '@/components/PagerNav.vue'
@@ -9,6 +9,7 @@ import QuizHistory from '@/components/QuizHistory.vue'
 import RevealText from '@/components/RevealText.vue'
 import SiteLayout from '@/components/SiteLayout.vue'
 import StudyHeader from '@/components/StudyHeader.vue'
+import StampToggle from '@/components/StampToggle.vue'
 import StudyPlan from '@/components/StudyPlan.vue'
 import LeaveTestSheet from '@/components/LeaveTestSheet.vue'
 import { hasKanji, KIND_LABEL, readingOptions, spellingOptions, type Vocab } from '@/lib/jlpt'
@@ -422,12 +423,29 @@ onMounted(() => {
   }
   learned.value = s
 })
+const justLearned = ref('')
+let justTimer: ReturnType<typeof setTimeout> | undefined
+/** Confetti dot `n` of 6 behind the learned seal. */
+function sealDot(n: number) {
+  const a = (n / 6) * Math.PI * 2
+  const colors = ['var(--color-positive)', 'var(--color-warning)', 'var(--color-primary)']
+  return { '--x': `${Math.cos(a) * 34}px`, '--y': `${Math.sin(a) * 34}px`, '--r': `${n * 60}deg`, background: colors[n % 3] }
+}
+function toCard(c: string) {
+  document.getElementById(`kanji-${c}`)?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+}
 function toggleLearned(c: string) {
   const s = new Set(learned.value)
   const on = !s.has(c)
   if (on) s.add(c)
   else s.delete(c)
   learned.value = s
+  if (on) {
+    // Pop the card, seal and chip once — on the change, not on every mount.
+    justLearned.value = c
+    clearTimeout(justTimer)
+    justTimer = setTimeout(() => (justLearned.value = ''), 400)
+  }
   try {
     if (on) localStorage.setItem(KANJI_KEY(c), '1')
     else localStorage.removeItem(KANJI_KEY(c))
@@ -761,52 +779,108 @@ const itemLabel = (i: number) => {
             </dl>
           </BaseCard>
 
-          <BaseCard v-for="k in r.kanji" :key="k.kanji" class="min-w-0">
+          <div class="flex items-center gap-3">
+            <div class="flex min-w-0 flex-1 flex-wrap gap-1.5">
+              <a
+                v-for="k in r.kanji"
+                :key="k.kanji"
+                :href="`#kanji-${k.kanji}`"
+                class="jp focus-ring grid size-11 place-items-center rounded-lg border text-lg"
+                :class="[learned.has(k.kanji) ? 'chip-on' : 'chip-off', justLearned === k.kanji ? 'quiz-pop' : '']"
+                :aria-label="`${k.kanji} · ${learned.has(k.kanji) ? u('learned') : '—'}`"
+                @click.prevent="toCard(k.kanji)"
+                >{{ k.kanji }}</a
+              >
+            </div>
+            <CircularProgress
+              size="sm"
+              tone="positive"
+              :value="learnedOf(r)"
+              :max="r.kanji.length"
+              :label="u('kanjiLearned')(learnedOf(r), r.kanji.length)"
+              ><span class="text-xs font-bold tabular-nums">{{ learnedOf(r) }}/{{ r.kanji.length }}</span></CircularProgress
+            >
+          </div>
+
+          <BaseCard
+            v-for="k in r.kanji"
+            :id="`kanji-${k.kanji}`"
+            :key="k.kanji"
+            class="kanji-card relative min-w-0 scroll-mt-4 overflow-hidden"
+            :class="[learned.has(k.kanji) ? 'kanji-learned' : '', justLearned === k.kanji ? 'quiz-pop' : '']"
+          >
+            <span
+              v-if="learned.has(k.kanji)"
+              class="pointer-events-none absolute end-2 bottom-2 grid size-11 place-items-center"
+              aria-hidden="true"
+            >
+              <template v-if="justLearned === k.kanji">
+                <span v-for="n in 6" :key="n" class="quiz-confetti" :style="sealDot(n)" />
+              </template>
+              <span
+                class="kanji-seal jp grid size-11 rotate-[-12deg] place-items-center rounded-full text-xl font-bold"
+                :class="justLearned === k.kanji ? 'kanji-seal-in' : ''"
+                >済</span
+              >
+            </span>
             <div class="flex items-start gap-3">
-              <span class="jp w-16 shrink-0 text-center text-6xl leading-none">{{ k.kanji }}</span>
+              <button
+                type="button"
+                class="jp focus-ring rounded-control w-16 shrink-0 text-center text-6xl leading-none"
+                :class="learned.has(k.kanji) ? 'text-positive' : ''"
+                :aria-pressed="learned.has(k.kanji)"
+                :aria-label="`${k.kanji} · ${u('learned')}`"
+                @click="toggleLearned(k.kanji)"
+              >
+                {{ k.kanji }}
+              </button>
               <div class="min-w-0 flex-1">
                 <div class="flex items-start gap-2">
                   <p class="min-w-0 flex-1 text-lg font-bold"><RevealText :text="m(k)" /></p>
-                  <label
-                    class="flex shrink-0 cursor-pointer items-center gap-1 text-sm font-semibold"
-                    :class="learned.has(k.kanji) ? 'text-positive' : 'text-ink-soft'"
-                  >
-                    <input
-                      type="checkbox"
-                      class="accent-primary size-5"
-                      :checked="learned.has(k.kanji)"
-                      @change="toggleLearned(k.kanji)"
-                    />
-                    {{ u('learned') }}
-                  </label>
+                  <StampToggle
+                    :checked="learned.has(k.kanji)"
+                    :label="u('learned')"
+                    size="sm"
+                    @toggle="toggleLearned(k.kanji)"
+                  />
                 </div>
                 <p class="text-ink-soft text-sm">{{ u('radicalOf')(r.radical, m(r)) }}</p>
-                <div class="mt-1.5 grid gap-1 text-[15px]">
-                  <p v-if="k.on.length">
-                    <b>音読み</b> <span class="jp text-xl">{{ k.on.join('・') }}</span>
-                    <span class="text-ink-soft text-sm">{{ u('on') }}</span>
+                <!-- Readings: on (Chinese) first and loudest, kun quieter. -->
+                <div class="mt-2 grid gap-1.5">
+                  <p v-if="k.on.length" class="flex flex-wrap items-center gap-2">
+                    <span class="bg-primary text-canvas rounded-control px-1.5 py-0.5 text-xs font-bold" title="音読み"
+                      >音</span
+                    >
+                    <span class="jp text-primary text-3xl leading-tight font-bold">{{ k.on.join('・') }}</span>
                   </p>
-                  <p v-if="k.kun.length">
-                    <b>訓読み</b> <span class="jp text-xl">{{ k.kun.join('・') }}</span>
-                    <span class="text-ink-soft text-sm">{{ u('kun') }}</span>
+                  <p v-if="k.kun.length" class="flex flex-wrap items-center gap-2">
+                    <span class="bg-muted rounded-control px-1.5 py-0.5 text-xs font-bold" title="訓読み">訓</span>
+                    <span class="jp text-ink-soft text-xl">{{ k.kun.join('・') }}</span>
                   </p>
                 </div>
               </div>
             </div>
-            <ul class="mt-3 grid gap-1.5">
+            <!-- The words matter most: big, furigana readable, meaning under. -->
+            <ul class="mt-4 grid gap-2">
               <li
                 v-for="w in k.words"
                 :key="w.word"
-                class="bg-muted rounded-control flex min-w-0 flex-wrap items-center gap-x-3 gap-y-0.5 px-3 py-1.5"
+                class="bg-muted rounded-card min-w-0 px-4 py-3"
               >
-                <span class="jp word-ruby text-2xl leading-[2.2] break-all min-[400px]:text-3xl" lang="ja" v-html="rubyWord(w.word, w.reading)" />
-                <span class="text-base"><RevealText :text="m(w)" /></span>
-                <span v-if="readingUsed(k, w)" class="jp text-primary ms-auto text-sm font-semibold">{{
-                  readingUsed(k, w)
-                }}</span>
+                <div class="flex min-w-0 items-end justify-between gap-3">
+                  <span
+                    class="jp word-ruby text-[2.6rem] leading-[1.9] break-all min-[400px]:text-5xl"
+                    lang="ja"
+                    v-html="rubyWord(w.word, w.reading)"
+                  />
+                  <span v-if="readingUsed(k, w)" class="jp text-primary shrink-0 pb-2 text-base font-bold">{{
+                    readingUsed(k, w)
+                  }}</span>
+                </div>
+                <p class="text-lg"><RevealText :text="m(w)" /></p>
               </li>
             </ul>
-            <div v-if="sameSound(k).length || sameRadical({ ...k, ri }).length" class="mt-3 grid gap-1 text-sm">
+            <div v-if="sameSound(k).length || sameRadical({ ...k, ri }).length" class="mt-3 grid gap-1 pe-12 text-sm">
               <p v-if="sameSound(k).length">
                 <b
                   ><Volume2
@@ -829,19 +903,15 @@ const itemLabel = (i: number) => {
           </BaseCard>
 
           <div class="grid gap-2">
-            <label
-              class="flex items-center gap-2 text-[15px] font-semibold"
-              :class="canTick(r) ? 'cursor-pointer' : 'text-ink-soft cursor-not-allowed'"
-            >
-              <input
-                type="checkbox"
-                class="accent-primary size-5"
-                :checked="studied.has(r.id)"
-                :disabled="!canTick(r)"
-                @change="toggleStudied(r.id)"
-              />
-              {{ u('studied') }} · {{ u('kanjiDone')(learnedOf(r), r.kanji.length) }}
-            </label>
+            <StampToggle
+              class="justify-self-start"
+              glyph="✓"
+              :checked="studied.has(r.id)"
+              :disabled="!canTick(r)"
+              :label="u('studied')"
+              :hint="u('kanjiDone')(learnedOf(r), r.kanji.length)"
+              @toggle="toggleStudied(r.id)"
+            />
             <p v-if="!canTick(r)" class="text-ink-soft text-sm">{{ u('studyLocked') }}</p>
             <div class="flex items-center gap-2">
               <BaseButton
@@ -904,16 +974,38 @@ const itemLabel = (i: number) => {
             <li class="flex min-w-0 items-stretch gap-2">
               <button
                 type="button"
-                class="surface focus-ring rounded-card flex w-full min-w-0 items-center gap-4 p-3 text-start"
+                class="surface focus-ring rounded-card flex w-full min-w-0 items-center gap-3 p-3 text-start"
+                :class="allLearned(r) ? 'rad-done' : ''"
                 @click="reading = radicals.indexOf(r)"
               >
-                <span class="jp text-primary w-14 shrink-0 text-center text-5xl leading-none">{{ r.radical }}</span>
+                <CircularProgress
+                  size="md"
+                  tone="positive"
+                  class="shrink-0"
+                  :value="learnedOf(r)"
+                  :max="r.kanji.length"
+                  :label="u('kanjiLearned')(learnedOf(r), r.kanji.length)"
+                  ><span class="jp text-primary text-2xl leading-none">{{ r.radical }}</span></CircularProgress
+                >
                 <span class="min-w-0 flex-1">
-                  <span class="block font-bold">{{ m(r) }}</span>
+                  <span class="flex items-center gap-1.5 font-bold"
+                    >{{ m(r)
+                    }}<span
+                      v-if="allLearned(r)"
+                      class="jp text-positive rounded border border-current px-1 text-xs font-bold"
+                      >済</span
+                    ></span
+                  >
                   <span class="jp text-ink-soft block text-sm">{{ r.name_jp }}</span>
-                  <span class="jp text-ink-soft block truncate text-lg tracking-[0.12em]">{{
-                    r.kanji.map((k) => k.kanji).join('')
-                  }}</span>
+                  <span class="mt-1 flex flex-wrap gap-1" aria-hidden="true">
+                    <span
+                      v-for="k in r.kanji"
+                      :key="k.kanji"
+                      class="jp inline-grid size-7 place-items-center rounded-md border text-base"
+                      :class="learned.has(k.kanji) ? 'chip-on' : 'chip-off'"
+                      >{{ k.kanji }}</span
+                    >
+                  </span>
                 </span>
                 <span
                   v-if="radScore(radicals.indexOf(r)) !== null"
@@ -925,20 +1017,18 @@ const itemLabel = (i: number) => {
                 >
                 <span class="text-ink-soft shrink-0" aria-hidden="true">→</span>
               </button>
-              <label
-                class="surface rounded-card flex w-14 shrink-0 flex-col items-center justify-center gap-1 text-center text-[10px] leading-tight"
-                :class="canTick(r) ? 'cursor-pointer' : 'text-ink-soft cursor-not-allowed'"
+              <StampToggle
+                class="surface rounded-card w-16"
+                layout="stack"
+                size="sm"
+                glyph="✓"
+                :checked="studied.has(r.id)"
+                :disabled="!canTick(r)"
+                :label="u('studied')"
+                :hint="canTick(r) ? undefined : u('kanjiDone')(learnedOf(r), r.kanji.length)"
                 :title="canTick(r) ? u('studied') : u('studyLocked')"
-              >
-                <input
-                  type="checkbox"
-                  class="accent-primary size-5"
-                  :checked="studied.has(r.id)"
-                  :disabled="!canTick(r)"
-                  @change="toggleStudied(r.id)"
-                />
-                {{ canTick(r) ? u('studied') : u('kanjiDone')(learnedOf(r), r.kanji.length) }}
-              </label>
+                @toggle="toggleStudied(r.id)"
+              />
             </li>
             <li v-if="groupAfter(radicals.indexOf(r))" class="min-w-0">
               <BaseCard class="border-primary border-s-4">

@@ -217,3 +217,23 @@ export const mostMissed = (history: Attempt[], top = 10) =>
     history.flatMap((a) => a.misses),
     top,
   )
+
+/** What changed between two runs of the same test, item by item (by miss label). */
+export interface RunDiff {
+  /** Missed last time and again now. */
+  still: string[]
+  /** Missed now, but not last time. */
+  fresh: string[]
+  /** Missed last time, right now. */
+  fixed: string[]
+}
+export function diffRuns(prev: Attempt | undefined, cur: Attempt): RunDiff {
+  const now = cur.misses.map((m) => m.label)
+  const before = new Set(prev?.misses.map((m) => m.label) ?? [])
+  const nowSet = new Set(now)
+  return {
+    still: now.filter((l) => before.has(l)),
+    fresh: now.filter((l) => !before.has(l)),
+    fixed: [...before].filter((l) => !nowSet.has(l)),
+  }
+}

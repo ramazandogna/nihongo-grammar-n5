@@ -4,11 +4,12 @@ import { BaseButton, BaseCard, BaseSheet } from 'rei-kit'
 import { Check, CircleX, Flame, History, Lightbulb, PartyPopper, X } from 'lucide-vue-next'
 
 import { usePageContext } from '@/lib/page'
-import { addAttempt, groupMisses, loadRun, saveRun, type Miss } from '@/lib/quiz-store'
+import { accuracy, addAttempt, groupMisses, loadHistory, loadRun, saveRun, type Attempt, type Miss } from '@/lib/quiz-store'
 import { notation, plain } from '@/lib/ruby'
 import * as engine from '@/engine/mastery'
 import MissList from './MissList.vue'
 import QuizHistory from './QuizHistory.vue'
+import QuizResults from './QuizResults.vue'
 
 export type { Question } from '@/engine/mastery'
 type Question = engine.Question
@@ -44,7 +45,8 @@ defineSlots<{
   actions?: () => unknown
 }>()
 
-const { t } = usePageContext()
+const { t, lang } = usePageContext()
+const showDetail = ref(false)
 
 /** The run itself, driven by the pure rules in engine/mastery.ts. */
 const run = reactive(engine.emptyState<K>()) as engine.RunState<K>
@@ -80,6 +82,9 @@ const explaining = ref(false)
 const actions = ref<HTMLElement | null>(null)
 /** The finished run's mistakes, kept for the end screen. */
 const lastMisses = ref<Miss[]>([])
+/** The finished run and the history it closes (for the results screen). */
+const lastAttempt = ref<Attempt | null>(null)
+const pastRuns = ref<Attempt[]>([])
 const lastGroups = computed(() => groupMisses(lastMisses.value, Infinity))
 function start() {
   engine.reset(run, pool, rng)
@@ -87,6 +92,7 @@ function start() {
   finished.value = false
   resumed.value = false
   showHistory.value = false
+  showDetail.value = false
   next()
 }
 function persist() {
@@ -138,15 +144,20 @@ function finish() {
   emit('finish')
   current.value = null
   lastMisses.value = [...misses.value.values()]
+  const attempt: Attempt = {
+    at: new Date().toISOString(),
+    tries: tries.value,
+    wrong: wrong.value,
+    misses: lastMisses.value,
+  }
+  lastAttempt.value = attempt
   if (storageKey) {
     saveRun(storageKey, null)
-    addAttempt(storageKey, {
-      at: new Date().toISOString(),
-      tries: tries.value,
-      wrong: wrong.value,
-      misses: lastMisses.value,
-    })
-  }
+    addAttempt(storageKey, attempt)
+    const h = loadHistory(storageKey)
+    // Storage blocked: compare against nothing rather than lose the screen.
+    pastRuns.value = h.length && h[h.length - 1]!.at === attempt.at ? h : [...h, attempt]
+  } else pastRuns.value = [attempt]
 }
 function restart() {
   if (storageKey) saveRun(storageKey, null)
@@ -259,6 +270,13 @@ const streakTier = computed(() => {
   if (n >= 5) return { chip: 'bg-warning/25 text-warning', icon: 'size-5 quiz-flicker', text: 'text-base' }
   return { chip: 'bg-warning/15 text-warning', icon: 'size-4', text: 'text-sm' }
 })
+/** How option `i` looks once an answer is locked in. */
+function optState(i: number): 'hit' | 'miss' | 'answer' | 'other' | null {
+  const q = question.value
+  if (picked.value === null || !q) return null
+  if (i === picked.value) return i === q.answer ? 'hit' : 'miss'
+  return i === q.answer ? 'answer' : 'other'
+}
 const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o).length > 12))
 </script>
 
@@ -275,7 +293,7 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
     </p>
     <!-- Streak milestone (5, 10, 15 …): a warm flash over the whole screen. -->
     <div
-      v-if="flash"
+      v-if="flash && !finished"
       :key="flash"
       class="quiz-flash pointer-events-none fixed inset-0 z-30"
       :class="`quiz-flash-${heat}`"
@@ -283,7 +301,7 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
     />
     <!-- From 5 in a row: a banner on every right answer, hotter with the streak. -->
     <div
-      v-if="hype && heat && picked !== null && correct"
+      v-if="hype && heat && !finished && picked !== null && correct"
       :key="`h${hype}`"
       class="quiz-hype bg-surface/90 rounded-[2rem] pointer-events-none fixed start-1/2 top-[18%] z-40 px-6 py-3 text-center shadow-2xl backdrop-blur-sm"
       :class="`quiz-hype-${heat}`"
@@ -366,24 +384,33 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
             v-for="i in order"
             :key="i"
             type="button"
-            class="control focus-ring rounded-control press jp px-3 py-2 text-[1.45rem] [--control-border-width:2px]"
+            class="control focus-ring rounded-control press jp relative px-3 py-2 text-[1.45rem] transition-[opacity,transform,filter] duration-200 [--control-border-width:2px]"
             :class="[
               question.options.length === 2 ? 'min-h-16' : 'min-h-12',
-              picked === i ? (i === question.answer ? 'quiz-pop quiz-glow' : 'quiz-shake') : '',
               wide ? 'text-start' : 'text-center',
               ruby ? 'leading-[2]' : 'leading-snug',
-              picked !== null && i === question.answer
-                ? 'bg-positive/15 [--surface-border-color:var(--color-positive)]'
-                : '',
-              picked !== null && i === picked && i !== question.answer
-                ? 'bg-negative/15 [--surface-border-color:var(--color-negative)]'
-                : '',
+              optState(i) === 'hit' ? 'quiz-glow opt-hit' : '',
+              optState(i) === 'miss' ? 'quiz-shake opt-miss' : '',
+              optState(i) === 'answer' ? 'opt-hit opt-pulse' : '',
+              optState(i) === 'other' ? 'opt-other' : '',
             ]"
             :aria-pressed="picked === i"
             :disabled="picked !== null && i !== picked && i !== question.answer"
             @click="pick(i)"
           >
             <span class="block" v-html="notation(question.options[i]!)" />
+            <span
+              v-if="optState(i) === 'hit' || optState(i) === 'answer' || optState(i) === 'miss'"
+              :key="`b${tries}`"
+              class="quiz-stamp absolute -end-2 -top-2 grid size-6 place-items-center rounded-full font-sans text-sm font-bold text-white shadow"
+              :class="optState(i) === 'miss' ? 'bg-negative' : 'bg-positive'"
+              role="img"
+              :aria-label="optState(i) === 'miss' ? 'yanlış' : 'doğru'"
+              >{{ optState(i) === 'miss' ? '✕' : '✓' }}</span
+            >
+            <span v-if="optState(i) === 'hit'" :key="`p${tries}`" class="opt-burst" aria-hidden="true">
+              <i v-for="n in 8" :key="n" :style="{ '--a': `${45 * n}deg`, background: n % 2 ? 'var(--color-positive)' : 'var(--color-warning)' }" />
+            </span>
             <span
               v-if="picked !== null && (i === picked || i === question.answer) && question.glosses?.[i]"
               class="mt-0.5 block font-sans text-sm leading-snug text-ink-soft [overflow-wrap:anywhere]"
@@ -450,17 +477,12 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
     </template>
 
     <div v-else-if="finished" class="py-10 text-center">
-      <div
-        class="quiz-stamp font-jp text-negative border-negative mx-auto grid size-28 -rotate-6 place-items-center rounded-full border-4 text-4xl"
-        aria-hidden="true"
-      >
-        合格
-      </div>
-      <h2 class="mt-6 text-2xl font-bold">{{ t.doneTitle }}</h2>
+      <QuizResults v-if="lastAttempt" :history="pastRuns" :current="lastAttempt" />
+      <h2 class="mt-4 text-lg font-bold">{{ t.doneTitle }}</h2>
       <dl class="mx-auto mt-4 grid max-w-md grid-cols-3 gap-2">
         <div class="surface rounded-card px-2 py-3">
-          <dd class="text-2xl font-bold">{{ tries ? Math.round(((tries - wrong) / tries) * 100) : 0 }}%</dd>
-          <dt class="text-ink-soft text-xs">{{ t.accuracy }}</dt>
+          <dd class="text-2xl font-bold">%{{ accuracy({ tries, wrong }) }}</dd>
+          <dt class="text-ink-soft text-xs">{{ lang === 'tr' ? 'isabet (doğru/cevap)' : 'hit rate (right/answers)' }}</dt>
         </div>
         <div class="surface rounded-card px-2 py-3">
           <dd class="text-warning flex items-center justify-center gap-1 text-2xl font-bold">
@@ -474,12 +496,16 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
         </div>
       </dl>
       <p class="text-ink-soft mt-2 text-sm">{{ t.doneStats(tries, wrong) }}</p>
-      <BaseCard v-if="lastMisses.length" class="mx-auto mt-5 max-w-md text-start">
-        <p class="mb-2 flex items-center gap-1.5 font-bold">
-          <CircleX class="text-negative size-5" aria-hidden="true" /> {{ t.runMisses }}
-        </p>
-        <MissList :groups="lastGroups" />
-      </BaseCard>
+      <div v-if="lastMisses.length" class="mx-auto mt-4 max-w-md text-start">
+        <BaseButton variant="ghost" block :aria-expanded="showDetail" @click="showDetail = !showDetail"
+          ><CircleX class="text-negative size-4" aria-hidden="true" />
+          {{ lang === 'tr' ? 'Ayrıntı' : 'Details' }} {{ showDetail ? '▴' : '▾' }}</BaseButton
+        >
+        <BaseCard v-if="showDetail" class="mt-2">
+          <p class="mb-2 font-bold">{{ t.runMisses }}</p>
+          <MissList :groups="lastGroups" />
+        </BaseCard>
+      </div>
       <div class="mt-6 flex flex-wrap justify-center gap-3">
         <BaseButton variant="secondary" @click="restart">{{ t.again }}</BaseButton>
         <BaseButton

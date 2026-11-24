@@ -124,3 +124,14 @@ describe('quiz-store validation', () => {
     expect(store.accuracy({ tries: 4, wrong: 1 })).toBe(75)
   })
 })
+
+import { diffRuns as _diffRuns } from './quiz-store'
+describe('diffRuns', () => {
+  const at = (labels: string[]) => ({ at: 'x', tries: 10, wrong: labels.length, misses: labels.map((label) => ({ label, n: 1 })) })
+  it('splits misses into still, fresh and fixed', () => {
+    expect(_diffRuns(at(['日', '月']), at(['月', '火']))).toEqual({ still: ['月'], fresh: ['火'], fixed: ['日'] })
+  })
+  it('treats a first run as all fresh', () => {
+    expect(_diffRuns(undefined, at(['日']))).toEqual({ still: [], fresh: ['日'], fixed: [] })
+  })
+})
