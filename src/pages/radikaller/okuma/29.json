@@ -1,0 +1,234 @@
+{
+  "radicalId": 29,
+  "title": "一人暮らしとお金",
+  "title_tr": "Tek başına yaşamak ve para",
+  "text": "今年の春から一人暮らしを始めて、お金の大切さがよく分かるようになった。[[11|賃貸]]のアパートに住んでいるが、毎月の[[1|家賃]]は給料の三分の一ぐらいで、かなり大きな[[2|負担]]だ。会社までの[[13|交通費]]は会社が払ってくれるので、少し助かっている。それでも、毎月少しずつ[[3|貯金]]することにした。先週、先輩に生活の[[4|費用]]について[[5|質問]]したら、いろいろ教えてくれた。先輩は「買い物の前に、まず[[6|財布]]の中を見るといい」と言った。私もその意見に[[7|賛成]]だ。また、安い物より[[8|品質]]のいい物を長く使うほうがいいそうだ。最近は個人同士で中古品を[[12|売買]]するアプリもあって、便利だ。ただ、サークルの[[10|会費]]を払うのを忘れて、友達に注意されたこともある。そのとき友達は私を強く[[14|責める]]ことはしなかったが、自分の生活は自分で[[9|責任]]を持たなければならないと思った。お金の使い方で自分に[[15|負け]]ないように、これからも頑張りたい。",
+  "text_tr": "Bu bahar tek başıma yaşamaya başladım ve paranın önemini iyice anlar oldum. Kiralık bir dairede oturuyorum; aylık kira maaşımın üçte biri kadar, oldukça büyük bir yük. İşe gidiş geliş masrafını şirket ödediği için biraz rahatlıyorum. Yine de her ay biraz biraz biriktirmeye karar verdim. Geçen hafta bir kıdemliye yaşam masraflarını sorunca bana pek çok şey anlattı. Kıdemlim \"Alışverişten önce cüzdanının içine bak\" dedi. Ben de bu görüşe katılıyorum. Ayrıca ucuz şeyler yerine kaliteli şeyleri uzun süre kullanmak daha iyiymiş. Son zamanlarda bireyler arasında ikinci el eşya alım satımı yapılan uygulamalar da var, kullanışlı. Ama kulüp aidatını ödemeyi unutup arkadaşımdan uyarı aldığım da oldu. O zaman arkadaşım beni sert bir şekilde suçlamadı ama kendi hayatımın sorumluluğunu kendimin taşıması gerektiğini düşündüm. Para harcarken kendime yenilmemek için bundan sonra da çabalayacağım.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "家賃",
+      "reading": "やちん",
+      "meaning_tr": "kira",
+      "sentence": "賃貸のアパートに住んでいるが、毎月の[[家賃]]は給料の三分の一ぐらいで、かなり大きな負担だ。",
+      "options": [
+        "やちん",
+        "やっちん",
+        "やじん",
+        "いえちん"
+      ],
+      "explain_tr": "家 ヤ + 賃 チン; 'いえ' okunmaz, っ yok."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "負担",
+      "reading": "ふたん",
+      "meaning_tr": "yük, külfet",
+      "sentence": "賃貸のアパートに住んでいるが、毎月の家賃は給料の三分の一ぐらいで、かなり大きな[[負担]]だ。",
+      "options": [
+        "ふたん",
+        "ぶたん",
+        "ふだん",
+        "ふうたん"
+      ],
+      "explain_tr": "負 フ + 担 タン; ゛ yok, uzun ünlü yok (ふだん = 普段)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "貯金",
+      "reading": "ちょきん",
+      "meaning_tr": "birikim, para biriktirme",
+      "sentence": "それでも、毎月少しずつ[[貯金]]することにした。",
+      "options": [
+        "ちょきん",
+        "ちょうきん",
+        "ちょぎん",
+        "ちょっきん"
+      ],
+      "explain_tr": "貯 チョ (kısa) + 金 キン; ゛ ve っ tuzağı."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "費用",
+      "reading": "ひよう",
+      "meaning_tr": "masraf",
+      "sentence": "先週、先輩に生活の[[費用]]について質問したら、いろいろ教えてくれた。",
+      "options": [
+        "ひよう",
+        "ひょう",
+        "ひよ",
+        "ひいよう"
+      ],
+      "explain_tr": "費 ヒ + 用 ヨウ; ひょう (表) ile karıştırma."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "質問",
+      "reading": "しつもん",
+      "meaning_tr": "soru",
+      "sentence": "先週、先輩に生活の費用について[[質問]]したら、いろいろ教えてくれた。",
+      "options": [
+        "しつもん",
+        "しちもん",
+        "しつぶん",
+        "しっもん"
+      ],
+      "explain_tr": "質 シツ + 問 モン."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "財布",
+      "reading": "さいふ",
+      "meaning_tr": "cüzdan",
+      "sentence": "先輩は「買い物の前に、まず[[さいふ]]の中を見るといい」と言った。",
+      "options": [
+        "財布",
+        "材布",
+        "財希",
+        "才布"
+      ],
+      "explain_tr": "財 (貝) para ile ilgili; 材 (木) malzeme. 布 'bez'."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "賛成",
+      "reading": "さんせい",
+      "meaning_tr": "katılma, onaylama",
+      "sentence": "私もその意見に[[さんせい]]だ。",
+      "options": [
+        "賛成",
+        "替成",
+        "賛正",
+        "質成"
+      ],
+      "explain_tr": "賛 (貝) destek; 替 değiştirmek. 成 olmak."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "品質",
+      "reading": "ひんしつ",
+      "meaning_tr": "kalite",
+      "sentence": "また、安い物より[[ひんしつ]]のいい物を長く使うほうがいいそうだ。",
+      "options": [
+        "品質",
+        "品室",
+        "品貨",
+        "品資"
+      ],
+      "explain_tr": "質 シツ nitelik; 室 oda, aynı okunuş tuzağı."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "責任",
+      "reading": "せきにん",
+      "meaning_tr": "sorumluluk",
+      "sentence": "そのとき友達は私を強く責めることはしなかったが、自分の生活は自分で[[せきにん]]を持たなければならないと思った。",
+      "options": [
+        "責任",
+        "積任",
+        "債任",
+        "責仁"
+      ],
+      "explain_tr": "責 (貝) sorumluluk; 積 biriktirmek, aynı セキ."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "会費",
+      "reading": "かいひ",
+      "meaning_tr": "aidat",
+      "sentence": "ただ、サークルの[[かいひ]]を払うのを忘れて、友達に注意されたこともある。",
+      "options": [
+        "会費",
+        "会貴",
+        "会賀",
+        "会肥"
+      ],
+      "explain_tr": "費 ヒ masraf; 貴/賀 benzer görünen 貝'li kanjiler."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "賃貸",
+      "reading": "ちんたい",
+      "meaning_tr": "kiralık",
+      "sentence": "（　　）のアパートに住んでいるが、毎月の家賃は給料の三分の一ぐらいで、かなり大きな負担だ。",
+      "options": [
+        "賃貸",
+        "賃金",
+        "運賃",
+        "家賃"
+      ],
+      "explain_tr": "賃貸 kiralık; 賃金 ücret, 運賃 yol ücreti."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "売買",
+      "reading": "ばいばい",
+      "meaning_tr": "alım satım",
+      "sentence": "最近は個人同士で中古品を（　　）するアプリもあって、便利だ。",
+      "options": [
+        "売買",
+        "貯金",
+        "費用",
+        "賛成"
+      ],
+      "explain_tr": "中古品を売買する: ikinci el eşya alıp satmak."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "交通費",
+      "reading": "こうつうひ",
+      "meaning_tr": "ulaşım masrafı",
+      "sentence": "会社までの（　　）は会社が払ってくれるので、少し助かっている。",
+      "options": [
+        "交通費",
+        "会費",
+        "学費",
+        "家賃"
+      ],
+      "explain_tr": "会社まで gidiş geliş masrafı → 交通費."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "責める",
+      "reading": "せめる",
+      "meaning_tr": "suçlamak",
+      "sentence": "そのとき友達は私を強く（　　）ことはしなかったが、自分の生活は自分で責任を持たなければならないと思った。",
+      "options": [
+        "責める",
+        "負ける",
+        "貸す",
+        "貯める"
+      ],
+      "explain_tr": "人を強く責める: birini sert suçlamak."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "負け",
+      "reading": "まけ",
+      "meaning_tr": "yenilmek",
+      "sentence": "お金の使い方で自分に（　　）ないように、これからも頑張りたい。",
+      "options": [
+        "負け",
+        "責め",
+        "貸さ",
+        "買わ"
+      ],
+      "explain_tr": "自分に負けない: kendine yenik düşmemek."
+    }
+  ]
+}

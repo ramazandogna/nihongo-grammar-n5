@@ -1,0 +1,234 @@
+{
+  "radicalId": 51,
+  "title": "増税の前に",
+  "title_tr": "Vergi artışından önce",
+  "text": "来月から[[7|消費税]]の[[8|税率]]が上がるというニュースを見ました。[[11|増税]]の前に買い物をしようと思って、週末にデパートへ行きました。店の値段は[[12|税抜き]]で書いてあったので、レジで[[1|税込み]]の金額を見て驚きました。外国人観光客は、パスポートを見せれば[[2|免税]]で買い物ができるそうです。友達は海外の店で靴を買いましたが、[[4|関税]]がかかって高くなったと言っていました。旅行の帰りに、空港の[[10|税関]]でかばんを調べられたこともあるそうです。私たちが払う[[6|税金]]には、いろいろな[[9|種類]]があります。会社員は給料から[[13|所得税]]が引かれ、住んでいる町には[[5|住民税]]を払います。自営業の父は、毎年三月に[[3|税務署]]へ書類を出しに行きます。父によると、払う税金は収入によってある[[14|程度]]決まるそうです。父は仕事で車で[[15|移動]]することが多いので、ガソリンの値段も気になると言っています。",
+  "text_tr": "Gelecek aydan itibaren tüketim vergisi oranının artacağı haberini gördüm. Vergi artmadan önce alışveriş yapayım diye hafta sonu büyük mağazaya gittim. Mağazadaki fiyatlar vergisiz yazıldığı için kasada vergi dahil tutarı görünce şaşırdım. Yabancı turistler pasaport gösterirse vergisiz alışveriş yapabiliyormuş. Arkadaşım yurt dışındaki bir mağazadan ayakkabı aldı ama gümrük vergisi yüzünden pahalılaştığını söyledi. Bir seyahat dönüşü havalimanı gümrüğünde çantası aranmış da. Ödediğimiz vergilerin çeşitli türleri var. Şirket çalışanlarının maaşından gelir vergisi kesiliyor, oturdukları belediyeye de yerel vergi ödüyorlar. Serbest çalışan babam her yıl mart ayında vergi dairesine evrak vermeye gidiyor. Babama göre ödenen vergi gelire göre belli ölçüde belirleniyormuş. Babam işi gereği sık sık arabayla dolaştığı için benzin fiyatlarını da dert ettiğini söylüyor.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "税込み",
+      "reading": "ぜいこみ",
+      "meaning_tr": "vergi dahil",
+      "sentence": "店の値段は税抜きで書いてあったので、レジで[[税込み]]の金額を見て驚きました。",
+      "options": [
+        "ぜいこみ",
+        "ぜいごみ",
+        "せいこみ",
+        "ぜいこう"
+      ],
+      "explain_tr": "税 ゼイ (゛) + 込み こみ."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "免税",
+      "reading": "めんぜい",
+      "meaning_tr": "vergiden muaf",
+      "sentence": "外国人観光客は、パスポートを見せれば[[免税]]で買い物ができるそうです。",
+      "options": [
+        "めんぜい",
+        "めんせい",
+        "べんぜい",
+        "めんぜ"
+      ],
+      "explain_tr": "免 メン + 税 ゼイ."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "税務署",
+      "reading": "ぜいむしょ",
+      "meaning_tr": "vergi dairesi",
+      "sentence": "自営業の父は、毎年三月に[[税務署]]へ書類を出しに行きます。",
+      "options": [
+        "ぜいむしょ",
+        "ぜいむしょう",
+        "ぜいむじょ",
+        "せいむしょ"
+      ],
+      "explain_tr": "署 ショ (kısa)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "関税",
+      "reading": "かんぜい",
+      "meaning_tr": "gümrük vergisi",
+      "sentence": "友達は海外の店で靴を買いましたが、[[関税]]がかかって高くなったと言っていました。",
+      "options": [
+        "かんぜい",
+        "かんせい",
+        "がんぜい",
+        "せきぜい"
+      ],
+      "explain_tr": "関 カン + 税 ゼイ."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "住民税",
+      "reading": "じゅうみんぜい",
+      "meaning_tr": "yerel vergi",
+      "sentence": "会社員は給料から所得税が引かれ、住んでいる町には[[住民税]]を払います。",
+      "options": [
+        "じゅうみんぜい",
+        "じゅみんぜい",
+        "じゅうみんせい",
+        "すみんぜい"
+      ],
+      "explain_tr": "住 ジュウ (uzun)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "税金",
+      "reading": "ぜいきん",
+      "meaning_tr": "vergi",
+      "sentence": "私たちが払う[[ぜいきん]]には、いろいろな種類があります。",
+      "options": [
+        "税金",
+        "説金",
+        "祝金",
+        "脱金"
+      ],
+      "explain_tr": "税 = 禾 + 兑; 説・脱 benzer sağ taraf."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "消費税",
+      "reading": "しょうひぜい",
+      "meaning_tr": "tüketim vergisi",
+      "sentence": "来月から[[しょうひぜい]]の税率が上がるというニュースを見ました。",
+      "options": [
+        "消費税",
+        "消費説",
+        "消費脱",
+        "消比税"
+      ],
+      "explain_tr": "禾 radikali 'tahıl' → vergi (eskiden tahılla ödenirdi)."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "税率",
+      "reading": "ぜいりつ",
+      "meaning_tr": "vergi oranı",
+      "sentence": "来月から消費税の[[ぜいりつ]]が上がるというニュースを見ました。",
+      "options": [
+        "税率",
+        "税卒",
+        "説率",
+        "脱率"
+      ],
+      "explain_tr": "率 リツ 'oran'; 卒 benzer."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "種類",
+      "reading": "しゅるい",
+      "meaning_tr": "tür",
+      "sentence": "私たちが払う税金には、いろいろな[[しゅるい]]があります。",
+      "options": [
+        "種類",
+        "重類",
+        "種数",
+        "稚類"
+      ],
+      "explain_tr": "種 (禾 radikali) シュ."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "税関",
+      "reading": "ぜいかん",
+      "meaning_tr": "gümrük",
+      "sentence": "旅行の帰りに、空港の[[ぜいかん]]でかばんを調べられたこともあるそうです。",
+      "options": [
+        "税関",
+        "税間",
+        "説関",
+        "税開"
+      ],
+      "explain_tr": "関 / 間 / 開 benzer görünür."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "増税",
+      "reading": "ぞうぜい",
+      "meaning_tr": "vergi artışı",
+      "sentence": "（　　）の前に買い物をしようと思って、週末にデパートへ行きました。",
+      "options": [
+        "増税",
+        "減税",
+        "免税",
+        "納税"
+      ],
+      "explain_tr": "税率が上がる → 増税."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "税抜き",
+      "reading": "ぜいぬき",
+      "meaning_tr": "vergi hariç",
+      "sentence": "店の値段は（　　）で書いてあったので、レジで税込みの金額を見て驚きました。",
+      "options": [
+        "税抜き",
+        "税込み",
+        "免税",
+        "関税"
+      ],
+      "explain_tr": "税抜き ↔ 税込み."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "所得税",
+      "reading": "しょとくぜい",
+      "meaning_tr": "gelir vergisi",
+      "sentence": "会社員は給料から（　　）が引かれ、住んでいる町には住民税を払います。",
+      "options": [
+        "所得税",
+        "消費税",
+        "関税",
+        "住民税"
+      ],
+      "explain_tr": "給料から引かれる → 所得税."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "程度",
+      "reading": "ていど",
+      "meaning_tr": "ölçü, derece",
+      "sentence": "父によると、払う税金は収入によってある（　　）決まるそうです。",
+      "options": [
+        "程度",
+        "種類",
+        "移動",
+        "税率"
+      ],
+      "explain_tr": "ある程度 = belli ölçüde (程: 禾)."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "移動",
+      "reading": "いどう",
+      "meaning_tr": "yer değiştirme, dolaşma",
+      "sentence": "父は仕事で車で（　　）することが多いので、ガソリンの値段も気になると言っています。",
+      "options": [
+        "移動",
+        "種類",
+        "程度",
+        "税関"
+      ],
+      "explain_tr": "車で移動する (移: 禾 radikali)."
+    }
+  ]
+}

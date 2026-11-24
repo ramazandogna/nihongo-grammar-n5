@@ -1,0 +1,234 @@
+{
+  "radicalId": 32,
+  "title": "新入社員の研修",
+  "title_tr": "Yeni çalışan eğitimi",
+  "text": "四月に会社に入って、二週間の[[1|研修]]を受けた。研修の場所は海の近くのホテルで、窓から[[5|砂浜]]が見えた。会社は食品の[[6|研究]]をしていて、私は新しいお菓子を作る部署に入った。最初の日、先輩は「[[7|正確]]に量ることが一番大切だ」と言った。[[2|砂糖]]を一グラム間違えるだけで、味が変わってしまうそうだ。作業の前には、必ず材料の量を[[4|確認]]しなければならない。ある日、材料の袋が[[8|破れて]]いて、床に粉が落ちていた。先輩に言われて、ほかの袋も一つずつ[[9|確かめた]]。休み時間には、ホテルの自動販売機に[[3|硬貨]]を入れて飲み物を買った。売店では、小さな[[10|宝石]]のアクセサリーも売っていた。昼に出たパンは[[12|硬くて]]食べにくかったが、みんなで笑いながら食べた。先輩は「約束の時間を[[13|破る]]人は信用されない」とよく言っていた。最近は[[15|石油]]の値段が上がって、材料費も高くなっているそうだ。[[11|確か]]、来月にもう一度研修があると思う。新しい商品を[[14|確実]]に成功させるため、これからも勉強を続けたい。",
+  "text_tr": "Nisanda şirkete girdim ve iki haftalık eğitim aldım. Eğitim yeri deniz kenarında bir oteldi; pencereden kumsal görünüyordu. Şirket gıda araştırması yapıyor, ben de yeni tatlılar üreten bölüme girdim. İlk gün kıdemlim \"En önemlisi doğru ölçmek\" dedi. Şekeri bir gram yanlış koymak bile tadı değiştirirmiş. Çalışmadan önce malzeme miktarını mutlaka kontrol etmek gerekiyor. Bir gün malzeme torbası yırtılmıştı ve yere un dökülmüştü. Kıdemlim söyleyince diğer torbaları da tek tek kontrol ettim. Molalarda otelin otomatına bozuk para atıp içecek aldım. Büfede küçük mücevherli aksesuarlar da satılıyordu. Öğlen çıkan ekmek sertti ve zor yeniyordu ama hep birlikte gülerek yedik. Kıdemlim sık sık \"Randevu saatine uymayan insana güvenilmez\" derdi. Son zamanlarda petrol fiyatları yükseldiği için malzeme masrafı da artıyormuş. Yanılmıyorsam gelecek ay bir eğitim daha var. Yeni ürünü kesin olarak başarılı kılmak için çalışmaya devam etmek istiyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "研修",
+      "reading": "けんしゅう",
+      "meaning_tr": "eğitim, staj",
+      "sentence": "四月に会社に入って、二週間の[[研修]]を受けた。",
+      "options": [
+        "けんしゅう",
+        "けんしゅ",
+        "げんしゅう",
+        "けんじゅう"
+      ],
+      "explain_tr": "研 ケン + 修 シュウ (uzun)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "砂糖",
+      "reading": "さとう",
+      "meaning_tr": "şeker",
+      "sentence": "[[砂糖]]を一グラム間違えるだけで、味が変わってしまうそうだ。",
+      "options": [
+        "さとう",
+        "さと",
+        "すなとう",
+        "さどう"
+      ],
+      "explain_tr": "砂 サ + 糖 トウ (uzun); さどう = 茶道."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "硬貨",
+      "reading": "こうか",
+      "meaning_tr": "madeni para",
+      "sentence": "休み時間には、ホテルの自動販売機に[[硬貨]]を入れて飲み物を買った。",
+      "options": [
+        "こうか",
+        "こか",
+        "こうが",
+        "かたか"
+      ],
+      "explain_tr": "硬 コウ + 貨 カ; ゛ yok."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "確認",
+      "reading": "かくにん",
+      "meaning_tr": "kontrol, teyit",
+      "sentence": "作業の前には、必ず材料の量を[[確認]]しなければならない。",
+      "options": [
+        "かくにん",
+        "かくいん",
+        "かっにん",
+        "かくに"
+      ],
+      "explain_tr": "確 カク + 認 ニン."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "砂浜",
+      "reading": "すなはま",
+      "meaning_tr": "kumsal",
+      "sentence": "研修の場所は海の近くのホテルで、窓から[[砂浜]]が見えた。",
+      "options": [
+        "すなはま",
+        "すなばま",
+        "さひん",
+        "すなはん"
+      ],
+      "explain_tr": "Kun okunuş: 砂 すな + 浜 はま (゛ yok)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "研究",
+      "reading": "けんきゅう",
+      "meaning_tr": "araştırma",
+      "sentence": "会社は食品の[[けんきゅう]]をしていて、私は新しいお菓子を作る部署に入った。",
+      "options": [
+        "研究",
+        "研空",
+        "妍究",
+        "研求"
+      ],
+      "explain_tr": "研 (石) + 究 araştırmak; 空/求 tuzak."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "正確",
+      "reading": "せいかく",
+      "meaning_tr": "doğru, kesin",
+      "sentence": "最初の日、先輩は「[[せいかく]]に量ることが一番大切だ」と言った。",
+      "options": [
+        "正確",
+        "性格",
+        "正格",
+        "生確"
+      ],
+      "explain_tr": "性格 (karakter) de せいかく okunur; 'doğru ölçmek' → 正確."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "破れて",
+      "reading": "やぶれて",
+      "meaning_tr": "yırtılmış",
+      "sentence": "ある日、材料の袋が[[やぶれて]]いて、床に粉が落ちていた。",
+      "options": [
+        "破れて",
+        "敗れて",
+        "被れて",
+        "波れて"
+      ],
+      "explain_tr": "敗れる (yenilmek) de やぶれる; torba için 破れる."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "確かめた",
+      "reading": "たしかめた",
+      "meaning_tr": "kontrol ettim",
+      "sentence": "先輩に言われて、ほかの袋も一つずつ[[たしかめた]]。",
+      "options": [
+        "確かめた",
+        "碓かめた",
+        "硬かめた",
+        "確がめた"
+      ],
+      "explain_tr": "確 (石) kesin; 碓 benzer görünüş."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "宝石",
+      "reading": "ほうせき",
+      "meaning_tr": "mücevher",
+      "sentence": "売店では、小さな[[ほうせき]]のアクセサリーも売っていた。",
+      "options": [
+        "宝石",
+        "宝右",
+        "宝岩",
+        "宝砂"
+      ],
+      "explain_tr": "石 セキ taş; 右 çok benzer görünür."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "確か",
+      "reading": "たしか",
+      "meaning_tr": "yanılmıyorsam",
+      "sentence": "（　　）、来月にもう一度研修があると思う。",
+      "options": [
+        "確か",
+        "正確",
+        "確実",
+        "確認"
+      ],
+      "explain_tr": "Cümle başında 確か、… = sanırım/yanılmıyorsam."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "硬くて",
+      "reading": "かたくて",
+      "meaning_tr": "sert olup",
+      "sentence": "昼に出たパンは（　　）食べにくかったが、みんなで笑いながら食べた。",
+      "options": [
+        "硬くて",
+        "柔らかくて",
+        "正確で",
+        "新鮮で"
+      ],
+      "explain_tr": "食べにくい → 硬くて."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "破る",
+      "reading": "やぶる",
+      "meaning_tr": "bozmak, çiğnemek",
+      "sentence": "先輩は「約束の時間を（　　）人は信用されない」とよく言っていた。",
+      "options": [
+        "破る",
+        "守る",
+        "研ぐ",
+        "確かめる"
+      ],
+      "explain_tr": "約束を破る人は信用されない: sözünü tutmayan."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "確実",
+      "reading": "かくじつ",
+      "meaning_tr": "kesin",
+      "sentence": "新しい商品を（　　）に成功させるため、これからも勉強を続けたい。",
+      "options": [
+        "確実",
+        "硬貨",
+        "研究",
+        "砂浜"
+      ],
+      "explain_tr": "確実に成功させる: kesin olarak başarmak."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "石油",
+      "reading": "せきゆ",
+      "meaning_tr": "petrol",
+      "sentence": "最近は（　　）の値段が上がって、材料費も高くなっているそうだ。",
+      "options": [
+        "石油",
+        "宝石",
+        "砂糖",
+        "硬貨"
+      ],
+      "explain_tr": "石油の値段が上がる: petrol fiyatı artmak."
+    }
+  ]
+}

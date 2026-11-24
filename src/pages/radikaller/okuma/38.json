@@ -1,0 +1,234 @@
+{
+  "radicalId": 38,
+  "title": "近所の事件と子猫",
+  "title_tr": "Mahalledeki olay ve yavru kedi",
+  "text": "先週、私の住むマンションの近くで[[6|犯罪]]が起きた。夜、だれかが近所の家に入って、お金を盗んだそうだ。警察の話によると、[[15|犯行]]の時間は夜十時ごろだった。まだ[[1|犯人]]は見つかっていない。罪を[[14|犯した]]人には、早く捕まってほしい。マンションの管理人さんは、[[5|防犯]]カメラを増やすことにした。私は[[2|独身]]で一人暮らしなので、少し不安になった。部屋も廊下も[[7|狭い]]が、夜は鍵を二つかけるようにしている。夜道を[[11|独り]]で歩くのは危ないので、最近は早く帰っている。ある日、家に帰ると、ドアの前に小さな[[4|子猫]]がいた。近くの公園に住みついている[[13|野良猫]]の子どもらしい。昔から[[9|猫]]が大好きなので、思わず「かわいいね」と[[8|独り言]]を言った。その子猫は白と黒の[[3|独特]]な模様をしていた。兄は会社を辞めて[[12|独立]]したばかりで忙しいが、子猫の写真を送ったら喜んでくれた。私は日本語を[[10|独学]]で勉強しているので、猫の飼い方も日本語の本で調べてみた。",
+  "text_tr": "Geçen hafta oturduğum apartmanın yakınında bir suç işlendi. Gece biri komşu bir eve girip para çalmış. Polise göre suç saat on civarında işlenmiş. Suçlu henüz bulunmadı. Suç işleyen kişinin bir an önce yakalanmasını istiyorum. Apartman yöneticisi güvenlik kamerası sayısını artırmaya karar verdi. Bekârım ve yalnız yaşıyorum, o yüzden biraz tedirgin oldum. Odam da koridor da dar ama geceleri kapıyı iki kilitle kilitliyorum. Gece yolda yalnız yürümek tehlikeli olduğu için son zamanlarda eve erken dönüyorum. Bir gün eve dönünce kapının önünde küçük bir yavru kedi vardı. Yakındaki parkta yaşayan sokak kedisinin yavrusuymuş. Eskiden beri kedileri çok sevdiğim için istemeden \"Ne tatlısın\" diye kendi kendime konuştum. O yavrunun siyah beyaz kendine özgü bir deseni vardı. Ağabeyim şirketten ayrılıp kendi işini yeni kurduğu için meşgul ama yavrunun fotoğrafını gönderince sevindi. Japoncayı kendi kendime öğrendiğim için kedi bakımını da Japonca kitaplardan araştırdım.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "犯人",
+      "reading": "はんにん",
+      "meaning_tr": "suçlu",
+      "sentence": "まだ[[犯人]]は見つかっていない。",
+      "options": [
+        "はんにん",
+        "はんじん",
+        "ばんにん",
+        "はにん"
+      ],
+      "explain_tr": "犯 ハン + 人 ニン (ジン değil)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "独身",
+      "reading": "どくしん",
+      "meaning_tr": "bekâr",
+      "sentence": "私は[[独身]]で一人暮らしなので、少し不安になった。",
+      "options": [
+        "どくしん",
+        "とくしん",
+        "どくじん",
+        "どっしん"
+      ],
+      "explain_tr": "独 ドク (゛ alır) + 身 シン."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "独特",
+      "reading": "どくとく",
+      "meaning_tr": "kendine özgü",
+      "sentence": "その子猫は白と黒の[[独特]]な模様をしていた。",
+      "options": [
+        "どくとく",
+        "とくとく",
+        "どくどく",
+        "どっとく"
+      ],
+      "explain_tr": "独 ドク + 特 トク; ゛ sadece ilk hecede."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "子猫",
+      "reading": "こねこ",
+      "meaning_tr": "yavru kedi",
+      "sentence": "ある日、家に帰ると、ドアの前に小さな[[子猫]]がいた。",
+      "options": [
+        "こねこ",
+        "こびょう",
+        "しねこ",
+        "こねご"
+      ],
+      "explain_tr": "Kun: 子 こ + 猫 ねこ."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "防犯",
+      "reading": "ぼうはん",
+      "meaning_tr": "suç önleme, güvenlik",
+      "sentence": "マンションの管理人さんは、[[防犯]]カメラを増やすことにした。",
+      "options": [
+        "ぼうはん",
+        "ぼうばん",
+        "ぼはん",
+        "ほうはん"
+      ],
+      "explain_tr": "防 ボウ + 犯 ハン; ゛ ikinci hecede yok."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "犯罪",
+      "reading": "はんざい",
+      "meaning_tr": "suç",
+      "sentence": "先週、私の住むマンションの近くで[[はんざい]]が起きた。",
+      "options": [
+        "犯罪",
+        "犯在",
+        "氾罪",
+        "犯罰"
+      ],
+      "explain_tr": "犯 (犭) suç işlemek; 氾 (氵) benzer, 在 aynı ザイ."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "狭い",
+      "reading": "せまい",
+      "meaning_tr": "dar",
+      "sentence": "部屋も廊下も[[せまい]]が、夜は鍵を二つかけるようにしている。",
+      "options": [
+        "狭い",
+        "峡い",
+        "挟い",
+        "侠い"
+      ],
+      "explain_tr": "狭 (犭) dar; 峡/挟/侠 aynı sağ parçayı taşır."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "独り言",
+      "reading": "ひとりごと",
+      "meaning_tr": "kendi kendine konuşma",
+      "sentence": "昔から猫が大好きなので、思わず「かわいいね」と[[ひとりごと]]を言った。",
+      "options": [
+        "独り言",
+        "濁り言",
+        "独り語",
+        "触り言"
+      ],
+      "explain_tr": "独 (犭) tek; 濁/触 benzer sağ parça."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "猫",
+      "reading": "ねこ",
+      "meaning_tr": "kedi",
+      "sentence": "昔から[[ねこ]]が大好きなので、思わず「かわいいね」と独り言を言った。",
+      "options": [
+        "猫",
+        "描",
+        "錨",
+        "苗"
+      ],
+      "explain_tr": "猫 (犭) kedi; 描 (扌) çizmek, klasik tuzak."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "独学",
+      "reading": "どくがく",
+      "meaning_tr": "kendi kendine öğrenme",
+      "sentence": "私は日本語を[[どくがく]]で勉強しているので、猫の飼い方も日本語の本で調べてみた。",
+      "options": [
+        "独学",
+        "読学",
+        "毒学",
+        "独楽"
+      ],
+      "explain_tr": "独 ドク; 読/毒 aynı ドク, 独楽 = こま (topaç)."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "独り",
+      "reading": "ひとり",
+      "meaning_tr": "yalnız",
+      "sentence": "夜道を（　　）で歩くのは危ないので、最近は早く帰っている。",
+      "options": [
+        "独り",
+        "犯人",
+        "独身",
+        "独特"
+      ],
+      "explain_tr": "独りで歩く: tek başına yürümek."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "独立",
+      "reading": "どくりつ",
+      "meaning_tr": "bağımsızlık, kendi işini kurma",
+      "sentence": "兄は会社を辞めて（　　）したばかりで忙しいが、子猫の写真を送ったら喜んでくれた。",
+      "options": [
+        "独立",
+        "独身",
+        "犯罪",
+        "防犯"
+      ],
+      "explain_tr": "会社を辞めて独立する: kendi işini kurmak."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "野良猫",
+      "reading": "のらねこ",
+      "meaning_tr": "sokak kedisi",
+      "sentence": "近くの公園に住みついている（　　）の子どもらしい。",
+      "options": [
+        "野良猫",
+        "犯人",
+        "独学",
+        "防犯"
+      ],
+      "explain_tr": "公園に住みついている野良猫."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "犯した",
+      "reading": "おかした",
+      "meaning_tr": "işledi",
+      "sentence": "罪を（　　）人には、早く捕まってほしい。",
+      "options": [
+        "犯した",
+        "守った",
+        "直した",
+        "起こした"
+      ],
+      "explain_tr": "罪を犯す: suç işlemek."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "犯行",
+      "reading": "はんこう",
+      "meaning_tr": "suç eylemi",
+      "sentence": "警察の話によると、（　　）の時間は夜十時ごろだった。",
+      "options": [
+        "犯行",
+        "独身",
+        "防犯",
+        "野良猫"
+      ],
+      "explain_tr": "犯行の時間: suçun işlendiği saat."
+    }
+  ]
+}

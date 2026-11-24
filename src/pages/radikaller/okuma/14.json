@@ -1,0 +1,234 @@
+{
+  "radicalId": 14,
+  "title": "お金の使い方",
+  "title_tr": "Para nasıl harcanır",
+  "text": "[[1|金曜日]]の仕事の後、[[2|地下鉄]]で[[3|銀行]]に行きました。毎月、給料の一部を[[4|貯金]]しているからです。最近は電気やガスの[[5|料金]]も上がって、生活が大変です。銀行で新しいアプリに[[6|登録]]すると、使った[[7|お金]]を[[8|記録]]できるそうで、[[9|税金]]の支払いも簡単にできます。家に帰って[[10|鏡]]を見ると、疲れた顔をしていました。今年は「むだ使いをしない」という[[11|方針]]を決めました。好きなドラマは[[12|録画]]して、週末にまとめて見ることにしています。来年は[[13|鉄道]]で日本中を旅行するのが夢です。そのために、[[14|銀色]]の小さな貯金箱を買って、毎日百円ずつ入れています。[[15|鉛筆]]で目標金額を書いた紙も、壁にはりました。",
+  "text_tr": "Cuma günü işten sonra metroyla bankaya gittim. Çünkü her ay maaşımın bir kısmını biriktiriyorum. Son zamanlarda elektrik ve gaz ücretleri de arttı, geçinmek zor. Bankada yeni bir uygulamaya kaydolursanız harcadığınız parayı kaydedebiliyormuşsunuz ve vergi ödemesini de kolayca yapabiliyorsunuz. Eve dönüp aynaya bakınca yorgun bir yüz gördüm. Bu yıl \"boşa para harcamamak\" diye bir ilke belirledim. Sevdiğim dizileri kaydedip hafta sonu topluca izliyorum. Seneye trenle bütün Japonya'yı gezmek hayalim. Bunun için gümüş renkli küçük bir kumbara alıp her gün yüzer yen atıyorum. Hedef tutarı kurşun kalemle yazdığım kâğıdı da duvara astım.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "金曜日",
+      "reading": "きんようび",
+      "meaning_tr": "cuma",
+      "sentence": "[[金曜日]]の仕事の後、地下鉄で銀行に行きました。",
+      "options": [
+        "きんようび",
+        "きんよおび",
+        "こんようび",
+        "かねようび"
+      ],
+      "explain_tr": "金 キン + 曜 ヨウ + 日 ビ."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "地下鉄",
+      "reading": "ちかてつ",
+      "meaning_tr": "metro",
+      "sentence": "金曜日の仕事の後、[[地下鉄]]で銀行に行きました。",
+      "options": [
+        "ちかてつ",
+        "ちがてつ",
+        "じかてつ",
+        "ちかてち"
+      ],
+      "explain_tr": "地 チ + 下 カ + 鉄 テツ."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "銀行",
+      "reading": "ぎんこう",
+      "meaning_tr": "banka",
+      "sentence": "金曜日の仕事の後、地下鉄で[[銀行]]に行きました。",
+      "options": [
+        "ぎんこう",
+        "きんこう",
+        "ぎんぎょう",
+        "ぎんこ"
+      ],
+      "explain_tr": "銀 ギン + 行 コウ."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "貯金",
+      "reading": "ちょきん",
+      "meaning_tr": "para biriktirme",
+      "sentence": "毎月、給料の一部を[[貯金]]しているからです。",
+      "options": [
+        "ちょきん",
+        "ちょうきん",
+        "ちょごん",
+        "ちょかね"
+      ],
+      "explain_tr": "貯 チョ (kısa) + 金 キン."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "料金",
+      "reading": "りょうきん",
+      "meaning_tr": "ücret",
+      "sentence": "最近は電気やガスの[[料金]]も上がって、生活が大変です。",
+      "options": [
+        "りょうきん",
+        "りょきん",
+        "りょうごん",
+        "りょうかね"
+      ],
+      "explain_tr": "料 リョウ (uzun) + 金 キン."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "登録",
+      "reading": "とうろく",
+      "meaning_tr": "kayıt, üyelik",
+      "sentence": "銀行で新しいアプリに[[とうろく]]すると、使ったお金を記録できるそうで、税金の支払いも簡単にできます。",
+      "options": [
+        "登録",
+        "登緑",
+        "答録",
+        "登禄"
+      ],
+      "explain_tr": "録 (金) kaydetmek; 緑 (糸) yeşil."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "お金",
+      "reading": "おかね",
+      "meaning_tr": "para",
+      "sentence": "銀行で新しいアプリに登録すると、使った[[おかね]]を記録できるそうで、税金の支払いも簡単にできます。",
+      "options": [
+        "お金",
+        "お全",
+        "お今",
+        "お会"
+      ],
+      "explain_tr": "金 ile 全 çok benzer."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "記録",
+      "reading": "きろく",
+      "meaning_tr": "kayıt",
+      "sentence": "銀行で新しいアプリに登録すると、使ったお金を[[きろく]]できるそうで、税金の支払いも簡単にできます。",
+      "options": [
+        "記録",
+        "記緑",
+        "記禄",
+        "起録"
+      ],
+      "explain_tr": "録 (金); 緑 ve 禄 benzer görünür."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "税金",
+      "reading": "ぜいきん",
+      "meaning_tr": "vergi",
+      "sentence": "銀行で新しいアプリに登録すると、使ったお金を記録できるそうで、[[ぜいきん]]の支払いも簡単にできます。",
+      "options": [
+        "税金",
+        "説金",
+        "税全",
+        "脱金"
+      ],
+      "explain_tr": "税 (禾) vergi; 説/脱 aynı sağ parça."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "鏡",
+      "reading": "かがみ",
+      "meaning_tr": "ayna",
+      "sentence": "家に帰って[[かがみ]]を見ると、疲れた顔をしていました。",
+      "options": [
+        "鏡",
+        "境",
+        "鐘",
+        "競"
+      ],
+      "explain_tr": "鏡 (金) ayna; 境 sınır."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "方針",
+      "reading": "ほうしん",
+      "meaning_tr": "ilke, politika",
+      "sentence": "今年は「むだ使いをしない」という（　　）を決めました。",
+      "options": [
+        "方針",
+        "針金",
+        "方角",
+        "秒針"
+      ],
+      "explain_tr": "～という方針を決める: ilke belirlemek."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "録画",
+      "reading": "ろくが",
+      "meaning_tr": "video kaydı",
+      "sentence": "好きなドラマは（　　）して、週末にまとめて見ることにしています。",
+      "options": [
+        "録画",
+        "録音",
+        "登録",
+        "記録"
+      ],
+      "explain_tr": "Dizi (görüntü) → 録画; ses → 録音."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "鉄道",
+      "reading": "てつどう",
+      "meaning_tr": "demiryolu",
+      "sentence": "来年は（　　）で日本中を旅行するのが夢です。",
+      "options": [
+        "鉄道",
+        "地下鉄",
+        "鉄板",
+        "鉄棒"
+      ],
+      "explain_tr": "Japonya çapında → 鉄道 (metro değil)."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "銀色",
+      "reading": "ぎんいろ",
+      "meaning_tr": "gümüş rengi",
+      "sentence": "そのために、（　　）の小さな貯金箱を買って、毎日百円ずつ入れています。",
+      "options": [
+        "銀色",
+        "銀行",
+        "金曜",
+        "金額"
+      ],
+      "explain_tr": "銀色の貯金箱: gümüş renkli kumbara."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "鉛筆",
+      "reading": "えんぴつ",
+      "meaning_tr": "kurşun kalem",
+      "sentence": "（　　）で目標金額を書いた紙も、壁にはりました。",
+      "options": [
+        "鉛筆",
+        "鉄板",
+        "針金",
+        "税金"
+      ],
+      "explain_tr": "鉛筆で書く: kurşun kalemle yazmak."
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "radicalId": 34,
+  "title": "料理教室",
+  "title_tr": "Yemek kursu",
+  "text": "先月から、駅前の料理教室に通い始めた。この教室は[[4|初心者]]向けで、[[5|評判]]がとてもいい。インターネットで申し込むと二割の[[1|割引]]があって、[[10|便利]]だ。生徒の中で男性の[[11|割合]]は三割ぐらいだそうだ。会社に新しい休暇の[[12|制度]]ができたので、平日の夜にも通えるようになった。初めての日は電車が遅れて、教室への[[3|到着]]が遅くなってしまった。[[6|遅刻]]したのに、先生は[[8|親切]]に説明してくれた。それからは、出かける前に電車の発車[[13|時刻]]を調べるようにしている。先生は「塩と砂糖をきちんと[[7|区別]]して、量は自分で[[9|判断]]しないでください」と言った。教室の近くにはいつも[[2|行列]]ができるパン屋があって、帰りによく寄る。[[15|最初]]は難しかったが、だんだん慣れてきた。先生にもらったレシピは、今では私の[[14|大切]]な宝物だ。",
+  "text_tr": "Geçen aydan beri istasyon önündeki yemek kursuna gitmeye başladım. Bu kurs yeni başlayanlara yönelik ve ünü çok iyi. İnternetten başvurunca yüzde yirmi indirim var, kullanışlı. Öğrenciler arasında erkeklerin oranı yüzde otuz kadarmış. Şirkette yeni bir izin sistemi çıktığı için hafta içi akşamları da gidebilir oldum. İlk gün tren gecikti ve kursa varışım geç oldu. Geç kalmama rağmen öğretmen nazikçe anlattı. O zamandan beri çıkmadan önce trenin kalkış saatine bakıyorum. Öğretmen \"Tuzla şekeri iyice ayırt edin ve miktara kendi başınıza karar vermeyin\" dedi. Kursun yakınında hep kuyruk olan bir fırın var, dönüşte sık sık uğrarım. İlk başta zordu ama yavaş yavaş alıştım. Öğretmenden aldığım tarifler şimdi benim için değerli bir hazine.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "割引",
+      "reading": "わりびき",
+      "meaning_tr": "indirim",
+      "sentence": "インターネットで申し込むと二割の[[割引]]があって、便利だ。",
+      "options": [
+        "わりびき",
+        "わりいん",
+        "かつびき",
+        "わりひき"
+      ],
+      "explain_tr": "Kun: 割 わり + 引 びき (゛ alır)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "行列",
+      "reading": "ぎょうれつ",
+      "meaning_tr": "kuyruk, sıra",
+      "sentence": "教室の近くにはいつも[[行列]]ができるパン屋があって、帰りによく寄る。",
+      "options": [
+        "ぎょうれつ",
+        "こうれつ",
+        "ぎょれつ",
+        "ぎょうれい"
+      ],
+      "explain_tr": "行 burada ギョウ + 列 レツ."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "到着",
+      "reading": "とうちゃく",
+      "meaning_tr": "varış",
+      "sentence": "初めての日は電車が遅れて、教室への[[到着]]が遅くなってしまった。",
+      "options": [
+        "とうちゃく",
+        "とちゃく",
+        "とうちゃっく",
+        "どうちゃく"
+      ],
+      "explain_tr": "到 トウ (uzun) + 着 チャク."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "初心者",
+      "reading": "しょしんしゃ",
+      "meaning_tr": "yeni başlayan",
+      "sentence": "この教室は[[初心者]]向けで、評判がとてもいい。",
+      "options": [
+        "しょしんしゃ",
+        "しょうしんしゃ",
+        "はつしんしゃ",
+        "しょしんじゃ"
+      ],
+      "explain_tr": "初 ショ (kısa) + 心 シン + 者 シャ."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "評判",
+      "reading": "ひょうばん",
+      "meaning_tr": "ün, şöhret",
+      "sentence": "この教室は初心者向けで、[[評判]]がとてもいい。",
+      "options": [
+        "ひょうばん",
+        "ひょうはん",
+        "ひょばん",
+        "へいばん"
+      ],
+      "explain_tr": "評 ヒョウ + 判 バン (burada ゛)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "遅刻",
+      "reading": "ちこく",
+      "meaning_tr": "geç kalma",
+      "sentence": "[[ちこく]]したのに、先生は親切に説明してくれた。",
+      "options": [
+        "遅刻",
+        "遅核",
+        "遅亥",
+        "遅刺"
+      ],
+      "explain_tr": "刻 (刂) oymak/zaman; 核 aynı カク değil ama benzer görünür; 刺 çok benzer."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "区別",
+      "reading": "くべつ",
+      "meaning_tr": "ayırt etme",
+      "sentence": "先生は「塩と砂糖をきちんと[[くべつ]]して、量は自分で判断しないでください」と言った。",
+      "options": [
+        "区別",
+        "区列",
+        "区刷",
+        "区則"
+      ],
+      "explain_tr": "別 ベツ ayrı; 列/刷/則 hepsi 刂'li."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "親切",
+      "reading": "しんせつ",
+      "meaning_tr": "nazik",
+      "sentence": "遅刻したのに、先生は[[しんせつ]]に説明してくれた。",
+      "options": [
+        "親切",
+        "新切",
+        "親設",
+        "親接"
+      ],
+      "explain_tr": "親 + 切 セツ; 新 aynı シン, 設/接 aynı セツ."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "判断",
+      "reading": "はんだん",
+      "meaning_tr": "karar, yargı",
+      "sentence": "先生は「塩と砂糖をきちんと区別して、量は自分で[[はんだん]]しないでください」と言った。",
+      "options": [
+        "判断",
+        "半断",
+        "判段",
+        "伴断"
+      ],
+      "explain_tr": "判 (刂) yargı; 半/伴 aynı ハン."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "便利",
+      "reading": "べんり",
+      "meaning_tr": "kullanışlı",
+      "sentence": "インターネットで申し込むと二割の割引があって、[[べんり]]だ。",
+      "options": [
+        "便利",
+        "便理",
+        "使利",
+        "便科"
+      ],
+      "explain_tr": "利 (刂) fayda; 理 aynı リ, 使 benzer görünüş."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "割合",
+      "reading": "わりあい",
+      "meaning_tr": "oran",
+      "sentence": "生徒の中で男性の（　　）は三割ぐらいだそうだ。",
+      "options": [
+        "割合",
+        "割引",
+        "区別",
+        "行列"
+      ],
+      "explain_tr": "男性の割合は三割: erkeklerin oranı."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "制度",
+      "reading": "せいど",
+      "meaning_tr": "sistem",
+      "sentence": "会社に新しい休暇の（　　）ができたので、平日の夜にも通えるようになった。",
+      "options": [
+        "制度",
+        "判断",
+        "時刻",
+        "特別"
+      ],
+      "explain_tr": "休暇の制度: izin sistemi."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "時刻",
+      "reading": "じこく",
+      "meaning_tr": "saat (belirli an)",
+      "sentence": "それからは、出かける前に電車の発車（　　）を調べるようにしている。",
+      "options": [
+        "時刻",
+        "遅刻",
+        "到着",
+        "行列"
+      ],
+      "explain_tr": "発車時刻: kalkış saati."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "大切",
+      "reading": "たいせつ",
+      "meaning_tr": "değerli, önemli",
+      "sentence": "先生にもらったレシピは、今では私の（　　）な宝物だ。",
+      "options": [
+        "大切",
+        "親切",
+        "便利",
+        "評判"
+      ],
+      "explain_tr": "私の大切な宝物: değerli hazinem."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "最初",
+      "reading": "さいしょ",
+      "meaning_tr": "ilk başta",
+      "sentence": "（　　）は難しかったが、だんだん慣れてきた。",
+      "options": [
+        "最初",
+        "最後",
+        "特別",
+        "到着"
+      ],
+      "explain_tr": "最初は難しかったが、だんだん慣れた."
+    }
+  ]
+}

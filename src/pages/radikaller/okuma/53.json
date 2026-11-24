@@ -1,0 +1,234 @@
+{
+  "radicalId": 53,
+  "title": "日本の豆の食べ物",
+  "title_tr": "Japonya'nın fasulye yiyecekleri",
+  "text": "日本の食事には、[[5|大豆]]から作られたものがたくさんあります。たとえば、朝ご飯によく食べる[[1|納豆]]や、みそ汁に入れる[[6|豆腐]]がそうです。最近は、牛乳のかわりに[[4|豆乳]]を飲む人も増えています。夏には、ビールと一緒に[[3|枝豆]]を食べるのが人気です。また、[[2|小豆]]は甘いあんこになり、和菓子に使われます。お正月には[[8|黒豆]]を食べ、二月の節分には「鬼は外」と言いながら[[11|豆まき]]をします。祖母はよく、しょうゆと砂糖で[[13|煮豆]]を作ってくれました。祖母の住む村は自然が[[9|豊か]]で、毎年秋には[[14|豊作]]を祝うお祭りがあります。村の畑では、[[7|豆]]のほかにも、野菜の種類が[[10|豊富]]です。祖母に聞いた[[12|豆知識]]によると、[[15|豆類]]には体にいいたんぱく質が多いそうです。",
+  "text_tr": "Japon yemeklerinde soya fasulyesinden yapılan pek çok şey var. Örneğin kahvaltıda sık yenen natto ve miso çorbasına konan tofu öyle. Son zamanlarda süt yerine soya sütü içenler de artıyor. Yazın birayla birlikte edamame yemek popüler. Ayrıca azuki fasulyesi tatlı anko olup Japon tatlılarında kullanılıyor. Yılbaşında kara fasulye yenir, şubattaki Setsubun'da da \"Şeytan dışarı\" diyerek fasulye atılır. Babaannem sık sık soya sosu ve şekerle haşlanmış fasulye yapardı. Babaannemin yaşadığı köyün doğası zengin ve her sonbahar bol hasadı kutlayan bir festival oluyor. Köyün tarlalarında fasulyenin yanı sıra sebze çeşidi de bol. Babaannemden duyduğum küçük bir bilgiye göre baklagillerde vücuda iyi gelen protein çokmuş.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "納豆",
+      "reading": "なっとう",
+      "meaning_tr": "natto",
+      "sentence": "たとえば、朝ご飯によく食べる[[納豆]]や、みそ汁に入れる豆腐がそうです。",
+      "options": [
+        "なっとう",
+        "のうとう",
+        "なっと",
+        "なとう"
+      ],
+      "explain_tr": "納 ナッ + 豆 トウ."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "小豆",
+      "reading": "あずき",
+      "meaning_tr": "azuki fasulyesi",
+      "sentence": "また、[[小豆]]は甘いあんこになり、和菓子に使われます。",
+      "options": [
+        "あずき",
+        "しょうず",
+        "こまめ",
+        "しょうとう"
+      ],
+      "explain_tr": "Özel okunuş (jukujikun): あずき."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "枝豆",
+      "reading": "えだまめ",
+      "meaning_tr": "edamame",
+      "sentence": "夏には、ビールと一緒に[[枝豆]]を食べるのが人気です。",
+      "options": [
+        "えだまめ",
+        "えだず",
+        "しとう",
+        "えだとう"
+      ],
+      "explain_tr": "枝 えだ + 豆 まめ (kun + kun)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "豆乳",
+      "reading": "とうにゅう",
+      "meaning_tr": "soya sütü",
+      "sentence": "最近は、牛乳のかわりに[[豆乳]]を飲む人も増えています。",
+      "options": [
+        "とうにゅう",
+        "まめにゅう",
+        "ずにゅう",
+        "とうにゅ"
+      ],
+      "explain_tr": "豆 トウ + 乳 ニュウ."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "大豆",
+      "reading": "だいず",
+      "meaning_tr": "soya fasulyesi",
+      "sentence": "日本の食事には、[[大豆]]から作られたものがたくさんあります。",
+      "options": [
+        "だいず",
+        "だいとう",
+        "おおまめ",
+        "たいず"
+      ],
+      "explain_tr": "Burada 豆 = ズ."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "豆腐",
+      "reading": "とうふ",
+      "meaning_tr": "tofu",
+      "sentence": "たとえば、朝ご飯によく食べる納豆や、みそ汁に入れる[[とうふ]]がそうです。",
+      "options": [
+        "豆腐",
+        "豆府",
+        "頭腐",
+        "豆附"
+      ],
+      "explain_tr": "腐 フ 'çürümek/mayalanmak'; 府 aynı ses."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "豆",
+      "reading": "まめ",
+      "meaning_tr": "fasulye",
+      "sentence": "村の畑では、[[まめ]]のほかにも、野菜の種類が豊富です。",
+      "options": [
+        "豆",
+        "立",
+        "互",
+        "亘"
+      ],
+      "explain_tr": "豆 = kapaklı kap şekli."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "黒豆",
+      "reading": "くろまめ",
+      "meaning_tr": "kara fasulye",
+      "sentence": "お正月には[[くろまめ]]を食べ、二月の節分には「鬼は外」と言いながら豆まきをします。",
+      "options": [
+        "黒豆",
+        "里豆",
+        "墨豆",
+        "黒頭"
+      ],
+      "explain_tr": "黒 くろ; 里 benzer."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "豊か",
+      "reading": "ゆたか",
+      "meaning_tr": "zengin, bol",
+      "sentence": "祖母の住む村は自然が[[ゆたか]]で、毎年秋には豊作を祝うお祭りがあります。",
+      "options": [
+        "豊か",
+        "農か",
+        "曲か",
+        "登か"
+      ],
+      "explain_tr": "豊 (豆 radikali) = 曲 + 豆."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "豊富",
+      "reading": "ほうふ",
+      "meaning_tr": "bol, zengin",
+      "sentence": "村の畑では、豆のほかにも、野菜の種類が[[ほうふ]]です。",
+      "options": [
+        "豊富",
+        "豊冨",
+        "農富",
+        "豊福"
+      ],
+      "explain_tr": "豊 ホウ + 富 フ."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "豆まき",
+      "reading": "まめまき",
+      "meaning_tr": "fasulye atma (Setsubun)",
+      "sentence": "お正月には黒豆を食べ、二月の節分には「鬼は外」と言いながら（　　）をします。",
+      "options": [
+        "豆まき",
+        "豆乳",
+        "豆腐",
+        "豆知識"
+      ],
+      "explain_tr": "節分 = 豆まき."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "豆知識",
+      "reading": "まめちしき",
+      "meaning_tr": "küçük ilginç bilgi",
+      "sentence": "祖母に聞いた（　　）によると、豆類には体にいいたんぱく質が多いそうです。",
+      "options": [
+        "豆知識",
+        "豆まき",
+        "豊作",
+        "豆乳"
+      ],
+      "explain_tr": "豆～ = küçük; 豆知識."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "煮豆",
+      "reading": "にまめ",
+      "meaning_tr": "haşlanmış tatlı fasulye",
+      "sentence": "祖母はよく、しょうゆと砂糖で（　　）を作ってくれました。",
+      "options": [
+        "煮豆",
+        "豆乳",
+        "納豆",
+        "枝豆"
+      ],
+      "explain_tr": "煮る + 豆."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "豊作",
+      "reading": "ほうさく",
+      "meaning_tr": "bol hasat",
+      "sentence": "祖母の住む村は自然が豊かで、毎年秋には（　　）を祝うお祭りがあります。",
+      "options": [
+        "豊作",
+        "豊富",
+        "豆類",
+        "大豆"
+      ],
+      "explain_tr": "豊作を祝う = bol hasadı kutlamak."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "豆類",
+      "reading": "まめるい",
+      "meaning_tr": "baklagiller",
+      "sentence": "祖母に聞いた豆知識によると、（　　）には体にいいたんぱく質が多いそうです。",
+      "options": [
+        "豆類",
+        "豆まき",
+        "豊作",
+        "豆知識"
+      ],
+      "explain_tr": "豆 + 類 'tür'."
+    }
+  ]
+}

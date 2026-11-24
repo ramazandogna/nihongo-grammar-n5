@@ -1,0 +1,234 @@
+{
+  "radicalId": 8,
+  "title": "山登り",
+  "title_tr": "Dağ yürüyüşü",
+  "text": "[[1|昨日]]は[[2|晴天]]だったので、友達と山に登りました。九月なのに[[3|残暑]]が厳しく、たくさん汗をかきました。頂上から見た[[4|景色]]は、[[5|映画]]の一場面のようでした。帰り道、友達は[[6|最近]]、仕事で[[7|貿易]]を担当していると話しました。[[8|景気]]が悪くて、仕事は[[9|容易]]ではないそうです。[[10|最初]]は大変だったけれど、今は慣れたと言っていました。私は子どものころ、祖母から[[11|昔話]]を聞くのが好きでした。祖母の話は何度も聞いたので、[[12|暗記]]してしまったほどです。友達は趣味で[[13|作曲]]をしていて、その日の気持ちを曲に[[14|反映]]させたいと言いました。山道を[[15|曲がる]]たびに新しい景色が見えて、本当に楽しい一日でした。",
+  "text_tr": "Dün hava açık olduğu için arkadaşımla dağa tırmandık. Eylül olmasına rağmen yaz sonu sıcağı çok sertti ve bolca terledik. Zirveden görülen manzara bir filmden sahne gibiydi. Dönüş yolunda arkadaşım son zamanlarda işte dış ticaretten sorumlu olduğunu anlattı. Ekonomi kötü olduğu için işi kolay değilmiş. Başta zor olsa da şimdi alıştığını söyledi. Ben çocukken büyükannemden masal dinlemeyi severdim. Büyükannemin hikâyelerini o kadar çok dinledim ki ezberlemiştim. Arkadaşım hobi olarak beste yapıyor ve o günkü duygularını şarkıya yansıtmak istediğini söyledi. Dağ yolunda her dönemeçte yeni bir manzara görünüyordu; gerçekten keyifli bir gündü.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "昨日",
+      "reading": "きのう",
+      "meaning_tr": "dün",
+      "sentence": "[[昨日]]は晴天だったので、友達と山に登りました。",
+      "options": [
+        "きのう",
+        "きょう",
+        "きのお",
+        "さくひ"
+      ],
+      "explain_tr": "Özel okunuş (熟字訓): 昨日 = きのう (resmî: さくじつ)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "晴天",
+      "reading": "せいてん",
+      "meaning_tr": "açık hava",
+      "sentence": "昨日は[[晴天]]だったので、友達と山に登りました。",
+      "options": [
+        "せいてん",
+        "はれてん",
+        "せいでん",
+        "しょうてん"
+      ],
+      "explain_tr": "晴 セイ + 天 テン; ゛ yok."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "残暑",
+      "reading": "ざんしょ",
+      "meaning_tr": "yaz sonu sıcağı",
+      "sentence": "九月なのに[[残暑]]が厳しく、たくさん汗をかきました。",
+      "options": [
+        "ざんしょ",
+        "ざんしょう",
+        "さんしょ",
+        "ざんじょ"
+      ],
+      "explain_tr": "残 ザン + 暑 ショ (kısa)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "景色",
+      "reading": "けしき",
+      "meaning_tr": "manzara",
+      "sentence": "頂上から見た[[景色]]は、映画の一場面のようでした。",
+      "options": [
+        "けしき",
+        "けいしょく",
+        "けいしき",
+        "けしょく"
+      ],
+      "explain_tr": "Özel okunuş: けしき (けいしき değil)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "映画",
+      "reading": "えいが",
+      "meaning_tr": "film",
+      "sentence": "頂上から見た景色は、[[映画]]の一場面のようでした。",
+      "options": [
+        "えいが",
+        "えが",
+        "えいかく",
+        "えいかい"
+      ],
+      "explain_tr": "映 エイ + 画 ガ."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "最近",
+      "reading": "さいきん",
+      "meaning_tr": "son zamanlarda",
+      "sentence": "帰り道、友達は[[さいきん]]、仕事で貿易を担当していると話しました。",
+      "options": [
+        "最近",
+        "最今",
+        "細近",
+        "再近"
+      ],
+      "explain_tr": "最 (日) en + 近 yakın."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "貿易",
+      "reading": "ぼうえき",
+      "meaning_tr": "dış ticaret",
+      "sentence": "帰り道、友達は最近、仕事で[[ぼうえき]]を担当していると話しました。",
+      "options": [
+        "貿易",
+        "貿益",
+        "賀易",
+        "防易"
+      ],
+      "explain_tr": "易 (日) değişim; 益 kâr."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "景気",
+      "reading": "けいき",
+      "meaning_tr": "ekonomik durum",
+      "sentence": "[[けいき]]が悪くて、仕事は容易ではないそうです。",
+      "options": [
+        "景気",
+        "景機",
+        "京気",
+        "計気"
+      ],
+      "explain_tr": "景 (日) + 気."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "容易",
+      "reading": "ようい",
+      "meaning_tr": "kolay",
+      "sentence": "景気が悪くて、仕事は[[ようい]]ではないそうです。",
+      "options": [
+        "容易",
+        "用意",
+        "容意",
+        "溶易"
+      ],
+      "explain_tr": "用意 (hazırlık) da ようい okunur."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "最初",
+      "reading": "さいしょ",
+      "meaning_tr": "ilk, başta",
+      "sentence": "[[さいしょ]]は大変だったけれど、今は慣れたと言っていました。",
+      "options": [
+        "最初",
+        "最所",
+        "催初",
+        "最書"
+      ],
+      "explain_tr": "初 = ilk; 所 ve 書 aynı sesli tuzak."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "昔話",
+      "reading": "むかしばなし",
+      "meaning_tr": "masal",
+      "sentence": "私は子どものころ、祖母から（　　）を聞くのが好きでした。",
+      "options": [
+        "昔話",
+        "電話",
+        "昔日",
+        "話題"
+      ],
+      "explain_tr": "祖母から昔話を聞く: büyükanneden masal dinlemek."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "暗記",
+      "reading": "あんき",
+      "meaning_tr": "ezber",
+      "sentence": "祖母の話は何度も聞いたので、（　　）してしまったほどです。",
+      "options": [
+        "暗記",
+        "暗算",
+        "記入",
+        "暗号"
+      ],
+      "explain_tr": "何度も聞いて暗記する: ezberlemek."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "作曲",
+      "reading": "さっきょく",
+      "meaning_tr": "beste",
+      "sentence": "友達は趣味で（　　）をしていて、その日の気持ちを曲に反映させたいと言いました。",
+      "options": [
+        "作曲",
+        "作品",
+        "曲線",
+        "名曲"
+      ],
+      "explain_tr": "作曲をする: beste yapmak."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "反映",
+      "reading": "はんえい",
+      "meaning_tr": "yansıtma",
+      "sentence": "友達は趣味で作曲をしていて、その日の気持ちを曲に（　　）させたいと言いました。",
+      "options": [
+        "反映",
+        "映画",
+        "上映",
+        "反省"
+      ],
+      "explain_tr": "気持ちを曲に反映させる: duyguyu şarkıya yansıtmak."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "曲がる",
+      "reading": "まがる",
+      "meaning_tr": "dönmek, kıvrılmak",
+      "sentence": "山道を（　　）たびに新しい景色が見えて、本当に楽しい一日でした。",
+      "options": [
+        "曲がる",
+        "曲げる",
+        "晴れる",
+        "映る"
+      ],
+      "explain_tr": "道を曲がる (geçişsiz); 曲げる bükmek (geçişli)."
+    }
+  ]
+}

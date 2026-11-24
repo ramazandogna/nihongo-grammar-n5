@@ -1,0 +1,234 @@
+{
+  "radicalId": 13,
+  "title": "社会人一年目",
+  "title_tr": "İş hayatında ilk yıl",
+  "text": "大学で[[1|経済]]を勉強した後、東京の会社に就職しました。最初の[[2|給料]]で両親にプレゼントを買って、[[3|手紙]]を添えて送りました。仕事では、新しい[[4|経験]]が毎日のようにあります。先輩が取引先に私を[[5|紹介]]してくれて、[[6|一緒]]に仕事をすることになりました。来月の出張のために、ホテルの[[7|予約]]やビザの[[8|手続き]]をしました。出張の[[9|詳細]]は、後でメールで[[10|連絡]]すると言われました。残業で[[11|終電]]に間に合わない日もありますが、チームの[[12|団結]]のおかげでがんばれます。週末は英語の[[13|練習]]をしていて、テレビの英語[[14|番組]]もよく見ます。ただ、忙しくて友達と会う[[15|約束]]をなかなか守れないのが悩みです。",
+  "text_tr": "Üniversitede ekonomi okuduktan sonra Tokyo'da bir şirkete girdim. İlk maaşımla anne babama hediye alıp yanına bir mektup ekleyerek gönderdim. İşte neredeyse her gün yeni deneyimler yaşıyorum. Kıdemli bir meslektaşım beni bir müşteriye tanıttı ve birlikte çalışmaya başladık. Gelecek ayki iş seyahati için otel rezervasyonu ve vize işlemlerini yaptım. Seyahatin ayrıntılarını sonra e-postayla bildireceklerini söylediler. Fazla mesai yüzünden son trene yetişemediğim günler de oluyor ama ekibin birliği sayesinde dayanabiliyorum. Hafta sonları İngilizce alıştırma yapıyorum ve televizyondaki İngilizce programları da sık izliyorum. Yalnız, yoğunluktan arkadaşlarla buluşma sözlerimi pek tutamamak beni üzüyor.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "経済",
+      "reading": "けいざい",
+      "meaning_tr": "ekonomi",
+      "sentence": "大学で[[経済]]を勉強した後、東京の会社に就職しました。",
+      "options": [
+        "けいざい",
+        "けいさい",
+        "きょうざい",
+        "けいせい"
+      ],
+      "explain_tr": "経 ケイ + 済 ザイ (゛)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "給料",
+      "reading": "きゅうりょう",
+      "meaning_tr": "maaş",
+      "sentence": "最初の[[給料]]で両親にプレゼントを買って、手紙を添えて送りました。",
+      "options": [
+        "きゅうりょう",
+        "きゅうりょ",
+        "きゅりょう",
+        "きゅうりょく"
+      ],
+      "explain_tr": "給 キュウ + 料 リョウ; ikisi de uzun."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "手紙",
+      "reading": "てがみ",
+      "meaning_tr": "mektup",
+      "sentence": "最初の給料で両親にプレゼントを買って、[[手紙]]を添えて送りました。",
+      "options": [
+        "てがみ",
+        "てかみ",
+        "しゅし",
+        "てし"
+      ],
+      "explain_tr": "手 て + 紙 かみ → がみ (ses yumuşaması)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "経験",
+      "reading": "けいけん",
+      "meaning_tr": "deneyim",
+      "sentence": "仕事では、新しい[[経験]]が毎日のようにあります。",
+      "options": [
+        "けいけん",
+        "けいげん",
+        "きょうけん",
+        "けけん"
+      ],
+      "explain_tr": "経 ケイ + 験 ケン."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "紹介",
+      "reading": "しょうかい",
+      "meaning_tr": "tanıtma",
+      "sentence": "先輩が取引先に私を[[紹介]]してくれて、一緒に仕事をすることになりました。",
+      "options": [
+        "しょうかい",
+        "しょかい",
+        "しょうがい",
+        "じょうかい"
+      ],
+      "explain_tr": "紹 ショウ (uzun) + 介 カイ; 障害 (しょうがい) tuzağı."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "一緒",
+      "reading": "いっしょ",
+      "meaning_tr": "birlikte",
+      "sentence": "先輩が取引先に私を紹介してくれて、[[いっしょ]]に仕事をすることになりました。",
+      "options": [
+        "一緒",
+        "一諸",
+        "一署",
+        "一処"
+      ],
+      "explain_tr": "緒 (糸); 諸 (言) çok benzer."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "予約",
+      "reading": "よやく",
+      "meaning_tr": "rezervasyon",
+      "sentence": "来月の出張のために、ホテルの[[よやく]]やビザの手続きをしました。",
+      "options": [
+        "予約",
+        "予訳",
+        "予役",
+        "余約"
+      ],
+      "explain_tr": "約 (糸) söz; 訳 çeviri."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "手続き",
+      "reading": "てつづき",
+      "meaning_tr": "işlem, prosedür",
+      "sentence": "来月の出張のために、ホテルの予約やビザの[[てつづき]]をしました。",
+      "options": [
+        "手続き",
+        "手統き",
+        "手読き",
+        "手継き"
+      ],
+      "explain_tr": "続 (糸) devam; 統/読 benzer."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "詳細",
+      "reading": "しょうさい",
+      "meaning_tr": "ayrıntı",
+      "sentence": "出張の[[しょうさい]]は、後でメールで連絡すると言われました。",
+      "options": [
+        "詳細",
+        "詳紬",
+        "洋細",
+        "詳彩"
+      ],
+      "explain_tr": "細 (糸 + 田); 紬 (糸 + 由)."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "連絡",
+      "reading": "れんらく",
+      "meaning_tr": "haber verme",
+      "sentence": "出張の詳細は、後でメールで[[れんらく]]すると言われました。",
+      "options": [
+        "連絡",
+        "連落",
+        "練絡",
+        "連格"
+      ],
+      "explain_tr": "絡 (糸) bağlantı; 落 düşmek."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "終電",
+      "reading": "しゅうでん",
+      "meaning_tr": "son tren",
+      "sentence": "残業で（　　）に間に合わない日もありますが、チームの団結のおかげでがんばれます。",
+      "options": [
+        "終電",
+        "終点",
+        "最終",
+        "電車"
+      ],
+      "explain_tr": "終電に間に合う: son trene yetişmek."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "団結",
+      "reading": "だんけつ",
+      "meaning_tr": "birlik",
+      "sentence": "残業で終電に間に合わない日もありますが、チームの（　　）のおかげでがんばれます。",
+      "options": [
+        "団結",
+        "結果",
+        "結論",
+        "結婚"
+      ],
+      "explain_tr": "チームの団結: ekip birliği."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "練習",
+      "reading": "れんしゅう",
+      "meaning_tr": "alıştırma",
+      "sentence": "週末は英語の（　　）をしていて、テレビの英語番組もよく見ます。",
+      "options": [
+        "練習",
+        "訓練",
+        "習慣",
+        "練乳"
+      ],
+      "explain_tr": "Dil için 練習; 訓練 askerî/mesleki eğitim."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "番組",
+      "reading": "ばんぐみ",
+      "meaning_tr": "TV programı",
+      "sentence": "週末は英語の練習をしていて、テレビの英語（　　）もよく見ます。",
+      "options": [
+        "番組",
+        "組合",
+        "番号",
+        "組織"
+      ],
+      "explain_tr": "テレビ番組: televizyon programı."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "約束",
+      "reading": "やくそく",
+      "meaning_tr": "söz, randevu",
+      "sentence": "ただ、忙しくて友達と会う（　　）をなかなか守れないのが悩みです。",
+      "options": [
+        "約束",
+        "予約",
+        "節約",
+        "要約"
+      ],
+      "explain_tr": "約束を守る: sözünü tutmak."
+    }
+  ]
+}

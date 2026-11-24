@@ -1,0 +1,234 @@
+{
+  "radicalId": 47,
+  "title": "夏祭りの担当",
+  "title_tr": "Yaz festivali sorumlusu",
+  "text": "私は会社でイベントの[[1|担当]]をしています。先月の夏祭りでは、[[2|当日]]の朝から準備が大変でした。お昼は会場の[[5|日当たり]]のいい場所で、みんなで[[6|弁当]]を食べました。今年は参加者が去年より[[3|相当]]多くて、[[7|本当]]に忙しかったです。ゴミの[[8|当番]]だった私は、一日中会場を歩き回りました。途中で子どもが転んでけがをしたので、すぐに[[4|手当て]]をしました。部長は「十年前に始めた[[9|当時]]は、客が百人もいなかった」と話していました。夕方には抽選会があり、私の同僚が一等に[[10|当選]]しました。イベントが成功したのは、みんなが協力したから[[11|当然]]の結果だと思います。ただ、ゴミ箱の数を[[12|適当]]に決めてしまい、足りなくなりました。来年はいくつ必要なのか、まだ[[13|見当]]がつきません。天気予報が[[14|当たって]]、最後まで雨が降らなかったのは幸運でした。来年は、クイズの答えを[[15|当てた]]人に景品をあげる企画を考えています。",
+  "text_tr": "Şirkette etkinliklerden sorumluyum. Geçen ayki yaz festivalinde o günün sabahından itibaren hazırlık zordu. Öğlen alanın güneş alan bir yerinde hep birlikte bento yedik. Bu yıl katılımcı geçen yıldan epey fazlaydı, gerçekten çok yoğunduk. Çöp nöbetçisi olan ben bütün gün alanı dolaştım. Arada bir çocuk düşüp yaralandı, hemen ilk yardım yaptım. Müdür \"On yıl önce başladığımız zamanlar yüz kişi bile gelmezdi\" dedi. Akşamüstü çekiliş vardı ve bir iş arkadaşım birincilik kazandı. Etkinliğin başarılı olması herkes iş birliği yaptığı için doğal bir sonuç bence. Yalnız çöp kutusu sayısını gelişigüzel belirlediğim için yetmedi. Seneye kaç tane gerektiğini hâlâ kestiremiyorum. Hava tahmini tuttu ve sonuna kadar yağmur yağmaması şanstı. Seneye bilmecenin cevabını bilene hediye veren bir etkinlik düşünüyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "担当",
+      "reading": "たんとう",
+      "meaning_tr": "sorumlu",
+      "sentence": "私は会社でイベントの[[担当]]をしています。",
+      "options": [
+        "たんとう",
+        "だんとう",
+        "たんどう",
+        "たんとお"
+      ],
+      "explain_tr": "担 タン + 当 トウ; ゛ yok."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "当日",
+      "reading": "とうじつ",
+      "meaning_tr": "o gün",
+      "sentence": "先月の夏祭りでは、[[当日]]の朝から準備が大変でした。",
+      "options": [
+        "とうじつ",
+        "とうにち",
+        "とうひ",
+        "あたりび"
+      ],
+      "explain_tr": "当日 özel okunuş: じつ."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "相当",
+      "reading": "そうとう",
+      "meaning_tr": "epey",
+      "sentence": "今年は参加者が去年より[[相当]]多くて、本当に忙しかったです。",
+      "options": [
+        "そうとう",
+        "そうどう",
+        "しょうとう",
+        "あいとう"
+      ],
+      "explain_tr": "相 ソウ + 当 トウ."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "手当て",
+      "reading": "てあて",
+      "meaning_tr": "ilk yardım, tedavi",
+      "sentence": "途中で子どもが転んでけがをしたので、すぐに[[手当て]]をしました。",
+      "options": [
+        "てあて",
+        "てとう",
+        "しゅとう",
+        "てあって"
+      ],
+      "explain_tr": "Kun + kun: て + あて."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "日当たり",
+      "reading": "ひあたり",
+      "meaning_tr": "güneş alma",
+      "sentence": "お昼は会場の[[日当たり]]のいい場所で、みんなで弁当を食べました。",
+      "options": [
+        "ひあたり",
+        "ひあだり",
+        "にちあたり",
+        "ひとうたり"
+      ],
+      "explain_tr": "日 ひ + 当たり あたり."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "弁当",
+      "reading": "べんとう",
+      "meaning_tr": "bento, yemek kutusu",
+      "sentence": "お昼は会場の日当たりのいい場所で、みんなで[[べんとう]]を食べました。",
+      "options": [
+        "弁当",
+        "弁頭",
+        "便当",
+        "弁答"
+      ],
+      "explain_tr": "当 トウ; 頭・答 aynı ses tuzağı."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "本当",
+      "reading": "ほんとう",
+      "meaning_tr": "gerçek",
+      "sentence": "今年は参加者が去年より相当多くて、[[ほんとう]]に忙しかったです。",
+      "options": [
+        "本当",
+        "本党",
+        "本頭",
+        "木当"
+      ],
+      "explain_tr": "本 / 木 benzer görünür."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "当番",
+      "reading": "とうばん",
+      "meaning_tr": "nöbet",
+      "sentence": "ゴミの[[とうばん]]だった私は、一日中会場を歩き回りました。",
+      "options": [
+        "当番",
+        "当晩",
+        "党番",
+        "当板"
+      ],
+      "explain_tr": "番 バン 'sıra, nöbet'."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "当時",
+      "reading": "とうじ",
+      "meaning_tr": "o zamanlar",
+      "sentence": "部長は「十年前に始めた[[とうじ]]は、客が百人もいなかった」と話していました。",
+      "options": [
+        "当時",
+        "当事",
+        "冬至",
+        "当持"
+      ],
+      "explain_tr": "時 ジ 'zaman'; 冬至 'kış gündönümü'."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "当選",
+      "reading": "とうせん",
+      "meaning_tr": "kazanmak (çekiliş/seçim)",
+      "sentence": "夕方には抽選会があり、私の同僚が一等に[[とうせん]]しました。",
+      "options": [
+        "当選",
+        "当船",
+        "当線",
+        "党選"
+      ],
+      "explain_tr": "選 セン 'seçmek'."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "当然",
+      "reading": "とうぜん",
+      "meaning_tr": "doğal, elbette",
+      "sentence": "イベントが成功したのは、みんなが協力したから（　　）の結果だと思います。",
+      "options": [
+        "当然",
+        "当時",
+        "本当",
+        "適当"
+      ],
+      "explain_tr": "当然の結果 = doğal sonuç."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "適当",
+      "reading": "てきとう",
+      "meaning_tr": "gelişigüzel",
+      "sentence": "ただ、ゴミ箱の数を（　　）に決めてしまい、足りなくなりました。",
+      "options": [
+        "適当",
+        "相当",
+        "担当",
+        "見当"
+      ],
+      "explain_tr": "適当に決める = rastgele belirlemek."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "見当",
+      "reading": "けんとう",
+      "meaning_tr": "tahmin",
+      "sentence": "来年はいくつ必要なのか、まだ（　　）がつきません。",
+      "options": [
+        "見当",
+        "担当",
+        "弁当",
+        "手当て"
+      ],
+      "explain_tr": "見当がつかない = kestirememek."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "当たって",
+      "reading": "あたって",
+      "meaning_tr": "tutup (tahmin)",
+      "sentence": "天気予報が（　　）、最後まで雨が降らなかったのは幸運でした。",
+      "options": [
+        "当たって",
+        "当てて",
+        "止まって",
+        "届いて"
+      ],
+      "explain_tr": "予報が当たる = tahmin tutmak (自動詞)."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "当てた",
+      "reading": "あてた",
+      "meaning_tr": "bilen",
+      "sentence": "来年は、クイズの答えを（　　）人に景品をあげる企画を考えています。",
+      "options": [
+        "当てた",
+        "当たった",
+        "当選した",
+        "担当した"
+      ],
+      "explain_tr": "答えを当てる (を + 他動詞)."
+    }
+  ]
+}

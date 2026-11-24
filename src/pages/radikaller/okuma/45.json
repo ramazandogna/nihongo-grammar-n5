@@ -1,0 +1,234 @@
+{
+  "radicalId": 45,
+  "title": "シェアハウスの生活",
+  "title_tr": "Paylaşımlı evde yaşam",
+  "text": "私は今、大学の近くのシェアハウスで、五人の留学生と[[1|共同]]で生活しています。国はみんな違いますが、英語が私たちの[[12|共通語]]です。台所とお風呂は[[8|共用]]で、料理の[[9|道具]]もみんなで使います。電気や水道などの[[10|公共料金]]は、五人で分けて払っています。掃除の予定はアプリで[[7|共有]]しているので、とても便利です。ルームメイトのアンナさんの両親は[[3|共働き]]で、父親は[[14|公務員]]だそうです。アンナさんは男女[[5|共学]]の高校を卒業しました。話してみると、私たちには[[6|共通点]]がたくさんありました。たとえば、好きな音楽が[[15|共通]]しています。家族に会いたいというアンナさんの気持ちに、私も強く[[11|共感]]しました。ハウスのルールについては、問題があれば[[13|具体的]]に話し合うことにしています。また、駅や図書館など[[4|公共]]の場所でのマナーも大切にしています。これからもみんなと[[2|共に]]成長したいです。",
+  "text_tr": "Şu an üniversitenin yakınındaki paylaşımlı bir evde beş yabancı öğrenciyle birlikte yaşıyorum. Hepimizin ülkesi farklı ama ortak dilimiz İngilizce. Mutfak ve banyo ortak kullanımlı, mutfak eşyalarını da hep birlikte kullanıyoruz. Elektrik, su gibi faturaları beş kişi bölüşüp ödüyoruz. Temizlik planını uygulamada paylaştığımız için çok pratik. Ev arkadaşım Anna'nın anne babası ikisi de çalışıyor, babası devlet memuruymuş. Anna karma bir liseden mezun olmuş. Konuşunca pek çok ortak noktamız olduğunu gördük. Örneğin sevdiğimiz müzik ortak. Anna'nın ailesini özleme duygusunu ben de çok iyi anladım. Ev kuralları konusunda sorun olursa somut biçimde konuşmaya karar verdik. Ayrıca istasyon, kütüphane gibi kamusal alanlardaki görgü kurallarına da önem veriyoruz. Bundan sonra da herkesle birlikte gelişmek istiyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "共同",
+      "reading": "きょうどう",
+      "meaning_tr": "ortaklaşa",
+      "sentence": "私は今、大学の近くのシェアハウスで、五人の留学生と[[共同]]で生活しています。",
+      "options": [
+        "きょうどう",
+        "きょうとう",
+        "ぎょうどう",
+        "ともどう"
+      ],
+      "explain_tr": "共 キョウ + 同 ドウ (゛)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "共に",
+      "reading": "ともに",
+      "meaning_tr": "birlikte",
+      "sentence": "これからもみんなと[[共に]]成長したいです。",
+      "options": [
+        "ともに",
+        "きょうに",
+        "とむに",
+        "とうに"
+      ],
+      "explain_tr": "Kun okunuş: とも + に."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "共働き",
+      "reading": "ともばたらき",
+      "meaning_tr": "karı-kocanın ikisinin de çalışması",
+      "sentence": "ルームメイトのアンナさんの両親は[[共働き]]で、父親は公務員だそうです。",
+      "options": [
+        "ともばたらき",
+        "きょうばたらき",
+        "ともはたらき",
+        "ともどうき"
+      ],
+      "explain_tr": "とも + はたらき → ばたらき (rendaku)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "公共",
+      "reading": "こうきょう",
+      "meaning_tr": "kamu",
+      "sentence": "また、駅や図書館など[[公共]]の場所でのマナーも大切にしています。",
+      "options": [
+        "こうきょう",
+        "こうぎょう",
+        "こきょう",
+        "こうきょ"
+      ],
+      "explain_tr": "公 コウ + 共 キョウ; 工業 こうぎょう tuzak."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "共学",
+      "reading": "きょうがく",
+      "meaning_tr": "karma eğitim",
+      "sentence": "アンナさんは男女[[共学]]の高校を卒業しました。",
+      "options": [
+        "きょうがく",
+        "ともがく",
+        "きょうかく",
+        "きょがく"
+      ],
+      "explain_tr": "共 キョウ + 学 ガク."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "共通点",
+      "reading": "きょうつうてん",
+      "meaning_tr": "ortak nokta",
+      "sentence": "話してみると、私たちには[[きょうつうてん]]がたくさんありました。",
+      "options": [
+        "共通点",
+        "供通点",
+        "共痛点",
+        "共通店"
+      ],
+      "explain_tr": "共 'ortak'; 供 (sunmak) benzer."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "共有",
+      "reading": "きょうゆう",
+      "meaning_tr": "paylaşma",
+      "sentence": "掃除の予定はアプリで[[きょうゆう]]しているので、とても便利です。",
+      "options": [
+        "共有",
+        "供有",
+        "共友",
+        "恭有"
+      ],
+      "explain_tr": "有 ユウ 'sahip olmak'."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "共用",
+      "reading": "きょうよう",
+      "meaning_tr": "ortak kullanım",
+      "sentence": "台所とお風呂は[[きょうよう]]で、料理の道具もみんなで使います。",
+      "options": [
+        "共用",
+        "共要",
+        "供用",
+        "共曜"
+      ],
+      "explain_tr": "用 ヨウ 'kullanım'."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "道具",
+      "reading": "どうぐ",
+      "meaning_tr": "alet, eşya",
+      "sentence": "台所とお風呂は共用で、料理の[[どうぐ]]もみんなで使います。",
+      "options": [
+        "道具",
+        "道貝",
+        "導具",
+        "道真"
+      ],
+      "explain_tr": "具 (八 radikali) グ; 貝 kabuk."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "公共料金",
+      "reading": "こうきょうりょうきん",
+      "meaning_tr": "faturalar (elektrik, su vb.)",
+      "sentence": "電気や水道などの[[こうきょうりょうきん]]は、五人で分けて払っています。",
+      "options": [
+        "公共料金",
+        "公共科金",
+        "工共料金",
+        "公供料金"
+      ],
+      "explain_tr": "料 'ücret'; 科 benzer."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "共感",
+      "reading": "きょうかん",
+      "meaning_tr": "empati, duygudaşlık",
+      "sentence": "家族に会いたいというアンナさんの気持ちに、私も強く（　　）しました。",
+      "options": [
+        "共感",
+        "共通",
+        "共有",
+        "公共"
+      ],
+      "explain_tr": "気持ちに共感する = duyguyu paylaşmak."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "共通語",
+      "reading": "きょうつうご",
+      "meaning_tr": "ortak dil",
+      "sentence": "国はみんな違いますが、英語が私たちの（　　）です。",
+      "options": [
+        "共通語",
+        "共通点",
+        "外来語",
+        "敬語"
+      ],
+      "explain_tr": "Farklı ülkelerin ortak dili = 共通語."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "具体的",
+      "reading": "ぐたいてき",
+      "meaning_tr": "somut",
+      "sentence": "ハウスのルールについては、問題があれば（　　）に話し合うことにしています。",
+      "options": [
+        "具体的",
+        "一方的",
+        "平均的",
+        "経済的"
+      ],
+      "explain_tr": "具体的に話し合う = somut konuşmak."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "公務員",
+      "reading": "こうむいん",
+      "meaning_tr": "devlet memuru",
+      "sentence": "ルームメイトのアンナさんの両親は共働きで、父親は（　　）だそうです。",
+      "options": [
+        "公務員",
+        "公共",
+        "公園",
+        "公式"
+      ],
+      "explain_tr": "公 'kamu' + 務員."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "共通",
+      "reading": "きょうつう",
+      "meaning_tr": "ortak olmak",
+      "sentence": "たとえば、好きな音楽が（　　）しています。",
+      "options": [
+        "共通",
+        "共同",
+        "公共",
+        "共用"
+      ],
+      "explain_tr": "～が共通している = ...ortak."
+    }
+  ]
+}

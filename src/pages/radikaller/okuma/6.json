@@ -1,0 +1,234 @@
+{
+  "radicalId": 6,
+  "title": "遅刻した日",
+  "title_tr": "Geç kaldığım gün",
+  "text": "私は毎朝、[[1|高速]]バスで会社に通っています。昨日は[[2|交通]]事故のせいでバスが遅れて、初めて[[3|遅刻]]してしまいました。すぐに上司に[[4|連絡]]しましたが、[[5|返事]]はありませんでした。会社に着くと、上司は「[[6|普通]]は電車で来る人が多いよ」と言いました。みんなに[[7|迷惑]]をかけたので、とても申し訳なく思いました。昼休みに、ネットで買った本の[[8|配達]]が遅れるというメールが来ました。しかも、[[9|送料]]の金額に[[10|間違い]]があったそうです。夜、[[11|友達]]に話すと、「[[12|過去]]にも同じことがあったよ」と笑われました。技術がこんなに[[13|進歩]]しても、交通のトラブルはなくならないようです。帰り道、[[14|歩道]]を走っているマラソンの[[15|選手]]を見て、少し元気が出ました。",
+  "text_tr": "Her sabah şirkete ekspres (otoyol) otobüsüyle gidiyorum. Dün trafik kazası yüzünden otobüs gecikti ve ilk kez işe geç kaldım. Hemen müdürüme haber verdim ama cevap gelmedi. Şirkete varınca müdür \"Normalde çoğu kişi trenle gelir\" dedi. Herkese zahmet verdiğim için çok mahcup oldum. Öğle arasında internetten aldığım kitabın teslimatının gecikeceğine dair bir e-posta geldi. Üstelik kargo ücretinde bir hata varmış. Akşam arkadaşıma anlatınca \"Geçmişte de aynısı olmuştu\" diye güldü. Teknoloji bu kadar ilerlese de ulaşım sorunları bitmeyecek gibi. Dönüş yolunda kaldırımda koşan maraton koşucularını görünce biraz moralim düzeldi.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "高速",
+      "reading": "こうそく",
+      "meaning_tr": "yüksek hız, otoyol",
+      "sentence": "私は毎朝、[[高速]]バスで会社に通っています。",
+      "options": [
+        "こうそく",
+        "こうぞく",
+        "こそく",
+        "こうすく"
+      ],
+      "explain_tr": "高 コウ + 速 ソク (゛ yok)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "交通",
+      "reading": "こうつう",
+      "meaning_tr": "ulaşım, trafik",
+      "sentence": "昨日は[[交通]]事故のせいでバスが遅れて、初めて遅刻してしまいました。",
+      "options": [
+        "こうつう",
+        "こうずう",
+        "こうとう",
+        "こつう"
+      ],
+      "explain_tr": "交 コウ + 通 ツウ."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "遅刻",
+      "reading": "ちこく",
+      "meaning_tr": "geç kalma",
+      "sentence": "昨日は交通事故のせいでバスが遅れて、初めて[[遅刻]]してしまいました。",
+      "options": [
+        "ちこく",
+        "ちごく",
+        "おそこく",
+        "じこく"
+      ],
+      "explain_tr": "遅 チ + 刻 コク; 時刻 (じこく) tuzağı."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "連絡",
+      "reading": "れんらく",
+      "meaning_tr": "haber verme",
+      "sentence": "すぐに上司に[[連絡]]しましたが、返事はありませんでした。",
+      "options": [
+        "れんらく",
+        "れらく",
+        "れんがく",
+        "れんろく"
+      ],
+      "explain_tr": "連 レン + 絡 ラク."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "返事",
+      "reading": "へんじ",
+      "meaning_tr": "cevap",
+      "sentence": "すぐに上司に連絡しましたが、[[返事]]はありませんでした。",
+      "options": [
+        "へんじ",
+        "へんごと",
+        "べんじ",
+        "へんし"
+      ],
+      "explain_tr": "返 ヘン + 事 ジ (゛)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "普通",
+      "reading": "ふつう",
+      "meaning_tr": "normal",
+      "sentence": "会社に着くと、上司は「[[ふつう]]は電車で来る人が多いよ」と言いました。",
+      "options": [
+        "普通",
+        "普痛",
+        "譜通",
+        "普道"
+      ],
+      "explain_tr": "通 (辶) geçmek; 痛 ağrı."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "迷惑",
+      "reading": "めいわく",
+      "meaning_tr": "rahatsızlık",
+      "sentence": "みんなに[[めいわく]]をかけたので、とても申し訳なく思いました。",
+      "options": [
+        "迷惑",
+        "迷或",
+        "米惑",
+        "迷感"
+      ],
+      "explain_tr": "迷 (辶) + 惑 (心)."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "配達",
+      "reading": "はいたつ",
+      "meaning_tr": "teslimat",
+      "sentence": "昼休みに、ネットで買った本の[[はいたつ]]が遅れるというメールが来ました。",
+      "options": [
+        "配達",
+        "配建",
+        "杯達",
+        "配速"
+      ],
+      "explain_tr": "達 (辶) ulaşmak; 建 farklı radikal."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "送料",
+      "reading": "そうりょう",
+      "meaning_tr": "kargo ücreti",
+      "sentence": "しかも、[[そうりょう]]の金額に間違いがあったそうです。",
+      "options": [
+        "送料",
+        "送科",
+        "迭料",
+        "送量"
+      ],
+      "explain_tr": "料 = ücret; 科 benzer görünür."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "間違い",
+      "reading": "まちがい",
+      "meaning_tr": "hata",
+      "sentence": "しかも、送料の金額に[[まちがい]]があったそうです。",
+      "options": [
+        "間違い",
+        "間遣い",
+        "問違い",
+        "間偉い"
+      ],
+      "explain_tr": "違 (辶) farklı olmak; 遣 göndermek."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "友達",
+      "reading": "ともだち",
+      "meaning_tr": "arkadaş",
+      "sentence": "夜、（　　）に話すと、「過去にも同じことがあったよ」と笑われました。",
+      "options": [
+        "友達",
+        "配達",
+        "速達",
+        "上達"
+      ],
+      "explain_tr": "友達に話す: arkadaşa anlatmak."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "過去",
+      "reading": "かこ",
+      "meaning_tr": "geçmiş",
+      "sentence": "夜、友達に話すと、「（　　）にも同じことがあったよ」と笑われました。",
+      "options": [
+        "過去",
+        "過度",
+        "通過",
+        "経過"
+      ],
+      "explain_tr": "過去にも: geçmişte de."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "進歩",
+      "reading": "しんぽ",
+      "meaning_tr": "ilerleme",
+      "sentence": "技術がこんなに（　　）しても、交通のトラブルはなくならないようです。",
+      "options": [
+        "進歩",
+        "進学",
+        "散歩",
+        "進路"
+      ],
+      "explain_tr": "技術が進歩する: teknoloji ilerler."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "歩道",
+      "reading": "ほどう",
+      "meaning_tr": "kaldırım",
+      "sentence": "帰り道、（　　）を走っているマラソンの選手を見て、少し元気が出ました。",
+      "options": [
+        "歩道",
+        "水道",
+        "報道",
+        "道具"
+      ],
+      "explain_tr": "歩道を走る: kaldırımda koşmak."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "選手",
+      "reading": "せんしゅ",
+      "meaning_tr": "sporcu",
+      "sentence": "帰り道、歩道を走っているマラソンの（　　）を見て、少し元気が出ました。",
+      "options": [
+        "選手",
+        "選挙",
+        "選択",
+        "手配"
+      ],
+      "explain_tr": "マラソンの選手: maraton koşucusu."
+    }
+  ]
+}

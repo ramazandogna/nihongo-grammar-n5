@@ -1,0 +1,234 @@
+{
+  "radicalId": 3,
+  "title": "日本語の勉強",
+  "title_tr": "Japonca çalışmak",
+  "text": "来月、日本語能力[[1|試験]]を受けるので、毎日勉強しています。朝は新しい[[2|単語]]を覚えて、夜は日本の[[3|小説]]を読んでいます。[[4|読書]]は好きですが、知らない言葉が多くて、[[5|調子]]が悪い日もあります。先生に[[6|相談]]したら、文法の[[7|説明]]を丁寧にしてくれました。先生は「新聞の[[8|記事]]を読んで、内容を[[9|確認]]するといいですよ」と言いました。また、友達と日本語で[[10|会話]]する練習もしています。学校の[[11|会議]]で、日本人の先生の[[12|通訳]]を頼まれたこともあります。頭の中で母国語に[[13|翻訳]]しないで考えることが大切だそうです。先生の[[14|許可]]をもらって、授業で昔の[[15|物語]]を発表しました。",
+  "text_tr": "Gelecek ay Japonca Yeterlilik Sınavı'na gireceğim için her gün çalışıyorum. Sabahları yeni kelimeler ezberliyor, akşamları Japon romanları okuyorum. Kitap okumayı seviyorum ama bilmediğim kelimeler çok olduğundan kötü gittiği günler de oluyor. Öğretmenime danıştığımda dilbilgisini özenle açıkladı. Öğretmen \"Gazete makalelerini okuyup içeriği kontrol etmek iyi olur\" dedi. Ayrıca arkadaşlarımla Japonca sohbet alıştırması da yapıyorum. Okuldaki bir toplantıda Japon öğretmen için tercümanlık yapmam bile istendi. Kafada ana dile çevirmeden düşünmek önemliymiş. Öğretmenden izin alıp derste eski bir hikâyeyi sundum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "試験",
+      "reading": "しけん",
+      "meaning_tr": "sınav",
+      "sentence": "来月、日本語能力[[試験]]を受けるので、毎日勉強しています。",
+      "options": [
+        "しけん",
+        "しげん",
+        "じけん",
+        "しけい"
+      ],
+      "explain_tr": "試 シ + 験 ケン; 事件 (じけん) ile karıştırma."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "単語",
+      "reading": "たんご",
+      "meaning_tr": "kelime",
+      "sentence": "朝は新しい[[単語]]を覚えて、夜は日本の小説を読んでいます。",
+      "options": [
+        "たんご",
+        "だんご",
+        "たんこ",
+        "たんごう"
+      ],
+      "explain_tr": "単 タン (゛ yok) + 語 ゴ."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "小説",
+      "reading": "しょうせつ",
+      "meaning_tr": "roman",
+      "sentence": "朝は新しい単語を覚えて、夜は日本の[[小説]]を読んでいます。",
+      "options": [
+        "しょうせつ",
+        "しょうぜつ",
+        "しょせつ",
+        "こせつ"
+      ],
+      "explain_tr": "小 ショウ (uzun) + 説 セツ."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "読書",
+      "reading": "どくしょ",
+      "meaning_tr": "kitap okuma",
+      "sentence": "[[読書]]は好きですが、知らない言葉が多くて、調子が悪い日もあります。",
+      "options": [
+        "どくしょ",
+        "とくしょ",
+        "どくしょう",
+        "よみしょ"
+      ],
+      "explain_tr": "読 ドク + 書 ショ (kısa)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "調子",
+      "reading": "ちょうし",
+      "meaning_tr": "durum, kondisyon",
+      "sentence": "読書は好きですが、知らない言葉が多くて、[[調子]]が悪い日もあります。",
+      "options": [
+        "ちょうし",
+        "ちょうこ",
+        "ちょし",
+        "しらべこ"
+      ],
+      "explain_tr": "子 burada シ okunur."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "相談",
+      "reading": "そうだん",
+      "meaning_tr": "danışma",
+      "sentence": "先生に[[そうだん]]したら、文法の説明を丁寧にしてくれました。",
+      "options": [
+        "相談",
+        "想談",
+        "相断",
+        "相淡"
+      ],
+      "explain_tr": "談 (言) konuşma; 想/断 aynı ses tuzakları."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "説明",
+      "reading": "せつめい",
+      "meaning_tr": "açıklama",
+      "sentence": "先生に相談したら、文法の[[せつめい]]を丁寧にしてくれました。",
+      "options": [
+        "説明",
+        "設明",
+        "説名",
+        "税明"
+      ],
+      "explain_tr": "説 (言) anlatmak; 設 kurmak."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "記事",
+      "reading": "きじ",
+      "meaning_tr": "makale",
+      "sentence": "先生は「新聞の[[きじ]]を読んで、内容を確認するといいですよ」と言いました。",
+      "options": [
+        "記事",
+        "紀事",
+        "記字",
+        "起事"
+      ],
+      "explain_tr": "記 (言) yazmak + 事."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "確認",
+      "reading": "かくにん",
+      "meaning_tr": "teyit",
+      "sentence": "先生は「新聞の記事を読んで、内容を[[かくにん]]するといいですよ」と言いました。",
+      "options": [
+        "確認",
+        "確忍",
+        "確任",
+        "角認"
+      ],
+      "explain_tr": "認 (言) = tanımak; 忍 sadece parçası."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "会話",
+      "reading": "かいわ",
+      "meaning_tr": "sohbet",
+      "sentence": "また、友達と日本語で[[かいわ]]する練習もしています。",
+      "options": [
+        "会話",
+        "会和",
+        "回話",
+        "会活"
+      ],
+      "explain_tr": "話 (言) konuşma."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "会議",
+      "reading": "かいぎ",
+      "meaning_tr": "toplantı",
+      "sentence": "学校の（　　）で、日本人の先生の通訳を頼まれたこともあります。",
+      "options": [
+        "会議",
+        "会話",
+        "議員",
+        "会員"
+      ],
+      "explain_tr": "学校の会議: okul toplantısı."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "通訳",
+      "reading": "つうやく",
+      "meaning_tr": "sözlü çeviri",
+      "sentence": "学校の会議で、日本人の先生の（　　）を頼まれたこともあります。",
+      "options": [
+        "通訳",
+        "翻訳",
+        "言い訳",
+        "訳語"
+      ],
+      "explain_tr": "Toplantıda sözlü çeviri → 通訳; yazılı çeviri 翻訳."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "翻訳",
+      "reading": "ほんやく",
+      "meaning_tr": "çeviri",
+      "sentence": "頭の中で母国語に（　　）しないで考えることが大切だそうです。",
+      "options": [
+        "翻訳",
+        "通訳",
+        "説明",
+        "記録"
+      ],
+      "explain_tr": "Kafada dile çevirme → 翻訳する."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "許可",
+      "reading": "きょか",
+      "meaning_tr": "izin",
+      "sentence": "先生の（　　）をもらって、授業で昔の物語を発表しました。",
+      "options": [
+        "許可",
+        "記憶",
+        "調査",
+        "試合"
+      ],
+      "explain_tr": "許可をもらう: izin almak."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "物語",
+      "reading": "ものがたり",
+      "meaning_tr": "hikâye",
+      "sentence": "先生の許可をもらって、授業で昔の（　　）を発表しました。",
+      "options": [
+        "物語",
+        "単語",
+        "会話",
+        "物質"
+      ],
+      "explain_tr": "昔の物語: eski hikâye."
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "radicalId": 17,
+  "title": "父の入院",
+  "title_tr": "Babamın hastaneye yatışı",
+  "text": "先月、父が駅の[[1|階段]]で転んで、足の骨を折った。すぐに病院へ運ばれ、二週間[[11|入院]]することになった。父は会社の[[2|部長]]なので、仕事のことをとても心配していた。しかし[[12|実際]]には、部下たちがよく働いてくれたので、問題はなかった。母は毎日病院へ行き、仕事の[[13|都合]]がつかない私の代わりに、父の世話をしてくれた。私は週末に実家へ帰り、父の[[6|部屋]]を[[3|掃除]]した。[[7|保険]]に入っていたので、入院のお金はあまりかからなかった。医者には「骨が弱くなるのを[[8|予防]]するため、[[9|太陽]]の光を浴びて散歩しましょう」と言われた。ただし、運動には[[14|制限]]があり、無理に歩くのは[[4|危険]]だそうだ。父は[[5|退院]]したら、母と海外の大きな[[10|都市]]を旅行したいそうで、申し込みの[[15|期限]]は来月末だ。",
+  "text_tr": "Geçen ay babam istasyonun merdivenlerinde düşüp bacağını kırdı. Hemen hastaneye götürüldü ve iki hafta yatması gerekti. Babam şirkette bölüm müdürü olduğu için iş konusunda çok endişeliydi. Ama gerçekte astları iyi çalıştığı için sorun olmadı. Annem her gün hastaneye gidip, işi uygun olmayan benim yerime babama baktı. Ben hafta sonu baba evine dönüp babamın odasını temizledim. Sigortası olduğu için hastane parası pek tutmadı. Doktor \"Kemiklerin zayıflamasını önlemek için güneş ışığında yürüyüş yapalım\" dedi. Ancak egzersizde sınır varmış, zorla yürümek tehlikeliymiş. Babam taburcu olunca annemle yurt dışında büyük bir şehri gezmek istiyormuş, başvurunun son tarihi de gelecek ay sonu.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "階段",
+      "reading": "かいだん",
+      "meaning_tr": "merdiven",
+      "sentence": "先月、父が駅の[[階段]]で転んで、足の骨を折った。",
+      "options": [
+        "かいだん",
+        "かいたん",
+        "がいだん",
+        "かいだい"
+      ],
+      "explain_tr": "階 カイ + 段 ダン."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "部長",
+      "reading": "ぶちょう",
+      "meaning_tr": "bölüm müdürü",
+      "sentence": "父は会社の[[部長]]なので、仕事のことをとても心配していた。",
+      "options": [
+        "ぶちょう",
+        "ぶっちょう",
+        "ぶちょ",
+        "べちょう"
+      ],
+      "explain_tr": "部 ブ + 長 チョウ (uzun, っ yok)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "掃除",
+      "reading": "そうじ",
+      "meaning_tr": "temizlik",
+      "sentence": "私は週末に実家へ帰り、父の部屋を[[掃除]]した。",
+      "options": [
+        "そうじ",
+        "そうじょ",
+        "そじ",
+        "そうち"
+      ],
+      "explain_tr": "除 burada ジ okunur (ジョ değil): 掃除 そうじ."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "危険",
+      "reading": "きけん",
+      "meaning_tr": "tehlikeli",
+      "sentence": "ただし、運動には制限があり、無理に歩くのは[[危険]]だそうだ。",
+      "options": [
+        "きけん",
+        "きげん",
+        "ぎけん",
+        "きっけん"
+      ],
+      "explain_tr": "危 キ + 険 ケン; きげん = 期限 (son tarih)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "退院",
+      "reading": "たいいん",
+      "meaning_tr": "taburcu olmak",
+      "sentence": "父は[[退院]]したら、母と海外の大きな都市を旅行したいそうで、申し込みの期限は来月末だ。",
+      "options": [
+        "たいいん",
+        "たいえん",
+        "だいいん",
+        "たいいいん"
+      ],
+      "explain_tr": "退 タイ + 院 イン."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "部屋",
+      "reading": "へや",
+      "meaning_tr": "oda",
+      "sentence": "私は週末に実家へ帰り、父の[[へや]]を掃除した。",
+      "options": [
+        "部屋",
+        "部家",
+        "陪屋",
+        "都屋"
+      ],
+      "explain_tr": "へや özel okunuşlu kelime: 部屋."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "保険",
+      "reading": "ほけん",
+      "meaning_tr": "sigorta",
+      "sentence": "[[ほけん]]に入っていたので、入院のお金はあまりかからなかった。",
+      "options": [
+        "保険",
+        "保検",
+        "保験",
+        "歩険"
+      ],
+      "explain_tr": "険 (阝 radikali); 検・験 aynı ケン okunur ama farklıdır."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "予防",
+      "reading": "よぼう",
+      "meaning_tr": "önleme",
+      "sentence": "医者には「骨が弱くなるのを[[よぼう]]するため、太陽の光を浴びて散歩しましょう」と言われた。",
+      "options": [
+        "予防",
+        "予妨",
+        "予肪",
+        "余防"
+      ],
+      "explain_tr": "防 (阝) korumak; 妨・肪 benzer görünür."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "太陽",
+      "reading": "たいよう",
+      "meaning_tr": "güneş",
+      "sentence": "医者には「骨が弱くなるのを予防するため、[[たいよう]]の光を浴びて散歩しましょう」と言われた。",
+      "options": [
+        "太陽",
+        "大陽",
+        "太場",
+        "太揚"
+      ],
+      "explain_tr": "太 (kalın) + 陽 (阝, güneş); 大 ve 揚 tuzaktır."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "都市",
+      "reading": "とし",
+      "meaning_tr": "şehir",
+      "sentence": "父は退院したら、母と海外の大きな[[とし]]を旅行したいそうで、申し込みの期限は来月末だ。",
+      "options": [
+        "都市",
+        "都布",
+        "部市",
+        "年"
+      ],
+      "explain_tr": "都 ト + 市 シ; 年 da とし okunur ama 'yıl/yaş'tır."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "入院",
+      "reading": "にゅういん",
+      "meaning_tr": "hastaneye yatmak",
+      "sentence": "すぐに病院へ運ばれ、二週間（　　）することになった。",
+      "options": [
+        "入院",
+        "退院",
+        "通院",
+        "病院"
+      ],
+      "explain_tr": "İki hafta hastanede kalmak → 入院."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "実際",
+      "reading": "じっさい",
+      "meaning_tr": "gerçekte",
+      "sentence": "しかし（　　）には、部下たちがよく働いてくれたので、問題はなかった。",
+      "options": [
+        "実際",
+        "国際",
+        "交際",
+        "実験"
+      ],
+      "explain_tr": "実際には = aslında/gerçekte."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "都合",
+      "reading": "つごう",
+      "meaning_tr": "uygunluk, müsaitlik",
+      "sentence": "母は毎日病院へ行き、仕事の（　　）がつかない私の代わりに、父の世話をしてくれた。",
+      "options": [
+        "都合",
+        "都市",
+        "都会",
+        "具合"
+      ],
+      "explain_tr": "都合がつかない = müsait olmamak."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "制限",
+      "reading": "せいげん",
+      "meaning_tr": "sınırlama",
+      "sentence": "ただし、運動には（　　）があり、無理に歩くのは危険だそうだ。",
+      "options": [
+        "制限",
+        "期限",
+        "予防",
+        "保険"
+      ],
+      "explain_tr": "運動に制限がある = egzersiz kısıtlı."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "期限",
+      "reading": "きげん",
+      "meaning_tr": "son tarih",
+      "sentence": "父は退院したら、母と海外の大きな都市を旅行したいそうで、申し込みの（　　）は来月末だ。",
+      "options": [
+        "期限",
+        "制限",
+        "期待",
+        "時限"
+      ],
+      "explain_tr": "申し込みの期限 = başvurunun son günü."
+    }
+  ]
+}

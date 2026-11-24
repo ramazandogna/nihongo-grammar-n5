@@ -1,0 +1,234 @@
+{
+  "radicalId": 49,
+  "title": "大雪の日",
+  "title_tr": "Yoğun kar günü",
+  "text": "昨日は大雪で、町の多くの道路が[[1|通行止め]]になりました。電車も朝から運転を[[2|停止]]し、駅の前にはバスが[[7|止まって]]いました。午後に予定していた会議は[[6|中止]]になりました。私は仕方なく、駅から会社まで三十分[[8|歩いて]]行きました。途中、雪で滑らないように何度も[[9|立ち止まって]]足元を確認しました。道の横には、事故[[4|防止]]のために「駐車[[11|禁止]]」の看板がありました。会社に着く直前、警察官に[[13|呼び止められ]]、この先は危ないので気をつけるように言われました。この町の[[10|歴史]]の中でも、こんな大雪は珍しいそうです。昔は町に路面電車がありましたが、二十年前に[[5|廃止]]されました。夕方、雪が[[3|止んで]]から、同僚が車を会社の前に[[12|止めて]]、家まで送ってくれました。部長は今回の大雪を真剣に[[14|受け止めて]]、雪の日は在宅勤務にすると決めました。雪の日は無理に出かけないのが[[15|正しい]]判断だと思いました。",
+  "text_tr": "Dün yoğun kar yüzünden kasabanın pek çok yolu trafiğe kapandı. Trenler de sabahtan seferleri durdurdu, istasyonun önünde otobüsler bekliyordu. Öğleden sonraya planlanan toplantı iptal edildi. Mecburen istasyondan şirkete otuz dakika yürüdüm. Yolda karda kaymamak için defalarca durup ayağımın altına baktım. Yolun kenarında kazaları önlemek için \"Park yasak\" tabelası vardı. Şirkete varmadan hemen önce bir polis beni durdurdu ve ilerisinin tehlikeli olduğunu, dikkat etmemi söyledi. Bu kasabanın tarihinde bile böyle yoğun kar nadirmiş. Eskiden kasabada tramvay vardı ama yirmi yıl önce kaldırıldı. Akşamüstü kar dindikten sonra iş arkadaşım arabasını şirketin önüne park edip beni eve bıraktı. Müdür bu kar olayını ciddiye alıp karlı günlerde evden çalışma kararı verdi. Karlı günlerde zorla dışarı çıkmamanın doğru karar olduğunu düşündüm.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "通行止め",
+      "reading": "つうこうどめ",
+      "meaning_tr": "yol kapalı",
+      "sentence": "昨日は大雪で、町の多くの道路が[[通行止め]]になりました。",
+      "options": [
+        "つうこうどめ",
+        "つうこうとめ",
+        "つうぎょうどめ",
+        "つこうどめ"
+      ],
+      "explain_tr": "通行 + 止め → どめ (rendaku)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "停止",
+      "reading": "ていし",
+      "meaning_tr": "durdurma",
+      "sentence": "電車も朝から運転を[[停止]]し、駅の前にはバスが止まっていました。",
+      "options": [
+        "ていし",
+        "ていじ",
+        "でいし",
+        "ていと"
+      ],
+      "explain_tr": "停 テイ + 止 シ."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "止んで",
+      "reading": "やんで",
+      "meaning_tr": "dinip",
+      "sentence": "夕方、雪が[[止んで]]から、同僚が車を会社の前に止めて、家まで送ってくれました。",
+      "options": [
+        "やんで",
+        "とんで",
+        "すんで",
+        "しんで"
+      ],
+      "explain_tr": "雨・雪が止む = dinmek (やむ)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "防止",
+      "reading": "ぼうし",
+      "meaning_tr": "önleme",
+      "sentence": "道の横には、事故[[防止]]のために「駐車禁止」の看板がありました。",
+      "options": [
+        "ぼうし",
+        "ぼし",
+        "ほうし",
+        "ぼうじ"
+      ],
+      "explain_tr": "防 ボウ (uzun, ゛) + 止 シ."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "廃止",
+      "reading": "はいし",
+      "meaning_tr": "kaldırılma",
+      "sentence": "昔は町に路面電車がありましたが、二十年前に[[廃止]]されました。",
+      "options": [
+        "はいし",
+        "はいじ",
+        "ばいし",
+        "はいと"
+      ],
+      "explain_tr": "廃 ハイ + 止 シ."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "中止",
+      "reading": "ちゅうし",
+      "meaning_tr": "iptal",
+      "sentence": "午後に予定していた会議は[[ちゅうし]]になりました。",
+      "options": [
+        "中止",
+        "中正",
+        "仲止",
+        "中上"
+      ],
+      "explain_tr": "止 / 正 / 上 benzer görünür."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "止まって",
+      "reading": "とまって",
+      "meaning_tr": "durmuş",
+      "sentence": "電車も朝から運転を停止し、駅の前にはバスが[[とまって]]いました。",
+      "options": [
+        "止まって",
+        "上まって",
+        "正まって",
+        "泊まって"
+      ],
+      "explain_tr": "泊まる da とまる ama 'konaklamak'."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "歩いて",
+      "reading": "あるいて",
+      "meaning_tr": "yürüyerek",
+      "sentence": "私は仕方なく、駅から会社まで三十分[[あるいて]]行きました。",
+      "options": [
+        "歩いて",
+        "渉いて",
+        "止いて",
+        "走いて"
+      ],
+      "explain_tr": "歩 (止 radikali) あるく."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "立ち止まって",
+      "reading": "たちどまって",
+      "meaning_tr": "durup",
+      "sentence": "途中、雪で滑らないように何度も[[たちどまって]]足元を確認しました。",
+      "options": [
+        "立ち止まって",
+        "立ち泊まって",
+        "位ち止まって",
+        "立ち正まって"
+      ],
+      "explain_tr": "立ち + 止まる → どまる."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "歴史",
+      "reading": "れきし",
+      "meaning_tr": "tarih",
+      "sentence": "この町の[[れきし]]の中でも、こんな大雪は珍しいそうです。",
+      "options": [
+        "歴史",
+        "暦史",
+        "歴使",
+        "歴死"
+      ],
+      "explain_tr": "歴 (止 radikali) レキ; 暦 'takvim'."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "禁止",
+      "reading": "きんし",
+      "meaning_tr": "yasak",
+      "sentence": "道の横には、事故防止のために「駐車（　　）」の看板がありました。",
+      "options": [
+        "禁止",
+        "中止",
+        "停止",
+        "防止"
+      ],
+      "explain_tr": "駐車禁止 = park yasak."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "止めて",
+      "reading": "とめて",
+      "meaning_tr": "park edip",
+      "sentence": "夕方、雪が止んでから、同僚が車を会社の前に（　　）、家まで送ってくれました。",
+      "options": [
+        "止めて",
+        "止まって",
+        "泊めて",
+        "辞めて"
+      ],
+      "explain_tr": "車を止める (他動詞)."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "呼び止められ",
+      "reading": "よびとめられ",
+      "meaning_tr": "durdurulup (seslenilerek)",
+      "sentence": "会社に着く直前、警察官に（　　）、この先は危ないので気をつけるように言われました。",
+      "options": [
+        "呼び止められ",
+        "受け止められ",
+        "立ち止まられ",
+        "取り止められ"
+      ],
+      "explain_tr": "警察官に呼び止められる = polis tarafından durdurulmak."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "受け止めて",
+      "reading": "うけとめて",
+      "meaning_tr": "ciddiye alıp",
+      "sentence": "部長は今回の大雪を真剣に（　　）、雪の日は在宅勤務にすると決めました。",
+      "options": [
+        "受け止めて",
+        "呼び止めて",
+        "立ち止まって",
+        "取り消して"
+      ],
+      "explain_tr": "真剣に受け止める = ciddiye almak."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "正しい",
+      "reading": "ただしい",
+      "meaning_tr": "doğru",
+      "sentence": "雪の日は無理に出かけないのが（　　）判断だと思いました。",
+      "options": [
+        "正しい",
+        "珍しい",
+        "新しい",
+        "優しい"
+      ],
+      "explain_tr": "正しい判断 = doğru karar."
+    }
+  ]
+}

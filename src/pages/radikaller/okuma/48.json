@@ -1,0 +1,234 @@
+{
+  "radicalId": 48,
+  "title": "健康のための決断",
+  "title_tr": "Sağlık için bir karar",
+  "text": "先月、会社の健康[[2|診断]]で、医者にお酒を控えたほうがいいと言われました。若いからと[[1|油断]]していたので、ショックでした。それで、しばらくお酒を[[5|断つ]]ことにしました。友達に飲み会に誘われても、理由を話して[[6|断って]]います。運動のためにマラソン大会に出ようと思いましたが、足を痛めて[[4|断念]]しました。そのかわりに毎朝散歩をしていますが、ある朝、[[8|横断歩道]]で車にぶつかりそうになりました。信号が変わったと思って渡りましたが、私の[[7|判断]]が早すぎたのです。家に帰ると、工事のためにマンションが[[3|断水]]していて、シャワーも使えませんでした。[[9|新聞]]によると、工事は雨で一度[[10|中断]]したそうです。工事の会社が住民に[[12|無断]]で予定を変えたので、みんな怒っていました。それでも、生活を変えたのは正しい[[11|決断]]だったと思います。お酒をやめてから、体の調子は[[13|断然]]よくなりました。最近は野菜や果物など、[[14|新鮮]]な食べ物を買うようにしています。スマホの[[15|最新]]のアプリで、毎日の歩数も記録しています。",
+  "text_tr": "Geçen ay şirketteki sağlık kontrolünde doktor alkolü azaltmamın iyi olacağını söyledi. Genç olduğum için gevşek davranmıştım, şok oldum. Bu yüzden bir süre alkolü tamamen bırakmaya karar verdim. Arkadaşlarım içki buluşmasına çağırsa da nedenini anlatıp reddediyorum. Spor için maratona katılmayı düşündüm ama ayağımı incitince vazgeçtim. Onun yerine her sabah yürüyüş yapıyorum ama bir sabah yaya geçidinde neredeyse arabaya çarpıyordum. Işık değişti sanıp geçmiştim ama kararım çok erkendi. Eve dönünce inşaat yüzünden apartmanda sular kesikti, duş bile alamadım. Gazeteye göre inşaat yağmur yüzünden bir kez durdurulmuş. İnşaat şirketi sakinlere haber vermeden planı değiştirdiği için herkes kızgındı. Yine de hayatımı değiştirmek doğru bir karardı bence. Alkolü bıraktığımdan beri vücudum kat kat daha iyi. Son zamanlarda sebze, meyve gibi taze yiyecekler almaya özen gösteriyorum. Akıllı telefonumdaki en yeni uygulamayla günlük adım sayımı da kaydediyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "油断",
+      "reading": "ゆだん",
+      "meaning_tr": "gaflet, dikkatsizlik",
+      "sentence": "若いからと[[油断]]していたので、ショックでした。",
+      "options": [
+        "ゆだん",
+        "ゆうだん",
+        "ゆたん",
+        "あぶらだん"
+      ],
+      "explain_tr": "油 ユ (kısa) + 断 ダン."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "診断",
+      "reading": "しんだん",
+      "meaning_tr": "teşhis, kontrol",
+      "sentence": "先月、会社の健康[[診断]]で、医者にお酒を控えたほうがいいと言われました。",
+      "options": [
+        "しんだん",
+        "しんたん",
+        "しんだい",
+        "じんだん"
+      ],
+      "explain_tr": "診 シン + 断 ダン."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "断水",
+      "reading": "だんすい",
+      "meaning_tr": "su kesintisi",
+      "sentence": "家に帰ると、工事のためにマンションが[[断水]]していて、シャワーも使えませんでした。",
+      "options": [
+        "だんすい",
+        "たんすい",
+        "だんみず",
+        "だんずい"
+      ],
+      "explain_tr": "断 ダン + 水 スイ (゛ yok)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "断念",
+      "reading": "だんねん",
+      "meaning_tr": "vazgeçme",
+      "sentence": "運動のためにマラソン大会に出ようと思いましたが、足を痛めて[[断念]]しました。",
+      "options": [
+        "だんねん",
+        "たんねん",
+        "だんにん",
+        "だんねい"
+      ],
+      "explain_tr": "念 ネン; 丹念 たんねん tuzak."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "断つ",
+      "reading": "たつ",
+      "meaning_tr": "kesmek, bırakmak",
+      "sentence": "それで、しばらくお酒を[[断つ]]ことにしました。",
+      "options": [
+        "たつ",
+        "だつ",
+        "きる",
+        "ことつ"
+      ],
+      "explain_tr": "酒を断つ = alkolü bırakmak; 断る ことわる ile karıştırma."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "断って",
+      "reading": "ことわって",
+      "meaning_tr": "reddedip",
+      "sentence": "友達に飲み会に誘われても、理由を話して[[ことわって]]います。",
+      "options": [
+        "断って",
+        "継って",
+        "新って",
+        "折って"
+      ],
+      "explain_tr": "断る ことわる; 継・折 benzer görünür."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "判断",
+      "reading": "はんだん",
+      "meaning_tr": "karar, yargı",
+      "sentence": "信号が変わったと思って渡りましたが、私の[[はんだん]]が早すぎたのです。",
+      "options": [
+        "判断",
+        "半断",
+        "判段",
+        "反断"
+      ],
+      "explain_tr": "判 ハン 'yargı'; 半・反 aynı ses."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "横断歩道",
+      "reading": "おうだんほどう",
+      "meaning_tr": "yaya geçidi",
+      "sentence": "そのかわりに毎朝散歩をしていますが、ある朝、[[おうだんほどう]]で車にぶつかりそうになりました。",
+      "options": [
+        "横断歩道",
+        "黄断歩道",
+        "横段歩道",
+        "構断歩道"
+      ],
+      "explain_tr": "横 オウ 'yan'; 黄 aynı ses."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "新聞",
+      "reading": "しんぶん",
+      "meaning_tr": "gazete",
+      "sentence": "[[しんぶん]]によると、工事は雨で一度中断したそうです。",
+      "options": [
+        "新聞",
+        "親聞",
+        "新問",
+        "新間"
+      ],
+      "explain_tr": "新 (斤 radikali) + 聞 ブン."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "中断",
+      "reading": "ちゅうだん",
+      "meaning_tr": "yarıda kesme",
+      "sentence": "新聞によると、工事は雨で一度[[ちゅうだん]]したそうです。",
+      "options": [
+        "中断",
+        "中段",
+        "仲断",
+        "中談"
+      ],
+      "explain_tr": "断 'kesmek'; 段 'basamak'."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "決断",
+      "reading": "けつだん",
+      "meaning_tr": "karar (kesin)",
+      "sentence": "それでも、生活を変えたのは正しい（　　）だったと思います。",
+      "options": [
+        "決断",
+        "油断",
+        "診断",
+        "断水"
+      ],
+      "explain_tr": "正しい決断 = doğru karar."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "無断",
+      "reading": "むだん",
+      "meaning_tr": "izinsiz",
+      "sentence": "工事の会社が住民に（　　）で予定を変えたので、みんな怒っていました。",
+      "options": [
+        "無断",
+        "油断",
+        "中断",
+        "判断"
+      ],
+      "explain_tr": "無断で = izin almadan."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "断然",
+      "reading": "だんぜん",
+      "meaning_tr": "kesinlikle, kat kat",
+      "sentence": "お酒をやめてから、体の調子は（　　）よくなりました。",
+      "options": [
+        "断然",
+        "断念",
+        "断水",
+        "決断"
+      ],
+      "explain_tr": "断然よくなる = kat kat iyileşmek."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "新鮮",
+      "reading": "しんせん",
+      "meaning_tr": "taze",
+      "sentence": "最近は野菜や果物など、（　　）な食べ物を買うようにしています。",
+      "options": [
+        "新鮮",
+        "新聞",
+        "新年",
+        "新型"
+      ],
+      "explain_tr": "新鮮な野菜 = taze sebze."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "最新",
+      "reading": "さいしん",
+      "meaning_tr": "en yeni",
+      "sentence": "スマホの（　　）のアプリで、毎日の歩数も記録しています。",
+      "options": [
+        "最新",
+        "新鮮",
+        "新人",
+        "新年"
+      ],
+      "explain_tr": "最新のアプリ = en yeni uygulama."
+    }
+  ]
+}

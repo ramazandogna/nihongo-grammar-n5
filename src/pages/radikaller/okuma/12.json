@@ -1,0 +1,234 @@
+{
+  "radicalId": 12,
+  "title": "秋の京都",
+  "title_tr": "Sonbaharda Kyoto",
+  "text": "秋の休みに、京都へ[[1|紅葉]]を見に行きました。駅には[[2|英語]]の案内もあり、外国からの[[3|若者]]もたくさんいました。大きな[[4|荷物]]を持って歩くのは大変で、少し[[5|苦労]]しました。お寺の近くで、有名な[[6|芸能人]]が撮影をしていました。昼ご飯は、地元の[[7|野菜]]を使った料理と[[8|お茶]]を楽しみました。途中で頭が痛くなったので、[[9|薬局]]で[[10|薬]]を買いました。美術館で日本の[[11|芸術]]に触れ、[[12|言葉]]では言えないほど感動しました。帰りに駅で財布を[[13|落として]]しまいましたが、[[14|落とし物]]として届けられていました。私は人と話すのが[[15|苦手]]ですが、この旅行のおかげで少し自信がつきました。",
+  "text_tr": "Sonbahar tatilinde kızaran yaprakları görmek için Kyoto'ya gittim. İstasyonda İngilizce tabelalar da vardı ve yurt dışından gelen pek çok genç vardı. Büyük bir bavulla yürümek zordu, biraz zahmet çektim. Tapınağın yakınında ünlü bir şöhret çekim yapıyordu. Öğle yemeğinde yerel sebzelerle yapılmış yemeğin ve çayın tadını çıkardım. Yolda başım ağrıdığı için eczaneden ilaç aldım. Müzede Japon sanatıyla tanışıp kelimelerle anlatılamayacak kadar etkilendim. Dönüşte istasyonda cüzdanımı düşürdüm ama kayıp eşya olarak teslim edilmişti. İnsanlarla konuşmakta zorlanırım ama bu gezi sayesinde biraz özgüven kazandım.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "紅葉",
+      "reading": "こうよう",
+      "meaning_tr": "sonbahar yaprakları",
+      "sentence": "秋の休みに、京都へ[[紅葉]]を見に行きました。",
+      "options": [
+        "こうよう",
+        "こうば",
+        "べによう",
+        "こうよ"
+      ],
+      "explain_tr": "紅 コウ + 葉 ヨウ (もみじ diye de okunur)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "英語",
+      "reading": "えいご",
+      "meaning_tr": "İngilizce",
+      "sentence": "駅には[[英語]]の案内もあり、外国からの若者もたくさんいました。",
+      "options": [
+        "えいご",
+        "えいこ",
+        "えご",
+        "いんご"
+      ],
+      "explain_tr": "英 エイ + 語 ゴ."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "若者",
+      "reading": "わかもの",
+      "meaning_tr": "genç insan",
+      "sentence": "駅には英語の案内もあり、外国からの[[若者]]もたくさんいました。",
+      "options": [
+        "わかもの",
+        "わかしゃ",
+        "じゃくしゃ",
+        "わかもん"
+      ],
+      "explain_tr": "Kun okunuş: 若 わか + 者 もの."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "荷物",
+      "reading": "にもつ",
+      "meaning_tr": "bagaj, eşya",
+      "sentence": "大きな[[荷物]]を持って歩くのは大変で、少し苦労しました。",
+      "options": [
+        "にもつ",
+        "にもの",
+        "かもつ",
+        "にぶつ"
+      ],
+      "explain_tr": "物 burada モツ; 貨物 (かもつ) tuzağı."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "苦労",
+      "reading": "くろう",
+      "meaning_tr": "zahmet",
+      "sentence": "大きな荷物を持って歩くのは大変で、少し[[苦労]]しました。",
+      "options": [
+        "くろう",
+        "くろ",
+        "くるう",
+        "にがろう"
+      ],
+      "explain_tr": "苦 ク + 労 ロウ (uzun)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "芸能人",
+      "reading": "げいのうじん",
+      "meaning_tr": "ünlü, şöhret",
+      "sentence": "お寺の近くで、有名な[[げいのうじん]]が撮影をしていました。",
+      "options": [
+        "芸能人",
+        "芸態人",
+        "芸能入",
+        "云能人"
+      ],
+      "explain_tr": "能 / 態 ve 人 / 入 karışır."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "野菜",
+      "reading": "やさい",
+      "meaning_tr": "sebze",
+      "sentence": "昼ご飯は、地元の[[やさい]]を使った料理とお茶を楽しみました。",
+      "options": [
+        "野菜",
+        "野采",
+        "野彩",
+        "夜菜"
+      ],
+      "explain_tr": "菜 (艹) sebze; 采 başında 艹 yok."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "お茶",
+      "reading": "おちゃ",
+      "meaning_tr": "çay",
+      "sentence": "昼ご飯は、地元の野菜を使った料理と[[おちゃ]]を楽しみました。",
+      "options": [
+        "お茶",
+        "お荼",
+        "お答",
+        "お条"
+      ],
+      "explain_tr": "茶 (艹); 荼 çok benzer ama farklı."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "薬局",
+      "reading": "やっきょく",
+      "meaning_tr": "eczane",
+      "sentence": "途中で頭が痛くなったので、[[やっきょく]]で薬を買いました。",
+      "options": [
+        "薬局",
+        "楽局",
+        "薬曲",
+        "薬極"
+      ],
+      "explain_tr": "薬 = 艹 + 楽."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "薬",
+      "reading": "くすり",
+      "meaning_tr": "ilaç",
+      "sentence": "途中で頭が痛くなったので、薬局で[[くすり]]を買いました。",
+      "options": [
+        "薬",
+        "楽",
+        "菓",
+        "草"
+      ],
+      "explain_tr": "薬 (艹) ilaç; 楽 (eğlence) başında 艹 yok."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "芸術",
+      "reading": "げいじゅつ",
+      "meaning_tr": "sanat",
+      "sentence": "美術館で日本の（　　）に触れ、言葉では言えないほど感動しました。",
+      "options": [
+        "芸術",
+        "芸能人",
+        "手術",
+        "農業"
+      ],
+      "explain_tr": "美術館で芸術に触れる: müzede sanatla tanışmak."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "言葉",
+      "reading": "ことば",
+      "meaning_tr": "kelime, söz",
+      "sentence": "美術館で日本の芸術に触れ、（　　）では言えないほど感動しました。",
+      "options": [
+        "言葉",
+        "紅葉",
+        "葉書",
+        "落葉"
+      ],
+      "explain_tr": "言葉では言えない: kelimelerle anlatılamaz."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "落として",
+      "reading": "おとして",
+      "meaning_tr": "düşürüp",
+      "sentence": "帰りに駅で財布を（　　）しまいましたが、落とし物として届けられていました。",
+      "options": [
+        "落として",
+        "落ちて",
+        "苦しんで",
+        "荷造りして"
+      ],
+      "explain_tr": "財布を落とす (geçişli); 落ちる を almaz."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "落とし物",
+      "reading": "おとしもの",
+      "meaning_tr": "kayıp eşya",
+      "sentence": "帰りに駅で財布を落としてしまいましたが、（　　）として届けられていました。",
+      "options": [
+        "落とし物",
+        "落ち葉",
+        "落第",
+        "落書き"
+      ],
+      "explain_tr": "落とし物として届ける: kayıp eşya olarak teslim etmek."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "苦手",
+      "reading": "にがて",
+      "meaning_tr": "zayıf olunan şey",
+      "sentence": "私は人と話すのが（　　）ですが、この旅行のおかげで少し自信がつきました。",
+      "options": [
+        "苦手",
+        "苦労",
+        "苦い",
+        "若手"
+      ],
+      "explain_tr": "～が苦手だ: -de zorlanmak."
+    }
+  ]
+}

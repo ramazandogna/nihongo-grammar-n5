@@ -1,0 +1,234 @@
+{
+  "radicalId": 24,
+  "title": "父のマラソン",
+  "title_tr": "Babamın maratonu",
+  "text": "父は[[1|通勤]]に一時間以上かかる会社に[[6|勤めて]]いる。健康のため、去年から[[11|運動]]を始めた。最初は少し走っただけで足が[[7|動かなく]]なり、[[2|苦労]]したそうだ。しかし毎朝の[[12|努力]]の[[3|効果]]が出て、今では十キロ走れるようになった。今年は市のマラソン大会に[[8|参加]]することにした。大会には[[13|大勢]]の人が集まり、父はスタートから[[14|勢い]]よく走り出した。途中で転んだ人を[[9|助け]]ながらも、父は最後まで正しい[[4|姿勢]]で走り続けた。結果は優勝ではなかったが、父は「自分との[[15|勝負]]には[[10|勝った]]」と笑った。来年は私も一緒に走れるように、[[5|勉強]]の合間に体を動かそうと思う。",
+  "text_tr": "Babam işe gidip gelmesi bir saatten fazla süren bir şirkette çalışıyor. Sağlığı için geçen yıldan beri egzersize başladı. Başta biraz koşunca bacakları tutmaz olmuş, çok zorlanmış. Ama her sabahki çabasının etkisi görüldü ve şimdi on kilometre koşabiliyor. Bu yıl belediyenin maraton yarışına katılmaya karar verdi. Yarışa çok sayıda insan geldi, babam starttan itibaren hızla koşmaya başladı. Yolda düşen birine yardım etmesine rağmen sonuna kadar doğru duruşla koşmaya devam etti. Sonuç birincilik değildi ama babam \"Kendimle olan mücadeleyi kazandım\" diye güldü. Gelecek yıl ben de birlikte koşabilmek için ders aralarında hareket etmeyi düşünüyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "通勤",
+      "reading": "つうきん",
+      "meaning_tr": "işe gidip gelme",
+      "sentence": "父は[[通勤]]に一時間以上かかる会社に勤めている。",
+      "options": [
+        "つうきん",
+        "つうぎん",
+        "つきん",
+        "つうけん"
+      ],
+      "explain_tr": "通 ツウ (uzun) + 勤 キン (゛ yok)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "苦労",
+      "reading": "くろう",
+      "meaning_tr": "zahmet",
+      "sentence": "最初は少し走っただけで足が動かなくなり、[[苦労]]したそうだ。",
+      "options": [
+        "くろう",
+        "くろ",
+        "くうろう",
+        "ぐろう"
+      ],
+      "explain_tr": "苦 ク + 労 ロウ (uzun)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "効果",
+      "reading": "こうか",
+      "meaning_tr": "etki",
+      "sentence": "しかし毎朝の努力の[[効果]]が出て、今では十キロ走れるようになった。",
+      "options": [
+        "こうか",
+        "こうが",
+        "こか",
+        "ごうか"
+      ],
+      "explain_tr": "効 コウ + 果 カ; ごうか = 豪華 (lüks)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "姿勢",
+      "reading": "しせい",
+      "meaning_tr": "duruş",
+      "sentence": "途中で転んだ人を助けながらも、父は最後まで正しい[[姿勢]]で走り続けた。",
+      "options": [
+        "しせい",
+        "しぜい",
+        "しいせい",
+        "しせ"
+      ],
+      "explain_tr": "姿 シ + 勢 セイ (゛ yok)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "勉強",
+      "reading": "べんきょう",
+      "meaning_tr": "ders çalışma",
+      "sentence": "来年は私も一緒に走れるように、[[勉強]]の合間に体を動かそうと思う。",
+      "options": [
+        "べんきょう",
+        "べんきょ",
+        "べんぎょう",
+        "めんきょう"
+      ],
+      "explain_tr": "勉 ベン + 強 キョウ (uzun)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "勤めて",
+      "reading": "つとめて",
+      "meaning_tr": "çalışmak (bir yerde)",
+      "sentence": "父は通勤に一時間以上かかる会社に[[つとめて]]いる。",
+      "options": [
+        "勤めて",
+        "務めて",
+        "努めて",
+        "勧めて"
+      ],
+      "explain_tr": "Şirkette çalışmak = 勤める; 務める görev üstlenmek, 努める çabalamak."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "動かなく",
+      "reading": "うごかなく",
+      "meaning_tr": "hareket etmez",
+      "sentence": "最初は少し走っただけで足が[[うごかなく]]なり、苦労したそうだ。",
+      "options": [
+        "動かなく",
+        "働かなく",
+        "勤かなく",
+        "重かなく"
+      ],
+      "explain_tr": "動く = hareket etmek; 働く (はたらく) benzer görünür."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "参加",
+      "reading": "さんか",
+      "meaning_tr": "katılım",
+      "sentence": "今年は市のマラソン大会に[[さんか]]することにした。",
+      "options": [
+        "参加",
+        "惨加",
+        "参架",
+        "参家"
+      ],
+      "explain_tr": "加 (力 + 口) eklemek; 架・家 de カ okunur."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "助け",
+      "reading": "たすけ",
+      "meaning_tr": "yardım (助ける)",
+      "sentence": "途中で転んだ人を[[たすけ]]ながらも、父は最後まで正しい姿勢で走り続けた。",
+      "options": [
+        "助け",
+        "肋け",
+        "勘け",
+        "効け"
+      ],
+      "explain_tr": "助 = 且 + 力; 肋 (kaburga) tuzaktır."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "勝った",
+      "reading": "かった",
+      "meaning_tr": "kazandı",
+      "sentence": "結果は優勝ではなかったが、父は「自分との勝負には[[かった]]」と笑った。",
+      "options": [
+        "勝った",
+        "膝った",
+        "券った",
+        "勢った"
+      ],
+      "explain_tr": "勝つ = kazanmak (力 radikali)."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "運動",
+      "reading": "うんどう",
+      "meaning_tr": "egzersiz",
+      "sentence": "健康のため、去年から（　　）を始めた。",
+      "options": [
+        "運動",
+        "自動",
+        "行動",
+        "移動"
+      ],
+      "explain_tr": "健康のために運動する."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "努力",
+      "reading": "どりょく",
+      "meaning_tr": "çaba",
+      "sentence": "しかし毎朝の（　　）の効果が出て、今では十キロ走れるようになった。",
+      "options": [
+        "努力",
+        "勢力",
+        "助手",
+        "義務"
+      ],
+      "explain_tr": "毎朝の努力 = her sabahki çaba."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "大勢",
+      "reading": "おおぜい",
+      "meaning_tr": "çok sayıda (insan)",
+      "sentence": "大会には（　　）の人が集まり、父はスタートから勢いよく走り出した。",
+      "options": [
+        "大勢",
+        "姿勢",
+        "勢い",
+        "参加"
+      ],
+      "explain_tr": "大勢の人 = kalabalık."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "勢い",
+      "reading": "いきおい",
+      "meaning_tr": "hız, coşku",
+      "sentence": "大会には大勢の人が集まり、父はスタートから（　　）よく走り出した。",
+      "options": [
+        "勢い",
+        "大勢",
+        "姿勢",
+        "効果"
+      ],
+      "explain_tr": "勢いよく = hızla, coşkuyla."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "勝負",
+      "reading": "しょうぶ",
+      "meaning_tr": "mücadele, yarış",
+      "sentence": "結果は優勝ではなかったが、父は「自分との（　　）には勝った」と笑った。",
+      "options": [
+        "勝負",
+        "勝手",
+        "勝利",
+        "義務"
+      ],
+      "explain_tr": "自分との勝負 = kendinle mücadele."
+    }
+  ]
+}

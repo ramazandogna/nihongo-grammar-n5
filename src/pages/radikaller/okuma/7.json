@@ -1,0 +1,234 @@
+{
+  "radicalId": 7,
+  "title": "老舗のセール",
+  "title_tr": "Köklü dükkânın indirimi",
+  "text": "先週、新聞の[[1|広告]]で、新しい[[2|商品]]のセールがあることを知りました。店の電話[[3|番号]]を調べて、すぐに電話をかけました。その店は百年以上の[[4|歴史]]があり、古い食器を集めるのが[[5|趣味]]の人に人気があります。店員に[[6|質問]]すると、セールの品物に少し[[7|問題]]があったと説明されました。店長はそのことをメーカーに[[8|報告]]して、全国[[9|各地]]の店でも調べているそうです。店の[[10|周辺]]には、似た店がたくさんあります。「訳あり」という言葉の[[11|意味]]が分からなかったので、店員に聞きました。帰りに[[12|信号]]を待っていると、隣の人がその店の[[13|噂]]を話していました。安く買えた[[14|喜び]]を家族に話すと、母も笑っていました。次は、店に飾ってあった陶芸家の[[15|作品]]も見に行きたいです。",
+  "text_tr": "Geçen hafta gazetedeki bir reklamdan yeni ürünlerde indirim olduğunu öğrendim. Dükkânın telefon numarasını bulup hemen aradım. O dükkânın yüz yılı aşkın bir geçmişi var ve eski tabak çanak toplamayı hobi edinenler arasında popüler. Görevliye soru sorunca indirimli ürünlerde küçük bir sorun olduğunu açıkladılar. Müdür bunu üreticiye bildirmiş ve ülkenin her yerindeki dükkânlarda da inceleniyormuş. Dükkânın çevresinde benzer pek çok dükkân var. \"Wake-ari\" (kusurlu) kelimesinin anlamını bilmediğim için görevliye sordum. Dönüşte trafik ışığında beklerken yanımdaki kişi o dükkân hakkında dedikodu anlatıyordu. Ucuza almanın sevincini aileme anlatınca annem de güldü. Bir dahaki sefere dükkânda sergilenen seramik sanatçısının eserlerini de görmeye gitmek istiyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "広告",
+      "reading": "こうこく",
+      "meaning_tr": "reklam",
+      "sentence": "先週、新聞の[[広告]]で、新しい商品のセールがあることを知りました。",
+      "options": [
+        "こうこく",
+        "こうごく",
+        "ひろこく",
+        "こうこう"
+      ],
+      "explain_tr": "広 コウ + 告 コク."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "商品",
+      "reading": "しょうひん",
+      "meaning_tr": "ürün",
+      "sentence": "先週、新聞の広告で、新しい[[商品]]のセールがあることを知りました。",
+      "options": [
+        "しょうひん",
+        "しょうびん",
+        "しょひん",
+        "しょうしな"
+      ],
+      "explain_tr": "商 ショウ + 品 ヒン (゛ yok)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "番号",
+      "reading": "ばんごう",
+      "meaning_tr": "numara",
+      "sentence": "店の電話[[番号]]を調べて、すぐに電話をかけました。",
+      "options": [
+        "ばんごう",
+        "ばんこう",
+        "ばんご",
+        "はんごう"
+      ],
+      "explain_tr": "番 バン + 号 ゴウ (uzun)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "歴史",
+      "reading": "れきし",
+      "meaning_tr": "tarih",
+      "sentence": "その店は百年以上の[[歴史]]があり、古い食器を集めるのが趣味の人に人気があります。",
+      "options": [
+        "れきし",
+        "れきじ",
+        "れっし",
+        "れきしい"
+      ],
+      "explain_tr": "歴 レキ + 史 シ."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "趣味",
+      "reading": "しゅみ",
+      "meaning_tr": "hobi",
+      "sentence": "その店は百年以上の歴史があり、古い食器を集めるのが[[趣味]]の人に人気があります。",
+      "options": [
+        "しゅみ",
+        "しゅうみ",
+        "しゅあじ",
+        "じゅみ"
+      ],
+      "explain_tr": "趣 シュ (kısa) + 味 ミ."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "質問",
+      "reading": "しつもん",
+      "meaning_tr": "soru",
+      "sentence": "店員に[[しつもん]]すると、セールの品物に少し問題があったと説明されました。",
+      "options": [
+        "質問",
+        "質門",
+        "室問",
+        "質間"
+      ],
+      "explain_tr": "問 (口) sormak; 門 kapı, 間 ara."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "問題",
+      "reading": "もんだい",
+      "meaning_tr": "sorun",
+      "sentence": "店員に質問すると、セールの品物に少し[[もんだい]]があったと説明されました。",
+      "options": [
+        "問題",
+        "門題",
+        "問代",
+        "間題"
+      ],
+      "explain_tr": "問 içinde 口 var: soru."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "報告",
+      "reading": "ほうこく",
+      "meaning_tr": "rapor, bildirme",
+      "sentence": "店長はそのことをメーカーに[[ほうこく]]して、全国各地の店でも調べているそうです。",
+      "options": [
+        "報告",
+        "報吉",
+        "法告",
+        "報刻"
+      ],
+      "explain_tr": "告 (口) bildirmek; 吉 benzer görünür."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "各地",
+      "reading": "かくち",
+      "meaning_tr": "her yer",
+      "sentence": "店長はそのことをメーカーに報告して、全国[[かくち]]の店でも調べているそうです。",
+      "options": [
+        "各地",
+        "名地",
+        "格地",
+        "各池"
+      ],
+      "explain_tr": "各 (口) her biri; 名 benzer görünür."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "周辺",
+      "reading": "しゅうへん",
+      "meaning_tr": "çevre",
+      "sentence": "店の[[しゅうへん]]には、似た店がたくさんあります。",
+      "options": [
+        "周辺",
+        "週辺",
+        "周返",
+        "周変"
+      ],
+      "explain_tr": "周 (口) çevre; 週 hafta."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "意味",
+      "reading": "いみ",
+      "meaning_tr": "anlam",
+      "sentence": "「訳あり」という言葉の（　　）が分からなかったので、店員に聞きました。",
+      "options": [
+        "意味",
+        "趣味",
+        "味方",
+        "意見"
+      ],
+      "explain_tr": "言葉の意味: kelimenin anlamı."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "信号",
+      "reading": "しんごう",
+      "meaning_tr": "trafik ışığı",
+      "sentence": "帰りに（　　）を待っていると、隣の人がその店の噂を話していました。",
+      "options": [
+        "信号",
+        "番号",
+        "記号",
+        "信用"
+      ],
+      "explain_tr": "信号を待つ: ışıkta beklemek."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "噂",
+      "reading": "うわさ",
+      "meaning_tr": "dedikodu",
+      "sentence": "帰りに信号を待っていると、隣の人がその店の（　　）を話していました。",
+      "options": [
+        "噂",
+        "命令",
+        "番号",
+        "信号"
+      ],
+      "explain_tr": "～の噂を話す: hakkında dedikodu yapmak."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "喜び",
+      "reading": "よろこび",
+      "meaning_tr": "sevinç",
+      "sentence": "安く買えた（　　）を家族に話すと、母も笑っていました。",
+      "options": [
+        "喜び",
+        "噂話",
+        "命令",
+        "問題"
+      ],
+      "explain_tr": "安く買えた喜び: ucuza almanın sevinci."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "作品",
+      "reading": "さくひん",
+      "meaning_tr": "eser",
+      "sentence": "次は、店に飾ってあった陶芸家の（　　）も見に行きたいです。",
+      "options": [
+        "作品",
+        "部品",
+        "品質",
+        "上品"
+      ],
+      "explain_tr": "陶芸家の作品: sanatçının eseri."
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "radicalId": 26,
+  "title": "日本への留学",
+  "title_tr": "Japonya'ya öğrenim",
+  "text": "私は来年、日本に[[1|留学]]する[[11|計画]]を立てている。きっかけは、日本の[[2|映画]]を見て、[[6|世界]]の文化に興味を持ったことだ。今は毎日、日本のテレビ[[5|番組]]で日本語を練習している。大学の留学の[[7|申し込み]]は、ウェブサイトで[[12|順番]]に手続きをする。必要な書類には、受験[[13|番号]]を書く欄もある。先日、パソコンの[[8|画面]]が急に暗くなり、作った書類が消えてしまった。機械の[[3|異常]]かと思ったが、[[14|理由]]は電池が切れていただけだった。日本の生活は、自分の国の習慣と[[9|異なる]]ことも多いだろう。寮には[[4|男性]]用と女性用の建物があり、田舎で[[10|畑]]仕事を体験するプログラムもあるらしい。授業がない日は、[[15|自由]]に好きな場所へ行けるので楽しみだ。",
+  "text_tr": "Gelecek yıl Japonya'da okumak için plan yapıyorum. Bunun başlangıcı Japon filmleri izleyip dünya kültürlerine ilgi duymamdı. Şu anda her gün Japon televizyon programlarıyla Japonca pratik yapıyorum. Üniversitenin değişim başvurusu internet sitesinden sırayla işlem yapılarak oluyor. Gerekli belgelerde sınav numarasını yazacak bir alan da var. Geçenlerde bilgisayarın ekranı birden karardı ve hazırladığım belgeler silindi. Makinede bir arıza var sandım ama sebep sadece pilin bitmesiydi. Japonya'daki hayat kendi ülkemin alışkanlıklarından farklı olan çok şey içerecektir. Yurtta erkekler ve kadınlar için ayrı binalar var, kırsalda tarla işini deneyimleme programı da varmış. Dersin olmadığı günlerde istediğim yere özgürce gidebileceğim için heyecanlıyım.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "留学",
+      "reading": "りゅうがく",
+      "meaning_tr": "yurt dışında okumak",
+      "sentence": "私は来年、日本に[[留学]]する計画を立てている。",
+      "options": [
+        "りゅうがく",
+        "りゅがく",
+        "るがく",
+        "りゅうかく"
+      ],
+      "explain_tr": "留 リュウ (uzun) + 学 ガク."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "映画",
+      "reading": "えいが",
+      "meaning_tr": "film",
+      "sentence": "きっかけは、日本の[[映画]]を見て、世界の文化に興味を持ったことだ。",
+      "options": [
+        "えいが",
+        "えいかく",
+        "えが",
+        "えいかい"
+      ],
+      "explain_tr": "画 burada ガ okunur (カク değil)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "異常",
+      "reading": "いじょう",
+      "meaning_tr": "anormallik, arıza",
+      "sentence": "機械の[[異常]]かと思ったが、理由は電池が切れていただけだった。",
+      "options": [
+        "いじょう",
+        "いじょ",
+        "いしょう",
+        "いっじょう"
+      ],
+      "explain_tr": "異 イ + 常 ジョウ (uzun, ゛ var)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "男性",
+      "reading": "だんせい",
+      "meaning_tr": "erkek",
+      "sentence": "寮には[[男性]]用と女性用の建物があり、田舎で畑仕事を体験するプログラムもあるらしい。",
+      "options": [
+        "だんせい",
+        "なんせい",
+        "だんしょう",
+        "たんせい"
+      ],
+      "explain_tr": "男 ダン + 性 セイ."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "番組",
+      "reading": "ばんぐみ",
+      "meaning_tr": "program",
+      "sentence": "今は毎日、日本のテレビ[[番組]]で日本語を練習している。",
+      "options": [
+        "ばんぐみ",
+        "ばんくみ",
+        "ばんそ",
+        "はんぐみ"
+      ],
+      "explain_tr": "番 バン + 組 くみ → ぐみ (rendaku)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "世界",
+      "reading": "せかい",
+      "meaning_tr": "dünya",
+      "sentence": "きっかけは、日本の映画を見て、[[せかい]]の文化に興味を持ったことだ。",
+      "options": [
+        "世界",
+        "世介",
+        "世境",
+        "世皆"
+      ],
+      "explain_tr": "界 = 田 + 介; sadece 介 yanlıştır."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "申し込み",
+      "reading": "もうしこみ",
+      "meaning_tr": "başvuru",
+      "sentence": "大学の留学の[[もうしこみ]]は、ウェブサイトで順番に手続きをする。",
+      "options": [
+        "申し込み",
+        "甲し込み",
+        "由し込み",
+        "申し混み"
+      ],
+      "explain_tr": "申 (çubuk iki yandan çıkar); 甲・由 çok benzer."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "画面",
+      "reading": "がめん",
+      "meaning_tr": "ekran",
+      "sentence": "先日、パソコンの[[がめん]]が急に暗くなり、作った書類が消えてしまった。",
+      "options": [
+        "画面",
+        "画綿",
+        "書面",
+        "画麺"
+      ],
+      "explain_tr": "画 (田 içerir) + 面; 書面 しょめん tuzaktır."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "異なる",
+      "reading": "ことなる",
+      "meaning_tr": "farklı olmak",
+      "sentence": "日本の生活は、自分の国の習慣と[[ことなる]]ことも多いだろう。",
+      "options": [
+        "異なる",
+        "果なる",
+        "黒なる",
+        "暴なる"
+      ],
+      "explain_tr": "異 = 田 + 共; 果・黒 benzer görünür."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "畑",
+      "reading": "はたけ",
+      "meaning_tr": "tarla",
+      "sentence": "寮には男性用と女性用の建物があり、田舎で[[はたけ]]仕事を体験するプログラムもあるらしい。",
+      "options": [
+        "畑",
+        "細",
+        "町",
+        "界"
+      ],
+      "explain_tr": "畑 = 火 + 田 (Japonya'da üretilmiş kanji)."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "計画",
+      "reading": "けいかく",
+      "meaning_tr": "plan",
+      "sentence": "私は来年、日本に留学する（　　）を立てている。",
+      "options": [
+        "計画",
+        "映画",
+        "画面",
+        "区画"
+      ],
+      "explain_tr": "計画を立てる = plan yapmak."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "順番",
+      "reading": "じゅんばん",
+      "meaning_tr": "sıra",
+      "sentence": "大学の留学の申し込みは、ウェブサイトで（　　）に手続きをする。",
+      "options": [
+        "順番",
+        "番号",
+        "番組",
+        "当番"
+      ],
+      "explain_tr": "順番に = sırayla."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "番号",
+      "reading": "ばんごう",
+      "meaning_tr": "numara",
+      "sentence": "必要な書類には、受験（　　）を書く欄もある。",
+      "options": [
+        "番号",
+        "番組",
+        "順番",
+        "交番"
+      ],
+      "explain_tr": "受験番号 = sınav numarası."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "理由",
+      "reading": "りゆう",
+      "meaning_tr": "sebep",
+      "sentence": "機械の異常かと思ったが、（　　）は電池が切れていただけだった。",
+      "options": [
+        "理由",
+        "自由",
+        "異常",
+        "世界"
+      ],
+      "explain_tr": "理由は〜だけだった = sebep sadece ...ydı."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "自由",
+      "reading": "じゆう",
+      "meaning_tr": "özgür",
+      "sentence": "授業がない日は、（　　）に好きな場所へ行けるので楽しみだ。",
+      "options": [
+        "自由",
+        "理由",
+        "異常",
+        "計画"
+      ],
+      "explain_tr": "自由に行ける = özgürce gidebilmek."
+    }
+  ]
+}

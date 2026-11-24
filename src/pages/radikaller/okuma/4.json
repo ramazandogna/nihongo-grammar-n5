@@ -1,0 +1,234 @@
+{
+  "radicalId": 4,
+  "title": "学校見学",
+  "title_tr": "Okul ziyareti",
+  "text": "先週、近所の[[1|学校]]で地域の人のための見学会がありました。最初に[[2|校長]]先生が学校の中を[[3|案内]]してくれました。教室の[[4|黒板]]には、子どもたちが育てている[[5|植物]]の絵がかいてありました。理科の[[6|授業]]では、[[7|機械]]を使って水の量を調べる[[8|様子]]を見ました。子どもたちはとても[[9|積極的]]に手を挙げていて、[[10|様々]]な意見が出ました。先生によると、地域の田んぼで[[11|農業]]について学ぶ[[12|機会]]も多いそうです。また、古い校舎の[[13|構造]]を調べる活動もあるそうです。子どもたちが自分で考えることが、教育の[[14|根本]]だと先生は話していました。帰りに学校の前の道を[[15|横断]]するとき、子どもたちが手を振ってくれました。",
+  "text_tr": "Geçen hafta mahalledeki okulda bölge halkı için bir gezi günü vardı. Önce okul müdürü bizi okulda gezdirdi. Sınıftaki kara tahtada çocukların yetiştirdiği bitkilerin resmi çizilmişti. Fen dersinde makine kullanarak su miktarını ölçmelerini izledik. Çocuklar çok istekli şekilde el kaldırıyordu ve çeşitli fikirler çıktı. Öğretmene göre bölgedeki pirinç tarlalarında tarım hakkında öğrenme fırsatları da çokmuş. Ayrıca eski okul binasının yapısını inceleyen bir etkinlik de varmış. Öğretmen, çocukların kendi başına düşünmesinin eğitimin temeli olduğunu söyledi. Dönüşte okulun önündeki yoldan karşıya geçerken çocuklar el salladı.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "学校",
+      "reading": "がっこう",
+      "meaning_tr": "okul",
+      "sentence": "先週、近所の[[学校]]で地域の人のための見学会がありました。",
+      "options": [
+        "がっこう",
+        "がくこう",
+        "がこう",
+        "がっこ"
+      ],
+      "explain_tr": "学 ガク + 校 コウ → ガッコウ (küçük っ)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "校長",
+      "reading": "こうちょう",
+      "meaning_tr": "okul müdürü",
+      "sentence": "最初に[[校長]]先生が学校の中を案内してくれました。",
+      "options": [
+        "こうちょう",
+        "こうちょ",
+        "こちょう",
+        "こうなが"
+      ],
+      "explain_tr": "校 コウ + 長 チョウ; iki uzun ünlü."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "案内",
+      "reading": "あんない",
+      "meaning_tr": "rehberlik",
+      "sentence": "最初に校長先生が学校の中を[[案内]]してくれました。",
+      "options": [
+        "あんない",
+        "あんうち",
+        "あない",
+        "あんだい"
+      ],
+      "explain_tr": "案 アン + 内 ナイ."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "黒板",
+      "reading": "こくばん",
+      "meaning_tr": "kara tahta",
+      "sentence": "教室の[[黒板]]には、子どもたちが育てている植物の絵がかいてありました。",
+      "options": [
+        "こくばん",
+        "こくはん",
+        "くろばん",
+        "こくいた"
+      ],
+      "explain_tr": "板 burada バン (゛)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "植物",
+      "reading": "しょくぶつ",
+      "meaning_tr": "bitki",
+      "sentence": "教室の黒板には、子どもたちが育てている[[植物]]の絵がかいてありました。",
+      "options": [
+        "しょくぶつ",
+        "しょくもつ",
+        "しょうぶつ",
+        "しょくぶち"
+      ],
+      "explain_tr": "物 ブツ; 食物 しょくもつ ile karıştırma."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "授業",
+      "reading": "じゅぎょう",
+      "meaning_tr": "ders",
+      "sentence": "理科の[[じゅぎょう]]では、機械を使って水の量を調べる様子を見ました。",
+      "options": [
+        "授業",
+        "受業",
+        "授行",
+        "援業"
+      ],
+      "explain_tr": "授 (扌) vermek; 受 almak."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "機械",
+      "reading": "きかい",
+      "meaning_tr": "makine",
+      "sentence": "理科の授業では、[[きかい]]を使って水の量を調べる様子を見ました。",
+      "options": [
+        "機械",
+        "機会",
+        "幾械",
+        "機戒"
+      ],
+      "explain_tr": "機会 (fırsat) da きかい ama anlam farklı."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "様子",
+      "reading": "ようす",
+      "meaning_tr": "durum, görünüş",
+      "sentence": "理科の授業では、機械を使って水の量を調べる[[ようす]]を見ました。",
+      "options": [
+        "様子",
+        "洋子",
+        "様予",
+        "羊子"
+      ],
+      "explain_tr": "様 (木) + 子; 予 benzer görünür."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "積極的",
+      "reading": "せっきょくてき",
+      "meaning_tr": "istekli, aktif",
+      "sentence": "子どもたちはとても[[せっきょくてき]]に手を挙げていて、様々な意見が出ました。",
+      "options": [
+        "積極的",
+        "積局的",
+        "責極的",
+        "績極的"
+      ],
+      "explain_tr": "積 (禾) + 極 (木)."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "様々",
+      "reading": "さまざま",
+      "meaning_tr": "çeşitli",
+      "sentence": "子どもたちはとても積極的に手を挙げていて、[[さまざま]]な意見が出ました。",
+      "options": [
+        "様々",
+        "模々",
+        "洋々",
+        "検々"
+      ],
+      "explain_tr": "様 (木) tekrar işareti 々 ile."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "農業",
+      "reading": "のうぎょう",
+      "meaning_tr": "tarım",
+      "sentence": "先生によると、地域の田んぼで（　　）について学ぶ機会も多いそうです。",
+      "options": [
+        "農業",
+        "工業",
+        "授業",
+        "作業"
+      ],
+      "explain_tr": "Pirinç tarlası → 農業."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "機会",
+      "reading": "きかい",
+      "meaning_tr": "fırsat",
+      "sentence": "先生によると、地域の田んぼで農業について学ぶ（　　）も多いそうです。",
+      "options": [
+        "機会",
+        "機械",
+        "機能",
+        "危機"
+      ],
+      "explain_tr": "学ぶ機会: öğrenme fırsatı."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "構造",
+      "reading": "こうぞう",
+      "meaning_tr": "yapı",
+      "sentence": "また、古い校舎の（　　）を調べる活動もあるそうです。",
+      "options": [
+        "構造",
+        "結構",
+        "造花",
+        "構想"
+      ],
+      "explain_tr": "校舎の構造: binanın yapısı."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "根本",
+      "reading": "こんぽん",
+      "meaning_tr": "temel, kök",
+      "sentence": "子どもたちが自分で考えることが、教育の（　　）だと先生は話していました。",
+      "options": [
+        "根本",
+        "根気",
+        "大根",
+        "本気"
+      ],
+      "explain_tr": "教育の根本: eğitimin özü."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "横断",
+      "reading": "おうだん",
+      "meaning_tr": "karşıya geçme",
+      "sentence": "帰りに学校の前の道を（　　）するとき、子どもたちが手を振ってくれました。",
+      "options": [
+        "横断",
+        "判断",
+        "横転",
+        "中断"
+      ],
+      "explain_tr": "道を横断する: yolu karşıdan karşıya geçmek."
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "radicalId": 55,
+  "title": "町のパン屋",
+  "title_tr": "Kasabanın fırını",
+  "text": "私は小さなパン屋で働いています。この店の[[6|社長]]は、三十年前に一人で店を始めました。社長の[[2|長男]]の健さんが、今は[[12|店長]]として店を任されています。健さんは[[5|身長]]が百九十センチもあり、お客さんによく驚かれます。健さんの[[1|長所]]は、誰にでも優しいところです。この店のパンの[[11|特長]]は、国産の小麦だけを使っていることです。店はこの十年で大きく[[7|成長]]し、今は町に三つの店があります。先月は会議が[[4|長引いて]]、夜遅くまで帰れませんでした。その会議で、営業時間を一時間[[3|延長]]することが決まりました。また、[[8|部長]]の提案で、[[10|長期]]の計画も立てることになりました。社長は今年八十歳ですが、毎朝[[14|長距離]]を走っているので、とても元気です。冬でも[[9|長袖]]のシャツ一枚で働いています。社長はいつも、健康で[[13|長生き]]したいと言っています。近くの小学校の[[15|校長]]先生も、毎朝パンを買いに来てくれます。",
+  "text_tr": "Küçük bir fırında çalışıyorum. Bu dükkânın sahibi otuz yıl önce dükkânı tek başına açmış. Sahibin büyük oğlu Ken şimdi dükkân müdürü olarak işi yürütüyor. Ken'in boyu tam 190 santim, müşteriler sık sık şaşırıyor. Ken'in iyi yanı herkese nazik olması. Bu dükkânın ekmeklerinin güçlü yanı yalnızca yerli un kullanılması. Dükkân son on yılda çok büyüdü, şimdi kasabada üç şubesi var. Geçen ay toplantı uzayınca gece geç saate kadar eve dönemedim. O toplantıda çalışma saatlerinin bir saat uzatılmasına karar verildi. Ayrıca müdürün önerisiyle uzun vadeli bir plan da yapılacak. Patron bu yıl seksen yaşında ama her sabah uzun mesafe koştuğu için çok dinç. Kışın bile tek bir uzun kollu gömlekle çalışıyor. Patron hep sağlıklı ve uzun yaşamak istediğini söylüyor. Yakındaki ilkokulun müdürü de her sabah ekmek almaya geliyor.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "長所",
+      "reading": "ちょうしょ",
+      "meaning_tr": "iyi yan, meziyet",
+      "sentence": "健さんの[[長所]]は、誰にでも優しいところです。",
+      "options": [
+        "ちょうしょ",
+        "ちょうじょ",
+        "ちょしょ",
+        "ながしょ"
+      ],
+      "explain_tr": "長 チョウ + 所 ショ; 長女 ちょうじょ tuzak."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "長男",
+      "reading": "ちょうなん",
+      "meaning_tr": "en büyük oğul",
+      "sentence": "社長の[[長男]]の健さんが、今は店長として店を任されています。",
+      "options": [
+        "ちょうなん",
+        "ちょうだん",
+        "ながおとこ",
+        "ちょうおとこ"
+      ],
+      "explain_tr": "男 burada ナン."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "延長",
+      "reading": "えんちょう",
+      "meaning_tr": "uzatma",
+      "sentence": "その会議で、営業時間を一時間[[延長]]することが決まりました。",
+      "options": [
+        "えんちょう",
+        "えんちょ",
+        "えいちょう",
+        "せんちょう"
+      ],
+      "explain_tr": "延 エン + 長 チョウ."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "長引いて",
+      "reading": "ながびいて",
+      "meaning_tr": "uzayıp",
+      "sentence": "先月は会議が[[長引いて]]、夜遅くまで帰れませんでした。",
+      "options": [
+        "ながびいて",
+        "ながひいて",
+        "ちょうびいて",
+        "ながいいて"
+      ],
+      "explain_tr": "長 + 引く → びく (rendaku)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "身長",
+      "reading": "しんちょう",
+      "meaning_tr": "boy",
+      "sentence": "健さんは[[身長]]が百九十センチもあり、お客さんによく驚かれます。",
+      "options": [
+        "しんちょう",
+        "みちょう",
+        "しんちょ",
+        "じんちょう"
+      ],
+      "explain_tr": "身 シン + 長 チョウ."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "社長",
+      "reading": "しゃちょう",
+      "meaning_tr": "şirket başkanı",
+      "sentence": "この店の[[しゃちょう]]は、三十年前に一人で店を始めました。",
+      "options": [
+        "社長",
+        "社張",
+        "杜長",
+        "社帳"
+      ],
+      "explain_tr": "長 'şef'; 張・帳 aynı ses tuzağı."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "成長",
+      "reading": "せいちょう",
+      "meaning_tr": "büyüme",
+      "sentence": "店はこの十年で大きく[[せいちょう]]し、今は町に三つの店があります。",
+      "options": [
+        "成長",
+        "成張",
+        "盛長",
+        "成帳"
+      ],
+      "explain_tr": "成 セイ + 長 チョウ."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "部長",
+      "reading": "ぶちょう",
+      "meaning_tr": "bölüm müdürü",
+      "sentence": "また、[[ぶちょう]]の提案で、長期の計画も立てることになりました。",
+      "options": [
+        "部長",
+        "部帳",
+        "都長",
+        "部張"
+      ],
+      "explain_tr": "部 / 都 benzer görünür."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "長袖",
+      "reading": "ながそで",
+      "meaning_tr": "uzun kol",
+      "sentence": "冬でも[[ながそで]]のシャツ一枚で働いています。",
+      "options": [
+        "長袖",
+        "長補",
+        "張袖",
+        "長抽"
+      ],
+      "explain_tr": "袖 そで; 補 benzer."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "長期",
+      "reading": "ちょうき",
+      "meaning_tr": "uzun vade",
+      "sentence": "また、部長の提案で、[[ちょうき]]の計画も立てることになりました。",
+      "options": [
+        "長期",
+        "長斯",
+        "帳期",
+        "長其"
+      ],
+      "explain_tr": "期 キ 'dönem'."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "特長",
+      "reading": "とくちょう",
+      "meaning_tr": "güçlü yan",
+      "sentence": "この店のパンの（　　）は、国産の小麦だけを使っていることです。",
+      "options": [
+        "特長",
+        "社長",
+        "成長",
+        "延長"
+      ],
+      "explain_tr": "パンの特長 = ekmeğin üstün yanı."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "店長",
+      "reading": "てんちょう",
+      "meaning_tr": "dükkân müdürü",
+      "sentence": "社長の長男の健さんが、今は（　　）として店を任されています。",
+      "options": [
+        "店長",
+        "社長",
+        "校長",
+        "身長"
+      ],
+      "explain_tr": "店を任される → 店長."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "長生き",
+      "reading": "ながいき",
+      "meaning_tr": "uzun yaşamak",
+      "sentence": "社長はいつも、健康で（　　）したいと言っています。",
+      "options": [
+        "長生き",
+        "長引き",
+        "長所",
+        "長男"
+      ],
+      "explain_tr": "健康で長生きする."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "長距離",
+      "reading": "ちょうきょり",
+      "meaning_tr": "uzun mesafe",
+      "sentence": "社長は今年八十歳ですが、毎朝（　　）を走っているので、とても元気です。",
+      "options": [
+        "長距離",
+        "長期",
+        "延長",
+        "長袖"
+      ],
+      "explain_tr": "長距離を走る = uzun mesafe koşmak."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "校長",
+      "reading": "こうちょう",
+      "meaning_tr": "okul müdürü",
+      "sentence": "近くの小学校の（　　）先生も、毎朝パンを買いに来てくれます。",
+      "options": [
+        "校長",
+        "店長",
+        "社長",
+        "部長"
+      ],
+      "explain_tr": "小学校の校長先生."
+    }
+  ]
+}

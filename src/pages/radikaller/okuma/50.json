@@ -1,0 +1,234 @@
+{
+  "radicalId": 50,
+  "title": "牧場の町",
+  "title_tr": "Çiftlik kasabası",
+  "text": "夏休みに、家族で北海道へ旅行しました。札幌から[[1|特急]]に乗って、二時間ほどで小さな町に着きました。この町は[[5|特色]]のある農業で有名で、[[4|牧場]]がたくさんあります。牧場で飲んだ[[9|牛乳]]は[[6|特別]]においしかったです。この牛乳の[[11|特長]]は、味が濃くて甘いことだそうです。町の[[3|特産]]のチーズにも、[[2|独特]]の香りがありました。牧場の人の[[12|特技]]は牛の顔を見て名前を当てることで、[[7|特に]]子どもたちが喜んでいました。牛は一頭一頭、模様に[[8|特徴]]があるそうです。町の[[15|名物]]のソフトクリームも食べました。お土産屋では[[10|特売]]をしていて、バターを安く買えました。帰ってから、テレビでこの町の[[13|特集]]を見て、また行きたくなりました。番組によると、[[14|特定]]の季節にしか食べられない料理もあるそうです。",
+  "text_tr": "Yaz tatilinde ailecek Hokkaido'ya gittik. Sapporo'dan ekspres trene binip iki saat kadarda küçük bir kasabaya vardık. Bu kasaba kendine özgü tarımıyla ünlü ve pek çok çiftliği var. Çiftlikte içtiğimiz süt özellikle lezzetliydi. Bu sütün güçlü yanı yoğun ve tatlı olmasıymış. Kasabanın yöresel ürünü peynirin de kendine has bir kokusu vardı. Çiftlikteki kişinin özel yeteneği ineklerin yüzüne bakıp adlarını bilmekti, özellikle çocuklar çok sevindi. İneklerin her birinin desen özellikleri farklıymış. Kasabanın meşhur dondurmasını da yedik. Hediyelik eşya dükkânında indirim vardı, tereyağını ucuza aldık. Dönünce televizyonda bu kasabayla ilgili özel programı izleyip yine gitmek istedim. Programa göre sadece belirli mevsimlerde yenebilen yemekler de varmış.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "特急",
+      "reading": "とっきゅう",
+      "meaning_tr": "ekspres tren",
+      "sentence": "札幌から[[特急]]に乗って、二時間ほどで小さな町に着きました。",
+      "options": [
+        "とっきゅう",
+        "とくきゅう",
+        "とっきゅ",
+        "どっきゅう"
+      ],
+      "explain_tr": "トク+キュウ → とっきゅう (っ)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "独特",
+      "reading": "どくとく",
+      "meaning_tr": "kendine özgü",
+      "sentence": "町の特産のチーズにも、[[独特]]の香りがありました。",
+      "options": [
+        "どくとく",
+        "とくとく",
+        "どくどく",
+        "どっとく"
+      ],
+      "explain_tr": "独 ドク (゛) + 特 トク."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "特産",
+      "reading": "とくさん",
+      "meaning_tr": "yöresel ürün",
+      "sentence": "町の[[特産]]のチーズにも、独特の香りがありました。",
+      "options": [
+        "とくさん",
+        "とくざん",
+        "とっさん",
+        "とくさ"
+      ],
+      "explain_tr": "特 トク + 産 サン."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "牧場",
+      "reading": "ぼくじょう",
+      "meaning_tr": "çiftlik, mera",
+      "sentence": "この町は特色のある農業で有名で、[[牧場]]がたくさんあります。",
+      "options": [
+        "ぼくじょう",
+        "ぼくば",
+        "まきじょう",
+        "ぼくしょう"
+      ],
+      "explain_tr": "牧 (牛 radikali) ボク + 場 ジョウ."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "特色",
+      "reading": "とくしょく",
+      "meaning_tr": "özellik, karakter",
+      "sentence": "この町は[[特色]]のある農業で有名で、牧場がたくさんあります。",
+      "options": [
+        "とくしょく",
+        "とくいろ",
+        "とくしき",
+        "とっしょく"
+      ],
+      "explain_tr": "色 burada ショク."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "特別",
+      "reading": "とくべつ",
+      "meaning_tr": "özel",
+      "sentence": "牧場で飲んだ牛乳は[[とくべつ]]においしかったです。",
+      "options": [
+        "特別",
+        "持別",
+        "特列",
+        "待別"
+      ],
+      "explain_tr": "特 = 牛 + 寺; 持・待 benzer."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "特に",
+      "reading": "とくに",
+      "meaning_tr": "özellikle",
+      "sentence": "牧場の人の特技は牛の顔を見て名前を当てることで、[[とくに]]子どもたちが喜んでいました。",
+      "options": [
+        "特に",
+        "持に",
+        "待に",
+        "時に"
+      ],
+      "explain_tr": "牛 radikalini ara: 特."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "特徴",
+      "reading": "とくちょう",
+      "meaning_tr": "özellik, ayırt edici nitelik",
+      "sentence": "牛は一頭一頭、模様に[[とくちょう]]があるそうです。",
+      "options": [
+        "特徴",
+        "持徴",
+        "特微",
+        "待徴"
+      ],
+      "explain_tr": "徴 チョウ; 微 'küçük' benzer."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "牛乳",
+      "reading": "ぎゅうにゅう",
+      "meaning_tr": "süt",
+      "sentence": "牧場で飲んだ[[ぎゅうにゅう]]は特別においしかったです。",
+      "options": [
+        "牛乳",
+        "午乳",
+        "牛孔",
+        "生乳"
+      ],
+      "explain_tr": "牛 / 午 benzer görünür."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "特売",
+      "reading": "とくばい",
+      "meaning_tr": "indirimli satış",
+      "sentence": "お土産屋では[[とくばい]]をしていて、バターを安く買えました。",
+      "options": [
+        "特売",
+        "特買",
+        "持売",
+        "特読"
+      ],
+      "explain_tr": "売 'satmak', 買 'almak'."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "特長",
+      "reading": "とくちょう",
+      "meaning_tr": "güçlü yan, avantaj",
+      "sentence": "この牛乳の（　　）は、味が濃くて甘いことだそうです。",
+      "options": [
+        "特長",
+        "特急",
+        "特売",
+        "特集"
+      ],
+      "explain_tr": "Olumlu özellik = 特長."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "特技",
+      "reading": "とくぎ",
+      "meaning_tr": "özel yetenek",
+      "sentence": "牧場の人の（　　）は牛の顔を見て名前を当てることで、特に子どもたちが喜んでいました。",
+      "options": [
+        "特技",
+        "特急",
+        "特売",
+        "特産"
+      ],
+      "explain_tr": "人の特技 = kişinin özel becerisi."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "特集",
+      "reading": "とくしゅう",
+      "meaning_tr": "özel program/dosya",
+      "sentence": "帰ってから、テレビでこの町の（　　）を見て、また行きたくなりました。",
+      "options": [
+        "特集",
+        "特技",
+        "特色",
+        "特急"
+      ],
+      "explain_tr": "テレビの特集 = özel program."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "特定",
+      "reading": "とくてい",
+      "meaning_tr": "belirli",
+      "sentence": "番組によると、（　　）の季節にしか食べられない料理もあるそうです。",
+      "options": [
+        "特定",
+        "特技",
+        "特長",
+        "特産"
+      ],
+      "explain_tr": "特定の季節 = belirli mevsim."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "名物",
+      "reading": "めいぶつ",
+      "meaning_tr": "meşhur ürün",
+      "sentence": "町の（　　）のソフトクリームも食べました。",
+      "options": [
+        "名物",
+        "名字",
+        "名所",
+        "名前"
+      ],
+      "explain_tr": "物 (牛 radikali); 町の名物 = yörenin meşhuru."
+    }
+  ]
+}

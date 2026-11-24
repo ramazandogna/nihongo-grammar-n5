@@ -1,0 +1,234 @@
+{
+  "radicalId": 42,
+  "title": "就職活動",
+  "title_tr": "İş arama",
+  "text": "私は大学四年生で、今[[2|就職]]活動をしている。将来の[[6|職業]]について考えるため、毎朝[[5|新聞]]を読むようにしている。日本の会社で働きたいので、日本語能力試験の[[1|聴解]]の練習もしている。でも、先生の話を全部[[11|聞き取る]]のはまだ難しい。寝る前には、リラックスするためにクラシック音楽を[[12|聴く]]。先週、大学の[[15|職員室]]へ行って、先生に相談した。先生は「面接では、[[13|聞き手]]の顔を見て話しなさい」とアドバイスしてくれた。先生のお兄さんは、もっと給料のいい会社に[[14|転職]]したそうだ。その後、伝統的な家具を作る[[9|職人]]の工房を見学した。その工房では、来年[[8|退職]]する人の代わりに、若い人を探している。静かな[[3|職場]]で、木を切る音だけが[[7|聞こえた]]。工房の[[4|職員]]の方はテレビ番組に出たことがあって、[[10|視聴者]]からたくさん手紙が来たと話してくれた。",
+  "text_tr": "Üniversite dördüncü sınıftayım ve şu an iş arıyorum. Gelecekteki mesleğimi düşünmek için her sabah gazete okumaya çalışıyorum. Japon bir şirkette çalışmak istediğim için JLPT dinleme bölümüne de çalışıyorum. Ama hocanın konuşmasını tamamen anlamak hâlâ zor. Yatmadan önce rahatlamak için klasik müzik dinliyorum. Geçen hafta üniversitenin öğretmenler odasına gidip hocama danıştım. Hocam \"Mülakatta dinleyenin yüzüne bakarak konuş\" diye tavsiye verdi. Hocanın ağabeyi daha yüksek maaşlı bir şirkete geçmiş. Sonra geleneksel mobilya yapan bir ustanın atölyesini gezdim. O atölye gelecek yıl emekli olacak kişinin yerine genç birini arıyor. Sessiz iş yerinde yalnızca tahta kesme sesi duyuluyordu. Atölyenin bir çalışanı bir televizyon programına çıkmış ve izleyicilerden çok mektup geldiğini anlattı.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "聴解",
+      "reading": "ちょうかい",
+      "meaning_tr": "dinleme (sınav)",
+      "sentence": "日本の会社で働きたいので、日本語能力試験の[[聴解]]の練習もしている。",
+      "options": [
+        "ちょうかい",
+        "ちょかい",
+        "ちょうがい",
+        "きょうかい"
+      ],
+      "explain_tr": "聴 チョウ (uzun) + 解 カイ (゛ yok)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "就職",
+      "reading": "しゅうしょく",
+      "meaning_tr": "işe girme",
+      "sentence": "私は大学四年生で、今[[就職]]活動をしている。",
+      "options": [
+        "しゅうしょく",
+        "しゅしょく",
+        "しゅうしょっく",
+        "じゅうしょく"
+      ],
+      "explain_tr": "就 シュウ (uzun) + 職 ショク."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "職場",
+      "reading": "しょくば",
+      "meaning_tr": "iş yeri",
+      "sentence": "静かな[[職場]]で、木を切る音だけが聞こえた。",
+      "options": [
+        "しょくば",
+        "しょくじょう",
+        "しょっば",
+        "しょくは"
+      ],
+      "explain_tr": "職 ショク + 場 ば (kun)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "職員",
+      "reading": "しょくいん",
+      "meaning_tr": "personel, çalışan",
+      "sentence": "工房の[[職員]]の方はテレビ番組に出たことがあって、視聴者からたくさん手紙が来たと話してくれた。",
+      "options": [
+        "しょくいん",
+        "しょくにん",
+        "しょいん",
+        "しょっいん"
+      ],
+      "explain_tr": "職 ショク + 員 イン; 職人 しょくにん ile karıştırma."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "新聞",
+      "reading": "しんぶん",
+      "meaning_tr": "gazete",
+      "sentence": "将来の職業について考えるため、毎朝[[新聞]]を読むようにしている。",
+      "options": [
+        "しんぶん",
+        "しんもん",
+        "しぶん",
+        "しんぷん"
+      ],
+      "explain_tr": "聞 burada ブン (゛)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "職業",
+      "reading": "しょくぎょう",
+      "meaning_tr": "meslek",
+      "sentence": "将来の[[しょくぎょう]]について考えるため、毎朝新聞を読むようにしている。",
+      "options": [
+        "職業",
+        "織業",
+        "識業",
+        "職行"
+      ],
+      "explain_tr": "職 (耳) iş; 織/識 aynı sağ parça."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "聞こえた",
+      "reading": "きこえた",
+      "meaning_tr": "duyuldu",
+      "sentence": "静かな職場で、木を切る音だけが[[きこえた]]。",
+      "options": [
+        "聞こえた",
+        "間こえた",
+        "閉こえた",
+        "開こえた"
+      ],
+      "explain_tr": "聞 içinde 耳 var; 間/閉/開 hepsi 門'lu."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "退職",
+      "reading": "たいしょく",
+      "meaning_tr": "emeklilik, işten ayrılma",
+      "sentence": "その工房では、来年[[たいしょく]]する人の代わりに、若い人を探している。",
+      "options": [
+        "退職",
+        "退識",
+        "対職",
+        "退織"
+      ],
+      "explain_tr": "職 (耳); 対 aynı タイ."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "職人",
+      "reading": "しょくにん",
+      "meaning_tr": "usta, zanaatkâr",
+      "sentence": "その後、伝統的な家具を作る[[しょくにん]]の工房を見学した。",
+      "options": [
+        "職人",
+        "織人",
+        "識人",
+        "食人"
+      ],
+      "explain_tr": "職 ショク; 食 aynı ショク okunuşu."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "視聴者",
+      "reading": "しちょうしゃ",
+      "meaning_tr": "izleyici",
+      "sentence": "工房の職員の方はテレビ番組に出たことがあって、[[しちょうしゃ]]からたくさん手紙が来たと話してくれた。",
+      "options": [
+        "視聴者",
+        "視徳者",
+        "試聴者",
+        "視聞者"
+      ],
+      "explain_tr": "聴 (耳) dinlemek; 徳 benzer sağ parça."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "聞き取る",
+      "reading": "ききとる",
+      "meaning_tr": "anlayarak duymak",
+      "sentence": "でも、先生の話を全部（　　）のはまだ難しい。",
+      "options": [
+        "聞き取る",
+        "聞こえる",
+        "就職する",
+        "退職する"
+      ],
+      "explain_tr": "話を全部聞き取る: konuşmayı tam anlamak."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "聴く",
+      "reading": "きく",
+      "meaning_tr": "dinlemek (müzik)",
+      "sentence": "寝る前には、リラックスするためにクラシック音楽を（　　）。",
+      "options": [
+        "聴く",
+        "聞こえる",
+        "就く",
+        "勤める"
+      ],
+      "explain_tr": "音楽を聴く: müzik dinlemek."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "聞き手",
+      "reading": "ききて",
+      "meaning_tr": "dinleyen",
+      "sentence": "先生は「面接では、（　　）の顔を見て話しなさい」とアドバイスしてくれた。",
+      "options": [
+        "聞き手",
+        "聴解",
+        "職員",
+        "就職"
+      ],
+      "explain_tr": "聞き手の顔を見て話す."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "転職",
+      "reading": "てんしょく",
+      "meaning_tr": "iş değiştirme",
+      "sentence": "先生のお兄さんは、もっと給料のいい会社に（　　）したそうだ。",
+      "options": [
+        "転職",
+        "退職",
+        "職業",
+        "職人"
+      ],
+      "explain_tr": "もっと給料のいい会社に転職する."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "職員室",
+      "reading": "しょくいんしつ",
+      "meaning_tr": "öğretmenler odası",
+      "sentence": "先週、大学の（　　）へ行って、先生に相談した。",
+      "options": [
+        "職員室",
+        "職場",
+        "聴解",
+        "新聞"
+      ],
+      "explain_tr": "先生に会いに職員室へ行く."
+    }
+  ]
+}

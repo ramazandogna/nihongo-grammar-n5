@@ -1,0 +1,234 @@
+{
+  "radicalId": 39,
+  "title": "真冬の北海道",
+  "title_tr": "Kış ortasında Hokkaido",
+  "text": "去年の[[8|冬休み]]に、友達と北海道へ旅行した。[[4|真冬]]の北海道は本当に寒くて、空港を出たとたん、手が[[12|凍え]]そうになった。出発の前に、[[15|冬服]]をたくさんかばんに入れておいてよかった。風がとても[[6|冷たくて]]、顔が痛いほどだった。ホテルの近くの湖は全部[[7|凍って]]いた。ガイドさんの話では、この辺りのクマは今[[10|冬眠]]中だそうだ。夜はホテルのレストランで食事をした。料理の写真を撮っていたら、せっかくの料理が[[14|冷めて]]しまった。スープはとても熱かったので、少し[[11|冷まして]]から飲んだ。部屋は暖房がよく効いていて、冬なのに[[5|冷房]]をつけたくなるほど暑かった。友達は買ってきたビールを部屋の[[1|冷蔵庫]]で[[13|冷やした]]。次の日、友達が雪の道で転んでけがをしたが、私は[[2|冷静]]に救急車を呼んだ。帰りに、お土産として[[3|冷凍]]のカニを買った。家に着いてからは、体が[[9|冷え]]ないように温かいお風呂に入った。",
+  "text_tr": "Geçen yılın kış tatilinde bir arkadaşımla Hokkaido'ya gittik. Kış ortasında Hokkaido gerçekten soğuktu; havalimanından çıkar çıkmaz ellerim donacak gibi oldu. Yola çıkmadan önce çantaya bolca kışlık giysi koymamız iyi olmuş. Rüzgâr o kadar soğuktu ki yüzüm acıyordu. Otelin yakınındaki göl tamamen donmuştu. Rehbere göre buradaki ayılar şu an kış uykusundaymış. Akşam otelin restoranında yemek yedik. Yemeğin fotoğrafını çekerken koca yemek soğudu. Çorba çok sıcak olduğu için biraz soğutup içtim. Oda kaloriferle iyice ısınmıştı; kış olmasına rağmen klima açmak isteyecek kadar sıcaktı. Arkadaşım aldığı biraları odanın buzdolabında soğuttu. Ertesi gün arkadaşım karlı yolda düşüp yaralandı ama ben sakin bir şekilde ambulans çağırdım. Dönüşte hediyelik olarak dondurulmuş yengeç aldım. Eve vardıktan sonra vücudum üşümesin diye sıcak bir banyo yaptım.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "冷蔵庫",
+      "reading": "れいぞうこ",
+      "meaning_tr": "buzdolabı",
+      "sentence": "友達は買ってきたビールを部屋の[[冷蔵庫]]で冷やした。",
+      "options": [
+        "れいぞうこ",
+        "れいそうこ",
+        "れいぞこ",
+        "れぞうこ"
+      ],
+      "explain_tr": "冷 レイ + 蔵 ゾウ + 庫 コ."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "冷静",
+      "reading": "れいせい",
+      "meaning_tr": "sakin",
+      "sentence": "次の日、友達が雪の道で転んでけがをしたが、私は[[冷静]]に救急車を呼んだ。",
+      "options": [
+        "れいせい",
+        "れいぜい",
+        "れいじょう",
+        "ねいせい"
+      ],
+      "explain_tr": "冷 レイ + 静 セイ (゛ yok)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "冷凍",
+      "reading": "れいとう",
+      "meaning_tr": "dondurulmuş",
+      "sentence": "帰りに、お土産として[[冷凍]]のカニを買った。",
+      "options": [
+        "れいとう",
+        "れいどう",
+        "れいと",
+        "れとう"
+      ],
+      "explain_tr": "冷 レイ + 凍 トウ (uzun, ゛ yok)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "真冬",
+      "reading": "まふゆ",
+      "meaning_tr": "kış ortası",
+      "sentence": "[[真冬]]の北海道は本当に寒くて、空港を出たとたん、手が凍えそうになった。",
+      "options": [
+        "まふゆ",
+        "しんとう",
+        "まぶゆ",
+        "まふゆう"
+      ],
+      "explain_tr": "Kun: 真 ま + 冬 ふゆ."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "冷房",
+      "reading": "れいぼう",
+      "meaning_tr": "klima (soğutma)",
+      "sentence": "部屋は暖房がよく効いていて、冬なのに[[冷房]]をつけたくなるほど暑かった。",
+      "options": [
+        "れいぼう",
+        "れいほう",
+        "れいぼ",
+        "れいぽう"
+      ],
+      "explain_tr": "冷 レイ + 房 ボウ (゛)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "冷たくて",
+      "reading": "つめたくて",
+      "meaning_tr": "soğuk olup",
+      "sentence": "風がとても[[つめたくて]]、顔が痛いほどだった。",
+      "options": [
+        "冷たくて",
+        "令たくて",
+        "涼たくて",
+        "凍たくて"
+      ],
+      "explain_tr": "冷 (冫) soğuk; 令 'buz' noktaları olmadan."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "凍って",
+      "reading": "こおって",
+      "meaning_tr": "donmuş",
+      "sentence": "ホテルの近くの湖は全部[[こおって]]いた。",
+      "options": [
+        "凍って",
+        "東って",
+        "陳って",
+        "棟って"
+      ],
+      "explain_tr": "凍 (冫) donmak; 東/陳/棟 aynı 東 parçası."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "冬休み",
+      "reading": "ふゆやすみ",
+      "meaning_tr": "kış tatili",
+      "sentence": "去年の[[ふゆやすみ]]に、友達と北海道へ旅行した。",
+      "options": [
+        "冬休み",
+        "各休み",
+        "冬体み",
+        "終休み"
+      ],
+      "explain_tr": "冬 kış; 各 benzer üst kısım, 体 休'ya benzer."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "冷え",
+      "reading": "ひえ",
+      "meaning_tr": "üşü-",
+      "sentence": "家に着いてからは、体が[[ひえ]]ないように温かいお風呂に入った。",
+      "options": [
+        "冷え",
+        "冶え",
+        "怜え",
+        "令え"
+      ],
+      "explain_tr": "冷える üşümek; 冶 (冫) benzer görünüş."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "冬眠",
+      "reading": "とうみん",
+      "meaning_tr": "kış uykusu",
+      "sentence": "ガイドさんの話では、この辺りのクマは今[[とうみん]]中だそうだ。",
+      "options": [
+        "冬眠",
+        "冬眼",
+        "東眠",
+        "冬民"
+      ],
+      "explain_tr": "冬 トウ + 眠 ミン; 眼 benzer, 民 aynı ミン."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "冷まして",
+      "reading": "さまして",
+      "meaning_tr": "soğutup",
+      "sentence": "スープはとても熱かったので、少し（　　）から飲んだ。",
+      "options": [
+        "冷まして",
+        "凍らせて",
+        "温めて",
+        "冷静にして"
+      ],
+      "explain_tr": "熱いスープを冷ます: sıcak çorbayı soğutmak."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "凍え",
+      "reading": "こごえ",
+      "meaning_tr": "don- (eller)",
+      "sentence": "真冬の北海道は本当に寒くて、空港を出たとたん、手が（　　）そうになった。",
+      "options": [
+        "凍え",
+        "冷まし",
+        "凍らせ",
+        "冷やし"
+      ],
+      "explain_tr": "寒くて手が凍えそう: soğuktan eller donacak gibi."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "冷やした",
+      "reading": "ひやした",
+      "meaning_tr": "soğuttu",
+      "sentence": "友達は買ってきたビールを部屋の冷蔵庫で（　　）。",
+      "options": [
+        "冷やした",
+        "冷ました",
+        "凍えた",
+        "冷えた"
+      ],
+      "explain_tr": "冷蔵庫でビールを冷やす (geçişli); 冷える geçişsiz."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "冷めて",
+      "reading": "さめて",
+      "meaning_tr": "soğudu",
+      "sentence": "料理の写真を撮っていたら、せっかくの料理が（　　）しまった。",
+      "options": [
+        "冷めて",
+        "冷やして",
+        "凍えて",
+        "冷静して"
+      ],
+      "explain_tr": "料理が冷める: yemek soğumak (kendiliğinden)."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "冬服",
+      "reading": "ふゆふく",
+      "meaning_tr": "kışlık giysi",
+      "sentence": "出発の前に、（　　）をたくさんかばんに入れておいてよかった。",
+      "options": [
+        "冬服",
+        "冬眠",
+        "冷房",
+        "冷凍"
+      ],
+      "explain_tr": "冬服をかばんに入れる."
+    }
+  ]
+}

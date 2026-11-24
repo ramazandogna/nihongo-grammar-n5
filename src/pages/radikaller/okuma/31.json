@@ -1,0 +1,234 @@
+{
+  "radicalId": 31,
+  "title": "父の転勤",
+  "title_tr": "Babamın tayini",
+  "text": "父は自動車会社で働いていて、来年アメリカへ[[5|転勤]]することになった。父の会社は車を[[8|輸出]]しているが、最近は部品を[[2|輸入]]することも増えたそうだ。父は毎朝、車を[[1|運転]]して会社へ行き、会社の[[10|駐車]]場に止めている。私は駅まで[[7|自転車]]で通っている。先週、雪の道で[[12|転んで]]しまい、自転車の[[13|車輪]]も少し曲がってしまった。今日は[[14|比較的]]暖かかったので、修理に出しに行った。帰りに母と喫茶店で[[6|軽食]]を食べた。母は日本とアメリカの生活を[[3|比較]]して、少し心配そうだった。母の指では、昔父からもらった[[4|指輪]]が[[9|輝いて]]いた。祖父は若いころ[[15|軍隊]]にいて、外国で暮らした経験がある。その祖父が、旅行用に新しいかばんをくれた。そのかばんは[[11|軽くて]]持ちやすい。",
+  "text_tr": "Babam bir otomobil şirketinde çalışıyor ve gelecek yıl Amerika'ya tayin edilecek. Babamın şirketi araba ihraç ediyor ama son zamanlarda parça ithal etmesi de artmış. Babam her sabah arabayı kullanarak işe gidiyor ve şirketin otoparkına park ediyor. Ben istasyona bisikletle gidiyorum. Geçen hafta karlı yolda düştüm ve bisikletin tekerleği de biraz eğrildi. Bugün nispeten sıcak olduğu için tamire götürdüm. Dönüşte annemle bir kafede hafif bir şeyler yedik. Annem Japonya ile Amerika'daki hayatı karşılaştırıp biraz endişeli göründü. Annemin parmağında yıllar önce babamdan aldığı yüzük parlıyordu. Dedem gençken orduda bulunmuş ve yurt dışında yaşamış. O dedem seyahat için bana yeni bir çanta verdi. O çanta hafif ve taşıması kolay.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "運転",
+      "reading": "うんてん",
+      "meaning_tr": "araç kullanma",
+      "sentence": "父は毎朝、車を[[運転]]して会社へ行き、会社の駐車場に止めている。",
+      "options": [
+        "うんてん",
+        "うんでん",
+        "うんて",
+        "うんってん"
+      ],
+      "explain_tr": "運 ウン + 転 テン; ゛ yok."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "輸入",
+      "reading": "ゆにゅう",
+      "meaning_tr": "ithalat",
+      "sentence": "父の会社は車を輸出しているが、最近は部品を[[輸入]]することも増えたそうだ。",
+      "options": [
+        "ゆにゅう",
+        "ゆうにゅう",
+        "ゆにゅ",
+        "ゆいり"
+      ],
+      "explain_tr": "輸 ユ (kısa) + 入 ニュウ (uzun)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "比較",
+      "reading": "ひかく",
+      "meaning_tr": "karşılaştırma",
+      "sentence": "母は日本とアメリカの生活を[[比較]]して、少し心配そうだった。",
+      "options": [
+        "ひかく",
+        "ひがく",
+        "ひこう",
+        "びかく"
+      ],
+      "explain_tr": "比 ヒ + 較 カク; ゛ yok."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "指輪",
+      "reading": "ゆびわ",
+      "meaning_tr": "yüzük",
+      "sentence": "母の指では、昔父からもらった[[指輪]]が輝いていた。",
+      "options": [
+        "ゆびわ",
+        "ゆびりん",
+        "しりん",
+        "ゆびは"
+      ],
+      "explain_tr": "Kun okunuş: 指 ゆび + 輪 わ."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "転勤",
+      "reading": "てんきん",
+      "meaning_tr": "tayin, iş yeri değişikliği",
+      "sentence": "父は自動車会社で働いていて、来年アメリカへ[[転勤]]することになった。",
+      "options": [
+        "てんきん",
+        "てんぎん",
+        "でんきん",
+        "てんしん"
+      ],
+      "explain_tr": "転 テン + 勤 キン."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "軽食",
+      "reading": "けいしょく",
+      "meaning_tr": "hafif yemek",
+      "sentence": "帰りに母と喫茶店で[[けいしょく]]を食べた。",
+      "options": [
+        "軽食",
+        "経食",
+        "軽色",
+        "怪食"
+      ],
+      "explain_tr": "軽 (車) hafif; 経 aynı ケイ okunuşu."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "自転車",
+      "reading": "じてんしゃ",
+      "meaning_tr": "bisiklet",
+      "sentence": "私は駅まで[[じてんしゃ]]で通っている。",
+      "options": [
+        "自転車",
+        "自伝車",
+        "字転車",
+        "自転者"
+      ],
+      "explain_tr": "転 dönmek + 車 araç; 伝/者 tuzak."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "輸出",
+      "reading": "ゆしゅつ",
+      "meaning_tr": "ihracat",
+      "sentence": "父の会社は車を[[ゆしゅつ]]しているが、最近は部品を輸入することも増えたそうだ。",
+      "options": [
+        "輸出",
+        "輪出",
+        "愉出",
+        "諭出"
+      ],
+      "explain_tr": "輸 (車) taşımak; 輪 halka, benzer görünüş."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "輝いて",
+      "reading": "かがやいて",
+      "meaning_tr": "parlıyordu",
+      "sentence": "母の指では、昔父からもらった指輪が[[かがやいて]]いた。",
+      "options": [
+        "輝いて",
+        "揮いて",
+        "輩いて",
+        "軍いて"
+      ],
+      "explain_tr": "輝く parlamak; 揮 (扌) ve 輩 benzer parçalar içerir."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "駐車",
+      "reading": "ちゅうしゃ",
+      "meaning_tr": "park etme",
+      "sentence": "父は毎朝、車を運転して会社へ行き、会社の[[ちゅうしゃ]]場に止めている。",
+      "options": [
+        "駐車",
+        "注車",
+        "駐者",
+        "柱車"
+      ],
+      "explain_tr": "駐 (馬) durmak + 車; 注/柱 aynı チュウ."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "軽くて",
+      "reading": "かるくて",
+      "meaning_tr": "hafif olup",
+      "sentence": "そのかばんは（　　）持ちやすい。",
+      "options": [
+        "軽くて",
+        "重くて",
+        "硬くて",
+        "狭くて"
+      ],
+      "explain_tr": "持ちやすい → 軽くて."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "転んで",
+      "reading": "ころんで",
+      "meaning_tr": "düşüp",
+      "sentence": "先週、雪の道で（　　）しまい、自転車の車輪も少し曲がってしまった。",
+      "options": [
+        "転んで",
+        "輝いて",
+        "運んで",
+        "比べて"
+      ],
+      "explain_tr": "雪の道で転ぶ: karlı yolda düşmek."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "車輪",
+      "reading": "しゃりん",
+      "meaning_tr": "tekerlek",
+      "sentence": "先週、雪の道で転んでしまい、自転車の（　　）も少し曲がってしまった。",
+      "options": [
+        "車輪",
+        "指輪",
+        "車道",
+        "運転"
+      ],
+      "explain_tr": "自転車の車輪: bisikletin tekerleği."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "比較的",
+      "reading": "ひかくてき",
+      "meaning_tr": "nispeten",
+      "sentence": "今日は（　　）暖かかったので、修理に出しに行った。",
+      "options": [
+        "比較的",
+        "具体的",
+        "積極的",
+        "基本的"
+      ],
+      "explain_tr": "比較的暖かい: nispeten sıcak."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "軍隊",
+      "reading": "ぐんたい",
+      "meaning_tr": "ordu",
+      "sentence": "祖父は若いころ（　　）にいて、外国で暮らした経験がある。",
+      "options": [
+        "軍隊",
+        "家族",
+        "車輪",
+        "運転"
+      ],
+      "explain_tr": "軍隊にいた: askerde bulundu."
+    }
+  ]
+}

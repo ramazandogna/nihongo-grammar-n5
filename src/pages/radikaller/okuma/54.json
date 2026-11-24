@@ -1,0 +1,234 @@
+{
+  "radicalId": 54,
+  "title": "農業体験",
+  "title_tr": "Tarım deneyimi",
+  "text": "大学の夏休みに、長野の[[8|農村]]で一週間、[[7|農業]]の体験をしました。お世話になった[[6|農家]]の田中さんは、野菜を[[11|無農薬]]で育てています。[[1|農薬]]を使わないので、虫を取る仕事が大変でした。隣の[[10|農場]]では[[3|酪農]]をしていて、毎朝牛の乳をしぼっていました。とれた[[2|農作物]]は、地元の[[4|農協]]を通じてスーパーで売られます。田中さんによると、この村の[[12|農産物]]は東京でも人気があるそうです。しかし、若い人が減って、使われていない[[13|農地]]が増えているそうです。昔の[[5|農民]]の生活について話を聞いて、農業の大変さがよくわかりました。ある夜、小さな[[9|地震]]があって、私は怖くて[[15|震えて]]しまいました。最後の日、田中さんは駅で手を[[14|振って]]見送ってくれました。",
+  "text_tr": "Üniversitenin yaz tatilinde Nagano'da bir tarım köyünde bir hafta tarım deneyimi yaptım. Bana bakan çiftçi Tanaka sebzeleri ilaçsız yetiştiriyor. Tarım ilacı kullanmadığı için böcek toplama işi zordu. Yandaki çiftlikte süt hayvancılığı yapılıyordu, her sabah inek sağıyorlardı. Toplanan ürünler yerel tarım kooperatifi aracılığıyla süpermarketlerde satılıyor. Tanaka'ya göre bu köyün tarım ürünleri Tokyo'da da seviliyormuş. Ama gençler azaldığı için kullanılmayan tarım arazisi artıyormuş. Eski köylülerin hayatını dinleyince tarımın zorluğunu iyice anladım. Bir gece küçük bir deprem oldu ve korkudan titredim. Son gün Tanaka istasyonda el sallayarak beni uğurladı.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "農薬",
+      "reading": "のうやく",
+      "meaning_tr": "tarım ilacı",
+      "sentence": "[[農薬]]を使わないので、虫を取る仕事が大変でした。",
+      "options": [
+        "のうやく",
+        "のうやっく",
+        "のやく",
+        "のうらく"
+      ],
+      "explain_tr": "農 ノウ (uzun) + 薬 ヤク."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "農作物",
+      "reading": "のうさくもつ",
+      "meaning_tr": "tarım ürünü",
+      "sentence": "とれた[[農作物]]は、地元の農協を通じてスーパーで売られます。",
+      "options": [
+        "のうさくもつ",
+        "のうざくもつ",
+        "のうさもつ",
+        "のうさくもの"
+      ],
+      "explain_tr": "作 サク + 物 モツ."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "酪農",
+      "reading": "らくのう",
+      "meaning_tr": "süt hayvancılığı",
+      "sentence": "隣の農場では[[酪農]]をしていて、毎朝牛の乳をしぼっていました。",
+      "options": [
+        "らくのう",
+        "かくのう",
+        "らくのお",
+        "ろうのう"
+      ],
+      "explain_tr": "酪 ラク + 農 ノウ."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "農協",
+      "reading": "のうきょう",
+      "meaning_tr": "tarım kooperatifi",
+      "sentence": "とれた農作物は、地元の[[農協]]を通じてスーパーで売られます。",
+      "options": [
+        "のうきょう",
+        "のうぎょう",
+        "のうきょ",
+        "のうこう"
+      ],
+      "explain_tr": "協 キョウ; 農業 のうぎょう tuzak."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "農民",
+      "reading": "のうみん",
+      "meaning_tr": "köylü, çiftçi",
+      "sentence": "昔の[[農民]]の生活について話を聞いて、農業の大変さがよくわかりました。",
+      "options": [
+        "のうみん",
+        "のみん",
+        "のうびん",
+        "のうたみ"
+      ],
+      "explain_tr": "民 ミン."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "農家",
+      "reading": "のうか",
+      "meaning_tr": "çiftçi (ailesi)",
+      "sentence": "お世話になった[[のうか]]の田中さんは、野菜を無農薬で育てています。",
+      "options": [
+        "農家",
+        "濃家",
+        "膿家",
+        "晨家"
+      ],
+      "explain_tr": "農 = 曲 + 辰; 濃 'koyu'."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "農業",
+      "reading": "のうぎょう",
+      "meaning_tr": "tarım",
+      "sentence": "大学の夏休みに、長野の農村で一週間、[[のうぎょう]]の体験をしました。",
+      "options": [
+        "農業",
+        "濃業",
+        "農行",
+        "曲業"
+      ],
+      "explain_tr": "業 ギョウ 'iş, sektör'."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "農村",
+      "reading": "のうそん",
+      "meaning_tr": "tarım köyü",
+      "sentence": "大学の夏休みに、長野の[[のうそん]]で一週間、農業の体験をしました。",
+      "options": [
+        "農村",
+        "農材",
+        "濃村",
+        "農林"
+      ],
+      "explain_tr": "村 ソン 'köy'; 材 benzer."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "地震",
+      "reading": "じしん",
+      "meaning_tr": "deprem",
+      "sentence": "ある夜、小さな[[じしん]]があって、私は怖くて震えてしまいました。",
+      "options": [
+        "地震",
+        "地振",
+        "地辰",
+        "池震"
+      ],
+      "explain_tr": "震 (辰 içerir) シン; 振 'sallamak'."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "農場",
+      "reading": "のうじょう",
+      "meaning_tr": "çiftlik",
+      "sentence": "隣の[[のうじょう]]では酪農をしていて、毎朝牛の乳をしぼっていました。",
+      "options": [
+        "農場",
+        "農揚",
+        "濃場",
+        "農湯"
+      ],
+      "explain_tr": "場 ジョウ; 揚・湯 benzer."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "無農薬",
+      "reading": "むのうやく",
+      "meaning_tr": "ilaçsız (organik)",
+      "sentence": "お世話になった農家の田中さんは、野菜を（　　）で育てています。",
+      "options": [
+        "無農薬",
+        "農作物",
+        "農産物",
+        "酪農"
+      ],
+      "explain_tr": "無農薬で育てる = ilaç kullanmadan yetiştirmek."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "農産物",
+      "reading": "のうさんぶつ",
+      "meaning_tr": "tarım ürünleri",
+      "sentence": "田中さんによると、この村の（　　）は東京でも人気があるそうです。",
+      "options": [
+        "農産物",
+        "農薬",
+        "農民",
+        "農協"
+      ],
+      "explain_tr": "村の農産物 = köyün ürünleri."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "農地",
+      "reading": "のうち",
+      "meaning_tr": "tarım arazisi",
+      "sentence": "しかし、若い人が減って、使われていない（　　）が増えているそうです。",
+      "options": [
+        "農地",
+        "農薬",
+        "農協",
+        "農民"
+      ],
+      "explain_tr": "使われていない農地 = boş arazi."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "振って",
+      "reading": "ふって",
+      "meaning_tr": "sallayarak",
+      "sentence": "最後の日、田中さんは駅で手を（　　）見送ってくれました。",
+      "options": [
+        "振って",
+        "震えて",
+        "張って",
+        "打って"
+      ],
+      "explain_tr": "手を振る = el sallamak (振: 辰 içerir)."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "震えて",
+      "reading": "ふるえて",
+      "meaning_tr": "titreyip",
+      "sentence": "ある夜、小さな地震があって、私は怖くて（　　）しまいました。",
+      "options": [
+        "震えて",
+        "振って",
+        "振り返って",
+        "張って"
+      ],
+      "explain_tr": "怖くて震える = korkudan titremek."
+    }
+  ]
+}

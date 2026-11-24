@@ -876,3 +876,37 @@ u.target {
 .stamp-disabled .text-ink-soft {
   color: var(--color-ink);
 }
+
+/* ── Radikaller: okuma sınavı passage ── */
+.okuma-seal {
+  color: var(--color-primary);
+  border: 2px solid currentColor;
+  opacity: 0.85;
+}
+.okuma-target {
+  border-bottom: 1px dotted color-mix(in oklab, var(--color-ink-soft, currentColor) 60%, transparent);
+  padding-inline: 1px;
+}
+.okuma-num {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.6em;
+  font-weight: 700;
+  color: var(--color-ink-soft, currentColor);
+  margin-inline-end: 1px;
+}
+.okuma-now {
+  border-bottom: 2px solid var(--color-primary);
+  background: color-mix(in oklab, var(--color-primary) 16%, transparent);
+  border-radius: 3px;
+}
+.okuma-now .okuma-num {
+  color: var(--color-primary);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .okuma-chev {
+    transition: transform 160ms ease;
+  }
+  .okuma-now {
+    transition: background-color 200ms ease;
+  }
+}

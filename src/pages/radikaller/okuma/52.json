@@ -1,0 +1,234 @@
+{
+  "radicalId": 52,
+  "title": "観光地の町",
+  "title_tr": "Turistik kasaba",
+  "text": "私の町は海に近い[[11|観光地]]で、週末はたくさんの人が[[6|観光]]に来ます。海の近くには大きな[[1|観覧車]]があって、夜はとてもきれいです。新しく建てられたホテルは、[[4|外観]]がとても美しいです。夏には花火大会があり、千人以上の[[8|観客]]が集まります。花火大会の日は、町の[[9|規則]]で海の近くに車を止められません。先週は小学校で授業[[5|参観]]があり、たくさんの[[10|親]]が見に来ました。その日は理科の授業で、子どもたちは植物を[[7|観察]]しました。学校の屋上には、天気を[[12|観測]]する機械もあります。先生は、自分の意見だけでなく[[2|客観的]]に考えることも大切だと話していました。町に来る外国人と話すと、[[13|価値観]]の違いに驚くこともあります。祖父の趣味は熱帯魚の[[14|観賞]]で、家には大きな水槽があります。父は[[3|楽観的]]な性格で、町はこれからもっと人気になると言っています。私も外国人に道を案内できるように、英語の表現を少しずつ[[15|覚えて]]います。",
+  "text_tr": "Kasabam denize yakın turistik bir yer ve hafta sonları pek çok kişi gezmeye geliyor. Denizin yakınında büyük bir dönme dolap var, geceleri çok güzel. Yeni yapılan otelin dış görünüşü çok güzel. Yazın havai fişek gösterisi oluyor ve binden fazla seyirci toplanıyor. Gösteri günü kasaba kuralları gereği denizin yakınına araba park edilemiyor. Geçen hafta ilkokulda veli günü vardı ve pek çok ebeveyn izlemeye geldi. O gün fen dersi vardı, çocuklar bitkileri gözlemledi. Okulun çatısında hava durumunu ölçen bir cihaz da var. Öğretmen yalnızca kendi görüşünü değil, nesnel düşünmenin de önemli olduğunu söyledi. Kasabaya gelen yabancılarla konuşunca değer yargılarının farkına şaşırdığım da oluyor. Dedemin hobisi tropikal balık seyretmek, evde büyük bir akvaryumu var. Babam iyimser biri, kasabanın bundan sonra daha da popüler olacağını söylüyor. Ben de yabancılara yol tarif edebilmek için İngilizce ifadeleri yavaş yavaş öğreniyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "観覧車",
+      "reading": "かんらんしゃ",
+      "meaning_tr": "dönme dolap",
+      "sentence": "海の近くには大きな[[観覧車]]があって、夜はとてもきれいです。",
+      "options": [
+        "かんらんしゃ",
+        "かんらんじゃ",
+        "がんらんしゃ",
+        "かんけんしゃ"
+      ],
+      "explain_tr": "観 カン + 覧 ラン + 車 シャ."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "客観的",
+      "reading": "きゃっかんてき",
+      "meaning_tr": "nesnel",
+      "sentence": "先生は、自分の意見だけでなく[[客観的]]に考えることも大切だと話していました。",
+      "options": [
+        "きゃっかんてき",
+        "きゃくかんてき",
+        "きゃかんてき",
+        "かっかんてき"
+      ],
+      "explain_tr": "キャク+カン → きゃっかん (っ)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "楽観的",
+      "reading": "らっかんてき",
+      "meaning_tr": "iyimser",
+      "sentence": "父は[[楽観的]]な性格で、町はこれからもっと人気になると言っています。",
+      "options": [
+        "らっかんてき",
+        "らくかんてき",
+        "がっかんてき",
+        "らかんてき"
+      ],
+      "explain_tr": "ラク+カン → らっかん (っ)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "外観",
+      "reading": "がいかん",
+      "meaning_tr": "dış görünüş",
+      "sentence": "新しく建てられたホテルは、[[外観]]がとても美しいです。",
+      "options": [
+        "がいかん",
+        "がいけん",
+        "そとかん",
+        "かいかん"
+      ],
+      "explain_tr": "外 ガイ + 観 カン; 外見 がいけん farklı kelime."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "参観",
+      "reading": "さんかん",
+      "meaning_tr": "(veli) ziyaret, izleme",
+      "sentence": "先週は小学校で授業[[参観]]があり、たくさんの親が見に来ました。",
+      "options": [
+        "さんかん",
+        "さんがん",
+        "ざんかん",
+        "さんけん"
+      ],
+      "explain_tr": "授業参観 = veli günü."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "観光",
+      "reading": "かんこう",
+      "meaning_tr": "turizm, gezi",
+      "sentence": "私の町は海に近い観光地で、週末はたくさんの人が[[かんこう]]に来ます。",
+      "options": [
+        "観光",
+        "勧光",
+        "歓光",
+        "観行"
+      ],
+      "explain_tr": "観 'görmek' (見 radikali); 勧・歓 benzer sol taraf."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "観察",
+      "reading": "かんさつ",
+      "meaning_tr": "gözlem",
+      "sentence": "その日は理科の授業で、子どもたちは植物を[[かんさつ]]しました。",
+      "options": [
+        "観察",
+        "観祭",
+        "歓察",
+        "観際"
+      ],
+      "explain_tr": "察 サツ; 祭 'festival' benzer."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "観客",
+      "reading": "かんきゃく",
+      "meaning_tr": "seyirci",
+      "sentence": "夏には花火大会があり、千人以上の[[かんきゃく]]が集まります。",
+      "options": [
+        "観客",
+        "観各",
+        "歓客",
+        "観容"
+      ],
+      "explain_tr": "客 キャク; 各・容 benzer."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "規則",
+      "reading": "きそく",
+      "meaning_tr": "kural",
+      "sentence": "花火大会の日は、町の[[きそく]]で海の近くに車を止められません。",
+      "options": [
+        "規則",
+        "規測",
+        "親則",
+        "規側"
+      ],
+      "explain_tr": "規 (見 radikali) キ + 則 ソク; 測・側 aynı ses."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "親",
+      "reading": "おや",
+      "meaning_tr": "ebeveyn",
+      "sentence": "先週は小学校で授業参観があり、たくさんの[[おや]]が見に来ました。",
+      "options": [
+        "親",
+        "新",
+        "視",
+        "規"
+      ],
+      "explain_tr": "親 = 立 + 木 + 見."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "観光地",
+      "reading": "かんこうち",
+      "meaning_tr": "turistik yer",
+      "sentence": "私の町は海に近い（　　）で、週末はたくさんの人が観光に来ます。",
+      "options": [
+        "観光地",
+        "観光客",
+        "観覧車",
+        "観客"
+      ],
+      "explain_tr": "町 = 観光地."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "観測",
+      "reading": "かんそく",
+      "meaning_tr": "ölçüm, gözlem (bilimsel)",
+      "sentence": "学校の屋上には、天気を（　　）する機械もあります。",
+      "options": [
+        "観測",
+        "観賞",
+        "観光",
+        "観念"
+      ],
+      "explain_tr": "天気を観測する = hava ölçümü."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "価値観",
+      "reading": "かちかん",
+      "meaning_tr": "değer yargıları",
+      "sentence": "町に来る外国人と話すと、（　　）の違いに驚くこともあります。",
+      "options": [
+        "価値観",
+        "観光客",
+        "外観",
+        "観客"
+      ],
+      "explain_tr": "価値観の違い = değer farkı."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "観賞",
+      "reading": "かんしょう",
+      "meaning_tr": "seyretme (zevk için)",
+      "sentence": "祖父の趣味は熱帯魚の（　　）で、家には大きな水槽があります。",
+      "options": [
+        "観賞",
+        "観客",
+        "観光",
+        "観測"
+      ],
+      "explain_tr": "熱帯魚の観賞 = balık seyretme."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "覚えて",
+      "reading": "おぼえて",
+      "meaning_tr": "öğrenip, ezberleyip",
+      "sentence": "私も外国人に道を案内できるように、英語の表現を少しずつ（　　）います。",
+      "options": [
+        "覚えて",
+        "見えて",
+        "観察して",
+        "見物して"
+      ],
+      "explain_tr": "覚 (見 radikali) おぼえる."
+    }
+  ]
+}

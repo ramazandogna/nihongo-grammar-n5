@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue'
+import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { Eye, Image, Lightbulb, MapPin, Puzzle, TriangleAlert, Volume2 } from 'lucide-vue-next'
 import { BaseButton, BaseCard, BaseInput, CircularProgress, SegmentedControl } from 'rei-kit'
 
@@ -12,6 +12,9 @@ import StudyHeader from '@/components/StudyHeader.vue'
 import StampToggle from '@/components/StampToggle.vue'
 import StudyPlan from '@/components/StudyPlan.vue'
 import LeaveTestSheet from '@/components/LeaveTestSheet.vue'
+import ScorePills from '@/components/radikaller/ScorePills.vue'
+import OkumaPassage from '@/components/radikaller/OkumaPassage.vue'
+import { indexOkuma, okumaQuestion } from '@/lib/okuma'
 import { hasKanji, KIND_LABEL, readingOptions, spellingOptions, type Vocab } from '@/lib/jlpt'
 import { usePage } from '@/lib/page'
 import { accuracy, loadHistory, loadRun, runProgress, saveRun } from '@/lib/quiz-store'
@@ -152,6 +155,12 @@ const U = {
   nextRad: ['Sonraki radikal →', 'Next radical →'],
   retry: ['Tekrar çöz', 'Take it again'],
   failed: ['kaldı', 'failed'],
+  okuTest: [(r: string) => `読 ${r} okuma sınavı (JLPT tarzı)`, (r: string) => `読 ${r} reading exam (JLPT style)`],
+  okuTitle: [(r: string) => `${r} okuma sınavı`, (r: string) => `${r} reading exam`],
+  okuSub: ['Metni oku · 15 soru: 漢字読み, 表記, 文脈規定', 'Read the passage · 15 questions: 漢字読み, 表記, 文脈規定'],
+  pillTest: ['Test', 'Test'],
+  pillOku: ['Okuma', 'Reading'],
+  okuPassed: [(a: number, b: number) => `Okuma sınavları: ${a}/${b} geçti`, (a: number, b: number) => `Reading exams: ${a}/${b} passed`],
   hyouki: [KIND_LABEL.hyouki, '問題2 表記 · the right kanji for the hiragana word'],
 } as const
 const u = <K extends keyof typeof U>(k: K): (typeof U)[K][0] => U[k][en.value ? 1 : 0] as (typeof U)[K][0]
@@ -210,7 +219,9 @@ interface TestDef {
   radical?: string
   /** For group tests: "1·2·3". */
   group?: string
-  kind: 'rad' | 'kan'
+  kind: 'rad' | 'kan' | 'oku'
+  /** For the okuma exam: index of its radical. */
+  ri?: number
   keys: string
   pool: number[]
 }
@@ -268,6 +279,24 @@ function radicalTest(ri: number): TestDef {
   return { id: `r-${radicals[ri]!.id}`, radical: radicals[ri]!.radical, kind: 'kan', keys: '', pool: ids }
 }
 
+/** Reading exams, one file per radical; a radical without one has no exam. */
+const okumaById = indexOkuma(import.meta.glob('./okuma/*.json', { eager: true }))
+const okumaOf = (ri: number) => okumaById.get(radicals[ri]!.id) ?? null
+/** The okuma exam of a radical: items are the question numbers. */
+function okumaTest(ri: number): TestDef | null {
+  const o = okumaOf(ri)
+  if (!o) return null
+  return {
+    id: `o-${radicals[ri]!.id}`,
+    radical: radicals[ri]!.radical,
+    ri,
+    kind: 'oku',
+    keys: '',
+    pool: o.questions.map((q) => q.n),
+  }
+}
+const okumaTests = radicals.map((_, ri) => okumaTest(ri)).filter((x): x is TestDef => !!x)
+
 const { testId, openTest, askClose, asking, leave, stay, leftOnPurpose, markFinished } = useTestRoute()
 /** The open test, read from the URL so the back button closes it. */
 const running = computed<TestDef | null>(() => {
@@ -277,10 +306,13 @@ const running = computed<TestDef | null>(() => {
     const ri = radicals.findIndex((r) => `r-${r.id}` === id)
     return ri >= 0 ? radicalTest(ri) : null
   }
+  if (id.startsWith('o-')) return okumaTests.find((x) => x.id === id) ?? null
   return [...prepTests, ...groupTests].find((x) => x.id === id) ?? null
 })
 const title = (x: TestDef) =>
-  x.radical
+  x.kind === 'oku'
+    ? u('okuTitle')(x.radical!)
+    : x.radical
     ? u('kanjiOf')(x.radical)
     : x.group
       ? u('groupTest')(x.group)
@@ -304,7 +336,7 @@ interface TestState {
   at: string
 }
 const states = ref(new Map<string, TestState>())
-const allTests = () => [...prepTests, ...groupTests, ...radicals.map((_, ri) => radicalTest(ri))]
+const allTests = () => [...prepTests, ...groupTests, ...radicals.map((_, ri) => radicalTest(ri)), ...okumaTests]
 function readStates() {
   const m = new Map<string, TestState>()
   for (const x of allTests()) {
@@ -474,10 +506,11 @@ function toggleStudied(id: number) {
 /* ── Stats screen ── */
 const toReview = computed(() =>
   radicals
-    .map((r, ri) => ({ r, ri, p: radScore(ri) }))
-    .filter(({ r, p }) => (p !== null ? p < 85 : studied.value.has(r.id)))
-    .sort((a, b) => (a.p ?? -1) - (b.p ?? -1)),
+    .map((r, ri) => ({ r, ri, p: radScore(ri), o: okuScore(ri) }))
+    .filter(({ r, p, o }) => (p !== null ? p < 85 : studied.value.has(r.id)) || (o !== null && o < 85))
+    .sort((a, b) => Math.min(a.p ?? -1, a.o ?? 101) - Math.min(b.p ?? -1, b.o ?? 101)),
 )
+const okuPassed = computed(() => okumaTests.filter((x) => (score(x) ?? 0) >= 75).length)
 const topKanji = computed(() => tallyMisses(misses.value, 1, 10))
 const topRads = computed(() => tallyMisses(misses.value, 0, 10))
 const radByChar = new Map(radicals.map((r, ri) => [r.radical, ri]))
@@ -505,6 +538,18 @@ const openRadical = (ri: number) => {
 
 const groupAfter = (ri: number) => (query.value.trim() ? null : closesGroup(ri))
 const radScore = (ri: number) => score(radicalTest(ri))
+const okuScore = (ri: number) => {
+  const x = okumaTest(ri)
+  return x ? score(x) : null
+}
+/** The okuma exam's button opens a fresh run once one is finished, else resumes. */
+const openOku = (ri: number) => {
+  const x = okumaTest(ri)!
+  if (okuScore(ri) !== null && openOf(x) === null) startOver(x)
+  else openTest(x.id)
+}
+/** After the radical test: done with the okuma exam too (or there is none). */
+const okuDone = (ri: number) => !okumaOf(ri) || (okuScore(ri) ?? 0) >= 75
 const nextRad = (ri: number) => {
   if (ri + 1 < radicals.length) reading.value = ri + 1
   else reading.value = null
@@ -540,6 +585,63 @@ const meanGloss = (mean: string) => {
 
 function build(i: number): Question {
   return glossed(rawBuild(i))
+}
+
+/* ── The okuma exam runs in the same MasteryQuiz; the passage above it follows
+   the current question, read from the built question and the saved run. ── */
+const okN = ref<number | null>(null)
+const okAnswered = ref(false)
+const okFinished = ref(false)
+function okBuild(n: number): Question {
+  const test = running.value!
+  const q = okumaOf(test.ri!)!.questions.find((x) => x.n === n)!
+  okN.value = n
+  okAnswered.value = false
+  okFinished.value = false
+  const r = radicals[test.ri!]!
+  return okumaQuestion(q, [`${r.radical} ${m(r)}`, `${q.word} ${q.meaning_tr}`], okumaOf(test.ri!)!.questions)
+}
+function okSync() {
+  const x = running.value
+  if (x?.kind !== 'oku') return
+  void nextTick(() => {
+    const run = loadRun<number>(storageKey(x))
+    if (run && run.current !== null) {
+      okN.value = run.current
+      okAnswered.value = run.picked !== null
+      okFinished.value = false
+    } else if (!okFinished.value) okAnswered.value = okN.value !== null
+  })
+}
+watch(
+  running,
+  (x) => {
+    okN.value = null
+    okAnswered.value = false
+    okFinished.value = false
+    if (x?.kind === 'oku') okSync()
+  },
+  { immediate: true },
+)
+function onFinish() {
+  if (running.value?.kind === 'oku') okFinished.value = true
+  markFinished()
+}
+const okWord = (n: number) => okumaOf(running.value!.ri!)?.questions.find((q) => q.n === n)
+const okWordRuby = (n: number) => {
+  const q = okWord(n)
+  return q ? rubyWord(q.word, q.reading) : ''
+}
+const quizPool = computed(() => {
+  const x = running.value!
+  return x.kind === 'oku' ? x.pool : x.pool.map((i) => all[i]!.kanji)
+})
+const quizBuild = (k: string | number) => (running.value!.kind === 'oku' ? okBuild(k as number) : build(ix(k as string)))
+const quizLabel = (k: string | number) => {
+  const x = running.value!
+  if (x.kind !== 'oku') return itemLabel(ix(k as string))
+  const q = okumaOf(x.ri!)!.questions.find((y) => y.n === k)
+  return q ? `${k}. {${q.word}|${q.reading}} ${q.meaning_tr}` : String(k)
 }
 function glossed(q: Question): Question {
   const test = running.value!
@@ -632,31 +734,52 @@ const itemLabel = (i: number) => {
   <SiteLayout>
     <!-- A test running -->
     <template v-if="running">
-      <StudyHeader :title="title(running)" :sub="u('runSub')" @back="askClose" />
+      <StudyHeader
+        :title="title(running)"
+        :sub="running.kind === 'oku' ? u('okuSub') : u('runSub')"
+        @back="askClose"
+      />
+      <OkumaPassage
+        v-if="running.kind === 'oku'"
+        :okuma="okumaOf(running.ri!)!"
+        :current="okN"
+        :answered="okAnswered"
+        :finished="okFinished"
+        :en="en"
+      />
+      <div class="contents" @click.capture="okSync" @keyup.capture="okSync">
       <MasteryQuiz
         :key="running.id"
-        :pool="running.pool.map((i) => all[i]!.kanji)"
-        :build="(c: string) => build(ix(c))"
+        :pool="quizPool"
+        :build="quizBuild"
         :storage-key="storageKey(running)"
-        @finish="markFinished"
-        :label="(c: string) => itemLabel(ix(c))"
+        @finish="onFinish"
+        :label="quizLabel"
       >
         <template #feedback="{ item }">
+          <div v-if="running.kind === 'oku'" class="bg-muted rounded-card min-w-0 px-4 py-3">
+            <span
+              class="jp word-ruby text-[2.2rem] leading-[1.9] break-all"
+              lang="ja"
+              v-html="okWordRuby(item as number)"
+            />
+            <p class="text-lg">{{ okWord(item as number)?.meaning_tr }}</p>
+          </div>
           <!-- The kanji large, its readings labelled, its words with furigana,
                and the other kanji of its radical. -->
-          <div v-if="running.kind === 'kan'" class="grid gap-4">
+          <div v-else-if="running.kind === 'kan'" class="grid gap-4">
             <div class="flex items-center gap-4">
               <span class="jp text-primary w-20 shrink-0 text-center text-7xl leading-none">{{
-                all[ix(item)]!.kanji
+                all[ix(item as string)]!.kanji
               }}</span>
               <dl class="grid min-w-0 gap-1.5">
-                <div v-if="all[ix(item)]!.on.length">
+                <div v-if="all[ix(item as string)]!.on.length">
                   <dt class="text-ink-soft text-xs">{{ u('onLabel') }}</dt>
-                  <dd class="jp text-xl">{{ all[ix(item)]!.on.join('・') }}</dd>
+                  <dd class="jp text-xl">{{ all[ix(item as string)]!.on.join('・') }}</dd>
                 </div>
-                <div v-if="all[ix(item)]!.kun.length">
+                <div v-if="all[ix(item as string)]!.kun.length">
                   <dt class="text-ink-soft text-xs">{{ u('kunLabel') }}</dt>
-                  <dd class="jp text-xl">{{ all[ix(item)]!.kun.join('・') }}</dd>
+                  <dd class="jp text-xl">{{ all[ix(item as string)]!.kun.join('・') }}</dd>
                 </div>
               </dl>
             </div>
@@ -664,24 +787,24 @@ const itemLabel = (i: number) => {
               <p class="text-ink-soft mb-1 text-sm font-semibold">{{ u('wordsLabel') }}</p>
               <ul class="grid gap-1.5">
                 <li
-                  v-for="w in all[ix(item)]!.words"
+                  v-for="w in all[ix(item as string)]!.words"
                   :key="w.word"
                   class="bg-muted rounded-control flex min-w-0 flex-wrap items-center gap-x-3 px-3 py-1.5"
                 >
                   <span class="jp word-ruby text-2xl leading-[2.2] break-all min-[400px]:text-3xl" lang="ja" v-html="rubyWord(w.word, w.reading)" />
                   <span class="text-base">{{ m(w) }}</span>
-                  <span v-if="readingUsed(all[ix(item)]!, w)" class="jp text-primary ms-auto text-sm font-semibold">{{
-                    readingUsed(all[ix(item)]!, w)
+                  <span v-if="readingUsed(all[ix(item as string)]!, w)" class="jp text-primary ms-auto text-sm font-semibold">{{
+                    readingUsed(all[ix(item as string)]!, w)
                   }}</span>
                 </li>
               </ul>
             </div>
           </div>
           <div v-else class="grid gap-2">
-            <p class="text-ink-soft text-sm font-semibold">{{ u('familyLabel')(radicals[ix(item)]!.radical) }}</p>
+            <p class="text-ink-soft text-sm font-semibold">{{ u('familyLabel')(radicals[ix(item as string)]!.radical) }}</p>
             <ul class="grid grid-cols-3 gap-2">
               <li
-                v-for="k in radicals[ix(item)]!.kanji"
+                v-for="k in radicals[ix(item as string)]!.kanji"
                 :key="k.kanji"
                 class="bg-muted rounded-control px-1 py-2 text-center"
               >
@@ -693,13 +816,13 @@ const itemLabel = (i: number) => {
         </template>
         <template #more="{ item }">
           <div v-if="running.kind === 'kan'">
-            <template v-if="sameRadical(all[ix(item)]!).length">
+            <template v-if="sameRadical(all[ix(item as string)]!).length">
               <p class="text-ink-soft mb-1 text-sm font-semibold">
-                {{ u('familyLabel')(radicals[all[ix(item)]!.ri]!.radical) }}
+                {{ u('familyLabel')(radicals[all[ix(item as string)]!.ri]!.radical) }}
               </p>
               <ul class="grid grid-cols-4 gap-2">
                 <li
-                  v-for="c in sameRadical(all[ix(item)]!)"
+                  v-for="c in sameRadical(all[ix(item as string)]!)"
                   :key="c"
                   class="bg-muted rounded-control px-1 py-1.5 text-center"
                 >
@@ -711,6 +834,7 @@ const itemLabel = (i: number) => {
           </div>
         </template>
       </MasteryQuiz>
+      </div>
       <LeaveTestSheet :open="asking" @leave="leave" @stay="stay" />
     </template>
 
@@ -732,6 +856,14 @@ const itemLabel = (i: number) => {
                   {{ position(r.radical) }}
                 </p>
               </div>
+              <ScorePills
+                class="ms-auto self-start"
+                :test="radScore(ri)"
+                :okuma="okuScore(ri)"
+                :badge="badge"
+                :test-label="u('pillTest')"
+                :okuma-label="u('pillOku')"
+              />
             </div>
             <dl v-if="guide(r.radical)" class="mt-4 grid gap-2 text-[15px]">
               <div>
@@ -931,7 +1063,25 @@ const itemLabel = (i: number) => {
                 >{{ radScore(ri) }}%</span
               >
             </div>
-            <template v-if="radScore(ri) !== null && radScore(ri)! >= 75">
+            <div v-if="okumaOf(ri) && radScore(ri) !== null && radScore(ri)! >= 75" class="flex items-center gap-2">
+              <BaseButton
+                class="min-w-0 flex-1"
+                :variant="okuDone(ri) ? 'secondary' : 'primary'"
+                @click="openOku(ri)"
+                >{{
+                  okuScore(ri) !== null && okuScore(ri)! < 75
+                    ? u('retry')
+                    : u('okuTest')(r.radical)
+                }}<template v-if="openOf(okumaTest(ri)!) !== null"> · {{ openOf(okumaTest(ri)!) }}%</template></BaseButton
+              >
+              <span
+                v-if="okuScore(ri) !== null"
+                class="shrink-0 rounded-full px-2 py-0.5 text-sm font-bold"
+                :style="badge(okuScore(ri)!)"
+                >{{ okuScore(ri) }}%</span
+              >
+            </div>
+            <template v-if="radScore(ri) !== null && radScore(ri)! >= 75 && okuDone(ri)">
               <BaseButton v-if="closesGroup(ri)" block @click="openTest(closesGroup(ri)!.id)"
                 >{{ u('groupTest')(closesGroup(ri)!.group!)
                 }}<template v-if="score(closesGroup(ri)!) !== null">
@@ -1006,15 +1156,17 @@ const itemLabel = (i: number) => {
                       >{{ k.kanji }}</span
                     >
                   </span>
+                  <ScorePills
+                    row
+                    class="mt-1.5"
+                    :test="radScore(radicals.indexOf(r))"
+                    :okuma="okuScore(radicals.indexOf(r))"
+                    :badge="badge"
+                    :test-label="u('pillTest')"
+                    :okuma-label="u('pillOku')"
+                    :failed="u('failed')"
+                  />
                 </span>
-                <span
-                  v-if="radScore(radicals.indexOf(r)) !== null"
-                  class="shrink-0 rounded-full px-2 py-0.5 text-sm font-bold"
-                  :style="badge(radScore(radicals.indexOf(r))!)"
-                  >{{ radScore(radicals.indexOf(r)) }}%<template v-if="radScore(radicals.indexOf(r))! < 75">
-                    · {{ u('failed') }}</template
-                  ></span
-                >
                 <span class="text-ink-soft shrink-0" aria-hidden="true">→</span>
               </button>
               <StampToggle
@@ -1151,6 +1303,10 @@ const itemLabel = (i: number) => {
           <div class="bg-muted mt-1 mb-3 h-2 overflow-hidden rounded-full">
             <span class="bg-primary block h-full" :style="{ width: `${(learnedCount / all.length) * 100}%` }" />
           </div>
+          <p v-if="okumaTests.length" class="mb-3 text-[15px]">
+            <span class="jp text-primary me-1 font-bold" aria-hidden="true">読</span
+            >{{ u('okuPassed')(okuPassed, radicals.length) }}
+          </p>
           <p class="text-[15px]">{{ u('bands') }}</p>
           <div class="mt-1 flex h-4 overflow-hidden rounded-full">
             <span
@@ -1181,12 +1337,14 @@ const itemLabel = (i: number) => {
               >
                 <span class="jp text-primary w-10 shrink-0 text-center text-3xl leading-none">{{ x.r.radical }}</span>
                 <span class="min-w-0 flex-1 truncate font-semibold">{{ m(x.r) }}</span>
-                <span
-                  v-if="x.p !== null"
-                  class="shrink-0 rounded-full px-2 py-0.5 text-sm font-bold"
-                  :style="badge(x.p)"
-                  >{{ x.p }}%</span
-                >
+                <ScorePills
+                  v-if="x.p !== null || x.o !== null"
+                  :test="x.p"
+                  :okuma="x.o"
+                  :badge="badge"
+                  :test-label="u('pillTest')"
+                  :okuma-label="u('pillOku')"
+                />
                 <span v-else class="text-ink-soft shrink-0 text-sm">{{ u('untested') }}</span>
                 <span class="text-ink-soft shrink-0" aria-hidden="true">→</span>
               </button>

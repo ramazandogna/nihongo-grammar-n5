@@ -1,0 +1,234 @@
+{
+  "radicalId": 40,
+  "title": "新しい町での生活",
+  "title_tr": "Yeni kasabadaki hayat",
+  "text": "先月、大学の近くのアパートに引っ越した。新しい[[10|部屋]]は狭いが、[[1|屋上]]から町がよく見える。窓からは、古い[[5|屋根]]の家が並んでいるのが見える。この地域には江戸時代の[[13|住居]]が今も残っていて、近くの博物館では昔の生活の道具が[[8|展示]]されている。町の人によると、この町は昔、港町として[[9|発展]]したそうだ。引っ越しの日、母から荷物が[[6|届いた]]。手紙を出すために、近くの[[7|郵便局]]にも行った。帰りに[[3|薬局]]で薬を買って、駅前の[[15|本屋]]で雑誌を買った。途中で財布を拾ったので、交番に[[11|届けた]]。夜は、同じサークルに[[4|所属]]している友達と[[2|居酒屋]]で食事をした。友達はみんな実家暮らしで、夜は家族と[[14|居間]]でテレビを見ることが多いそうだ。一人暮らしは寂しいので実家に帰ろうかとも考えたが、[[12|結局]]、ここで頑張ることにした。",
+  "text_tr": "Geçen ay üniversitenin yakınındaki bir daireye taşındım. Yeni odam dar ama çatıdan kasaba iyi görünüyor. Pencereden eski çatılı evlerin sıralandığı görülüyor. Bu bölgede Edo dönemine ait konutlar hâlâ duruyor ve yakındaki müzede eski günlük yaşam eşyaları sergileniyor. Kasaba halkına göre burası eskiden bir liman kasabası olarak gelişmiş. Taşındığım gün annemden koli geldi. Mektup göndermek için yakındaki postaneye de gittim. Dönüşte eczaneden ilaç, istasyon önündeki kitapçıdan dergi aldım. Yolda bir cüzdan buldum ve karakola teslim ettim. Akşam aynı kulübe üye arkadaşlarla bir izakayada yemek yedik. Arkadaşlarımın hepsi ailesiyle yaşıyor ve akşamları ailece oturma odasında televizyon izliyorlarmış. Yalnız yaşamak hüzünlü olduğu için eve dönmeyi de düşündüm ama sonunda burada çabalamaya karar verdim.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "屋上",
+      "reading": "おくじょう",
+      "meaning_tr": "çatı katı (teras)",
+      "sentence": "新しい部屋は狭いが、[[屋上]]から町がよく見える。",
+      "options": [
+        "おくじょう",
+        "やじょう",
+        "おくうえ",
+        "おくしょう"
+      ],
+      "explain_tr": "屋 オク + 上 ジョウ (゛)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "居酒屋",
+      "reading": "いざかや",
+      "meaning_tr": "izakaya",
+      "sentence": "夜は、同じサークルに所属している友達と[[居酒屋]]で食事をした。",
+      "options": [
+        "いざかや",
+        "いさかや",
+        "きょしゅや",
+        "いざけや"
+      ],
+      "explain_tr": "居 い + 酒 ざか (さけ→ざか) + 屋 や."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "薬局",
+      "reading": "やっきょく",
+      "meaning_tr": "eczane",
+      "sentence": "帰りに[[薬局]]で薬を買って、駅前の本屋で雑誌を買った。",
+      "options": [
+        "やっきょく",
+        "やくきょく",
+        "やっきょっく",
+        "くすりきょく"
+      ],
+      "explain_tr": "薬 ヤク + 局 キョク → やっきょく (っ)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "所属",
+      "reading": "しょぞく",
+      "meaning_tr": "üyelik, bağlı olma",
+      "sentence": "夜は、同じサークルに[[所属]]している友達と居酒屋で食事をした。",
+      "options": [
+        "しょぞく",
+        "しょそく",
+        "しょうぞく",
+        "しょぞっく"
+      ],
+      "explain_tr": "所 ショ (kısa) + 属 ゾク (゛)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "屋根",
+      "reading": "やね",
+      "meaning_tr": "çatı",
+      "sentence": "窓からは、古い[[屋根]]の家が並んでいるのが見える。",
+      "options": [
+        "やね",
+        "おくね",
+        "やこん",
+        "おくこん"
+      ],
+      "explain_tr": "Kun: 屋 や + 根 ね."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "届いた",
+      "reading": "とどいた",
+      "meaning_tr": "ulaştı, geldi",
+      "sentence": "引っ越しの日、母から荷物が[[とどいた]]。",
+      "options": [
+        "届いた",
+        "屈いた",
+        "居いた",
+        "局いた"
+      ],
+      "explain_tr": "届 (尸) ulaşmak; 屈/居/局 aynı 尸 kapağı."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "郵便局",
+      "reading": "ゆうびんきょく",
+      "meaning_tr": "postane",
+      "sentence": "手紙を出すために、近くの[[ゆうびんきょく]]にも行った。",
+      "options": [
+        "郵便局",
+        "郵便居",
+        "郵使局",
+        "郵便届"
+      ],
+      "explain_tr": "局 büro; 便 vs 使 benzer görünüş."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "展示",
+      "reading": "てんじ",
+      "meaning_tr": "sergi",
+      "sentence": "この地域には江戸時代の住居が今も残っていて、近くの博物館では昔の生活の道具が[[てんじ]]されている。",
+      "options": [
+        "展示",
+        "展字",
+        "殿示",
+        "展事"
+      ],
+      "explain_tr": "展 テン + 示 ジ; 字/事 aynı ジ, 殿 benzer."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "発展",
+      "reading": "はってん",
+      "meaning_tr": "gelişme",
+      "sentence": "町の人によると、この町は昔、港町として[[はってん]]したそうだ。",
+      "options": [
+        "発展",
+        "発殿",
+        "発点",
+        "発転"
+      ],
+      "explain_tr": "展 (尸) yaymak; 点/転 aynı テン."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "部屋",
+      "reading": "へや",
+      "meaning_tr": "oda",
+      "sentence": "新しい[[へや]]は狭いが、屋上から町がよく見える。",
+      "options": [
+        "部屋",
+        "部居",
+        "部室",
+        "郡屋"
+      ],
+      "explain_tr": "Özel okunuş へや; 部室 ぶしつ (kulüp odası)."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "届けた",
+      "reading": "とどけた",
+      "meaning_tr": "teslim ettim",
+      "sentence": "途中で財布を拾ったので、交番に（　　）。",
+      "options": [
+        "届けた",
+        "届いた",
+        "居た",
+        "属した"
+      ],
+      "explain_tr": "財布を交番に届ける (geçişli); 届く geçişsiz."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "結局",
+      "reading": "けっきょく",
+      "meaning_tr": "sonunda",
+      "sentence": "一人暮らしは寂しいので実家に帰ろうかとも考えたが、（　　）、ここで頑張ることにした。",
+      "options": [
+        "結局",
+        "薬局",
+        "郵便局",
+        "住居"
+      ],
+      "explain_tr": "いろいろ考えたが、結局～ことにした."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "住居",
+      "reading": "じゅうきょ",
+      "meaning_tr": "konut",
+      "sentence": "この地域には江戸時代の（　　）が今も残っていて、近くの博物館では昔の生活の道具が展示されている。",
+      "options": [
+        "住居",
+        "薬局",
+        "屋上",
+        "展示"
+      ],
+      "explain_tr": "江戸時代の住居が残っている."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "居間",
+      "reading": "いま",
+      "meaning_tr": "oturma odası",
+      "sentence": "友達はみんな実家暮らしで、夜は家族と（　　）でテレビを見ることが多いそうだ。",
+      "options": [
+        "居間",
+        "屋上",
+        "薬局",
+        "住居"
+      ],
+      "explain_tr": "家族と居間でテレビを見る."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "本屋",
+      "reading": "ほんや",
+      "meaning_tr": "kitapçı",
+      "sentence": "帰りに薬局で薬を買って、駅前の（　　）で雑誌を買った。",
+      "options": [
+        "本屋",
+        "薬局",
+        "郵便局",
+        "居酒屋"
+      ],
+      "explain_tr": "本屋で雑誌を買う."
+    }
+  ]
+}

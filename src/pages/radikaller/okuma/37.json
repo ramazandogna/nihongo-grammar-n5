@@ -1,0 +1,234 @@
+{
+  "radicalId": 37,
+  "title": "新しいカフェ",
+  "title_tr": "Yeni kafe",
+  "text": "駅前に新しいカフェが[[10|開店]]したと聞いて、日曜日に行ってみた。インターネットの[[7|広告]]で見たとおり、店の中はとても明るかった。店に入ると、[[6|店員]]が笑顔で窓側の[[1|座席]]に案内してくれた。店の中の[[2|温度]]もちょうどよく、居心地がよかった。メニューには、[[3|健康]]にいい野菜のスープがあった。壁には[[4|海底]]の写真が飾ってあって、まるで海の中にいるようだった。店長の話によると、[[5|政府]]の補助金を使って店を始めたそうだ。家から店までは車で十分[[12|程度]]だが、店の前の道は狭いので、[[11|速度]]を落として運転しなければならない。帰りの電車は混んでいて、席に[[13|座れ]]なかった。家に帰ると母が晩ご飯を作っていて、なべの[[15|底]]が少し焦げていた。うちは庭が[[14|広くて]]、夏はそこで晩ご飯を食べることもある。母は「[[8|家庭]]の味が一番だ」と言って笑った。[[9|今度]]は家族みんなであのカフェに行きたい。",
+  "text_tr": "İstasyon önünde yeni bir kafe açıldığını duyunca pazar günü gittim. İnternetteki reklamda gördüğüm gibi içerisi çok aydınlıktı. İçeri girince garson güler yüzle beni pencere kenarındaki koltuğa yönlendirdi. İçerideki sıcaklık da tam kıvamındaydı, rahattı. Menüde sağlığa iyi gelen bir sebze çorbası vardı. Duvarda deniz dibi fotoğrafları asılıydı, sanki denizin içindeymişim gibiydi. Müdürün anlattığına göre dükkânı hükümetin desteğiyle açmışlar. Evden kafeye arabayla on dakika kadar ama önündeki yol dar olduğu için hızı düşürerek sürmek gerekiyor. Dönüş treni kalabalıktı, oturamadım. Eve dönünce annem akşam yemeği yapıyordu ve tencerenin dibi biraz yanmıştı. Evimizin bahçesi geniş, yazın orada akşam yemeği yediğimiz de oluyor. Annem \"En güzeli ev yemeği\" deyip güldü. Bir dahaki sefere bütün aile o kafeye gitmek istiyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "座席",
+      "reading": "ざせき",
+      "meaning_tr": "koltuk",
+      "sentence": "店に入ると、店員が笑顔で窓側の[[座席]]に案内してくれた。",
+      "options": [
+        "ざせき",
+        "ざいせき",
+        "させき",
+        "ざせっき"
+      ],
+      "explain_tr": "座 ザ + 席 セキ."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "温度",
+      "reading": "おんど",
+      "meaning_tr": "sıcaklık",
+      "sentence": "店の中の[[温度]]もちょうどよく、居心地がよかった。",
+      "options": [
+        "おんど",
+        "おんと",
+        "うんど",
+        "おんどう"
+      ],
+      "explain_tr": "温 オン + 度 ド (゛ alır)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "健康",
+      "reading": "けんこう",
+      "meaning_tr": "sağlık",
+      "sentence": "メニューには、[[健康]]にいい野菜のスープがあった。",
+      "options": [
+        "けんこう",
+        "けんこ",
+        "げんこう",
+        "けんきょう"
+      ],
+      "explain_tr": "健 ケン + 康 コウ (uzun)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "海底",
+      "reading": "かいてい",
+      "meaning_tr": "deniz dibi",
+      "sentence": "壁には[[海底]]の写真が飾ってあって、まるで海の中にいるようだった。",
+      "options": [
+        "かいてい",
+        "かいでい",
+        "うみそこ",
+        "かいとい"
+      ],
+      "explain_tr": "海 カイ + 底 テイ; ゛ yok."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "政府",
+      "reading": "せいふ",
+      "meaning_tr": "hükümet",
+      "sentence": "店長の話によると、[[政府]]の補助金を使って店を始めたそうだ。",
+      "options": [
+        "せいふ",
+        "せいぶ",
+        "せふ",
+        "しょうふ"
+      ],
+      "explain_tr": "政 セイ + 府 フ."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "店員",
+      "reading": "てんいん",
+      "meaning_tr": "tezgâhtar, garson",
+      "sentence": "店に入ると、[[てんいん]]が笑顔で窓側の座席に案内してくれた。",
+      "options": [
+        "店員",
+        "点員",
+        "店貝",
+        "庄員"
+      ],
+      "explain_tr": "店 (广) dükkân; 点 aynı テン, 貝 員'ye benzer."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "広告",
+      "reading": "こうこく",
+      "meaning_tr": "reklam",
+      "sentence": "インターネットの[[こうこく]]で見たとおり、店の中はとても明るかった。",
+      "options": [
+        "広告",
+        "公告",
+        "広造",
+        "広吉"
+      ],
+      "explain_tr": "公告 (resmi ilan) de こうこく; internet reklamı → 広告."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "家庭",
+      "reading": "かてい",
+      "meaning_tr": "aile, ev",
+      "sentence": "母は「[[かてい]]の味が一番だ」と言って笑った。",
+      "options": [
+        "家庭",
+        "家廷",
+        "家定",
+        "家底"
+      ],
+      "explain_tr": "庭 (广) bahçe/ev; 廷 aynı テイ, 底 benzer görünüş."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "今度",
+      "reading": "こんど",
+      "meaning_tr": "bir dahaki sefer",
+      "sentence": "[[こんど]]は家族みんなであのカフェに行きたい。",
+      "options": [
+        "今度",
+        "今渡",
+        "令度",
+        "今庶"
+      ],
+      "explain_tr": "度 ド; 渡 (氵) aynı ト parçası, 令 今'e benzer."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "開店",
+      "reading": "かいてん",
+      "meaning_tr": "dükkân açılışı",
+      "sentence": "駅前に新しいカフェが[[かいてん]]したと聞いて、日曜日に行ってみた。",
+      "options": [
+        "開店",
+        "開点",
+        "開展",
+        "閉店"
+      ],
+      "explain_tr": "店 テン; 点/展 aynı テン, 閉店 = kapanış."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "速度",
+      "reading": "そくど",
+      "meaning_tr": "hız",
+      "sentence": "家から店までは車で十分程度だが、店の前の道は狭いので、（　　）を落として運転しなければならない。",
+      "options": [
+        "速度",
+        "温度",
+        "程度",
+        "座席"
+      ],
+      "explain_tr": "速度を落とす: hızı düşürmek."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "程度",
+      "reading": "ていど",
+      "meaning_tr": "kadar, civarı",
+      "sentence": "家から店までは車で十分（　　）だが、店の前の道は狭いので、速度を落として運転しなければならない。",
+      "options": [
+        "程度",
+        "速度",
+        "温度",
+        "今度"
+      ],
+      "explain_tr": "十分程度: on dakika kadar."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "座れ",
+      "reading": "すわれ",
+      "meaning_tr": "oturabil-",
+      "sentence": "帰りの電車は混んでいて、席に（　　）なかった。",
+      "options": [
+        "座れ",
+        "広げ",
+        "守ら",
+        "建て"
+      ],
+      "explain_tr": "席に座れなかった: oturamadım."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "広くて",
+      "reading": "ひろくて",
+      "meaning_tr": "geniş olup",
+      "sentence": "うちは庭が（　　）、夏はそこで晩ご飯を食べることもある。",
+      "options": [
+        "広くて",
+        "低くて",
+        "浅くて",
+        "細くて"
+      ],
+      "explain_tr": "庭が広い: bahçe geniş."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "底",
+      "reading": "そこ",
+      "meaning_tr": "dip",
+      "sentence": "家に帰ると母が晩ご飯を作っていて、なべの（　　）が少し焦げていた。",
+      "options": [
+        "底",
+        "庭",
+        "店",
+        "席"
+      ],
+      "explain_tr": "なべの底が焦げる: tencerenin dibi yanmak."
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "radicalId": 10,
+  "title": "姉の結婚式",
+  "title_tr": "Ablamın düğünü",
+  "text": "先月姉が[[1|結婚]]式を挙げ、式は午前十時に[[2|開始]]されました。白いドレスを着た姉の[[3|姿]]は、とてもきれいでした。父は[[4|娘]]の結婚が少しさびしいようでしたが、その日は[[5|機嫌]]がよかったです。町内会の[[6|委員]]をしている田中さん[[7|夫妻]]も来てくれました。二人は[[8|婚約]]してから一年間、準備をしてきました。姉は[[9|主婦]]になるのではなく、仕事も続けるそうです。スピーチで、母は「いい[[10|夫婦]]になってね」と話しました。姉は仕事に対する[[11|姿勢]]がまじめで、みんなに尊敬されています。昔は[[12|嫌い]]だった料理も、最近[[13|始めた]]そうです。[[14|新婚]]旅行では、姉の[[15|好き]]なハワイに行くそうです。",
+  "text_tr": "Geçen ay ablam düğün yaptı; tören sabah saat onda başladı. Beyaz gelinlik giymiş ablamın görüntüsü çok güzeldi. Babam kızının evlenmesine biraz hüzünlenmiş gibiydi ama o gün keyfi yerindeydi. Mahalle derneğinde komite üyesi olan Tanaka çifti de geldi. İkisi nişanlandıktan sonra bir yıl boyunca hazırlık yapmışlar. Ablam ev hanımı olmayacak, işine de devam edecekmiş. Annem konuşmasında \"İyi bir karı koca olun\" dedi. Ablamın işe karşı tutumu ciddi ve herkes ona saygı duyuyor. Eskiden sevmediği yemek yapmaya da son zamanlarda başlamış. Balayında ablamın sevdiği Hawaii'ye gideceklermiş.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "結婚",
+      "reading": "けっこん",
+      "meaning_tr": "evlilik",
+      "sentence": "先月姉が[[結婚]]式を挙げ、式は午前十時に開始されました。",
+      "options": [
+        "けっこん",
+        "けつこん",
+        "けいこん",
+        "けっごん"
+      ],
+      "explain_tr": "結 ケツ + 婚 コン → ケッコン (küçük っ)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "開始",
+      "reading": "かいし",
+      "meaning_tr": "başlangıç",
+      "sentence": "先月姉が結婚式を挙げ、式は午前十時に[[開始]]されました。",
+      "options": [
+        "かいし",
+        "かいじ",
+        "かいはじ",
+        "がいし"
+      ],
+      "explain_tr": "開 カイ + 始 シ (゛ yok)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "姿",
+      "reading": "すがた",
+      "meaning_tr": "görünüş",
+      "sentence": "白いドレスを着た姉の[[姿]]は、とてもきれいでした。",
+      "options": [
+        "すがた",
+        "すかた",
+        "しせい",
+        "すがお"
+      ],
+      "explain_tr": "Kun okunuş すがた; 姿勢'de シ."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "娘",
+      "reading": "むすめ",
+      "meaning_tr": "kız evlat",
+      "sentence": "父は[[娘]]の結婚が少しさびしいようでしたが、その日は機嫌がよかったです。",
+      "options": [
+        "むすめ",
+        "むすこ",
+        "むすみ",
+        "じょう"
+      ],
+      "explain_tr": "娘 むすめ; 息子 むすこ (oğul)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "機嫌",
+      "reading": "きげん",
+      "meaning_tr": "ruh hali",
+      "sentence": "父は娘の結婚が少しさびしいようでしたが、その日は[[機嫌]]がよかったです。",
+      "options": [
+        "きげん",
+        "きけん",
+        "きいげん",
+        "ききらい"
+      ],
+      "explain_tr": "嫌 burada ゲン; 危険 (きけん) tuzağı."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "委員",
+      "reading": "いいん",
+      "meaning_tr": "komite üyesi",
+      "sentence": "町内会の[[いいん]]をしている田中さん夫妻も来てくれました。",
+      "options": [
+        "委員",
+        "季員",
+        "医員",
+        "委院"
+      ],
+      "explain_tr": "委 = 禾 + 女; 季 mevsim."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "夫妻",
+      "reading": "ふさい",
+      "meaning_tr": "karı koca (çift)",
+      "sentence": "町内会の委員をしている田中さん[[ふさい]]も来てくれました。",
+      "options": [
+        "夫妻",
+        "夫要",
+        "天妻",
+        "夫斉"
+      ],
+      "explain_tr": "妻 (女) eş; 要 benzer görünür."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "婚約",
+      "reading": "こんやく",
+      "meaning_tr": "nişan",
+      "sentence": "二人は[[こんやく]]してから一年間、準備をしてきました。",
+      "options": [
+        "婚約",
+        "婚訳",
+        "混約",
+        "婚役"
+      ],
+      "explain_tr": "婚 (女) evlilik + 約 söz."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "主婦",
+      "reading": "しゅふ",
+      "meaning_tr": "ev hanımı",
+      "sentence": "姉は[[しゅふ]]になるのではなく、仕事も続けるそうです。",
+      "options": [
+        "主婦",
+        "主帰",
+        "主掃",
+        "首婦"
+      ],
+      "explain_tr": "婦 (女) kadın; 帰/掃 aynı sağ parça."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "夫婦",
+      "reading": "ふうふ",
+      "meaning_tr": "karı koca",
+      "sentence": "スピーチで、母は「いい[[ふうふ]]になってね」と話しました。",
+      "options": [
+        "夫婦",
+        "夫帰",
+        "夫掃",
+        "府婦"
+      ],
+      "explain_tr": "夫 フウ (uzun) + 婦 フ."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "姿勢",
+      "reading": "しせい",
+      "meaning_tr": "tutum, duruş",
+      "sentence": "姉は仕事に対する（　　）がまじめで、みんなに尊敬されています。",
+      "options": [
+        "姿勢",
+        "姿見",
+        "勢力",
+        "夫妻"
+      ],
+      "explain_tr": "仕事に対する姿勢: işe karşı tutum."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "嫌い",
+      "reading": "きらい",
+      "meaning_tr": "sevmemek",
+      "sentence": "昔は（　　）だった料理も、最近始めたそうです。",
+      "options": [
+        "嫌い",
+        "機嫌",
+        "嫌味",
+        "妹"
+      ],
+      "explain_tr": "昔は嫌いだった: eskiden sevmezdi."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "始めた",
+      "reading": "はじめた",
+      "meaning_tr": "başladı",
+      "sentence": "昔は嫌いだった料理も、最近（　　）そうです。",
+      "options": [
+        "始めた",
+        "開始した",
+        "止めた",
+        "決めた"
+      ],
+      "explain_tr": "Günlük işler için 始める; 開始する resmî."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "新婚",
+      "reading": "しんこん",
+      "meaning_tr": "yeni evli",
+      "sentence": "（　　）旅行では、姉の好きなハワイに行くそうです。",
+      "options": [
+        "新婚",
+        "結婚",
+        "婚約",
+        "離婚"
+      ],
+      "explain_tr": "新婚旅行: balayı."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "好き",
+      "reading": "すき",
+      "meaning_tr": "sevmek",
+      "sentence": "新婚旅行では、姉の（　　）なハワイに行くそうです。",
+      "options": [
+        "好き",
+        "嫌い",
+        "機嫌",
+        "好み"
+      ],
+      "explain_tr": "～の好きな…: -nın sevdiği…"
+    }
+  ]
+}

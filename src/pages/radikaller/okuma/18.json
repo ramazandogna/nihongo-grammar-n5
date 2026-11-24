@@ -1,0 +1,234 @@
+{
+  "radicalId": 18,
+  "title": "留守の間に",
+  "title_tr": "Evde yokken",
+  "text": "先週の日曜日、[[1|家族]]で出かけている間に、家に泥棒が入った。その日は朝から[[11|留守]]にしていたので、誰も気づかなかった。夜、帰ってきた母がすぐに[[2|警察]]に電話すると、警察の人が来て、盗まれた物の[[3|内容]]を細かく聞いた。[[6|被害]]は現金だけだったが、私は[[12|不安]]で夜も眠れなかった。次の日は[[4|寝坊]]して学校に遅れたうえ、[[7|宿題]]も忘れてしまった。先生に事情を話すと、「それは大変だったね。[[13|実は]]先生の家も去年同じことがあったんだよ」と言ってくれた。父は「[[8|安心]]して住めるように、鍵を新しくしよう」と言った。新しい鍵の工事は来週[[9|完成]]する[[5|予定]]だ。鍵の代金は、毎月の[[14|家賃]]の半分ぐらいだった。これで[[10|完全]]に安全とは言えないが、家族の生活は少しずつ[[15|安定]]してきた。",
+  "text_tr": "Geçen pazar ailecek dışarıdayken eve hırsız girdi. O gün sabahtan beri evde olmadığımız için kimse fark etmedi. Akşam eve dönen annem hemen polisi arayınca polis geldi ve çalınan eşyaların ne olduğunu ayrıntılı sordu. Zarar sadece nakit paraydı ama ben endişeden gece uyuyamadım. Ertesi gün uyuyakalıp okula geç kaldım, üstelik ödevimi de unuttum. Öğretmene durumu anlatınca \"Çok zor olmuş. Aslında öğretmenin evinde de geçen yıl aynısı olmuştu\" dedi. Babam \"İçimiz rahat yaşayalım diye kilidi yenileyelim\" dedi. Yeni kilit işinin gelecek hafta bitmesi planlanıyor. Kilit ücreti aylık kiranın yarısı kadar tuttu. Bununla tamamen güvende sayılmayız ama ailenin hayatı yavaş yavaş düzene girdi.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "家族",
+      "reading": "かぞく",
+      "meaning_tr": "aile",
+      "sentence": "先週の日曜日、[[家族]]で出かけている間に、家に泥棒が入った。",
+      "options": [
+        "かぞく",
+        "かそく",
+        "かぞっく",
+        "けぞく"
+      ],
+      "explain_tr": "家 カ + 族 ゾク (゛ var)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "警察",
+      "reading": "けいさつ",
+      "meaning_tr": "polis",
+      "sentence": "夜、帰ってきた母がすぐに[[警察]]に電話すると、警察の人が来て、盗まれた物の内容を細かく聞いた。",
+      "options": [
+        "けいさつ",
+        "けいざつ",
+        "けさつ",
+        "けいさっ"
+      ],
+      "explain_tr": "警 ケイ (uzun) + 察 サツ (゛ yok)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "内容",
+      "reading": "ないよう",
+      "meaning_tr": "içerik",
+      "sentence": "夜、帰ってきた母がすぐに警察に電話すると、警察の人が来て、盗まれた物の[[内容]]を細かく聞いた。",
+      "options": [
+        "ないよう",
+        "ないよ",
+        "ないおう",
+        "うちよう"
+      ],
+      "explain_tr": "内 ナイ + 容 ヨウ (uzun)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "寝坊",
+      "reading": "ねぼう",
+      "meaning_tr": "uyuyakalmak",
+      "sentence": "次の日は[[寝坊]]して学校に遅れたうえ、宿題も忘れてしまった。",
+      "options": [
+        "ねぼう",
+        "ねぼ",
+        "しんぼう",
+        "ねいぼう"
+      ],
+      "explain_tr": "寝 ね (kun) + 坊 ボウ; しんぼう = 辛抱 (sabır)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "予定",
+      "reading": "よてい",
+      "meaning_tr": "plan",
+      "sentence": "新しい鍵の工事は来週完成する[[予定]]だ。",
+      "options": [
+        "よてい",
+        "よでい",
+        "ようてい",
+        "よってい"
+      ],
+      "explain_tr": "予 ヨ (kısa) + 定 テイ."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "被害",
+      "reading": "ひがい",
+      "meaning_tr": "zarar",
+      "sentence": "[[ひがい]]は現金だけだったが、私は不安で夜も眠れなかった。",
+      "options": [
+        "被害",
+        "被割",
+        "披害",
+        "被宮"
+      ],
+      "explain_tr": "害 (宀 radikali) zarar; 割・宮 benzer görünür."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "宿題",
+      "reading": "しゅくだい",
+      "meaning_tr": "ödev",
+      "sentence": "次の日は寝坊して学校に遅れたうえ、[[しゅくだい]]も忘れてしまった。",
+      "options": [
+        "宿題",
+        "宿代",
+        "縮題",
+        "宿第"
+      ],
+      "explain_tr": "宿 + 題 (konu); 代・第 de だい okunur."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "安心",
+      "reading": "あんしん",
+      "meaning_tr": "içi rahat olmak",
+      "sentence": "父は「[[あんしん]]して住めるように、鍵を新しくしよう」と言った。",
+      "options": [
+        "安心",
+        "案心",
+        "安必",
+        "安信"
+      ],
+      "explain_tr": "安 (huzur) + 心; 案 aynı アン okunur."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "完成",
+      "reading": "かんせい",
+      "meaning_tr": "tamamlanma",
+      "sentence": "新しい鍵の工事は来週[[かんせい]]する予定だ。",
+      "options": [
+        "完成",
+        "完生",
+        "完政",
+        "院成"
+      ],
+      "explain_tr": "成 (olmak) ile 完成; 生・政 de セイ okunur."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "完全",
+      "reading": "かんぜん",
+      "meaning_tr": "tamamen",
+      "sentence": "これで[[かんぜん]]に安全とは言えないが、家族の生活は少しずつ安定してきた。",
+      "options": [
+        "完全",
+        "完善",
+        "院全",
+        "完金"
+      ],
+      "explain_tr": "完 (宀) + 全 ゼン; 善 de ゼン okunur."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "留守",
+      "reading": "るす",
+      "meaning_tr": "evde olmamak",
+      "sentence": "その日は朝から（　　）にしていたので、誰も気づかなかった。",
+      "options": [
+        "留守",
+        "安心",
+        "完成",
+        "予定"
+      ],
+      "explain_tr": "留守にする = evi boş bırakmak."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "不安",
+      "reading": "ふあん",
+      "meaning_tr": "endişe",
+      "sentence": "被害は現金だけだったが、私は（　　）で夜も眠れなかった。",
+      "options": [
+        "不安",
+        "安心",
+        "安定",
+        "安全"
+      ],
+      "explain_tr": "Endişeden uyuyamamak → 不安で眠れない."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "実は",
+      "reading": "じつは",
+      "meaning_tr": "aslında",
+      "sentence": "（　　）先生の家も去年同じことがあったんだよ」と言ってくれた。",
+      "options": [
+        "実は",
+        "完全",
+        "実験",
+        "内容"
+      ],
+      "explain_tr": "実は… = aslında (sır açıklarken)."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "家賃",
+      "reading": "やちん",
+      "meaning_tr": "kira",
+      "sentence": "鍵の代金は、毎月の（　　）の半分ぐらいだった。",
+      "options": [
+        "家賃",
+        "家族",
+        "家庭",
+        "家具"
+      ],
+      "explain_tr": "毎月払うお金 → 家賃 (家 ヤ okunur)."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "安定",
+      "reading": "あんてい",
+      "meaning_tr": "istikrar, düzen",
+      "sentence": "これで完全に安全とは言えないが、家族の生活は少しずつ（　　）してきた。",
+      "options": [
+        "安定",
+        "安心",
+        "不安",
+        "予定"
+      ],
+      "explain_tr": "生活が安定する = hayat düzene girer."
+    }
+  ]
+}

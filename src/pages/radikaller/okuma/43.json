@@ -1,0 +1,234 @@
+{
+  "radicalId": 43,
+  "title": "島への出張",
+  "title_tr": "Adaya iş seyahati",
+  "text": "私は北海道の[[11|出身]]ですが、先月、仕事の[[8|出張]]で九州の南にある[[6|島]]へ行きました。朝七時に東京を[[5|出発]]して、飛行機と船で昼ごろに着きました。その島には小さな[[1|半島]]があって、[[3|海岸]]には大きな[[2|岩]]がたくさんあります。港の近くの工場では、魚を海外へ[[10|輸出]]しているそうです。仕事の後で、車で山の[[4|峠]]を越えて、島の反対側の[[7|岸]]まで行きました。そこで見た黒い[[9|岩石]]は、火山から生まれたものだそうです。日本は[[13|島国]]なので、こういう場所がたくさんあります。夜はホテルで報告書を書いて、メールで会社に[[12|提出]]しました。台風が近づいていたので、夜は[[15|外出]]しないで休みました。短い旅でしたが、いい[[14|思い出]]になりました。",
+  "text_tr": "Ben Hokkaidoluyum ama geçen ay iş seyahatiyle Kyushu'nun güneyindeki bir adaya gittim. Sabah yedide Tokyo'dan yola çıkıp uçak ve gemiyle öğlene doğru vardım. Adada küçük bir yarımada var ve sahilde çok sayıda büyük kaya bulunuyor. Limanın yakınındaki fabrika yurt dışına balık ihraç ediyormuş. İşten sonra arabayla dağ geçidini aşıp adanın öbür kıyısına kadar gittim. Orada gördüğüm siyah kayaçlar volkandan oluşmuş. Japonya bir ada ülkesi olduğu için böyle pek çok yer var. Akşam otelde raporu yazıp e-postayla şirkete teslim ettim. Tayfun yaklaştığı için gece dışarı çıkmadan dinlendim. Kısa bir yolculuktu ama güzel bir anı oldu.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "半島",
+      "reading": "はんとう",
+      "meaning_tr": "yarımada",
+      "sentence": "その島には小さな[[半島]]があって、海岸には大きな岩がたくさんあります。",
+      "options": [
+        "はんとう",
+        "はんどう",
+        "はんと",
+        "ばんとう"
+      ],
+      "explain_tr": "半 ハン + 島 トウ; 島 burada ゛ almaz ve uzundur: とう."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "岩",
+      "reading": "いわ",
+      "meaning_tr": "kaya",
+      "sentence": "その島には小さな半島があって、海岸には大きな[[岩]]がたくさんあります。",
+      "options": [
+        "いわ",
+        "いし",
+        "いた",
+        "がん"
+      ],
+      "explain_tr": "Tek başına kun okunuşu いわ; いし 'taş' (石)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "海岸",
+      "reading": "かいがん",
+      "meaning_tr": "sahil",
+      "sentence": "その島には小さな半島があって、[[海岸]]には大きな岩がたくさんあります。",
+      "options": [
+        "かいがん",
+        "かいかん",
+        "がいがん",
+        "かいぎし"
+      ],
+      "explain_tr": "海 カイ + 岸 ガン; ゛ 岸'tadır."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "峠",
+      "reading": "とうげ",
+      "meaning_tr": "dağ geçidi",
+      "sentence": "仕事の後で、車で山の[[峠]]を越えて、島の反対側の岸まで行きました。",
+      "options": [
+        "とうげ",
+        "とおげ",
+        "とげ",
+        "とうけ"
+      ],
+      "explain_tr": "峠 yalnız kun: とうげ (uzun う, sonda ゛)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "出発",
+      "reading": "しゅっぱつ",
+      "meaning_tr": "yola çıkış",
+      "sentence": "朝七時に東京を[[出発]]して、飛行機と船で昼ごろに着きました。",
+      "options": [
+        "しゅっぱつ",
+        "しゅつはつ",
+        "しゅっはつ",
+        "しゅぱつ"
+      ],
+      "explain_tr": "シュツ+ハツ → っ ve ぱ: しゅっぱつ."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "島",
+      "reading": "しま",
+      "meaning_tr": "ada",
+      "sentence": "私は北海道の出身ですが、先月、仕事の出張で九州の南にある[[しま]]へ行きました。",
+      "options": [
+        "島",
+        "鳥",
+        "烏",
+        "馬"
+      ],
+      "explain_tr": "島 = 山 + 鳥 şekli; 鳥 'kuş'."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "岸",
+      "reading": "きし",
+      "meaning_tr": "kıyı",
+      "sentence": "仕事の後で、車で山の峠を越えて、島の反対側の[[きし]]まで行きました。",
+      "options": [
+        "岸",
+        "炭",
+        "岩",
+        "崖"
+      ],
+      "explain_tr": "岸 きし; 岩 いわ, 炭 すみ."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "出張",
+      "reading": "しゅっちょう",
+      "meaning_tr": "iş seyahati",
+      "sentence": "私は北海道の出身ですが、先月、仕事の[[しゅっちょう]]で九州の南にある島へ行きました。",
+      "options": [
+        "出張",
+        "出帳",
+        "出長",
+        "出貼"
+      ],
+      "explain_tr": "張 チョウ 'germek, yaymak'; 帳・長 aynı okunuşlu tuzak."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "岩石",
+      "reading": "がんせき",
+      "meaning_tr": "kayaç",
+      "sentence": "そこで見た黒い[[がんせき]]は、火山から生まれたものだそうです。",
+      "options": [
+        "岩石",
+        "岸石",
+        "岩右",
+        "炭石"
+      ],
+      "explain_tr": "岩 ガン + 石 セキ."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "輸出",
+      "reading": "ゆしゅつ",
+      "meaning_tr": "ihracat",
+      "sentence": "港の近くの工場では、魚を海外へ[[ゆしゅつ]]しているそうです。",
+      "options": [
+        "輸出",
+        "輪出",
+        "諭出",
+        "輸山"
+      ],
+      "explain_tr": "輸 'taşımak'; 輪 (tekerlek) benzer görünür."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "出身",
+      "reading": "しゅっしん",
+      "meaning_tr": "memleket, ...lı",
+      "sentence": "私は北海道の（　　）ですが、先月、仕事の出張で九州の南にある島へ行きました。",
+      "options": [
+        "出身",
+        "出場",
+        "出席",
+        "出口"
+      ],
+      "explain_tr": "～の出身です = ...lıyım."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "提出",
+      "reading": "ていしゅつ",
+      "meaning_tr": "teslim etmek",
+      "sentence": "夜はホテルで報告書を書いて、メールで会社に（　　）しました。",
+      "options": [
+        "提出",
+        "輸出",
+        "外出",
+        "出発"
+      ],
+      "explain_tr": "Rapor/ödev → 提出する."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "島国",
+      "reading": "しまぐに",
+      "meaning_tr": "ada ülkesi",
+      "sentence": "日本は（　　）なので、こういう場所がたくさんあります。",
+      "options": [
+        "島国",
+        "半島",
+        "無人島",
+        "島民"
+      ],
+      "explain_tr": "Japonya = 島国."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "思い出",
+      "reading": "おもいで",
+      "meaning_tr": "anı",
+      "sentence": "短い旅でしたが、いい（　　）になりました。",
+      "options": [
+        "思い出",
+        "出口",
+        "出前",
+        "出席"
+      ],
+      "explain_tr": "いい思い出になる = güzel bir anı olmak."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "外出",
+      "reading": "がいしゅつ",
+      "meaning_tr": "dışarı çıkma",
+      "sentence": "台風が近づいていたので、夜は（　　）しないで休みました。",
+      "options": [
+        "外出",
+        "輸出",
+        "出張",
+        "出版"
+      ],
+      "explain_tr": "外出する = dışarı çıkmak."
+    }
+  ]
+}

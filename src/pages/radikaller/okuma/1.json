@@ -1,0 +1,234 @@
+{
+  "radicalId": 1,
+  "title": "海の旅",
+  "title_tr": "Deniz kenarında bir yolculuk",
+  "text": "去年の夏、初めて[[1|海外]]へ旅行しました。[[2|空港]]に着いたとき、[[3|気温]]が三十五度もあって驚きました。ホテルは[[4|海岸]]の近くにあり、毎朝[[5|水泳]]を楽しみました。でも、[[6|深夜]]まで騒ぐ人がいて、少し[[7|不満]]もありました。服が汚れたので、ホテルで[[8|洗濯]]をしましたが、[[9|洗剤]]は自分で買う必要がありました。現地の[[10|生活]]を見て、トラブルを[[12|解決]]する[[11|方法]]が日本とは違うことに気づきました。帰りの飛行機は[[13|満員]]でしたが、旅行には十分[[14|満足]]しています。次はボランティア[[15|活動]]に参加するために、また行きたいと思っています。",
+  "text_tr": "Geçen yaz ilk kez yurt dışına seyahat ettim. Havalimanına vardığımda sıcaklığın 35 derece olmasına şaşırdım. Otel sahile yakındı ve her sabah yüzmenin tadını çıkardım. Ama gece yarısına kadar gürültü yapan insanlar vardı, biraz da memnuniyetsizlik oldu. Kıyafetlerim kirlendiği için otelde çamaşır yıkadım ama deterjanı kendim almam gerekti. Oradaki yaşamı görünce sorunları çözme yöntemlerinin Japonya'dan farklı olduğunu fark ettim. Dönüş uçağı tıklım tıklımdı ama seyahatten oldukça memnunum. Bir dahaki sefere gönüllü faaliyetlere katılmak için yine gitmek istiyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "海外",
+      "reading": "かいがい",
+      "meaning_tr": "yurt dışı",
+      "sentence": "去年の夏、初めて[[海外]]へ旅行しました。",
+      "options": [
+        "かいがい",
+        "かいそと",
+        "うみがい",
+        "かいかい"
+      ],
+      "explain_tr": "海 カイ + 外 ガイ; ゛ olan ガイ'ye dikkat."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "空港",
+      "reading": "くうこう",
+      "meaning_tr": "havalimanı",
+      "sentence": "[[空港]]に着いたとき、気温が三十五度もあって驚きました。",
+      "options": [
+        "くうこう",
+        "くうこ",
+        "そらこう",
+        "くこう"
+      ],
+      "explain_tr": "空 クウ + 港 コウ; iki uzun ünlü var."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "気温",
+      "reading": "きおん",
+      "meaning_tr": "hava sıcaklığı",
+      "sentence": "空港に着いたとき、[[気温]]が三十五度もあって驚きました。",
+      "options": [
+        "きおん",
+        "きいおん",
+        "きうん",
+        "けおん"
+      ],
+      "explain_tr": "気 キ + 温 オン; 'kii' diye uzatılmaz."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "海岸",
+      "reading": "かいがん",
+      "meaning_tr": "sahil",
+      "sentence": "ホテルは[[海岸]]の近くにあり、毎朝水泳を楽しみました。",
+      "options": [
+        "かいがん",
+        "かいかん",
+        "うみぎし",
+        "かいがい"
+      ],
+      "explain_tr": "海 カイ + 岸 ガン; 海外 (かいがい) ile karıştırma."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "水泳",
+      "reading": "すいえい",
+      "meaning_tr": "yüzme",
+      "sentence": "ホテルは海岸の近くにあり、毎朝[[水泳]]を楽しみました。",
+      "options": [
+        "すいえい",
+        "すいえ",
+        "みずえい",
+        "すいよう"
+      ],
+      "explain_tr": "水 スイ + 泳 エイ (on okunuş)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "深夜",
+      "reading": "しんや",
+      "meaning_tr": "gece yarısı",
+      "sentence": "でも、[[しんや]]まで騒ぐ人がいて、少し不満もありました。",
+      "options": [
+        "深夜",
+        "探夜",
+        "深液",
+        "森夜"
+      ],
+      "explain_tr": "深 (derin) + 夜; 探 (aramak) benzer görünür."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "不満",
+      "reading": "ふまん",
+      "meaning_tr": "memnuniyetsizlik",
+      "sentence": "でも、深夜まで騒ぐ人がいて、少し[[ふまん]]もありました。",
+      "options": [
+        "不満",
+        "不漫",
+        "不万",
+        "府満"
+      ],
+      "explain_tr": "満 (dolu) memnuniyet anlamı taşır; 漫 farklı."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "洗濯",
+      "reading": "せんたく",
+      "meaning_tr": "çamaşır yıkama",
+      "sentence": "服が汚れたので、ホテルで[[せんたく]]をしましたが、洗剤は自分で買う必要がありました。",
+      "options": [
+        "洗濯",
+        "洗択",
+        "先濯",
+        "選択"
+      ],
+      "explain_tr": "選択 de せんたく okunur ama 'seçim' demektir."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "洗剤",
+      "reading": "せんざい",
+      "meaning_tr": "deterjan",
+      "sentence": "服が汚れたので、ホテルで洗濯をしましたが、[[せんざい]]は自分で買う必要がありました。",
+      "options": [
+        "洗剤",
+        "洗済",
+        "先剤",
+        "洗材"
+      ],
+      "explain_tr": "剤 = ilaç/madde; 済 ve 材 aynı okunuşa yakın tuzaklar."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "生活",
+      "reading": "せいかつ",
+      "meaning_tr": "yaşam",
+      "sentence": "現地の[[せいかつ]]を見て、トラブルを解決する方法が日本とは違うことに気づきました。",
+      "options": [
+        "生活",
+        "生括",
+        "性活",
+        "生話"
+      ],
+      "explain_tr": "活 (氵) canlılık; 括 (扌) bağlamak."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "方法",
+      "reading": "ほうほう",
+      "meaning_tr": "yöntem",
+      "sentence": "現地の生活を見て、トラブルを解決する（　　）が日本とは違うことに気づきました。",
+      "options": [
+        "方法",
+        "方角",
+        "寸法",
+        "文法"
+      ],
+      "explain_tr": "'Sorunu çözme yöntemi' → 方法."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "解決",
+      "reading": "かいけつ",
+      "meaning_tr": "çözüm",
+      "sentence": "現地の生活を見て、トラブルを（　　）する方法が日本とは違うことに気づきました。",
+      "options": [
+        "解決",
+        "決定",
+        "決心",
+        "解説"
+      ],
+      "explain_tr": "トラブルを解決する: sorunu çözmek."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "満員",
+      "reading": "まんいん",
+      "meaning_tr": "tıklım tıklım",
+      "sentence": "帰りの飛行機は（　　）でしたが、旅行には十分満足しています。",
+      "options": [
+        "満員",
+        "満足",
+        "満点",
+        "不満"
+      ],
+      "explain_tr": "Uçak/tren insanla dolu → 満員."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "満足",
+      "reading": "まんぞく",
+      "meaning_tr": "memnuniyet",
+      "sentence": "帰りの飛行機は満員でしたが、旅行には十分（　　）しています。",
+      "options": [
+        "満足",
+        "満員",
+        "満点",
+        "充満"
+      ],
+      "explain_tr": "～に満足する: -den memnun olmak."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "活動",
+      "reading": "かつどう",
+      "meaning_tr": "faaliyet",
+      "sentence": "次はボランティア（　　）に参加するために、また行きたいと思っています。",
+      "options": [
+        "活動",
+        "活用",
+        "生活",
+        "活躍"
+      ],
+      "explain_tr": "ボランティア活動 kalıplaşmış ifade."
+    }
+  ]
+}

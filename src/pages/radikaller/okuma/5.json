@@ -1,0 +1,234 @@
+{
+  "radicalId": 5,
+  "title": "最後の日",
+  "title_tr": "Son gün",
+  "text": "先月、三年間働いた会社を辞めることになりました。最後の日、同僚たちが送別会を開いてくれて、心から[[1|感謝]]しました。部長は「あなたの明るい[[2|性格]]のおかげで、職場が楽しかった」と言ってくれました。若い[[3|女性]]の後輩は、[[4|表情]]を変えずに話していましたが、目には涙がありました。みんなの[[5|感想]]を聞いて、私は[[6|感動]]して泣いてしまいました。[[7|予想]]していなかったプレゼントももらい、一生の[[8|思い出]]になりました。毎朝コーヒーを飲みながら[[9|情報]]を集めるのが、私の[[10|習慣]]でした。次の会社でも、自分の[[11|意見]]をはっきり言うことが[[12|必要]]だと思います。帰りに[[13|急に]]雨が降ってきて、会社に[[14|忘れ物]]をしたことにも気づきました。落ち込んでいた私を、友人が優しく[[15|慰めて]]くれました。",
+  "text_tr": "Geçen ay üç yıl çalıştığım şirketten ayrılmaya karar verdim. Son gün iş arkadaşlarım veda partisi düzenledi, onlara yürekten teşekkür ettim. Müdür \"Neşeli karakterin sayesinde iş yeri eğlenceliydi\" dedi. Genç bir kadın meslektaşım yüz ifadesini değiştirmeden konuşuyordu ama gözleri yaşlıydı. Herkesin izlenimlerini dinleyince duygulanıp ağladım. Beklemediğim bir hediye de aldım; ömür boyu sürecek bir anı oldu. Her sabah kahve içerken bilgi toplamak alışkanlığımdı. Bir sonraki şirkette de fikrimi açıkça söylemenin gerekli olduğunu düşünüyorum. Dönüşte birden yağmur başladı ve şirkette bir şey unuttuğumu da fark ettim. Moralim bozukken bir arkadaşım beni nazikçe teselli etti.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "感謝",
+      "reading": "かんしゃ",
+      "meaning_tr": "teşekkür",
+      "sentence": "最後の日、同僚たちが送別会を開いてくれて、心から[[感謝]]しました。",
+      "options": [
+        "かんしゃ",
+        "かんじゃ",
+        "かんしや",
+        "がんしゃ"
+      ],
+      "explain_tr": "感 カン + 謝 シャ (küçük ゃ)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "性格",
+      "reading": "せいかく",
+      "meaning_tr": "karakter",
+      "sentence": "部長は「あなたの明るい[[性格]]のおかげで、職場が楽しかった」と言ってくれました。",
+      "options": [
+        "せいかく",
+        "しょうかく",
+        "せいがく",
+        "せいかい"
+      ],
+      "explain_tr": "性 セイ (相性'de ショウ) + 格 カク."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "女性",
+      "reading": "じょせい",
+      "meaning_tr": "kadın",
+      "sentence": "若い[[女性]]の後輩は、表情を変えずに話していましたが、目には涙がありました。",
+      "options": [
+        "じょせい",
+        "じょしょう",
+        "にょせい",
+        "おんなせい"
+      ],
+      "explain_tr": "女 ジョ + 性 セイ."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "表情",
+      "reading": "ひょうじょう",
+      "meaning_tr": "yüz ifadesi",
+      "sentence": "若い女性の後輩は、[[表情]]を変えずに話していましたが、目には涙がありました。",
+      "options": [
+        "ひょうじょう",
+        "ひょうじょ",
+        "ひょうせい",
+        "ひょじょう"
+      ],
+      "explain_tr": "情 ジョウ (uzun ünlü)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "感想",
+      "reading": "かんそう",
+      "meaning_tr": "izlenim",
+      "sentence": "みんなの[[感想]]を聞いて、私は感動して泣いてしまいました。",
+      "options": [
+        "かんそう",
+        "かんしょう",
+        "がんそう",
+        "かんぞう"
+      ],
+      "explain_tr": "想 ソウ; 感傷 (かんしょう) ile karıştırma."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "感動",
+      "reading": "かんどう",
+      "meaning_tr": "duygulanma",
+      "sentence": "みんなの感想を聞いて、私は[[かんどう]]して泣いてしまいました。",
+      "options": [
+        "感動",
+        "感働",
+        "関動",
+        "勘動"
+      ],
+      "explain_tr": "動 (hareket); 働 çalışmak."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "予想",
+      "reading": "よそう",
+      "meaning_tr": "tahmin",
+      "sentence": "[[よそう]]していなかったプレゼントももらい、一生の思い出になりました。",
+      "options": [
+        "予想",
+        "予相",
+        "予送",
+        "余想"
+      ],
+      "explain_tr": "想 (心) düşünmek."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "思い出",
+      "reading": "おもいで",
+      "meaning_tr": "anı",
+      "sentence": "予想していなかったプレゼントももらい、一生の[[おもいで]]になりました。",
+      "options": [
+        "思い出",
+        "恩い出",
+        "思い手",
+        "重い出"
+      ],
+      "explain_tr": "思 (心) düşünmek; 恩 iyilik."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "情報",
+      "reading": "じょうほう",
+      "meaning_tr": "bilgi",
+      "sentence": "毎朝コーヒーを飲みながら[[じょうほう]]を集めるのが、私の習慣でした。",
+      "options": [
+        "情報",
+        "情方",
+        "精報",
+        "清報"
+      ],
+      "explain_tr": "情 (忄) + 報 (haber)."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "習慣",
+      "reading": "しゅうかん",
+      "meaning_tr": "alışkanlık",
+      "sentence": "毎朝コーヒーを飲みながら情報を集めるのが、私の[[しゅうかん]]でした。",
+      "options": [
+        "習慣",
+        "週間",
+        "習間",
+        "修慣"
+      ],
+      "explain_tr": "週間 (hafta) de しゅうかん okunur."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "意見",
+      "reading": "いけん",
+      "meaning_tr": "fikir",
+      "sentence": "次の会社でも、自分の（　　）をはっきり言うことが必要だと思います。",
+      "options": [
+        "意見",
+        "意味",
+        "意識",
+        "注意"
+      ],
+      "explain_tr": "意見を言う: fikir söylemek."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "必要",
+      "reading": "ひつよう",
+      "meaning_tr": "gerekli",
+      "sentence": "次の会社でも、自分の意見をはっきり言うことが（　　）だと思います。",
+      "options": [
+        "必要",
+        "必死",
+        "必然",
+        "必勝"
+      ],
+      "explain_tr": "～ことが必要だ: -mek gerekir."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "急に",
+      "reading": "きゅうに",
+      "meaning_tr": "aniden",
+      "sentence": "帰りに（　　）雨が降ってきて、会社に忘れ物をしたことにも気づきました。",
+      "options": [
+        "急に",
+        "緊急に",
+        "急行に",
+        "特急に"
+      ],
+      "explain_tr": "急に雨が降る: birden yağmur yağmak."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "忘れ物",
+      "reading": "わすれもの",
+      "meaning_tr": "unutulan eşya",
+      "sentence": "帰りに急に雨が降ってきて、会社に（　　）をしたことにも気づきました。",
+      "options": [
+        "忘れ物",
+        "物忘れ",
+        "忘年会",
+        "買い物"
+      ],
+      "explain_tr": "忘れ物をする: bir şey unutmak; 物忘れ unutkanlık."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "慰めて",
+      "reading": "なぐさめて",
+      "meaning_tr": "teselli edip",
+      "sentence": "落ち込んでいた私を、友人が優しく（　　）くれました。",
+      "options": [
+        "慰めて",
+        "感じて",
+        "思って",
+        "悲しんで"
+      ],
+      "explain_tr": "慰める: teselli etmek."
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "radicalId": 36,
+  "title": "駅での出来事",
+  "title_tr": "İstasyondaki olay",
+  "text": "今朝、駅の[[2|改札]]の前で、男の人が急に倒れた。駅員がすぐに[[1|救急車]]を呼んだ。駅のエレベーターが[[11|故障]]していたので、救急隊員は階段を使って男の人を運んだ。隊員たちのおかげで、男の人の命は[[13|救われた]]。その後、「線路に人が入ったため、電車が遅れています」という[[4|放送]]が流れた。幸い、大きな[[5|事故]]にはならなかった。会社に遅れそうだったので、上司に電話して、[[3|敬語]]で事情を説明した。上司は昔、学校で[[9|教育]]の仕事をしていた人で、私はとても[[12|尊敬]]している。緊張して何度も言い間違えるという[[8|失敗]]をしてしまった。会社に着いてから、会議の参加者の人数を[[15|数えて]]、資料の[[10|数字]]を直した。会議の前には、[[7|政治]]のニュースについて少し話した。夜は疲れていたが、近所を[[6|散歩]]して気分を変えた。途中、小学校の[[14|教室]]に明かりがついているのが見えた。",
+  "text_tr": "Bu sabah istasyonun turnikelerinin önünde bir adam aniden yere yığıldı. İstasyon görevlisi hemen ambulans çağırdı. İstasyonun asansörü arızalı olduğu için sağlık ekibi adamı merdivenden taşıdı. Ekip sayesinde adamın hayatı kurtuldu. Sonra \"Raylara biri girdiği için trenler gecikiyor\" diye anons yapıldı. Neyse ki büyük bir kaza olmadı. İşe geç kalacak gibi olduğum için amirimi arayıp durumu saygı diliyle anlattım. Amirim eskiden okulda eğitim işinde çalışmış biri, ona çok saygı duyuyorum. Gerildiğim için defalarca yanlış konuşma hatası yaptım. Şirkete varınca toplantı katılımcılarını sayıp belgedeki rakamları düzelttim. Toplantıdan önce biraz siyaset haberlerinden konuştuk. Akşam yorgundum ama mahallede yürüyüş yapıp kafamı dağıttım. Yolda ilkokulun bir sınıfında ışık yandığını gördüm.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "救急車",
+      "reading": "きゅうきゅうしゃ",
+      "meaning_tr": "ambulans",
+      "sentence": "駅員がすぐに[[救急車]]を呼んだ。",
+      "options": [
+        "きゅうきゅうしゃ",
+        "きゅきゅうしゃ",
+        "きゅうきゅしゃ",
+        "きゅうきゅうじゃ"
+      ],
+      "explain_tr": "救 キュウ + 急 キュウ + 車 シャ; uzun ünlüler."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "改札",
+      "reading": "かいさつ",
+      "meaning_tr": "bilet kontrol / turnike",
+      "sentence": "今朝、駅の[[改札]]の前で、男の人が急に倒れた。",
+      "options": [
+        "かいさつ",
+        "かいざつ",
+        "かいさく",
+        "がいさつ"
+      ],
+      "explain_tr": "改 カイ + 札 サツ; ゛ yok."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "敬語",
+      "reading": "けいご",
+      "meaning_tr": "saygı dili",
+      "sentence": "会社に遅れそうだったので、上司に電話して、[[敬語]]で事情を説明した。",
+      "options": [
+        "けいご",
+        "けご",
+        "きょうご",
+        "けいこ"
+      ],
+      "explain_tr": "敬 ケイ (uzun) + 語 ゴ."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "放送",
+      "reading": "ほうそう",
+      "meaning_tr": "anons, yayın",
+      "sentence": "その後、「線路に人が入ったため、電車が遅れています」という[[放送]]が流れた。",
+      "options": [
+        "ほうそう",
+        "ほそう",
+        "ほうぞう",
+        "ほうそ"
+      ],
+      "explain_tr": "放 ホウ + 送 ソウ; ikisi de uzun."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "事故",
+      "reading": "じこ",
+      "meaning_tr": "kaza",
+      "sentence": "幸い、大きな[[事故]]にはならなかった。",
+      "options": [
+        "じこ",
+        "じこう",
+        "しこ",
+        "じご"
+      ],
+      "explain_tr": "事 ジ + 故 コ (kısa)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "散歩",
+      "reading": "さんぽ",
+      "meaning_tr": "yürüyüş",
+      "sentence": "夜は疲れていたが、近所を[[さんぽ]]して気分を変えた。",
+      "options": [
+        "散歩",
+        "敬歩",
+        "散走",
+        "数歩"
+      ],
+      "explain_tr": "散 サン; 敬/数 aynı 攵 parçasını taşır."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "政治",
+      "reading": "せいじ",
+      "meaning_tr": "siyaset",
+      "sentence": "会議の前には、[[せいじ]]のニュースについて少し話した。",
+      "options": [
+        "政治",
+        "正治",
+        "政冶",
+        "故治"
+      ],
+      "explain_tr": "政 (攵) yönetim; 正 aynı セイ, 冶 benzer."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "失敗",
+      "reading": "しっぱい",
+      "meaning_tr": "başarısızlık, hata",
+      "sentence": "緊張して何度も言い間違えるという[[しっぱい]]をしてしまった。",
+      "options": [
+        "失敗",
+        "失販",
+        "矢敗",
+        "失放"
+      ],
+      "explain_tr": "敗 (攵) yenilgi; 販 aynı ハン parçası, 矢 benzer."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "教育",
+      "reading": "きょういく",
+      "meaning_tr": "eğitim",
+      "sentence": "上司は昔、学校で[[きょういく]]の仕事をしていた人で、私はとても尊敬している。",
+      "options": [
+        "教育",
+        "教音",
+        "孝育",
+        "教肯"
+      ],
+      "explain_tr": "教 (攵) öğretmek; 孝 benzer görünüş."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "数字",
+      "reading": "すうじ",
+      "meaning_tr": "rakam",
+      "sentence": "会社に着いてから、会議の参加者の人数を数えて、資料の[[すうじ]]を直した。",
+      "options": [
+        "数字",
+        "数学",
+        "散字",
+        "救字"
+      ],
+      "explain_tr": "数 スウ + 字 ジ; 数学 すうがく farklı kelime."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "故障",
+      "reading": "こしょう",
+      "meaning_tr": "arıza",
+      "sentence": "駅のエレベーターが（　　）していたので、救急隊員は階段を使って男の人を運んだ。",
+      "options": [
+        "故障",
+        "事故",
+        "失敗",
+        "改札"
+      ],
+      "explain_tr": "エレベーターが故障する: asansör bozulmak."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "尊敬",
+      "reading": "そんけい",
+      "meaning_tr": "saygı",
+      "sentence": "上司は昔、学校で教育の仕事をしていた人で、私はとても（　　）している。",
+      "options": [
+        "尊敬",
+        "教育",
+        "敬語",
+        "政治"
+      ],
+      "explain_tr": "上司を尊敬する: amire saygı duymak."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "救われた",
+      "reading": "すくわれた",
+      "meaning_tr": "kurtarıldı",
+      "sentence": "隊員たちのおかげで、男の人の命は（　　）。",
+      "options": [
+        "救われた",
+        "放された",
+        "散らされた",
+        "教えられた"
+      ],
+      "explain_tr": "命が救われる: hayatı kurtulmak."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "教室",
+      "reading": "きょうしつ",
+      "meaning_tr": "sınıf",
+      "sentence": "途中、小学校の（　　）に明かりがついているのが見えた。",
+      "options": [
+        "教室",
+        "教育",
+        "政治",
+        "放送"
+      ],
+      "explain_tr": "小学校の教室: ilkokul sınıfı."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "数えて",
+      "reading": "かぞえて",
+      "meaning_tr": "sayıp",
+      "sentence": "会社に着いてから、会議の参加者の人数を（　　）、資料の数字を直した。",
+      "options": [
+        "数えて",
+        "教えて",
+        "放して",
+        "敬って"
+      ],
+      "explain_tr": "人数を数える: kişi sayısını saymak."
+    }
+  ]
+}

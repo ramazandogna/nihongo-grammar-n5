@@ -1,0 +1,234 @@
+{
+  "radicalId": 23,
+  "title": "試験のあとで",
+  "title_tr": "Sınavdan sonra",
+  "text": "先月の試験では頭が[[10|真っ白]]になって悪い点を取ってしまい、私は深く[[1|反省]]した。原因は、毎日の[[2|睡眠]]時間が足りなかったことだと思う。授業中も[[6|眠く]]て、先生の話がよく聞けなかった。そこで、[[3|正直]]に母に話し、どうすればいいか[[11|相談]]した。母は[[12|真剣]]な顔で聞いてくれて、「話す[[13|相手]]がいるのはいいことだよ」と言った。そして、母は[[8|素直]]に自分の昔の失敗を話し、高校時代の[[7|写真]]を見せてくれた。写真の母は[[9|眼鏡]]をかけていて、今とは全然違った。次の日から、夜は十一時に[[4|眠る]]ようにし、学校にも余裕をもって[[14|到着]]できるようになった。担任の先生にも[[15|直接]]お礼を言いに行った。来月は[[5|県]]の英語スピーチ大会にも出る予定だ。",
+  "text_tr": "Geçen ayki sınavda kafam bomboş oldu ve kötü not aldım, derin bir pişmanlık duydum. Sebebi her günkü uyku süremin yetersiz olmasıydı sanırım. Derste de uykum geliyordu, öğretmeni iyi dinleyemiyordum. Bunun üzerine anneme dürüstçe anlatıp ne yapmam gerektiğini danıştım. Annem ciddi bir yüzle dinledi ve \"Konuşacak birinin olması iyi bir şey\" dedi. Sonra annem kendi eski hatalarını içtenlikle anlattı ve lise yıllarının fotoğrafını gösterdi. Fotoğraftaki annem gözlük takıyordu, şimdikinden bambaşkaydı. Ertesi günden itibaren gece on birde uyumaya başladım ve okula da rahatça zamanında varabilir oldum. Sınıf öğretmenime de doğrudan teşekkür etmeye gittim. Gelecek ay ilin İngilizce hitabet yarışmasına da katılmayı planlıyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "反省",
+      "reading": "はんせい",
+      "meaning_tr": "pişmanlık, öz eleştiri",
+      "sentence": "先月の試験では頭が真っ白になって悪い点を取ってしまい、私は深く[[反省]]した。",
+      "options": [
+        "はんせい",
+        "はんしょう",
+        "ばんせい",
+        "はんせ"
+      ],
+      "explain_tr": "省 burada セイ (ショウ değil): 反省."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "睡眠",
+      "reading": "すいみん",
+      "meaning_tr": "uyku",
+      "sentence": "原因は、毎日の[[睡眠]]時間が足りなかったことだと思う。",
+      "options": [
+        "すいみん",
+        "すいめん",
+        "すいみ",
+        "ずいみん"
+      ],
+      "explain_tr": "睡 スイ + 眠 ミン."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "正直",
+      "reading": "しょうじき",
+      "meaning_tr": "dürüst",
+      "sentence": "そこで、[[正直]]に母に話し、どうすればいいか相談した。",
+      "options": [
+        "しょうじき",
+        "せいじき",
+        "しょうちょく",
+        "しょじき"
+      ],
+      "explain_tr": "正 ショウ + 直 ジキ (özel okunuş)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "眠る",
+      "reading": "ねむる",
+      "meaning_tr": "uyumak",
+      "sentence": "次の日から、夜は十一時に[[眠る]]ようにし、学校にも余裕をもって到着できるようになった。",
+      "options": [
+        "ねむる",
+        "ねぶる",
+        "みんる",
+        "ねる"
+      ],
+      "explain_tr": "眠る ねむる; ねる = 寝る."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "県",
+      "reading": "けん",
+      "meaning_tr": "il",
+      "sentence": "来月は[[県]]の英語スピーチ大会にも出る予定だ。",
+      "options": [
+        "けん",
+        "げん",
+        "けい",
+        "せん"
+      ],
+      "explain_tr": "県 ケン (゛ yok)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "眠く",
+      "reading": "ねむく",
+      "meaning_tr": "uykulu (眠い)",
+      "sentence": "授業中も[[ねむく]]て、先生の話がよく聞けなかった。",
+      "options": [
+        "眠く",
+        "眼く",
+        "民く",
+        "眺く"
+      ],
+      "explain_tr": "眠 = 目 + 民; 眼 (göz) ile karıştırma."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "写真",
+      "reading": "しゃしん",
+      "meaning_tr": "fotoğraf",
+      "sentence": "そして、母は素直に自分の昔の失敗を話し、高校時代の[[しゃしん]]を見せてくれた。",
+      "options": [
+        "写真",
+        "写直",
+        "舎真",
+        "写慎"
+      ],
+      "explain_tr": "真 (gerçek) ile 写真; 直 çok benzer görünür."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "素直",
+      "reading": "すなお",
+      "meaning_tr": "içten, uysal",
+      "sentence": "そして、母は[[すなお]]に自分の昔の失敗を話し、高校時代の写真を見せてくれた。",
+      "options": [
+        "素直",
+        "素真",
+        "索直",
+        "素値"
+      ],
+      "explain_tr": "素 + 直 (なお); 真 ile karıştırma."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "眼鏡",
+      "reading": "めがね",
+      "meaning_tr": "gözlük",
+      "sentence": "写真の母は[[めがね]]をかけていて、今とは全然違った。",
+      "options": [
+        "眼鏡",
+        "眠鏡",
+        "眼鐘",
+        "根鏡"
+      ],
+      "explain_tr": "眼 (göz) + 鏡 (ayna); 眠 (uyku) tuzaktır."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "真っ白",
+      "reading": "まっしろ",
+      "meaning_tr": "bembeyaz",
+      "sentence": "先月の試験では頭が[[まっしろ]]になって悪い点を取ってしまい、私は深く反省した。",
+      "options": [
+        "真っ白",
+        "直っ白",
+        "具っ白",
+        "真っ自"
+      ],
+      "explain_tr": "真っ〜 = tamamen; 白 (beyaz) ile 自 benzer."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "相談",
+      "reading": "そうだん",
+      "meaning_tr": "danışma",
+      "sentence": "そこで、正直に母に話し、どうすればいいか（　　）した。",
+      "options": [
+        "相談",
+        "相手",
+        "首相",
+        "真剣"
+      ],
+      "explain_tr": "どうすればいいか相談する = danışmak."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "真剣",
+      "reading": "しんけん",
+      "meaning_tr": "ciddi",
+      "sentence": "母は（　　）な顔で聞いてくれて、「話す相手がいるのはいいことだよ」と言った。",
+      "options": [
+        "真剣",
+        "写真",
+        "反省",
+        "到着"
+      ],
+      "explain_tr": "真剣な顔 = ciddi yüz."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "相手",
+      "reading": "あいて",
+      "meaning_tr": "karşı taraf, muhatap",
+      "sentence": "母は真剣な顔で聞いてくれて、「話す（　　）がいるのはいいことだよ」と言った。",
+      "options": [
+        "相手",
+        "相談",
+        "首相",
+        "眼鏡"
+      ],
+      "explain_tr": "話す相手 = konuşacak kişi."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "到着",
+      "reading": "とうちゃく",
+      "meaning_tr": "varış",
+      "sentence": "次の日から、夜は十一時に眠るようにし、学校にも余裕をもって（　　）できるようになった。",
+      "options": [
+        "到着",
+        "着用",
+        "着物",
+        "反省"
+      ],
+      "explain_tr": "学校に到着する = okula varmak."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "直接",
+      "reading": "ちょくせつ",
+      "meaning_tr": "doğrudan",
+      "sentence": "担任の先生にも（　　）お礼を言いに行った。",
+      "options": [
+        "直接",
+        "正直",
+        "素直",
+        "直線"
+      ],
+      "explain_tr": "直接お礼を言う = bizzat teşekkür etmek."
+    }
+  ]
+}

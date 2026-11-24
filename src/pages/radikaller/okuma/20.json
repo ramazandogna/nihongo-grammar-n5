@@ -1,0 +1,234 @@
+{
+  "radicalId": 20,
+  "title": "増える町の人口",
+  "title_tr": "Artan kasaba nüfusu",
+  "text": "私の住む町では、最近人口が[[1|増加]]している。その理由の一つは、駅の近くに[[11|大型]]のショッピングモールができたことだ。また、新しい[[2|工場]]もでき、働く場所が[[6|増えた]]。市の[[3|報告]]によると、[[4|現在]]の人口は五万人を超えたそうだ。町の人の[[12|平均]]年齢も少しずつ下がっている。一方で、車が増えて、自然[[13|環境]]への影響を心配する声もある。先月は小さな[[7|地震]]があり、市は避難[[8|場所]]を示した[[9|地図]]を全ての家に配った。ウェブサイトで最新の[[14|情報]]を確認するようにも呼びかけている。週末には駅前の[[10|広場]]で防災訓練が行われるが、防災の[[15|基本]]は一人一人が準備しておくことだ。町にとって、住民一人一人が大切な[[5|存在]]なのだ。",
+  "text_tr": "Yaşadığım kasabada son zamanlarda nüfus artıyor. Bunun sebeplerinden biri istasyonun yakınında büyük bir alışveriş merkezinin açılması. Ayrıca yeni bir fabrika da açıldı ve çalışılacak yerler arttı. Belediyenin raporuna göre şu anki nüfus elli bini aşmış. Kasaba halkının yaş ortalaması da yavaş yavaş düşüyor. Öte yandan arabalar artınca doğal çevreye etkisinden endişe edenler de var. Geçen ay küçük bir deprem oldu ve belediye tahliye yerlerini gösteren haritayı bütün evlere dağıttı. İnternet sitesinden en güncel bilgiyi kontrol etmeye de çağırıyor. Hafta sonu istasyon önündeki meydanda afet tatbikatı yapılacak, ama afete hazırlığın temeli herkesin kendi hazırlığını yapmasıdır. Kasaba için her bir sakin önemli bir varlıktır.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "増加",
+      "reading": "ぞうか",
+      "meaning_tr": "artış",
+      "sentence": "私の住む町では、最近人口が[[増加]]している。",
+      "options": [
+        "ぞうか",
+        "そうか",
+        "ぞうが",
+        "ぞっか"
+      ],
+      "explain_tr": "増 ゾウ (゛ var) + 加 カ."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "工場",
+      "reading": "こうじょう",
+      "meaning_tr": "fabrika",
+      "sentence": "また、新しい[[工場]]もでき、働く場所が増えた。",
+      "options": [
+        "こうじょう",
+        "こうしょう",
+        "くじょう",
+        "こうじょ"
+      ],
+      "explain_tr": "工 コウ + 場 ジョウ (uzun, ゛ var)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "報告",
+      "reading": "ほうこく",
+      "meaning_tr": "rapor",
+      "sentence": "市の[[報告]]によると、現在の人口は五万人を超えたそうだ。",
+      "options": [
+        "ほうこく",
+        "ほこく",
+        "ぼうこく",
+        "ほうごく"
+      ],
+      "explain_tr": "報 ホウ (uzun) + 告 コク."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "現在",
+      "reading": "げんざい",
+      "meaning_tr": "şu an",
+      "sentence": "市の報告によると、[[現在]]の人口は五万人を超えたそうだ。",
+      "options": [
+        "げんざい",
+        "げんさい",
+        "けんざい",
+        "げんじゃい"
+      ],
+      "explain_tr": "現 ゲン + 在 ザイ."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "存在",
+      "reading": "そんざい",
+      "meaning_tr": "varlık",
+      "sentence": "町にとって、住民一人一人が大切な[[存在]]なのだ。",
+      "options": [
+        "そんざい",
+        "ぞんざい",
+        "そんさい",
+        "ぞんさい"
+      ],
+      "explain_tr": "存 ソン + 在 ザイ; ぞんざい = özensiz (başka kelime)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "増えた",
+      "reading": "ふえた",
+      "meaning_tr": "arttı",
+      "sentence": "また、新しい工場もでき、働く場所が[[ふえた]]。",
+      "options": [
+        "増えた",
+        "憎えた",
+        "贈えた",
+        "層えた"
+      ],
+      "explain_tr": "増える (土 radikali); 憎・贈・層 aynı 曽 parçalı."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "地震",
+      "reading": "じしん",
+      "meaning_tr": "deprem",
+      "sentence": "先月は小さな[[じしん]]があり、市は避難場所を示した地図を全ての家に配った。",
+      "options": [
+        "地震",
+        "地振",
+        "池震",
+        "他震"
+      ],
+      "explain_tr": "地 (土) + 震 (雨); 振 de シン okunur."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "場所",
+      "reading": "ばしょ",
+      "meaning_tr": "yer",
+      "sentence": "先月は小さな地震があり、市は避難[[ばしょ]]を示した地図を全ての家に配った。",
+      "options": [
+        "場所",
+        "揚所",
+        "湯所",
+        "場書"
+      ],
+      "explain_tr": "場 (土 radikali); 揚・湯 benzer görünür."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "地図",
+      "reading": "ちず",
+      "meaning_tr": "harita",
+      "sentence": "先月は小さな地震があり、市は避難場所を示した[[ちず]]を全ての家に配った。",
+      "options": [
+        "地図",
+        "池図",
+        "地途",
+        "他図"
+      ],
+      "explain_tr": "地 チ + 図 ズ; 池・他 aynı 也 parçalı."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "広場",
+      "reading": "ひろば",
+      "meaning_tr": "meydan",
+      "sentence": "週末には駅前の[[ひろば]]で防災訓練が行われるが、防災の基本は一人一人が準備しておくことだ。",
+      "options": [
+        "広場",
+        "広揚",
+        "庁場",
+        "広湯"
+      ],
+      "explain_tr": "広い + 場 ば; 揚 (あげる) tuzaktır."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "大型",
+      "reading": "おおがた",
+      "meaning_tr": "büyük boy",
+      "sentence": "その理由の一つは、駅の近くに（　　）のショッピングモールができたことだ。",
+      "options": [
+        "大型",
+        "大勢",
+        "大量",
+        "最大"
+      ],
+      "explain_tr": "大型のショッピングモール = büyük AVM."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "平均",
+      "reading": "へいきん",
+      "meaning_tr": "ortalama",
+      "sentence": "町の人の（　　）年齢も少しずつ下がっている。",
+      "options": [
+        "平均",
+        "平等",
+        "基本",
+        "平和"
+      ],
+      "explain_tr": "平均年齢 = yaş ortalaması."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "環境",
+      "reading": "かんきょう",
+      "meaning_tr": "çevre",
+      "sentence": "一方で、車が増えて、自然（　　）への影響を心配する声もある。",
+      "options": [
+        "環境",
+        "境界",
+        "情報",
+        "存在"
+      ],
+      "explain_tr": "自然環境 = doğal çevre."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "情報",
+      "reading": "じょうほう",
+      "meaning_tr": "bilgi",
+      "sentence": "ウェブサイトで最新の（　　）を確認するようにも呼びかけている。",
+      "options": [
+        "情報",
+        "増加",
+        "基本",
+        "存在"
+      ],
+      "explain_tr": "最新の情報 = en güncel bilgi."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "基本",
+      "reading": "きほん",
+      "meaning_tr": "temel",
+      "sentence": "週末には駅前の広場で防災訓練が行われるが、防災の（　　）は一人一人が準備しておくことだ。",
+      "options": [
+        "基本",
+        "平均",
+        "現在",
+        "大型"
+      ],
+      "explain_tr": "防災の基本 = afete hazırlığın temeli."
+    }
+  ]
+}

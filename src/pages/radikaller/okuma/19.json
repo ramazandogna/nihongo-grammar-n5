@@ -1,0 +1,234 @@
+{
+  "radicalId": 19,
+  "title": "駅前のパン屋",
+  "title_tr": "İstasyon önündeki fırın",
+  "text": "駅前に新しいパン屋が[[1|開店]]した。店長は大手食品会社で新商品の[[2|開発]]をしていた人だそうだ。店は朝七時に[[6|開き]]、夜八時に[[7|閉まる]]。[[11|閉店]]の三十分前になると、パンが安くなる。私は仕事の[[3|関係]]で帰りが遅いが、急げば安売りの[[12|時間]]に[[8|間に合う]]。地域の人々も新しい店に強い[[13|関心]]を持っていて、先月は[[10|関東]]地方の雑誌にも紹介された。店長は「パンを作るのは機械ではなく[[4|人間]]の手です」と言う。家に帰ると、[[9|玄関]]の前に母が買ったパンの袋が置いてあった。母は袋を[[5|開けて]]、「今度、店の料理教室が[[14|開始]]されるから一緒に行こう。参加できる[[15|期間]]は三か月だって」と言った。",
+  "text_tr": "İstasyon önünde yeni bir fırın açıldı. Dükkân sahibinin büyük bir gıda şirketinde yeni ürün geliştirme yapmış biri olduğu söyleniyor. Dükkân sabah yedide açılıp akşam sekizde kapanıyor. Kapanıştan otuz dakika önce ekmekler ucuzluyor. Ben iş yüzünden eve geç dönüyorum ama acele edersem indirim saatine yetişiyorum. Bölge halkı da yeni dükkâna büyük ilgi gösteriyor, geçen ay Kanto bölgesinin bir dergisinde de tanıtıldı. Dükkân sahibi \"Ekmeği makine değil insan eli yapar\" diyor. Eve dönünce giriş kapısının önünde annemin aldığı ekmek poşeti duruyordu. Annem poşeti açıp \"Yakında dükkânın yemek kursu başlayacak, birlikte gidelim. Katılım süresi üç aymış\" dedi.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "開店",
+      "reading": "かいてん",
+      "meaning_tr": "dükkân açılışı",
+      "sentence": "駅前に新しいパン屋が[[開店]]した。",
+      "options": [
+        "かいてん",
+        "がいてん",
+        "かいでん",
+        "あいてん"
+      ],
+      "explain_tr": "開 カイ + 店 テン (゛ yok)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "開発",
+      "reading": "かいはつ",
+      "meaning_tr": "geliştirme",
+      "sentence": "店長は大手食品会社で新商品の[[開発]]をしていた人だそうだ。",
+      "options": [
+        "かいはつ",
+        "かいばつ",
+        "かいはっ",
+        "かいほつ"
+      ],
+      "explain_tr": "開 カイ + 発 ハツ."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "関係",
+      "reading": "かんけい",
+      "meaning_tr": "ilişki, sebep",
+      "sentence": "私は仕事の[[関係]]で帰りが遅いが、急げば安売りの時間に間に合う。",
+      "options": [
+        "かんけい",
+        "かんけ",
+        "がんけい",
+        "かんげい"
+      ],
+      "explain_tr": "関 カン + 係 ケイ; かんげい = 歓迎 (karşılama)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "人間",
+      "reading": "にんげん",
+      "meaning_tr": "insan",
+      "sentence": "店長は「パンを作るのは機械ではなく[[人間]]の手です」と言う。",
+      "options": [
+        "にんげん",
+        "にんかん",
+        "じんげん",
+        "にんけん"
+      ],
+      "explain_tr": "人 ニン + 間 ゲン (゛ var)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "開けて",
+      "reading": "あけて",
+      "meaning_tr": "açmak (開ける)",
+      "sentence": "母は袋を[[開けて]]、「今度、店の料理教室が開始されるから一緒に行こう。",
+      "options": [
+        "あけて",
+        "ひらけて",
+        "かいけて",
+        "あいて"
+      ],
+      "explain_tr": "袋を開ける (geçişli) → あける; あいて geçişsiz 開く'dır."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "開き",
+      "reading": "ひらき",
+      "meaning_tr": "açılmak (開く)",
+      "sentence": "店は朝七時に[[ひらき]]、夜八時に閉まる。",
+      "options": [
+        "開き",
+        "閉き",
+        "間き",
+        "聞き"
+      ],
+      "explain_tr": "開く ひらく = açılmak; 閉 kapamak demektir."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "閉まる",
+      "reading": "しまる",
+      "meaning_tr": "kapanmak",
+      "sentence": "店は朝七時に開き、夜八時に[[しまる]]。",
+      "options": [
+        "閉まる",
+        "開まる",
+        "閑まる",
+        "問まる"
+      ],
+      "explain_tr": "閉 (門 içinde 才) = kapanmak."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "間に合う",
+      "reading": "まにあう",
+      "meaning_tr": "yetişmek",
+      "sentence": "私は仕事の関係で帰りが遅いが、急げば安売りの時間に[[まにあう]]。",
+      "options": [
+        "間に合う",
+        "関に合う",
+        "問に合う",
+        "間に会う"
+      ],
+      "explain_tr": "間に合う sabit ifade; 会う kullanılmaz."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "玄関",
+      "reading": "げんかん",
+      "meaning_tr": "giriş kapısı",
+      "sentence": "家に帰ると、[[げんかん]]の前に母が買ったパンの袋が置いてあった。",
+      "options": [
+        "玄関",
+        "玄間",
+        "玄開",
+        "弦関"
+      ],
+      "explain_tr": "玄 + 関 カン; 間 de カン okunur."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "関東",
+      "reading": "かんとう",
+      "meaning_tr": "Kanto bölgesi",
+      "sentence": "地域の人々も新しい店に強い関心を持っていて、先月は[[かんとう]]地方の雑誌にも紹介された。",
+      "options": [
+        "関東",
+        "開東",
+        "間東",
+        "関果"
+      ],
+      "explain_tr": "関 (geçit) + 東 (doğu)."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "閉店",
+      "reading": "へいてん",
+      "meaning_tr": "kapanış",
+      "sentence": "（　　）の三十分前になると、パンが安くなる。",
+      "options": [
+        "閉店",
+        "開店",
+        "閉館",
+        "開始"
+      ],
+      "explain_tr": "Kapanıştan 30 dk önce → 閉店."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "時間",
+      "reading": "じかん",
+      "meaning_tr": "saat, zaman",
+      "sentence": "私は仕事の関係で帰りが遅いが、急げば安売りの（　　）に間に合う。",
+      "options": [
+        "時間",
+        "期間",
+        "人間",
+        "世間"
+      ],
+      "explain_tr": "安売りの時間 = indirim saati."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "関心",
+      "reading": "かんしん",
+      "meaning_tr": "ilgi",
+      "sentence": "地域の人々も新しい店に強い（　　）を持っていて、先月は関東地方の雑誌にも紹介された。",
+      "options": [
+        "関心",
+        "関係",
+        "感心",
+        "安心"
+      ],
+      "explain_tr": "関心を持つ = ilgi duymak; 感心 = takdir etmek."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "開始",
+      "reading": "かいし",
+      "meaning_tr": "başlama",
+      "sentence": "母は袋を開けて、「今度、店の料理教室が（　　）されるから一緒に行こう。",
+      "options": [
+        "開始",
+        "開発",
+        "公開",
+        "開店"
+      ],
+      "explain_tr": "教室が開始される = kurs başlar."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "期間",
+      "reading": "きかん",
+      "meaning_tr": "süre",
+      "sentence": "参加できる（　　）は三か月だって」と言った。",
+      "options": [
+        "期間",
+        "時間",
+        "年間",
+        "世間"
+      ],
+      "explain_tr": "三か月 bir süredir → 期間."
+    }
+  ]
+}

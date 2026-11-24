@@ -1,0 +1,234 @@
+{
+  "radicalId": 2,
+  "title": "新しい町",
+  "title_tr": "Yeni kasaba",
+  "text": "先月、会社の近くに引っ越して、新しい[[1|住所]]を登録しました。駅まで歩いて五分なので、とても[[2|便利]]です。[[3|休日]]には近所の[[4|住民]]と一緒に、公園の掃除の[[5|作業]]をしています。最初は[[6|他人]]と話すのが苦手で、[[7|自信]]がありませんでした。でも、[[8|例えば]]料理教室のような[[9|体験]]イベントに参加して、少しずつ友達ができました。町の人が[[10|案内]]してくれた美術館では、地元の画家の[[11|作品]]を見ました。一日の[[12|労働]]が終わった後、散歩する[[13|余裕]]もできました。[[14|個人]]的には、町[[15|全体]]の温かい雰囲気が大好きです。",
+  "text_tr": "Geçen ay şirkete yakın bir yere taşındım ve yeni adresimi kaydettirdim. İstasyona yürüyerek beş dakika olduğu için çok kullanışlı. Tatil günlerinde mahalle sakinleriyle birlikte parkı temizleme işi yapıyorum. Başta yabancılarla konuşmakta zorlanıyordum ve özgüvenim yoktu. Ama örneğin yemek kursu gibi deneyim etkinliklerine katılarak yavaş yavaş arkadaş edindim. Kasaba halkının gezdirdiği müzede yerel bir ressamın eserlerini gördüm. Günlük iş bittikten sonra yürüyüş yapacak vaktim de oldu. Kişisel olarak, bütün kasabanın sıcak havasını çok seviyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "住所",
+      "reading": "じゅうしょ",
+      "meaning_tr": "adres",
+      "sentence": "先月、会社の近くに引っ越して、新しい[[住所]]を登録しました。",
+      "options": [
+        "じゅうしょ",
+        "じゅうしょう",
+        "じゅしょ",
+        "すみしょ"
+      ],
+      "explain_tr": "住 ジュウ (uzun) + 所 ショ (kısa)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "便利",
+      "reading": "べんり",
+      "meaning_tr": "kullanışlı",
+      "sentence": "駅まで歩いて五分なので、とても[[便利]]です。",
+      "options": [
+        "べんり",
+        "びんり",
+        "べんりい",
+        "へんり"
+      ],
+      "explain_tr": "便 ベン; 郵便 (ゆうびん)'deki ビン ile karıştırma."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "休日",
+      "reading": "きゅうじつ",
+      "meaning_tr": "tatil günü",
+      "sentence": "[[休日]]には近所の住民と一緒に、公園の掃除の作業をしています。",
+      "options": [
+        "きゅうじつ",
+        "きゅうにち",
+        "きゅうび",
+        "やすみび"
+      ],
+      "explain_tr": "日 burada ジツ okunur."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "住民",
+      "reading": "じゅうみん",
+      "meaning_tr": "sakin",
+      "sentence": "休日には近所の[[住民]]と一緒に、公園の掃除の作業をしています。",
+      "options": [
+        "じゅうみん",
+        "じゅみん",
+        "じゅうめん",
+        "すみみん"
+      ],
+      "explain_tr": "住 ジュウ + 民 ミン."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "作業",
+      "reading": "さぎょう",
+      "meaning_tr": "iş, çalışma",
+      "sentence": "休日には近所の住民と一緒に、公園の掃除の[[作業]]をしています。",
+      "options": [
+        "さぎょう",
+        "さくぎょう",
+        "さぎょ",
+        "さくごう"
+      ],
+      "explain_tr": "作 burada サ okunur (作品'de サク)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "他人",
+      "reading": "たにん",
+      "meaning_tr": "yabancı, başkası",
+      "sentence": "最初は[[たにん]]と話すのが苦手で、自信がありませんでした。",
+      "options": [
+        "他人",
+        "地人",
+        "他入",
+        "池人"
+      ],
+      "explain_tr": "人 ile 入 karıştırılır; 他 = diğer."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "自信",
+      "reading": "じしん",
+      "meaning_tr": "özgüven",
+      "sentence": "最初は他人と話すのが苦手で、[[じしん]]がありませんでした。",
+      "options": [
+        "自信",
+        "自身",
+        "自進",
+        "地震"
+      ],
+      "explain_tr": "自身 (kendisi) ve 地震 (deprem) de じしん okunur."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "例えば",
+      "reading": "たとえば",
+      "meaning_tr": "örneğin",
+      "sentence": "でも、[[たとえば]]料理教室のような体験イベントに参加して、少しずつ友達ができました。",
+      "options": [
+        "例えば",
+        "列えば",
+        "側えば",
+        "礼えば"
+      ],
+      "explain_tr": "例 = örnek; 列 (sıra) benzer görünür."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "体験",
+      "reading": "たいけん",
+      "meaning_tr": "deneyim",
+      "sentence": "でも、例えば料理教室のような[[たいけん]]イベントに参加して、少しずつ友達ができました。",
+      "options": [
+        "体験",
+        "体検",
+        "休験",
+        "対験"
+      ],
+      "explain_tr": "験 (at 馬 radikali) deney; 検 kontrol."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "案内",
+      "reading": "あんない",
+      "meaning_tr": "rehberlik",
+      "sentence": "町の人が[[あんない]]してくれた美術館では、地元の画家の作品を見ました。",
+      "options": [
+        "案内",
+        "安内",
+        "案肉",
+        "案納"
+      ],
+      "explain_tr": "案 (木) + 内 (iç)."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "作品",
+      "reading": "さくひん",
+      "meaning_tr": "eser",
+      "sentence": "町の人が案内してくれた美術館では、地元の画家の（　　）を見ました。",
+      "options": [
+        "作品",
+        "作業",
+        "作文",
+        "製品"
+      ],
+      "explain_tr": "Ressamın eseri → 作品."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "労働",
+      "reading": "ろうどう",
+      "meaning_tr": "emek, çalışma",
+      "sentence": "一日の（　　）が終わった後、散歩する余裕もできました。",
+      "options": [
+        "労働",
+        "労力",
+        "動作",
+        "感動"
+      ],
+      "explain_tr": "一日の労働: günün mesaisi."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "余裕",
+      "reading": "よゆう",
+      "meaning_tr": "vakit/rahatlık payı",
+      "sentence": "一日の労働が終わった後、散歩する（　　）もできました。",
+      "options": [
+        "余裕",
+        "余計",
+        "余分",
+        "余白"
+      ],
+      "explain_tr": "～する余裕がある: -ecek vakti/imkânı olmak."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "個人",
+      "reading": "こじん",
+      "meaning_tr": "birey",
+      "sentence": "（　　）的には、町全体の温かい雰囲気が大好きです。",
+      "options": [
+        "個人",
+        "個性",
+        "他人",
+        "本人"
+      ],
+      "explain_tr": "個人的には: şahsen."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "全体",
+      "reading": "ぜんたい",
+      "meaning_tr": "bütün",
+      "sentence": "個人的には、町（　　）の温かい雰囲気が大好きです。",
+      "options": [
+        "全体",
+        "全部",
+        "体力",
+        "大体"
+      ],
+      "explain_tr": "町全体: bütün kasaba."
+    }
+  ]
+}

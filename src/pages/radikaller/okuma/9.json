@@ -1,0 +1,234 @@
+{
+  "radicalId": 9,
+  "title": "新入社員の教育",
+  "title_tr": "Yeni çalışanların eğitimi",
+  "text": "私は会社で新入社員の[[1|教育]]を担当しています。研修の[[2|期間]]は三か月で、みんな[[3|希望]]を持って毎日がんばっています。若い社員の[[4|能力]]は高く、会社も大きく[[5|期待]]しています。でも、長い時間パソコンを使うので、[[6|肩こり]]や[[7|背中]]の痛みに悩む人も多いです。最近は物の値段が[[8|高騰]]して、生活が大変だという声も聞きます。去年から[[9|服装]]が自由になって、好きな[[10|洋服]]で働けるようになりました。上司に失礼なことを言われて[[11|腹が立つ]]こともありますが、みんな我慢しています。新しいシステムを使えば、家で働くことも[[12|可能]]です。優れた[[13|頭脳]]を持つ人でも、休まなければ病気になります。私はお湯が[[14|沸騰]]するのを待つ間に、[[15|定期]]的にストレッチをするようにしています。",
+  "text_tr": "Şirkette yeni çalışanların eğitiminden sorumluyum. Eğitim süresi üç ay ve herkes umutla her gün çok çalışıyor. Genç çalışanların yetenekleri yüksek ve şirket de onlardan çok şey bekliyor. Ama uzun süre bilgisayar kullandıkları için omuz tutulması ve sırt ağrısından şikâyet edenler de çok. Son zamanlarda fiyatlar fırladığı için hayatın zorlaştığını söyleyenler de var. Geçen yıldan beri kıyafet serbest oldu ve istediğimiz kıyafetle çalışabiliyoruz. Müdürden kaba sözler duyup sinirlenildiği de oluyor ama herkes sabrediyor. Yeni sistemi kullanırsak evden çalışmak da mümkün. Üstün zekâlı biri bile dinlenmezse hastalanır. Ben su kaynamasını beklerken düzenli olarak esneme hareketleri yapmaya çalışıyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "教育",
+      "reading": "きょういく",
+      "meaning_tr": "eğitim",
+      "sentence": "私は会社で新入社員の[[教育]]を担当しています。",
+      "options": [
+        "きょういく",
+        "きょいく",
+        "きょういき",
+        "きょうよく"
+      ],
+      "explain_tr": "教 キョウ (uzun) + 育 イク."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "期間",
+      "reading": "きかん",
+      "meaning_tr": "süre",
+      "sentence": "研修の[[期間]]は三か月で、みんな希望を持って毎日がんばっています。",
+      "options": [
+        "きかん",
+        "きがん",
+        "ごかん",
+        "きけん"
+      ],
+      "explain_tr": "期 キ + 間 カン; 最期'deki ゴ değil."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "希望",
+      "reading": "きぼう",
+      "meaning_tr": "umut, istek",
+      "sentence": "研修の期間は三か月で、みんな[[希望]]を持って毎日がんばっています。",
+      "options": [
+        "きぼう",
+        "きもう",
+        "きほう",
+        "きぼ"
+      ],
+      "explain_tr": "望 burada ボウ (゛ + uzun)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "能力",
+      "reading": "のうりょく",
+      "meaning_tr": "yetenek",
+      "sentence": "若い社員の[[能力]]は高く、会社も大きく期待しています。",
+      "options": [
+        "のうりょく",
+        "のうりき",
+        "のりょく",
+        "のうろく"
+      ],
+      "explain_tr": "力 burada リョク."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "期待",
+      "reading": "きたい",
+      "meaning_tr": "beklenti",
+      "sentence": "若い社員の能力は高く、会社も大きく[[期待]]しています。",
+      "options": [
+        "きたい",
+        "きだい",
+        "ごたい",
+        "きまち"
+      ],
+      "explain_tr": "期 キ + 待 タイ."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "肩こり",
+      "reading": "かたこり",
+      "meaning_tr": "omuz tutulması",
+      "sentence": "でも、長い時間パソコンを使うので、[[かたこり]]や背中の痛みに悩む人も多いです。",
+      "options": [
+        "肩こり",
+        "屑こり",
+        "扇こり",
+        "眉こり"
+      ],
+      "explain_tr": "肩 (月) omuz; 扇 yelpaze."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "背中",
+      "reading": "せなか",
+      "meaning_tr": "sırt",
+      "sentence": "でも、長い時間パソコンを使うので、肩こりや[[せなか]]の痛みに悩む人も多いです。",
+      "options": [
+        "背中",
+        "脊中",
+        "北中",
+        "肯中"
+      ],
+      "explain_tr": "背 = 北 + 月."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "高騰",
+      "reading": "こうとう",
+      "meaning_tr": "fiyat fırlaması",
+      "sentence": "最近は物の値段が[[こうとう]]して、生活が大変だという声も聞きます。",
+      "options": [
+        "高騰",
+        "高謄",
+        "高藤",
+        "高等"
+      ],
+      "explain_tr": "騰 (月+馬) yükselmek; 高等 de こうとう."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "服装",
+      "reading": "ふくそう",
+      "meaning_tr": "kıyafet tarzı",
+      "sentence": "去年から[[ふくそう]]が自由になって、好きな洋服で働けるようになりました。",
+      "options": [
+        "服装",
+        "服送",
+        "腹装",
+        "復装"
+      ],
+      "explain_tr": "服 (月) giysi; 腹 karın."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "洋服",
+      "reading": "ようふく",
+      "meaning_tr": "kıyafet",
+      "sentence": "去年から服装が自由になって、好きな[[ようふく]]で働けるようになりました。",
+      "options": [
+        "洋服",
+        "用服",
+        "洋腹",
+        "様服"
+      ],
+      "explain_tr": "洋 (Batı) + 服."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "腹が立つ",
+      "reading": "はらがたつ",
+      "meaning_tr": "sinirlenmek",
+      "sentence": "上司に失礼なことを言われて（　　）こともありますが、みんな我慢しています。",
+      "options": [
+        "腹が立つ",
+        "腹が減る",
+        "背が高い",
+        "肩が軽い"
+      ],
+      "explain_tr": "Kaba söz → 腹が立つ (sinirlenmek)."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "可能",
+      "reading": "かのう",
+      "meaning_tr": "mümkün",
+      "sentence": "新しいシステムを使えば、家で働くことも（　　）です。",
+      "options": [
+        "可能",
+        "機能",
+        "能力",
+        "才能"
+      ],
+      "explain_tr": "～ことも可能だ: -mek de mümkün."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "頭脳",
+      "reading": "ずのう",
+      "meaning_tr": "zekâ, beyin",
+      "sentence": "優れた（　　）を持つ人でも、休まなければ病気になります。",
+      "options": [
+        "頭脳",
+        "頭痛",
+        "脳波",
+        "先頭"
+      ],
+      "explain_tr": "優れた頭脳: üstün zekâ."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "沸騰",
+      "reading": "ふっとう",
+      "meaning_tr": "kaynama",
+      "sentence": "私はお湯が（　　）するのを待つ間に、定期的にストレッチをするようにしています。",
+      "options": [
+        "沸騰",
+        "高騰",
+        "活動",
+        "成長"
+      ],
+      "explain_tr": "お湯が沸騰する: su kaynar."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "定期",
+      "reading": "ていき",
+      "meaning_tr": "düzenli, periyodik",
+      "sentence": "私はお湯が沸騰するのを待つ間に、（　　）的にストレッチをするようにしています。",
+      "options": [
+        "定期",
+        "期間",
+        "定食",
+        "予定"
+      ],
+      "explain_tr": "定期的に: düzenli olarak."
+    }
+  ]
+}

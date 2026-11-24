@@ -1,0 +1,234 @@
+{
+  "radicalId": 33,
+  "title": "町のお祭り",
+  "title_tr": "Kasabanın festivali",
+  "text": "私の町では毎年夏の[[2|祝日]]に、大きな[[6|祭り]]が行われる。町の[[1|神社]]から出発して、みんなで町の中を歩くのだ。[[3|祖父]]は若いころからこの祭りに参加していて、町の人たちの[[4|幸福]]を願ってきたそうだ。今年は兄が大学に合格したので、家族で[[12|祝った]]後、祭りに行った。神社の近くでは、たばこを吸うことが[[5|禁止]]されている。近くの食堂も全席[[13|禁煙]]だ。祭りの前の日に、町の会社の[[14|社長]]があいさつをした。社長は「祭りは町の[[10|社会]]をつなぐ大切な行事です」と話した。また、来月の町長選挙では必ず[[8|投票]]に行くようにとも言った。私は人が多い所に行くと[[9|神経]]が疲れるが、祭りは好きだ。人とぶつかったときは、すぐに「[[7|失礼]]しました」と言うのがマナーだ。帰りに、準備を手伝ってくれた友達に[[11|お礼]]を言った。最後に、来年もみんなが元気でいられるように[[15|神様]]にお願いした。",
+  "text_tr": "Kasabamda her yaz resmi tatilde büyük bir festival yapılır. Kasabanın Şinto tapınağından çıkıp hep birlikte kasabayı dolaşırız. Dedem gençliğinden beri bu festivale katılıyor ve kasaba halkının mutluluğunu diliyormuş. Bu yıl ağabeyim üniversiteyi kazandığı için ailece kutladıktan sonra festivale gittik. Tapınağın yakınında sigara içmek yasak. Yakındaki lokanta da tamamen sigarasız. Festivalden bir gün önce kasabadaki bir şirketin müdürü konuşma yaptı. Müdür \"Festival, kasaba toplumunu birbirine bağlayan önemli bir etkinliktir\" dedi. Ayrıca gelecek ayki belediye başkanlığı seçiminde mutlaka oy kullanmamızı söyledi. Kalabalık yerlerde sinirlerim yorulur ama festivali severim. Biriyle çarpıştığında hemen \"Pardon\" demek görgü kuralıdır. Dönüşte hazırlığa yardım eden arkadaşlarıma teşekkür ettim. Son olarak gelecek yıl da herkes sağlıklı olsun diye tanrılara dua ettim.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "神社",
+      "reading": "じんじゃ",
+      "meaning_tr": "Şinto tapınağı",
+      "sentence": "町の[[神社]]から出発して、みんなで町の中を歩くのだ。",
+      "options": [
+        "じんじゃ",
+        "しんじゃ",
+        "じんしゃ",
+        "かみしゃ"
+      ],
+      "explain_tr": "神 burada ジン, 社 ジャ (゛ alır)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "祝日",
+      "reading": "しゅくじつ",
+      "meaning_tr": "resmi tatil",
+      "sentence": "私の町では毎年夏の[[祝日]]に、大きな祭りが行われる。",
+      "options": [
+        "しゅくじつ",
+        "しゅくにち",
+        "しゅくひ",
+        "しゅうじつ"
+      ],
+      "explain_tr": "祝 シュク + 日 ジツ."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "祖父",
+      "reading": "そふ",
+      "meaning_tr": "dede",
+      "sentence": "[[祖父]]は若いころからこの祭りに参加していて、町の人たちの幸福を願ってきたそうだ。",
+      "options": [
+        "そふ",
+        "そぶ",
+        "そうふ",
+        "そっぷ"
+      ],
+      "explain_tr": "祖 ソ + 父 フ; ゛ yok."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "幸福",
+      "reading": "こうふく",
+      "meaning_tr": "mutluluk",
+      "sentence": "祖父は若いころからこの祭りに参加していて、町の人たちの[[幸福]]を願ってきたそうだ。",
+      "options": [
+        "こうふく",
+        "こふく",
+        "こうぶく",
+        "しあわふく"
+      ],
+      "explain_tr": "幸 コウ + 福 フク."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "禁止",
+      "reading": "きんし",
+      "meaning_tr": "yasak",
+      "sentence": "神社の近くでは、たばこを吸うことが[[禁止]]されている。",
+      "options": [
+        "きんし",
+        "きんじ",
+        "ぎんし",
+        "きんしい"
+      ],
+      "explain_tr": "禁 キン + 止 シ."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "祭り",
+      "reading": "まつり",
+      "meaning_tr": "festival",
+      "sentence": "私の町では毎年夏の祝日に、大きな[[まつり]]が行われる。",
+      "options": [
+        "祭り",
+        "際り",
+        "察り",
+        "奈り"
+      ],
+      "explain_tr": "祭 festival; 際/察 içinde 祭 parçası var."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "失礼",
+      "reading": "しつれい",
+      "meaning_tr": "kabalık / pardon",
+      "sentence": "人とぶつかったときは、すぐに「[[しつれい]]しました」と言うのがマナーだ。",
+      "options": [
+        "失礼",
+        "失令",
+        "矢礼",
+        "失例"
+      ],
+      "explain_tr": "礼 (礻) nezaket; 令/例 aynı レイ."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "投票",
+      "reading": "とうひょう",
+      "meaning_tr": "oy verme",
+      "sentence": "また、来月の町長選挙では必ず[[とうひょう]]に行くようにとも言った。",
+      "options": [
+        "投票",
+        "投標",
+        "役票",
+        "投表"
+      ],
+      "explain_tr": "票 oy pusulası; 標/表 aynı ヒョウ."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "神経",
+      "reading": "しんけい",
+      "meaning_tr": "sinir",
+      "sentence": "私は人が多い所に行くと[[しんけい]]が疲れるが、祭りは好きだ。",
+      "options": [
+        "神経",
+        "神径",
+        "伸経",
+        "紳経"
+      ],
+      "explain_tr": "神 シン + 経 ケイ; 伸/紳 aynı シン."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "社会",
+      "reading": "しゃかい",
+      "meaning_tr": "toplum",
+      "sentence": "社長は「祭りは町の[[しゃかい]]をつなぐ大切な行事です」と話した。",
+      "options": [
+        "社会",
+        "社回",
+        "杜会",
+        "車会"
+      ],
+      "explain_tr": "社 (礻); 杜 (木) benzer görünüş."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "お礼",
+      "reading": "おれい",
+      "meaning_tr": "teşekkür",
+      "sentence": "帰りに、準備を手伝ってくれた友達に（　　）を言った。",
+      "options": [
+        "お礼",
+        "失礼",
+        "礼儀",
+        "神経"
+      ],
+      "explain_tr": "お礼を言う: teşekkür etmek."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "祝った",
+      "reading": "いわった",
+      "meaning_tr": "kutladık",
+      "sentence": "今年は兄が大学に合格したので、家族で（　　）後、祭りに行った。",
+      "options": [
+        "祝った",
+        "禁止した",
+        "投票した",
+        "失礼した"
+      ],
+      "explain_tr": "合格を祝う: başarıyı kutlamak."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "禁煙",
+      "reading": "きんえん",
+      "meaning_tr": "sigara içilmez",
+      "sentence": "近くの食堂も全席（　　）だ。",
+      "options": [
+        "禁煙",
+        "禁止",
+        "祝日",
+        "神経"
+      ],
+      "explain_tr": "全席禁煙: tüm masalar sigarasız."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "社長",
+      "reading": "しゃちょう",
+      "meaning_tr": "şirket müdürü",
+      "sentence": "祭りの前の日に、町の会社の（　　）があいさつをした。",
+      "options": [
+        "社長",
+        "社会",
+        "神社",
+        "祝日"
+      ],
+      "explain_tr": "会社の社長: şirketin patronu."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "神様",
+      "reading": "かみさま",
+      "meaning_tr": "tanrı",
+      "sentence": "最後に、来年もみんなが元気でいられるように（　　）にお願いした。",
+      "options": [
+        "神様",
+        "神経",
+        "社会",
+        "礼儀"
+      ],
+      "explain_tr": "神様にお願いする: tanrıya dua etmek."
+    }
+  ]
+}

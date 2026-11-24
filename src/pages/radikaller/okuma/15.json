@@ -1,0 +1,234 @@
+{
+  "radicalId": 15,
+  "title": "京都の旅館",
+  "title_tr": "Kyoto'daki han",
+  "text": "先週末、家族で京都へ行き、古い[[6|旅館]]に泊まった。部屋の[[3|装飾]]はとても美しく、床の間には花の[[15|飾り]]もあった。着いた日の[[2|夕飯]]は旅館の料理で、[[9|飲み物]]は地元のお茶だった。次の日は[[12|朝ご飯]]を食べてから、[[5|美術館]]で有名な絵を見た。恐竜の骨も見たかったので、[[14|博物館]]にも行った。午後は雨が降ったので、近くの[[8|図書館]]で休んだ。帰りに駅前の[[7|映画館]]の隣にある[[1|飲食]]店に入ると、犬を連れた[[4|飼い主]]がいた。その人は「犬を[[10|飼う]]のは大変だけど楽しいですよ」と話してくれた。夜、町の[[11|体育館]]では子供たちがバスケットボールの試合をしていた。父は運転するので、夕食のときに[[13|飲酒]]はしなかった。",
+  "text_tr": "Geçen hafta sonu ailecek Kyoto'ya gittik ve eski bir handa kaldık. Odanın süslemeleri çok güzeldi, tokonoma'da çiçek süsü de vardı. Vardığımız günün akşam yemeği hanın yemeğiydi, içecek de yöresel çaydı. Ertesi gün kahvaltıdan sonra sanat müzesinde ünlü tabloları gördük. Dinozor kemiklerini de görmek istediğimiz için müzeye de gittik. Öğleden sonra yağmur yağdığı için yakındaki kütüphanede dinlendik. Dönüşte istasyon önündeki sinemanın yanındaki bir lokantaya girdiğimizde köpeğiyle gelmiş bir hayvan sahibi vardı. O kişi \"Köpek beslemek zor ama eğlenceli\" dedi. Akşam kasabanın spor salonunda çocuklar basketbol maçı yapıyordu. Babam araba kullanacağı için akşam yemeğinde alkol içmedi.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "飲食",
+      "reading": "いんしょく",
+      "meaning_tr": "yeme içme",
+      "sentence": "帰りに駅前の映画館の隣にある[[飲食]]店に入ると、犬を連れた飼い主がいた。",
+      "options": [
+        "いんしょく",
+        "いんじき",
+        "おんしょく",
+        "いんしょう"
+      ],
+      "explain_tr": "飲 イン + 食 ショク; 飲食店 = lokanta."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "夕飯",
+      "reading": "ゆうはん",
+      "meaning_tr": "akşam yemeği",
+      "sentence": "着いた日の[[夕飯]]は旅館の料理で、飲み物は地元のお茶だった。",
+      "options": [
+        "ゆうはん",
+        "ゆうばん",
+        "ゆうめし",
+        "ゆはん"
+      ],
+      "explain_tr": "夕 ゆう (uzun) + 飯 ハン; ばん'a dönüşmez."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "装飾",
+      "reading": "そうしょく",
+      "meaning_tr": "süsleme, dekorasyon",
+      "sentence": "部屋の[[装飾]]はとても美しく、床の間には花の飾りもあった。",
+      "options": [
+        "そうしょく",
+        "そうじょく",
+        "しょうしょく",
+        "そうしき"
+      ],
+      "explain_tr": "装 ソウ + 飾 ショク; そうしき (葬式) tuzaktır."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "飼い主",
+      "reading": "かいぬし",
+      "meaning_tr": "hayvan sahibi",
+      "sentence": "帰りに駅前の映画館の隣にある飲食店に入ると、犬を連れた[[飼い主]]がいた。",
+      "options": [
+        "かいぬし",
+        "かいしゅ",
+        "しいぬし",
+        "かいおも"
+      ],
+      "explain_tr": "飼う か(う) + 主 ぬし (kun okunuş)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "美術館",
+      "reading": "びじゅつかん",
+      "meaning_tr": "sanat müzesi",
+      "sentence": "次の日は朝ご飯を食べてから、[[美術館]]で有名な絵を見た。",
+      "options": [
+        "びじゅつかん",
+        "びじゅっかん",
+        "びしゅつかん",
+        "びじゅつがん"
+      ],
+      "explain_tr": "美 ビ + 術 ジュツ + 館 カン; っ ve ゛ eklenmez."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "旅館",
+      "reading": "りょかん",
+      "meaning_tr": "geleneksel Japon hanı",
+      "sentence": "先週末、家族で京都へ行き、古い[[りょかん]]に泊まった。",
+      "options": [
+        "旅館",
+        "旅観",
+        "族館",
+        "旅管"
+      ],
+      "explain_tr": "旅 (yolculuk) + 館 (bina); 族 benzer görünür."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "映画館",
+      "reading": "えいがかん",
+      "meaning_tr": "sinema salonu",
+      "sentence": "帰りに駅前の[[えいがかん]]の隣にある飲食店に入ると、犬を連れた飼い主がいた。",
+      "options": [
+        "映画館",
+        "英画館",
+        "映画官",
+        "映絵館"
+      ],
+      "explain_tr": "映 (yansıtmak) + 画 + 館; 英 aynı okunur ama 'İngiliz' demektir."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "図書館",
+      "reading": "としょかん",
+      "meaning_tr": "kütüphane",
+      "sentence": "午後は雨が降ったので、近くの[[としょかん]]で休んだ。",
+      "options": [
+        "図書館",
+        "図書官",
+        "図書観",
+        "図書管"
+      ],
+      "explain_tr": "Bina anlamı için 館 (食 radikali) kullanılır."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "飲み物",
+      "reading": "のみもの",
+      "meaning_tr": "içecek",
+      "sentence": "着いた日の夕飯は旅館の料理で、[[のみもの]]は地元のお茶だった。",
+      "options": [
+        "飲み物",
+        "飯み物",
+        "飼み物",
+        "欽み物"
+      ],
+      "explain_tr": "飲む = içmek; 飯 ve 飼 aynı radikalli benzer kanjilerdir."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "飼う",
+      "reading": "かう",
+      "meaning_tr": "(hayvan) beslemek",
+      "sentence": "その人は「犬を[[かう]]のは大変だけど楽しいですよ」と話してくれた。",
+      "options": [
+        "飼う",
+        "飾う",
+        "飯う",
+        "伺う"
+      ],
+      "explain_tr": "飼う hayvan beslemek; 買う da かう okunur ama 'satın almak'tır."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "体育館",
+      "reading": "たいいくかん",
+      "meaning_tr": "spor salonu",
+      "sentence": "夜、町の（　　）では子供たちがバスケットボールの試合をしていた。",
+      "options": [
+        "体育館",
+        "映画館",
+        "大使館",
+        "旅館"
+      ],
+      "explain_tr": "Basketbol maçı yapılan yer spor salonudur."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "朝ご飯",
+      "reading": "あさごはん",
+      "meaning_tr": "kahvaltı",
+      "sentence": "次の日は（　　）を食べてから、美術館で有名な絵を見た。",
+      "options": [
+        "朝ご飯",
+        "夕飯",
+        "飲み物",
+        "飲酒"
+      ],
+      "explain_tr": "Gezmeden önce, ertesi sabah yenen yemek kahvaltıdır."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "飲酒",
+      "reading": "いんしゅ",
+      "meaning_tr": "alkol içme",
+      "sentence": "父は運転するので、夕食のときに（　　）はしなかった。",
+      "options": [
+        "飲酒",
+        "飲食",
+        "装飾",
+        "飼育"
+      ],
+      "explain_tr": "Araba kullanan kişi alkol (飲酒) almaz."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "博物館",
+      "reading": "はくぶつかん",
+      "meaning_tr": "müze",
+      "sentence": "恐竜の骨も見たかったので、（　　）にも行った。",
+      "options": [
+        "博物館",
+        "図書館",
+        "旅館",
+        "体育館"
+      ],
+      "explain_tr": "Dinozor kemikleri müzede (博物館) sergilenir."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "飾り",
+      "reading": "かざり",
+      "meaning_tr": "süs",
+      "sentence": "部屋の装飾はとても美しく、床の間には花の（　　）もあった。",
+      "options": [
+        "飾り",
+        "飼い",
+        "飲み",
+        "食べ"
+      ],
+      "explain_tr": "花の飾り = çiçek süsü; 飾る (süslemek)."
+    }
+  ]
+}

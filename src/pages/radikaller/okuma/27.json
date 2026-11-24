@@ -1,0 +1,234 @@
+{
+  "radicalId": 27,
+  "title": "新製品の発表",
+  "title_tr": "Yeni ürün sunumu",
+  "text": "来週、会社で新しい[[1|製品]]についての[[11|発表]]がある。私はチームの[[2|代表]]として話すことになった。資料の内容が[[3|複雑]]なので、どう[[12|表現]]すれば分かりやすいか悩んでいる。先輩に相談すると、「足りない部分は図や写真で[[6|補う]]といい」と言われた。また、[[4|複数]]の[[13|候補]]の中から、一番いいデザインを選ぶことになった。新製品は[[15|製造]]の方法を変えて、雨や台風による[[14|被害]]を減らせるようになった。資料の[[8|裏]]には細かいデータを印刷し、サンプルは小さな[[10|袋]]に入れて配る予定だ。当日の[[7|服装]]はスーツにすることにした。練習で先輩に「[[5|表情]]が硬いよ」と言われたので、本番は[[9|余裕]]を持って笑顔で話したい。",
+  "text_tr": "Gelecek hafta şirkette yeni ürün hakkında bir sunum var. Ben ekibin temsilcisi olarak konuşacağım. Dokümanın içeriği karmaşık olduğu için nasıl ifade edersem anlaşılır olur diye kafa yoruyorum. Kıdemliye danışınca \"Eksik kısımları şekil ve fotoğraflarla tamamlarsan iyi olur\" dedi. Ayrıca birden fazla aday arasından en iyi tasarımı seçeceğiz. Yeni ürün, üretim yöntemi değiştirilerek yağmur ve tayfunun yol açtığı hasarı azaltabilir hale geldi. Dokümanın arka yüzüne ayrıntılı verileri basacağız, numuneleri de küçük poşetlere koyup dağıtacağız. O günkü kıyafet olarak takım elbise giymeye karar verdim. Provada kıdemli \"Yüz ifaden gergin\" dediği için gerçek sunumda rahat ve gülümseyerek konuşmak istiyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "製品",
+      "reading": "せいひん",
+      "meaning_tr": "ürün",
+      "sentence": "来週、会社で新しい[[製品]]についての発表がある。",
+      "options": [
+        "せいひん",
+        "せいびん",
+        "せいしな",
+        "せひん"
+      ],
+      "explain_tr": "製 セイ + 品 ヒン (゛ yok)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "代表",
+      "reading": "だいひょう",
+      "meaning_tr": "temsilci",
+      "sentence": "私はチームの[[代表]]として話すことになった。",
+      "options": [
+        "だいひょう",
+        "だいびょう",
+        "たいひょう",
+        "だいひょ"
+      ],
+      "explain_tr": "代 ダイ + 表 ヒョウ (uzun, ゛ yok)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "複雑",
+      "reading": "ふくざつ",
+      "meaning_tr": "karmaşık",
+      "sentence": "資料の内容が[[複雑]]なので、どう表現すれば分かりやすいか悩んでいる。",
+      "options": [
+        "ふくざつ",
+        "ふくさつ",
+        "ふっくざつ",
+        "ふくざい"
+      ],
+      "explain_tr": "複 フク + 雑 ザツ."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "複数",
+      "reading": "ふくすう",
+      "meaning_tr": "birden fazla",
+      "sentence": "また、[[複数]]の候補の中から、一番いいデザインを選ぶことになった。",
+      "options": [
+        "ふくすう",
+        "ふくず",
+        "ふくしゅう",
+        "ふくそう"
+      ],
+      "explain_tr": "複 フク + 数 スウ; ふくしゅう = 復習."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "表情",
+      "reading": "ひょうじょう",
+      "meaning_tr": "yüz ifadesi",
+      "sentence": "練習で先輩に「[[表情]]が硬いよ」と言われたので、本番は余裕を持って笑顔で話したい。",
+      "options": [
+        "ひょうじょう",
+        "ひょうしょう",
+        "ひょじょう",
+        "ひょうせい"
+      ],
+      "explain_tr": "表 ヒョウ + 情 ジョウ (゛ var)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "補う",
+      "reading": "おぎなう",
+      "meaning_tr": "tamamlamak",
+      "sentence": "先輩に相談すると、「足りない部分は図や写真で[[おぎなう]]といい」と言われた。",
+      "options": [
+        "補う",
+        "捕う",
+        "舗う",
+        "哺う"
+      ],
+      "explain_tr": "補 = 衤 + 甫; 捕 (yakalamak) 扌 radikallidir."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "服装",
+      "reading": "ふくそう",
+      "meaning_tr": "kıyafet",
+      "sentence": "当日の[[ふくそう]]はスーツにすることにした。",
+      "options": [
+        "服装",
+        "服袋",
+        "腹装",
+        "服荘"
+      ],
+      "explain_tr": "装 (衣 radikali) giyim; 袋 (poşet) benzer görünür."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "裏",
+      "reading": "うら",
+      "meaning_tr": "arka yüz",
+      "sentence": "資料の[[うら]]には細かいデータを印刷し、サンプルは小さな袋に入れて配る予定だ。",
+      "options": [
+        "裏",
+        "表",
+        "衷",
+        "裹"
+      ],
+      "explain_tr": "裏 = 衣 içinde 里; 表 おもて (ön yüz) zıttıdır."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "余裕",
+      "reading": "よゆう",
+      "meaning_tr": "rahatlık, pay",
+      "sentence": "練習で先輩に「表情が硬いよ」と言われたので、本番は[[よゆう]]を持って笑顔で話したい。",
+      "options": [
+        "余裕",
+        "余容",
+        "余浴",
+        "余祐"
+      ],
+      "explain_tr": "裕 (衤 radikali); 容・浴 de ヨウ/ヨク okunur."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "袋",
+      "reading": "ふくろ",
+      "meaning_tr": "poşet",
+      "sentence": "資料の裏には細かいデータを印刷し、サンプルは小さな[[ふくろ]]に入れて配る予定だ。",
+      "options": [
+        "袋",
+        "貸",
+        "装",
+        "岱"
+      ],
+      "explain_tr": "袋 = 代 + 衣; 貸 (kiralamak) benzer görünür."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "発表",
+      "reading": "はっぴょう",
+      "meaning_tr": "sunum",
+      "sentence": "来週、会社で新しい製品についての（　　）がある。",
+      "options": [
+        "発表",
+        "表現",
+        "代表",
+        "表情"
+      ],
+      "explain_tr": "新製品についての発表 = yeni ürün sunumu."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "表現",
+      "reading": "ひょうげん",
+      "meaning_tr": "ifade",
+      "sentence": "資料の内容が複雑なので、どう（　　）すれば分かりやすいか悩んでいる。",
+      "options": [
+        "表現",
+        "表情",
+        "発表",
+        "表面"
+      ],
+      "explain_tr": "どう表現すれば = nasıl ifade edersem."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "候補",
+      "reading": "こうほ",
+      "meaning_tr": "aday",
+      "sentence": "また、複数の（　　）の中から、一番いいデザインを選ぶことになった。",
+      "options": [
+        "候補",
+        "補足",
+        "被害",
+        "表情"
+      ],
+      "explain_tr": "複数の候補から選ぶ = adaylar arasından seçmek."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "被害",
+      "reading": "ひがい",
+      "meaning_tr": "hasar",
+      "sentence": "新製品は製造の方法を変えて、雨や台風による（　　）を減らせるようになった。",
+      "options": [
+        "被害",
+        "候補",
+        "表現",
+        "製品"
+      ],
+      "explain_tr": "台風による被害 = tayfun hasarı."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "製造",
+      "reading": "せいぞう",
+      "meaning_tr": "üretim",
+      "sentence": "新製品は（　　）の方法を変えて、雨や台風による被害を減らせるようになった。",
+      "options": [
+        "製造",
+        "製品",
+        "補足",
+        "複雑"
+      ],
+      "explain_tr": "製造の方法 = üretim yöntemi."
+    }
+  ]
+}

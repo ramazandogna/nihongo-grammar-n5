@@ -1,0 +1,234 @@
+{
+  "radicalId": 28,
+  "title": "風邪をひいた週末",
+  "title_tr": "Hastalandığım hafta sonu",
+  "text": "先週は仕事が忙しく、[[1|疲労]]がたまっていた。金曜日の朝、ひどい[[2|頭痛]]で目が覚め、熱もあったので近くの[[6|病院]]へ行った。医者に[[11|症状]]を説明すると、「ただの風邪ですが、[[12|治療]]には一週間ほどかかるでしょう」と言われた。のどの[[7|痛み]]を止める薬をもらって家に帰ったが、体がとても[[8|疲れて]]いて、すぐに寝た。春は[[3|花粉症]]もあり、子供のころから[[9|腹痛]]も起こしやすいので、もともと体が弱いのだ。次の日、母が来て[[13|看病]]してくれた。母は「[[14|病気]]のときは、しっかり食べて寝るのが一番よ」と言った。一週間で少し[[10|痩せて]]しまったが、月曜日には熱も下がり、[[4|病人]]扱いも終わった。「[[5|病]]は気から」と言うように、気持ちも大切だ。週末はしっかり休んで、[[15|疲れ]]をとろうと思う。",
+  "text_tr": "Geçen hafta iş yoğundu ve yorgunluk birikmişti. Cuma sabahı şiddetli bir baş ağrısıyla uyandım, ateşim de olduğu için yakındaki hastaneye gittim. Doktora belirtileri anlatınca \"Sadece soğuk algınlığı ama tedavisi bir hafta kadar sürer\" dedi. Boğaz ağrısını kesen ilaç alıp eve döndüm ama vücudum çok yorgundu ve hemen uyudum. İlkbaharda saman nezlem de var, çocukluğumdan beri kolayca karın ağrısı da çekerim, yani zaten bünyem zayıf. Ertesi gün annem gelip bana baktı. Annem \"Hastayken iyice yiyip uyumak en iyisidir\" dedi. Bir haftada biraz zayıfladım ama pazartesi ateşim düştü ve hasta muamelesi de bitti. \"Hastalık kafadan başlar\" dendiği gibi moral de önemli. Hafta sonu iyice dinlenip yorgunluğumu atmayı düşünüyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "疲労",
+      "reading": "ひろう",
+      "meaning_tr": "yorgunluk",
+      "sentence": "先週は仕事が忙しく、[[疲労]]がたまっていた。",
+      "options": [
+        "ひろう",
+        "ひろ",
+        "ひろお",
+        "びろう"
+      ],
+      "explain_tr": "疲 ヒ + 労 ロウ (uzun ünlü う ile yazılır)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "頭痛",
+      "reading": "ずつう",
+      "meaning_tr": "baş ağrısı",
+      "sentence": "金曜日の朝、ひどい[[頭痛]]で目が覚め、熱もあったので近くの病院へ行った。",
+      "options": [
+        "ずつう",
+        "とうつう",
+        "ずづう",
+        "ずうつう"
+      ],
+      "explain_tr": "頭 burada ズ okunur; 痛 ツウ (゛ yok)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "花粉症",
+      "reading": "かふんしょう",
+      "meaning_tr": "saman nezlesi",
+      "sentence": "春は[[花粉症]]もあり、子供のころから腹痛も起こしやすいので、もともと体が弱いのだ。",
+      "options": [
+        "かふんしょう",
+        "かふんしょ",
+        "かぶんしょう",
+        "かふんじょう"
+      ],
+      "explain_tr": "花 カ + 粉 フン + 症 ショウ."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "病人",
+      "reading": "びょうにん",
+      "meaning_tr": "hasta kişi",
+      "sentence": "一週間で少し痩せてしまったが、月曜日には熱も下がり、[[病人]]扱いも終わった。",
+      "options": [
+        "びょうにん",
+        "びょうじん",
+        "びょにん",
+        "へいにん"
+      ],
+      "explain_tr": "病 ビョウ + 人 ニン."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "病",
+      "reading": "やまい",
+      "meaning_tr": "hastalık",
+      "sentence": "「[[病]]は気から」と言うように、気持ちも大切だ。",
+      "options": [
+        "やまい",
+        "びょう",
+        "やまえ",
+        "へい"
+      ],
+      "explain_tr": "Tek başına kun okunuş: 病 やまい (病は気から atasözü)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "病院",
+      "reading": "びょういん",
+      "meaning_tr": "hastane",
+      "sentence": "金曜日の朝、ひどい頭痛で目が覚め、熱もあったので近くの[[びょういん]]へ行った。",
+      "options": [
+        "病院",
+        "病員",
+        "痛院",
+        "病陰"
+      ],
+      "explain_tr": "院 (阝) kurum; 員・陰 de イン okunur."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "痛み",
+      "reading": "いたみ",
+      "meaning_tr": "ağrı",
+      "sentence": "のどの[[いたみ]]を止める薬をもらって家に帰ったが、体がとても疲れていて、すぐに寝た。",
+      "options": [
+        "痛み",
+        "病み",
+        "疲み",
+        "癒み"
+      ],
+      "explain_tr": "痛 = 疒 + 甬 (acı)."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "疲れて",
+      "reading": "つかれて",
+      "meaning_tr": "yorgun",
+      "sentence": "のどの痛みを止める薬をもらって家に帰ったが、体がとても[[つかれて]]いて、すぐに寝た。",
+      "options": [
+        "疲れて",
+        "被れて",
+        "波れて",
+        "皮れて"
+      ],
+      "explain_tr": "疲 = 疒 + 皮; 被 (衤) benzer görünür."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "腹痛",
+      "reading": "ふくつう",
+      "meaning_tr": "karın ağrısı",
+      "sentence": "春は花粉症もあり、子供のころから[[ふくつう]]も起こしやすいので、もともと体が弱いのだ。",
+      "options": [
+        "腹痛",
+        "複痛",
+        "腹通",
+        "服痛"
+      ],
+      "explain_tr": "腹 (karın) + 痛; 複・服 de フク okunur."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "痩せて",
+      "reading": "やせて",
+      "meaning_tr": "zayıflamak",
+      "sentence": "一週間で少し[[やせて]]しまったが、月曜日には熱も下がり、病人扱いも終わった。",
+      "options": [
+        "痩せて",
+        "捜せて",
+        "疫せて",
+        "疲せて"
+      ],
+      "explain_tr": "痩せる = 疒 + 叟; 捜 (aramak) benzer görünür."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "症状",
+      "reading": "しょうじょう",
+      "meaning_tr": "belirti",
+      "sentence": "医者に（　　）を説明すると、「ただの風邪ですが、治療には一週間ほどかかるでしょう」と言われた。",
+      "options": [
+        "症状",
+        "病気",
+        "治療",
+        "疲労"
+      ],
+      "explain_tr": "医者に症状を説明する = doktora belirtileri anlatmak."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "治療",
+      "reading": "ちりょう",
+      "meaning_tr": "tedavi",
+      "sentence": "医者に症状を説明すると、「ただの風邪ですが、（　　）には一週間ほどかかるでしょう」と言われた。",
+      "options": [
+        "治療",
+        "症状",
+        "頭痛",
+        "看病"
+      ],
+      "explain_tr": "治療には一週間かかる = tedavi bir hafta sürer."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "看病",
+      "reading": "かんびょう",
+      "meaning_tr": "hasta bakımı",
+      "sentence": "次の日、母が来て（　　）してくれた。",
+      "options": [
+        "看病",
+        "病気",
+        "病院",
+        "重病"
+      ],
+      "explain_tr": "母が看病してくれた = annem bana baktı."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "病気",
+      "reading": "びょうき",
+      "meaning_tr": "hastalık",
+      "sentence": "母は「（　　）のときは、しっかり食べて寝るのが一番よ」と言った。",
+      "options": [
+        "病気",
+        "病院",
+        "症状",
+        "治療"
+      ],
+      "explain_tr": "病気のときは = hastayken."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "疲れ",
+      "reading": "つかれ",
+      "meaning_tr": "yorgunluk",
+      "sentence": "週末はしっかり休んで、（　　）をとろうと思う。",
+      "options": [
+        "疲れ",
+        "看病",
+        "病院",
+        "治療"
+      ],
+      "explain_tr": "疲れをとる = yorgunluk atmak."
+    }
+  ]
+}

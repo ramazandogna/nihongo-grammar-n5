@@ -1,0 +1,234 @@
+{
+  "radicalId": 30,
+  "title": "先輩の結婚式",
+  "title_tr": "Kıdemlinin düğünü",
+  "text": "来月、大学の先輩の結婚式に[[11|招待]]された。式は土曜日の[[12|午後]]二時からで、駅から会場までは[[3|徒歩]]十分ぐらいだそうだ。先輩は大学で[[5|法律]]を勉強して、今は市の[[9|役所]]で働いている。私にとっては、いつも[[13|役に立つ]]アドバイスをくれる大切な先輩だ。先輩の家族から、[[2|後輩]]の私にスピーチをしてほしいと頼まれた。人の前で話すのは[[6|得意]]ではないが、みんなが[[1|期待]]しているので、断れなかった。家から会場までは[[14|往復]]で三時間かかるので、電車の中で原稿を[[4|復習]]するつもりだ。先輩は高校時代、[[7|生徒]]会の会長だったので、その話から始めることにした。何度も書き直して、[[10|最後]]にやっと[[8|納得]]できる原稿ができた。この経験から、私は多くのことを[[15|得た]]と思う。",
+  "text_tr": "Gelecek ay üniversitedeki kıdemlimin düğününe davet edildim. Tören cumartesi öğleden sonra saat ikide; istasyondan salona yürüyerek on dakika kadarmış. Kıdemlim üniversitede hukuk okudu, şimdi belediyede çalışıyor. Benim için her zaman işe yarar tavsiyeler veren önemli bir kıdemli. Ailesi, alt dönemden olan benim bir konuşma yapmamı istedi. İnsanların önünde konuşmakta iyi değilim ama herkes beklediği için reddedemedim. Evden salona gidiş dönüş üç saat sürdüğü için trende metni tekrar edeceğim. Kıdemlim lisede öğrenci konseyi başkanıydı, ben de o hikâyeyle başlamaya karar verdim. Defalarca yeniden yazıp sonunda nihayet içime sinen bir metin çıktı. Bu deneyimden çok şey kazandığımı düşünüyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "期待",
+      "reading": "きたい",
+      "meaning_tr": "beklenti",
+      "sentence": "人の前で話すのは得意ではないが、みんなが[[期待]]しているので、断れなかった。",
+      "options": [
+        "きたい",
+        "きだい",
+        "ぎたい",
+        "きいたい"
+      ],
+      "explain_tr": "期 キ + 待 タイ; ゛ eklenmez."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "後輩",
+      "reading": "こうはい",
+      "meaning_tr": "alt dönemden kişi",
+      "sentence": "先輩の家族から、[[後輩]]の私にスピーチをしてほしいと頼まれた。",
+      "options": [
+        "こうはい",
+        "ごはい",
+        "こうばい",
+        "こはい"
+      ],
+      "explain_tr": "後 burada コウ (午後'daki ゴ değil) + 輩 ハイ."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "徒歩",
+      "reading": "とほ",
+      "meaning_tr": "yürüyerek",
+      "sentence": "式は土曜日の午後二時からで、駅から会場までは[[徒歩]]十分ぐらいだそうだ。",
+      "options": [
+        "とほ",
+        "とぼ",
+        "とうほ",
+        "とほう"
+      ],
+      "explain_tr": "徒 ト + 歩 ホ; ゛ ve uzun ünlü yok."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "復習",
+      "reading": "ふくしゅう",
+      "meaning_tr": "tekrar (ders)",
+      "sentence": "家から会場までは往復で三時間かかるので、電車の中で原稿を[[復習]]するつもりだ。",
+      "options": [
+        "ふくしゅう",
+        "ふくしゅ",
+        "ふっしゅう",
+        "ふくじゅう"
+      ],
+      "explain_tr": "復 フク + 習 シュウ (uzun)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "法律",
+      "reading": "ほうりつ",
+      "meaning_tr": "hukuk, kanun",
+      "sentence": "先輩は大学で[[法律]]を勉強して、今は市の役所で働いている。",
+      "options": [
+        "ほうりつ",
+        "ほりつ",
+        "ほうれつ",
+        "ほうりち"
+      ],
+      "explain_tr": "法 ホウ (uzun) + 律 リツ."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "得意",
+      "reading": "とくい",
+      "meaning_tr": "iyi olunan şey",
+      "sentence": "人の前で話すのは[[とくい]]ではないが、みんなが期待しているので、断れなかった。",
+      "options": [
+        "得意",
+        "徳意",
+        "特意",
+        "得衣"
+      ],
+      "explain_tr": "得 (彳) kazanmak; 徳/特 aynı トク okunuşu."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "生徒",
+      "reading": "せいと",
+      "meaning_tr": "öğrenci",
+      "sentence": "先輩は高校時代、[[せいと]]会の会長だったので、その話から始めることにした。",
+      "options": [
+        "生徒",
+        "生従",
+        "生途",
+        "性徒"
+      ],
+      "explain_tr": "徒 ト öğrenci; 従 benzer görünüş, 途 aynı ト."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "納得",
+      "reading": "なっとく",
+      "meaning_tr": "ikna olma, içine sinme",
+      "sentence": "何度も書き直して、最後にやっと[[なっとく]]できる原稿ができた。",
+      "options": [
+        "納得",
+        "納徳",
+        "約得",
+        "納特"
+      ],
+      "explain_tr": "納 ナッ + 得 トク; 徳/特 tuzak."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "役所",
+      "reading": "やくしょ",
+      "meaning_tr": "belediye, resmi daire",
+      "sentence": "先輩は大学で法律を勉強して、今は市の[[やくしょ]]で働いている。",
+      "options": [
+        "役所",
+        "約所",
+        "投所",
+        "役書"
+      ],
+      "explain_tr": "役 (彳) görev; 投 (扌) çok benzer görünür."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "最後",
+      "reading": "さいご",
+      "meaning_tr": "son",
+      "sentence": "何度も書き直して、[[さいご]]にやっと納得できる原稿ができた。",
+      "options": [
+        "最後",
+        "最御",
+        "再後",
+        "最語"
+      ],
+      "explain_tr": "最 en + 後 ゴ; 再 (さい) tekrar."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "招待",
+      "reading": "しょうたい",
+      "meaning_tr": "davet",
+      "sentence": "来月、大学の先輩の結婚式に（　　）された。",
+      "options": [
+        "招待",
+        "期待",
+        "接待",
+        "待機"
+      ],
+      "explain_tr": "結婚式に招待される: düğüne davet edilmek."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "午後",
+      "reading": "ごご",
+      "meaning_tr": "öğleden sonra",
+      "sentence": "式は土曜日の（　　）二時からで、駅から会場までは徒歩十分ぐらいだそうだ。",
+      "options": [
+        "午後",
+        "最後",
+        "前後",
+        "直後"
+      ],
+      "explain_tr": "土曜日の午後二時: saat belirtir."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "役に立つ",
+      "reading": "やくにたつ",
+      "meaning_tr": "işe yaramak",
+      "sentence": "私にとっては、いつも（　　）アドバイスをくれる大切な先輩だ。",
+      "options": [
+        "役に立つ",
+        "往復する",
+        "復習する",
+        "招待する"
+      ],
+      "explain_tr": "役に立つアドバイス: faydalı tavsiye."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "往復",
+      "reading": "おうふく",
+      "meaning_tr": "gidiş dönüş",
+      "sentence": "家から会場までは（　　）で三時間かかるので、電車の中で原稿を復習するつもりだ。",
+      "options": [
+        "往復",
+        "復習",
+        "回復",
+        "反復"
+      ],
+      "explain_tr": "往復で三時間: gidiş-dönüş üç saat."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "得た",
+      "reading": "えた",
+      "meaning_tr": "kazandı, edindi",
+      "sentence": "この経験から、私は多くのことを（　　）と思う。",
+      "options": [
+        "得た",
+        "待った",
+        "招いた",
+        "従った"
+      ],
+      "explain_tr": "経験から多くのことを得る: deneyimden çok şey edinmek."
+    }
+  ]
+}

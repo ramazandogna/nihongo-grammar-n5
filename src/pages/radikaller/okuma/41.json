@@ -1,0 +1,234 @@
+{
+  "radicalId": 41,
+  "title": "新入社員の歓迎会",
+  "title_tr": "Yeni çalışan karşılama partisi",
+  "text": "先週の金曜日、会社で新入社員の[[12|歓迎会]]が開かれた。私は風邪をひいていて、あまり[[3|食欲]]がなかったが、[[1|欠席]]はしたくなかった。会場の入り口には「ようこそ」と書かれた紙が貼ってあって、みんなで新入社員を[[4|歓迎]]した。料理が[[11|次々]]に運ばれてきて、テーブルはすぐにいっぱいになった。私のコップは少し[[13|欠けて]]いたので、店員さんに替えてもらった。二次会はカラオケで、新入社員の田中さんが人気[[2|歌手]]の歌を[[14|歌った]]。田中さんはその歌が好きで、[[8|歌詞]]を見ないでも歌えるそうだ。毎朝[[15|欠かさず]]歌の練習をしているらしい。仕事に対する[[10|意欲]]も高く、自分の[[7|欠点]]もよく分かっている人だ。田中さんは「早く自分のパソコンが[[9|欲しい]]です」と笑っていた。帰る前に、課長が新しいマニュアルを配った。最初のページの[[5|目次]]を見ると、全部で百ページもあった。最後に課長が「[[6|次回]]はみんなで花見をしよう」と言った。",
+  "text_tr": "Geçen cuma şirkette yeni çalışanlar için karşılama partisi düzenlendi. Nezle olduğum için pek iştahım yoktu ama katılmamak istemedim. Salonun girişinde \"Hoş geldiniz\" yazan bir kâğıt asılıydı ve hep birlikte yeni çalışanları karşıladık. Yemekler peş peşe geldi ve masa hemen doldu. Bardağım biraz kırık olduğu için garsona değiştirttim. İkinci mekân karaokeydi; yeni çalışan Tanaka popüler bir şarkıcının şarkısını söyledi. Tanaka o şarkıyı sevdiği için sözlerine bakmadan söyleyebiliyormuş. Her sabah aksatmadan şarkı çalışıyormuş. İşe karşı istekli, kendi kusurlarının da farkında biri. Tanaka \"Bir an önce kendi bilgisayarımı istiyorum\" diye güldü. Çıkmadan önce şef yeni kılavuzu dağıttı. İlk sayfadaki içindekilere bakınca toplam yüz sayfa olduğunu gördüm. Son olarak şef \"Bir dahaki sefere hep birlikte hanami yapalım\" dedi.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "欠席",
+      "reading": "けっせき",
+      "meaning_tr": "katılmama",
+      "sentence": "私は風邪をひいていて、あまり食欲がなかったが、[[欠席]]はしたくなかった。",
+      "options": [
+        "けっせき",
+        "けつせき",
+        "けせき",
+        "けっぜき"
+      ],
+      "explain_tr": "欠 ケツ + 席 セキ → けっせき (っ)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "歌手",
+      "reading": "かしゅ",
+      "meaning_tr": "şarkıcı",
+      "sentence": "二次会はカラオケで、新入社員の田中さんが人気[[歌手]]の歌を歌った。",
+      "options": [
+        "かしゅ",
+        "かしゅう",
+        "うたしゅ",
+        "がしゅ"
+      ],
+      "explain_tr": "歌 カ + 手 シュ (kısa)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "食欲",
+      "reading": "しょくよく",
+      "meaning_tr": "iştah",
+      "sentence": "私は風邪をひいていて、あまり[[食欲]]がなかったが、欠席はしたくなかった。",
+      "options": [
+        "しょくよく",
+        "しょくよう",
+        "しょっよく",
+        "しょくゆく"
+      ],
+      "explain_tr": "食 ショク + 欲 ヨク."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "歓迎",
+      "reading": "かんげい",
+      "meaning_tr": "karşılama, hoş geldin",
+      "sentence": "会場の入り口には「ようこそ」と書かれた紙が貼ってあって、みんなで新入社員を[[歓迎]]した。",
+      "options": [
+        "かんげい",
+        "かんけい",
+        "かんげ",
+        "がんげい"
+      ],
+      "explain_tr": "歓 カン + 迎 ゲイ (゛); かんけい = 関係."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "目次",
+      "reading": "もくじ",
+      "meaning_tr": "içindekiler",
+      "sentence": "最初のページの[[目次]]を見ると、全部で百ページもあった。",
+      "options": [
+        "もくじ",
+        "もくし",
+        "めつぎ",
+        "もくつぎ"
+      ],
+      "explain_tr": "目 モク + 次 ジ (゛)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "次回",
+      "reading": "じかい",
+      "meaning_tr": "bir dahaki sefer",
+      "sentence": "最後に課長が「[[じかい]]はみんなで花見をしよう」と言った。",
+      "options": [
+        "次回",
+        "欠回",
+        "次会",
+        "吹回"
+      ],
+      "explain_tr": "次 (欠) sonraki; 欠/吹 benzer parça."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "欠点",
+      "reading": "けってん",
+      "meaning_tr": "kusur",
+      "sentence": "仕事に対する意欲も高く、自分の[[けってん]]もよく分かっている人だ。",
+      "options": [
+        "欠点",
+        "決点",
+        "欠天",
+        "次点"
+      ],
+      "explain_tr": "欠 ケツ eksik; 決 aynı ケツ, 次点 ayrı kelime."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "歌詞",
+      "reading": "かし",
+      "meaning_tr": "şarkı sözü",
+      "sentence": "田中さんはその歌が好きで、[[かし]]を見ないでも歌えるそうだ。",
+      "options": [
+        "歌詞",
+        "歌詩",
+        "歌試",
+        "欧詞"
+      ],
+      "explain_tr": "詞 kelime; 詩/試 aynı シ, 欧 歌'ya benzer."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "欲しい",
+      "reading": "ほしい",
+      "meaning_tr": "istemek",
+      "sentence": "田中さんは「早く自分のパソコンが[[ほしい]]です」と笑っていた。",
+      "options": [
+        "欲しい",
+        "浴しい",
+        "裕しい",
+        "谷しい"
+      ],
+      "explain_tr": "欲 (欠) istek; 浴/裕 aynı 谷 parçası."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "意欲",
+      "reading": "いよく",
+      "meaning_tr": "istek, şevk",
+      "sentence": "仕事に対する[[いよく]]も高く、自分の欠点もよく分かっている人だ。",
+      "options": [
+        "意欲",
+        "異欲",
+        "意浴",
+        "意谷"
+      ],
+      "explain_tr": "意 + 欲 ヨク; 浴 aynı ヨク."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "次々",
+      "reading": "つぎつぎ",
+      "meaning_tr": "peş peşe",
+      "sentence": "料理が（　　）に運ばれてきて、テーブルはすぐにいっぱいになった。",
+      "options": [
+        "次々",
+        "次第",
+        "目次",
+        "次回"
+      ],
+      "explain_tr": "料理が次々に運ばれる: yemekler art arda gelmek."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "歓迎会",
+      "reading": "かんげいかい",
+      "meaning_tr": "karşılama partisi",
+      "sentence": "先週の金曜日、会社で新入社員の（　　）が開かれた。",
+      "options": [
+        "歓迎会",
+        "歌手",
+        "欠席",
+        "食欲"
+      ],
+      "explain_tr": "新入社員の歓迎会が開かれる."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "欠けて",
+      "reading": "かけて",
+      "meaning_tr": "kırık, eksik",
+      "sentence": "私のコップは少し（　　）いたので、店員さんに替えてもらった。",
+      "options": [
+        "欠けて",
+        "欠席して",
+        "次いで",
+        "歓迎して"
+      ],
+      "explain_tr": "コップが欠ける: bardağın kenarı kırılmak."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "歌った",
+      "reading": "うたった",
+      "meaning_tr": "söyledi",
+      "sentence": "二次会はカラオケで、新入社員の田中さんが人気歌手の歌を（　　）。",
+      "options": [
+        "歌った",
+        "欲した",
+        "欠けた",
+        "歓迎した"
+      ],
+      "explain_tr": "歌を歌う: şarkı söylemek."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "欠かさず",
+      "reading": "かかさず",
+      "meaning_tr": "aksatmadan",
+      "sentence": "毎朝（　　）歌の練習をしているらしい。",
+      "options": [
+        "欠かさず",
+        "歌わず",
+        "欲張らず",
+        "次がず"
+      ],
+      "explain_tr": "毎朝欠かさず練習する: her sabah aksatmadan."
+    }
+  ]
+}

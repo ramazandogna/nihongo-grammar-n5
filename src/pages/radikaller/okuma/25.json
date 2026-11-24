@@ -1,0 +1,234 @@
+{
+  "radicalId": 25,
+  "title": "夏祭りの盆踊り",
+  "title_tr": "Yaz festivalinde Bon dansı",
+  "text": "夏祭りの日、町の[[1|道路]]は車が通れないようになっていた。駅から会場までは少し[[2|距離]]があったが、途中の[[6|踏切]]で電車が[[11|線路]]を通り過ぎると、向こうから太鼓の音が聞こえてきた。会場では、大勢の人が浴衣を着て[[7|踊って]]いた。私も友達に教えてもらって、初めて盆[[3|踊り]]に参加した。最初は[[12|足元]]ばかり見ていて、何度も友達の足を[[8|踏んで]]しまった。運動[[13|不足]]の私はすぐに疲れてしまったが、子供たちは楽しそうに[[9|跳んで]]いた。地面には、たくさんの[[4|足跡]]が残っていた。帰りは駅の地下[[14|通路]]を通ったが、静かで自分の[[10|足音]]だけが響いていた。まるで子供のころの[[5|遠足]]のようで、とても[[15|満足]]した一日だった。",
+  "text_tr": "Yaz festivali günü kasabanın yolları araç trafiğine kapatılmıştı. İstasyondan festival alanına biraz mesafe vardı ama yoldaki hemzemin geçitte tren rayların üzerinden geçince karşıdan davul sesi duyuldu. Alanda yukata giymiş bir sürü insan dans ediyordu. Ben de arkadaşlarımdan öğrenip ilk kez Bon dansına katıldım. Başta hep ayaklarıma baktım ve defalarca arkadaşımın ayağına bastım. Hareketsiz olduğum için çabucak yoruldum ama çocuklar neşeyle zıplıyordu. Yerde bir sürü ayak izi kalmıştı. Dönüşte istasyonun yeraltı geçidinden geçtim, sessizdi ve yalnızca kendi ayak seslerim yankılanıyordu. Sanki çocukluğumdaki okul gezisi gibiydi; çok tatmin edici bir gündü.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "道路",
+      "reading": "どうろ",
+      "meaning_tr": "yol",
+      "sentence": "夏祭りの日、町の[[道路]]は車が通れないようになっていた。",
+      "options": [
+        "どうろ",
+        "どろ",
+        "とうろ",
+        "どうろう"
+      ],
+      "explain_tr": "道 ドウ + 路 ロ; どろ = 泥 (çamur)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "距離",
+      "reading": "きょり",
+      "meaning_tr": "mesafe",
+      "sentence": "駅から会場までは少し[[距離]]があったが、途中の踏切で電車が線路を通り過ぎると、向こうから太鼓の音が聞こえてきた。",
+      "options": [
+        "きょり",
+        "きより",
+        "きょうり",
+        "ぎょり"
+      ],
+      "explain_tr": "距 キョ (kısa) + 離 リ."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "踊り",
+      "reading": "おどり",
+      "meaning_tr": "dans",
+      "sentence": "私も友達に教えてもらって、初めて盆[[踊り]]に参加した。",
+      "options": [
+        "おどり",
+        "おとり",
+        "おどし",
+        "ようり"
+      ],
+      "explain_tr": "踊る おどる; おとり (囮 yem) tuzaktır."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "足跡",
+      "reading": "あしあと",
+      "meaning_tr": "ayak izi",
+      "sentence": "地面には、たくさんの[[足跡]]が残っていた。",
+      "options": [
+        "あしあと",
+        "あしせき",
+        "そくあと",
+        "あしだと"
+      ],
+      "explain_tr": "足 あし + 跡 あと (ikisi de kun)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "遠足",
+      "reading": "えんそく",
+      "meaning_tr": "okul gezisi",
+      "sentence": "まるで子供のころの[[遠足]]のようで、とても満足した一日だった。",
+      "options": [
+        "えんそく",
+        "えんぞく",
+        "とおあし",
+        "えんそっく"
+      ],
+      "explain_tr": "遠 エン + 足 ソク (゛ yok)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "踏切",
+      "reading": "ふみきり",
+      "meaning_tr": "hemzemin geçit",
+      "sentence": "駅から会場までは少し距離があったが、途中の[[ふみきり]]で電車が線路を通り過ぎると、向こうから太鼓の音が聞こえてきた。",
+      "options": [
+        "踏切",
+        "踊切",
+        "路切",
+        "跳切"
+      ],
+      "explain_tr": "踏む (basmak) + 切る; hepsi ⻊ radikalli."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "踊って",
+      "reading": "おどって",
+      "meaning_tr": "dans ederek",
+      "sentence": "会場では、大勢の人が浴衣を着て[[おどって]]いた。",
+      "options": [
+        "踊って",
+        "跳って",
+        "桶って",
+        "痛って"
+      ],
+      "explain_tr": "踊 = ⻊ + 甬; 桶・痛 aynı 甬 parçalı."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "踏んで",
+      "reading": "ふんで",
+      "meaning_tr": "basarak",
+      "sentence": "最初は足元ばかり見ていて、何度も友達の足を[[ふんで]]しまった。",
+      "options": [
+        "踏んで",
+        "路んで",
+        "踊んで",
+        "沓んで"
+      ],
+      "explain_tr": "踏む = ⻊ + 水 + 日."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "跳んで",
+      "reading": "とんで",
+      "meaning_tr": "zıplayarak",
+      "sentence": "運動不足の私はすぐに疲れてしまったが、子供たちは楽しそうに[[とんで]]いた。",
+      "options": [
+        "跳んで",
+        "眺んで",
+        "桃んで",
+        "挑んで"
+      ],
+      "explain_tr": "跳ぶ = ⻊ + 兆; 眺・桃・挑 aynı 兆 parçalı."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "足音",
+      "reading": "あしおと",
+      "meaning_tr": "ayak sesi",
+      "sentence": "帰りは駅の地下通路を通ったが、静かで自分の[[あしおと]]だけが響いていた。",
+      "options": [
+        "足音",
+        "促音",
+        "足昔",
+        "走音"
+      ],
+      "explain_tr": "足 + 音; 昔 (mukashi) 音'e benzer."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "線路",
+      "reading": "せんろ",
+      "meaning_tr": "ray",
+      "sentence": "駅から会場までは少し距離があったが、途中の踏切で電車が（　　）を通り過ぎると、向こうから太鼓の音が聞こえてきた。",
+      "options": [
+        "線路",
+        "通路",
+        "進路",
+        "迷路"
+      ],
+      "explain_tr": "Trenin geçtiği yer → 線路."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "足元",
+      "reading": "あしもと",
+      "meaning_tr": "ayak ucu",
+      "sentence": "最初は（　　）ばかり見ていて、何度も友達の足を踏んでしまった。",
+      "options": [
+        "足元",
+        "足音",
+        "足跡",
+        "不足"
+      ],
+      "explain_tr": "足元ばかり見る = hep ayaklarına bakmak."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "不足",
+      "reading": "ぶそく",
+      "meaning_tr": "eksiklik",
+      "sentence": "運動（　　）の私はすぐに疲れてしまったが、子供たちは楽しそうに跳んでいた。",
+      "options": [
+        "不足",
+        "満足",
+        "足元",
+        "遠足"
+      ],
+      "explain_tr": "運動不足 = hareketsizlik."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "通路",
+      "reading": "つうろ",
+      "meaning_tr": "geçit, koridor",
+      "sentence": "帰りは駅の地下（　　）を通ったが、静かで自分の足音だけが響いていた。",
+      "options": [
+        "通路",
+        "線路",
+        "進路",
+        "回路"
+      ],
+      "explain_tr": "地下通路 = yeraltı geçidi."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "満足",
+      "reading": "まんぞく",
+      "meaning_tr": "memnuniyet",
+      "sentence": "まるで子供のころの遠足のようで、とても（　　）した一日だった。",
+      "options": [
+        "満足",
+        "不足",
+        "遠足",
+        "足元"
+      ],
+      "explain_tr": "満足した一日 = tatmin edici bir gün."
+    }
+  ]
+}

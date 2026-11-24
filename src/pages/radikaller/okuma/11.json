@@ -1,0 +1,234 @@
+{
+  "radicalId": 11,
+  "title": "面接の準備",
+  "title_tr": "Mülakat hazırlığı",
+  "text": "来週、IT会社の[[1|面接]]を受けることになりました。その会社の[[2|技術]]はとても高く、ずっと働きたいと思っていました。人事の[[3|担当]]者から、[[4|指定]]された時間に来るようにとメールが来ました。当日は[[5|直接]]会場に行かず、まず先輩と[[6|打ち合わせ]]をする予定です。先輩の[[7|指示]]どおりに、質問の答えを準備しました。緊張していますが、大学の[[8|授業]]で学んだことを生かして、前向きな[[9|気持ち]]で受けたいです。先週は、会社の説明会に[[10|招待]]されて、社員の話を聞きました。帰りに、道でごみを[[11|拾う]]社員を見て、いい会社だと感じました。交通費の[[12|支払い]]は会社がしてくれるので、レシートは[[13|捨てないで]]と言われました。家で財布の中を[[14|探す]]と、電車代を[[15|払った]]ときのレシートがちゃんとありました。",
+  "text_tr": "Gelecek hafta bir bilişim şirketinde mülakata gireceğim. O şirketin teknolojisi çok ileri ve hep orada çalışmak istemiştim. İnsan kaynakları sorumlusundan belirlenen saatte gelmem gerektiğini söyleyen bir e-posta geldi. O gün doğrudan mülakat yerine gitmeyip önce bir üst dönem arkadaşımla ön görüşme yapacağım. Onun talimatlarına göre soruların cevaplarını hazırladım. Gerginim ama üniversitedeki derslerde öğrendiklerimi kullanarak olumlu bir ruh hâliyle girmek istiyorum. Geçen hafta şirketin tanıtım toplantısına davet edildim ve çalışanları dinledim. Dönüşte yoldan çöp toplayan bir çalışanı görünce iyi bir şirket olduğunu hissettim. Yol masrafının ödemesini şirket yapacağı için fişleri atmamam söylendi. Evde cüzdanımı karıştırınca tren ücretini ödediğim zamanki fiş yerli yerinde duruyordu.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "面接",
+      "reading": "めんせつ",
+      "meaning_tr": "mülakat",
+      "sentence": "来週、IT会社の[[面接]]を受けることになりました。",
+      "options": [
+        "めんせつ",
+        "めんぜつ",
+        "めんしょう",
+        "つらせつ"
+      ],
+      "explain_tr": "面 メン + 接 セツ (゛ yok)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "技術",
+      "reading": "ぎじゅつ",
+      "meaning_tr": "teknoloji, teknik",
+      "sentence": "その会社の[[技術]]はとても高く、ずっと働きたいと思っていました。",
+      "options": [
+        "ぎじゅつ",
+        "ぎじつ",
+        "きじゅつ",
+        "ぎじゅう"
+      ],
+      "explain_tr": "技 ギ + 術 ジュツ; 記述 (きじゅつ) tuzağı."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "担当",
+      "reading": "たんとう",
+      "meaning_tr": "sorumlu",
+      "sentence": "人事の[[担当]]者から、指定された時間に来るようにとメールが来ました。",
+      "options": [
+        "たんとう",
+        "だんとう",
+        "たんどう",
+        "たんと"
+      ],
+      "explain_tr": "担 タン + 当 トウ."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "指定",
+      "reading": "してい",
+      "meaning_tr": "belirleme",
+      "sentence": "人事の担当者から、[[指定]]された時間に来るようにとメールが来ました。",
+      "options": [
+        "してい",
+        "しでい",
+        "しじょう",
+        "してき"
+      ],
+      "explain_tr": "指 シ + 定 テイ."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "直接",
+      "reading": "ちょくせつ",
+      "meaning_tr": "doğrudan",
+      "sentence": "当日は[[直接]]会場に行かず、まず先輩と打ち合わせをする予定です。",
+      "options": [
+        "ちょくせつ",
+        "ちょくぜつ",
+        "じきせつ",
+        "ちょっせつ"
+      ],
+      "explain_tr": "直 チョク + 接 セツ."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "打ち合わせ",
+      "reading": "うちあわせ",
+      "meaning_tr": "ön görüşme",
+      "sentence": "当日は直接会場に行かず、まず先輩と[[うちあわせ]]をする予定です。",
+      "options": [
+        "打ち合わせ",
+        "討ち合わせ",
+        "打ち会わせ",
+        "撃ち合わせ"
+      ],
+      "explain_tr": "打 (扌) + 合わせる; 会 değil 合."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "指示",
+      "reading": "しじ",
+      "meaning_tr": "talimat",
+      "sentence": "先輩の[[しじ]]どおりに、質問の答えを準備しました。",
+      "options": [
+        "指示",
+        "支持",
+        "指事",
+        "止示"
+      ],
+      "explain_tr": "支持 (destek) de しじ okunur."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "授業",
+      "reading": "じゅぎょう",
+      "meaning_tr": "ders",
+      "sentence": "緊張していますが、大学の[[じゅぎょう]]で学んだことを生かして、前向きな気持ちで受けたいです。",
+      "options": [
+        "授業",
+        "受業",
+        "授行",
+        "探業"
+      ],
+      "explain_tr": "授 (扌) vermek; 受 almak."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "気持ち",
+      "reading": "きもち",
+      "meaning_tr": "his",
+      "sentence": "緊張していますが、大学の授業で学んだことを生かして、前向きな[[きもち]]で受けたいです。",
+      "options": [
+        "気持ち",
+        "気待ち",
+        "気特ち",
+        "木持ち"
+      ],
+      "explain_tr": "持 (扌) tutmak; 待 beklemek."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "招待",
+      "reading": "しょうたい",
+      "meaning_tr": "davet",
+      "sentence": "先週は、会社の説明会に[[しょうたい]]されて、社員の話を聞きました。",
+      "options": [
+        "招待",
+        "招持",
+        "紹待",
+        "正体"
+      ],
+      "explain_tr": "招 (扌) çağırmak; 紹 (糸) tanıtmak."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "拾う",
+      "reading": "ひろう",
+      "meaning_tr": "yerden almak",
+      "sentence": "帰りに、道でごみを（　　）社員を見て、いい会社だと感じました。",
+      "options": [
+        "拾う",
+        "捨てる",
+        "払う",
+        "探す"
+      ],
+      "explain_tr": "ごみを拾う: çöp toplamak (捨てる tersi)."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "支払い",
+      "reading": "しはらい",
+      "meaning_tr": "ödeme",
+      "sentence": "交通費の（　　）は会社がしてくれるので、レシートは捨てないでと言われました。",
+      "options": [
+        "支払い",
+        "支持",
+        "支度",
+        "指示"
+      ],
+      "explain_tr": "交通費の支払い: yol masrafının ödenmesi."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "捨てないで",
+      "reading": "すてないで",
+      "meaning_tr": "atma",
+      "sentence": "交通費の支払いは会社がしてくれるので、レシートは（　　）と言われました。",
+      "options": [
+        "捨てないで",
+        "拾わないで",
+        "払わないで",
+        "打たないで"
+      ],
+      "explain_tr": "レシートを捨てる: fişi atmak."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "探す",
+      "reading": "さがす",
+      "meaning_tr": "aramak",
+      "sentence": "家で財布の中を（　　）と、電車代を払ったときのレシートがちゃんとありました。",
+      "options": [
+        "探す",
+        "拾う",
+        "捨てる",
+        "投げる"
+      ],
+      "explain_tr": "財布の中を探す: cüzdanda aramak."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "払った",
+      "reading": "はらった",
+      "meaning_tr": "ödedi",
+      "sentence": "家で財布の中を探すと、電車代を（　　）ときのレシートがちゃんとありました。",
+      "options": [
+        "払った",
+        "拾った",
+        "探した",
+        "投げた"
+      ],
+      "explain_tr": "電車代を払う: tren ücretini ödemek."
+    }
+  ]
+}

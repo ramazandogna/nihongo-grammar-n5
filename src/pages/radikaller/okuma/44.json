@@ -1,0 +1,234 @@
+{
+  "radicalId": 44,
+  "title": "山に囲まれた町",
+  "title_tr": "Dağlarla çevrili kasaba",
+  "text": "私の町は山に[[6|囲まれた]]静かな町です。駅の[[1|周囲]]には古い店が多く、昔の[[3|雰囲気]]が残っています。町の真ん中には大きな[[9|公園]]があり、週末は家族で[[10|地図]]を見ながら散歩します。公園では、お年寄りがテーブルを[[11|囲んで]][[4|囲碁]]を楽しんでいます。強い人がいるときは、子どもたちがその人を[[7|取り囲んで]]見ています。公園の奥では、うさぎを柵で[[14|囲って]]育てています。畑のまわりには竹の[[8|囲い]]があります。町の健康診断では、身長や[[5|胸囲]]も測ります。先月、台風で[[12|広範囲]]に停電があり、町の人はとても[[15|困って]]いました。市の支援は、町の[[13|範囲内]]に住んでいる人なら誰でも受けられます。私は今、町の歴史について調べていますが、調べる[[2|範囲]]が広くて大変です。",
+  "text_tr": "Benim kasabam dağlarla çevrili sakin bir kasaba. İstasyonun çevresinde eski dükkânlar çok ve eski zamanların havası hâlâ duruyor. Kasabanın ortasında büyük bir park var; hafta sonları ailecek haritaya bakarak yürüyüş yapıyoruz. Parkta yaşlılar bir masanın etrafına toplanıp go oynuyor. Güçlü biri olduğunda çocuklar onun etrafını sarıp izliyor. Parkın arkasında tavşanlar çitle çevrilip besleniyor. Tarlaların çevresinde bambu çit var. Kasabanın sağlık taramasında boy ve göğüs çevresi de ölçülüyor. Geçen ay tayfun yüzünden geniş bir alanda elektrik kesildi ve kasaba halkı çok zor durumda kaldı. Belediyenin yardımından kasaba sınırları içinde oturan herkes yararlanabiliyor. Şu an kasabanın tarihini araştırıyorum ama araştırma kapsamı geniş olduğu için zor.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "周囲",
+      "reading": "しゅうい",
+      "meaning_tr": "çevre",
+      "sentence": "駅の[[周囲]]には古い店が多く、昔の雰囲気が残っています。",
+      "options": [
+        "しゅうい",
+        "しゅい",
+        "しゅうえ",
+        "じゅうい"
+      ],
+      "explain_tr": "周 シュウ (uzun) + 囲 イ."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "範囲",
+      "reading": "はんい",
+      "meaning_tr": "kapsam",
+      "sentence": "私は今、町の歴史について調べていますが、調べる[[範囲]]が広くて大変です。",
+      "options": [
+        "はんい",
+        "ばんい",
+        "はんえ",
+        "はんかこ"
+      ],
+      "explain_tr": "範 ハン + 囲 イ."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "雰囲気",
+      "reading": "ふんいき",
+      "meaning_tr": "atmosfer, hava",
+      "sentence": "駅の周囲には古い店が多く、昔の[[雰囲気]]が残っています。",
+      "options": [
+        "ふんいき",
+        "ふいんき",
+        "ふんいけ",
+        "ぶんいき"
+      ],
+      "explain_tr": "Sık hata ふいんき! Doğrusu ふん・い・き."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "囲碁",
+      "reading": "いご",
+      "meaning_tr": "go oyunu",
+      "sentence": "公園では、お年寄りがテーブルを囲んで[[囲碁]]を楽しんでいます。",
+      "options": [
+        "いご",
+        "いこ",
+        "かこご",
+        "いごう"
+      ],
+      "explain_tr": "囲 イ + 碁 ゴ."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "胸囲",
+      "reading": "きょうい",
+      "meaning_tr": "göğüs çevresi",
+      "sentence": "町の健康診断では、身長や[[胸囲]]も測ります。",
+      "options": [
+        "きょうい",
+        "きょい",
+        "むねい",
+        "きょうかこ"
+      ],
+      "explain_tr": "胸 キョウ + 囲 イ."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "囲まれた",
+      "reading": "かこまれた",
+      "meaning_tr": "çevrilmiş",
+      "sentence": "私の町は山に[[かこまれた]]静かな町です。",
+      "options": [
+        "囲まれた",
+        "困まれた",
+        "固まれた",
+        "因まれた"
+      ],
+      "explain_tr": "囲 = 囗 + 井; 困・固・因 benzer görünür."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "取り囲んで",
+      "reading": "とりかこんで",
+      "meaning_tr": "etrafını sarıp",
+      "sentence": "強い人がいるときは、子どもたちがその人を[[とりかこんで]]見ています。",
+      "options": [
+        "取り囲んで",
+        "取り困んで",
+        "取り固んで",
+        "取り回んで"
+      ],
+      "explain_tr": "取り囲む = etrafını kuşatmak."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "囲い",
+      "reading": "かこい",
+      "meaning_tr": "çit, çevirme",
+      "sentence": "畑のまわりには竹の[[かこい]]があります。",
+      "options": [
+        "囲い",
+        "困い",
+        "固い",
+        "国い"
+      ],
+      "explain_tr": "囲い かこい; 固い かたい."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "公園",
+      "reading": "こうえん",
+      "meaning_tr": "park",
+      "sentence": "町の真ん中には大きな[[こうえん]]があり、週末は家族で地図を見ながら散歩します。",
+      "options": [
+        "公園",
+        "公遠",
+        "公円",
+        "公国"
+      ],
+      "explain_tr": "園 de 囗 içindedir; 遠・円 aynı ses tuzağı."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "地図",
+      "reading": "ちず",
+      "meaning_tr": "harita",
+      "sentence": "町の真ん中には大きな公園があり、週末は家族で[[ちず]]を見ながら散歩します。",
+      "options": [
+        "地図",
+        "地回",
+        "池図",
+        "地団"
+      ],
+      "explain_tr": "図 ズ 'çizim'; 囗 radikali."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "囲んで",
+      "reading": "かこんで",
+      "meaning_tr": "etrafına toplanıp",
+      "sentence": "公園では、お年寄りがテーブルを（　　）囲碁を楽しんでいます。",
+      "options": [
+        "囲んで",
+        "囲まれて",
+        "開いて",
+        "閉じて"
+      ],
+      "explain_tr": "テーブルを囲む = masanın etrafında toplanmak."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "広範囲",
+      "reading": "こうはんい",
+      "meaning_tr": "geniş alan",
+      "sentence": "先月、台風で（　　）に停電があり、町の人はとても困っていました。",
+      "options": [
+        "広範囲",
+        "周囲",
+        "雰囲気",
+        "範囲内"
+      ],
+      "explain_tr": "広範囲に = geniş bir bölgede."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "範囲内",
+      "reading": "はんいない",
+      "meaning_tr": "sınırlar içinde",
+      "sentence": "市の支援は、町の（　　）に住んでいる人なら誰でも受けられます。",
+      "options": [
+        "範囲内",
+        "範囲外",
+        "周囲",
+        "広範囲"
+      ],
+      "explain_tr": "範囲内 içinde, 範囲外 dışında."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "囲って",
+      "reading": "かこって",
+      "meaning_tr": "çevirip",
+      "sentence": "公園の奥では、うさぎを柵で（　　）育てています。",
+      "options": [
+        "囲って",
+        "囲まれて",
+        "困って",
+        "回って"
+      ],
+      "explain_tr": "柵で囲う = çitle çevirmek."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "困って",
+      "reading": "こまって",
+      "meaning_tr": "zor durumda",
+      "sentence": "先月、台風で広範囲に停電があり、町の人はとても（　　）いました。",
+      "options": [
+        "困って",
+        "囲って",
+        "回って",
+        "固まって"
+      ],
+      "explain_tr": "困る = sıkıntıda olmak; 囲 ile karıştırma."
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "radicalId": 22,
+  "title": "大雪の夜",
+  "title_tr": "Yoğun kar gecesi",
+  "text": "去年の冬、私の町に[[1|大雪]]が降った。朝から空は暗い[[2|雪雲]]におおわれ、夜になると[[6|雷]]まで鳴り始めた。そして突然、[[7|停電]]になった。[[11|電気]]がつかないので、家の中は寒くて体が[[8|震えた]]。古いラジオに新しい[[12|電池]]を入れてつけると、近くで小さな[[3|地震]]もあったというニュースが流れた。家族はろうそくの周りに集まり、いつもと違う不思議な[[4|雰囲気]]の中で話をした。次の朝、窓を開けると、外は一面の[[13|雪]]で、子供たちが[[9|雪だるま]]を作っていた。空には[[14|雲]]一つなく、[[5|電線]]に積もった雪がきらきら光っていた。その日は[[10|電車]]も止まっていたので、父は会社に[[15|電話]]で遅れると連絡した。",
+  "text_tr": "Geçen kış kasabama yoğun kar yağdı. Sabahtan beri gökyüzü karanlık kar bulutlarıyla kaplıydı, gece olunca gök gürültüsü bile başladı. Sonra birden elektrikler kesildi. Elektrik yanmadığı için ev soğuktu ve vücudum titredi. Eski radyoya yeni pil takıp açınca yakınlarda küçük bir deprem olduğu haberi geldi. Aile mumun etrafında toplandı ve her zamankinden farklı, tuhaf bir atmosferde sohbet ettik. Ertesi sabah pencereyi açınca dışarısı bembeyaz kardı, çocuklar kardan adam yapıyordu. Gökyüzünde tek bir bulut yoktu, elektrik tellerine birikmiş kar pırıl pırıl parlıyordu. O gün trenler de durduğu için babam şirketi telefonla arayıp geç kalacağını bildirdi.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "大雪",
+      "reading": "おおゆき",
+      "meaning_tr": "yoğun kar",
+      "sentence": "去年の冬、私の町に[[大雪]]が降った。",
+      "options": [
+        "おおゆき",
+        "おおせつ",
+        "だいせつ",
+        "おゆき"
+      ],
+      "explain_tr": "Hava durumu kelimesi: 大 おお + 雪 ゆき (kun)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "雪雲",
+      "reading": "ゆきぐも",
+      "meaning_tr": "kar bulutu",
+      "sentence": "朝から空は暗い[[雪雲]]におおわれ、夜になると雷まで鳴り始めた。",
+      "options": [
+        "ゆきぐも",
+        "ゆきくも",
+        "せつうん",
+        "ゆきも"
+      ],
+      "explain_tr": "雲 くも birleşikte ぐも olur (rendaku)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "地震",
+      "reading": "じしん",
+      "meaning_tr": "deprem",
+      "sentence": "古いラジオに新しい電池を入れてつけると、近くで小さな[[地震]]もあったというニュースが流れた。",
+      "options": [
+        "じしん",
+        "ちしん",
+        "じじん",
+        "ちじん"
+      ],
+      "explain_tr": "地 ジ + 震 シン."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "雰囲気",
+      "reading": "ふんいき",
+      "meaning_tr": "atmosfer",
+      "sentence": "家族はろうそくの周りに集まり、いつもと違う不思議な[[雰囲気]]の中で話をした。",
+      "options": [
+        "ふんいき",
+        "ふいんき",
+        "ふんいけ",
+        "ぶんいき"
+      ],
+      "explain_tr": "Sık yapılan hata ふいんき; doğrusu ふん・い・き."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "電線",
+      "reading": "でんせん",
+      "meaning_tr": "elektrik teli",
+      "sentence": "空には雲一つなく、[[電線]]に積もった雪がきらきら光っていた。",
+      "options": [
+        "でんせん",
+        "てんせん",
+        "でんせい",
+        "でんぜん"
+      ],
+      "explain_tr": "電 デン + 線 セン."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "雷",
+      "reading": "かみなり",
+      "meaning_tr": "gök gürültüsü",
+      "sentence": "朝から空は暗い雪雲におおわれ、夜になると[[かみなり]]まで鳴り始めた。",
+      "options": [
+        "雷",
+        "雪",
+        "電",
+        "霜"
+      ],
+      "explain_tr": "雨 + 田 = 雷 かみなり."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "停電",
+      "reading": "ていでん",
+      "meaning_tr": "elektrik kesintisi",
+      "sentence": "そして突然、[[ていでん]]になった。",
+      "options": [
+        "停電",
+        "低電",
+        "停雷",
+        "亭電"
+      ],
+      "explain_tr": "停 (durmak) + 電; 低・亭 de テイ okunur."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "震えた",
+      "reading": "ふるえた",
+      "meaning_tr": "titredi",
+      "sentence": "電気がつかないので、家の中は寒くて体が[[ふるえた]]。",
+      "options": [
+        "震えた",
+        "振えた",
+        "農えた",
+        "雲えた"
+      ],
+      "explain_tr": "震える (雨 radikali); 振る (sallamak) tuzaktır."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "雪だるま",
+      "reading": "ゆきだるま",
+      "meaning_tr": "kardan adam",
+      "sentence": "次の朝、窓を開けると、外は一面の雪で、子供たちが[[ゆきだるま]]を作っていた。",
+      "options": [
+        "雪だるま",
+        "雷だるま",
+        "霜だるま",
+        "雲だるま"
+      ],
+      "explain_tr": "ゆき = 雪 (雨 + ヨ)."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "電車",
+      "reading": "でんしゃ",
+      "meaning_tr": "tren",
+      "sentence": "その日は[[でんしゃ]]も止まっていたので、父は会社に電話で遅れると連絡した。",
+      "options": [
+        "電車",
+        "雷車",
+        "電単",
+        "雪車"
+      ],
+      "explain_tr": "電 ile 雷 karıştırılmamalı."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "電気",
+      "reading": "でんき",
+      "meaning_tr": "elektrik",
+      "sentence": "（　　）がつかないので、家の中は寒くて体が震えた。",
+      "options": [
+        "電気",
+        "電池",
+        "電話",
+        "電車"
+      ],
+      "explain_tr": "電気がつかない = ışık/elektrik yanmıyor."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "電池",
+      "reading": "でんち",
+      "meaning_tr": "pil",
+      "sentence": "古いラジオに新しい（　　）を入れてつけると、近くで小さな地震もあったというニュースが流れた。",
+      "options": [
+        "電池",
+        "電線",
+        "電車",
+        "電報"
+      ],
+      "explain_tr": "Radyoya takılan şey → 電池."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "雪",
+      "reading": "ゆき",
+      "meaning_tr": "kar",
+      "sentence": "次の朝、窓を開けると、外は一面の（　　）で、子供たちが雪だるまを作っていた。",
+      "options": [
+        "雪",
+        "雲",
+        "雷",
+        "雨"
+      ],
+      "explain_tr": "一面の雪 = her yer bembeyaz kar."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "雲",
+      "reading": "くも",
+      "meaning_tr": "bulut",
+      "sentence": "空には（　　）一つなく、電線に積もった雪がきらきら光っていた。",
+      "options": [
+        "雲",
+        "雪",
+        "雷",
+        "雨"
+      ],
+      "explain_tr": "雲一つない = tek bulut yok."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "電話",
+      "reading": "でんわ",
+      "meaning_tr": "telefon",
+      "sentence": "その日は電車も止まっていたので、父は会社に（　　）で遅れると連絡した。",
+      "options": [
+        "電話",
+        "電線",
+        "電池",
+        "停電"
+      ],
+      "explain_tr": "Geç kalacağını bildirmek → 電話で連絡."
+    }
+  ]
+}

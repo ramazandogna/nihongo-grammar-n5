@@ -1,0 +1,234 @@
+{
+  "radicalId": 35,
+  "title": "忙しい一日",
+  "title_tr": "Yoğun bir gün",
+  "text": "朝から[[1|頭痛]]がして、会社に行くのがつらかった。課長に「[[12|顔色]]が悪いけど、大丈夫？」と聞かれた。今日はお客様からの[[2|依頼]]で、急いで[[7|書類]]を作らなければならなかった。課長は私を[[8|信頼]]して、この仕事を任せてくれたのだ。資料には、商品の[[14|種類]]と値段を[[6|順番]]に並べた。でも、計算に一つ[[13|問題]]が見つかったので、隣の先輩に確認を[[15|頼んだ]]。先輩はいつも[[4|笑顔]]で手伝ってくれる。昼休みには、最近社内で[[9|話題]]になっているカフェに行った。そこでコーヒーを買って、[[3|領収書]]をもらった。帰りに銀行に寄って、給料の一部を[[5|預金]]した。週末は旅行に行くので、犬を友達に[[11|預ける]]ことにした。夜は家で子どもの[[10|宿題]]を見てあげた。",
+  "text_tr": "Sabahtan beri başım ağrıyordu ve işe gitmek zor geldi. Şef \"Rengin solgun, iyi misin?\" diye sordu. Bugün bir müşterinin talebiyle acilen belge hazırlamam gerekiyordu. Şef bana güvenip bu işi bana bırakmıştı. Belgede ürün çeşitlerini ve fiyatlarını sırayla dizdim. Ama hesapta bir sorun çıkınca yandaki kıdemliden kontrol etmesini rica ettim. Kıdemlim hep güler yüzle yardım eder. Öğle arasında son zamanlarda şirkette gündem olan kafeye gittim. Orada kahve alıp makbuz aldım. Dönüşte bankaya uğrayıp maaşımın bir kısmını yatırdım. Hafta sonu seyahate gideceğim için köpeği bir arkadaşa emanet etmeye karar verdim. Akşam evde çocuğumun ödevine baktım.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "頭痛",
+      "reading": "ずつう",
+      "meaning_tr": "baş ağrısı",
+      "sentence": "朝から[[頭痛]]がして、会社に行くのがつらかった。",
+      "options": [
+        "ずつう",
+        "とうつう",
+        "あたまいた",
+        "ずうつう"
+      ],
+      "explain_tr": "頭 burada ズ (トウ değil) + 痛 ツウ."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "依頼",
+      "reading": "いらい",
+      "meaning_tr": "talep, rica",
+      "sentence": "今日はお客様からの[[依頼]]で、急いで書類を作らなければならなかった。",
+      "options": [
+        "いらい",
+        "いたい",
+        "えらい",
+        "いれい"
+      ],
+      "explain_tr": "依 イ + 頼 ライ."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "領収書",
+      "reading": "りょうしゅうしょ",
+      "meaning_tr": "makbuz",
+      "sentence": "そこでコーヒーを買って、[[領収書]]をもらった。",
+      "options": [
+        "りょうしゅうしょ",
+        "りょしゅうしょ",
+        "りょうしゅしょ",
+        "れいしゅうしょ"
+      ],
+      "explain_tr": "領 リョウ + 収 シュウ + 書 ショ; uzun ünlüler önemli."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "笑顔",
+      "reading": "えがお",
+      "meaning_tr": "güler yüz",
+      "sentence": "先輩はいつも[[笑顔]]で手伝ってくれる。",
+      "options": [
+        "えがお",
+        "えかお",
+        "しょうがん",
+        "わらいがお"
+      ],
+      "explain_tr": "Özel okunuş: えがお (顔 → がお)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "預金",
+      "reading": "よきん",
+      "meaning_tr": "banka mevduatı",
+      "sentence": "帰りに銀行に寄って、給料の一部を[[預金]]した。",
+      "options": [
+        "よきん",
+        "よぎん",
+        "ようきん",
+        "あずきん"
+      ],
+      "explain_tr": "預 ヨ + 金 キン; 貯金 ちょきん ile karıştırma."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "順番",
+      "reading": "じゅんばん",
+      "meaning_tr": "sıra",
+      "sentence": "資料には、商品の種類と値段を[[じゅんばん]]に並べた。",
+      "options": [
+        "順番",
+        "順晩",
+        "訓番",
+        "純番"
+      ],
+      "explain_tr": "順 (頁) sıra; 訓 benzer görünüş, 純 aynı ジュン."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "書類",
+      "reading": "しょるい",
+      "meaning_tr": "belge",
+      "sentence": "今日はお客様からの依頼で、急いで[[しょるい]]を作らなければならなかった。",
+      "options": [
+        "書類",
+        "書数",
+        "書累",
+        "諸類"
+      ],
+      "explain_tr": "類 (頁) tür; 数 benzer, 累 aynı ルイ."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "信頼",
+      "reading": "しんらい",
+      "meaning_tr": "güven",
+      "sentence": "課長は私を[[しんらい]]して、この仕事を任せてくれたのだ。",
+      "options": [
+        "信頼",
+        "信頻",
+        "信類",
+        "伸頼"
+      ],
+      "explain_tr": "頼 (頁) güvenmek; 頻/類 benzer görünür."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "話題",
+      "reading": "わだい",
+      "meaning_tr": "gündem konusu",
+      "sentence": "昼休みには、最近社内で[[わだい]]になっているカフェに行った。",
+      "options": [
+        "話題",
+        "話台",
+        "話顕",
+        "語題"
+      ],
+      "explain_tr": "題 (頁) konu; 台 aynı ダイ."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "宿題",
+      "reading": "しゅくだい",
+      "meaning_tr": "ödev",
+      "sentence": "夜は家で子どもの[[しゅくだい]]を見てあげた。",
+      "options": [
+        "宿題",
+        "宿第",
+        "宿顕",
+        "宿代"
+      ],
+      "explain_tr": "題 ダイ; 第/代 aynı ダイ."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "預ける",
+      "reading": "あずける",
+      "meaning_tr": "emanet etmek",
+      "sentence": "週末は旅行に行くので、犬を友達に（　　）ことにした。",
+      "options": [
+        "預ける",
+        "頼る",
+        "願う",
+        "飾る"
+      ],
+      "explain_tr": "犬を友達に預ける: köpeği arkadaşa bırakmak."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "顔色",
+      "reading": "かおいろ",
+      "meaning_tr": "yüz rengi",
+      "sentence": "課長に「（　　）が悪いけど、大丈夫？」と聞かれた。",
+      "options": [
+        "顔色",
+        "笑顔",
+        "頭痛",
+        "話題"
+      ],
+      "explain_tr": "顔色が悪い: solgun görünmek."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "問題",
+      "reading": "もんだい",
+      "meaning_tr": "sorun",
+      "sentence": "でも、計算に一つ（　　）が見つかったので、隣の先輩に確認を頼んだ。",
+      "options": [
+        "問題",
+        "話題",
+        "種類",
+        "順番"
+      ],
+      "explain_tr": "計算に問題が見つかる: hesapta sorun çıkmak."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "種類",
+      "reading": "しゅるい",
+      "meaning_tr": "çeşit",
+      "sentence": "資料には、商品の（　　）と値段を順番に並べた。",
+      "options": [
+        "種類",
+        "順番",
+        "書類",
+        "問題"
+      ],
+      "explain_tr": "商品の種類: ürün çeşitleri."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "頼んだ",
+      "reading": "たのんだ",
+      "meaning_tr": "rica ettim",
+      "sentence": "でも、計算に一つ問題が見つかったので、隣の先輩に確認を（　　）。",
+      "options": [
+        "頼んだ",
+        "預けた",
+        "願った",
+        "祝った"
+      ],
+      "explain_tr": "確認を頼む: kontrol etmesini rica etmek."
+    }
+  ]
+}

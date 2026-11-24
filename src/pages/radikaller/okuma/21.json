@@ -1,0 +1,234 @@
+{
+  "radicalId": 21,
+  "title": "修学旅行の計画",
+  "title_tr": "Okul gezisinin planı",
+  "text": "クラスで修学旅行についてのアンケートを取ったところ、ほとんどの学生から[[1|回答]]があった。一番人気だったのは、[[2|季節]]の花が美しい北海道だった。しかし、旅行の[[11|予算]]は一人五万円までと決まっている。私は係として、交通費や宿泊費を[[6|計算]]した。北海道まで電車で行くと、[[7|切符]]代だけで三万円かかる。「[[12|第一]]に考えるべきなのは安全だ」と先生は言った。先生は[[13|笑顔]]で、「お金の[[3|管理]]はみんなでしっかりやろう」と[[8|答えた]]。みんなが[[14|平等]]にお金を出し、余計なものを買わないように[[4|節約]]することにした。[[10|第二]]回目の話し合いで、最終的な計画は思ったより[[15|簡単]]に決まった。[[5|算数]]が苦手な私も今回は役に立ててうれしかったし、みんなでたくさん[[9|笑う]]楽しい旅行にしたい。",
+  "text_tr": "Sınıfta okul gezisi hakkında anket yaptığımızda neredeyse tüm öğrencilerden yanıt geldi. En popüler yer mevsim çiçeklerinin güzel olduğu Hokkaido'ydu. Ancak gezi bütçesi kişi başı elli bin yenle sınırlı. Ben sorumlu olarak ulaşım ve konaklama masraflarını hesapladım. Hokkaido'ya trenle gidilirse sadece bilet parası otuz bin yen tutuyor. Öğretmen \"Öncelikle düşünülmesi gereken güvenliktir\" dedi. Öğretmen gülümseyerek \"Para yönetimini hep birlikte sıkı yapalım\" diye cevap verdi. Herkes eşit para verip gereksiz şeyler almamak için tasarruf etmeye karar verdik. İkinci toplantıda nihai plan düşündüğümüzden kolay belirlendi. Aritmetikte kötü olan ben de bu sefer işe yaradığım için sevindim; hep birlikte bolca güleceğimiz eğlenceli bir gezi olsun istiyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "回答",
+      "reading": "かいとう",
+      "meaning_tr": "yanıt",
+      "sentence": "クラスで修学旅行についてのアンケートを取ったところ、ほとんどの学生から[[回答]]があった。",
+      "options": [
+        "かいとう",
+        "かいどう",
+        "がいとう",
+        "かいこう"
+      ],
+      "explain_tr": "回 カイ + 答 トウ (゛ yok)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "季節",
+      "reading": "きせつ",
+      "meaning_tr": "mevsim",
+      "sentence": "一番人気だったのは、[[季節]]の花が美しい北海道だった。",
+      "options": [
+        "きせつ",
+        "きせっ",
+        "きせち",
+        "きぜつ"
+      ],
+      "explain_tr": "季 キ + 節 セツ; きぜつ = 気絶 (bayılma)."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "管理",
+      "reading": "かんり",
+      "meaning_tr": "yönetim",
+      "sentence": "先生は笑顔で、「お金の[[管理]]はみんなでしっかりやろう」と答えた。",
+      "options": [
+        "かんり",
+        "がんり",
+        "かんりい",
+        "けんり"
+      ],
+      "explain_tr": "管 カン + 理 リ; けんり = 権利 (hak)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "節約",
+      "reading": "せつやく",
+      "meaning_tr": "tasarruf",
+      "sentence": "みんなが平等にお金を出し、余計なものを買わないように[[節約]]することにした。",
+      "options": [
+        "せつやく",
+        "せっやく",
+        "せつやっ",
+        "せつあく"
+      ],
+      "explain_tr": "節 セツ + 約 ヤク; や önünde っ olmaz."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "算数",
+      "reading": "さんすう",
+      "meaning_tr": "aritmetik",
+      "sentence": "[[算数]]が苦手な私も今回は役に立ててうれしかったし、みんなでたくさん笑う楽しい旅行にしたい。",
+      "options": [
+        "さんすう",
+        "さんずう",
+        "さんすい",
+        "ざんすう"
+      ],
+      "explain_tr": "算 サン + 数 スウ (uzun)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "計算",
+      "reading": "けいさん",
+      "meaning_tr": "hesap",
+      "sentence": "私は係として、交通費や宿泊費を[[けいさん]]した。",
+      "options": [
+        "計算",
+        "計箕",
+        "計賛",
+        "軽算"
+      ],
+      "explain_tr": "算 (竹 radikali); 賛 de サン okunur."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "切符",
+      "reading": "きっぷ",
+      "meaning_tr": "bilet",
+      "sentence": "北海道まで電車で行くと、[[きっぷ]]代だけで三万円かかる。",
+      "options": [
+        "切符",
+        "切府",
+        "切付",
+        "切苻"
+      ],
+      "explain_tr": "符 (竹 radikali); 府・付 フ okunur ama farklıdır."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "答えた",
+      "reading": "こたえた",
+      "meaning_tr": "cevap verdi",
+      "sentence": "先生は笑顔で、「お金の管理はみんなでしっかりやろう」と[[こたえた]]。",
+      "options": [
+        "答えた",
+        "合えた",
+        "箸えた",
+        "管えた"
+      ],
+      "explain_tr": "答える (竹); 合 alt parçasıdır ama tek başına あう'dur."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "笑う",
+      "reading": "わらう",
+      "meaning_tr": "gülmek",
+      "sentence": "算数が苦手な私も今回は役に立ててうれしかったし、みんなでたくさん[[わらう]]楽しい旅行にしたい。",
+      "options": [
+        "笑う",
+        "咲う",
+        "竿う",
+        "美う"
+      ],
+      "explain_tr": "笑 (竹 radikali); 咲 (さく, çiçek açmak) benzer görünür."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "第二",
+      "reading": "だいに",
+      "meaning_tr": "ikinci",
+      "sentence": "[[だいに]]回目の話し合いで、最終的な計画は思ったより簡単に決まった。",
+      "options": [
+        "第二",
+        "弟二",
+        "台二",
+        "代二"
+      ],
+      "explain_tr": "Sıra eki 第 (竹); 弟 (kardeş) benzer görünür."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "予算",
+      "reading": "よさん",
+      "meaning_tr": "bütçe",
+      "sentence": "しかし、旅行の（　　）は一人五万円までと決まっている。",
+      "options": [
+        "予算",
+        "計算",
+        "予定",
+        "予約"
+      ],
+      "explain_tr": "Kişi başı 50 bin yen sınırı → 予算."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "第一",
+      "reading": "だいいち",
+      "meaning_tr": "öncelikle, birinci",
+      "sentence": "「（　　）に考えるべきなのは安全だ」と先生は言った。",
+      "options": [
+        "第一",
+        "次第",
+        "平等",
+        "簡単"
+      ],
+      "explain_tr": "第一に = her şeyden önce."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "笑顔",
+      "reading": "えがお",
+      "meaning_tr": "gülümseme",
+      "sentence": "先生は（　　）で、「お金の管理はみんなでしっかりやろう」と答えた。",
+      "options": [
+        "笑顔",
+        "笑い",
+        "素顔",
+        "横顔"
+      ],
+      "explain_tr": "笑顔で言う = gülümseyerek söylemek."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "平等",
+      "reading": "びょうどう",
+      "meaning_tr": "eşit",
+      "sentence": "みんなが（　　）にお金を出し、余計なものを買わないように節約することにした。",
+      "options": [
+        "平等",
+        "平均",
+        "平和",
+        "平日"
+      ],
+      "explain_tr": "平等に出す = eşit olarak vermek."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "簡単",
+      "reading": "かんたん",
+      "meaning_tr": "kolay",
+      "sentence": "第二回目の話し合いで、最終的な計画は思ったより（　　）に決まった。",
+      "options": [
+        "簡単",
+        "管理",
+        "計算",
+        "季節"
+      ],
+      "explain_tr": "思ったより簡単に = düşünülenden kolay."
+    }
+  ]
+}

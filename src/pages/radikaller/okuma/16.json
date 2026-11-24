@@ -1,0 +1,234 @@
+{
+  "radicalId": 16,
+  "title": "山でキャンプ",
+  "title_tr": "Dağda kamp",
+  "text": "夏休みに友達と山へキャンプに行った。[[1|自然]]の中で過ごすのは初めてだったが、キャンプ場は[[11|無料]]で使えた。夜は[[7|焼肉]]をしようと思ったが、炭がなかなか[[8|燃え]]なかった。友達が持ってきた[[2|燃料]]を使うと、やっと火がついたが、[[9|煙]]がたくさん出た。料理が得意な友達は[[3|熱心]]に肉を焼いてくれた。キャンプ場の中は[[12|禁煙]]なので、たばこを吸う人はいなかった。夜中に[[4|照明]]を消すと、星が町とは[[13|全然]]違って見えた。次の日、友達が少し[[5|発熱]]したので、[[14|無理]]をしないで早く帰ることにした。体調が悪いときに休むのは[[15|当然]]のことだ。帰りの電車で、今回のキャンプに[[6|点数]]をつけるなら八十点で、[[10|欠点]]は準備不足だったと話して笑った。",
+  "text_tr": "Yaz tatilinde arkadaşlarımla dağa kampa gittim. Doğanın içinde vakit geçirmek ilk defaydı ama kamp alanı ücretsiz kullanılabiliyordu. Akşam mangal yapmayı düşündük ama kömür bir türlü yanmadı. Arkadaşın getirdiği yakıtı kullanınca sonunda ateş yandı ama çok duman çıktı. Yemekte iyi olan arkadaşım hevesle eti pişirdi. Kamp alanında sigara yasak olduğu için sigara içen kimse yoktu. Gece ışıkları söndürünce yıldızlar şehirdekinden bambaşka göründü. Ertesi gün bir arkadaşın biraz ateşi çıktığı için zorlamadan erken dönmeye karar verdik. Hastayken dinlenmek elbette doğaldır. Dönüş treninde bu kampa puan verecek olsak seksen olur, kusuru da hazırlıksızlıktı diye konuşup güldük.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "自然",
+      "reading": "しぜん",
+      "meaning_tr": "doğa",
+      "sentence": "[[自然]]の中で過ごすのは初めてだったが、キャンプ場は無料で使えた。",
+      "options": [
+        "しぜん",
+        "じぜん",
+        "しねん",
+        "しせん"
+      ],
+      "explain_tr": "自 シ (ジ değil) + 然 ゼン."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "燃料",
+      "reading": "ねんりょう",
+      "meaning_tr": "yakıt",
+      "sentence": "友達が持ってきた[[燃料]]を使うと、やっと火がついたが、煙がたくさん出た。",
+      "options": [
+        "ねんりょう",
+        "ねんりょ",
+        "ぜんりょう",
+        "ねんりょく"
+      ],
+      "explain_tr": "燃 ネン + 料 リョウ (uzun); 然 ゼン ile karıştırma."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "熱心",
+      "reading": "ねっしん",
+      "meaning_tr": "hevesli, gayretli",
+      "sentence": "料理が得意な友達は[[熱心]]に肉を焼いてくれた。",
+      "options": [
+        "ねっしん",
+        "ねつしん",
+        "ねしん",
+        "ねっじん"
+      ],
+      "explain_tr": "熱 ネツ + 心 シン → ねっしん (küçük っ)."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "照明",
+      "reading": "しょうめい",
+      "meaning_tr": "aydınlatma",
+      "sentence": "夜中に[[照明]]を消すと、星が町とは全然違って見えた。",
+      "options": [
+        "しょうめい",
+        "しょめい",
+        "しょうみょう",
+        "てるめい"
+      ],
+      "explain_tr": "照 ショウ (uzun) + 明 メイ; しょめい = 署名 (imza)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "発熱",
+      "reading": "はつねつ",
+      "meaning_tr": "ateşlenme",
+      "sentence": "次の日、友達が少し[[発熱]]したので、無理をしないで早く帰ることにした。",
+      "options": [
+        "はつねつ",
+        "はっねつ",
+        "はつれつ",
+        "ほつねつ"
+      ],
+      "explain_tr": "発 ハツ + 熱 ネツ; ね önünde っ olmaz."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "点数",
+      "reading": "てんすう",
+      "meaning_tr": "puan",
+      "sentence": "帰りの電車で、今回のキャンプに[[てんすう]]をつけるなら八十点で、欠点は準備不足だったと話して笑った。",
+      "options": [
+        "点数",
+        "点教",
+        "店数",
+        "点類"
+      ],
+      "explain_tr": "点 (nokta, puan) + 数 (sayı); 教 benzer görünür."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "焼肉",
+      "reading": "やきにく",
+      "meaning_tr": "ızgara et",
+      "sentence": "夜は[[やきにく]]をしようと思ったが、炭がなかなか燃えなかった。",
+      "options": [
+        "焼肉",
+        "焼内",
+        "暁肉",
+        "焼月"
+      ],
+      "explain_tr": "焼く (pişirmek, 火 radikali) + 肉; 暁 benzer görünür."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "燃え",
+      "reading": "もえ",
+      "meaning_tr": "yanma (燃える)",
+      "sentence": "夜は焼肉をしようと思ったが、炭がなかなか[[もえ]]なかった。",
+      "options": [
+        "燃え",
+        "然え",
+        "焼え",
+        "照え"
+      ],
+      "explain_tr": "燃える = yanmak; 然 'öyle' anlamındadır, 火 eklenince 燃 olur."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "煙",
+      "reading": "けむり",
+      "meaning_tr": "duman",
+      "sentence": "友達が持ってきた燃料を使うと、やっと火がついたが、[[けむり]]がたくさん出た。",
+      "options": [
+        "煙",
+        "畑",
+        "灰",
+        "炎"
+      ],
+      "explain_tr": "けむり = 煙; 灰 はい (kül), 炎 ほのお (alev)."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "欠点",
+      "reading": "けってん",
+      "meaning_tr": "kusur",
+      "sentence": "帰りの電車で、今回のキャンプに点数をつけるなら八十点で、[[けってん]]は準備不足だったと話して笑った。",
+      "options": [
+        "欠点",
+        "欠店",
+        "決点",
+        "欠典"
+      ],
+      "explain_tr": "欠 (eksik) + 点; 決 aynı ケツ okunur ama 'karar' demektir."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "無料",
+      "reading": "むりょう",
+      "meaning_tr": "ücretsiz",
+      "sentence": "自然の中で過ごすのは初めてだったが、キャンプ場は（　　）で使えた。",
+      "options": [
+        "無料",
+        "無理",
+        "無事",
+        "無言"
+      ],
+      "explain_tr": "Kamp alanı para ödemeden kullanılabiliyordu → 無料."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "禁煙",
+      "reading": "きんえん",
+      "meaning_tr": "sigara içmek yasak",
+      "sentence": "キャンプ場の中は（　　）なので、たばこを吸う人はいなかった。",
+      "options": [
+        "禁煙",
+        "喫煙",
+        "発熱",
+        "照明"
+      ],
+      "explain_tr": "Sigara içen yoktu → 禁煙; 喫煙 sigara içmek demektir."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "全然",
+      "reading": "ぜんぜん",
+      "meaning_tr": "tamamen, hiç",
+      "sentence": "夜中に照明を消すと、星が町とは（　　）違って見えた。",
+      "options": [
+        "全然",
+        "当然",
+        "自然",
+        "天然"
+      ],
+      "explain_tr": "全然違う = bambaşka."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "無理",
+      "reading": "むり",
+      "meaning_tr": "zorlama, imkânsız",
+      "sentence": "次の日、友達が少し発熱したので、（　　）をしないで早く帰ることにした。",
+      "options": [
+        "無理",
+        "無事",
+        "無料",
+        "無言"
+      ],
+      "explain_tr": "無理をしない = kendini zorlamamak."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "当然",
+      "reading": "とうぜん",
+      "meaning_tr": "doğal, elbette",
+      "sentence": "体調が悪いときに休むのは（　　）のことだ。",
+      "options": [
+        "当然",
+        "全然",
+        "自然",
+        "突然"
+      ],
+      "explain_tr": "〜のは当然だ = ... çok doğaldır."
+    }
+  ]
+}

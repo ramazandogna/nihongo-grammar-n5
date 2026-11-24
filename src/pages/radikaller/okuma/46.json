@@ -1,0 +1,234 @@
+{
+  "radicalId": 46,
+  "title": "初めての出張",
+  "title_tr": "İlk iş seyahati",
+  "text": "先週、初めて一人で大阪へ[[1|出張]]しました。大事な会議で発表することになっていて、前の晩からとても[[2|緊張]]していました。部長に「[[6|頑張って]]ね」と言われ、少し元気が出ました。会議では、相手の会社が工場を[[8|拡張]]する計画について、私たちの[[3|主張]]をはっきり述べました。相手の担当者は最後まで「値段が高すぎる」と[[11|言い張って]]いましたが、私はあまり[[9|強く]]反論しませんでした。[[4|欲張り]]すぎると、交渉がうまくいかないからです。会議の後、先輩の田中さんが私の腕を[[5|引っ張って]]、「よかったよ」と言ってくれました。田中さんは誰よりも努力する[[13|頑張り屋]]で、私の目標です。帰りの駅では、警備員が荷物を[[10|見張って]]いて、壁には「忘れ物に注意」という[[7|張り紙]]がありました。私はプレッシャーに[[14|弱く]]、すぐ手が震えてしまう性格です。でも今回は、最後まで気を[[12|張って]]いられました。次の会議でも、いい[[15|緊張感]]を持って臨みたいです。",
+  "text_tr": "Geçen hafta ilk kez tek başıma Osaka'ya iş seyahatine gittim. Önemli bir toplantıda sunum yapacaktım ve önceki geceden beri çok gergindim. Müdürüm \"Başarılar\" deyince biraz moralim düzeldi. Toplantıda karşı şirketin fabrikayı genişletme planı hakkında görüşümüzü açıkça anlattım. Karşı taraftaki sorumlu sonuna kadar \"fiyat çok yüksek\" diye diretti ama ben çok sert itiraz etmedim. Çok açgözlü olursan pazarlık iyi gitmez. Toplantıdan sonra kıdemlim Tanaka kolumdan çekip \"iyiydi\" dedi. Tanaka herkesten çok çabalayan biri ve benim hedefim. Dönüşte istasyonda güvenlik görevlisi bagajları gözlüyordu, duvarda da \"eşyalarınızı unutmayın\" yazan bir afiş vardı. Ben baskıya dayanıksız, ellerim hemen titreyen biriyim. Ama bu sefer sonuna kadar dikkatimi toplayabildim. Bir sonraki toplantıda da iyi bir gerginlikle hazır olmak istiyorum.",
+  "questions": [
+    {
+      "n": 1,
+      "type": "yomi",
+      "word": "出張",
+      "reading": "しゅっちょう",
+      "meaning_tr": "iş seyahati",
+      "sentence": "先週、初めて一人で大阪へ[[出張]]しました。",
+      "options": [
+        "しゅっちょう",
+        "しゅつちょう",
+        "しゅちょう",
+        "しゅっちょ"
+      ],
+      "explain_tr": "シュツ+チョウ → しゅっちょう (っ + uzun ō)."
+    },
+    {
+      "n": 2,
+      "type": "yomi",
+      "word": "緊張",
+      "reading": "きんちょう",
+      "meaning_tr": "gerginlik",
+      "sentence": "大事な会議で発表することになっていて、前の晩からとても[[緊張]]していました。",
+      "options": [
+        "きんちょう",
+        "きんちょ",
+        "きんしょう",
+        "ぎんちょう"
+      ],
+      "explain_tr": "緊 キン + 張 チョウ."
+    },
+    {
+      "n": 3,
+      "type": "yomi",
+      "word": "主張",
+      "reading": "しゅちょう",
+      "meaning_tr": "iddia, görüş",
+      "sentence": "会議では、相手の会社が工場を拡張する計画について、私たちの[[主張]]をはっきり述べました。",
+      "options": [
+        "しゅちょう",
+        "しゅうちょう",
+        "しゅっちょう",
+        "しゅじょう"
+      ],
+      "explain_tr": "主 シュ (kısa) + 張 チョウ; 出張 ile karıştırma."
+    },
+    {
+      "n": 4,
+      "type": "yomi",
+      "word": "欲張り",
+      "reading": "よくばり",
+      "meaning_tr": "açgözlü",
+      "sentence": "[[欲張り]]すぎると、交渉がうまくいかないからです。",
+      "options": [
+        "よくばり",
+        "よくはり",
+        "ほしばり",
+        "よっぱり"
+      ],
+      "explain_tr": "欲 よく + 張り → ばり (rendaku)."
+    },
+    {
+      "n": 5,
+      "type": "yomi",
+      "word": "引っ張って",
+      "reading": "ひっぱって",
+      "meaning_tr": "çekip",
+      "sentence": "会議の後、先輩の田中さんが私の腕を[[引っ張って]]、「よかったよ」と言ってくれました。",
+      "options": [
+        "ひっぱって",
+        "ひっはって",
+        "ひきはって",
+        "ひっばって"
+      ],
+      "explain_tr": "引っ + 張る → ぱる (っ'dan sonra ぱ)."
+    },
+    {
+      "n": 6,
+      "type": "hyouki",
+      "word": "頑張って",
+      "reading": "がんばって",
+      "meaning_tr": "gayret et",
+      "sentence": "部長に「[[がんばって]]ね」と言われ、少し元気が出ました。",
+      "options": [
+        "頑張って",
+        "頑長って",
+        "顔張って",
+        "頑帳って"
+      ],
+      "explain_tr": "頑 ガン + 張る; 顔 'yüz' benzer."
+    },
+    {
+      "n": 7,
+      "type": "hyouki",
+      "word": "張り紙",
+      "reading": "はりがみ",
+      "meaning_tr": "duvar ilanı",
+      "sentence": "帰りの駅では、警備員が荷物を見張っていて、壁には「忘れ物に注意」という[[はりがみ]]がありました。",
+      "options": [
+        "張り紙",
+        "張り神",
+        "帳り紙",
+        "長り紙"
+      ],
+      "explain_tr": "紙 'kâğıt' → がみ."
+    },
+    {
+      "n": 8,
+      "type": "hyouki",
+      "word": "拡張",
+      "reading": "かくちょう",
+      "meaning_tr": "genişletme",
+      "sentence": "会議では、相手の会社が工場を[[かくちょう]]する計画について、私たちの主張をはっきり述べました。",
+      "options": [
+        "拡張",
+        "拡帳",
+        "格張",
+        "拡長"
+      ],
+      "explain_tr": "拡 カク 'genişletmek' + 張."
+    },
+    {
+      "n": 9,
+      "type": "hyouki",
+      "word": "強く",
+      "reading": "つよく",
+      "meaning_tr": "sert, güçlü",
+      "sentence": "相手の担当者は最後まで「値段が高すぎる」と言い張っていましたが、私はあまり[[つよく]]反論しませんでした。",
+      "options": [
+        "強く",
+        "弱く",
+        "弘く",
+        "弾く"
+      ],
+      "explain_tr": "強 (弓 radikali) つよい; 弱 よわい."
+    },
+    {
+      "n": 10,
+      "type": "hyouki",
+      "word": "見張って",
+      "reading": "みはって",
+      "meaning_tr": "gözetleyip",
+      "sentence": "帰りの駅では、警備員が荷物を[[みはって]]いて、壁には「忘れ物に注意」という張り紙がありました。",
+      "options": [
+        "見張って",
+        "見帳って",
+        "目張って",
+        "見長って"
+      ],
+      "explain_tr": "見張る = nöbet tutmak, gözlemek."
+    },
+    {
+      "n": 11,
+      "type": "bunmyaku",
+      "word": "言い張って",
+      "reading": "いいはって",
+      "meaning_tr": "diretip",
+      "sentence": "相手の担当者は最後まで「値段が高すぎる」と（　　）いましたが、私はあまり強く反論しませんでした。",
+      "options": [
+        "言い張って",
+        "引っ張って",
+        "見張って",
+        "頑張って"
+      ],
+      "explain_tr": "～と言い張る = ...diye diretmek."
+    },
+    {
+      "n": 12,
+      "type": "bunmyaku",
+      "word": "張って",
+      "reading": "はって",
+      "meaning_tr": "gererek (dikkatli)",
+      "sentence": "でも今回は、最後まで気を（　　）いられました。",
+      "options": [
+        "張って",
+        "引いて",
+        "貼って",
+        "伸ばして"
+      ],
+      "explain_tr": "気を張る = dikkatini/gerginliğini korumak."
+    },
+    {
+      "n": 13,
+      "type": "bunmyaku",
+      "word": "頑張り屋",
+      "reading": "がんばりや",
+      "meaning_tr": "çok çalışkan kişi",
+      "sentence": "田中さんは誰よりも努力する（　　）で、私の目標です。",
+      "options": [
+        "頑張り屋",
+        "欲張り",
+        "恥ずかしがり屋",
+        "見張り"
+      ],
+      "explain_tr": "努力する人 = 頑張り屋."
+    },
+    {
+      "n": 14,
+      "type": "bunmyaku",
+      "word": "弱く",
+      "reading": "よわく",
+      "meaning_tr": "zayıf",
+      "sentence": "私はプレッシャーに（　　）、すぐ手が震えてしまう性格です。",
+      "options": [
+        "弱く",
+        "強く",
+        "張り",
+        "引き"
+      ],
+      "explain_tr": "プレッシャーに弱い = baskıya dayanıksız."
+    },
+    {
+      "n": 15,
+      "type": "bunmyaku",
+      "word": "緊張感",
+      "reading": "きんちょうかん",
+      "meaning_tr": "gerginlik duygusu",
+      "sentence": "次の会議でも、いい（　　）を持って臨みたいです。",
+      "options": [
+        "緊張感",
+        "出張費",
+        "主張",
+        "拡張"
+      ],
+      "explain_tr": "いい緊張感を持つ = sağlıklı bir gerginlik taşımak."
+    }
+  ]
+}
