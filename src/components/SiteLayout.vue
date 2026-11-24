@@ -119,7 +119,8 @@ function dismissReminder() {
 </script>
 
 <template>
-  <div class="flex min-h-dvh flex-col">
+  <!-- Always an app: on a wide screen the page sits in a phone-width frame. -->
+  <div class="app-frame flex min-h-dvh flex-col">
     <header class="border-hair bg-surface/80 sticky top-0 z-20 border-b backdrop-blur">
       <PageContainer width="reading" class="relative flex h-12 items-center gap-2">
         <RouterLink

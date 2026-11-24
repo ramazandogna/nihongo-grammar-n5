@@ -36,3 +36,46 @@ export function mixedSets(items: SampleItem[], sets: number, size: number, seed 
 /** Score band: <75 failed, ≥75 pass, ≥85 good, ≥90 strong. */
 export type Band = 'fail' | 'pass' | 'good' | 'strong'
 export const band = (p: number): Band => (p >= 90 ? 'strong' : p >= 85 ? 'good' : p >= 75 ? 'pass' : 'fail')
+
+/**
+ * `sets` pools of exactly `size` distinct indices (when there are enough items),
+ * dealt round-robin from a hash-stable order with n3 items first, so coverage
+ * spreads across sets; once every item is used the order wraps around.
+ */
+export function coverSets(items: SampleItem[], sets: number, size: number, seed: string): number[][] {
+  const by = (xs: number[]) => xs.sort((a, b) => hash(seed + items[a]!.key) - hash(seed + items[b]!.key))
+  const idx = items.map((_, i) => i)
+  const order = [...by(idx.filter((i) => items[i]!.n3 === true)), ...by(idx.filter((i) => items[i]!.n3 !== true))]
+  const out: number[][] = Array.from({ length: sets }, () => [])
+  const cap = Math.min(size, order.length)
+  if (!order.length) return out
+  let p = 0
+  for (let k = 0; k < sets * cap; k++) {
+    const set = out[k % sets]!
+    for (let tries = 0; tries < order.length; tries++) {
+      const i = order[p++ % order.length]!
+      if (!set.includes(i)) {
+        set.push(i)
+        break
+      }
+    }
+  }
+  return out.map((s) => s.sort((a, b) => a - b))
+}
+
+export interface MissLike {
+  n: number
+  path?: string[]
+}
+/** Sum miss counts by `path[level]`, most first. */
+export function tallyMisses(misses: MissLike[], level: number, top = 10): { label: string; n: number }[] {
+  const m = new Map<string, number>()
+  for (const x of misses) {
+    const k = x.path?.[level]
+    if (k) m.set(k, (m.get(k) ?? 0) + x.n)
+  }
+  return [...m]
+    .map(([label, n]) => ({ label, n }))
+    .sort((a, b) => b.n - a.n || a.label.localeCompare(b.label))
+    .slice(0, top)
+}

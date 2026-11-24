@@ -6,6 +6,8 @@
 
 @import 'tailwindcss';
 @import 'rei-kit/web.css';
+/* The phone geometry BaseSheet reads (`shell-frame`), so a sheet lines up with the app frame. */
+@import 'rei-kit/shell/mobile.css';
 
 @theme {
   /* ── Motion: one vocabulary for every transition on the site ──
@@ -429,5 +431,27 @@ u.target {
   from {
     opacity: 0;
     transform: translateY(10px);
+  }
+}
+
+/* ── The app frame ─────────────────────────────────────────────────────────
+   The site is a phone app everywhere. On a phone the frame is the screen; on
+   a wider window it is a 430px column (the kit's shell width) and the window
+   around it is muted. The document still scrolls, so the sticky header works. */
+.app-frame {
+  width: 100%;
+  max-width: 430px;
+  margin-inline: auto;
+  background: var(--color-canvas);
+  overflow-x: clip;
+}
+@media (min-width: 480px) {
+  html,
+  body {
+    background: var(--color-muted);
+  }
+  .app-frame {
+    border-inline: 1px solid var(--color-hair);
+    box-shadow: 0 0 48px rgb(0 0 0 / 0.12);
   }
 }
