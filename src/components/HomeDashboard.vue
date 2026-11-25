@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
-import { BookOpen, ChevronRight, Flame, Headphones, Play, Target, Trophy } from 'lucide-vue-next'
+import { Flame, Play, Trophy } from 'lucide-vue-next'
 
 import { summarize, type Summary } from '@/lib/dashboard'
 import { usePageContext } from '@/lib/page'
@@ -40,42 +40,6 @@ const S = {
   grammar: ['Gramer', 'Grammar'],
   examShort: ['Geçmiş sınav · dinleme', 'Past paper · listening'],
   reading: ['Okuma (問題4・5) · dinleme', 'Reading (問題4・5) · listening'],
-}
-const LEVELS = [
-  {
-    level: 'N5',
-    links: [
-      { to: '/n5/', label: S.grammar, icon: BookOpen },
-      { to: '/n5/', label: S.vocab, icon: Target },
-    ],
-  },
-  {
-    level: 'N4',
-    links: [
-      { to: '/n4/', label: S.grammar, icon: BookOpen },
-      { to: '/n4/13-15/', label: [`13–15 · ${S.grammar[0]}`, `13–15 · ${S.grammar[1]}`], icon: BookOpen },
-    ],
-  },
-  {
-    level: 'N3',
-    links: [
-      { to: '/blue-book/', label: [`Blue Book · ${S.grammar[0]}`, `Blue Book · ${S.grammar[1]}`], icon: BookOpen },
-      { to: '/past-n3/', label: S.examShort, icon: Headphones },
-      { to: '/kanji-n3-book/', label: S.reading, icon: BookOpen },
-      { to: '/radikaller/', label: S.vocab, icon: Target },
-    ],
-  },
-]
-
-const level = ref<'N5' | 'N4' | 'N3'>('N3')
-const current = computed(() => LEVELS.find((l) => l.level === level.value)!)
-function onLevelKey(e: KeyboardEvent) {
-  const i = LEVELS.findIndex((l) => l.level === level.value)
-  const n = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : null
-  if (n === null) return
-  e.preventDefault()
-  level.value = LEVELS[(n + LEVELS.length) % LEVELS.length]!.level as typeof level.value
-  ;((e.currentTarget as HTMLElement).children[(n + LEVELS.length) % LEVELS.length] as HTMLElement)?.focus()
 }
 const sum = ref<Summary | null>(null)
 onMounted(() => {
@@ -172,43 +136,5 @@ const date = (iso: string) =>
       </ul>
     </div>
 
-    <!-- JLPT by level: one card, a level picker, that level's ways in -->
-    <section class="surface rounded-card grid gap-3 p-4" aria-labelledby="jlpt-title">
-      <div class="flex items-center justify-between gap-3">
-        <h2 id="jlpt-title" class="font-bold">{{ pick(S.jlpt) }}</h2>
-        <div role="tablist" class="bg-muted rounded-control flex gap-1 p-1" @keydown="onLevelKey">
-          <button
-            v-for="lv in LEVELS"
-            :key="lv.level"
-            type="button"
-            role="tab"
-            :aria-selected="level === lv.level"
-            :tabindex="level === lv.level ? 0 : -1"
-            class="focus-ring rounded-control press min-h-11 min-w-11 px-2 text-sm font-extrabold"
-            :class="level === lv.level ? 'bg-primary text-on-primary shadow-sm' : 'text-ink-soft hover:text-ink'"
-            @click="level = lv.level as typeof level"
-          >
-            {{ lv.level }}
-          </button>
-        </div>
-      </div>
-      <Transition name="fade-up" mode="out-in">
-        <ul :key="level" role="tabpanel" class="grid gap-1">
-          <li v-for="l in current.links" :key="l.to + l.label[0]">
-            <RouterLink
-              :to="l.to"
-              class="focus-ring rounded-control press group flex min-h-12 items-center gap-3 px-2 hover:bg-[var(--color-muted)]"
-            >
-              <span class="bg-primary/10 rounded-control grid size-9 shrink-0 place-items-center"
-                ><component :is="l.icon" class="text-primary size-[18px]" aria-hidden="true"
-              /></span>
-              <span class="min-w-0 flex-1 text-[15px] font-medium">{{ pick(l.label) }}</span>
-              <ChevronRight class="text-ink-soft size-4 shrink-0" aria-hidden="true" />
-            </RouterLink>
-          </li>
-        </ul>
-      </Transition>
-      <p v-if="level === 'N3'" class="text-ink-soft text-xs">{{ pick(S.jlptHint) }}</p>
-    </section>
   </div>
 </template>

@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import { CircleHelp, Lightbulb, MessageCircle, MessagesSquare, ReceiptText } from 'lucide-vue-next'
-import { BaseButton, BaseCard } from 'rei-kit'
+import { BaseButton, BaseCard, CircularProgress } from 'rei-kit'
+
+import StampToggle from '@/components/StampToggle.vue'
+import { accuracy, loadHistory } from '@/lib/quiz-store'
+import { band } from '@/lib/radikal-sets'
 
 import JpText from '@/components/JpText.vue'
 import MasteryQuiz, { type Question } from '@/components/MasteryQuiz.vue'
@@ -59,6 +63,53 @@ function open(c: number, v: 'learn' | 'test' = 'learn') {
   cat.value = c
   view.value = v
 }
+
+/* ── Learned words and test scores, the same way as the radicals page ── */
+const LEARNED = 'nihongo-matsuya:learned'
+const learned = ref(new Set<string>())
+const scores = ref(new Map<number, number>())
+function readScores() {
+  const m = new Map<number, number>()
+  for (let k = -1; k < cats.length; k++) {
+    const h = loadHistory(`matsuya:${k}`)
+    if (h.length) m.set(k, accuracy(h[h.length - 1]!))
+  }
+  scores.value = m
+}
+onMounted(() => {
+  try {
+    const raw = localStorage.getItem(LEARNED)
+    if (raw) learned.value = new Set((JSON.parse(raw) as unknown[]).filter((x): x is string => typeof x === 'string'))
+  } catch {
+    // No storage: start empty.
+  }
+  readScores()
+})
+watch(cat, (c) => {
+  if (c === null) readScores()
+})
+const wordKey = (w: Word) => `${w.w}|${w.r}`
+function toggleLearned(i: number) {
+  const k = wordKey(all[i]!)
+  const s = new Set(learned.value)
+  if (s.has(k)) s.delete(k)
+  else s.add(k)
+  learned.value = s
+  try {
+    localStorage.setItem(LEARNED, JSON.stringify([...s]))
+  } catch {
+    // No storage: kept for this visit only.
+  }
+}
+const learnedIn = (c: number) => idsOf(c).filter((i) => learned.value.has(wordKey(all[i]!))).length
+const tone = (p: number) => {
+  const b = band(p)
+  return b === 'fail' ? 'var(--color-negative)' : b === 'pass' ? 'var(--color-warning)' : 'var(--color-positive)'
+}
+const badge = (p: number) =>
+  band(p) === 'strong'
+    ? { color: 'var(--color-canvas)', background: tone(p) }
+    : { color: tone(p), background: `color-mix(in oklab, ${tone(p)} 14%, transparent)` }
 
 const pool = computed(() => (cat.value === -1 ? all.map((_, i) => i) : cat.value === null ? [] : idsOf(cat.value)))
 
@@ -124,9 +175,26 @@ function build(i: number): Question {
       <h2 class="text-ink-soft mb-2 text-sm font-semibold">Kelimeler</h2>
       <div class="grid gap-3">
         <BaseCard v-for="(c, k) in cats" :key="k">
-          <div class="flex flex-wrap items-baseline justify-between gap-2">
-            <h2 class="font-bold">{{ c.title }}</h2>
-            <span class="text-ink-soft text-sm">{{ idsOf(k).length }} kelime</span>
+          <div class="flex items-center gap-3">
+            <CircularProgress
+              size="md"
+              tone="positive"
+              class="shrink-0"
+              :value="learnedIn(k)"
+              :max="idsOf(k).length"
+              :label="`${learnedIn(k)}/${idsOf(k).length} öğrenildi`"
+              ><span class="text-xs font-bold tabular-nums">{{ learnedIn(k) }}</span></CircularProgress
+            >
+            <div class="min-w-0 flex-1">
+              <h2 class="font-bold">{{ c.title }}</h2>
+              <span class="text-ink-soft text-sm">{{ learnedIn(k) }}/{{ idsOf(k).length }} kelime öğrenildi</span>
+            </div>
+            <span
+              v-if="scores.has(k)"
+              class="shrink-0 rounded-full px-2 py-0.5 text-xs font-bold tabular-nums"
+              :style="badge(scores.get(k)!)"
+              >Test %{{ scores.get(k) }}<template v-if="scores.get(k)! < 75"> · kaldı</template></span
+            >
           </div>
           <div class="mt-3 grid grid-cols-2 gap-2">
             <BaseButton variant="secondary" size="sm" @click="open(k)">学 {{ t.learn }}</BaseButton>
@@ -227,17 +295,35 @@ function build(i: number): Question {
 
       <div v-if="cat >= 0 && view === 'learn'" class="grid gap-3">
         <p class="bg-muted rounded-control border-primary border-s-4 px-4 py-3 text-[15px]" v-html="cats[cat]!.note" />
-        <BaseCard v-for="i in idsOf(cat)" :key="i" padding="sm">
-          <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <span class="jp min-w-32 text-2xl leading-[2.1]" lang="ja" v-html="rubyWord(all[i]!.w, all[i]!.r)" />
+        <BaseCard
+          v-for="i in idsOf(cat)"
+          :key="i"
+          padding="sm"
+          class="kanji-card"
+          :class="learned.has(wordKey(all[i]!)) ? 'kanji-learned' : ''"
+        >
+          <div class="flex items-start gap-3">
+            <div class="grid min-w-0 flex-1 gap-0.5">
+            <span class="jp text-2xl leading-[2.1]" lang="ja" v-html="rubyWord(all[i]!.w, all[i]!.r)" />
             <span class="min-w-0 flex-1">
               <span class="block font-semibold"><RevealText :text="all[i]!.tr" /></span>
               <span class="text-ink-soft block text-sm">{{ all[i]!.r }} · {{ all[i]!.romaji }}</span>
               <span v-if="all[i]!.note" class="text-ink-soft block text-sm" v-html="all[i]!.note" />
             </span>
+            </div>
+            <StampToggle
+              class="shrink-0"
+              layout="stack"
+              size="sm"
+              :checked="learned.has(wordKey(all[i]!))"
+              label="öğrendim"
+              @toggle="toggleLearned(i)"
+            />
           </div>
         </BaseCard>
-        <BaseButton @click="view = 'test'">{{ t.test }} →</BaseButton>
+        <BaseButton @click="view = 'test'"
+          >{{ t.test }} →<template v-if="scores.has(cat)"> · son %{{ scores.get(cat) }}</template></BaseButton
+        >
       </div>
 
       <MasteryQuiz

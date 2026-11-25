@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import { BaseSheet } from 'rei-kit'
 
 import HomeDashboard from '@/components/HomeDashboard.vue'
 import SiteLayout from '@/components/SiteLayout.vue'
 import { usePage } from '@/lib/page'
-import { LANG_FLAG, LANG_LABEL } from '@/lib/i18n'
 import { ref } from 'vue'
 import { BookOpen, BookOpenText, Brush, ChevronRight, Mail, MessagesSquare, Newspaper, Scale } from 'lucide-vue-next'
 
@@ -16,26 +16,20 @@ const { pick, lang } = usePage('/')
 const text = (x: { title: string; description: string; en: { title: string; description: string } }) =>
   lang.value === 'en' ? x.en : x
 
-/** “Türkçe · English · 中文” for a card’s flags. */
-const langNames = (p: SitePage, sep: string) => p.langs.map((x) => LANG_LABEL[x]).join(sep)
-
 /** Open block, remembered so coming back to the menu lands in the same place. */
 const open = ref<Group | null>(null)
-try {
-  const saved = sessionStorage.getItem('nihongo-folder')
-  open.value = GROUPS.find((g) => g.id === saved)?.id ?? null
-} catch {}
 function toggle(g: Group) {
   open.value = open.value === g ? null : g
-  try {
-    sessionStorage.setItem('nihongo-folder', open.value ?? '')
-  } catch {}
 }
 /** Each block's icon; the grammar book opens when expanded. */
 const groupIcon = (name: MenuGroup['icon'], isOpen: boolean) =>
   ({ grammar: isOpen ? BookOpenText : BookOpen, reading: Newspaper, kanji: Brush, phrases: MessagesSquare })[name]
 /** A block's pages; hidden ones are reached from inside another page. */
-const inGroup = (g: Group) => PAGES.filter((p) => !p.hidden && (p.group ?? 'grammar') === g)
+/** Higher level first (N3 → N4 → N5), so the current level sits on top. */
+const ORDER = ['/blue-book/', '/n4/', '/n5/', '/past-n3/', '/kanji-n3-book/', '/radikaller/', '/kanji-book-2/']
+const rank = (p: SitePage) => (ORDER.indexOf(p.path) + 1 || 99)
+const inGroup = (g: Group) =>
+  PAGES.filter((p) => !p.hidden && (p.group ?? 'grammar') === g).sort((a, b) => rank(a) - rank(b))
 
 const ABOUT = {
   title: ['Hakkında', 'About'],
@@ -91,72 +85,58 @@ const hello = (() => {
     <HomeDashboard class="mb-8" />
 
     <h2 class="text-ink-soft mb-2 px-1 text-xs font-bold tracking-wider uppercase">{{ pick(SECTIONS) }}</h2>
-    <nav aria-label="Nihongo" class="grid gap-3">
-      <section
+    <!-- Four square tiles; a tile opens its sections in a sheet, so nothing scrolls away. -->
+    <nav aria-label="Nihongo" class="grid grid-cols-2 gap-3">
+      <button
         v-for="(g, gi) in GROUPS"
         :key="g.id"
-        class="surface rounded-card rise-in overflow-hidden"
+        type="button"
+        class="surface rounded-card rise-in focus-ring press lift flex aspect-square min-h-0 flex-col items-start justify-between overflow-hidden p-4 text-start"
         :style="{ '--stagger': gi }"
+        :aria-haspopup="'dialog'"
+        @click="toggle(g.id)"
       >
-        <button
-          type="button"
-          class="focus-ring press flex min-h-16 w-full items-center gap-4 p-4 text-start"
-          :aria-expanded="open === g.id"
-          @click="toggle(g.id)"
-        >
-          <span class="bg-primary/10 rounded-control grid size-12 shrink-0 place-items-center" aria-hidden="true"
-            ><component :is="groupIcon(g.icon, open === g.id)" class="text-primary size-6" aria-hidden="true"
-          /></span>
-          <span class="min-w-0 flex-1">
-            <span class="block font-bold">{{ text(g).title }}</span>
-            <span class="text-ink-soft block text-sm">{{ text(g).description }}</span>
+        <span class="bg-primary/10 rounded-control grid size-12 place-items-center" aria-hidden="true"
+          ><component :is="groupIcon(g.icon, false)" class="text-primary size-7" aria-hidden="true"
+        /></span>
+        <span class="w-full">
+          <span class="flex items-center justify-between gap-2">
+            <span class="text-lg font-bold">{{ text(g).title }}</span>
+            <span class="bg-muted text-ink-soft rounded-full px-2 py-0.5 text-xs font-bold tabular-nums">{{
+              inGroup(g.id).length
+            }}</span>
           </span>
-          <span class="bg-muted text-ink-soft rounded-full px-2 py-0.5 text-xs font-bold tabular-nums">{{
-            inGroup(g.id).length
-          }}</span>
-          <ChevronRight
-            class="text-ink-soft size-5 shrink-0 transition-transform duration-300"
-            :class="open === g.id ? 'rotate-90' : ''"
-            aria-hidden="true"
-          />
-        </button>
-        <Transition name="fade-up">
-          <ul v-if="open === g.id" class="border-hair grid gap-2 border-t p-3">
-            <li v-for="p in inGroup(g.id)" :key="p.path">
-              <RouterLink
-                :to="p.path"
-                class="bg-muted focus-ring rounded-control press lift group flex items-center gap-3 p-3"
-              >
-                <span
-                  :data-palette="p.palette"
-                  class="bg-surface text-primary font-jp rounded-control grid size-11 shrink-0 place-items-center text-xl"
-                  aria-hidden="true"
-                  >{{ p.icon }}</span
-                >
-                <span class="min-w-0 flex-1">
-                  <span class="block font-bold">{{ text(p).title }}</span>
-                  <span class="text-ink-soft line-clamp-2 block text-sm">{{ text(p).description }}</span>
-                  <span
-                    class="mt-1.5 flex gap-1"
-                    role="img"
-                    :aria-label="langNames(p, ', ')"
-                    :title="langNames(p, ' · ')"
-                    ><span
-                      v-for="x in p.langs"
-                      :key="x"
-                      class="bg-surface text-ink-soft rounded-cell px-1.5 py-0.5 text-[11px] font-bold"
-                      aria-hidden="true"
-                      >{{ LANG_FLAG[x] }}</span
-                    ></span
-                  >
-                </span>
-                <ChevronRight class="text-ink-soft group-hover:text-primary size-5 shrink-0" aria-hidden="true" />
-              </RouterLink>
-            </li>
-          </ul>
-        </Transition>
-      </section>
+          <span class="text-ink-soft line-clamp-2 block text-xs leading-snug">{{ text(g).description }}</span>
+        </span>
+      </button>
     </nav>
+    <BaseSheet
+      :model-value="open !== null"
+      :title="open ? text(GROUPS.find((x) => x.id === open)!).title : ''"
+      :close-label="pick(['Kapat', 'Close'])"
+      @update:model-value="(v: boolean) => !v && toggle(open!)"
+    >
+      <ul v-if="open" class="grid gap-2 pb-2">
+        <li v-for="p in inGroup(open)" :key="p.path">
+          <RouterLink
+            :to="p.path"
+            class="bg-muted focus-ring rounded-control press lift group flex items-center gap-3 p-3"
+          >
+            <span
+              :data-palette="p.palette"
+              class="bg-surface text-primary font-jp rounded-control grid size-12 shrink-0 place-items-center text-2xl"
+              aria-hidden="true"
+              >{{ p.icon }}</span
+            >
+            <span class="min-w-0 flex-1">
+              <span class="block font-bold">{{ text(p).title }}</span>
+              <span class="text-ink-soft line-clamp-2 block text-sm">{{ text(p).description }}</span>
+            </span>
+            <ChevronRight class="text-ink-soft group-hover:text-primary size-5 shrink-0" aria-hidden="true" />
+          </RouterLink>
+        </li>
+      </ul>
+    </BaseSheet>
     <p class="text-ink-soft mt-4 text-center text-xs">© 2026 Ramazan Doğan · rei-kit</p>
 
     <!-- About: who made it, the license, and how to get in touch. The address
