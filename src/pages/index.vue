@@ -6,9 +6,9 @@ import SiteLayout from '@/components/SiteLayout.vue'
 import { usePage } from '@/lib/page'
 import { LANG_FLAG, LANG_LABEL } from '@/lib/i18n'
 import { ref } from 'vue'
-import { BriefcaseBusiness, ChevronRight, Folder, FolderOpen, Library, Mail, Scale } from 'lucide-vue-next'
+import { BookOpen, BookOpenText, Brush, ChevronRight, Mail, MessagesSquare, Newspaper, Scale } from 'lucide-vue-next'
 
-import { GROUPS, PAGES, type Group, type SitePage } from '@/site'
+import { GROUPS, PAGES, type Group, type MenuGroup, type SitePage } from '@/site'
 
 const { pick, lang } = usePage('/')
 
@@ -19,10 +19,11 @@ const text = (x: { title: string; description: string; en: { title: string; desc
 /** “Türkçe · English · 中文” for a card’s flags. */
 const langNames = (p: SitePage, sep: string) => p.langs.map((x) => LANG_LABEL[x]).join(sep)
 
-/** Open folder, remembered so coming back to the menu lands in the same place. */
+/** Open block, remembered so coming back to the menu lands in the same place. */
 const open = ref<Group | null>(null)
 try {
-  open.value = (sessionStorage.getItem('nihongo-folder') as Group | null) ?? null
+  const saved = sessionStorage.getItem('nihongo-folder')
+  open.value = GROUPS.find((g) => g.id === saved)?.id ?? null
 } catch {}
 function toggle(g: Group) {
   open.value = open.value === g ? null : g
@@ -30,17 +31,18 @@ function toggle(g: Group) {
     sessionStorage.setItem('nihongo-folder', open.value ?? '')
   } catch {}
 }
-/** Each folder's icon; the school folder opens when expanded. */
-const groupIcon = (name: 'library' | 'folder' | 'briefcase', isOpen: boolean) =>
-  name === 'folder' ? (isOpen ? FolderOpen : Folder) : name === 'library' ? Library : BriefcaseBusiness
-const inGroup = (g: Group) => PAGES.filter((p) => (p.group ?? 'self') === g)
+/** Each block's icon; the grammar book opens when expanded. */
+const groupIcon = (name: MenuGroup['icon'], isOpen: boolean) =>
+  ({ grammar: isOpen ? BookOpenText : BookOpen, reading: Newspaper, kanji: Brush, phrases: MessagesSquare })[name]
+/** A block's pages; hidden ones are reached from inside another page. */
+const inGroup = (g: Group) => PAGES.filter((p) => !p.hidden && (p.group ?? 'grammar') === g)
 
 const ABOUT = {
   title: ['Hakkında', 'About'],
   sub: ['Lisans ve iletişim', 'License and contact'],
   what: [
-    'Ramazan Doğan’ın Japonca çalışmak için hazırladığı kişisel site: okul dersleri, iş yeri Japoncası ve JLPT hazırlığı.',
-    'A personal site Ramazan Doğan made to study Japanese: school lessons, workplace Japanese and JLPT preparation.',
+    'Ramazan Doğan’ın Japonca çalışmak için hazırladığı kişisel site: gramer, okuma, kanji, iş yeri ifadeleri ve JLPT hazırlığı.',
+    'A personal site Ramazan Doğan made to study Japanese: grammar, reading, kanji, workplace expressions and JLPT preparation.',
   ],
   rights: ['Tüm hakları saklıdır.', 'All rights reserved.'],
   license: [
@@ -155,6 +157,7 @@ const hello = (() => {
         </Transition>
       </section>
     </nav>
+    <p class="text-ink-soft mt-4 text-center text-xs">© 2026 Ramazan Doğan · rei-kit</p>
 
     <!-- About: who made it, the license, and how to get in touch. The address
          is written out, not linked, so it is not harvested by spam bots. -->

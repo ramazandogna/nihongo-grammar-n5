@@ -64,7 +64,7 @@ describe('dashboard', () => {
     expect(r.resume?.percent).toBe(25)
     expect(r.accuracy).toBe(90)
     expect(r.finished).toBe(2)
-    expect(r.groups.self.finished).toBe(2)
+    expect(r.groups.kanji.finished).toBe(2)
     expect(r.streakDays).toBe(3) // 12, 13, 14
     expect(r.weak[0]).toMatchObject({ label: '洗', n: 2 })
   })

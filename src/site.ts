@@ -31,45 +31,57 @@ export interface SitePage {
   palette: Palette
   /** Languages the page's content exists in. One means no language switch. */
   langs: readonly Lang[]
-  /** Which home-menu folder it sits in. */
+  /** Which home-menu block it sits in. */
   group?: Group
+  /**
+   * Kept as a page (route, head, prerender, saved progress) but not listed in
+   * the home menu: it is reached from another page of the same source.
+   */
+  hidden?: boolean
   /** The menu card in English (title and description above are Turkish). */
   en: { title: string; description: string }
 }
 
-export type Group = 'school' | 'work' | 'self'
+export type Group = 'grammar' | 'reading' | 'kanji' | 'phrases'
 
 export interface MenuGroup {
   id: Group
   /** Icon name, drawn by the home page (lucide). */
-  icon: 'library' | 'folder' | 'briefcase'
+  icon: 'grammar' | 'reading' | 'kanji' | 'phrases'
   title: string
   description: string
   en: { title: string; description: string }
 }
 
-/** The home menu's folders, in order. */
+/** The home menu's blocks, in order. */
 export const GROUPS: readonly MenuGroup[] = [
   {
-    id: 'self',
-    icon: 'library',
-    title: 'Kendi Çalışmam',
-    description: 'Sınav hazırlığı ve radikaller',
-    en: { title: 'Self Study', description: 'Exam preparation and radicals' },
+    id: 'grammar',
+    icon: 'grammar',
+    title: 'Gramer',
+    description: 'N5, N4 ve N3 dilbilgisi',
+    en: { title: 'Grammar', description: 'N5, N4 and N3 grammar' },
   },
   {
-    id: 'school',
-    icon: 'folder',
-    title: 'Okul Dersleri',
-    description: 'Derste gördüğümüz kitaplar ve çalışma yerleri',
-    en: { title: 'School Lessons', description: 'The books and study material from class' },
+    id: 'reading',
+    icon: 'reading',
+    title: 'Okuma',
+    description: 'Çıkmış N3 sınavları, okuma ve dinleme',
+    en: { title: 'Reading', description: 'Past N3 papers, reading and listening' },
   },
   {
-    id: 'work',
-    icon: 'briefcase',
-    title: 'İş Yeri Japoncası',
-    description: 'İşte kullandığım Japonca: müşteri, sipariş, menü',
-    en: { title: 'Workplace Japanese', description: 'The Japanese I use at work: customers, orders, menu' },
+    id: 'kanji',
+    icon: 'kanji',
+    title: 'Kanji',
+    description: 'Kanji kitabı ve radikaller',
+    en: { title: 'Kanji', description: 'The kanji book and radicals' },
+  },
+  {
+    id: 'phrases',
+    icon: 'phrases',
+    title: 'İfadeler',
+    description: 'İş yeri ve iş Japoncası: müşteri, sipariş, yazışma',
+    en: { title: 'Expressions', description: 'Workplace and business Japanese: customers, orders, writing' },
   },
 ]
 
@@ -77,57 +89,16 @@ export const HOME: SitePage = {
   path: '/',
   icon: '日',
   title: 'Nihongo',
-  description: 'Kişisel Japonca çalışma sitesi: okul dersleri, iş yeri Japoncası, JLPT N5–N3 hazırlığı.',
+  description: 'Kişisel Japonca çalışma sitesi: gramer, okuma, kanji ve iş yeri ifadeleri, JLPT N5–N3 hazırlığı.',
   palette: 'nord',
   langs: ['tr', 'en'],
   en: {
     title: 'Nihongo',
-    description: 'Personal Japanese study site: school lessons, workplace Japanese, JLPT N5–N3 prep.',
+    description: 'Personal Japanese study site: grammar, reading, kanji and workplace expressions, JLPT N5–N3 prep.',
   },
 }
 
 export const PAGES: readonly SitePage[] = [
-  {
-    path: '/blue-book/',
-    icon: '青',
-    title: 'Blue Book',
-    description: 'Okuldaki mavi kitap: okuma metinleri, gramer, kelime oyunu, alıştırma ve test — ders ders.',
-    palette: 'tokyo-night',
-    langs: ['tr'],
-    group: 'school',
-    en: {
-      title: 'Blue Book',
-      description:
-        'The blue book from school: reading texts, grammar, word game, exercises and tests, lesson by lesson.',
-    },
-  },
-  {
-    path: '/business-nihongo/',
-    icon: '商',
-    title: 'Business Nihongo',
-    description: 'ISI ビジネス日本語 中級Ⅰ: şirket duyurusu okuma, 敬語 ile davet, iş yazışması kalıpları.',
-    palette: 'rei',
-    langs: ['tr'],
-    group: 'school',
-    en: {
-      title: 'Business Nihongo',
-      description: 'ISI ビジネス日本語 中級Ⅰ: reading company notices, inviting with 敬語, business writing patterns.',
-    },
-  },
-  {
-    path: '/past-n3/',
-    icon: '過',
-    title: 'N3 Çıkmış Sorular',
-    description: 'Çıkmış JLPT N3 sınavları: her soru çözümüyle, okuma metinleri satır satır, dinleme sesli ve metinli.',
-    palette: 'solarized',
-    langs: ['tr'],
-    group: 'self',
-    en: {
-      title: 'Past N3 Papers',
-      description:
-        'Past JLPT N3 exams: every question explained, readings line by line, listening with audio and script.',
-    },
-  },
   {
     path: '/n5/',
     icon: '五',
@@ -135,7 +106,7 @@ export const PAGES: readonly SitePage[] = [
     description: 'N5 dilbilgisi: fiil çekimleri, partikeller, N5 kanjileri, örnek cümleler ve quizler.',
     palette: 'rose-pine',
     langs: ['tr'],
-    group: 'school',
+    group: 'grammar',
     en: {
       title: 'N5 Grammar',
       description: 'N5 grammar: verb forms, particles, N5 kanji, example sentences and quizzes.',
@@ -145,13 +116,13 @@ export const PAGES: readonly SitePage[] = [
     path: '/n4/',
     icon: '四',
     title: 'N4 Gramer',
-    description: 'JLPT N4 dilbilgisinin tamamı: 46 konu, romaji ve Türkçe örnekler, N4 kanji ve kelime, quizler.',
+    description: 'JLPT N4 dilbilgisinin tamamı: 46 konu, N4 kanji ve kelime, quizler; ayrıca 13・14・15課 dersleri ve testleri.',
     palette: 'gruvbox',
     langs: ['tr'],
-    group: 'school',
+    group: 'grammar',
     en: {
       title: 'N4 Grammar',
-      description: 'All of JLPT N4 grammar: 46 topics, romaji and examples, N4 kanji and vocabulary, quizzes.',
+      description: 'All of JLPT N4 grammar: 46 topics, N4 kanji and vocabulary, quizzes; plus lessons 13・14・15 and their tests.',
     },
   },
   {
@@ -161,20 +132,49 @@ export const PAGES: readonly SitePage[] = [
     description: '13・14・15課 gramer konuları, diyaloglar ve iki test.',
     palette: 'catppuccin',
     langs: ['tr', 'en', 'zh'],
-    group: 'school',
+    group: 'grammar',
+    hidden: true,
     en: { title: 'N4 Grammar 13–15', description: 'Lessons 13・14・15: grammar points, dialogues and two tests.' },
   },
   {
-    path: '/kanji-n3-book/',
-    icon: '漢',
-    title: 'N3 Kanji Book',
-    description: 'N3 kelime/kanji soruları 1–35: okunuş, anlam, kanji parçaları, okuma metinleri ve testler.',
-    palette: 'sakura',
-    langs: ['tr', 'en', 'zh'],
-    group: 'school',
+    path: '/blue-book/',
+    icon: '青',
+    title: 'N3 Blue Book',
+    description: 'Okuldaki mavi kitap: okuma metinleri, gramer, kelime oyunu, alıştırma ve test — ders ders.',
+    palette: 'tokyo-night',
+    langs: ['tr'],
+    group: 'grammar',
     en: {
-      title: 'N3 Kanji Book',
-      description: 'N3 vocabulary/kanji questions 1–35, reading (問題4・5), listening lessons and tests.',
+      title: 'N3 Blue Book',
+      description:
+        'The blue book from school: reading texts, grammar, word game, exercises and tests, lesson by lesson.',
+    },
+  },
+  {
+    path: '/past-n3/',
+    icon: '過',
+    title: 'N3 Çıkmış Sorular',
+    description: 'Çıkmış JLPT N3 sınavları: her soru çözümüyle, okuma metinleri satır satır, dinleme sesli ve metinli.',
+    palette: 'solarized',
+    langs: ['tr'],
+    group: 'reading',
+    en: {
+      title: 'Past N3 Papers',
+      description:
+        'Past JLPT N3 exams: every question explained, readings line by line, listening with audio and script.',
+    },
+  },
+  {
+    path: '/kanji-n3-book/',
+    icon: '読',
+    title: 'N3 Okuma · Dinleme',
+    description: 'N3 okuma (問題4・5) metinleri ve soruları, dinleme (聴解) dersleri: adım adım, nedenleriyle.',
+    palette: 'sakura',
+    langs: ['tr'],
+    group: 'reading',
+    en: {
+      title: 'N3 Reading · Listening',
+      description: 'N3 reading (問題4・5) passages and questions, listening (聴解) lessons, step by step.',
     },
   },
   {
@@ -182,9 +182,9 @@ export const PAGES: readonly SitePage[] = [
     icon: '字',
     title: 'Kanji Book 2',
     description: '18 ünitede 210 kanji: en bilinen kelimeler, furigana, ünite ve dört ünitelik testler.',
-    palette: 'sakura',
+    palette: 'nord',
     langs: ['tr'],
-    group: 'school',
+    group: 'kanji',
     en: {
       title: 'Kanji Book 2',
       description: '210 kanji in 18 units: common words, furigana, unit tests and four-unit tests.',
@@ -196,8 +196,8 @@ export const PAGES: readonly SitePage[] = [
     title: 'Radikaller',
     description: '55 radikal (部首), 378 N3 kanji ve kelimeleri: liste, arama ve radikal/kanji testleri.',
     palette: 'rei',
-    langs: ['tr', 'en'],
-    group: 'self',
+    langs: ['tr'],
+    group: 'kanji',
     en: {
       title: 'Radicals',
       description: '43 radicals (部首), 347 N3 kanji and their words: in-depth lessons and tests.',
@@ -210,10 +210,23 @@ export const PAGES: readonly SitePage[] = [
     description: 'Matsuya iş yeri kelimeleri: menü, sipariş, fiş, mutfak ve talimatlar.',
     palette: 'matcha',
     langs: ['tr'],
-    group: 'work',
+    group: 'phrases',
     en: {
       title: 'Matsuya Vocabulary',
       description: 'Matsuya workplace Japanese: menu, orders, slips, kitchen and instructions.',
+    },
+  },
+  {
+    path: '/business-nihongo/',
+    icon: '商',
+    title: 'Business Nihongo',
+    description: 'ISI ビジネス日本語 中級Ⅰ: şirket duyurusu okuma, 敬語 ile davet, iş yazışması kalıpları.',
+    palette: 'rei',
+    langs: ['tr'],
+    group: 'phrases',
+    en: {
+      title: 'Business Nihongo',
+      description: 'ISI ビジネス日本語 中級Ⅰ: reading company notices, inviting with 敬語, business writing patterns.',
     },
   },
 ]

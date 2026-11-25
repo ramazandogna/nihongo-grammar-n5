@@ -619,24 +619,22 @@ u.target {
   }
 }
 @keyframes quiz-quake {
+  /* A tremble in place: mostly vertical and a hair of rotation, so nothing slides sideways. */
   0%,
   100% {
-    transform: translate(0, 0);
+    transform: none;
   }
-  15% {
-    transform: translate(calc(var(--q) * -1), calc(var(--q) * 0.5)) rotate(-0.6deg);
+  20% {
+    transform: translateY(calc(var(--q) * -0.6)) rotate(-0.5deg);
   }
-  30% {
-    transform: translate(var(--q), calc(var(--q) * -0.5)) rotate(0.6deg);
-  }
-  45% {
-    transform: translate(calc(var(--q) * -0.8), 0) rotate(-0.4deg);
+  40% {
+    transform: translateY(calc(var(--q) * 0.5)) rotate(0.5deg);
   }
   60% {
-    transform: translate(calc(var(--q) * 0.6), calc(var(--q) * 0.3));
+    transform: translateY(calc(var(--q) * -0.3)) rotate(-0.3deg);
   }
   80% {
-    transform: translate(calc(var(--q) * -0.3), 0);
+    transform: translateY(calc(var(--q) * 0.15));
   }
 }
 

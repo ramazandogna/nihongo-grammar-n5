@@ -1800,8 +1800,8 @@ export const LESSONS: Lesson[] = [
       {
         title: '29. 〜でも',
         items: [
-          { q: 'A：{疲|つか}れました。ちょっと{休|やす}みたいですね。B：そうですね、あそこで（　）でも{飲|の}みませんか。', a: 'コーヒー' },
-          { q: 'A：{週末|しゅうまつ}、どこか{遊|あそ}びに{行|い}かない？B：そうだね。（　）にでも{行|い}こうか。', a: '{映画|えいが}', note: 'Örnek. 海／公園 da olur.' },
+          { q: 'A：{疲|つか}れました。ちょっと{休|やす}みたいですね。B：そうですね、あそこで（　）でも{飲|の}みませんか。', a: '{抹茶|まっちゃ}ラテ', note: 'Örnek. Yorgunluğa yeşil çay latte; コーヒー／お茶 da olur.' },
+          { q: 'A：{週末|しゅうまつ}、どこか{遊|あそ}びに{行|い}かない？B：そうだね。（　）にでも{行|い}こうか。', a: '{星空|ほしぞら}を{見|み}に{山|やま}', note: 'Örnek: “yıldızları seyretmeye dağa falan mı gitsek?” 映画／海 da olur.' },
         ],
       },
     ],
@@ -1825,14 +1825,50 @@ export const LESSONS: Lesson[] = [
       'Yöntemi sormak / anlatmak: 〜ふうに.',
       'Yöntem / sebep ve sonucunu söylemek: 〜ことで.',
     ],
-    readings: [],
+    readings: [
+      {
+        title: '{使|つか}ってみよう 2 · 1{週間|しゅうかん}の{過|す}ごし{方|かた}',
+        intro: 'パク (パ), アニル (ア) ve マルコ (マ) haftanın nasıl hızla geçtiğini konuşuyor; Marco kendi yöntemini anlatıyor (A09).',
+        lines: [
+          { who: 'パ', jp: 'ねえ、1{週間|しゅうかん}ってあっという{間|ま}に{過|す}ぎちゃうよね。{何|なに}かしようと{思|おも}っているだけで{終|お}わっちゃう。', tr: 'Baksana, bir hafta göz açıp kapayıncaya kadar geçiveriyor, değil mi? Bir şey yapmayı düşünürken bitiveriyor.' },
+          { who: 'ア', jp: '{僕|ぼく}もそうだよ。ちゃんとしようと{思|おも}うんだけど、だらだら{過|す}ごしてしまうんだ。マルコさんはどう？', tr: 'Ben de öyleyim. Düzgün yapayım diyorum ama boş boş vakit geçiriyorum. Marco, sen nasılsın?' },
+          {
+            who: 'マ',
+            jp: '{僕|ぼく}はね、{金曜日|きんようび}の{夕方|ゆうがた}、いつも{同|おな}じ{喫茶店|きっさてん}に{行|い}って、1{人|ひとり}でコーヒーを{飲|の}みながら、この1{週間|しゅうかん}、いつ、どこで、{何|なに}をしたかを{振|ふ}り{返|かえ}ることにしているんだ。これ、{結構|けっこう}いいよ。',
+            tr: 'Ben mi? Cuma akşamüstleri hep aynı kafeye gidip tek başıma kahve içerken bu hafta ne zaman, nerede, ne yaptığımı gözden geçirmeyi alışkanlık edindim. Bu epey iyi geliyor.',
+          },
+          { who: 'パ', jp: 'へえ、[[そんな]]ことしてるんだ。', tr: 'Vay, öyle bir şey yapıyorsun demek.' },
+          {
+            who: 'マ',
+            jp: 'うん。{前|まえ}の{週|しゅう}を{振|ふ}り{返|かえ}ると、{次|つぎ}の1{週間|しゅうかん}をどういう[[ふうに]]{過|す}ごしたらいいか{頭|あたま}に{浮|う}かんできてね。そしてそれを{手帳|てちょう}にメモしておくと、{役|やく}に{立|た}つんだ。',
+            tr: 'Evet. Geçen haftaya dönüp bakınca, gelecek haftayı nasıl geçirmem gerektiği aklıma geliyor. Sonra onu ajandama not edersem çok işe yarıyor.',
+          },
+          { who: 'パ/ア', jp: 'へえ。', tr: 'Vay.' },
+          {
+            who: 'マ',
+            jp: 'それに、1{週間|しゅうかん}を{振|ふ}り{返|かえ}る[[ことで]]{気持|きも}ちが{落|お}ち{着|つ}いて、「また、{次|つぎ}の1{週間|しゅうかん}{頑張|がんば}ろう」って{思|おも}うんだ。',
+            tr: 'Üstelik haftayı gözden geçirerek içim rahatlıyor ve “Hadi, gelecek hafta da elimden geleni yapayım” diye düşünüyorum.',
+          },
+          { who: 'ア', jp: 'いいね。{僕|ぼく}もやってみようかな。', tr: 'Güzelmiş. Ben de denesem mi acaba.' },
+        ],
+        questions: [
+          { q: 'パクさんとアニルさんの{悩|なや}みは{何|なん}ですか。', a: 'Hafta çok çabuk geçiyor; bir şey yapmayı düşünürken boş boş (だらだら) geçirip bitiriyorlar.' },
+          { q: 'マルコさんは{毎週|まいしゅう}いつ、どこで、{何|なに}をしていますか。', a: 'Her cuma akşamüstü hep aynı kafede tek başına kahve içerken o haftayı (ne zaman, nerede, ne yaptığını) gözden geçiriyor.' },
+          { q: '{振|ふ}り{返|かえ}ったあと、マルコさんは{何|なに}をしますか。', a: 'Gelecek haftayı nasıl geçireceğini aklına gelene göre ajandasına (手帳) not ediyor.' },
+          { q: '{振|ふ}り{返|かえ}ることで、マルコさんの{気持|きも}ちはどうなりますか。', a: 'İçi rahatlıyor (気持ちが落ち着く) ve “gelecek hafta da çabalayayım” diye düşünüyor.' },
+        ],
+      },
+    ],
     grammar: [
       {
         title: 'こんな〜／そんな〜／あんな〜／どんな〜',
         form: 'こんな ＋ N',
         meaning: '<b>“böyle / şöyle / öyle / nasıl bir N”</b> — 〜のような, みたいな. こんな: elindeki, yakındaki; そんな: karşıdakinin söylediği; あんな: ikinizin de bildiği uzaktaki ya da geçmişteki şey.',
+        note: 'Nasıl seçilir? <b>こんな</b>: şu an elinde / önünde olan, kendi söylediğin şey (本を見せながら). <b>そんな</b>: karşındakinin az önce söylediği, senin görmediğin ya da bilmediğin şey (“アンジェラさん？そんな名前の人…”). <b>あんな</b>: ikinizin de bildiği, uzakta ya da geçmişte kalan şey (昨日の店). <b>どんな</b>: soru. Okumadaki “そんなことしてるんだ” da Marco’nun anlattığı şeye tepki olduğu için そんな.',
         examples: [
-          ['これは『{風|かぜ}の{中|なか}のマリア』っていう{本|ほん}なんだけど、[[こんな]]おもしろい{本|ほん}、{読|よ}んだことがないよ。', 'Bu “Rüzgârdaki Maria” diye bir kitap; bu kadar ilginç bir kitap hiç okumadım.'],
+          ['A：これは『{風|かぜ}の{中|なか}のマリア』っていう{本|ほん}なんだけど、[[こんな]]おもしろい{本|ほん}、{今|いま}までに{読|よ}んだことがないよ。B：へえ。{私|わたし}も{読|よ}んでみたい。', 'A: Bu “Rüzgârdaki Maria” diye bir kitap; şimdiye kadar bu kadar ilginç bir kitap hiç okumadım. B: Vay, ben de okumak isterim.'],
+          ['A：{昨日|きのう}の{店|みせ}の{料理|りょうり}、おいしかったね。B：そうだね。[[あんな]]おいしい{料理|りょうり}、なかなか{他|ほか}では{食|た}べられないよね。', 'A: Dünkü dükkânın yemekleri lezzetliydi, değil mi? B: Evet. O kadar lezzetli yemek başka yerde pek yenmez.'],
+          ['A：この{間|あいだ}、パーティーに{来|き}ていたアンジェラさんって、{国|くに}ではプロの{歌手|かしゅ}なんだって。B：アンジェラさん？[[そんな]]{名前|なまえ}の{人|ひと}、いた？', 'A: Geçen gün partiye gelen Angela, kendi ülkesinde profesyonel şarkıcıymış. B: Angela mı? Öyle isimli biri var mıydı ki?'],
           ['うん。[[あんな]]{店|みせ}、もう{二度|にど}と{行|い}かない。', 'Evet. Öyle bir dükkâna bir daha asla gitmem.'],
         ],
       },
@@ -1841,7 +1877,8 @@ export const LESSONS: Lesson[] = [
         form: 'こんな／そんな／あんな／どんな／こういう／そういう／ああいう／どういう ＋ ふうに',
         meaning: '<b>“böyle / öyle / nasıl (bir şekilde)”</b> — 〜ように／〜みたいに 〜する. Yöntem ve tarz. <span class="text-ink-soft">N2 ★</span>',
         examples: [
-          ['どういう[[ふうに]]{説明|せつめい}すれば、{子|こ}どもにわかりやすいだろう。', 'Nasıl açıklarsam çocuk kolay anlar acaba?'],
+          ['A：{先生|せんせい}、トマトの{皮|かわ}が{上手|じょうず}にむけないんです。B：じゃあ、わたしのやり{方|かた}をよく{見|み}てて。こんな[[ふうに]]すればいいんですよ。', 'A: Hocam, domatesin kabuğunu güzelce soyamıyorum. B: O zaman benim yaptığıma iyi bak. Böyle yaparsan olur.'],
+          ['どういう[[ふうに]]{説明|せつめい}すれば、{子|こ}どもにもわかりやすいだろう。', 'Nasıl açıklarsam çocuklar bile kolayca anlar acaba?'],
           ['{私|わたし}たちもあんな[[ふうに]]{上手|じょうず}になりたいね。', 'Biz de onun gibi iyi olmak isteriz.'],
         ],
       },
@@ -1874,6 +1911,19 @@ export const LESSONS: Lesson[] = [
       ['{丈夫|じょうぶ}', 'sağlam'],
       ['{出発|しゅっぱつ}', 'hareket, yola çıkış'],
       ['{遅|おく}れる', 'gecikmek'],
+      ['あっという{間|ま}', 'göz açıp kapayıncaya kadar'],
+      ['だらだら', 'boş boş, tembelce'],
+      ['ちゃんと', 'düzgünce, gerektiği gibi'],
+      ['{喫茶店|きっさてん}', 'kafe, kahvehane'],
+      ['{振|ふ}り{返|かえ}る', 'dönüp bakmak, gözden geçirmek'],
+      ['{結構|けっこう}', 'epey, oldukça'],
+      ['{浮|う}かぶ', '(aklına) gelmek, belirmek'],
+      ['{手帳|てちょう}', 'ajanda, cep defteri'],
+      ['{役|やく}に{立|た}つ', 'işe yaramak'],
+      ['{落|お}ち{着|つ}く', 'sakinleşmek, rahatlamak'],
+      ['{歌手|かしゅ}', 'şarkıcı'],
+      ['{皮|かわ}', 'kabuk'],
+      ['むく', 'soymak'],
     ],
     exercises: [
       {
@@ -1893,8 +1943,8 @@ export const LESSONS: Lesson[] = [
       {
         title: '32. 〜ことで',
         items: [
-          { q: '{毎日|まいにち}、（　）ことで、{体|からだ}が{丈夫|じょうぶ}になります。', a: '{運動|うんどう}する', note: 'Örnek.' },
-          { q: '{私|わたし}が（　）ことで、みんなの{出発|しゅっぱつ}が{遅|おく}れてしまった。', a: '{遅刻|ちこく}した' },
+          { q: '{毎日|まいにち}、（　）ことで、{体|からだ}が{丈夫|じょうぶ}になります。', a: 'エレベーターをやめて{階段|かいだん}を{使|つか}う', note: 'Örnek: asansör yerine merdiven kullanarak. 運動する da olur.' },
+          { q: '{私|わたし}が（　）ことで、みんなの{出発|しゅっぱつ}が{遅|おく}れてしまった。', a: 'パスポートを{家|いえ}に{忘|わす}れてきた', note: 'Örnek: pasaportu evde unutmam yüzünden herkes gecikti. 遅刻した da olur.' },
         ],
       },
     ],
@@ -1906,6 +1956,9 @@ export const LESSONS: Lesson[] = [
       { q: '{日記|にっき}を{書|か}く（　）、{生活|せいかつ}を{見直|みなお}しています。', opts: ['ことで', 'ふうに', 'なんて', 'ほど'], a: 0, why: 'Yöntem → ことで.' },
       { q: '{私|わたし}が{遅刻|ちこく}した（　）、{出発|しゅっぱつ}が{遅|おく}れた。', opts: ['ことで', 'ことだし', 'ことがある', 'ことに'], a: 0, why: 'Sebep → ことで + sonuç.' },
       { q: '「{二度|にど}と{行|い}かない」の{意味|いみ}は？', opts: ['bir daha asla gitmem', 'iki kez gittim', 'tekrar gideceğim', 'iki kişi gitmez'], a: 0, why: '二度と + olumsuz = bir daha asla.' },
+      { q: '1{週間|しゅうかん}って（　）に{過|す}ぎちゃうよね。', opts: ['あっという{間|ま}', 'だらだら', 'ちゃんと', '{結構|けっこう}'], a: 0, why: 'Çok hızlı geçmek → あっという間に.' },
+      { q: '{金曜日|きんようび}に1{週間|しゅうかん}を（　）ことにしている。', opts: ['{振|ふ}り{返|かえ}る', '{浮|う}かぶ', '{落|お}ち{着|つ}く', 'むく'], a: 0, why: 'Geçmişe dönüp bakmak → 振り返る.' },
+      { q: 'A：アンジェラさんってプロの{歌手|かしゅ}なんだって。B：（　）{名前|なまえ}の{人|ひと}、いた？', opts: ['そんな', 'こんな', 'あんな', 'どんな'], a: 0, why: 'Karşının söylediği, B’nin bilmediği şey → そんな.' },
     ],
   },
   {
@@ -1972,23 +2025,23 @@ export const LESSONS: Lesson[] = [
         title: '33. 〜なあ',
         items: [
           { q: 'のどが（　）なあ。{何|なに}か{飲|の}もう。', a: 'かわいた' },
-          { q: '〈まだ{見|み}ていない{映画|えいが}のポスターを{見|み}ながら〉この{映画|えいが}、（　）なあ。', a: '{見|み}たい' },
+          { q: '〈まだ{見|み}ていない{映画|えいが}のポスターを{見|み}ながら〉この{映画|えいが}、（　）なあ。', a: '{公開|こうかい}されたらすぐ{見|み}に{行|い}きたい', note: 'Örnek: “vizyona girer girmez gitmek istiyorum ya”. Kısaca 見たい.' },
           { q: '{明日|あした}、{雨|あめ}が{降|ふ}る［なあ・かなあ］。', hint: 'Doğru olanı seç.', a: 'かなあ', note: 'Henüz bilinmeyen tahmin / merak → かなあ.' },
         ],
       },
       {
         title: '34. 〜ことがある',
         items: [
-          { q: 'A：いつもどうやって{学校|がっこう}に{来|き}てるの？B：{普段|ふだん}は{自転車|じてんしゃ}だけど、たまに（　）。', a: 'バスで{来|く}ることがある' },
-          { q: 'A：いつもどこで{宿題|しゅくだい}している？B：たいてい（　）、（　）こともあるよ。', a: '{家|いえ}でするけど／{図書館|としょかん}でする', note: 'Örnek.' },
+          { q: 'A：いつもどうやって{学校|がっこう}に{来|き}てるの？B：{普段|ふだん}は{自転車|じてんしゃ}だけど、たまに（　）。', a: '{寝坊|ねぼう}して{駅|えき}から{走|はし}って{来|く}ることがある', note: 'Örnek: bazen uyuyakalıp istasyondan koşarak geliyorum. バスで来ることがある da olur.' },
+          { q: 'A：いつもどこで{宿題|しゅくだい}している？B：たいてい（　）、（　）こともあるよ。', a: '{家|いえ}でするけど／{朝|あさ}の{電車|でんしゃ}の{中|なか}で{急|いそ}いでする', note: 'Örnek: genelde evde ama bazen sabah trende aceleyle yapıyorum. 図書館でする da olur.' },
           { q: 'お{寿司|すし}を［{食|た}べる・{食|た}べた］ことがあります。', hint: 'Bu dersin anlamıyla (bazen) seç.', a: '{食|た}べる', note: '食べることがある = bazen yerim. 食べたことがある = yemişliğim var (deneyim).' },
         ],
       },
       {
         title: '35. 〜にとって',
         items: [
-          { q: 'この{時計|とけい}は{古|ふる}いですが、{私|わたし}にとって（　）。', a: '{大切|たいせつ}なものです' },
-          { q: '{現代人|げんだいじん}にとって（　）はなくてはならないものです。', a: 'スマートフォン', note: 'Örnek. インターネット da olur.' },
+          { q: 'この{時計|とけい}は{古|ふる}いですが、{私|わたし}にとって（　）。', a: '{祖父|そふ}からもらった{宝物|たからもの}です', note: 'Örnek: dedemden kalma bir hazine. 大切なものです da olur.' },
+          { q: '{現代人|げんだいじん}にとって（　）はなくてはならないものです。', a: 'スマホの{充電器|じゅうでんき}', note: 'Örnek: telefon şarj aleti olmazsa olmaz! スマートフォン／インターネット da olur.' },
         ],
       },
     ],
@@ -2064,21 +2117,21 @@ export const LESSONS: Lesson[] = [
       {
         title: '36. 〜ことだし',
         items: [
-          { q: 'A：{今日|きょう}、これからどうする？B：そうだねえ。{天気|てんき}もいいことだし、（　）ない？', a: '{散歩|さんぽ}に{行|い}か', note: 'Örnek.' },
+          { q: 'A：{今日|きょう}、これからどうする？B：そうだねえ。{天気|てんき}もいいことだし、（　）ない？', a: '{自転車|じてんしゃ}で{海|うみ}まで{行|い}ってみ', note: 'Örnek: “bisikletle denize kadar gitmeyi denemez miyiz?” 散歩に行か da olur.' },
           { q: '{日本|にほん}の{生活|せいかつ}にも（　）ことだし、アルバイトを{始|はじ}めようかな。', a: '{慣|な}れた' },
         ],
       },
       {
         title: '37. 〜くれない？／〜てくれる？',
         items: [
-          { q: 'こんなとき、{何|なん}と{言|い}ったらいいですか。〈{消|け}しゴムを{忘|わす}れた〉→（　）', a: '{悪|わる}いけど、{消|け}しゴム{貸|か}してくれない？' },
-          { q: 'こんなとき、{何|なん}と{言|い}ったらいいですか。〈メールアドレスを{知|し}りたい〉→（　）', a: 'メールアドレス、{教|おし}えてくれる？' },
+          { q: 'こんなとき、{何|なん}と{言|い}ったらいいですか。〈{消|け}しゴムを{忘|わす}れた〉→（　）', a: '{悪|わる}いけど、{消|け}しゴム{貸|か}してくれない？すぐ{返|かえ}すから。', note: '“Hemen geri veririm” eklemek ricayı yumuşatır.' },
+          { q: 'こんなとき、{何|なん}と{言|い}ったらいいですか。〈メールアドレスを{知|し}りたい〉→（　）', a: '{今日|きょう}の{写真|しゃしん}{送|おく}りたいから、メールアドレス、{教|おし}えてくれる？', note: 'Sebebi önce söylemek doğal: “bugünkü fotoğrafları göndermek istiyorum”.' },
         ],
       },
       {
         title: '38. 〜じゃない？／〜んじゃない？',
         items: [
-          { q: 'A：{顔色|かおいろ}が{悪|わる}いけど、{大丈夫|だいじょうぶ}？（　）ほうがいいんじゃない？B：そうだね。そうする。', a: '{早|はや}く{帰|かえ}った', note: '休んだ da olur.' },
+          { q: 'A：{顔色|かおいろ}が{悪|わる}いけど、{大丈夫|だいじょうぶ}？（　）ほうがいいんじゃない？B：そうだね。そうする。', a: '{今日|きょう}は{早退|そうたい}した', note: 'Örnek: bugün erken çıksan (早退) iyi olur. 早く帰った／休んだ da olur.' },
           { q: '〈{飲|の}み{会|かい}で〉A：えっ、{何杯目|なんばいめ}？ちょっと（　）じゃない？{大丈夫|だいじょうぶ}？B：{大丈夫|だいじょうぶ}、{大丈夫|だいじょうぶ}！', a: '{飲|の}み{過|す}ぎ' },
         ],
       },

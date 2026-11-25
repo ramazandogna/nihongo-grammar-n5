@@ -197,12 +197,13 @@ function pick(i: number) {
     actions.value?.scrollIntoView({ block: 'nearest', behavior: reduceMotion() ? 'auto' : 'smooth' }),
   )
 }
-const root = ref<HTMLElement | null>(null)
+/** Only the question card trembles, so the page itself never slides. */
+const shaker = ref<HTMLElement | null>(null)
 /** Shake the whole quiz; level 1–3, and the shake distance keeps growing to 30. */
 function quake(level: number) {
-  const el = root.value
+  const el = shaker.value
   if (!el || reduceMotion()) return
-  el.style.setProperty('--q', `${3 + fire.value * 9}px`)
+  el.style.setProperty('--q', `${2 + fire.value * 4}px`)
   el.classList.remove('quiz-quake-1', 'quiz-quake-2', 'quiz-quake-3')
   void el.offsetWidth
   el.classList.add(`quiz-quake-${level}`)
@@ -288,7 +289,7 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
 </script>
 
 <template>
-  <div ref="root" class="flex flex-col gap-4">
+  <div class="flex flex-col gap-4">
     <!-- Resumed: a passing note, not a row of its own. -->
     <p
       v-if="toast"
@@ -369,6 +370,7 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
         </p>
       </div>
 
+      <div ref="shaker">
       <BaseCard
         :class="[heat >= 2 ? 'quiz-card-hot' : '', heat >= 3 ? 'quiz-card-blaze' : '']"
         :style="{ '--fire': fire }"
@@ -428,12 +430,13 @@ const wide = computed(() => (question.value?.options ?? []).some((o) => plain(o)
             </span>
             <span
               v-if="picked !== null && (i === picked || i === question.answer) && question.glosses?.[i]"
-              class="mt-0.5 block font-sans text-sm leading-snug text-ink-soft [overflow-wrap:anywhere]"
+              class="mt-0.5 block font-sans text-sm leading-snug text-ink-soft break-words"
               v-html="notation(question.glosses[i]!)"
             />
           </button>
         </div>
       </BaseCard>
+      </div>
 
       <!-- After answering: the verdict and two buttons right under the
            question — explanation on the left, next question on the right. -->

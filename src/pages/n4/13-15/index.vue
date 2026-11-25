@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import { List } from 'lucide-vue-next'
 import { BaseButton, BaseCard } from 'rei-kit'
 
@@ -98,7 +99,10 @@ function open(n: 1 | 2 | null) {
 
     <div v-show="page === 0">
       <section class="py-4 text-center">
-        <h1 class="jp text-3xl font-bold">13・14・15課</h1>
+        <RouterLink to="/n4/" class="text-primary focus-ring rounded-cell text-sm font-semibold"
+          >← N4 Gramer</RouterLink
+        >
+        <h1 class="jp mt-1 text-3xl font-bold">13・14・15課</h1>
       </section>
       <nav :aria-label="t.contents" class="surface rounded-card my-4 p-4">
         <h2 class="mb-2 text-lg font-bold">{{ t.contents }}</h2>

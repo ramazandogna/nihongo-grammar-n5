@@ -20,32 +20,36 @@ Explanations are in Turkish, and the menu is in Turkish and English. Some pages 
 
 ## Contents
 
-The home menu has three folders.
+The home menu has four blocks.
 
-### 📚 Self Study
+### 📖 Grammar
+
+| Page | Content | Languages |
+| --- | --- | --- |
+| [N5 Grammar](https://ramazandogna.github.io/nihongo-grammar-n5/n5/) | N5 grammar, kanji, quizzes | TR |
+| [N4 Grammar](https://ramazandogna.github.io/nihongo-grammar-n5/n4/) | All N4 grammar, kanji, vocabulary, quizzes; lessons 13・14・15 ([`/n4/13-15/`](https://ramazandogna.github.io/nihongo-grammar-n5/n4/13-15/), linked from the N4 page) | TR (13–15: TR · EN · ZH) |
+| [N3 Blue Book](https://ramazandogna.github.io/nihongo-grammar-n5/blue-book/) | Reading, grammar, word game, exercises and tests, lesson by lesson | TR |
+
+### 📰 Reading
 
 | Page | Content | Languages |
 | --- | --- | --- |
 | [Past N3 Papers](https://ramazandogna.github.io/nihongo-grammar-n5/past-n3/) | Past JLPT N3 exams, fully explained, with audio | TR |
-| [Radicals](https://ramazandogna.github.io/nihongo-grammar-n5/radikaller/) | 43 radicals, 347 N3 kanji, 470 words, in-depth lessons and tests | TR · EN |
+| [N3 Reading · Listening](https://ramazandogna.github.io/nihongo-grammar-n5/kanji-n3-book/) | Reading (問題4・5) and listening lessons from the N3 Kanji Book | TR |
 
-### 📁 School Lessons
+### 🖌️ Kanji
 
 | Page | Content | Languages |
 | --- | --- | --- |
-| [Blue Book](https://ramazandogna.github.io/nihongo-grammar-n5/blue-book/) | Reading, grammar, word game, exercises and tests, lesson by lesson | TR |
-| [Business Nihongo](https://ramazandogna.github.io/nihongo-grammar-n5/business-nihongo/) | ISI ビジネス日本語 中級Ⅰ: notices, 敬語, business writing | TR |
-| [N5 Grammar](https://ramazandogna.github.io/nihongo-grammar-n5/n5/) | N5 grammar, kanji, quizzes | TR |
-| [N4 Grammar](https://ramazandogna.github.io/nihongo-grammar-n5/n4/) | All N4 grammar, kanji, vocabulary, quizzes | TR |
-| [N4 Grammar 13–15](https://ramazandogna.github.io/nihongo-grammar-n5/n4/13-15/) | Lessons 13・14・15: grammar, dialogues, tests | TR · EN · ZH |
-| [N3 Kanji Book](https://ramazandogna.github.io/nihongo-grammar-n5/kanji-n3-book/) | Questions 1–35, reading (問題4・5), listening | TR · EN · ZH |
 | [Kanji Book 2](https://ramazandogna.github.io/nihongo-grammar-n5/kanji-book-2/) | 210 kanji in 18 units | TR |
+| [Radicals](https://ramazandogna.github.io/nihongo-grammar-n5/radikaller/) | 55 radicals, 378 N3 kanji and their words, lessons and tests (includes the N3 Kanji Book's kanji questions) | TR |
 
-### 💼 Workplace Japanese
+### 💬 Expressions
 
 | Page | Content | Languages |
 | --- | --- | --- |
 | [Matsuya](https://ramazandogna.github.io/nihongo-grammar-n5/matsuya/) | Menu, customer dialogues, order slips, online orders | TR |
+| [Business Nihongo](https://ramazandogna.github.io/nihongo-grammar-n5/business-nihongo/) | ISI ビジネス日本語 中級Ⅰ: notices, 敬語, business writing | TR |
 
 > The past exam papers and their audio are copyrighted. They are kept out of the repository (`assets/past-n3/` is gitignored), so the public site shows that page without its content.
 

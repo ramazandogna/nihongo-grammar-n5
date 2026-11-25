@@ -1,9 +1,9 @@
-import { PAGES, type Group, type SitePage } from '@/site'
+import { GROUPS, PAGES, type Group, type SitePage } from '@/site'
 import { isAttempt, isSavedRun, runProgress, type Attempt, type Miss } from './quiz-store'
 
 /**
  * What the home page shows about this browser's study: the test to continue,
- * day streak, accuracy, finished tests per folder and the items missed most.
+ * day streak, accuracy, finished tests per menu block and the items missed most.
  * Read-only over the existing storage keys.
  */
 
@@ -71,11 +71,7 @@ export interface Summary {
 }
 
 export function summarize(s: Store | null, now = new Date()): Summary {
-  const groups: Summary['groups'] = {
-    self: { finished: 0, last: null },
-    school: { finished: 0, last: null },
-    work: { finished: 0, last: null },
-  }
+  const groups = Object.fromEntries(GROUPS.map((g) => [g.id, { finished: 0, last: null }])) as Summary['groups']
   const empty: Summary = { resume: null, streakDays: 0, accuracy: null, finished: 0, answers: 0, groups, weak: [] }
   if (!s) return empty
   const days = new Set<string>()
@@ -106,7 +102,7 @@ export function summarize(s: Store | null, now = new Date()): Summary {
       wrong += a.wrong
       days.add(day(a.at))
       if (place) {
-        const g = groups[place.page.group ?? 'self']
+        const g = groups[place.page.group ?? 'grammar']
         g.finished++
         if (!g.last || a.at > g.last) g.last = a.at
       }

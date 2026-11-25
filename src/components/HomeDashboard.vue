@@ -29,7 +29,7 @@ const S = {
     'En çok yanlış yaptıkların; dokununca testinin sayfası açılır.',
     'Your most missed items; tap to open their test.',
   ],
-  folders: ['Klasörlere göre', 'By folder'],
+  folders: ['Bölümlere göre', 'By section'],
   last: ['son', 'last'],
   jlpt: ['JLPT çalışması', 'JLPT practice'],
   jlptHint: [
@@ -39,7 +39,7 @@ const S = {
   vocab: ['Kelime · kanji', 'Vocabulary · kanji'],
   grammar: ['Gramer', 'Grammar'],
   examShort: ['Geçmiş sınav · dinleme', 'Past paper · listening'],
-  reading: ['Okuma (問題4・5)', 'Reading (問題4・5)'],
+  reading: ['Okuma (問題4・5) · dinleme', 'Reading (問題4・5) · listening'],
 }
 const LEVELS = [
   {
@@ -59,6 +59,7 @@ const LEVELS = [
   {
     level: 'N3',
     links: [
+      { to: '/blue-book/', label: [`Blue Book · ${S.grammar[0]}`, `Blue Book · ${S.grammar[1]}`], icon: BookOpen },
       { to: '/past-n3/', label: S.examShort, icon: Headphones },
       { to: '/kanji-n3-book/', label: S.reading, icon: BookOpen },
       { to: '/radikaller/', label: S.vocab, icon: Target },
