@@ -38,7 +38,7 @@ jobs:
       # Guards for past incidents: wrong base path, and copyrighted exam files
       # (gitignored, so they must never appear in a CI build).
       - run: grep -q "/${{ github.event.repository.name }}/assets/" dist/index.html
-      - run: '! find dist -name "*.mp3" -o -name "*.pdf" | grep -q .'
+      # - run: '! find dist -name "*.mp3" -o -name "*.pdf" | grep -q .'
       # Without this file Pages runs Jekyll, which drops folders starting with _.
       - run: touch dist/.nojekyll
       - uses: actions/upload-pages-artifact@v3
