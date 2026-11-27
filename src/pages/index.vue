@@ -6,7 +6,7 @@ import HomeDashboard from '@/components/HomeDashboard.vue'
 import SiteLayout from '@/components/SiteLayout.vue'
 import { usePage } from '@/lib/page'
 import { ref } from 'vue'
-import { BookOpen, BookOpenText, Brush, ChevronRight, Mail, MessagesSquare, Newspaper, Scale } from 'lucide-vue-next'
+import { BookOpen, BookOpenText, Brush, ChevronRight, ClipboardCheck, Mail, MessagesSquare, Newspaper, Scale } from 'lucide-vue-next'
 
 import { GROUPS, PAGES, type Group, type MenuGroup, type SitePage } from '@/site'
 
@@ -23,7 +23,7 @@ function toggle(g: Group) {
 }
 /** Each block's icon; the grammar book opens when expanded. */
 const groupIcon = (name: MenuGroup['icon'], isOpen: boolean) =>
-  ({ grammar: isOpen ? BookOpenText : BookOpen, reading: Newspaper, kanji: Brush, phrases: MessagesSquare })[name]
+  ({ grammar: isOpen ? BookOpenText : BookOpen, jlpt: ClipboardCheck, reading: Newspaper, kanji: Brush, phrases: MessagesSquare })[name]
 /** A block's pages; hidden ones are reached from inside another page. */
 /** Higher level first (N3 → N4 → N5), so the current level sits on top. */
 const ORDER = ['/blue-book/', '/n4/', '/n5/', '/past-n3/', '/kanji-n3-book/', '/radikaller/', '/kanji-book-2/']

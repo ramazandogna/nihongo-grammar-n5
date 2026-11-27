@@ -42,12 +42,12 @@ export interface SitePage {
   en: { title: string; description: string }
 }
 
-export type Group = 'grammar' | 'reading' | 'kanji' | 'phrases'
+export type Group = 'grammar' | 'jlpt' | 'reading' | 'kanji' | 'phrases'
 
 export interface MenuGroup {
   id: Group
   /** Icon name, drawn by the home page (lucide). */
-  icon: 'grammar' | 'reading' | 'kanji' | 'phrases'
+  icon: 'grammar' | 'jlpt' | 'reading' | 'kanji' | 'phrases'
   title: string
   description: string
   en: { title: string; description: string }
@@ -63,11 +63,18 @@ export const GROUPS: readonly MenuGroup[] = [
     en: { title: 'Grammar', description: 'N5, N4 and N3 grammar' },
   },
   {
+    id: 'jlpt',
+    icon: 'jlpt',
+    title: 'JLPT',
+    description: 'Çıkmış N3 sınavları: kelime, gramer, okuma, dinleme',
+    en: { title: 'JLPT', description: 'Past N3 papers: vocabulary, grammar, reading, listening' },
+  },
+  {
     id: 'reading',
     icon: 'reading',
     title: 'Okuma',
-    description: 'Çıkmış N3 sınavları, okuma ve dinleme',
-    en: { title: 'Reading', description: 'Past N3 papers, reading and listening' },
+    description: 'Okuma ve dinleme',
+    en: { title: 'Reading', description: 'Reading and listening' },
   },
   {
     id: 'kanji',
@@ -157,7 +164,7 @@ export const PAGES: readonly SitePage[] = [
     description: 'Çıkmış JLPT N3 sınavları: her soru çözümüyle, okuma metinleri satır satır, dinleme sesli ve metinli.',
     palette: 'solarized',
     langs: ['tr'],
-    group: 'reading',
+    group: 'jlpt',
     en: {
       title: 'Past N3 Papers',
       description:
