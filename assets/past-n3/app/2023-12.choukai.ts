@@ -1,0 +1,273 @@
+import type { ExamSection, ScriptLine } from '@/pages/past-n3/types'
+
+/** JLPT N3, Aralık 2023 — 聴解. Answers worked out from the script. */
+const L = (who: string, jp: string, tr: string): ScriptLine => ({ who, jp, tr })
+
+export const CHOUKAI: ExamSection[] = [
+  {
+    id: 'c1',
+    part: '聴解',
+    title: '問題1 · 課題理解',
+    how: 'Soru önce okunur: KİM, ŞİMDİ / İLK ne yapacak? Konuşmada birçok iş geçer; şunları ele: zaten yapılmış (もう〜てある), başkası yapacak (私の方で確認します), sonra yapılacak (〜たら, あとで), gerek yok (今日はいいです). “いま”, “まず”, “その前に” duyduğun iş genelde cevaptır.',
+    groups: [
+      {
+        title: '1番 · {旅行|りょこう}の{準備|じゅんび}',
+        start: 178,
+        script: [
+          L('', '家で、ホストファミリーのお母さんと男の{留学生|りゅうがくせい}が、高校の旅行について話しています。男の留学生は、これからカバンに何を入れますか。', 'Evde ev sahibi ailenin annesi ile erkek yabancı öğrenci lise gezisi hakkında konuşuyor. Öğrenci şimdi çantasına ne koyacak?'),
+          L('母', '明日からの旅行の準備、終わった？', 'Yarınki gezinin hazırlığı bitti mi?'),
+          L('男', 'はい、でも何か忘れていないか{心配|しんぱい}です。', 'Evet ama bir şey unuttum mu diye endişeliyim.'),
+          L('母', '[[セーター入れた？]]朝と夜は寒くなることもあるから、持って行ったほうがいいよ。', 'Kazak koydun mu? Sabah ve akşam soğuk olabilir, götürsen iyi olur.'),
+          L('男', 'あ、そうですね。[[入れときます]]。', 'Ah, doğru. Koyarım.'),
+          L('母', 'それから{薬|くすり}は？{一応|いちおう}持って行ったほうが{安心|あんしん}だと思うよ。', 'Ya ilaç? Her ihtimale karşı götürmek içini rahatlatır.'),
+          L('男', 'はい、[[{風邪|かぜ}の薬とお{腹|なか}の薬はもう入れてあります]]。', 'Evet, soğuk algınlığı ve mide ilacını zaten koydum.'),
+          L('母', 'そう、じゃ他には…あ、旅行先からお国のご{両親|りょうしん}にはがきを送れると言ったよね。[[切手も持って行ったら？]]いつもの場所にあるから。', 'Peki, başka… Ha, gittiğin yerden ailene kartpostal göndereceğini söylemiştin. Pul da götürsene? Her zamanki yerde.'),
+          L('男', 'ありがとうございます。[[そうします]]。', 'Teşekkürler. Öyle yaparım.'),
+        ],
+        items: [{ no: 1, q: '男の留学生は、これからカバンに何を入れますか。（ア セーター　イ 薬　ウ 切手）', opts: ['ア イ', 'ア イ ウ', 'ア ウ', 'イ ウ'], a: 2, why: 'Kazak: 入れときます ✓ · İlaç: もう入れてあります = zaten koymuş ✗ · Pul: そうします ✓ → ア ウ.' }],
+      },
+      {
+        title: '2番 · りんごのケーキ',
+        start: 269.7,
+        script: [
+          L('', '大学で、男の学生と女の学生が話しています。男の学生は、この後どうしますか。', 'Üniversitede bir erkek ve bir kız öğrenci konuşuyor. Erkek öğrenci bundan sonra ne yapacak?'),
+          L('男', '{先輩|せんぱい}、この前作ってきてくれたりんごのケーキ、作り方教えてくれませんか。何かインターネットのサイトとか見て作ったんですか。', 'Geçen gün getirdiğiniz elmalı kekin tarifini öğretir misiniz? İnternetten bir siteye mi bakıp yaptınız?'),
+          L('女', 'ああ、あれ、私の好きな料理{研究家|けんきゅうか}の{美奈|みな}先生がテレビでレシピを{紹介|しょうかい}してたから、メモを取って作ったんだ。メモ、どこにあるだろう。見つけたら、写真に取って送るね。', 'Ha, o; sevdiğim yemek uzmanı Mina hoca televizyonda tarif verdi, not alıp yaptım. Not nerede acaba? Bulunca fotoğrafını gönderirim.'),
+          L('男', '実は、明日友達が家に遊びに来るから今日作っておきたいなと思って。美奈先生のレシピの本に{載|の}ってるでしょうか。', 'Aslında yarın arkadaşım gelecek, bugün yapmak istiyorum. Mina hocanın tarif kitabında var mıdır?'),
+          L('女', 'あ、新しい本が出たらしくて、それに載ってるってテレビで言ってたな。[[本屋に行って探してみたら？]]', 'Ha, yeni kitabı çıkmış, onda olduğunu televizyonda söylüyordu. Kitapçıya gidip baksana?'),
+          L('男', '[[そうします]]。他のレシピも知りたいし。', 'Öyle yaparım. Başka tarifleri de merak ediyorum.'),
+        ],
+        items: [{ no: 2, q: '男の学生は、この後どうしますか。', opts: ['インターネットで{調|しら}べる', 'レシピのメモをとる', 'せんぱいの本をかりる', '本屋に行く'], a: 3, why: 'Not bulunamadı ve bugün lazım → kitapçı önerisine “そうします” → 4. İnternet ve not tuzak.' }],
+      },
+      {
+        title: '3番 · 何時に電話する？',
+        start: 357.3,
+        script: [
+          L('', '大学で、女の学生と男の学生が話しています。女の学生は、何時に男の学生に電話しますか。', 'Kız öğrenci erkek öğrenciyi saat kaçta arayacak?'),
+          L('女', '{山下|やました}君、ちょっと{相談|そうだん}したいことがあるんだけど。', 'Yamashita, sana danışmak istediğim bir şey var.'),
+          L('男', '今から授業なんだ。ごめん、急ぎ？', 'Şimdi dersim var. Pardon, acil mi?'),
+          L('女', 'あ、留学プログラムに申し込もうと思ってて。山下君、去年行ってきたでしょう？ちょっと聞きたいことがあって。授業何時まで？', 'Değişim programına başvurmayı düşünüyorum. Sen geçen yıl gittin ya, sormak istediklerim var. Ders saat kaça kadar?'),
+          L('男', '授業は[[三時]]までなんだけど、終わったらすぐにうちに帰らなきゃいけないんだ。電話でもいい？[[三時半とか]]。', 'Ders 3’e kadar ama bitince hemen eve gitmem lazım. Telefonla olur mu? 3 buçuk gibi.'),
+          L('女', '[[じゃ、その時間に電話してもいい？]]', 'O zaman o saatte arayabilir miyim?'),
+          L('男', 'うん。今日は五時からバイトがあるから、四時半にはうちを出なくちゃいけないんだけど。', 'Olur. Bugün 5’te işim var, 4 buçukta evden çıkmam lazım.'),
+          L('女', '分かった。その前には終わるよ。ありがとう。', 'Tamam, ondan önce biter. Teşekkürler.'),
+        ],
+        items: [{ no: 3, q: '女の学生は、何時に男の学生に電話しますか。', opts: ['3時', '3時半', '4時半', '5時'], a: 1, why: '“その時間” = 三時半. 3 dersin bittiği, 4:30 çıkış, 5 iş saati — hepsi tuzak.' }],
+      },
+      {
+        title: '4番 · レストランのアルバイト',
+        start: 439.5,
+        script: [
+          L('', 'レストランで、アルバイトの男の人と女の店員が話しています。男の人はこの後、まず何をしますか。', 'Restoranda yarı zamanlı çalışan erkek ile kadın çalışan konuşuyor. Adam bundan sonra İLK ne yapacak?'),
+          L('男', 'おはようございます。今朝はすごい雨でしたね。', 'Günaydın. Bu sabah çok yağmur vardı.'),
+          L('女', '{吉田|よしだ}さん、おはようございます。ランチの{開店|かいてん}前に止んで良かったですね。もうすぐ開店ですが、お客様は{靴|くつ}が{濡|ぬ}れていると思うので、床が濡れたら{拭|ふ}くようにしてください。あ、[[お客様の{傘|かさ}を入れるもの、いま、入り口の外に出して置いてください]]。まだ降るかもしれないので。', 'Günaydın Yoshida. Öğle açılışından önce dinmesi iyi oldu. Birazdan açıyoruz; müşterilerin ayakkabıları ıslak olur, yer ıslanırsa silin. Ah, şemsiyelik — şimdi girişin dışına çıkarın lütfen. Yine yağabilir.'),
+          L('男', 'わかりました。', 'Anladım.'),
+          L('女', '[[そのあとで]]、{店長|てんちょう}の所に行ってもらえますか。昨日、吉田さんが受けた{予約|よやく}について、詳しいことを聞きたいそうです。', 'Ondan sonra müdürün yanına gider misiniz? Dün aldığınız rezervasyonun ayrıntılarını sormak istiyor.'),
+          L('男', 'はい。', 'Tamam.'),
+          L('女', 'いつもは朝、外の席を拭いてもらっていますが、[[今日はいいです]]。店内のお席だけご案内しましょう。', 'Normalde sabah dış masaları sildiriyoruz ama bugün gerek yok. Sadece içerideki masalara alalım.'),
+          L('男', 'わかりました。', 'Anladım.'),
+        ],
+        items: [{ no: 4, q: '男の人は、この後まず何をしますか。（1 床を拭く　2 傘立てを外に出す　3 店長と話す　4 外の席を拭く）', opts: ['床を拭く（絵1）', '傘立てを外に出す（絵2）', '店長と話す（絵3）', '外の席を拭く（絵4）'], a: 1, why: 'Şemsiyelik: “いま” → ilk iş ✓. Yer: ıslanırsa (〜たら) ✗ · Müdür: そのあとで ✗ · Dış masalar: 今日はいいです ✗.' }],
+      },
+      {
+        title: '5番 · 急な会議',
+        start: 528.7,
+        script: [
+          L('', '会社で、女の人と男の人が話しています。女の人は、これからまず、何をしますか。', 'Şirkette kadın ve adam konuşuyor. Kadın şimdi İLK ne yapacak?'),
+          L('女', '明日、急に{会議|かいぎ}が入りましたね。準備、何か手伝いましょうか。', 'Yarın aniden toplantı çıktı. Hazırlıkta yardım edeyim mi?'),
+          L('男', 'あ、{林|はやし}さん、ありがとう。会議の場所はまだ決まってないんですが、[[{関係者|かんけいしゃ}には{日時|にちじ}だけメールで先に知らせました]]。', 'Hayashi, teşekkürler. Yer henüz belli değil ama ilgililere tarih ve saati mail ile bildirdim.'),
+          L('女', 'はい。', 'Evet.'),
+          L('男', 'えっと、{出席者|しゅっせきしゃ}の数がまだわからないんですけど、場所は第一会議室がいいですね。[[予約、お願いしてもいいですか]]。資料は部長から頂いているので、[[出席者の数がわかったら、印刷も]]お願いします。', 'Katılımcı sayısı henüz belli değil ama 1 numaralı toplantı odası iyi olur. Rezervasyonu yapar mısınız? Belgeler müdürden geldi; katılımcı sayısı belli olunca çıktısını da alın lütfen.'),
+          L('女', 'わかりました。出席者の確認は…', 'Anladım. Katılımcıların teyidi…'),
+          L('男', '先送ったメールに返信してもらう予定だから、[[私の方で確認します]]。', 'Gönderdiğim maile cevap verecekler, onu ben kontrol ederim.'),
+          L('女', 'わかりました。', 'Anladım.'),
+        ],
+        items: [{ no: 5, q: '女の人は、これからまず、何をしますか。', opts: ['かいぎしつを よやくする', 'かんけいしゃにメールする', 'しりょうを いんさつする', 'しゅっせきしゃの かくにんをする'], a: 0, why: 'Mail zaten gönderildi ✗ · Çıktı: sayı belli olunca (〜たら) ✗ · Teyit: 私の方で = adam yapacak ✗ → oda rezervasyonu ✓.' }],
+      },
+      {
+        title: '6番 · 観光バス',
+        start: 612.8,
+        script: [
+          L('', '観光バスの中で、旅行会社の女の人が話しています。客はバスを降りて、まず何をしますか。', 'Tur otobüsünde seyahat şirketinden bir kadın konuşuyor. Müşteriler otobüsten inince İLK ne yapacak?'),
+          L('女', '{北山|きたやま}公園に{到着|とうちゃく}しました。これから公園内にあるお{城|しろ}を見学します。[[今からチケットを配ります]]。[[バスを降りましたら、前方にお城の門が見えますので、その前にお集まりください]]。門の前で皆さんで一緒に写真を取ります。その後、お城の中に入りますが、初めにお城の歴史についてのビデオを見ていただきます。ビデオを見た後は、自由に見学をしてください。昼食は見学の後、公園内のレストランで取る予定です。', 'Kitayama Parkı’na vardık. Şimdi parktaki kaleyi gezeceğiz. Biletleri şimdi dağıtıyorum. Otobüsten inince ileride kalenin kapısını göreceksiniz, onun önünde toplanın. Kapının önünde hep birlikte fotoğraf çekeceğiz. Sonra kaleye girip önce tarihiyle ilgili bir video izleyeceksiniz. Videodan sonra serbest gezi. Öğle yemeği geziden sonra parktaki restoranda.'),
+        ],
+        items: [{ no: 6, q: '客はバスを降りて、まず何をしますか。', opts: ['しろの入り口でチケットを買う', 'しろの門の前に行く', 'ビデオを見る', 'レストランに行く'], a: 1, why: 'Bilet otobüste dağıtılıyor (satın alınmıyor) ✗. İndikten sonra ilk: kapının önünde toplanmak → 2. Video ve restoran sonra.' }],
+      },
+    ],
+  },
+  {
+    id: 'c2',
+    part: '聴解',
+    title: '問題2 · ポイント理解',
+    how: 'Soru (neden? ne? ne istiyor?) önce sorulur, sonra şıkları OKUMA süresi verilir — mutlaka oku. Konuşmada şıkların çoğu geçer ama bir “でも / 実は / それより / 本当は” ile düzeltilir. Asıl cevap düzeltmeden sonra gelir.',
+    groups: [
+      {
+        title: '1番 · 社長室の絵',
+        start: 833,
+        script: [
+          L('', '会社の社長室で、客の女の人と社長が話しています。社長室に{飾|かざ}ってある絵は、誰が{描|か}いた絵ですか。', 'Şirket başkanının odasında misafir kadın ile başkan konuşuyor. Odada asılı resimleri kim yapmış?'),
+          L('女', '{素敵|すてき}な絵がたくさんありますね。全部同じ画家の絵ですか。', 'Çok güzel resimler var. Hepsi aynı ressamın mı?'),
+          L('男', 'ええ。[[気に入っている画家がいて、その人の絵を集めているんです]]。今はまだそんなに知られていないけど、いつかきっと、日本を代表する画家になると思いますよ。', 'Evet. Sevdiğim bir ressam var, onun resimlerini topluyorum. Şimdilik pek tanınmıyor ama bir gün Japonya’nın önde gelen ressamı olacak bence.'),
+          L('女', 'そうですか。以前、社長も絵を描かれるとお聞きしましたが、今もよく描かれるんですか？', 'Öyle mi. Sizin de resim yaptığınızı duymuştum, hâlâ yapıyor musunuz?'),
+          L('男', 'あ、私は今はあまり。でも、{娘|むすめ}が大学で絵を勉強していて、画家になりたいと言ってます。[[自宅には]]、娘の絵を飾っていますよ。', 'Ben artık pek yapmıyorum. Ama kızım üniversitede resim okuyor, ressam olmak istiyor. Evde kızımın resimlerini asıyorum.'),
+        ],
+        items: [{ no: 7, q: '社長室に飾ってある絵は、誰が描いた絵ですか。', opts: ['しゃちょうが好きな画家', '日本をだいひょうする画家', 'しゃちょう', 'しゃちょうのむすめ'], a: 0, why: 'Odadakiler sevdiği ressamın (気に入っている画家) ✓. “Japonya’yı temsil edecek” gelecek tahmini; kızının resimleri EVDE ✗.' }],
+      },
+      {
+        title: '2番 · 遅刻の理由',
+        start: 938.4,
+        script: [
+          L('', '電話で、男の学生と女の学生が話しています。男の学生は、どうして{遅刻|ちこく}すると言っていますか。', 'Telefonda erkek ve kız öğrenci konuşuyor. Erkek neden geç kalacağını söylüyor?'),
+          L('男', 'もしもし、僕まだ家なんだけど。待ち合わせの時間に三十分ぐらい遅れそうなんだ。ごめん。', 'Alo, hâlâ evdeyim. Buluşmaya 30 dakika kadar geç kalacağım galiba. Pardon.'),
+          L('女', 'また{寝坊|ねぼう}？', 'Yine mi uyuyakaldın?'),
+          L('男', '[[違うよ]]。昨日友達がうちに泊まりに来てたんだけど、[[財布を忘れて帰ったから、今から取りにくるって電話があって]]。', 'Hayır. Dün arkadaşım bende kaldı, cüzdanını unutup gitmiş; şimdi almaya gelecekmiş, aradı.'),
+          L('女', 'それなら仕方ないね。私、もう家出ちゃったから、カフェにでも入って待ってるよ。', 'O zaman yapacak bir şey yok. Ben evden çıktım, bir kafeye girip beklerim.'),
+          L('男', 'ごめん。コーヒー代、僕が出すから。', 'Kusura bakma. Kahveyi ben ısmarlarım.'),
+          L('女', 'へえ、いいよ。それより、この前みたいに、降りる駅、間違えないように気つけてね。', 'Yok gerek yok. Asıl geçen sefer gibi ineceğin istasyonu şaşırma.'),
+        ],
+        items: [{ no: 8, q: '男の学生は、どうして遅刻すると言っていますか。', opts: ['ねぼうしたから', '友人がわすれものをとりに来るから', 'カフェで友人と会わなければいけないから', 'おりる駅をまちがえたから'], a: 1, why: 'Uyuyakalma: 違うよ ✗ · Arkadaşı unuttuğu cüzdanı almaya geliyor ✓ · İstasyon hatası “geçen sefer”di ✗.' }],
+      },
+      {
+        title: '3番 · 帰国までに',
+        start: 1039.0,
+        script: [
+          L('', '大学で、男の学生と女の留学生が話しています。女の留学生は、帰国までに何をしたいと言っていますか。', 'Erkek öğrenci ile yabancı kız öğrenci konuşuyor. Kız ülkesine dönmeden önce ne yapmak istiyor?'),
+          L('男', 'サラさん帰国まであと一か月だよね。それまでに何かやっておきたいことない？手伝えることがあったら言ってね。', 'Sara, dönmene bir ay kaldı. O zamana kadar yapmak istediğin bir şey var mı? Yardım edebileceğim bir şey olursa söyle.'),
+          L('女', 'ありがとう。うん、[[行きたかった温泉とか、観光地は大体行けたし]]、あ、そうだ。友達から{着物|きもの}をもらったんだ。[[自分で着られるようになりたいな]]。誰か教えてくれる人、知らない？', 'Teşekkürler. Gitmek istediğim kaplıca ve turistik yerlerin çoğuna gittim. Ha, arkadaşımdan kimono aldım. Kendim giyebilmek istiyorum. Öğretebilecek birini tanıyor musun?'),
+          L('男', 'えっと、あ、前に日本料理の作り方を教えてくれた先生、覚えてる？確か、着物の着方も教えてると言ってたよ。僕、連絡先知ってるから、聞いてみようか。', 'Hmm, geçen sefer Japon yemeği öğreten hocayı hatırlıyor musun? Kimono giyimi de öğretiyormuş. İletişim bilgisi bende, sorayım mı?'),
+          L('女', 'ああ、是非お願いしたいな。', 'Ah, lütfen.'),
+          L('男', 'わかった。ほかにはある？', 'Tamam. Başka?'),
+          L('女', 'ううん、[[新幹線も乗れたし]]、やりたかったこと、全部できたと思う。', 'Hayır, Shinkansen’e de bindim; yapmak istediklerimin hepsini yaptım sanırım.'),
+        ],
+        items: [{ no: 9, q: '女の留学生は、帰国までに何をしたいと言っていますか。', opts: ['おんせんに行きたい', '着物の着方を習いたい', '日本料理の作り方を習いたい', 'しんかんせんに乗りたい'], a: 1, why: 'Kaplıca ve Shinkansen zaten yapıldı (行けたし, 乗れたし); yemek hocası sadece öğretmeni tanıtmak için anıldı → kimono giymeyi öğrenmek ✓.' }],
+      },
+      {
+        title: '4番 · 新しい靴',
+        start: 1157.7,
+        script: [
+          L('', '大学で、女の学生と男の学生が話しています。男の学生は、今{履|は}いている靴を店で選んだ理由はなんだと言っていますか。', 'Erkek öğrenci şu an giydiği ayakkabıyı dükkânda neden seçtiğini söylüyor?'),
+          L('女', 'あ、今日の靴、新しいね。', 'Ayakkabın yeni, değil mi?'),
+          L('男', 'そう、さっき買ったばかりなんだ。履いてた靴の{底|そこ}が取れちゃって、大学に来る途中で慌てて買ったんだ。', 'Evet, az önce aldım. Eski ayakkabının tabanı çıktı, okula gelirken aceleyle aldım.'),
+          L('女', 'ええ、黄色でかっこいいね。それにその{柄|がら}、今年の{流行|りゅうこう}だよね。', 'Sarı, havalı. Desen de bu yılın modası.'),
+          L('男', 'そうなの？[[知らなかった]]。[[履いて歩いてみたら軽くて楽だったんだ]]。本当は黒とか落ち着いた色が良かったんだけど、この靴はこの色しかなくて。ちょっと{派手|はで}じゃない？', 'Öyle mi? Bilmiyordum. Giyip yürüyünce hafif ve rahattı. Aslında siyah gibi sade bir renk isterdim ama bu sadece bu renkteydi. Biraz gösterişli değil mi?'),
+          L('女', 'いいんじゃない？明るい色のほうがいいよ。', 'Bence güzel, açık renk daha iyi.'),
+          L('男', 'そう？よかった。[[そんなに安くはなかった]]んだけどね、これ。', 'Öyle mi? İyi. Pek ucuz da değildi aslında.'),
+        ],
+        items: [{ no: 10, q: '男の学生は、今履いている靴を店で選んだ理由はなんだと言っていますか。', opts: ['りゅうこうしている　がらだったから', '自分ににあう色だったから', '軽くて歩きやすかったから', 'ねだんが安かったから'], a: 2, why: 'Moda: 知らなかった ✗ · Renk: aslında siyah isterdi ✗ · Ucuz değildi ✗ → hafif ve rahat ✓.' }],
+      },
+      {
+        title: '5番 · 留学生のスピーチ',
+        start: 1264.5,
+        script: [
+          L('', '日本語学校で、留学生がスピーチをしています。留学生は、日本に留学に来て、何が最も良かったと言っていますか。', 'Bir yabancı öğrenci konuşma yapıyor. Japonya’da en çok neyi iyi bulduğunu söylüyor?'),
+          L('男', '僕は日本の映画が好きで、日本に興味を持ちました。日本に来て映画館で日本の映画を見たり、僕が好きな映画が取られた場所に行ったりできて、{感激|かんげき}しています。[[でも、もっと嬉しいのは日本人の友達ができたことです]]。これから、友達と一緒に旅行することも計画しています。とても楽しみです。', 'Japon filmlerini sevdiğim için Japonya’ya ilgi duydum. Sinemada Japon filmi izleyebildim, sevdiğim filmlerin çekildiği yerlere gidebildim, çok duygulandım. Ama daha da sevindirici olan Japon arkadaşlar edinmem. Şimdi arkadaşlarla seyahat planlıyoruz, çok heyecanlıyım.'),
+        ],
+        items: [{ no: 11, q: '留学生は、日本に留学に来て、何が最も良かったと言っていますか。', opts: ['映画館で日本の映画が見られたこと', '好きな映画がとられた場所に行けたこと', '日本人の友だちができたこと', '友だちと旅行できたこと'], a: 2, why: '“でも、もっと嬉しいのは” → en iyisi Japon arkadaşlar ✓. Seyahat henüz plan (これから) ✗.' }],
+      },
+      {
+        title: '6番 · 車椅子の旅行',
+        start: 1352.9,
+        script: [
+          L('', 'ラジオで、男の人が話しています。男の人は、最近{車椅子|くるまいす}で旅行した時、何が{残念|ざんねん}だったと言っていますか。', 'Radyoda bir adam konuşuyor. Son tekerlekli sandalye yolculuğunda neyin üzücü olduğunu söylüyor?'),
+          L('男', '私は普段から車椅子を使ってるんですが、この前、久しぶりに旅行しました。以前はエレベーターや車椅子用のトイレは、小さい駅にはありませんでしたが、[[今は増えているので、旅行も楽でした]]。ホテルの部屋も、車椅子でも利用しやすくなっていました。[[ただ]]旅行中、ラーメンや寿司など、行きたい店がいくつかあったんですが、[[狭かったり、階段しかなかったりして、入れずにがっかりしました]]。ファミレスなど、利用しやすい店もあるんですけどね。', 'Hep tekerlekli sandalye kullanıyorum; geçenlerde uzun bir aradan sonra seyahat ettim. Eskiden küçük istasyonlarda asansör ve engelli tuvaleti yoktu ama şimdi arttı, yolculuk kolaydı. Otel odası da rahattı. Yalnız ramen, suşi gibi gitmek istediğim birkaç dükkân dar ya da sadece merdivenliydi; giremedim, hayal kırıklığına uğradım. Aile restoranları gibi rahat yerler de var gerçi.'),
+        ],
+        items: [{ no: 12, q: '男の人は、最近車椅子で旅行した時、何が残念だったと言っていますか。', opts: ['駅にエレベーターがあまりないこと', '駅のトイレが使いにくいこと', 'ホテルのへやが不便なこと', '入れない店があること'], a: 3, why: 'Asansör/tuvalet “eskiden” sorundu, şimdi arttı ✗ · Otel rahattı ✗ · ただ… 入れずにがっかり → girilemeyen dükkânlar ✓.' }],
+      },
+    ],
+  },
+  {
+    id: 'c3',
+    part: '聴解',
+    title: '問題3 · 概要理解',
+    how: 'Kâğıtta hiçbir şey yazmaz; soru ve şıklar konuşmadan SONRA sesle okunur. Ayrıntıya takılma, “konuşmanın ana fikri ne?” diye dinle. Not al: konu + konuşanın vardığı sonuç. Ayrıntıdan bahseden şıklar (tek bir örnek) genelde tuzaktır.',
+    groups: [
+      {
+        title: '1番',
+        start: 1644,
+        script: [
+          L('', '男の人と女の人が話しています。', 'Bir adam ile bir kadın konuşuyor.'),
+          L('男', 'リンさん、今広告の会社で働いてるんだよね。楽しい？', 'Lin, şimdi reklam şirketinde çalışıyorsun değil mi? Eğlenceli mi?'),
+          L('女', 'うん。勉強になることばかりだし、楽しんでやってるうちに、三年たっちゃった。[[学生時代、今の会社でアルバイトをしてたんだけど、みんな楽しそうに働いているのを見て、ここに就職したいって思ったんだ]]。入れて良かったよ。', 'Evet. Hep öğretici şeyler var, keyifle çalışırken üç yıl geçti. Öğrenciyken bu şirkette yarı zamanlı çalışıyordum; herkesin keyifle çalıştığını görünce burada çalışmak istedim. Girebildiğim için mutluyum.'),
+          L('男', 'そうか。良かったね。', 'Ne güzel.'),
+          L('女', '将来は、自分で広告の会社を作りたいと思ってるんだ。そのためにも、今の所でしばらく頑張るつもり。', 'İleride kendi reklam şirketimi kurmak istiyorum. Bunun için de bir süre burada çalışacağım.'),
+          L('', '女の人は、何について話していますか。', 'Kadın ne hakkında konuşuyor?'),
+        ],
+        items: [{ no: 13, q: '女の人は、何について話していますか。', opts: ['楽しく働く方法', '今の会社で働いている理由', '今している仕事の大変さ', 'アルバイトで学んだこと'], a: 1, why: 'Neden bu şirkette: öğrenciyken herkesin keyifle çalıştığını gördü + gelecekte kendi şirketi için deneyim → 2.' }],
+      },
+      {
+        title: '2番',
+        start: 1739.5,
+        script: [
+          L('', 'テレビで、専門家が{山川市|やまかわし}について話しています。', 'Televizyonda bir uzman Yamakawa şehrini anlatıyor.'),
+          L('男', '農業や人々の生活は、その土地の自然環境に大きな影響を受けます。山川市の辺りは、雨が少なく、大きな川もありません。[[そのため水が不足することが多く、昔の人は人工の池をたくさん作ることにしました。降った雨を池にため、必要な時に水が使えるようにしてきたのです]]。', 'Tarım ve insanların yaşamı bölgenin doğasından çok etkilenir. Yamakawa civarında az yağmur yağar, büyük nehir de yoktur. Bu yüzden sık su sıkıntısı olur; eskiler çok sayıda yapay gölet yapmışlar. Yağmuru göletlerde biriktirip gerektiğinde su kullanabilmişler.'),
+          L('', '専門家は、山川市の何について話していますか。', 'Uzman Yamakawa’nın neyi hakkında konuşuyor?'),
+        ],
+        items: [{ no: 14, q: '専門家は、山川市の何について話していますか。', opts: ['農業の種類', '雨の量の変化', '川をきれいにする方法', '水が不足しないようにする工夫'], a: 3, why: 'Ana fikir: su sıkıntısına karşı yapay göletler = suyun yetmemesine karşı çözüm (工夫) ✓.' }],
+      },
+      {
+        title: '3番',
+        start: 1819.6,
+        script: [
+          L('', 'ラジオで、女の人が話しています。', 'Radyoda bir kadın konuşuyor.'),
+          L('女', 'コップに水が半分残っていたら、あなたは「まだ半分もある」と思いますか。それとも「もう半分しかない」と思いますか。この二つの質問は言い方は違いますが、コップの中の水が半分だということは同じです。「半分しかない」と否定的に思う人は、考え方が否定的なのかもしれません。考え方を変えるのは簡単なことではありませんが、[[自分がどんな考え方をすることが多いかは、こんな質問で簡単に気付くことができるのです]]。', 'Bardakta yarım su kalsa “daha yarısı var” mı dersiniz, “sadece yarısı kaldı” mı? İkisi farklı söyleniş ama su aynı. “Sadece yarısı” diyen olumsuz düşünüyor olabilir. Düşünce tarzını değiştirmek kolay değil ama nasıl düşündüğünüzü bu tür bir soruyla kolayca fark edebilirsiniz.'),
+          L('', '女の人は、何について話していますか。', 'Kadın ne hakkında konuşuyor?'),
+        ],
+        items: [{ no: 15, q: '女の人は、何について話していますか。', opts: ['正しい言葉の使い方', '考え方を変える方法', '自分の考え方の{癖|くせ}を知る方法', '相手に伝わる話し方'], a: 2, why: 'Sonuç cümlesi: kendi düşünme alışkanlığını bu soruyla fark edebilirsin → 3. “Değiştirmek kolay değil” dediği için 2 tuzak.' }],
+      },
+    ],
+  },
+  {
+    id: 'c4',
+    part: '聴解',
+    title: '問題4 · 発話表現',
+    how: 'Resimdeki kişi ne söyler? Durum + 3 seçenek sesle gelir. Kim kime konuşuyor (öğretmen, arkadaş, dükkân çalışanı) ve ne istiyor (rica, uyarı, selam)? Kalıp ifadeleri bil: ご無沙汰しております, 〜てほしいんですが, これでいい？',
+    groups: [
+      {
+        script: [
+          L('1番', '高校のクラス会で、卒業後久しぶりに先生に会いました。何と言いますか。1 会えるのを楽しみにしています。 2 ご{無沙汰|ぶさた}しております。 3 初めてお目にかかります。', 'Lise buluşmasında mezuniyetten sonra uzun aradan sonra öğretmeninle karşılaştın. Ne dersin?'),
+          L('2番', '友達が教室を出るところです。{椅子|いす}に友達の{上着|うわぎ}があります。何と言いますか。1 上着、置いていったら？ 2 上着、取ってくれる？ 3 上着、忘れてるよ。', 'Arkadaşın sınıftan çıkıyor; sandalyede ceketi kalmış. Ne dersin?'),
+          L('3番', '靴の{踵|かかと}が取れてしまいました。店の人に修理してもらいたいです。何と言いますか。1 あの、この靴、直して欲しいんですが。 2 あの、この靴、修理しましょうか。 3 あの、この靴、いただけますか。', 'Ayakkabının topuğu çıktı, dükkânda tamir ettirmek istiyorsun. Ne dersin?'),
+          L('4番', '友達から折り紙を習っています。ここまでの折り方が正しいかどうか聞きたいです。何と言いますか。1 ちょっと折ってみて。 2 折り紙、ある？ 3 これでいい？', 'Arkadaşından origami öğreniyorsun; şimdiye kadarki katlamanın doğru olup olmadığını sormak istiyorsun.'),
+        ],
+        items: [
+          { no: 16, start: 1989, q: '先生に久しぶりに会った。', opts: ['会えるのを楽しみにしています。', 'ご無沙汰しております。', '初めてお目にかかります。'], a: 1, why: 'Uzun süre görüşmeyince kibar selam: ご無沙汰しております. 1 buluşmadan önce, 3 ilk tanışmada söylenir.' },
+          { no: 17, start: 2029.9, q: '友達が上着を忘れている。', opts: ['上着、置いていったら？', '上着、取ってくれる？', '上着、忘れてるよ。'], a: 2, why: 'Uyarı: 忘れてるよ = unutuyorsun. 1 “bırak git” der, 2 “bana uzatır mısın” der.' },
+          { no: 18, start: 2066.4, q: '店の人に靴を直してもらいたい。', opts: ['あの、この靴、直して欲しいんですが。', 'あの、この靴、修理しましょうか。', 'あの、この靴、いただけますか。'], a: 0, why: 'Rica: 〜て欲しいんですが. 2 tamir teklif eden dükkân çalışanının sözü; 3 “alabilir miyim”.' },
+          { no: 19, start: 2106.4, q: '折り方が正しいか聞きたい。', opts: ['ちょっと折ってみて。', '折り紙、ある？', 'これでいい？'], a: 2, why: 'Doğru mu diye sormak: これでいい？ (böyle mi?).' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c5',
+    part: '聴解',
+    title: '問題5 · 即時応答',
+    how: 'Kısa bir cümle ve hemen 3 cevap. Hız önemli: cümle soru mu, rica mı, haber mi, uyarı mı? Japonca tuzak: cümledeki kelimeyi tekrar eden cevap çoğu zaman yanlıştır (遠慮 → 遠慮してません ✗).',
+    groups: [
+      {
+        script: [
+          L('1番', 'あれ、ジョンさん、帰るの？次の授業に出ないの？', 'John, gidiyor musun? Sonraki derse girmiyor musun?'),
+          L('2番', '{和田|わだ}さん、この間貸してくれた経済の本、ちっともわからなかったよ。', 'Wada, geçen gün verdiğin ekonomi kitabından hiçbir şey anlamadım.'),
+          L('3番', 'お客様、申し訳ありませんが、ロビーでの飲食はご{遠慮|えんりょ}ください。', 'Efendim, kusura bakmayın, lobide yiyip içmemenizi rica ederiz.'),
+          L('4番', '課長、先週お伝えしましたが、今日はこれで{早退|そうたい}させていただきます。', 'Müdürüm, geçen hafta söylemiştim, bugün erken çıkıyorum.'),
+          L('5番', 'リナさん、今度のスピーチ大会に{応募|おうぼ}してみてはどうですか。', 'Rina, bu seferki konuşma yarışmasına başvurmaya ne dersin?'),
+          L('6番', 'お客様、そちらのスーツ、他の色もございますが、ご覧になりますか？', 'Efendim, o takımın başka renkleri de var, bakmak ister misiniz?'),
+          L('7番', '{野田|のだ}さん、明日の歓迎会、開会の挨拶をしてもらえないでしょうか。', 'Noda, yarınki karşılama partisinde açılış konuşmasını yapabilir misiniz?'),
+          L('8番', '{雷|かみなり}が鳴ってるね。旅館につくまで雨が降らなければいいけど。', 'Gök gürlüyor. Hana varana kadar yağmasa iyi olur.'),
+          L('9番', '工事が遅れていること、部長にも報告しないといけないね。', 'İnşaatın geciktiğini müdüre de bildirmek lazım.'),
+        ],
+        items: [
+          { no: 20, start: 2221, q: 'あれ、ジョンさん、帰るの？次の授業に出ないの？', opts: ['今日は病院にいかなくちゃいけなくて。', 'え、次の授業、なくなったの？', 'どうして出ないの？'], a: 0, why: 'Neden gitmediğini açıklar: hastaneye gitmem lazım.' },
+          { no: 21, start: 2258.1, q: 'この間貸してくれた経済の本、ちっともわからなかったよ。', opts: ['そんなに難しかった？', 'ちょっとはわかったんだね。', '読みやすかったなら、良かった。'], a: 0, why: 'ちっとも〜ない = hiç anlamadım → “o kadar zor muydu?”' },
+          { no: 22, start: 2289.6, q: 'ロビーでの飲食はご遠慮ください。', opts: ['じゃあ、ロビーでいただきます。', 'え、遠慮してませんよ。', 'あ、ここで食べちゃいけないんですね。'], a: 2, why: 'ご遠慮ください = yapmayın (kibar yasak). 2, kelimeyi tekrarlayan tuzak.' },
+          { no: 23, start: 2322.5, q: '今日はこれで早退させていただきます。', opts: ['あ、早退はしないんですね。', 'すみません、お先に失礼します。', 'あ、はい。お疲れ様でした。'], a: 2, why: 'Müdür, erken çıkan çalışana: お疲れ様でした. 2 çıkan kişinin sözü.' },
+          { no: 24, start: 2356.1, q: '今度のスピーチ大会に応募してみてはどうですか。', opts: ['すごく緊張しました。', 'ぜひチャレンジしたいです。', '応募してみたんですね。'], a: 1, why: 'Öneri → istekle kabul: ぜひチャレンジしたいです.' },
+          { no: 25, start: 2385.6, q: 'そちらのスーツ、他の色もございますが、ご覧になりますか？', opts: ['他の色のは、まだ見ていません。', 'あ、見せていただけますか。', 'それは、いつ届くんですか？'], a: 1, why: 'Bakmak ister misiniz? → evet, gösterir misiniz.' },
+          { no: 26, start: 2418.5, q: '明日の歓迎会、開会の挨拶をしてもらえないでしょうか。', opts: ['挨拶をしなくてよくなったんですね。', '挨拶、してくれるんですか。', '大勢の前で話すの、苦手なんです。すみません。'], a: 2, why: 'Rica → kibarca reddetme: kalabalık önünde konuşmakta kötüyüm.' },
+          { no: 27, start: 2452.5, q: '雷が鳴ってるね。旅館につくまで雨が降らなければいいけど。', opts: ['あ、降ってきたんだね。', '急いだほうがよさそうだね。', 'え、降ったほうがいいの？'], a: 1, why: 'Yağmadan varmak istiyoruz → acele etsek iyi olur.' },
+          { no: 28, start: 2484.0, q: '工事が遅れていること、部長にも報告しないといけないね。', opts: ['では、私から連絡しておきます。', '報告してはいけないんですね。', '部長から聞いたんですか。'], a: 0, why: 'Bildirmek lazım → “ben haber veririm”. 2: 〜ないといけない’yi yasak sanan tuzak.' },
+        ],
+      },
+    ],
+  },
+]
