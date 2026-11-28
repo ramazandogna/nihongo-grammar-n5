@@ -12,6 +12,7 @@ import SiteLayout from '@/components/SiteLayout.vue'
 import StudyHeader from '@/components/StudyHeader.vue'
 import { usePage } from '@/lib/page'
 import { notation } from '@/lib/ruby'
+import { read, write } from '@/lib/quiz-store'
 import { toTop } from '@/lib/scroll'
 import type { Exam, ExamGroup, ExamQuestion, ExamSection } from './types'
 
@@ -50,6 +51,22 @@ const page = ref(0)
 const picks = ref<Record<string, number>>({})
 const shown = ref<Record<string, boolean>>({})
 const scriptOpen = ref<Record<string, boolean>>({})
+
+/* Learn-mode answers, kept per exam so they survive a reload and travel with sync. */
+type Learned = { picks: Record<string, number>; shown: Record<string, boolean> }
+const LEARN_KEY = (id: string) => `nihongo-past-n3:${id}`
+watch(exam, (e) => {
+  const v = e ? read<Learned>(LEARN_KEY(e.id)) : null
+  picks.value = v?.picks && typeof v.picks === 'object' ? v.picks : {}
+  shown.value = v?.shown && typeof v.shown === 'object' ? v.shown : {}
+})
+watch(
+  [picks, shown],
+  () => {
+    if (exam.value) write(LEARN_KEY(exam.value.id), { picks: picks.value, shown: shown.value })
+  },
+  { deep: true },
+)
 
 watch([exam, part, section, mode], () => {
   page.value = 0

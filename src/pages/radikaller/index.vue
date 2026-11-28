@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { requestSync } from '@/lib/sync'
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { Eye, Image, Lightbulb, MapPin, Puzzle, TriangleAlert, Volume2 } from 'lucide-vue-next'
 import { BaseButton, BaseCard, BaseInput, CircularProgress, SegmentedControl } from 'rei-kit'
@@ -71,10 +72,7 @@ const U = {
   statsTab: ['İstatistik', 'Stats'],
   learned: ['öğrendim', 'learned'],
   kanjiDone: [(a: number, b: number) => `${a}/${b} kanji`, (a: number, b: number) => `${a}/${b} kanji`],
-  studyLocked: [
-    'Önce tüm kanjileri “öğrendim” olarak işaretle.',
-    'Mark every kanji as learned first.',
-  ],
+  studyLocked: ['Önce tüm kanjileri “öğrendim” olarak işaretle.', 'Mark every kanji as learned first.'],
   short: [(n: number) => `Kısa test ${n}`, (n: number) => `Short test ${n}`],
   long: [(n: number) => `Uzun test ${n}`, (n: number) => `Long test ${n}`],
   n3Test: ['N3 kitap kanjileri', 'N3 book kanji'],
@@ -89,8 +87,14 @@ const U = {
   topRad: ['En çok hata yapılan radikaller', 'Most-missed radicals'],
   noMiss: ['Henüz hata kaydı yok — bir test çöz.', 'No mistakes recorded yet — take a test.'],
   progress: ['Genel ilerleme', 'Overall progress'],
-  radStudied: [(a: number, b: number) => `${a}/${b} radikal çalışıldı`, (a: number, b: number) => `${a}/${b} radicals studied`],
-  kanjiLearned: [(a: number, b: number) => `${a}/${b} kanji öğrenildi`, (a: number, b: number) => `${a}/${b} kanji learned`],
+  radStudied: [
+    (a: number, b: number) => `${a}/${b} radikal çalışıldı`,
+    (a: number, b: number) => `${a}/${b} radicals studied`,
+  ],
+  kanjiLearned: [
+    (a: number, b: number) => `${a}/${b} kanji öğrenildi`,
+    (a: number, b: number) => `${a}/${b} kanji learned`,
+  ],
   bands: ['Radikal testleri', 'Radical tests'],
   bandNames: [
     { none: 'çözülmedi', fail: '<75', pass: '75+', good: '85+', strong: '90+' },
@@ -157,10 +161,16 @@ const U = {
   failed: ['kaldı', 'failed'],
   okuTest: [(r: string) => `読 ${r} okuma sınavı (JLPT tarzı)`, (r: string) => `読 ${r} reading exam (JLPT style)`],
   okuTitle: [(r: string) => `${r} okuma sınavı`, (r: string) => `${r} reading exam`],
-  okuSub: ['Metni oku · 15 soru: 漢字読み, 表記, 文脈規定', 'Read the passage · 15 questions: 漢字読み, 表記, 文脈規定'],
+  okuSub: [
+    'Metni oku · 15 soru: 漢字読み, 表記, 文脈規定',
+    'Read the passage · 15 questions: 漢字読み, 表記, 文脈規定',
+  ],
   pillTest: ['Test', 'Test'],
   pillOku: ['Okuma', 'Reading'],
-  okuPassed: [(a: number, b: number) => `Okuma sınavları: ${a}/${b} geçti`, (a: number, b: number) => `Reading exams: ${a}/${b} passed`],
+  okuPassed: [
+    (a: number, b: number) => `Okuma sınavları: ${a}/${b} geçti`,
+    (a: number, b: number) => `Reading exams: ${a}/${b} passed`,
+  ],
   hyouki: [KIND_LABEL.hyouki, '問題2 表記 · the right kanji for the hiragana word'],
 } as const
 const u = <K extends keyof typeof U>(k: K): (typeof U)[K][0] => U[k][en.value ? 1 : 0] as (typeof U)[K][0]
@@ -313,16 +323,16 @@ const title = (x: TestDef) =>
   x.kind === 'oku'
     ? u('okuTitle')(x.radical!)
     : x.radical
-    ? u('kanjiOf')(x.radical)
-    : x.group
-      ? u('groupTest')(x.group)
-      : x.id === 'n3'
-        ? u('n3Test')
-        : x.id.startsWith('kisa')
-          ? u('short')(x.n!)
-          : x.id.startsWith('uzun')
-            ? u('long')(x.n!)
-            : `Kanji ${x.n}`
+      ? u('kanjiOf')(x.radical)
+      : x.group
+        ? u('groupTest')(x.group)
+        : x.id === 'n3'
+          ? u('n3Test')
+          : x.id.startsWith('kisa')
+            ? u('short')(x.n!)
+            : x.id.startsWith('uzun')
+              ? u('long')(x.n!)
+              : `Kanji ${x.n}`
 const historyOf = ref<string | null>(null)
 watch([tab, running, reading], toTop)
 
@@ -367,8 +377,7 @@ function readMisses() {
     for (const k of keys)
       for (const a of loadHistory(k))
         for (const x of a.misses)
-          if (x.path && x.path.length >= 2)
-            out.push({ ...x, path: [x.path[0]!.split(' ')[0]!, [...x.path[1]!][0]!] })
+          if (x.path && x.path.length >= 2) out.push({ ...x, path: [x.path[0]!.split(' ')[0]!, [...x.path[1]!][0]!] })
   } catch {
     // No storage: no stats.
   }
@@ -414,6 +423,7 @@ watch(reading, (i) => {
   try {
     if (i === null) localStorage.removeItem(LAST_LESSON)
     else localStorage.setItem(LAST_LESSON, String(i))
+    requestSync()
   } catch {
     // No storage: nothing to remember.
   }
@@ -461,7 +471,12 @@ let justTimer: ReturnType<typeof setTimeout> | undefined
 function sealDot(n: number) {
   const a = (n / 6) * Math.PI * 2
   const colors = ['var(--color-positive)', 'var(--color-warning)', 'var(--color-primary)']
-  return { '--x': `${Math.cos(a) * 34}px`, '--y': `${Math.sin(a) * 34}px`, '--r': `${n * 60}deg`, background: colors[n % 3] }
+  return {
+    '--x': `${Math.cos(a) * 34}px`,
+    '--y': `${Math.sin(a) * 34}px`,
+    '--r': `${n * 60}deg`,
+    background: colors[n % 3],
+  }
 }
 function toCard(c: string) {
   document.getElementById(`kanji-${c}`)?.scrollIntoView({ block: 'start', behavior: 'smooth' })
@@ -481,6 +496,7 @@ function toggleLearned(c: string) {
   try {
     if (on) localStorage.setItem(KANJI_KEY(c), '1')
     else localStorage.removeItem(KANJI_KEY(c))
+    requestSync()
   } catch {
     // No storage: the tick lasts for this visit.
   }
@@ -498,6 +514,7 @@ function toggleStudied(id: number) {
   studied.value = s
   try {
     localStorage.setItem(STUDIED, JSON.stringify([...s]))
+    requestSync()
   } catch {
     // No storage: the tick lasts for this visit.
   }
@@ -636,7 +653,8 @@ const quizPool = computed(() => {
   const x = running.value!
   return x.kind === 'oku' ? x.pool : x.pool.map((i) => all[i]!.kanji)
 })
-const quizBuild = (k: string | number) => (running.value!.kind === 'oku' ? okBuild(k as number) : build(ix(k as string)))
+const quizBuild = (k: string | number) =>
+  running.value!.kind === 'oku' ? okBuild(k as number) : build(ix(k as string))
 const quizLabel = (k: string | number) => {
   const x = running.value!
   if (x.kind !== 'oku') return itemLabel(ix(k as string))
@@ -734,11 +752,7 @@ const itemLabel = (i: number) => {
   <SiteLayout>
     <!-- A test running -->
     <template v-if="running">
-      <StudyHeader
-        :title="title(running)"
-        :sub="running.kind === 'oku' ? u('okuSub') : u('runSub')"
-        @back="askClose"
-      />
+      <StudyHeader :title="title(running)" :sub="running.kind === 'oku' ? u('okuSub') : u('runSub')" @back="askClose" />
       <OkumaPassage
         v-if="running.kind === 'oku'"
         :okuma="okumaOf(running.ri!)!"
@@ -748,92 +762,100 @@ const itemLabel = (i: number) => {
         :en="en"
       />
       <div class="contents" @click.capture="okSync" @keyup.capture="okSync">
-      <MasteryQuiz
-        :key="running.id"
-        :pool="quizPool"
-        :build="quizBuild"
-        :storage-key="storageKey(running)"
-        @finish="onFinish"
-        :label="quizLabel"
-      >
-        <template #feedback="{ item }">
-          <div v-if="running.kind === 'oku'" class="bg-muted rounded-card min-w-0 px-4 py-3">
-            <span
-              class="jp word-ruby text-[2.2rem] leading-[1.9] break-all"
-              lang="ja"
-              v-html="okWordRuby(item as number)"
-            />
-            <p class="text-lg">{{ okWord(item as number)?.meaning_tr }}</p>
-          </div>
-          <!-- The kanji large, its readings labelled, its words with furigana,
+        <MasteryQuiz
+          :key="running.id"
+          :pool="quizPool"
+          :build="quizBuild"
+          :storage-key="storageKey(running)"
+          @finish="onFinish"
+          :label="quizLabel"
+        >
+          <template #feedback="{ item }">
+            <div v-if="running.kind === 'oku'" class="bg-muted rounded-card min-w-0 px-4 py-3">
+              <span
+                class="jp word-ruby text-[2.2rem] leading-[1.9] break-all"
+                lang="ja"
+                v-html="okWordRuby(item as number)"
+              />
+              <p class="text-lg">{{ okWord(item as number)?.meaning_tr }}</p>
+            </div>
+            <!-- The kanji large, its readings labelled, its words with furigana,
                and the other kanji of its radical. -->
-          <div v-else-if="running.kind === 'kan'" class="grid gap-4">
-            <div class="flex items-center gap-4">
-              <span class="jp text-primary w-20 shrink-0 text-center text-7xl leading-none">{{
-                all[ix(item as string)]!.kanji
-              }}</span>
-              <dl class="grid min-w-0 gap-1.5">
-                <div v-if="all[ix(item as string)]!.on.length">
-                  <dt class="text-ink-soft text-xs">{{ u('onLabel') }}</dt>
-                  <dd class="jp text-xl">{{ all[ix(item as string)]!.on.join('・') }}</dd>
-                </div>
-                <div v-if="all[ix(item as string)]!.kun.length">
-                  <dt class="text-ink-soft text-xs">{{ u('kunLabel') }}</dt>
-                  <dd class="jp text-xl">{{ all[ix(item as string)]!.kun.join('・') }}</dd>
-                </div>
-              </dl>
+            <div v-else-if="running.kind === 'kan'" class="grid gap-4">
+              <div class="flex items-center gap-4">
+                <span class="jp text-primary w-20 shrink-0 text-center text-7xl leading-none">{{
+                  all[ix(item as string)]!.kanji
+                }}</span>
+                <dl class="grid min-w-0 gap-1.5">
+                  <div v-if="all[ix(item as string)]!.on.length">
+                    <dt class="text-ink-soft text-xs">{{ u('onLabel') }}</dt>
+                    <dd class="jp text-xl">{{ all[ix(item as string)]!.on.join('・') }}</dd>
+                  </div>
+                  <div v-if="all[ix(item as string)]!.kun.length">
+                    <dt class="text-ink-soft text-xs">{{ u('kunLabel') }}</dt>
+                    <dd class="jp text-xl">{{ all[ix(item as string)]!.kun.join('・') }}</dd>
+                  </div>
+                </dl>
+              </div>
+              <div>
+                <p class="text-ink-soft mb-1 text-sm font-semibold">{{ u('wordsLabel') }}</p>
+                <ul class="grid gap-1.5">
+                  <li
+                    v-for="w in all[ix(item as string)]!.words"
+                    :key="w.word"
+                    class="bg-muted rounded-control flex min-w-0 flex-wrap items-center gap-x-3 px-3 py-1.5"
+                  >
+                    <span
+                      class="jp word-ruby text-2xl leading-[2.2] break-all min-[400px]:text-3xl"
+                      lang="ja"
+                      v-html="rubyWord(w.word, w.reading)"
+                    />
+                    <span class="text-base">{{ m(w) }}</span>
+                    <span
+                      v-if="readingUsed(all[ix(item as string)]!, w)"
+                      class="jp text-primary ms-auto text-sm font-semibold"
+                      >{{ readingUsed(all[ix(item as string)]!, w) }}</span
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <p class="text-ink-soft mb-1 text-sm font-semibold">{{ u('wordsLabel') }}</p>
-              <ul class="grid gap-1.5">
-                <li
-                  v-for="w in all[ix(item as string)]!.words"
-                  :key="w.word"
-                  class="bg-muted rounded-control flex min-w-0 flex-wrap items-center gap-x-3 px-3 py-1.5"
-                >
-                  <span class="jp word-ruby text-2xl leading-[2.2] break-all min-[400px]:text-3xl" lang="ja" v-html="rubyWord(w.word, w.reading)" />
-                  <span class="text-base">{{ m(w) }}</span>
-                  <span v-if="readingUsed(all[ix(item as string)]!, w)" class="jp text-primary ms-auto text-sm font-semibold">{{
-                    readingUsed(all[ix(item as string)]!, w)
-                  }}</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div v-else class="grid gap-2">
-            <p class="text-ink-soft text-sm font-semibold">{{ u('familyLabel')(radicals[ix(item as string)]!.radical) }}</p>
-            <ul class="grid grid-cols-3 gap-2">
-              <li
-                v-for="k in radicals[ix(item as string)]!.kanji"
-                :key="k.kanji"
-                class="bg-muted rounded-control px-1 py-2 text-center"
-              >
-                <span class="jp block text-4xl leading-tight">{{ k.kanji }}</span>
-                <span class="block text-xs">{{ m(k) }}</span>
-              </li>
-            </ul>
-          </div>
-        </template>
-        <template #more="{ item }">
-          <div v-if="running.kind === 'kan'">
-            <template v-if="sameRadical(all[ix(item as string)]!).length">
-              <p class="text-ink-soft mb-1 text-sm font-semibold">
-                {{ u('familyLabel')(radicals[all[ix(item as string)]!.ri]!.radical) }}
+            <div v-else class="grid gap-2">
+              <p class="text-ink-soft text-sm font-semibold">
+                {{ u('familyLabel')(radicals[ix(item as string)]!.radical) }}
               </p>
-              <ul class="grid grid-cols-4 gap-2">
+              <ul class="grid grid-cols-3 gap-2">
                 <li
-                  v-for="c in sameRadical(all[ix(item as string)]!)"
-                  :key="c"
-                  class="bg-muted rounded-control px-1 py-1.5 text-center"
+                  v-for="k in radicals[ix(item as string)]!.kanji"
+                  :key="k.kanji"
+                  class="bg-muted rounded-control px-1 py-2 text-center"
                 >
-                  <span class="jp block text-3xl leading-tight">{{ c }}</span>
-                  <span class="block truncate text-xs">{{ m(byChar.get(c)!) }}</span>
+                  <span class="jp block text-4xl leading-tight">{{ k.kanji }}</span>
+                  <span class="block text-xs">{{ m(k) }}</span>
                 </li>
               </ul>
-            </template>
-          </div>
-        </template>
-      </MasteryQuiz>
+            </div>
+          </template>
+          <template #more="{ item }">
+            <div v-if="running.kind === 'kan'">
+              <template v-if="sameRadical(all[ix(item as string)]!).length">
+                <p class="text-ink-soft mb-1 text-sm font-semibold">
+                  {{ u('familyLabel')(radicals[all[ix(item as string)]!.ri]!.radical) }}
+                </p>
+                <ul class="grid grid-cols-4 gap-2">
+                  <li
+                    v-for="c in sameRadical(all[ix(item as string)]!)"
+                    :key="c"
+                    class="bg-muted rounded-control px-1 py-1.5 text-center"
+                  >
+                    <span class="jp block text-3xl leading-tight">{{ c }}</span>
+                    <span class="block truncate text-xs">{{ m(byChar.get(c)!) }}</span>
+                  </li>
+                </ul>
+              </template>
+            </div>
+          </template>
+        </MasteryQuiz>
       </div>
       <LeaveTestSheet :open="asking" @leave="leave" @stay="stay" />
     </template>
@@ -930,7 +952,9 @@ const itemLabel = (i: number) => {
               :value="learnedOf(r)"
               :max="r.kanji.length"
               :label="u('kanjiLearned')(learnedOf(r), r.kanji.length)"
-              ><span class="text-xs font-bold tabular-nums">{{ learnedOf(r) }}/{{ r.kanji.length }}</span></CircularProgress
+              ><span class="text-xs font-bold tabular-nums"
+                >{{ learnedOf(r) }}/{{ r.kanji.length }}</span
+              ></CircularProgress
             >
           </div>
 
@@ -994,11 +1018,7 @@ const itemLabel = (i: number) => {
             </div>
             <!-- The words matter most: big, furigana readable, meaning under. -->
             <ul class="mt-4 grid gap-2">
-              <li
-                v-for="w in k.words"
-                :key="w.word"
-                class="bg-muted rounded-card min-w-0 px-4 py-3"
-              >
+              <li v-for="w in k.words" :key="w.word" class="bg-muted rounded-card min-w-0 px-4 py-3">
                 <div class="flex min-w-0 items-end justify-between gap-3">
                   <span
                     class="jp word-ruby text-[2.6rem] leading-[1.9] break-all min-[400px]:text-5xl"
@@ -1064,15 +1084,11 @@ const itemLabel = (i: number) => {
               >
             </div>
             <div v-if="okumaOf(ri) && radScore(ri) !== null && radScore(ri)! >= 75" class="flex items-center gap-2">
-              <BaseButton
-                class="min-w-0 flex-1"
-                :variant="okuDone(ri) ? 'secondary' : 'primary'"
-                @click="openOku(ri)"
-                >{{
-                  okuScore(ri) !== null && okuScore(ri)! < 75
-                    ? u('retry')
-                    : u('okuTest')(r.radical)
-                }}<template v-if="openOf(okumaTest(ri)!) !== null"> · {{ openOf(okumaTest(ri)!) }}%</template></BaseButton
+              <BaseButton class="min-w-0 flex-1" :variant="okuDone(ri) ? 'secondary' : 'primary'" @click="openOku(ri)"
+                >{{ okuScore(ri) !== null && okuScore(ri)! < 75 ? u('retry') : u('okuTest')(r.radical)
+                }}<template v-if="openOf(okumaTest(ri)!) !== null">
+                  · {{ openOf(okumaTest(ri)!) }}%</template
+                ></BaseButton
               >
               <span
                 v-if="okuScore(ri) !== null"

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { requestSync } from '@/lib/sync'
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { BaseButton, BaseCard, CircularProgress, SegmentedControl } from 'rei-kit'
 
@@ -39,7 +40,11 @@ interface Kanji {
 const { t } = usePage('/kanji-book-2/')
 
 /** "ウ・ユウ" → ["ウ", "ユウ"]; "—" means none. */
-const list = (s: string) => s.split('・').map((x) => x.trim()).filter((x) => x && x !== '—')
+const list = (s: string) =>
+  s
+    .split('・')
+    .map((x) => x.trim())
+    .filter((x) => x && x !== '—')
 const units = data.map((u) => ({ title: u.title, tr: u.tr }))
 /** Every kanji in one list; tests keep these indices as their items. */
 const all: Kanji[] = data.flatMap((u, unit) =>
@@ -110,7 +115,9 @@ const mixTests: TestDef[] = Array.from({ length: MIX }, (_, j) => ({
   id: `m${j + 1}`,
   kind: 'mix' as const,
   n: j + 1,
-  pool: hashed.slice(Math.round((j * all.length) / MIX), Math.round(((j + 1) * all.length) / MIX)).sort((a, b) => a - b),
+  pool: hashed
+    .slice(Math.round((j * all.length) / MIX), Math.round(((j + 1) * all.length) / MIX))
+    .sort((a, b) => a - b),
 }))
 const unitTests = units.map((_, u) => unitTest(u))
 const blockTests = blocks.map((_, b) => blockTest(b))
@@ -247,6 +254,7 @@ watch(reading, (i) => {
   try {
     if (i === null) localStorage.removeItem(LAST_UNIT)
     else localStorage.setItem(LAST_UNIT, String(i))
+    requestSync()
   } catch {
     // No storage: nothing to remember.
   }
@@ -271,6 +279,7 @@ function toggleLearned(c: string) {
   try {
     if (on) localStorage.setItem(KANJI_KEY(c), '1')
     else localStorage.removeItem(KANJI_KEY(c))
+    requestSync()
   } catch {
     // No storage: the tick lasts for this visit.
   }
@@ -287,6 +296,7 @@ function toggleStudied(u: number) {
   studied.value = s
   try {
     localStorage.setItem(STUDIED, JSON.stringify([...s]))
+    requestSync()
   } catch {
     // No storage: the tick lasts for this visit.
   }
@@ -375,9 +385,7 @@ function rawBuild(i: number): Question {
   }
   // Meaning, with look-alike and same-unit kanji as the wrong options.
   const near = shuffle(
-    [...similar(k.k), ...kanjiOf(k.unit).map((x) => x.k)]
-      .map((c) => byChar.get(c)?.m)
-      .filter((x): x is string => !!x),
+    [...similar(k.k), ...kanjiOf(k.unit).map((x) => x.k)].map((c) => byChar.get(c)?.m).filter((x): x is string => !!x),
   )
   return {
     kind: K_MEAN,
@@ -481,7 +489,9 @@ const nextUnit = (u: number) => (u + 1 < units.length ? u + 1 : null)
         <template #actions>
           <template v-if="running.kind === 'unit'">
             <template v-if="lastScore !== null && lastScore >= 75">
-              <BaseButton v-if="closesBlock(running.n) !== null" @click="openFresh(blockTests[closesBlock(running.n)!]!)"
+              <BaseButton
+                v-if="closesBlock(running.n) !== null"
+                @click="openFresh(blockTests[closesBlock(running.n)!]!)"
                 >総 {{ blockName(closesBlock(running.n)!) }} blok testi</BaseButton
               >
               <BaseButton
@@ -494,7 +504,9 @@ const nextUnit = (u: number) => (u + 1 < units.length ? u + 1 : null)
             <BaseButton variant="ghost" @click="goUnit(running.n)">Üniteye dön</BaseButton>
           </template>
           <BaseButton
-            v-else-if="running.kind === 'block' && lastScore !== null && lastScore >= 75 && running.n + 1 < blocks.length"
+            v-else-if="
+              running.kind === 'block' && lastScore !== null && lastScore >= 75 && running.n + 1 < blocks.length
+            "
             @click="goUnit(blocks[running.n + 1]![0]!)"
             >Sonraki ünite →</BaseButton
           >
@@ -505,7 +517,11 @@ const nextUnit = (u: number) => (u + 1 < units.length ? u + 1 : null)
 
     <!-- One unit: its kanji cards, then the test flow -->
     <template v-else-if="reading !== null">
-      <StudyHeader :title="`${reading + 1}. ünite · ${units[reading]!.title}`" :sub="units[reading]!.tr" @back="reading = null" />
+      <StudyHeader
+        :title="`${reading + 1}. ünite · ${units[reading]!.title}`"
+        :sub="units[reading]!.tr"
+        @back="reading = null"
+      />
       <template v-for="(_, ui) in units" :key="ui">
         <div v-if="reading === ui" class="grid gap-4">
           <div class="flex items-center gap-3">
@@ -527,7 +543,9 @@ const nextUnit = (u: number) => (u + 1 < units.length ? u + 1 : null)
               :value="learnedOf(ui)"
               :max="idsOf(ui).length"
               :label="`${learnedOf(ui)}/${idsOf(ui).length} kanji öğrenildi`"
-              ><span class="text-xs font-bold tabular-nums">{{ learnedOf(ui) }}/{{ idsOf(ui).length }}</span></CircularProgress
+              ><span class="text-xs font-bold tabular-nums"
+                >{{ learnedOf(ui) }}/{{ idsOf(ui).length }}</span
+              ></CircularProgress
             >
           </div>
 
@@ -563,7 +581,9 @@ const nextUnit = (u: number) => (u + 1 < units.length ? u + 1 : null)
                 :variant="unitScore(ui) !== null && unitScore(ui)! >= 75 ? 'secondary' : 'primary'"
                 @click="openFresh(unitTests[ui]!)"
                 >{{ unitScore(ui) !== null && unitScore(ui)! < 75 ? 'Tekrar çöz' : '試 Ünite testi (JLPT tarzı)'
-                }}<template v-if="openOf(unitTests[ui]!) !== null"> · {{ openOf(unitTests[ui]!) }}%</template></BaseButton
+                }}<template v-if="openOf(unitTests[ui]!) !== null">
+                  · {{ openOf(unitTests[ui]!) }}%</template
+                ></BaseButton
               >
               <span
                 v-if="unitScore(ui) !== null"
@@ -624,12 +644,16 @@ const nextUnit = (u: number) => (u + 1 < units.length ? u + 1 : null)
                   :value="learnedOf(ui)"
                   :max="idsOf(ui).length"
                   :label="`${learnedOf(ui)}/${idsOf(ui).length} kanji öğrenildi`"
-                  ><span class="text-primary text-lg leading-none font-bold tabular-nums">{{ ui + 1 }}</span></CircularProgress
+                  ><span class="text-primary text-lg leading-none font-bold tabular-nums">{{
+                    ui + 1
+                  }}</span></CircularProgress
                 >
                 <span class="min-w-0 flex-1">
                   <span class="flex items-center gap-1.5 font-bold"
                     ><span class="jp min-w-0 truncate">{{ un.title }}</span
-                    ><span v-if="allLearned(ui)" class="jp text-positive shrink-0 rounded border border-current px-1 text-xs font-bold"
+                    ><span
+                      v-if="allLearned(ui)"
+                      class="jp text-positive shrink-0 rounded border border-current px-1 text-xs font-bold"
                       >済</span
                     ></span
                   >
@@ -679,8 +703,14 @@ const nextUnit = (u: number) => (u + 1 < units.length ? u + 1 : null)
                     >%{{ score(blockTests[closesBlock(ui)!]!) }}</span
                   >
                 </div>
-                <div v-if="openOf(blockTests[closesBlock(ui)!]!) !== null" class="bg-muted mt-2 h-1.5 overflow-hidden rounded-full">
-                  <span class="bg-primary block h-full rounded-full" :style="{ width: `${openOf(blockTests[closesBlock(ui)!]!)}%` }" />
+                <div
+                  v-if="openOf(blockTests[closesBlock(ui)!]!) !== null"
+                  class="bg-muted mt-2 h-1.5 overflow-hidden rounded-full"
+                >
+                  <span
+                    class="bg-primary block h-full rounded-full"
+                    :style="{ width: `${openOf(blockTests[closesBlock(ui)!]!)}%` }"
+                  />
                 </div>
                 <BaseButton size="sm" block class="mt-3" @click="openTest(blockTests[closesBlock(ui)!]!.id)">
                   <template v-if="openOf(blockTests[closesBlock(ui)!]!) !== null"
@@ -697,9 +727,9 @@ const nextUnit = (u: number) => (u + 1 < units.length ? u + 1 : null)
       <template v-else-if="tab === 'tests'">
         <Kb2Plan />
         <p class="text-ink-soft mb-3 text-[15px]">
-          Sorular JLPT tarzında: 漢字読み (okunuş, ゛・uzun ses・っ tuzaklarıyla), 表記 (benzer veya aynı okunan kanjiler
-          arasından doğru yazılış) ve anlam. Blok testleri 4 ünitenin, karışık testler ise hepsi birlikte bütün kanjilerin
-          testidir. Testten çıksan da kaldığın yerden devam eder.
+          Sorular JLPT tarzında: 漢字読み (okunuş, ゛・uzun ses・っ tuzaklarıyla), 表記 (benzer veya aynı okunan
+          kanjiler arasından doğru yazılış) ve anlam. Blok testleri 4 ünitenin, karışık testler ise hepsi birlikte bütün
+          kanjilerin testidir. Testten çıksan da kaldığın yerden devam eder.
         </p>
         <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <BaseCard v-for="x in [...blockTests, ...mixTests]" :key="x.id" class="min-w-0">

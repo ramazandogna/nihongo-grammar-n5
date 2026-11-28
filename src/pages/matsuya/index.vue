@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { requestSync } from '@/lib/sync'
 import { computed, onMounted, ref, watch } from 'vue'
 import { CircleHelp, Lightbulb, MessageCircle, MessagesSquare, ReceiptText } from 'lucide-vue-next'
 import { BaseButton, BaseCard, CircularProgress } from 'rei-kit'
@@ -97,6 +98,7 @@ function toggleLearned(i: number) {
   learned.value = s
   try {
     localStorage.setItem(LEARNED, JSON.stringify([...s]))
+    requestSync()
   } catch {
     // No storage: kept for this visit only.
   }
@@ -304,12 +306,12 @@ function build(i: number): Question {
         >
           <div class="flex items-start gap-3">
             <div class="grid min-w-0 flex-1 gap-0.5">
-            <span class="jp text-2xl leading-[2.1]" lang="ja" v-html="rubyWord(all[i]!.w, all[i]!.r)" />
-            <span class="min-w-0 flex-1">
-              <span class="block font-semibold"><RevealText :text="all[i]!.tr" /></span>
-              <span class="text-ink-soft block text-sm">{{ all[i]!.r }} · {{ all[i]!.romaji }}</span>
-              <span v-if="all[i]!.note" class="text-ink-soft block text-sm" v-html="all[i]!.note" />
-            </span>
+              <span class="jp text-2xl leading-[2.1]" lang="ja" v-html="rubyWord(all[i]!.w, all[i]!.r)" />
+              <span class="min-w-0 flex-1">
+                <span class="block font-semibold"><RevealText :text="all[i]!.tr" /></span>
+                <span class="text-ink-soft block text-sm">{{ all[i]!.r }} · {{ all[i]!.romaji }}</span>
+                <span v-if="all[i]!.note" class="text-ink-soft block text-sm" v-html="all[i]!.note" />
+              </span>
             </div>
             <StampToggle
               class="shrink-0"

@@ -1,3 +1,4 @@
+import { requestSync } from './sync'
 import { ref, watch } from 'vue'
 
 import type { Lang } from '@/site'
@@ -26,6 +27,7 @@ function get(key: string): string | null {
 function put(key: string, value: string) {
   try {
     localStorage.setItem(key, value)
+    requestSync()
   } catch {
     // Storage blocked: the choice lasts for this visit.
   }
