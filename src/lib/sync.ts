@@ -161,6 +161,13 @@ export async function bootSync() {
 export const hasLocalProgress = () =>
   Object.keys(collect().data).some((k) => k.startsWith('nihongo-history:') || k.startsWith('nihongo-run:'))
 
+/** Whether a cloud copy exists for this code — false means the code is being created now. */
+export async function probe(raw: string): Promise<boolean> {
+  const c = raw.trim()
+  if (c.length < MIN_CODE) throw new Error('short')
+  return (await pull(await deriveKeys(c))) !== null
+}
+
 /**
  * Connect a code. `merge` keeps this device's progress and joins it with the cloud copy;
  * `cloud` takes the cloud copy (this device's state stays in `nihongo-backup:last`).

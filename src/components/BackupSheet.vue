@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { BaseButton, BaseSheet } from 'rei-kit'
-import { Download, Upload } from 'lucide-vue-next'
+import { Download, Eye, EyeOff, Upload } from 'lucide-vue-next'
 
 import { applyBackup, collect, markExported, parseBackup, undoImport, type ParseResult } from '@/lib/backup'
 import { usePageContext } from '@/lib/page'
-import { connect, disconnect, hasLocalProgress, MIN_CODE, syncCode, syncStatus } from '@/lib/sync'
+import { connect, disconnect, hasLocalProgress, MIN_CODE, probe, syncCode, syncStatus } from '@/lib/sync'
 
 /**
  * Export every saved test and history as one JSON file, and bring one back:
@@ -78,18 +78,41 @@ const code = ref('')
 const asking = ref(false)
 const busy = ref(false)
 const syncFailed = ref(false)
-async function link(mode: 'merge' | 'cloud' | null) {
-  if (mode === null && hasLocalProgress()) return void (asking.value = true)
-  asking.value = false
+const confirmCode = ref('')
+const creating = ref(false)
+const reveal = ref(false)
+const mismatch = computed(() => creating.value && confirmCode.value.trim() !== code.value.trim())
+async function run(fn: () => Promise<void>) {
   busy.value = true
   syncFailed.value = false
   try {
-    await connect(code.value, mode ?? 'merge')
+    await fn()
   } catch {
     syncFailed.value = true
   } finally {
     busy.value = false
   }
+}
+/** First press: does this code already have a cloud copy? New code → confirm it; existing → merge question. */
+function link() {
+  void run(async () => {
+    if (creating.value) {
+      if (!mismatch.value) await connect(code.value, 'merge')
+      return
+    }
+    if (!(await probe(code.value))) creating.value = true
+    else if (hasLocalProgress()) asking.value = true
+    else await connect(code.value, 'merge')
+  })
+}
+function choose(mode: 'merge' | 'cloud') {
+  asking.value = false
+  void run(() => connect(code.value, mode))
+}
+function edited() {
+  creating.value = false
+  asking.value = false
+  confirmCode.value = ''
 }
 function reload() {
   location.reload()
@@ -115,24 +138,48 @@ function reload() {
         </template>
         <template v-else>
           <p class="text-ink-soft text-xs">{{ t.sync.hint }}</p>
-          <input
-            v-model="code"
-            type="password"
-            autocomplete="off"
-            class="control focus-ring rounded-control min-h-11 w-full px-3"
-            :aria-label="t.sync.placeholder"
-            :placeholder="t.sync.placeholder"
-          />
+          <div class="relative">
+            <input
+              v-model="code"
+              :type="reveal ? 'text' : 'password'"
+              autocomplete="off"
+              class="control focus-ring rounded-control min-h-11 w-full ps-3 pe-11"
+              :aria-label="t.sync.placeholder"
+              :placeholder="t.sync.placeholder"
+              @input="edited"
+            />
+            <button
+              type="button"
+              class="focus-ring rounded-control text-ink-soft absolute inset-y-0 end-0 grid w-11 place-items-center"
+              :aria-label="reveal ? t.sync.hide : t.sync.show"
+              :aria-pressed="reveal"
+              @click="reveal = !reveal"
+            >
+              <EyeOff v-if="reveal" class="size-4" aria-hidden="true" /><Eye v-else class="size-4" aria-hidden="true" />
+            </button>
+          </div>
+          <template v-if="creating">
+            <p class="text-sm font-semibold">{{ t.sync.newCode }}</p>
+            <input
+              v-model="confirmCode"
+              :type="reveal ? 'text' : 'password'"
+              autocomplete="off"
+              class="control focus-ring rounded-control min-h-11 w-full px-3"
+              :aria-label="t.sync.confirm"
+              :placeholder="t.sync.confirm"
+            />
+            <p v-if="confirmCode && mismatch" role="alert" class="text-negative text-sm">{{ t.sync.mismatch }}</p>
+          </template>
           <div v-if="asking" class="bg-muted rounded-control grid gap-2 p-3">
             <p class="text-sm font-semibold">{{ t.sync.ask }}</p>
             <div class="flex flex-wrap gap-2">
-              <BaseButton size="sm" @click="link('merge')">{{ t.sync.merge }}</BaseButton>
-              <BaseButton size="sm" variant="secondary" @click="link('cloud')">{{ t.sync.cloud }}</BaseButton>
+              <BaseButton size="sm" @click="choose('merge')">{{ t.sync.merge }}</BaseButton>
+              <BaseButton size="sm" variant="secondary" @click="choose('cloud')">{{ t.sync.cloud }}</BaseButton>
               <BaseButton size="sm" variant="ghost" @click="asking = false">{{ t.sync.cancel }}</BaseButton>
             </div>
           </div>
-          <BaseButton v-else block :disabled="busy || code.trim().length < MIN_CODE" @click="link(null)">{{
-            busy ? t.sync.syncing : t.sync.connect
+          <BaseButton v-else block :disabled="busy || code.trim().length < MIN_CODE || mismatch" @click="link">{{
+            busy ? t.sync.syncing : creating ? t.sync.create : t.sync.connect
           }}</BaseButton>
           <p v-if="syncFailed" role="alert" class="text-negative text-sm">{{ t.sync.failed }}</p>
         </template>

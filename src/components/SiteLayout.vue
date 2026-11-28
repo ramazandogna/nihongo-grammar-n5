@@ -9,7 +9,7 @@ import { usePageContext } from '@/lib/page'
 import { furigana, hideAnswers, lang } from '@/lib/prefs'
 import { daysSinceExport, needsBackup } from '@/lib/backup'
 import { storageError } from '@/lib/quiz-store'
-import { bootSync } from '@/lib/sync'
+import { bootSync, syncCode } from '@/lib/sync'
 import BackupSheet from './BackupSheet.vue'
 
 /**
@@ -110,6 +110,25 @@ onMounted(() => {
   remindBackup.value = needsBackup()
   backupDays.value = daysSinceExport()
 })
+/** Home page tip for devices without sync; hidden on this device once dismissed. */
+const syncTip = ref(false)
+onMounted(() => {
+  if (page.path !== '/' || syncCode.value) return
+  try {
+    if (localStorage.getItem('nihongo-backup-sync-tip') === '1') return
+  } catch {
+    // show it
+  }
+  syncTip.value = true
+})
+function dismissSyncTip() {
+  syncTip.value = false
+  try {
+    localStorage.setItem('nihongo-backup-sync-tip', '1')
+  } catch {
+    // nothing to remember it in
+  }
+}
 function dismissReminder() {
   remindBackup.value = false
   try {
@@ -206,7 +225,16 @@ function dismissReminder() {
           <TriangleAlert class="text-warning mt-0.5 size-4 shrink-0" aria-hidden="true" />{{ t.storageError }}
         </p>
         <div
-          v-if="remindBackup && !playing"
+          v-if="syncTip && !syncCode && !playing"
+          role="status"
+          class="border-primary bg-muted rounded-control mb-4 flex flex-wrap items-center gap-2 border-s-4 px-3 py-2 text-sm"
+        >
+          <span class="min-w-0 flex-1">{{ t.sync.tip }}</span>
+          <BaseButton size="sm" @click="openBackup">{{ t.sync.tipCta }}</BaseButton>
+          <BaseButton size="sm" variant="ghost" @click="dismissSyncTip">{{ t.dismiss }}</BaseButton>
+        </div>
+        <div
+          v-else-if="remindBackup && !playing"
           role="status"
           class="border-primary bg-muted rounded-control mb-4 flex flex-wrap items-center gap-2 border-s-4 px-3 py-2 text-sm"
         >
