@@ -5,6 +5,7 @@ import { Download, Upload } from 'lucide-vue-next'
 
 import { applyBackup, collect, markExported, parseBackup, undoImport, type ParseResult } from '@/lib/backup'
 import { usePageContext } from '@/lib/page'
+import { connect, disconnect, hasLocalProgress, MIN_CODE, syncCode, syncStatus } from '@/lib/sync'
 
 /**
  * Export every saved test and history as one JSON file, and bring one back:
@@ -73,6 +74,23 @@ function apply(mode: 'merge' | 'replace') {
 function undo() {
   if (undoImport()) location.reload()
 }
+const code = ref('')
+const asking = ref(false)
+const busy = ref(false)
+const syncFailed = ref(false)
+async function link(mode: 'merge' | 'cloud' | null) {
+  if (mode === null && hasLocalProgress()) return void (asking.value = true)
+  asking.value = false
+  busy.value = true
+  syncFailed.value = false
+  try {
+    await connect(code.value, mode ?? 'merge')
+  } catch {
+    syncFailed.value = true
+  } finally {
+    busy.value = false
+  }
+}
 function reload() {
   location.reload()
 }
@@ -82,6 +100,45 @@ function reload() {
   <BaseSheet v-model="open" :title="t.backup" :close-label="t.close">
     <div class="grid gap-4 text-[15px]">
       <section class="grid gap-2">
+        <h3 class="font-semibold">{{ t.sync.title }}</h3>
+        <template v-if="syncCode">
+          <p role="status" :class="syncStatus === 'error' ? 'text-negative' : 'text-positive'" class="text-sm">
+            {{
+              syncStatus === 'error'
+                ? t.sync.error
+                : syncStatus === 'syncing'
+                  ? t.sync.syncing
+                  : t.sync.on(`•••${syncCode.slice(-2)}`)
+            }}
+          </p>
+          <BaseButton size="sm" variant="ghost" @click="disconnect">{{ t.sync.off }}</BaseButton>
+        </template>
+        <template v-else>
+          <p class="text-ink-soft text-xs">{{ t.sync.hint }}</p>
+          <input
+            v-model="code"
+            type="password"
+            autocomplete="off"
+            class="control focus-ring rounded-control min-h-11 w-full px-3"
+            :aria-label="t.sync.placeholder"
+            :placeholder="t.sync.placeholder"
+          />
+          <div v-if="asking" class="bg-muted rounded-control grid gap-2 p-3">
+            <p class="text-sm font-semibold">{{ t.sync.ask }}</p>
+            <div class="flex flex-wrap gap-2">
+              <BaseButton size="sm" @click="link('merge')">{{ t.sync.merge }}</BaseButton>
+              <BaseButton size="sm" variant="secondary" @click="link('cloud')">{{ t.sync.cloud }}</BaseButton>
+              <BaseButton size="sm" variant="ghost" @click="asking = false">{{ t.sync.cancel }}</BaseButton>
+            </div>
+          </div>
+          <BaseButton v-else block :disabled="busy || code.trim().length < MIN_CODE" @click="link(null)">{{
+            busy ? t.sync.syncing : t.sync.connect
+          }}</BaseButton>
+          <p v-if="syncFailed" role="alert" class="text-negative text-sm">{{ t.sync.failed }}</p>
+        </template>
+      </section>
+
+      <section class="border-hair grid gap-2 border-t pt-4">
         <BaseButton block @click="exportFile"
           ><Download class="size-4" aria-hidden="true" />{{ t.exportProgress }}</BaseButton
         >

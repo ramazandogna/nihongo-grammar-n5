@@ -1,4 +1,5 @@
 import { ref } from 'vue'
+import { requestSync } from './sync'
 
 /**
  * Where a test lives between visits, and what it remembers after it ends.
@@ -64,7 +65,7 @@ export interface Attempt {
 const RUN = (key: string) => `nihongo-run:${key}`
 const HISTORY = (key: string) => `nihongo-history:${key}`
 
-function read<T>(k: string): T | null {
+export function read<T>(k: string): T | null {
   try {
     const v = localStorage.getItem(k)
     return v ? (JSON.parse(v) as T) : null
@@ -74,10 +75,11 @@ function read<T>(k: string): T | null {
 }
 /** Set once a write fails (quota, private mode), so the layout can say progress is not being kept. */
 export const storageError = ref(false)
-function write(k: string, v: unknown) {
+export function write(k: string, v: unknown) {
   try {
     if (v === null) localStorage.removeItem(k)
     else localStorage.setItem(k, JSON.stringify(v))
+    requestSync()
   } catch {
     // Storage blocked or full: this run is not kept — say so once.
     storageError.value = true

@@ -9,6 +9,7 @@ import { usePageContext } from '@/lib/page'
 import { furigana, hideAnswers, lang } from '@/lib/prefs'
 import { daysSinceExport, needsBackup } from '@/lib/backup'
 import { storageError } from '@/lib/quiz-store'
+import { bootSync } from '@/lib/sync'
 import BackupSheet from './BackupSheet.vue'
 
 /**
@@ -47,6 +48,7 @@ function onKey(e: KeyboardEvent) {
   if (e.key === 'Escape' && menuOpen.value) closeMenu(true)
 }
 onMounted(() => {
+  void bootSync()
   document.addEventListener('pointerdown', onDocPointer)
   document.addEventListener('keydown', onKey)
 })
@@ -136,7 +138,15 @@ function dismissReminder() {
           <span class="font-jp text-primary text-xl leading-none" aria-hidden="true">{{ page.icon }}</span>
           <span class="truncate text-base font-bold">{{ page.title }}</span>
         </span>
-        <BaseButton variant="ghost" size="sm" icon class="size-11" :aria-label="themeLabel" :title="themeLabel" @click="cycleTheme">
+        <BaseButton
+          variant="ghost"
+          size="sm"
+          icon
+          class="size-11"
+          :aria-label="themeLabel"
+          :title="themeLabel"
+          @click="cycleTheme"
+        >
           <component :is="themeIcon" class="size-5" aria-hidden="true" />
         </BaseButton>
         <BaseButton
@@ -219,9 +229,11 @@ function dismissReminder() {
           <span>© 2026 Ramazan Doğan</span>
         </span>
         <span class="flex items-center gap-1">
-          <RouterLink to="/#about" class="focus-ring hover:text-ink rounded-control inline-flex min-h-11 items-center px-2">{{
-            t.about
-          }}</RouterLink>
+          <RouterLink
+            to="/#about"
+            class="focus-ring hover:text-ink rounded-control inline-flex min-h-11 items-center px-2"
+            >{{ t.about }}</RouterLink
+          >
           <a
             href="https://github.com/ramazandogna"
             target="_blank"
